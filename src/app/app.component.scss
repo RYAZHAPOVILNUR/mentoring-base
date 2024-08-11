@@ -115,8 +115,8 @@
     
 }
 .item-cards__grid-left-action {
-    align-self: self-end;
     display: flex;
+    align-self: self-end;
     align-items: center;
 }
 .item-cards__grid-left-actio-link {
@@ -132,59 +132,65 @@
     gap: 25px;
     margin-left: 20px; 
 }
-
 .item-cards__grid-right-block {
-width: 421px;
-height: 200px;
-box-shadow: 0px 20px 50px 0px #3C3C3B12;
-height: 200px;
-
+    max-width: 421px;
+    max-height: 200px;
+    width: 421px;
+    height: 200px;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    height: 200px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
 }
-.item-cards__grid-right-block-1{
-    height: 100%;
-    width: 100%;
+.item-cards__grid-right-block-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 421px;
+    height: 200px;
     background-image: url(/assets/image_14.png);
     background-repeat: no-repeat;
+    overflow: hidden;
 }
-.item-cards__grid-right-block-text {
+.item-cards__grid-right-block-text2{
+    display: flex;
+    align-self: self-end;
     font-size: 28px;
     font-family: Inter;
     font-weight: 600;
 }
-.item-cards__grid-right-block-2 {
-    height: 100%;
-    width: 100%;
+.item-cards__grid-right-block-text-action{
+    display: flex;
+    align-self: self-end;
+    padding-bottom: 30px;
+    align-items: center;
+}
+
+.item-cards__grid-right-block-2-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 421px;
+    max-height: 200px;
+    width: 421px;
+    height: 200px;
     background-image: url(/assets/image_17.png);
     background-repeat: no-repeat;
     overflow: hidden;
+    background-position-x: right;
+    background-position-y: center;
 }
-.item-cards__grid-right-block-2-text{
+.item-cards__grid-right-block-text3{
+    display: flex;
+    align-self: baseline;
     font-size: 28px;
     font-family: Inter;
     font-weight: 600;
 }
-.item-cards__grid-right-block-3 {
-    height: 100%;
-    width: 100%;
-    background-image: url(/assets/image_18.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-.item-cards__grid-right-block-3-text{
-    font-size: 28px;
-    font-family: Inter;
-    font-weight: 600;
-}
-
-.item-cards__grid-right-block-4 {
-    height: 100%;
-    width: 100%;
-    background-image: url(/assets/image_15.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-.item-cards__grid-right-block-4-text{
-    font-size: 28px;
-    font-family: Inter;
-    font-weight: 600;
+.item-cards__grid-right-block-2-text-action{
+    display: flex;
+    align-self: baseline;
+    padding-bottom: 30px;
+    align-items: center;
 }
