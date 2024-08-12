@@ -329,7 +329,12 @@
 .newcards-card-title{
     display: flex;
     align-items: center;
-    justify-content: space-between;  
+    justify-content: space-between;
+}
+.newcards-card-title-heart{
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 .newcards-card-picture{
     background-image: url(/assets/image13.svg);
@@ -338,6 +343,7 @@
     background-position-y: top;
     overflow: hidden;
     height: 180px;
+    position: relative;
 }
 .newcards-card-picture-new{
     font-size: 16px;
@@ -355,6 +361,10 @@
     padding: 10px 20px 10px 20px;
     border-radius: 50px;
     max-width: 15px;
+    // margin-top: 50px;
+}
+.newcards-card-picture-sale-with_new{
+    margin-top: 10px;
 }
 .newcards-card-picture-new-sale{
     display: flex;
