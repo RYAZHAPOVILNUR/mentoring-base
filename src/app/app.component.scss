@@ -300,20 +300,22 @@
     margin-bottom: 25px;
     display: flex;
     justify-content: space-between;
-    // gap: 25px;
+    position: relative;
 }
 .newcards-card-left-arrow{
-    color: #F0BA4E;
-    font-size: 17px;
+    background-image: url(/assets/Polygon_1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
     height: 60px;
     width: 60px;
-    position: relative;
+    position: absolute;
     top: 170px;
-    left: 20px;
-    background: #FFFFFF;
-    padding: 20px;
+    left: -45px;
+    background-color: #FFFFFF;
     border: none;
     border-radius: 50px;
+    box-shadow: 0px 2px 50px 0px #00000012;
 }
 .newcards-card{
     height: 380px;
@@ -333,7 +335,7 @@
 }
 .newcards-card-title-heart{
     position: absolute;
-    right: 10px;
+    right: 0;
     top: 10px;
 }
 .newcards-card-picture{
@@ -393,24 +395,25 @@
     border-radius: 50px;
 }
 .newcards-card-right-arrow{
-    color: #F0BA4E;
-    font-size: 17px;
+    background-image: url(/assets/Polygon_2.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
     height: 60px;
     width: 60px;
-    position: relative;
+    position: absolute;
     top: 170px;
-    right: 20px;
-    background: #FFFFFF;
-    padding: 20px;
+    right: -45px;
+    background-color: #FFFFFF;
     border: none;
     border-radius: 50px;
+    box-shadow: 0px 2px 50px 0px #00000012;
 }
 
 .footer-container{
     background-color: #4b565E; 
 }
 .footer-up{
-    // height: 270px;
     display: flex;
     justify-content: space-between;
     padding: 30px 0;
@@ -476,7 +479,6 @@
     height: 36px;
     width: 94px;
 }
-
 
 .footer{
     height: 80px; 
