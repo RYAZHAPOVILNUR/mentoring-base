@@ -52,10 +52,41 @@
         </div>
     </div>
 </div>
-<div>
+<div class="banner">
     <img src="assets/баннер.png" alt="банннер" style="width: 100%;">
 </div>
 <div class="content-container">
+    <section class="benefits">
+        <div class="benefits__content-wrapper">
+            <div class="benefits__content">
+                <div class="benefits__content-icon">
+                    <img src="../assets/icon-1.svg" alt="">
+                </div>
+                <div class="benefits__text">
+                    <div class="benefits__title">Большой ассортимент</div>
+                    <div class="benefits__label">строительных материалов всегда в наличии</div>
+                </div>
+            </div>
+            <div class="benefits__content">
+                <div class="benefits__content-icon">
+                    <img src="../assets/icon-2.svg" alt="">
+                </div>
+                <div class="benefits__text">
+                    <div class="benefits__title">Доставка стройматериалов</div>
+                    <div class="benefits__label">в течении четырех часов или в любое удобное время</div>
+                </div>
+            </div>
+            <div class="benefits__content">
+                <div class="benefits__content-icon">
+                    <img src="../assets/icon-3.svg" alt="">
+                </div>
+                <div class="benefits__text">
+                    <div class="benefits__title">Многоуровневая система</div>
+                    <div class="benefits__label">управления качеством по стандарту ISO 9001</div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="item-cards">
         <div class="item-cards__pagination">
             <button class="item-cards__pagination-button active-button">1</button>
@@ -64,89 +95,352 @@
             <button class="item-cards__pagination-button">4</button>
             <button class="item-cards__pagination-button">5 </button>
         </div>
-        <div class="item-cards__grid">
-            <div class="item-cards__grid-left">
-                <div class="item-cards__grid-left-text">
-                    Строительный отделочный инструмент
-                </div>
+            <div class="item-cards__grid">
+                <div class="item-cards__grid-left">
+                    <div class="item-cards__grid-left-text">
+                        Строительный отделочный инструмент
+                    </div>
+
                     <div class="item-cards__grid-left-action">
-                        <span style="margin-right: 10px;">Перейти в каталог</span>
+                        <span class="item-cards__grid-text-button" style="margin-right: 10px;">Перейти в каталог</span>
                         <a class="item-cards__grid-left-actio-link">
                             <img src="/assets/Frame 20.svg" alt="иконка кнопки">
                         </a>
                     </div>
-            </div>
-            <div class="item-cards__grid-right">
-
-
-
-
-                
-                <div class="item-cards__grid-right-block">
-                    <div class="item-cards__grid-right-block-text">
-                        <div class="item-cards__grid-right-block-text2">
-                            Эмали
-                        </div>
-                        <div class="item-cards__grid-right-block-text-action">
-                            <span style="margin-right: 10px;">Перейти в каталог</span>
-                        <a class="item-cards__grid-left-actio-link">
-                        <img src="/assets/Frame 20.svg" alt="иконка кнопки">
-                        </a>
-                        </div>
-                    </div>
                 </div>
-                
-                
-                
-                <div class="item-cards__grid-right-block">
-                    <div class="item-cards__grid-right-block-2-text">
-                        <div class="item-cards__grid-right-block-text3">
-                            Лакокрасочные материалы
-                        </div>
-                        <div class="item-cards__grid-right-block-2-text-action">
-                            <span style="margin-right: 10px;">Перейти в каталог</span>
-                            <a class="item-cards__grid-left-actio-link">
-                            <img src="/assets/Frame 20.svg" alt="иконка кнопки">
-                            </a>
-                        </div>
-                    </div>                                                       
-                </div>
-
-
-
-                <div class="item-cards__grid-right-block">
-                    <div class="item-cards__grid-right-block-3-text">
-                        <div class="item-cards__grid-right-block-text4">
-                            Пены, клеи и герметики
-                        </div>
-                        <div class="item-cards__grid-right-block-3-text-action">
-                            <span style="margin-right: 10px;">Перейти в каталог</span>
-                            <a class="item-cards__grid-left-actio-link">
-                            <img src="/assets/Frame 20.svg" alt="иконка кнопки">
-                            </a>
+                <div class="item-cards__grid-right">
+                    <div class="item-cards__grid-right-block">
+                        <div class="item-cards__grid-right-block-text">
+                            <div class="item-cards__grid-right-block-text2">
+                                Эмали
+                            </div>
+                            <div class="item-cards__grid-right-block-text-action">
+                                <span class="item-cards__grid-text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                
+                                <a class="item-cards__grid-left-actio-link">
+                                    <img src="/assets/Frame 20.svg" alt="иконка кнопки">
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
+                    <div class="item-cards__grid-right-block">
+                        <div class="item-cards__grid-right-block-2-text">
+                            <div class="item-cards__grid-right-block-text3">
+                                Лакокрасочные материалы
+                            </div>
+
+                            <div class="item-cards__grid-right-block-2-text-action">
+                                <span class="item-cards__grid-text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <a class="item-cards__grid-left-actio-link">
+                                    <img src="/assets/Frame 20.svg" alt="иконка кнопки">
+                                </a>
+                            </div>
+                        </div>                                                       
+                    </div>
+
+                    <div class="item-cards__grid-right-block">
+                        <div class="item-cards__grid-right-block-3-text">
+                            <div class="item-cards__grid-right-block-text4">
+                                Пены, клеи и герметики
+                            </div>
+
+                            <div class="item-cards__grid-right-block-3-text-action">
+                                <span class="item-cards__grid-text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <a class="item-cards__grid-left-actio-link">
+                                    <img src="/assets/Frame 20.svg" alt="иконка кнопки">
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="item-cards__grid-right-block">
+                        <div class="item-cards__grid-right-block-4-text">
+                            <div class="item-cards__grid-right-block-text5">
+                                Розетки и выключатели
+                            </div>
+
+                            <div class="item-cards__grid-right-block-4-text-action">
+                                <span class="item-cards__grid-text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <a class="item-cards__grid-left-actio-link">
+                                    <img src="/assets/Frame 20.svg" alt="иконка кнопки">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div> 
+    </div>
+        <div class="item-cards-2">
+                <div class="item-cards-2-action">
+                    <div class="item-cards-2-action-left">
+                        <img src="/assets/Frame 49-cropped.svg" alt="кнопка-скролла">
+                    </div>
+                    
+                    <div class="item-cards-2-action-right">
+                        <img src="/assets/Frame 46-cropped.svg" alt="кнопка-скролла">
+                    </div>
                 </div>
 
+                <div class="item-cards-2__pagination">
+                    <div class="item-cards-2__pagination-button">
+                        Популярные товары
+                    </div>
 
-                <div class="item-cards__grid-right-block">
-                    <div class="item-cards__grid-right-block-4-text">
-                        <div class="item-cards__grid-right-block-text5">
-                            Розетки и выключатели
+                    <div class="item-cards-2__pagination-active-button-2">
+                        Посмотреть все товары
+                    </div>
+                </div>
+                <div class="item-cards__grid-2">
+                    <div class="item-cards__grid-2-block">
+                        <div class="item-cards__grid-2-block-element-1">
+                            <img src="/assets/Frame 41.svg" alt="кнопка">
                         </div>
-                        <div class="item-cards__grid-right-block-4-text-action">
-                            <span style="margin-right: 10px;">Перейти в каталог</span>
-                            <a class="item-cards__grid-left-actio-link">
-                            <img src="/assets/Frame 20.svg" alt="иконка кнопки">
-                            </a>
+
+                        <div class="item-cards__grid-2-block-element-2">
+                            Круг зачистной 125х6х22
+                        </div>
+
+                        <div class="item-cards__grid-2-block-element-3">
+                            Артикул 00004
+                        </div>
+
+                        <div class="item-cards__grid-2-block-element-4"></div>
+
+                        <div class="item-cards__grid-2-block-element-5"></div>
+                    </div>
+
+
+                    <div class="item-cards__grid-2-block">
+                        <div class="item-cards__grid-2-block-element-1">
+                            <img src="/assets/Frame 41.svg" alt="кнопка">
+                        </div>
+                        <div class="item-cards__grid-2-block-element-2">
+                            Круг зачистной 125х6х22
+                        </div>
+                        <div class="item-cards__grid-2-block-element-3">
+                            Артикул 00004
+                        </div>
+                        <div class="item-cards__grid-2-block-element-4">
+
+                        </div>
+                        <div class="item-cards__grid-2-block-element-5">
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="item-cards__grid-2-block">
+                        <div class="item-cards__grid-2-block-element-1 second-version">
+                            <img src="/assets/Frame41 .svg" alt="кнопка">
+                        </div>
+                        <div class="item-cards__grid-2-block-element-2">
+                            Круг зачистной 125х6х22
+                        </div>
+                        <div class="item-cards__grid-2-block-element-3">
+                            Артикул 00004
+                        </div>
+                        <div class="item-cards__grid-2-block-element-4">
+
+                        </div>
+                        <div class="item-cards__grid-2-block-element-5">
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="item-cards__grid-2-block">
+                        <div class="item-cards__grid-2-block-element-1 second-version">
+                            <img src="/assets/Frame41 .svg" alt="кнопка">
+                        </div>
+                        <div class="item-cards__grid-2-block-element-2">
+                            Круг зачистной 125х6х22
+                        </div>
+                        <div class="item-cards__grid-2-block-element-3">
+                            Артикул 00004
+                        </div>
+                        <div class="item-cards__grid-2-block-element-4">
+
+                        </div>
+                        <div class="item-cards__grid-2-block-element-5">
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    <div class="banner-2">
+        <img src="/assets/Frame-50.png" alt="банннер" style="width: 100%;">
+    </div>
+    <div class="item-cards-2">
+
+        <div class="item-cards-2-action">
+
+
+            <div class="item-cards-2-action-left">
+                <img src="/assets/Frame 49-cropped.svg" alt="">
+            </div>
+
+
+            <div class="item-cards-2-action-right">
+                <img src="/assets/Frame 46-cropped.svg" alt="">
+            </div>
+
+
+        </div>
+        <div class="item-cards-2__pagination">
+            <div class="item-cards-2__pagination-button">
+                Популярные товары
+            </div>
+            <div class="item-cards-2__pagination-active-button-2">
+                Посмотреть все товары
+            </div>
+        </div>
+        <div class="item-cards__grid-2">
+            <div class="item-cards__grid-2-block">
+                <div class="item-cards__grid-2-block-element-1 third-version">
+                    <img src="/assets/Frame41-3.svg" alt="кнопка">
+                </div>
+                <div class="item-cards__grid-2-block-element-2">
+                    Круг зачистной 125х6х22
+                </div>
+                <div class="item-cards__grid-2-block-element-3">
+                    Артикул 00004
+                </div>
+                <div class="item-cards__grid-2-block-element-4">
+
+                </div>
+                <div class="item-cards__grid-2-block-element-5">
+
+                </div>
+            </div>
+
+
+            <div class="item-cards__grid-2-block">
+                <div class="item-cards__grid-2-block-element-1 third-version">
+                    <img src="/assets/Frame41-3.svg" alt="кнопка">
+                </div>
+                <div class="item-cards__grid-2-block-element-2">
+                    Круг зачистной 125х6х22
+                </div>
+                <div class="item-cards__grid-2-block-element-3">
+                    Артикул 00004
+                </div>
+                <div class="item-cards__grid-2-block-element-4">
+
+                </div>
+                <div class="item-cards__grid-2-block-element-5">
+                    
+                </div>
+            </div>
+
+
+            <div class="item-cards__grid-2-block">
+                <div class="item-cards__grid-2-block-element-1 third-version">
+                    <img src="/assets/Frame41-3.svg" alt="кнопка">
+                </div>
+                <div class="item-cards__grid-2-block-element-2">
+                    Круг зачистной 125х6х22
+                </div>
+                <div class="item-cards__grid-2-block-element-3">
+                    Артикул 00004
+                </div>
+                <div class="item-cards__grid-2-block-element-4">
+
+                </div>
+                <div class="item-cards__grid-2-block-element-5">
+                    
+                </div>
+            </div>
+
+
+            <div class="item-cards__grid-2-block">
+                <div class="item-cards__grid-2-block-element-1 third-version">
+                    <img src="/assets/Frame41-3.svg" alt="кнопка">
+                </div>
+                <div class="item-cards__grid-2-block-element-2">
+                    Круг зачистной 125х6х22
+                </div>
+                <div class="item-cards__grid-2-block-element-3">
+                    Артикул 00004
+                </div>
+                <div class="item-cards__grid-2-block-element-4">
+
+                </div>
+                <div class="item-cards__grid-2-block-element-5">
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section class="footer">
+    <div class="footer__container">
+        <div class="container">
+            <div class="footer__container-wrapper">
+                
+                <div class="footer__contacts">
+                    <img src="assets/Frame.svg" class="footer__logo" alt="ЛОГОТИП сайта" width="59" height="39px">
+                    <div class="footer__contacts-wrapper1">
+                        <div class="footer__contacts-wrapper">
+                            <div class="footer__contacts-icon">
+                                <img src="../assets/call-calling.svg" alt="" class="footer__contacts-image">
+                            </div>
+                            <div class="footer__contacts-content">
+                                <span class="footer__contacts-title">Контактный телефон</span> 
+                                <span class="footer_contacts-phone">+ 7 (812) 309-09-34</span>
+                                <span class="footer_contacts-phone ">+ 7 (965) 084-29-09</span>
+                            </div>
+                        </div>
+                        <div class="footer__contacts-wrapper">
+                            <div class="footer__contacts-icon  ">
+                                <img src="../assets/Icon.svg" alt="" class="footer__contacts-image">
+                            </div>
+                            <div class="footer__contacts-content">
+                                <span class="footer__contacts-title">Электронная почта</span> 
+                                <span class="footer_contacts-mail">tustin78.mail.ru</span>
+                                <span class="footer_contacts-mail">info.tustin.ru</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>  
-         </div> 
+                <div class="footer__inline-vertical"></div>
+                <div class="footer__email">
+                    <div class="footer__title-wrapper">
+                        <h3 class="footer__title">Остались вопросы?</h3>
+                        <p class="footer__label">Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</p>
+                        <form class="footer__form-wrapper">
+                            <img src="../assets/Icon.svg" alt="" class="footer__input-icon" width="16px" height="16px">
+                            <input type="email" placeholder="Введите свою почту" class="footer__input">
+                            <button type="submit " class="footer__email-submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__inline-horizontal"></div>
+            <div class="footer__navigation-wrapper">
+                <nav class="footer__navigation" >
+                    <span class="footer__navigation-item">Главная</span>
+                    <span class="footer__navigation-item">О Компании</span>
+                    <span class="footer__navigation-item">Каталог</span>
+                </nav>
+                <div class="footer__copyright-wrapper"> 
+                    <div class="footer__social-icons-wrapper">
+                        <img class="footer__social-icons" src="../assets/facebook_icon.svg" alt=""> 
+                        <img class="footer__social-icons" src="../assets/youtube_icon.svg" alt="">
+                        <img class="footer__social-icons" src="../assets/whatsapp_icon.svg" alt="">
+                    </div>
+                    <span class="footer__copyright">© 2000-2021, All rights reserved</span>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
    
     
          
