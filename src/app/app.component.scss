@@ -7,45 +7,53 @@
     background-color: #4b565e;
     padding: 0 240px;
 }
+
 .header-left {
     display: flex;
     align-items: center;
 }
+
 .header-logo {
     margin-right : 20px;
 }
+
 .header-right {
     display: flex;
     align-items: center;
 }
+
 .header-logo-reversed {
     margin-left: 20px;
 }
+
 .header-nav {
     display: flex;
-    font-family: Inter;
     font-size: 16px;
     font-weight: 600;
-    line-height: 19.36px;
+    line-height: 19px;
     text-align: left;
 
 }
+
 .header-nav-item {
     margin-right: 20px;
 }
+
 .header-nav2 {
     display: flex;
     align-items: center;
 }
+
 .header-nav-item2 {
+    color: #ffff;
     margin-left: 20px;
-    font-family: Inter;
     font-size: 16px;
     font-weight: 500;
-    line-height: 19.36px;
+    line-height: 19px;
     text-align: left;
 
 }
+
 .header-bottom {
     display: flex;
     justify-content: space-between;
@@ -55,59 +63,70 @@
     background: #F0BA4E;
     padding: 0 240px;
 }
+
 .header-bottom-logo {
     margin-right: 20px;
 }
+
 .header-bottom-left {
     display: flex;
     align-items: center;
 }
+
 .header-bottom-left-nav {
     display: flex;
-    font-family: Inter;
     font-size: 14px;
     font-weight: 600;
-    line-height: 16.94px;
+    line-height: 16px;
     text-align: left;
     color: #3C3C3B;
-    ;
 
 }
+
 .header-bottom-left-nav-item {
     margin-right: 20px;
 }
+
 .header-bottom-right {
     display: flex;
     align-self: center;
 }
+
 .header-bottom-search {
     margin-left: 20px;
 }
+
 .header-bottom-location {
     margin-left: 20px;
 }
+
 .banner{
     margin-bottom: 20px;
 }
+
 .content-container {
     max-width: 1320px;
-    margin: 0 auto ;
+    margin: 0 auto;
 }
+
 .benefits {
     margin-top: 31px;
     margin-bottom: 31px;
+
     &__content-wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         height: 72px;
     }
+
     &__content {
         display: flex;
         flex-direction: row;
         margin-top: 3px;
         margin-bottom: 3px;
     }
+
     &__text {
         display: flex;
         flex-direction: column;
@@ -115,7 +134,7 @@
         font-family: Inter;
         font-size: 18px;
         font-weight: 500;
-        line-height: 21.78px;
+        line-height: 21px;
         text-align: left;
        
     }
@@ -130,6 +149,7 @@
 .item-cards__pagination {
     display: flex;
     justify-content: end;
+
     &-button {
         font-family: inter;
         border: none;
@@ -137,19 +157,22 @@
         color: #A1A0A0; 
     }
 }
+
 .item-cards-2__pagination{
     display: flex;
     justify-content: space-between;
+
     .item-cards-2__pagination-button{
         font-family: Inter;
         font-size: 28px;
         font-weight: 500;
     }
+
     .item-cards-2__pagination-active-button-2{
         font-family: Inter;
         font-size: 18px;
         font-weight: 600;
-        line-height: 21.78px;
+        line-height: 21px;
         text-align: left;
         color: #F0BA4E;
 
@@ -159,11 +182,13 @@
     color: #F0BA4E;
     font-weight: 600;
 }
+
 .item-cards__grid {
     display: flex; 
     margin-bottom: 50px;
 
 }
+
 .item-cards__grid-left {
     // width: 421px;
     height: 428px;
@@ -183,22 +208,25 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .item-cards__grid-left-text {
     font-size: 28px;
     font-family: Inter;
     font-weight: 600;
     
 }
+
 .item-cards__grid-left-action {
     display: flex;
     align-self: self-end;
     align-items: center;
 }
+
 .item-cards__grid-text-button {
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
-    line-height: 16.94px;
+    line-height: 16px;
     text-align: left;
 
 }
@@ -351,7 +379,7 @@
     background-image: url(/assets/image_17.png);
     background-repeat: no-repeat;
     overflow: hidden;
-background-position-x: right;
+    background-position-x: right;
     background-position-y: bottom;
 }
 .banner-2{
@@ -488,6 +516,9 @@ background-position-x: right;
             display: flex;
             flex-direction: column;
             margin-bottom: 52px;
+        }
+        &__contacts-phone {
+            color: #ffff;
         }
         &__logo {
             margin-bottom: 32px;
