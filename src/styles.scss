@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+  
+  
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -349,10 +357,3 @@
     display: none;
   }
 
-   
-  
-*,
-*::before,
-*::after {
-box-sizing: border-box;
-}
