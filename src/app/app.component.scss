@@ -41,7 +41,6 @@
 }
 
 .number {
-    text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -119,10 +118,14 @@
     margin: 0 auto;
 }
 
+.gray {
+    color: #A1A0A0
+}
+
 .mask-group {
     display: flex;
     padding-block: 25px;
-    gap: 30px;
+    gap: 28px;
 
     &-block {
         display: flex;
@@ -369,7 +372,7 @@
     position: relative;
 }
 
-.scrolling1 {
+.scrolling-left {
     width: 60px;
     height: 60px;
     border: none;
@@ -381,7 +384,7 @@
     border-radius: 36px;
 }
 
-.scrolling2 {
+.scrolling-right {
     width: 60px;
     height: 60px;
     border: none;
@@ -395,7 +398,7 @@
 
 .sale {
     background-color: #FA5D69;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     border-radius: 61px;
 }
 
@@ -467,7 +470,7 @@
     &-current_price {
         font-size: 20px;
         font-weight: 600;
-        line-height: 24.2px;
+        line-height: 24px;
         text-align: left;
         color: #3C3C3B;
     }
@@ -559,7 +562,8 @@
         line-height: 34px;
         text-align: left;
         color: #3C3C3B;
-        margin: 28px 0 16px 28px;
+        margin: 28px 0px 16px 28px;
+        text-transform: uppercase;
     }
 
     &-item {
@@ -620,9 +624,7 @@
 .phone-number {
     display: flex;
     flex-direction: column;
-    padding: 4px 0px 0px 0px;
     gap: 8px;
-    text-decoration: none;
     color: #FFFFFF;
     font-size: 16px;
 }
@@ -660,9 +662,11 @@
                     align-items: start;
 
                     &-inner {
+                        display: flex;
+                        flex-direction: column;
                         margin-left: 15px;
-                        width: 100%;
-                        height: 73px;
+                        padding: 4px 0px 0px 0px;                        
+                        gap: 8px;
                     }
                 }
 
@@ -670,9 +674,9 @@
                     display: flex;
                     align-items: start;
 
-                    &_number {
-                        flex-direction: column;
+                    &-inner {
                         display: flex;
+                        flex-direction: column;
                         padding: 4px 0px 0px 0px;
                         gap: 8px;
                         margin-left: 15px;
