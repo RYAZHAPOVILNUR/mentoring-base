@@ -223,7 +223,7 @@
                 display: flex;
                 padding: 15px;
 
-                &-text {
+                &-first {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -233,7 +233,7 @@
                     background-repeat: no-repeat;
                     overflow: hidden;
 
-                    &2 {
+                    &__content {
                         display: flex;
                         align-self: self-end;
                         font-size: 28px;
@@ -249,7 +249,7 @@
                     }
                 }
 
-                &-2-text {
+                &-second {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -262,7 +262,7 @@
                     background-position-x: right;
                     background-position-y: bottom;  
 
-                    .item-cards__grid-right-block-text3 {
+                    .item-cards__grid-right-block-second__words {
                         display: flex;
                         width: 231px;
                         align-self: baseline;
@@ -280,7 +280,7 @@
                 }
 
             
-                &-3-text {
+                &-third {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -291,7 +291,7 @@
                     overflow: hidden;
                     background-position-x: right;
 
-                    .item-cards__grid-right-block-text4 {
+                    .item-cards__grid-right-block-third__script {
                         display: flex;
                         width: 218px;
                         font-size: 28px;
@@ -307,7 +307,7 @@
                     }
                 }
 
-                &-4-text {
+                &-forth {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -318,7 +318,7 @@
                     overflow: hidden;
                     background-position-y: bottom;
 
-                    .item-cards__grid-right-block-text5 {
+                    .item-cards__grid-right-block-forth__wording {
                         display: flex;
                         width: 336px;
                         font-size: 28px;
@@ -338,7 +338,7 @@
 
     }
 
-    .item-cards-2__pagination {
+    .item-cards__wide__pagination {
         display: flex;
         justify-content: space-between;
     
@@ -348,7 +348,7 @@
             font-weight: 500;
         }
     
-        &-active-button-2 {
+        &-active-btn {
             font-family: Inter;
             font-size: 18px;
             font-weight: 600;
@@ -359,10 +359,10 @@
         }
     }
 
-    .item-cards-2 {
+    .item-cards__wide {
         position: relative;
 
-        &-action {
+        &__btn {
         position: absolute;
         width: 100%;
         display: flex;
@@ -370,21 +370,21 @@
         margin-top: 247px;
         }
 
-        &-action-left {
+        &__btn-left {
         width: 60px;
         height: 60px;
         display: flex;
         box-shadow: 0px 20px 50px 0px #3C3C3B12;
         }
 
-        &-action-right {
+        &__btn-right {
         width: 60px;
         height: 60px;
         display: flex;
         box-shadow: 0px 20px 50px 0px #3C3C3B12;
         }
 
-        .item-cards__grid-2 {
+        .item-cards__grid__wrap {
             display: flex;
             width: 100%;
             height: 428px;
