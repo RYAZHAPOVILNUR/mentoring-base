@@ -7,7 +7,7 @@
     background-color: #4b565e;
     padding: 0 240px;
 
-    &-left {
+    &-west {
         display: flex;
         align-items: center;
     }
@@ -16,7 +16,7 @@
         margin-right : 20px;
     }
 
-    &-right {
+    &-east {
         display: flex;
         align-items: center;    
     }
@@ -37,12 +37,13 @@
         margin-right: 20px;
     }
 
-    &-nav2 {
+    &__nav {
         display: flex;
-        align-items: center;   
+        align-items: center;  
+         
     }
 
-    &-nav-item2 {
+    &__nav-item {
         color: #ffff;
         margin-left: 20px;
         font-size: 16px;
@@ -65,12 +66,12 @@
         margin-right: 20px;   
     }
 
-    &-bottom-left {
+    &-bottom-west {
         display: flex;
         align-items: center;
     }
 
-    &-bottom-left-nav {
+    &-bottom-west-nav {
         display: flex;
         font-size: 14px;
         font-weight: 600;
@@ -79,11 +80,11 @@
         color: #3C3C3B;   
     }
 
-    &-bottom-left-nav-item {
+    &-bottom-west-nav-item {
         margin-right: 20px; 
     }
 
-    &-bottom-right {
+    &-bottom-east {
         display: flex;
         align-self: center;
     }
@@ -97,7 +98,7 @@
     }
 }
 
-.banner{
+.banner__safety-helmet-man {
     margin-bottom: 20px;
 }
 
@@ -165,12 +166,12 @@
         display: flex; 
         margin-bottom: 50px;
     
-        &-left {
+        &-west {
             height: 428px;
             max-width: 421px;
             max-height: 428px;
             box-shadow: 0px 20px 50px 0px #3C3C3B12;
-            background-image: url('/./assets/image_19.png');
+            background-image: url('../assets/spray.png');
             background-repeat: no-repeat;
             overflow: hidden;
             background-position-y: bottom;
@@ -182,13 +183,13 @@
 
         }
         
-        &-left-text {
+        &-west-text {
             font-size: 28px;
             font-family: Inter;
             font-weight: 600;
         }
 
-        &-left-action {
+        &-west-action {
             display: flex;
             align-self: self-end;
             align-items: center;
@@ -201,13 +202,13 @@
                 text-align: left;
             }
 
-            &-left-actio-link {
+            &-west-actio-link {
                 width: 40px;
                 height: 40px;
             }
         }
 
-        &-right {
+        &-east {
             display: flex;
             flex-wrap: wrap;
             width: 91%;
@@ -229,7 +230,7 @@
                     justify-content: space-between;
                     width: 421px;
                     height: 185px;
-                    background-image: url(/assets/image_14.png);
+                    background-image: url('../assets/can-spray.png');
                     background-repeat: no-repeat;
                     overflow: hidden;
 
@@ -256,13 +257,13 @@
                     
                     width: 421px;
                     height: 185px;
-                    background-image: url('/assets/image_17.png');
+                    background-image: url('../assets/paint-container.png');
                     background-repeat: no-repeat;
                     overflow: hidden;
                     background-position-x: right;
                     background-position-y: bottom;  
 
-                    .item-cards__grid-right-block-second__words {
+                    .item-cards__grid-east-block-second__words {
                         display: flex;
                         width: 231px;
                         align-self: baseline;
@@ -286,12 +287,12 @@
                     justify-content: space-between;
                     width: 421px;
                     height: 183px;
-                    background-image: url('/assets/image_18.png');
+                    background-image: url('../assets/silicone.png');
                     background-repeat: no-repeat;
                     overflow: hidden;
                     background-position-x: right;
 
-                    .item-cards__grid-right-block-third__script {
+                    .item-cards__grid-east-block-third__script {
                         display: flex;
                         width: 218px;
                         font-size: 28px;
@@ -313,12 +314,12 @@
                     justify-content: space-between;
                     width: 421px;
                     height: 183px;
-                    background-image: url('/assets/image_15.png');
+                    background-image: url('../assets/power-strip.png');
                     background-repeat: no-repeat;
                     overflow: hidden;
                     background-position-y: bottom;
 
-                    .item-cards__grid-right-block-forth__wording {
+                    .item-cards__grid-east-block-forth__wording {
                         display: flex;
                         width: 336px;
                         font-size: 28px;
@@ -370,14 +371,14 @@
         margin-top: 247px;
         }
 
-        &__btn-left {
+        &__btn-west {
         width: 60px;
         height: 60px;
         display: flex;
         box-shadow: 0px 20px 50px 0px #3C3C3B12;
         }
 
-        &__btn-right {
+        &__btn-east {
         width: 60px;
         height: 60px;
         display: flex;
@@ -400,7 +401,7 @@
                 padding: 0px 0px 0px 0px;
                 gap: 13px;
                 box-shadow: 0px 20px 50px 0px #12112714;
-                background-image: url('/./assets/image13.png');
+                background-image: url('../assets/grinding-disc.png');
                 background-repeat: no-repeat;
                 overflow: hidden;
                 background-position-x: center;
@@ -408,40 +409,40 @@
                 padding: 20px;
 
 
-                &-element-1 {
+                &__sale-heart {
                     display: flex;
                     align-self: center;
                     padding-bottom: 131px;
                 }
 
-                &-element-2 {
+                &__title-size {
                     display: flex;
                     font-family: Inter;
                     font-size: 20px;
                     font-weight: 600;
                 }
 
-                &-element-3 {
+                &__origin {
                     display: flex;
                     font-family: Inter;
                     font-size: 16px;
                     font-weight: 500;
                 }
 
-                &-element-4 {
+                &__piece-cost {
                     display: flex;
                     width: 256px;
                     height: 73px;
-                    background-image: url('/assets/Frame\ 39.png');
+                    background-image: url('../assets/piece-cost.png');
                     background-repeat: no-repeat;
                     overflow: hidden;
                 }
 
-                &-element-5 {
+                &__amount-cart {
                     display: flex;
                     width: 261px;
                     height: 53px;
-                    background-image: url('/assets/Frame\ 38.svg');
+                    background-image: url('../assets/amount-cart.svg');
                     background-repeat: no-repeat;
                     overflow: hidden;
                 }
@@ -456,7 +457,7 @@
     }
 }
 
-.banner-2{
+.banner__driller-man{
     margin-bottom: 50px;
 }
 
