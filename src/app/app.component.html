@@ -7,38 +7,38 @@
             <div class="logo">
               <img src="./assets/logo.png">
             </div>
-            <div class="menu-item white-color">Главная</div>
-            <div class="menu-item white-color">О компании</div>
-            <div class="menu-item white-color">Каталог</div>
-          </div>
+                <div class="menu-item white-color">{{headerItemFirst}}</div>
+                <div class="menu-item white-color">{{headerItemSecond}}</div>
+                <div class="menu-item white-color">{{headerItemThird}}</div>
+              </div>
               <div class="header-info-container">
               <div class="call">
                 <img src="/assets/call.svg" alt="call">
                 <a class="tel" href="tel:+79650842929"> +7 (965) 084-29-29 </a>
               </div>
               <img class="header-info-item" 
-              src="assets/hearticon.svg" 
-              alt="favorites">
+                    src="assets/hearticon.svg" 
+                    alt="favorites">
               <button class="cart-button header-info-container">
               <img 
               src="assets/buy.svg" 
               alt="cart">
-            <div style="margin-left: 10px;">
+            <span style="margin-left: 10px;">
               Пусто
-            </div>  
+            </span>  
             </button>
               </div>
-      </div>
+          </div>
       </nav>
       <nav class="second-nav">
         <div class="second-nav-container">
           <div class="menu-items-container">
             <img src="assets/light.png">
-            <span class="menu-item">Каталог</span>
-            <span class="menu-item">Стройматериалы</span>
-            <span class="menu-item">Инструменты</span>
-            <span class="menu-item">Электрика</span>
-            <span class="menu-item">Интерьер и одежда</span>
+            <span class="menu-item">{{headerTwoItemFirst}}</span>
+            <span class="menu-item">{{headerTwoItemSecond}}</span>
+            <span class="menu-item">{{headerTwiItemThird}}</span>
+            <span class="menu-item">{{headerTwiItemFourth}}</span>
+            <span class="menu-item">{{headerTwiItemFifth}}</span>
           </div>
           <div class="search">
             <input class="search-input" type="text" placeholder="Поиск, например Круг зачистной">
@@ -54,7 +54,7 @@
 </div>
 <div class="content">
   <div class="container">
-     <div class="banner">
+      <div class="banner">
     <p class="slogan">Инструмент для вашего<br> бизнеса</p>
     <img src="assets/banner.jpg" height="720px">
   </div>
@@ -106,7 +106,7 @@
   <div class="container">
   <div class="cells">
     <div class="cell-left-block">
-   <div class="cell-left shadow">
+    <div class="cell-left shadow">
   <div class="cell-left-title">Стротиельный отделочный<br> инструмент</div>
   <div class="catalog1">
     <div class="catalog-text1" style="margin-right: 10px;">Перейти в каталог</div>
@@ -117,7 +117,7 @@
 <div class="cells-right">
   <div class="group">
     <div class="group-item shadow">
-      <img class="image_14" src="assets/image_14.png" width="200px" hight="150px">
+      <img class="decorix" src="assets/image_14.png" width="200px" hight="150px">
       <div class="text-block">
         <div class="group-item-title">Эмали</div>
         <div class="catalog">
@@ -153,14 +153,13 @@
       </div>
   <div class="group">
     <div class="group-item shadow">
-      <div class="group-item5">
+      <div class="group-item-five">
         <div class="cell-left-title">Розетки и выключатели</div>
         <div class="catalog5">
           <div class="catalog">
-         <div class="catalog-text" style="margin-right: 10px;">Перейти в каталог</div>
-         <img src="assets/arrow.png">
+          <div class="catalog-text" style="margin-right: 10px;">Перейти в каталог</div>
+          <img src="assets/arrow.png">
       </div>
-    
     </div>
       </div>
     </div>
@@ -175,8 +174,7 @@
         <div class="popular-items-text-title"><b>Популярные товары</b></div>
         <div class="seeallitems"><b>Посмотреть все товары</b></div>
       </div>
-      <div class="circle-items">
-        
+      <div class="circle-items"> 
         <div class="circle-items-buy shadow ">
         <img class="circle" src="assets/image13.png">
         <p class="circle-size">Круг зачистной 125х6х22</p>
@@ -266,20 +264,20 @@
                   </div>
                   </div>
                   <button class="button-buy">В корзину</button>
+                </div>
               </div>
-          </div>
-          </div>
+            </div>
           </div>
         </div>
-</div>
-</div> 
+      </div>
+    </div> 
 <div class="content">
   <div class="container">
     <div class="names">
       <div class="names-text">
-        <div class="names-text1">Более 10 000 наименований </div>
-        <div class="names-text2">Инструмент для вашего бизнеса, разнообразных марок</div>
-        <div class="names-text3">Перейти в каталог</div>
+        <div class="names-text-one">Более 10 000 наименований </div>
+        <div class="names-text-two">Инструмент для вашего бизнеса, разнообразных марок</div>
+        <div class="names-text-trhee">Перейти в каталог</div>
       </div>
       <img class="man" src="assets/man.png">
     </div>
@@ -382,12 +380,12 @@
                   </div>
                   </div>
                   <button class="button-buy">В корзину</button>
+                </div>
               </div>
-          </div>
-          </div>
+            </div>
           </div>
         </div>
-</div>
+      </div>
 </div> 
   <div class="content">
     <div class="container">
@@ -435,10 +433,12 @@
                    своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
                 </p>
                 <div class="input">
-  <div class="input-mail">
-  <img class="mail" src="assets/mail.svg">
-  <input class="input-question" type="text" placeholder="Введите свою почту">
-  </div>
+              <div class="input-mail">
+                  <img class="mail" src="assets/mail.svg">
+                  <input class="input-question"
+                    type="text"
+                    placeholder="Введите свою почту">
+              </div>
                   <button class="send">Отправить</button>
                 </div>
               </div>
@@ -465,39 +465,6 @@
     </div>
   </div>
 </footer>      
-  
-
-
-
-
-   
-
-
-
-
-
-
- 
- 
-
-
- 
-
-
-
-
-
-  
-
-  
-      
- 
-  
-
-
-
-    
-        
 
 
 
