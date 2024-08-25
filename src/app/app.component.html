@@ -6,11 +6,11 @@
 
         <nav class="header-nav">
             <ul class="header-nav-link">
-                <a class="header-nav-item">Главная</a>
+                <a class="header-nav-item">{{headerItem1 }}</a>
 
-                <a class="header-nav-item">О Компании</a>
+                <a class="header-nav-item">{{headerItem2}}</a>
 
-                <a class="header-nav-item">Каталог</a>
+                <a class="header-nav-item">{{headerItem3}}</a>
             </ul>
         </nav>
         
@@ -30,29 +30,29 @@
                 <img src="../assets/shopping__cart.svg" alt="корзина">
             </li>
         </nav>
-      
-
+        
     </ul>
+    
 </section>
 <section class="header-bottom">
     <ul class="header-bottom-left">
         <ul class="header-bottom-logo">
             <img src="../assets/three__stripe-icon.svg" alt="рисунок каталога">
             <li class="logo-text">
-                Каталог
+                {{boottom__header_one}}
             </li>
         </ul>
 
         <nav class="bottom-left-nav">
             <ul class="left-nav-link">
 
-                <a class="left-nav-item">Стройматериалы</a>
+                <a class="left-nav-item">{{boottom__header_two}}</a>
 
-                <a class="left-nav-item">Инструменты</a>
+                <a class="left-nav-item">{{boottom__header_three}}</a>
 
-                <a class="left-nav-item">Электрика</a>
+                <a class="left-nav-item">{{boottom__header_four}}</a>
 
-                <a class="left-nav-item">Интерьер и одежда</a>
+                <a class="left-nav-item">{{boottom__header_five}}</a>
             </ul>
         </nav>
     </ul>
@@ -116,6 +116,7 @@
             </ul>
         </ul>
     </section>
+
     <section class="item-cards">
         <ul class="item-cards__pagination">
             <button class="pagination-button active-button">1</button>
@@ -135,7 +136,7 @@
                     </span>
 
                     <ul class="left__action">
-                        <span class="text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                        <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
 
                         <a class="left-actio-link">
                             <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
@@ -150,7 +151,7 @@
                             </span>
 
                             <ul class="block-first-action">
-                                <span class="text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
                                 
                                 <a class="left-actio-link">
                                     <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
@@ -166,7 +167,7 @@
                             </span>
 
                             <ul class="block-second-action">
-                                <span class="text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
 
                                 <a class="left-actio-link">
                                     <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
@@ -182,7 +183,7 @@
                             </span>
 
                             <ul class="block-third-action">
-                                <span class="text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
 
                                 <a class="left-actio-link">
                                     <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
@@ -199,7 +200,7 @@
                             </span>
 
                             <ul class="block-forth-action">
-                                <span class="text-button" style="margin-right: 10px;">Перейти в каталог</span>
+                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
 
                                 <a class="left-actio-link">
                                     <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
@@ -229,7 +230,7 @@
                 </span>
 
                 <span class="wide__pagination active-button">
-                    Посмотреть все товары
+                    {{wide__pagination_action}}
                 </span>
             </ul>
 
@@ -331,7 +332,7 @@
             </span>
 
             <span class="wide__pagination active-button">
-                Посмотреть все товары
+                {{wide__pagination_action}}
             </span>
         </ul>
         
@@ -476,11 +477,11 @@
             <ul class="footer__navigation-wrapper">
                 <nav class="footer__navigation" >
                     <ul class="footer__navigation-link">
-                        <span class="footer__navigation-item">Главная</span>
+                        <span class="footer__navigation-item">{{headerItem1}}</span>
 
-                        <span class="footer__navigation-item">О Компании</span>
+                        <span class="footer__navigation-item">{{headerItem2}}</span>
 
-                        <span class="footer__navigation-item">Каталог</span>
+                        <span class="footer__navigation-item">{{headerItem3}}</span>
                     </ul>
                 </nav>
 
@@ -493,7 +494,7 @@
                         <img class="footer__social-icons" src="../assets/whatsapp_icon.svg" alt="">
                     </ul>
 
-                    <span class="footer__copyright">© 2000-2021, All rights reserved</span>
+                    <span class="footer__copyright">{{footer__copyright}}</span>
                 </ul>
             </ul>
         </ul>
