@@ -116,7 +116,9 @@ header {
   border-bottom: 1px solid black;
   width: 400px;
   height: 28px;
-  background: url("/assets/search.svg") no-repeat right ;
+  background: url("/assets/search.svg");
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .second-nav{
@@ -134,6 +136,8 @@ header {
 }
 
 .slogan {
+  width: 543px;
+  height: 112px;
   position: absolute;
   font-family: Inter; 
   color: #F0BA4E;
@@ -208,18 +212,15 @@ header {
   height: 421px;
 }
 
-.catalog1 {
-  display: flex;
-  align-items: center;
-}
-
 .cell-left {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.catalog1 {
+.catalog-one {
+  display: flex;
+  align-items: center;
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -229,7 +230,7 @@ header {
   margin-left: 235px;
 }
 
-.catalog3{
+.catalog-three{
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -312,12 +313,12 @@ header {
   height: 200px;
 }
 
-.catalog5{
+.catalog-five{
   margin-left: 195px;
   margin-top: 92px;
 }
 
-.cell-right-block3{
+.cell-right-block-three{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -564,7 +565,7 @@ footer {
   height: 24px;
 }
 
-.sms-1 {
+.sms-one {
   margin-top: 8px;
   font-family: Inter;
   font-size: 16px;
@@ -572,7 +573,7 @@ footer {
   color: #fff;
 }
 
-.sms-2{
+.sms-two{
   margin-top: 8px;
   font-family: Inter;
   font-size: 16px;
