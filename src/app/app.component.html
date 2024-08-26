@@ -4,9 +4,10 @@
     <img src="/assets/Frame.svg" alt="лого сайта">
    </div> 
     <nav class="header-nav">  
-      <div class="header-nav-item">Главная</div>
-      <div class="header-nav-item">О компании</div>
-      <div class="header-nav-item">Каталог</div>
+      <div class="header-nav-item">{{HeaderItem1}}
+      </div>
+      <div class="header-nav-item">{{HeaderItem2}}</div>
+      <div class="header-nav-item">{{HeaderItem3}}</div>
     </nav>
   </div>
   <div class="header-right">
@@ -26,17 +27,17 @@
       <img src="/assets/menu.svg" alt="catalogue icon"> 
     </div>
     <nav class="bar-nav">
-      <div class="bar-nav-item">Каталог</div>
-      <div class="bar-nav-item">Стройматериалы</div>
-      <div class="bar-nav-item">Инструменты</div>
-      <div class="bar-nav-item">Электроника</div>
-      <div class="bar-nav-item">Интерьер и одежда</div>
+      <div class="bar-nav-item">{{BarItem1}}</div>
+      <div class="bar-nav-item">{{BarItem2}}</div>
+      <div class="bar-nav-item">{{BarItem3}}</div>
+      <div class="bar-nav-item">{{BarItem4}}</div>
+      <div class="bar-nav-item">{{BarItem5}}</div>
     </nav>
 </div>
 <div class="bar-right">
   <input type="text" class="input-with-icon" placeholder="Поиск, например Круг зачистной"> 
   <img src="/assets/pin.svg" alt="map-pin">
-  <div class="location">Москва</div>
+  <div class="location">{{BarLocation}}</div>
   </div>
 </div>
 <div>
@@ -87,7 +88,7 @@
             <div class="item-cards_grid-right-block-text1">
               Эмали
             </div>
-            <div class="item-cards_grid-right-action">
+            <div class="item-cards_grid-right-action1">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
                 <img src="/assets/Frame20.svg" alt="Перейти">
@@ -98,7 +99,7 @@
             <div class="item-cards_grid-right-block-text2">
               Лакокрасочные <br> материалы
             </div>
-            <div class="item-cards_grid-right-action">
+            <div class="item-cards_grid-right-action2">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
                 <img src="/assets/Frame20.svg" alt="Перейти">
@@ -109,7 +110,7 @@
             <div class="item-cards_grid-right-block-text3">
               Пены, клеи и <br> герметики
             </div>
-            <div class="item-cards_grid-right-action">
+            <div class="item-cards_grid-right-action2">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
                 <img src="/assets/Frame20.svg" alt="Перейти">
@@ -120,7 +121,7 @@
             <div class="item-cards_grid-right-block-text4">
               Розетки и выключатели
             </div>
-            <div class="item-cards_grid-right-action">
+            <div class="item-cards_grid-right-action1">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
                 <img src="/assets/Frame20.svg" alt="Перейти">
@@ -213,10 +214,10 @@
           </div>
         <div class="infocard2">
             <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <h6> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b></h6>
+            <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 37px;"> 48 руб.</b>
         </div>
         <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
+  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
   <button type="button" class="infocard3-addtocart">-</button>
   <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
   <button type="button" class="infocard3-addtocart">+</button>
@@ -261,10 +262,10 @@
           </div>
             <div class="infocard2">
                <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-               <h6> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b></h6>
+               <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
               </div>
-                <div class="infocard3">
-                  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
+              <div class="infocard3">
+        <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
                   <button type="button" class="infocard3-addtocart">-</button>
                   <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
                   <button type="button" class="infocard3-addtocart">+</button>
@@ -280,10 +281,10 @@
           </div>
         <div class="infocard2">
             <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <h6> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b></h6>
+            <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
         </div>
         <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
+  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
   <button type="button" class="infocard3-addtocart">-</button>
   <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
   <button type="button" class="infocard3-addtocart">+</button>
@@ -299,10 +300,10 @@
           </div>
         <div class="infocard2">
             <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <h6> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b></h6>
+             <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
         </div>
         <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
+  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
   <button type="button" class="infocard3-addtocart">-</button>
   <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
   <button type="button" class="infocard3-addtocart">+</button>
@@ -318,10 +319,10 @@
           </div>
             <div class="infocard2">
                <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-               <h6> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b></h6>
+               <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
               </div>
-                <div class="infocard3">
-                  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
+              <div class="infocard3">
+        <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
                   <button type="button" class="infocard3-addtocart">-</button>
                   <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
                   <button type="button" class="infocard3-addtocart">+</button>
