@@ -7,8 +7,10 @@
           <div class="menu-items-container">
               <img class = "logo" src="/assets/logo.png">
                 <div class="menu-item white-color">{{headerItemFirst}}</div>
-                <div class="menu-item white-color">{{headerItemSecond}}</div>
-                <div class="menu-item white-color">{{headerItemThird}}</div>
+                <div class="menu-item white-color">{{aboutCompany}}</div>
+                <div class="menu-item white-color" *ngIf="isShowCatalog">{{headerItemThird}}</div>
+                <button (click)="isShowCatalog =!isShowCatalog">Скрыть/Показать каталог</button>
+                <button (click)="changeMenuText()">Изменить текст</button>
               </div>
               <div class="header-info-container">
               <div class="call">
@@ -31,13 +33,10 @@
       </nav>
       <nav class="second-nav">
         <div class="second-nav-container">
-          <div class="menu-items-container">
-            <img src="assets/light.png">
-            <span class="menu-item">{{headerTwoItemFirst}}</span>
-            <span class="menu-item">{{headerTwoItemSecond}}</span>
-            <span class="menu-item">{{headerTwiItemThird}}</span>
-            <span class="menu-item">{{headerTwiItemFourth}}</span>
-            <span class="menu-item">{{headerTwiItemFifth}}</span>
+          <div class="menu-items-container" >
+            <img src="assets/light.png" >
+            <span class="menu-item"></span>
+            <span class="menu-item" *ngFor="let item of menuItems">{{item}}</span>
           </div>
           <div class="search">
             <input class="search-input" type="text" placeholder="Поиск, например Круг зачистной">
@@ -52,18 +51,17 @@
   </div>
 </div>  
 </section>
-  
+
 <section> 
-<div class="content">
-    <div class="container">
-        <div class="banner">
+<button (click)="isShowSadMan =!isShowSadMan">Скрыть/Показать грустного мужика</button>
+<div class="content" *ngIf="isShowSadMan">
+    <div class="container" >
           <p class="slogan">Инструмент для вашего бизнеса</p>
-          <img src="assets/banner.jpg" height="720px">
+          <img src="assets/banner.jpg"  height="720px">
         </div>
-      </div>
-  </div>  
+      </div> 
 </section>
-  
+
 <section>
   <div class="container">
   <div class="advantages">
@@ -98,11 +96,7 @@
   <div class="container">
   <div class="item-cards">
     <div class="item-cards__pagination">
-      <button class="item-cards__pagination-button active-button">1</button>
-      <button class="item-cards__pagination-button">2</button>
-      <button class="item-cards__pagination-button">3</button>
-      <button class="item-cards__pagination-button">4</button>
-      <button class="item-cards__pagination-button">5</button>
+      <button class="item-cards__pagination-button active-button" *ngFor="let item of newPages">{{item}}</button>
     </div>
   </div>
 </div>

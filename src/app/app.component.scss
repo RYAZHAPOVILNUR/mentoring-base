@@ -181,8 +181,10 @@ header {
 }
 
 .item-cards__pagination {
+  
   display: flex;
     &-button {
+      cursor: pointer;
       font-family: Inter;
       border: none;
       background-color: white;
