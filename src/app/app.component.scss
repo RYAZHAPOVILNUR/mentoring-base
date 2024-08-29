@@ -239,6 +239,7 @@ header {
   text-align: left;
   color: #3C3C3B;
   margin-left: 10px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
 }
@@ -294,6 +295,7 @@ header {
 }
 
 .catalog {
+  margin-bottom: 16px;
   margin-right: 16px;
   display: flex;
   align-items: center;
@@ -304,6 +306,7 @@ header {
   color: #3C3C3B;
   white-space: nowrap;
   margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
 }
@@ -316,6 +319,7 @@ header {
 }
 
 .catalog-five{
+  display: flex;
   margin-left: 195px;
   margin-top: 92px;
 }
@@ -418,15 +422,33 @@ li {
 .buy {
   display: flex;
 }
-
+.quantry-text {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3C3C3B;
+}
 .how-quantry-container {
+  margin-top: 10px;
   display: flex;
 }
-
+.how-quantry {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3C3C3B;
+}
 .quantry-block {
   display: flex;
 }
+.button-item {
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #3C3C3B;
+  font-weight: 500;
 
+}
 .button-buy {
   font-family: Inter;
   font-weight: 600;

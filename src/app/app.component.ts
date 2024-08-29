@@ -44,7 +44,7 @@ export class AppComponent {
   isUpperCase = true;
   changeMenuText() {
     this.menuItems = this.upperCaseMenuItems.map(
-      (item: any) => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
+      item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
     )
     this.isUpperCase = !this.isUpperCase
   }
