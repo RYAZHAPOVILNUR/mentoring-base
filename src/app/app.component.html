@@ -1,19 +1,21 @@
 <div class="header">
   <div class="header-left">
    <div class="header-logo">
-    <img src="/assets/Frame.svg" alt="лого сайта">
+    <img src="/assets/frame.svg" alt="лого сайта">
    </div> 
     <nav class="header-nav">  
       <div class="header-nav-item">{{HeaderItem1}}
       </div>
       <div class="header-nav-item">{{HeaderItem2}}</div>
-      <div class="header-nav-item">{{HeaderItem3}}</div>
+      <div class="header-nav-item" *ngIf="isShowCatalog">{{HeaderItem3}}</div>
     </nav>
+    <button (click)="isShowCatalog = !isShowCatalog">Раскрыть/свернуть</button>
+    <button (click)="changeMenuText()">Изменить текст</button>
   </div>
   <div class="header-right">
-<img src="/assets/Phone.svg" alt="phone icon">
+<img src="/assets/phone.svg" alt="phone icon">
 <a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> +7 (965) 084-29-29 </a>
-<img src="/assets/heart 1.svg" alt="fav">
+<img src="/assets/heart1.svg" alt="fav">
 <button type="button" class="cart"> 
   <img class="img-cart" src="/assets/cart.svg" alt="cart">
   <span class="empty">Пусто</span>
@@ -27,11 +29,11 @@
       <img src="/assets/menu.svg" alt="catalogue icon"> 
     </div>
     <nav class="bar-nav">
-      <div class="bar-nav-item">{{BarItem1}}</div>
-      <div class="bar-nav-item">{{BarItem2}}</div>
-      <div class="bar-nav-item">{{BarItem3}}</div>
-      <div class="bar-nav-item">{{BarItem4}}</div>
-      <div class="bar-nav-item">{{BarItem5}}</div>
+      <a class="bar-nav-item" *ngFor="let item of MenuItems">{{item}}</a>
+      <!-- <button type="button" class="bar-nav-item">{{BarItem2}}</button>
+      <button type="button" class="bar-nav-item">{{BarItem3}}</button>
+      <button type="button" class="bar-nav-item">{{BarItem4}}</button>
+      <button type="button" class="bar-nav-item">{{BarItem5}}</button> -->
     </nav>
 </div>
 <div class="bar-right">
@@ -40,8 +42,9 @@
   <div class="location">{{BarLocation}}</div>
   </div>
 </div>
+<button (click)="isShowBanner = !isShowBanner">Раскрыть/свернуть</button>
 <div>
-  <img src="/assets/баннер.svg" alt="баннер" style="width: 100%;">
+  <img src="/assets/banner.svg" alt="баннер" style="width: 100%;" *ngIf="isShowBanner">
 </div>
   
 <div class="benefits">
@@ -64,11 +67,8 @@
 <div class="content-container">
   <div class="item-cards">
     <div class= "item-cards_pagination">
-      <button type="button" class="item-cards_pagination-button active-button">1</button>
-      <button type="button" class="item-cards_pagination-button">2</button>
-      <button type="button" class="item-cards_pagination-button">3</button>
-      <button type="button" class="item-cards_pagination-button">4</button>
-      <button type="button" class="item-cards_pagination-button">5</button>
+      <button type="button" *ngFor="let item of newPages" class="item-cards_pagination-button active-button">{{item}}
+      </button>
     </div>
     
       <div class="item-cards_grid">
@@ -79,7 +79,7 @@
           <div class="item-cards_grid-left-action">
             <span style="margin-right: 10px;">Перейти в каталог</span>
             <a class="item-cards_grid-left-action_link"> 
-              <img src="/assets/Frame20.svg" alt="Перейти">
+              <img src="/assets/frame20.svg" alt="Перейти">
             </a>
           </div>
         </div>
@@ -91,7 +91,7 @@
             <div class="item-cards_grid-right-action1">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
-                <img src="/assets/Frame20.svg" alt="Перейти">
+                <img src="/assets/frame20.svg" alt="Перейти">
               </a>
             </div>
           </div>
@@ -102,7 +102,7 @@
             <div class="item-cards_grid-right-action2">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
-                <img src="/assets/Frame20.svg" alt="Перейти">
+                <img src="/assets/frame20.svg" alt="Перейти">
               </a>
             </div>
           </div>
@@ -113,7 +113,7 @@
             <div class="item-cards_grid-right-action2">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
-                <img src="/assets/Frame20.svg" alt="Перейти">
+                <img src="/assets/frame20.svg" alt="Перейти">
               </a>
             </div>
           </div>
@@ -124,7 +124,7 @@
             <div class="item-cards_grid-right-action1">
               <span style="margin-right: 10px;">Перейти в каталог</span>
               <a class="item-cards_grid-right-action_link">
-                <img src="/assets/Frame20.svg" alt="Перейти">
+                <img src="/assets/frame20.svg" alt="Перейти">
               </a>
             </div>
           </div>
@@ -137,10 +137,10 @@
 <section class="popular">
   <div class="popular_container">
     <button type="button" class="popular-arrow-left">
-      <img src="/assets/Polygon1.svg" alt="arrow-left">
+      <img src="/assets/polygon1.svg" alt="arrow-left">
     </button>
     <button type="button" class="popular-arrow-right">
-      <img src="/assets/Polygon2.svg" alt="arrow-right">
+      <img src="/assets/polygon2.svg" alt="arrow-right">
     </button>
     <div class="popular_title-wrapper">
       <span class="popular_items-text">
@@ -152,185 +152,208 @@
       <li class="popular_product-card">
         <div class="infocard-text">
           <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
+            <div class="infocard_name">Круг зачистной 125х6х22</div>
+            <div class="infocard_article">Артикул 00004</div>
           </div>
             <div class="infocard2">
-               <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-                <h6 style="font-size: 16px;font-weight: 600;text-align: left; margin-top: 0;"> <s>52 руб.</s> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 48 руб.</b></h6>
+              <div class="infocard_price">
+                <h5>Цена за штуку</h5>
               </div>
-                <div class="infocard3">
-                  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
-                  <button type="button" class="infocard3-addtocart">-</button>
-                  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-                  <button type="button" class="infocard3-addtocart">+</button>
-                  <button type="button" class="infocard_tocard-action">В корзину</button>
-                </div>
+              <div>
+                <h6 class="infocard_priceNew"><s>52 руб.</s> <b class="infocard_priceNewPrice">48 руб.</b></h6>
+              </div>
+            </div>
+            <div class="infocard3">
+                <div class="infocard_quantity">Количество</div>
+                <button type="button" class="infocard3-addtocart">-</button>
+                <span class="infocard3_innertext">1</span>
+                <button type="button" class="infocard3-addtocart">+</button>
+                <button type="button" class="infocard_tocard-action">В корзину</button>
+              </div>
           </div>
       </li>
       <li class="popular_product-card">
         <div class="infocard-text">
           <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
+            <div class="infocard_name">Круг зачистной 125х6х22</div>
+            <div class="infocard_article">Артикул 00004</div>
           </div>
-        <div class="infocard2">
-            <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <h6 style="font-size: 16px;font-weight: 600;text-align: left; margin-top: 0;"> <s>52 руб.</s> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 48 руб.</b></h6>
-        </div>
-        <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
-  <button type="button" class="infocard3-addtocart">-</button>
-  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-  <button type="button" class="infocard3-addtocart">+</button>
-  <button type="button" class="infocard_tocard-action">В корзину</button>
-        </div>
-        </div>
+            <div class="infocard2">
+              <div class="infocard_price">
+                <h5>Цена за штуку</h5>
+              </div>
+              <div>
+                <h6 class="infocard_priceNew"><s>52 руб.</s> <b class="infocard_priceNewPrice">48 руб.</b></h6>
+              </div>
+            </div>
+            <div class="infocard3">
+                <div class="infocard_quantity">Количество</div>
+                <button type="button" class="infocard3-addtocart">-</button>
+                <span class="infocard3_innertext">1</span>
+                <button type="button" class="infocard3-addtocart">+</button>
+                <button type="button" class="infocard_tocard-action">В корзину</button>
+              </div>
+          </div>
       </li>
       <li class="popular_product-card">
         <div class="infocard-text">
           <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
+            <div class="infocard_name">Круг зачистной 125х6х22</div>
+            <div class="infocard_article">Артикул 00004</div>
           </div>
-        <div class="infocard2">
-            <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <h6 style="font-size: 16px;font-weight: 600;text-align: left; margin-top: 0;"> <s>52 руб.</s> <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 48 руб.</b></h6>
-        </div>
-        <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 0;margin-bottom: 5px;">Количество</h5>
-  <button type="button" class="infocard3-addtocart">-</button>
-  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-  <button type="button" class="infocard3-addtocart">+</button>
-  <button type="button" class="infocard_tocard-action">В корзину</button>
-        </div>
-        </div>
+            <div class="infocard2">
+              <div class="infocard_price">
+                <h5>Цена за штуку</h5>
+              </div>
+              <div>
+                <h6 class="infocard_priceNew"><s>52 руб.</s> <b class="infocard_priceNewPrice">48 руб.</b></h6>
+              </div>
+            </div>
+            <div class="infocard3">
+                <div class="infocard_quantity">Количество</div>
+                <button type="button" class="infocard3-addtocart">-</button>
+                <span class="infocard3_innertext">1</span>
+                <button type="button" class="infocard3-addtocart">+</button>
+                <button type="button" class="infocard_tocard-action">В корзину</button>
+              </div>
+          </div>
       </li>
       <li class="popular_product-card">
         <div class="infocard-text">
           <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
+            <div class="infocard_name">Круг зачистной 125х6х22</div>
+            <div class="infocard_article">Артикул 00004</div>
           </div>
-        <div class="infocard2">
-            <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 37px;"> 48 руб.</b>
-        </div>
-        <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
-  <button type="button" class="infocard3-addtocart">-</button>
-  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-  <button type="button" class="infocard3-addtocart">+</button>
-  <button type="button" class="infocard_tocard-action">В корзину</button>
-        </div>
-      </div>
+            <div class="infocard2">
+              <div class="infocard_price">
+                <h5>Цена за штуку</h5>
+              </div>
+              <div>
+                <h6 class="infocard_priceNew"><s>52 руб.</s> <b class="infocard_priceNewPrice">48 руб.</b></h6>
+              </div>
+            </div>
+            <div class="infocard3">
+                <div class="infocard_quantity">Количество</div>
+                <button type="button" class="infocard3-addtocart">-</button>
+                <span class="infocard3_innertext">1</span>
+                <button type="button" class="infocard3-addtocart">+</button>
+                <button type="button" class="infocard_tocard-action">В корзину</button>
+              </div>
+          </div>
+      </li>
     </ul>
   </div>
 </section>
 
 <section>
   <div class="catalogue-action">
-<img style="float: right;" src="/assets/pngwing1.svg" alt="man">
-<div class="catalogue-text">
-<h3 style="font-family: Inter;font-size: 28px;font-weight: 500;text-align: left;color: #3C3C3B; padding-top: 28px; padding-left: 28px;">Более 10 000 наименований </h3>
-<h4 style="font-family: Inter; font-size: 20px; font-weight: 400; text-align: left; color: #A1A0A0; padding-top: 28px; padding-left: 28px;">Инструмент для вашего бизнеса, разнообразных марок</h4>
-<a style="font-family: Inter;font-size: 18px; font-weight: 600; padding-top: 28px; padding-left: 28px; color: #F0BA4E; text-align: left; margin-top: 20px;">Перейти в каталог</a>
-</div>
+    <img style="float: right;" src="/assets/pngwing1.svg" alt="man">
+      <div class="catalogue-text">
+        <div class="manyItems">Более 10 000 наименований</div>
+        <div class="differentBrands">Инструмент для вашего бизнеса, разнообразных марок</div>
+        <a class="action_tocatalog">Перейти в каталог</a>
+      </div>
   </div>
 </section>
 
 <section class="New">
   <div class="New_container">
     <button type="button" class="New-arrow-left">
-      <img src="/assets/Polygon1.svg" alt="arrow-left">
+      <img src="/assets/polygon1.svg" alt="arrow-left">
     </button>
     <button type="button" class="New-arrow-right">
-      <img src="/assets/Polygon2.svg" alt="arrow-right">
+      <img src="/assets/polygon2.svg" alt="arrow-right">
     </button>
-    <div class="New_title-wrapper">
-      <span class="New_items-text">
-      Новинки
-      </span >
-        <a class="New_items-action-link">Посмотреть все товары</a>
-    </div>
-    <ul class="New_product-list">
-      <li class="popular_product-card">
-        <div class="infocard-text">
-          <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
-          </div>
-            <div class="infocard2">
-               <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-               <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
+      <div class="New_title-wrapper">
+        <span class="New_items-text">Новинки</span >
+          <a class="New_items-action-link">Посмотреть все товары</a>
+      </div>
+        <ul class="New_product-list">
+          <li class="popular_product-card">
+            <div class="infocard-text">
+              <div class="infocard1"> 
+                <div class="infocard_name">Круг зачистной 125х6х22</div>
+                <div class="infocard_article">Артикул 00004</div>
               </div>
-              <div class="infocard3">
-        <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
-                  <button type="button" class="infocard3-addtocart">-</button>
-                  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-                  <button type="button" class="infocard3-addtocart">+</button>
-                  <button type="button" class="infocard_tocard-action">В корзину</button>
+                <div class="infocard2">
+                  <div class="infocard_price">
+                    <h5>Цена за штуку</h5>
+                  </div>
+                  <div class="infocard_pricePrevious">52 руб.</div>
                 </div>
-          </div>
-      </li>
-      <li class="New_product-card">
-        <div class="infocard-text">
-          <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
-          </div>
-        <div class="infocard2">
-            <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-            <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
-        </div>
-        <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
-  <button type="button" class="infocard3-addtocart">-</button>
-  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-  <button type="button" class="infocard3-addtocart">+</button>
-  <button type="button" class="infocard_tocard-action">В корзину</button>
-        </div>
-        </div>
-      </li>
-      <li class="New_product-card">
-        <div class="infocard-text">
-          <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
-          </div>
-        <div class="infocard2">
-            <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-             <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
-        </div>
-        <div class="infocard3">
-  <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
-  <button type="button" class="infocard3-addtocart">-</button>
-  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-  <button type="button" class="infocard3-addtocart">+</button>
-  <button type="button" class="infocard_tocard-action">В корзину</button>
-        </div>
-        </div>
-      </li>
-      <li class="popular_product-card">
-        <div class="infocard-text">
-          <div class="infocard1"> 
-            <h4 style="font-size: 20px;font-weight: 600;text-align: left; margin-bottom: 10px;"> Круг зачистной 125х6х22 </h4>
-            <h5 style="font-size: 16px;font-weight: 500; text-align: left;margin: 0">Артикул 00004 </h5>
-          </div>
-            <div class="infocard2">
-               <h5 style="font-size: 16px;font-weight: 500;text-align: left;color: #A1A0A0;margin-top: 20px; margin-bottom: 5px;">Цена за штуку</h5>
-               <b style="font-size: 20px;font-weight: 600;text-align: left;margin-top: 0; margin-bottom: 0;"> 52 руб.</b>
+                <div class="infocard3">
+                    <div class="infocard_quantity">Количество</div>
+                    <button type="button" class="infocard3-addtocart">-</button>
+                    <span class="infocard3_innertext">1</span>
+                    <button type="button" class="infocard3-addtocart">+</button>
+                    <button type="button" class="infocard_tocard-action">В корзину</button>
+                  </div>
               </div>
-              <div class="infocard3">
-        <h5 style="font-size: 16px;font-weight: 500;text-align: left; margin-top: 37px;margin-bottom: 5px;">Количество</h5>
-                  <button type="button" class="infocard3-addtocart">-</button>
-                  <span style="font-family: Inter;font-size: 20px;font-weight: 500;margin-right: 8px;margin-left: 8px;">1</span>
-                  <button type="button" class="infocard3-addtocart">+</button>
-                  <button type="button" class="infocard_tocard-action">В корзину</button>
+          </li>
+          <li class="popular_product-card">
+            <div class="infocard-text">
+              <div class="infocard1"> 
+                <div class="infocard_name">Круг зачистной 125х6х22</div>
+                <div class="infocard_article">Артикул 00004</div>
+              </div>
+                <div class="infocard2">
+                  <div class="infocard_price">
+                    <h5>Цена за штуку</h5>
+                  </div>
+                  <div class="infocard_pricePrevious">52 руб.</div>
                 </div>
-          </div>
-      </li>
-    </ul>
+                <div class="infocard3">
+                    <div class="infocard_quantity">Количество</div>
+                    <button type="button" class="infocard3-addtocart">-</button>
+                    <span class="infocard3_innertext">1</span>
+                    <button type="button" class="infocard3-addtocart">+</button>
+                    <button type="button" class="infocard_tocard-action">В корзину</button>
+                  </div>
+              </div>
+          </li>
+            <li class="popular_product-card">
+              <div class="infocard-text">
+                <div class="infocard1"> 
+                  <div class="infocard_name">Круг зачистной 125х6х22</div>
+                  <div class="infocard_article">Артикул 00004</div>
+                </div>
+                  <div class="infocard2">
+                    <div class="infocard_price">
+                      <h5>Цена за штуку</h5>
+                    </div>
+                    <div class="infocard_pricePrevious">52 руб.</div>
+                  </div>
+                  <div class="infocard3">
+                      <div class="infocard_quantity">Количество</div>
+                      <button type="button" class="infocard3-addtocart">-</button>
+                      <span class="infocard3_innertext">1</span>
+                      <button type="button" class="infocard3-addtocart">+</button>
+                      <button type="button" class="infocard_tocard-action">В корзину</button>
+                    </div>
+                </div>
+            </li>
+          <li class="popular_product-card">
+            <div class="infocard-text">
+              <div class="infocard1"> 
+                <div class="infocard_name">Круг зачистной 125х6х22</div>
+                <div class="infocard_article">Артикул 00004</div>
+              </div>
+                <div class="infocard2">
+                  <div class="infocard_price">
+                    <h5>Цена за штуку</h5>
+                  </div>
+                  <div class="infocard_pricePrevious">52 руб.</div>
+                </div>
+                <div class="infocard3">
+                    <div class="infocard_quantity">Количество</div>
+                    <button type="button" class="infocard3-addtocart">-</button>
+                    <span class="infocard3_innertext">1</span>
+                    <button type="button" class="infocard3-addtocart">+</button>
+                    <button type="button" class="infocard_tocard-action">В корзину</button>
+                  </div>
+              </div>
+          </li>
+        </ul>
   </div>
 </section>
 
@@ -339,7 +362,7 @@
     <div class="container">
       <div class="footer_container-wrapper">
     <div class="footer_contacts">
-      <img src="/assets/Frame.svg" class="footer_logo" alt="Логотип" width="59px" height="39px">
+      <img src="/assets/frame.svg" class="footer_logo" alt="Логотип" width="59px" height="39px">
         <div class="footer_contacts-wrapper1">
          <div class="footer_contacts-wrapper">
            <div class="footer_contacts-icon">
@@ -383,9 +406,9 @@
           </nav>
           <div class="footer_copyright-wrapper">
             <div class="footer_socials-icons-wrapper">
-              <img class="footer-socials-wrapper" src="/assets/Facebook.svg" alt="Facebook">
-              <img class="footer-socials-wrapper" src="/assets/Youtube.png" alt="Youtube">
-              <img class="footer-socials-wrapper" src="/assets/Whatsup.svg" alt="WhatsUp">
+              <img class="footer-socials-wrapper" src="/assets/facebook.svg" alt="Facebook">
+              <img class="footer-socials-wrapper" src="/assets/youtube.png" alt="Youtube">
+              <img class="footer-socials-wrapper" src="/assets/whatsup.svg" alt="WhatsUp">
             </div>
             <span class="footer_copyright">© 2021-2022, EDE</span>
           </div>
