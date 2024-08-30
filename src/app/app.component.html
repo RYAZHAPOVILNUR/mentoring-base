@@ -8,11 +8,13 @@
             <ul class="header-nav-link">
                 <a class="header-nav-item">{{headerItem1 }}</a>
 
-                <a class="header-nav-item">{{headerItem2}}</a>
+                <a class="header-nav-item">{{aboutCompany}}</a>
 
-                <a class="header-nav-item">{{headerItem3}}</a>
+                <a class="header-nav-item" *ngIf="isShowCatalog  ">{{headerItem3}}</a>
             </ul>
         </nav>
+
+        <button (click)="isShowCatalog = !isShowCatalog">скрыть/показать каталог</button>
         
     </div>
     <ul class="header-right">
@@ -39,20 +41,13 @@
         <ul class="header-bottom-logo">
             <img src="../assets/three__stripe-icon.svg" alt="рисунок каталога">
             <li class="logo-text">
-                {{boottom__header_one}}
+                
             </li>
         </ul>
 
         <nav class="bottom-left-nav">
             <ul class="left-nav-link">
-
-                <a class="left-nav-item">{{boottom__header_two}}</a>
-
-                <a class="left-nav-item">{{boottom__header_three}}</a>
-
-                <a class="left-nav-item">{{boottom__header_four}}</a>
-
-                <a class="left-nav-item">{{boottom__header_five}}</a>
+                <a class="left-nav-item" *ngFor="let item of menuItems">{{item}}</a>
             </ul>
         </nav>
     </ul>
@@ -68,9 +63,11 @@
     </ul>
 </section>
 
-<section class="safety__helmet-man">
+<section class="safety__helmet-man" *ngIf="isShowMan">
     <img src="../assets/safety__helmet-man.png" alt="банннер" style="width: 100%;">
 </section>
+
+<button (click)="isShowMan = !isShowMan">скрыть/показать мужика</button>
 
 <section class="content-container">
     <section class="benefits">
@@ -119,15 +116,7 @@
 
     <section class="item-cards">
         <ul class="item-cards__pagination">
-            <button class="pagination-button active-button">1</button>
-
-            <button class="pagination-button">2</button>
-
-            <button class="pagination-button">3</button>
-
-            <button class="pagination-button">4</button>
-
-            <button class="pagination-button">5 </button>
+            <button *ngFor="let item of newPages" class="pagination-button active-button">{{item}}</button>
         </ul>
             <ul class="item-cards__grid">
                 <ul class="item-cards__grid-left">
@@ -479,7 +468,7 @@
                     <ul class="footer__navigation-link">
                         <span class="footer__navigation-item">{{headerItem1}}</span>
 
-                        <span class="footer__navigation-item">{{headerItem2}}</span>
+                        <span class="footer__navigation-item">{{aboutCompany}}</span>
 
                         <span class="footer__navigation-item">{{headerItem3}}</span>
                     </ul>
