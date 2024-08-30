@@ -65,3 +65,8 @@ const aboutCompany = headerItem2.map((item) => item[0].toUpperCase() + item.slic
 //   return item;
 // }
 // console.log(aboutCompany2('О компании'))
+
+const func = (data: string) => {return data};
+const itemAbout: string = 'О компании';
+const about = func(itemAbout);
+
