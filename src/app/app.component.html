@@ -14,12 +14,13 @@
             </ul>
         </nav>
 
-        <button (click)="isShowCatalog = !isShowCatalog">скрыть/показать каталог</button>
+        <button (click)="isShowCatalog = !isShowCatalog" style=" border: solid 1px #F0BA4E; border-radius: 30px;" >скрыть/показать каталог</button>
+
         
     </div>
     <ul class="header-right">
         <li class="header-logo-reversed">
-            <img src="assets/Phone.svg" alt="логотип телефон">
+            <img src="assets/phone.svg" alt="логотип телефон">
         </li>
         <nav class="header__nav">
             <a class="header__nav-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
@@ -38,6 +39,7 @@
 </section>
 <section class="header-bottom">
     <ul class="header-bottom-left">
+
         <ul class="header-bottom-logo">
             <img src="../assets/three__stripe-icon.svg" alt="рисунок каталога">
             <li class="logo-text">
@@ -47,14 +49,16 @@
 
         <nav class="bottom-left-nav">
             <ul class="left-nav-link">
-                <a class="left-nav-item" *ngFor="let item of menuItems">{{item}}</a>
+                <a class="left-nav-item" *ngFor="let item of menuItems" >{{item}}</a>
             </ul>
         </nav>
+
+        <button (click)="changeMenuText()" style="width:80px; font-size: 10px; cursor: pointer; background-color: #4B565E; color: #ffff; border: solid 1px ; border-radius: 30px;">скрыть/показать БОЛШИЕ буквы</button>
     </ul>
 
     <ul class="header-right">
         <li class="header-bottom-search">
-            <img src="../assets/bottom__lined-search.svg" alt="поиск">
+            <input type="text" placeholder="Поиск, например Круг зачистной">
         </li>
 
         <li class="header-location">
@@ -67,7 +71,9 @@
     <img src="../assets/safety__helmet-man.png" alt="банннер" style="width: 100%;">
 </section>
 
-<button (click)="isShowMan = !isShowMan">скрыть/показать мужика</button>
+<button (click)="isShowMan = !isShowMan" style=" background-color: transparent; border: solid 1px #F0BA4E; border-radius: 30px; margin-left: 180px;">скрыть/показать мужика</button>
+
+
 
 <section class="content-container">
     <section class="benefits">
@@ -239,7 +245,17 @@
 
                     <li class="block__piece-cost"></li>
 
-                    <li class="block__amount-cart"></li>
+                    <li class="block__amount-cart">
+                        <div class="amount">
+                            <span>Количество</span>
+                            <span class="adjustable__number">
+                                <span class="add__remove">-</span>
+                                <span style="font-size: 20px;">1</span>
+                                <span class="add__remove">+</span>
+                            </span>
+                        </div>
+                        <button class="cart" style="font-size: 16px;">В корзину</button>
+                    </li>
                 </ul>
 
                 <ul class="grid__wrapper-block">
@@ -257,7 +273,17 @@
 
                     <li class="block__piece-cost"></li>
 
-                    <li class="block__amount-cart"></li>
+                    <li class="block__amount-cart">
+                        <div class="amount">
+                            <span>Количество</span>
+                            <span class="adjustable__number">
+                                <span class="add__remove">-</span>
+                                <span style="font-size: 20px;">1</span>
+                                <span class="add__remove">+</span>
+                            </span>
+                        </div>
+                        <button class="cart" style="font-size: 16px;">В корзину</button>
+                    </li>
                 </ul>
 
                 <ul class="grid__wrapper-block">
@@ -275,7 +301,17 @@
 
                     <li class="block__piece-cost"></li>
 
-                    <li class="block__amount-cart"></li>
+                    <li class="block__amount-cart">
+                        <div class="amount">
+                            <span>Количество</span>
+                            <span class="adjustable__number">
+                                <span class="add__remove">-</span>
+                                <span style="font-size: 20px;">1</span>
+                                <span class="add__remove">+</span>
+                            </span>
+                        </div>
+                        <button class="cart" style="font-size: 16px;">В корзину</button>
+                    </li>
                 </ul>
 
                 <ul class="grid__wrapper-block">
@@ -293,7 +329,17 @@
 
                     <li class="block__piece-cost"></li>
 
-                    <li class="block__amount-cart"></li>
+                    <li class="block__amount-cart">
+                        <div class="amount">
+                            <span>Количество</span>
+                            <span class="adjustable__number">
+                                <span class="add__remove">-</span>
+                                <span style="font-size: 20px;">1</span>
+                                <span class="add__remove">+</span>
+                            </span>
+                        </div>
+                        <button class="cart" style="font-size: 16px;">В корзину</button>
+                    </li>
                 </ul>
             </ul>
     </section>
@@ -328,7 +374,8 @@
         <ul class="cards__grid-wrapper">
             <ul class="grid__wrapper-block">
                 <li class="block__sale-heart third-version">
-                    <img src="../assets/brand-new.svg" alt="кнопка">
+                    <button class="green__new">Новинка</button>
+                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
                 </li>
 
                 <span class="block__title-size">
@@ -341,13 +388,24 @@
 
                 <li class="block__piece-cost"></li>
 
-                <li class="block__amount-cart"></li>
+                <li class="block__amount-cart">
+                    <div class="amount">
+                        <span>Количество</span>
+                        <span class="adjustable__number">
+                            <span class="add__remove">-</span>
+                            <span style="font-size: 20px;">1</span>
+                            <span class="add__remove">+</span>
+                        </span>
+                    </div>
+                    <button class="cart" style="font-size: 16px;">В корзину</button>
+                </li>
             </ul>
 
 
             <ul class="grid__wrapper-block">
                 <li class="block__sale-heart third-version">
-                    <img src="../assets/brand-new.svg" alt="кнопка">
+                    <button class="green__new">Новинка</button>
+                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
                 </li>
 
                 <span class="block__title-size">
@@ -360,13 +418,24 @@
 
                 <li class="block__piece-cost"></li>
 
-                <li class="block__amount-cart"></li>
+                <li class="block__amount-cart">
+                    <div class="amount">
+                        <span>Количество</span>
+                        <span class="adjustable__number">
+                            <span class="add__remove">-</span>
+                            <span style="font-size: 20px;">1</span>
+                            <span class="add__remove">+</span>
+                        </span>
+                    </div>
+                    <button class="cart" style="font-size: 16px;">В корзину</button>
+                </li>
             </ul>
 
 
             <ul class="grid__wrapper-block">
                 <li class="block__sale-heart third-version">
-                    <img src="../assets/brand-new.svg" alt="кнопка">
+                    <button class="green__new">Новинка</button>
+                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
                 </li>
 
                 <span class="block__title-size">
@@ -379,13 +448,24 @@
 
                 <li class="block__piece-cost"></li>
 
-                <li class="block__amount-cart"></li>
+                <li class="block__amount-cart">
+                    <div class="amount">
+                        <span>Количество</span>
+                        <span class="adjustable__number">
+                            <span class="add__remove">-</span>
+                            <span style="font-size: 20px;">1</span>
+                            <span class="add__remove">+</span>
+                        </span>
+                    </div>
+                    <button class="cart" style="font-size: 16px;">В корзину</button>
+                </li>
             </ul>
 
 
             <ul class="grid__wrapper-block">
                 <li class="block__sale-heart third-version">
-                    <img src="../assets/brand-new.svg" alt="кнопка">
+                    <button class="green__new">Новинка</button>
+                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
                 </li>
 
                 <span class="block__title-size">
@@ -398,7 +478,17 @@
 
                 <li class="block__piece-cost"></li>
 
-                <li class="block__amount-cart"></li>
+                <li class="block__amount-cart">
+                    <div class="amount">
+                        <span>Количество</span>
+                        <span class="adjustable__number">
+                            <span class="add__remove">-</span>
+                            <span style="font-size: 20px;">1</span>
+                            <span class="add__remove">+</span>
+                        </span>
+                    </div>
+                    <button class="cart" style="font-size: 16px;">В корзину</button>
+                </li>
             </ul>
 
         </ul>

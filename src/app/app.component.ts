@@ -43,34 +43,10 @@ import { RouterOutlet } from '@angular/router';
 
 
 
-
 const func2 = ( caller: string) => { return caller};
 
 const newCaller = func2('О Компании');
 
-
-
-
-
- 
-const menuItems = ['Каталог', 'Инструменты', 'Электрика', 'Интерьер и одежда']
-
-const upperCaseMenuItems = menuItems.map(
-  (item) => {
-    return item.toUpperCase();
-  }
-)
-
-
-console.log(upperCaseMenuItems);
-
-
-const upperCaseMenuItems = this.menuItems;
-  isUpperCase = true;
-  changeMenuText() {
-    this.menuItems = this.upperCaseMenuItems.map(
-      (item: any) => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
-    )
 
 
 
@@ -89,6 +65,8 @@ const newPages = [5, 4, 3, 2, 1]
 // console.log(names[1], names[2], names[3]);
 
 
+
+
 @Component({
   selector: 'app-root ',
   standalone: true,  
@@ -100,35 +78,46 @@ export class AppComponent {
 [x: string]: any;
   title = 'mentoring-first-project';
 
+  menuItems = ['Каталог', 'Инструменты', 'Электрика', 'Интерьер и одежда'];
+  
+  isUppercase = true;
+
+  changeMenuText() {
+    this.menuItems = this.menuItems.map(
+      (item) => this.isUppercase ? item.toLowerCase() : item.toUpperCase()
+    )
+
+    this.isUppercase = !this.isUppercase
+  }
+
+
   newPages = newPages;
 
   isShowCatalog = true;
 
   isShowMan = true;
 
-  readonly headerItem1 = 'Главная'
+   headerItem1 = 'Главная';
 
-  readonly aboutCompany = newCaller;
+   aboutCompany = newCaller;
 
-  readonly headerItem3 = 'Каталог'
+   headerItem3 = 'Каталог';
 
-  readonly boottom__header_one = upperCaseMenuItems[0]
+   boottom__header_one = 'Каталог';
 
-  menuItems = upperCaseMenuItems
+   boottom__header_two = 'Стройматериалы';
 
-  readonly boottom__header_two = 'Стройматериалы'
+   boottom__header_three = 'Инструменты';
 
-  readonly boottom__header_three = 'Инструменты'
+   boottom__header_four = 'Электрика';
 
-  readonly boottom__header_four = 'Электрика'
+   boottom__header_five = 'Интерьер и одежда';
 
-  readonly boottom__header_five = 'Интерьер и одежда'
+   grid__left_action = 'Перейти в каталог';
 
-  readonly grid__left_action = 'Перейти в каталог'
+   wide__pagination_action = 'Посмотреть все товары';
 
-  readonly wide__pagination_action = 'Посмотреть все товары'
-
-  readonly footer__copyright = '© 2000-2021, All rights reserved'
+   footer__copyright = '© 2000-2021, All rights reserved';
 
 
 }

@@ -2,11 +2,26 @@
 *::before,
 *::after {
 box-sizing: border-box;
-}
+
 
 a {
   text-decoration: none;
   color: inherit;
+  }
+
+  font-family: Inter;
+
+ normalize.scss
+
+  ul {
+    
+      margin: 0;
+      padding: 0;
+  }
+  
+  li {
+      margin: 0;
+      padding: 0;
   }
   
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -22,6 +37,8 @@ a {
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+
+    
   }
   
   /* Sections
@@ -32,8 +49,7 @@ a {
    */
   
   body {
-    margin: 0;
-    font-family: Inter;
+    margin: 0; 
   }
   
   /**
@@ -359,4 +375,4 @@ a {
   [hidden] {
     display: none;
   }
-
+}
