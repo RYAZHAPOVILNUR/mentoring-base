@@ -3,13 +3,15 @@
   <header class="main-header">
       <nav class="main-header-nav">
           <img class="header-icon main-nav-text" src="../assets/Header-icon.svg" alt="Иконка сайта">
-          <span class="main-nav-text">Главная</span>
-          <span class="main-nav-text">О компании</span>
-          <span class="main-nav-text">Каталог</span>
+          <span class="main-nav-text">{{mainheaderitem1}}</span>
+          <span class="main-nav-text">{{aboutCompany}}</span>
+          <span class="main-nav-text">{{mainheaderitem3}}</span>
+          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать О Компании</button>
+          <button (click)="changeMenuText()">Изменить размер текста</button>
       </nav>
       <nav class="second-main-header-nav">
           <img class="main-nav-text phone-icon" src="../assets/Phone-icon.svg" alt="Иконка телефона">
-          <span class="main-nav-text">+7 (965) 084-29-29</span>
+          <span class="main-nav-text">{{mainheaderitem4}}</span>
           <img class="main-nav-text" src="../assets/Heart-icon.svg" alt="Иконка сердца">
           <button class="main-nav-text button-properties">
               <img class="button-image" src="../assets/Basket-icon.svg" alt="Иконка корзины">
@@ -20,11 +22,11 @@
   <div class="second-header">
       <nav class="second-header-nav">
           <img class="second-nav-text catalog-icon" src="../assets/Catalog-icon.svg" alt="Иконка каталога">
-          <span class="second-nav-text">Каталог</span>
-          <span class="second-nav-text">Стройматериалы</span>
-          <span class="second-nav-text">Инструменты</span>
-          <span class="second-nav-text">Электрика</span>
-          <span class="second-nav-text">Интерьер и одежда</span>
+          <span class="second-nav-text">{{yellowheader1}}</span>
+          <span class="second-nav-text">{{yellowheader2}}</span>
+          <span class="second-nav-text">{{yellowheader3}}</span>
+          <span class="second-nav-text">{{yellowheader4}}</span>
+          <span class="second-nav-text">{{yellowheader5}}</span>
       </nav>
       <nav class="second-header-nav-module">
           <form action="">
@@ -37,7 +39,8 @@
   </div>
 </section>
 <section class="main-picture">
-  <div class="main-picture-block">
+  <button (click)="isShowWorker = !isShowWorker">Скрыть/Показать мужика</button>
+  <div class="main-picture-block" *ngIf="isShowWorker">
       <img class="worker-icon" src="../assets/Worker-image.png" alt="Картинка строителя">
   </div>
 </section>
@@ -65,7 +68,10 @@
       </div>
   </div>
 </section>
-<div class="pages">12345</div>
+<div class="item-cards_pagination">
+
+    <button *ngFor="let item of newPages" class="item-cards__pagination-button active-button">{{item}}</button>
+</div>
 <section class="product-cards-section">
   <div class="product-cards-block">
       <div class="product-cards1">
@@ -166,6 +172,12 @@
                   </div>
               </li>
           </ul>
+          <div class="button-slider-left">
+            <button class="left-button"><img src="../assets/Button-left.svg" alt=""></button>
+          </div>
+          <div class="button-slider-right">
+            <button class="right-button"><img src="../assets/Button-right.svg" alt=""></button>
+          </div>
       </div>
   </div>
 </section>
@@ -253,6 +265,12 @@
                   </div>
               </li>
           </ul>
+          <div class="button-slider-left">
+            <button class="left-button"><img src="../assets/Button-left.svg" alt=""></button>
+          </div>
+          <div class="button-slider-right">
+            <button class="right-button"><img src="../assets/Button-right.svg" alt=""></button>
+          </div>
       </div>
   </div>
 </section>
@@ -319,7 +337,6 @@
       </div>
   </div>
 </section>
-
 
 
 

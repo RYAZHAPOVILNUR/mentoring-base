@@ -734,3 +734,23 @@
   width: 16px;
   height: 16px;
 }
+
+.content-box {
+  position: relative;
+}
+
+.left-button, .right-button {
+  background: transparent;
+  border: none;
+  position:absolute
+}
+
+.left-button {
+  top: 130px;
+  left: -60px;
+}
+
+.right-button {
+  top: 130px;
+  right: -50px;
+}
