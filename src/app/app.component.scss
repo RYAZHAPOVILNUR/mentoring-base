@@ -140,7 +140,17 @@
 
 // section-.safety__helmet-man
 .safety__helmet-man {
-  margin-bottom: 20px;
+    
+  .helmet__man-text {
+    font-size: 40px;
+    font-weight: 700;
+    color: #f0ba4e;
+    position: absolute;
+    width: 543px;
+    height: 112px;
+    top: 384px;
+    left: 300px;
+  }
 }
 
 .bottom-left-nav {
@@ -649,7 +659,6 @@
 
 // mixin
 @mixin clear-button {
-
   box-shadow: none;
   border: none;
   background-color: transparent;
@@ -658,7 +667,6 @@
   margin: 0;
 }
 @mixin clear-input {
-
   font-family: inherit;
   font-size: inherit;
   background-color: transparent;
@@ -785,7 +793,7 @@ a {
 
   &__email-submit {
     @include clear-button;
-    
+
     border-radius: 30px;
     background-color: #f0ba4e;
     color: #ffff;
