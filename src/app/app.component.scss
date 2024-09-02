@@ -20,6 +20,31 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+    .header__cart {
+      .header__cart-img {
+        height: 28px;
+        width: 28px;
+      }
+
+      .header__cart-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        width: 126px;
+        height: 48px;
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        background-color: transparent;
+        border-radius: 50px;
+        border: solid 1px #f0ba4e;
+        padding: 10px, 20px, 10px, 20px;
+        cursor: pointer;
+      }
+    }
   }
 
   &-logo-reversed {
@@ -88,16 +113,15 @@
 
   &-bottom-search {
     input {
-        cursor: pointer;
-        width: 400px;
-        height: 28px;
-        background-color: transparent;
-        border: none;
-        border-bottom: solid 1px #3c3c3b;
-        background-image: url(../assets/header_search-icon.png);
-        background-repeat: no-repeat;
-        background-position: right;
-
+      cursor: pointer;
+      width: 400px;
+      height: 28px;
+      background-color: transparent;
+      border: none;
+      border-bottom: solid 1px #3c3c3b;
+      background-image: url(../assets/header_search-icon.png);
+      background-repeat: no-repeat;
+      background-position: right;
     }
   }
 
@@ -157,7 +181,6 @@
       display: flex;
       flex-direction: column;
       align-self: center;
-      font-family: Inter;
       font-size: 18px;
       font-weight: 500;
       line-height: 21px;
@@ -180,7 +203,6 @@
     transform: translateX(-6px);
 
     .pagination-button {
-      font-family: inter;
       border: none;
       background: none;
       color: #a1a0a0;
@@ -188,6 +210,7 @@
     .active-button {
       color: #f0ba4e;
       font-weight: 600;
+      cursor: pointer;
     }
   }
 
@@ -212,7 +235,6 @@
 
       .left__text {
         font-size: 28px;
-        font-family: Inter;
         font-weight: 600;
       }
 
@@ -222,7 +244,6 @@
         align-items: center;
 
         .text-button {
-          font-family: Inter;
           font-size: 14px;
           font-weight: 400;
           line-height: 16px;
@@ -232,7 +253,6 @@
         .left-actio-link {
           width: 40px;
           height: 40px;
-          
         }
       }
     }
@@ -267,7 +287,6 @@
             display: flex;
             align-self: self-end;
             font-size: 28px;
-            font-family: Inter;
             font-weight: 600;
           }
 
@@ -297,7 +316,6 @@
             width: 231px;
             align-self: baseline;
             font-size: 28px;
-            font-family: Inter;
             font-weight: 600;
           }
 
@@ -324,7 +342,6 @@
             display: flex;
             width: 218px;
             font-size: 28px;
-            font-family: Inter;
             font-weight: 600;
           }
 
@@ -351,7 +368,6 @@
             display: flex;
             width: 336px;
             font-size: 28px;
-            font-family: Inter;
             font-weight: 600;
           }
 
@@ -374,7 +390,6 @@
     &-button {
       width: 282px;
       height: 34px;
-      font-family: Inter;
       font-size: 28px;
       font-weight: 500;
       margin-bottom: 28px;
@@ -383,7 +398,6 @@
     .active-button {
       width: 218px;
       height: 22px;
-      font-family: Inter;
       font-size: 18px;
       font-weight: 600;
       line-height: 21px;
@@ -431,7 +445,7 @@
         justify-content: end;
         width: 309px;
         height: 429px;
-        padding: 0px 0px 0px 0px;
+        padding: 0px;
         gap: 13px;
         box-shadow: 0px 20px 50px 0px #12112714;
         background-image: url("../assets/grinding-disc.png");
@@ -443,97 +457,155 @@
 
         .block__sale-heart {
           display: flex;
-          align-self: center;
-          padding-bottom: 131px;
+          flex-direction: row;
+          justify-content: space-between;
+          padding-bottom: 125px;
+
+          .red__new {
+            color: #ffff;
+            width: 54px;
+            height: 39px;
+            border: solid 1px #fa5d69;
+            border-radius: 54px;
+            background-color: #fa5d69;
+            font-weight: 600;
+            font-size: 16px;
+          }
         }
 
         .block__title-size {
           display: flex;
-          font-family: Inter;
           font-size: 20px;
           font-weight: 600;
         }
 
         .block__origin {
           display: flex;
-          font-family: Inter;
           font-size: 16px;
           font-weight: 500;
         }
 
         .block__piece-cost {
           display: flex;
+          flex-direction: column;
           width: 256px;
           height: 73px;
-          background-image: url("../assets/piece-cost.png");
-          background-repeat: no-repeat;
-          overflow: hidden;
-        }
+          justify-content: space-around;
 
-        .block__amount-cart {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          width: 261px;
-          height: 53px;
-          font-size: 16px;
-          font-weight: 500;
-          gap: 12px;
-
-          .amount {
-            width: 114px;
-            height: 53px;
-            display: flex;
-            flex-direction: column;
-
-            .adjustable__number {
-              display: flex;
-              flex-direction: row;
-              gap: 16px;
-
-              .add__remove {
-                font-weight: 400;
-                cursor: pointer;
-              }
-            }
+          .piece__cost-one {
+            font-size: 16px;
+            font-weight: 500;
+            color: #a1a0a0;
           }
 
-          .cart {
-            background-color: transparent;
-            border: solid 1px #f0ba4e;
-            border-radius: 54px;
-            width: 135px;
-            height: 47px;
-            gap: 10px;
-            cursor: pointer;
-          }
-        }
-
-        .second-version {
-          display: flex;
-          align-self: center;
-          padding-bottom: 79px;
-        }
-
-        .third-version {
+          .piece__cost-two {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width: 261px;
-            
+            gap: 16px;
+            align-items: baseline;
+            font-weight: 600;
+          }
 
-            
-            .green__new {
-                color: #ffff;
-                width: 109px;
-                height: 39px;
-                border: solid 1px #08C785;
-                border-radius: 54px;
-                background-color: #08C785;
-                font-weight: 600;
-                font-size: 16px;
+          .piece__cost-three {
+            font-size: 16px;
+
+            .discount__inline-horizontal {
+              border-top: 1px solid #3c3c3b;
+              width: 60px;
+              position: absolute;
+              left: 16px;
+              top: 387px;
             }
+          }
+
+          .piece__cost-four {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .block__amount-cart {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 261px;
+        height: 53px;
+        font-size: 16px;
+        font-weight: 500;
+        gap: 12px;
+
+        .amount {
+          width: 114px;
+          height: 53px;
+          display: flex;
+          flex-direction: column;
+
+          .adjustable__number {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+
+            .add__remove {
+              font-weight: 400;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .cart {
+          background-color: transparent;
+          border: solid 1px #f0ba4e;
+          border-radius: 54px;
+          width: 135px;
+          height: 47px;
+          gap: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .second-version {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        width: 261px;
+        position: absolute;
+        left: 695px;
+        top: 85px;
+
+        .green__new {
+          color: #ffff;
+          width: 109px;
+          height: 39px;
+          border: solid 1px #08c785;
+          border-radius: 54px;
+          background-color: #08c785;
+          font-weight: 600;
+          font-size: 16px;
+        }
+
+        .sale__heart-second {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+
+      .third-version {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 261px;
+
+        .green__new {
+          color: #ffff;
+          width: 109px;
+          height: 39px;
+          border: solid 1px #08c785;
+          border-radius: 54px;
+          background-color: #08c785;
+          font-weight: 600;
+          font-size: 16px;
         }
       }
     }
@@ -543,10 +615,41 @@
 // section-.banner__driller-man
 .banner__driller-man {
   margin-bottom: 50px;
+
+  .driller__man {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 28px;
+    background-color: #f6f6f6;
+    background-image: url(../assets/driller-man.png);
+    background-repeat: no-repeat;
+    width: 1320px;
+    height: 251px;
+    background-position: 97%;
+
+    .driller__man-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .left__text-column {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .ten__k-naming {
+          font-weight: 500;
+          font-size: 28px;
+        }
+      }
+    }
+  }
 }
 
 // mixin
 @mixin clear-button {
+
   box-shadow: none;
   border: none;
   background-color: transparent;
@@ -555,6 +658,7 @@
   margin: 0;
 }
 @mixin clear-input {
+
   font-family: inherit;
   font-size: inherit;
   background-color: transparent;
@@ -582,14 +686,12 @@ li {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    }
+  text-decoration: none;
+  color: inherit;
+}
 
 // section-.footer
 .footer {
-  font-family: Arial, Helvetica, sans-serif;
-
   &__container {
     background-color: #4b565e;
     height: 373px;
@@ -683,6 +785,7 @@ a {
 
   &__email-submit {
     @include clear-button;
+    
     border-radius: 30px;
     background-color: #f0ba4e;
     color: #ffff;
@@ -698,6 +801,7 @@ a {
   }
   &__input {
     @include clear-input;
+
     width: 410px;
     margin-left: 9px;
     color: #ffff;

@@ -1,583 +1,743 @@
 <section class="header">
-    <div class="header-left">
-        <span class="header-logo">
-            <img src="../assets/site-logo.svg" alt="ЛОГОТИП сайта">
-        </span>
+  <div class="header-left">
+    <span class="header-logo">
+      <img src="../assets/site-logo.svg" alt="ЛОГОТИП сайта" />
+    </span>
 
-        <nav class="header-nav">
-            <ul class="header-nav-link">
-                <a class="header-nav-item">{{headerItem1 }}</a>
+    <nav class="header-nav">
+      <li class="header-nav-link">
+        <a class="header-nav-item">{{ headerItem1 }}</a>
 
-                <a class="header-nav-item">{{aboutCompany}}</a>
+        <a class="header-nav-item">{{ aboutCompany }}</a>
 
-                <a class="header-nav-item" *ngIf="isShowCatalog  ">{{headerItem3}}</a>
-            </ul>
-        </nav>
+        <a class="header-nav-item" *ngIf="isShowCatalog">{{ headerItem3 }}</a>
+      </li>
+    </nav>
 
-        <button (click)="isShowCatalog = !isShowCatalog" style=" border: solid 1px #F0BA4E; border-radius: 30px;" >скрыть/показать каталог</button>
-
-        
-    </div>
-    <ul class="header-right">
-        <li class="header-logo-reversed">
-            <img src="assets/phone.svg" alt="логотип телефон">
-        </li>
-        <nav class="header__nav">
-            <a class="header__nav-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
-
-            <li class="header__nav-item">
-                <img src="../assets/heart.svg" alt="лайк">
-            </li>
-            
-            <li class="header__nav-item">
-                <img src="../assets/shopping__cart.svg" alt="корзина">
-            </li>
-        </nav>
-        
-    </ul>
+    <button
+      (click)="isShowCatalog = !isShowCatalog"
+      style="
+        background-color: #f0ba4e;
+        color: #ffff;
+        border: solid 1px #f0ba4e;
+        border-radius: 30px;
+      "
+    >
+      скрыть/показать каталог
+    </button>
+  </div>
+  <div class="header-right">
+    <li class="header-logo-reversed">
+      <img src="assets/phone.svg" alt="логотип телефон" />
+    </li>
     
+    <nav class="header__nav">
+      <a class="header__nav-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
+
+      <li class="header__nav-item">
+        <img src="../assets/heart.svg" alt="лайк" />
+      </li>
+
+      <div class="header__nav-item">
+        <div class="header__cart">
+          <button class="header__cart-text">
+            <img
+              class="header__cart-img"
+              src="../assets/header__cart-icon.svg"
+              alt="иконка-корзинки"
+            />
+            Пусто
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
 </section>
 <section class="header-bottom">
-    <ul class="header-bottom-left">
-
-        <ul class="header-bottom-logo">
-            <img src="../assets/three__stripe-icon.svg" alt="рисунок каталога">
-            <li class="logo-text">
-                
-            </li>
-        </ul>
-
-        <nav class="bottom-left-nav">
-            <ul class="left-nav-link">
-                <a class="left-nav-item" *ngFor="let item of menuItems" >{{item}}</a>
-            </ul>
-        </nav>
-
-        <button (click)="changeMenuText()" style="width:80px; font-size: 10px; cursor: pointer; background-color: #4B565E; color: #ffff; border: solid 1px ; border-radius: 30px;">скрыть/показать БОЛШИЕ буквы</button>
+  <div class="header-bottom-left">
+    <ul class="header-bottom-logo">
+      <img src="../assets/three__stripe-icon.svg" alt="рисунок каталога" />
+      <li class="logo-text"></li>
     </ul>
 
-    <ul class="header-right">
-        <li class="header-bottom-search">
-            <input type="text" placeholder="Поиск, например Круг зачистной">
-        </li>
+    <nav class="bottom-left-nav">
+      <ul class="left-nav-link">
+        <a class="left-nav-item" *ngFor="let item of menuItems">{{ item }}</a>
+      </ul>
+    </nav>
 
-        <li class="header-location">
-            <img src="../assets/location.svg" alt="геопозиция">
-        </li>
-    </ul>
+    <button
+      (click)="changeMenuText()"
+      style="
+        width: 80px;
+        font-size: 10px;
+        cursor: pointer;
+        background-color: #4b565e;
+        color: #ffff;
+        border: solid 1px #4b565e;
+        border-radius: 30px;
+      "
+    >
+      скрыть/показать БОЛШИЕ буквы
+    </button>
+  </div>
+
+  <div class="header-right">
+    <li class="header-bottom-search">
+      <input type="text" placeholder="Поиск, например Круг зачистной" />
+    </li>
+
+    <li class="header-location">
+      <img src="../assets/location.svg" alt="геопозиция" />
+    </li>
+  </div>
 </section>
 
 <section class="safety__helmet-man" *ngIf="isShowMan">
-    <img src="../assets/safety__helmet-man.png" alt="банннер" style="width: 100%;">
+  <img
+    src="../assets/safety__helmet-man.png"
+    alt="банннер"
+    style="width: 100%"
+  />
 </section>
 
-<button (click)="isShowMan = !isShowMan" style=" background-color: transparent; border: solid 1px #F0BA4E; border-radius: 30px; margin-left: 180px;">скрыть/показать мужика</button>
-
-
+<button
+  (click)="isShowMan = !isShowMan"
+  style="
+    color: #ffff;
+    background-color: #08c785;
+    border: solid 1px #08c785;
+    border-radius: 30px;
+    margin-left: 180px;
+  "
+>
+  скрыть/показать мужика
+</button>
 
 <section class="content-container">
-    <section class="benefits">
-        <ul class="benefits__content-wrapper">
-            <ul class="benefits__content">
-                <li class="content-icon">
-                    <img src="../assets/brick-wall.svg" alt="кирпичная-стена">
-                </li>
+  <section class="benefits">
+    <div class="benefits__content-wrapper">
+      <div class="benefits__content">
+        <div class="content-icon">
+          <img src="../assets/brick-wall.svg" alt="кирпичная-стена" />
+        </div>
 
-                <ul class="benefits__text">
-                    <span class="benefits__title">Большой ассортимент</span>
+        <div class="benefits__text">
+          <span class="benefits__title">Большой ассортимент</span>
 
-                    <span class="benefits__label">строительных материалов всегда в наличии</span>
-                </ul>
-            </ul>
+          <span class="benefits__label"
+            >строительных материалов всегда в наличии</span
+          >
+        </div>
+      </div>
 
-            <ul class="benefits__content">
-                <li class="content-icon">
-                    <img src="../assets/clock__truck.svg" alt="">
-                </li>
+      <div class="benefits__content">
+        <li class="content-icon">
+          <img src="../assets/clock__truck.svg" alt="" />
+        </li>
 
-                <ul class="benefits__text">
-                    <span class="benefits__title">Доставка стройматериалов</span>
+        <div class="benefits__text">
+          <span class="benefits__title">Доставка стройматериалов</span>
 
-                    <span class="benefits__label">в течении четырех часов или в любое удобное время</span>
-                </ul>
-            </ul>
+          <span class="benefits__label"
+            >в течении четырех часов или в любое удобное время</span
+          >
+        </div>
+      </div>
 
-            <ul class="benefits__content">
-                <li class="content-icon">
-                    <img src="../assets/thumbs__up.svg" alt="">
-                </li>
+      <div class="benefits__content">
+        <li class="content-icon">
+          <img src="../assets/thumbs__up.svg" alt="" />
+        </li>
 
-                <ul class="benefits__text">
-                    <li class="benefits__title">
-                        <span>Многоуровневая система</span>
-                    </li>
+        <div class="benefits__text">
+          <div class="benefits__title">
+            <span>Многоуровневая система</span>
+          </div>
 
-                    <li class="benefits__label">
-                        <span>управления качеством по стандарту ISO 9001</span>
-                    </li>
-                </ul>
-            </ul>
+          <div class="benefits__label">
+            <span>управления качеством по стандарту ISO 9001</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="item-cards">
+    <div class="item-cards__pagination">
+      <button
+        *ngFor="let item of newPages"
+        class="pagination-button active-button"
+      >
+        {{ item }}
+      </button>
+    </div>
+    <ul class="item-cards__grid">
+      <ul class="item-cards__grid-left">
+        <span class="left__text"> Строительный отделочный инструмент </span>
+
+        <ul class="left__action">
+          <span class="text-button" style="margin-right: 10px">{{
+            grid__left_action
+          }}</span>
+
+          <a class="left-actio-link">
+            <img src="../assets/right__dark-dart.svg" alt="иконка кнопки" />
+          </a>
         </ul>
-    </section>
+      </ul>
+      <ul class="item-cards__grid-right">
+        <ul class="grid__right-block">
+          <ul class="right__block-first">
+            <span class="block-first__content"> Эмали </span>
 
-    <section class="item-cards">
-        <ul class="item-cards__pagination">
-            <button *ngFor="let item of newPages" class="pagination-button active-button">{{item}}</button>
-        </ul>
-            <ul class="item-cards__grid">
-                <ul class="item-cards__grid-left">
-                    <span class="left__text">
-                        Строительный отделочный инструмент
-                    </span>
+            <ul class="block-first-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
 
-                    <ul class="left__action">
-                        <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
-
-                        <a class="left-actio-link">
-                            <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
-                        </a>
-                    </ul>
-                </ul>
-                <ul class="item-cards__grid-right">
-                    <ul class="grid__right-block">
-                        <ul class="right__block-first">
-                            <span class="block-first__content">
-                                Эмали
-                            </span>
-
-                            <ul class="block-first-action">
-                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
-                                
-                                <a class="left-actio-link">
-                                    <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
-                                </a>
-                            </ul>
-                        </ul>
-                    </ul>
-                    
-                    <ul class="grid__right-block">
-                        <ul class="right__block-second">
-                            <span class="block-second__words">
-                                Лакокрасочные материалы
-                            </span>
-
-                            <ul class="block-second-action">
-                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
-
-                                <a class="left-actio-link">
-                                    <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
-                                </a>
-                            </ul>
-                        </ul>                                                       
-                    </ul>
-
-                    <ul class="grid__right-block">
-                        <ul class="right__block-third">
-                            <span class="block-third__script">
-                                Пены, клеи и герметики
-                            </span>
-
-                            <ul class="block-third-action">
-                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
-
-                                <a class="left-actio-link">
-                                    <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
-                                </a>
-                            </ul>
-                        </ul>
-                        
-                    </ul>
-
-                    <ul class="grid__right-block">
-                        <ul class="right__block-forth">
-                            <span class="block-forth__wording">
-                                Розетки и выключатели
-                            </span>
-
-                            <ul class="block-forth-action">
-                                <span class="text-button" style="margin-right: 10px;">{{grid__left_action}}</span>
-
-                                <a class="left-actio-link">
-                                    <img src="../assets/right__dark-dart.svg" alt="иконка кнопки">
-                                </a>
-                            </ul>
-                        </ul>
-                    </ul>
-                </ul>  
-            </ul> 
-    </section>
-
-    <section class="item-cards__wide">
-            <ul class="wide__button">
-                <li class="wide__button-left">
-                    <img src="../assets/left__gold-dart.svg" alt="кнопка-скролла">
-                </li>
-                
-                <li class="wide__button-right">
-                    <img src="../assets/right__gold-dart.svg" alt="кнопка-скролла">
-                </li>
+              <a class="left-actio-link">
+                <img src="../assets/right__dark-dart.svg" alt="иконка кнопки" />
+              </a>
             </ul>
-
-            <!-- item-cards__wide__pagination↓ -->
-            <ul class="wide__pagination">
-                <span class="wide__pagination-button">
-                    Популярные товары
-                </span>
-
-                <span class="wide__pagination active-button">
-                    {{wide__pagination_action}}
-                </span>
-            </ul>
-
-            <ul class="cards__grid-wrapper">
-                <ul class="grid__wrapper-block">
-                    <li class="block__sale-heart">
-                        <img src="../assets/sale-heart.svg" alt="кнопка">
-                    </li>
-
-                    <span class="block__title-size">
-                        Круг зачистной 125х6х22
-                    </span>
-
-                    <span class="block__origin">
-                        Артикул 00004
-                    </span>
-
-                    <li class="block__piece-cost"></li>
-
-                    <li class="block__amount-cart">
-                        <div class="amount">
-                            <span>Количество</span>
-                            <span class="adjustable__number">
-                                <span class="add__remove">-</span>
-                                <span style="font-size: 20px;">1</span>
-                                <span class="add__remove">+</span>
-                            </span>
-                        </div>
-                        <button class="cart" style="font-size: 16px;">В корзину</button>
-                    </li>
-                </ul>
-
-                <ul class="grid__wrapper-block">
-                    <li class="block__sale-heart">
-                        <img src="../assets/sale-heart.svg" alt="кнопка">
-                    </li>
-
-                    <span class="block__title-size">
-                        Круг зачистной 125х6х22
-                    </span>
-
-                    <span class="block__origin">
-                        Артикул 00004
-                    </span>
-
-                    <li class="block__piece-cost"></li>
-
-                    <li class="block__amount-cart">
-                        <div class="amount">
-                            <span>Количество</span>
-                            <span class="adjustable__number">
-                                <span class="add__remove">-</span>
-                                <span style="font-size: 20px;">1</span>
-                                <span class="add__remove">+</span>
-                            </span>
-                        </div>
-                        <button class="cart" style="font-size: 16px;">В корзину</button>
-                    </li>
-                </ul>
-
-                <ul class="grid__wrapper-block">
-                    <li class="block__sale-heart second-version">
-                        <img src="../assets/new__sale-heart.svg" alt="кнопка">
-                    </li>
-
-                    <span class="block__title-size">
-                        Круг зачистной 125х6х22
-                    </span>
-
-                    <span class="block__origin">
-                        Артикул 00004
-                    </span>
-
-                    <li class="block__piece-cost"></li>
-
-                    <li class="block__amount-cart">
-                        <div class="amount">
-                            <span>Количество</span>
-                            <span class="adjustable__number">
-                                <span class="add__remove">-</span>
-                                <span style="font-size: 20px;">1</span>
-                                <span class="add__remove">+</span>
-                            </span>
-                        </div>
-                        <button class="cart" style="font-size: 16px;">В корзину</button>
-                    </li>
-                </ul>
-
-                <ul class="grid__wrapper-block">
-                    <li class="block__sale-heart second-version">
-                        <img src="../assets/new__sale-heart.svg" alt="кнопка">
-                    </li>
-
-                    <span class="block__title-size">
-                        Круг зачистной 125х6х22
-                    </span>
-
-                    <span class="block__origin">
-                        Артикул 00004
-                    </span>
-
-                    <li class="block__piece-cost"></li>
-
-                    <li class="block__amount-cart">
-                        <div class="amount">
-                            <span>Количество</span>
-                            <span class="adjustable__number">
-                                <span class="add__remove">-</span>
-                                <span style="font-size: 20px;">1</span>
-                                <span class="add__remove">+</span>
-                            </span>
-                        </div>
-                        <button class="cart" style="font-size: 16px;">В корзину</button>
-                    </li>
-                </ul>
-            </ul>
-    </section>
-
-    <section class="banner__driller-man">
-        <img src="../assets/driller-man.png" alt="банннер" style="width: 100%;">
-    </section>
-
-    <section class="item-cards__wide">
-        <ul class="wide__button">
-            <li class="wide__button-left">
-                <img src="../assets/left__gold-dart.svg" alt="">
-            </li>
-
-            <li class="wide__button-right">
-                <img src="../assets/right__gold-dart.svg" alt="">
-            </li>
-
+          </ul>
         </ul>
 
-        <!-- item-cards__wide__pagination↓ -->
-        <ul class="wide__pagination">
-            <span class="wide__pagination-button">
-                Популярные товары
+        <ul class="grid__right-block">
+          <ul class="right__block-second">
+            <span class="block-second__words"> Лакокрасочные материалы </span>
+
+            <ul class="block-second-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link">
+                <img src="../assets/right__dark-dart.svg" alt="иконка кнопки" />
+              </a>
+            </ul>
+          </ul>
+        </ul>
+
+        <ul class="grid__right-block">
+          <ul class="right__block-third">
+            <span class="block-third__script"> Пены, клеи и герметики </span>
+
+            <ul class="block-third-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link">
+                <img src="../assets/right__dark-dart.svg" alt="иконка кнопки" />
+              </a>
+            </ul>
+          </ul>
+        </ul>
+
+        <ul class="grid__right-block">
+          <ul class="right__block-forth">
+            <span class="block-forth__wording"> Розетки и выключатели </span>
+
+            <ul class="block-forth-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link">
+                <img src="../assets/right__dark-dart.svg" alt="иконка кнопки" />
+              </a>
+            </ul>
+          </ul>
+        </ul>
+      </ul>
+    </ul>
+  </section>
+
+  <section class="item-cards__wide">
+    <ul class="wide__button">
+      <li class="wide__button-left">
+        <img src="../assets/left__gold-dart.svg" alt="кнопка-скролла" />
+      </li>
+
+      <li class="wide__button-right">
+        <img src="../assets/right__gold-dart.svg" alt="кнопка-скролла" />
+      </li>
+    </ul>
+
+    <!-- item-cards__wide__pagination↓ -->
+    <ul class="wide__pagination">
+      <span class="wide__pagination-button"> Популярные товары </span>
+
+      <span class="wide__pagination active-button">
+        {{ wide__pagination_action }}
+      </span>
+    </ul>
+
+    <ul class="cards__grid-wrapper">
+      <ul class="grid__wrapper-block">
+        <div class="block__sale-heart">
+          <div class="sale__heart-one">
+            <button class="red__new">%</button>
+          </div>
+
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
             </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </ul>
 
-            <span class="wide__pagination active-button">
-                {{wide__pagination_action}}
+      <ul class="grid__wrapper-block">
+        <li class="block__sale-heart">
+          <div class="sale__heart-one">
+            <button class="red__new">%</button>
+          </div>
+
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </li>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
             </span>
-        </ul>
-        
-        <ul class="cards__grid-wrapper">
-            <ul class="grid__wrapper-block">
-                <li class="block__sale-heart third-version">
-                    <button class="green__new">Новинка</button>
-                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
-                </li>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </ul>
 
-                <span class="block__title-size">
-                    Круг зачистной 125х6х22
-                </span>
+      <div class="grid__wrapper-block">
+        <li class="block__sale-heart second-version">
+          <div class="sale__heart-second">
+            <button class="green__new">Новинка</button>
+            <button class="red__new">%</button>
+          </div>
+          <img
+            src="../assets/brand-new-heart.svg"
+            alt="кнопка"
+            style="align-self: baseline; cursor: pointer"
+          />
+        </li>
 
-                <span class="block__origin">
-                    Артикул 00004
-                </span>
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
 
-                <li class="block__piece-cost"></li>
+        <span class="block__origin"> Артикул 00004 </span>
 
-                <li class="block__amount-cart">
-                    <div class="amount">
-                        <span>Количество</span>
-                        <span class="adjustable__number">
-                            <span class="add__remove">-</span>
-                            <span style="font-size: 20px;">1</span>
-                            <span class="add__remove">+</span>
-                        </span>
-                    </div>
-                    <button class="cart" style="font-size: 16px;">В корзину</button>
-                </li>
-            </ul>
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
 
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
 
-            <ul class="grid__wrapper-block">
-                <li class="block__sale-heart third-version">
-                    <button class="green__new">Новинка</button>
-                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
-                </li>
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </div>
 
-                <span class="block__title-size">
-                    Круг зачистной 125х6х22
-                </span>
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </div>
 
-                <span class="block__origin">
-                    Артикул 00004
-                </span>
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
 
-                <li class="block__piece-cost"></li>
+        <span class="block__origin"> Артикул 00004 </span>
 
-                <li class="block__amount-cart">
-                    <div class="amount">
-                        <span>Количество</span>
-                        <span class="adjustable__number">
-                            <span class="add__remove">-</span>
-                            <span style="font-size: 20px;">1</span>
-                            <span class="add__remove">+</span>
-                        </span>
-                    </div>
-                    <button class="cart" style="font-size: 16px;">В корзину</button>
-                </li>
-            </ul>
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
 
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
 
-            <ul class="grid__wrapper-block">
-                <li class="block__sale-heart third-version">
-                    <button class="green__new">Новинка</button>
-                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
-                </li>
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </div>
+    </ul>
+  </section>
 
-                <span class="block__title-size">
-                    Круг зачистной 125х6х22
-                </span>
+  <section class="banner__driller-man">
+    <div class="driller__man">
+      <div class="driller__man-left">
+        <div class="left__text-column">
+          <span class="ten__k-naming">БОЛЕЕ 10 000 НАИМЕНОВАНИЙ </span>
+          <span style="color: #a1a0a0; font-size: 20px; font-weight: 400"
+            >Инструмент для вашего бизнеса, разнообразных марок</span
+          >
+        </div>
 
-                <span class="block__origin">
-                    Артикул 00004
-                </span>
+        <span style="color: #f0ba4e; cursor: pointer">Перейти в каталог</span>
+      </div>
+    </div>
+  </section>
 
-                <li class="block__piece-cost"></li>
+  <section class="item-cards__wide">
+    <ul class="wide__button">
+      <li class="wide__button-left">
+        <img src="../assets/left__gold-dart.svg" alt="" />
+      </li>
 
-                <li class="block__amount-cart">
-                    <div class="amount">
-                        <span>Количество</span>
-                        <span class="adjustable__number">
-                            <span class="add__remove">-</span>
-                            <span style="font-size: 20px;">1</span>
-                            <span class="add__remove">+</span>
-                        </span>
-                    </div>
-                    <button class="cart" style="font-size: 16px;">В корзину</button>
-                </li>
-            </ul>
+      <li class="wide__button-right">
+        <img src="../assets/right__gold-dart.svg" alt="" />
+      </li>
+    </ul>
 
+    <!-- item-cards__wide__pagination↓ -->
+    <ul class="wide__pagination">
+      <span class="wide__pagination-button"> Популярные товары </span>
 
-            <ul class="grid__wrapper-block">
-                <li class="block__sale-heart third-version">
-                    <button class="green__new">Новинка</button>
-                    <img src="../assets/brand-new-heart.svg" alt="кнопка">
-                </li>
+      <span class="wide__pagination active-button">
+        {{ wide__pagination_action }}
+      </span>
+    </ul>
 
-                <span class="block__title-size">
-                    Круг зачистной 125х6х22
-                </span>
+    <ul class="cards__grid-wrapper">
+      <ul class="grid__wrapper-block">
+        <li class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </li>
 
-                <span class="block__origin">
-                    Артикул 00004
-                </span>
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
 
-                <li class="block__piece-cost"></li>
+        <span class="block__origin"> Артикул 00004 </span>
 
-                <li class="block__amount-cart">
-                    <div class="amount">
-                        <span>Количество</span>
-                        <span class="adjustable__number">
-                            <span class="add__remove">-</span>
-                            <span style="font-size: 20px;">1</span>
-                            <span class="add__remove">+</span>
-                        </span>
-                    </div>
-                    <button class="cart" style="font-size: 16px;">В корзину</button>
-                </li>
-            </ul>
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
 
-        </ul>
-    </section>
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </ul>
+
+      <ul class="grid__wrapper-block">
+        <li class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </li>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </ul>
+
+      <ul class="grid__wrapper-block">
+        <li class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </li>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </ul>
+
+      <ul class="grid__wrapper-block">
+        <li class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../assets/brand-new-heart.svg" alt="кнопка" />
+        </li>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <li class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </li>
+      </ul>
+    </ul>
+  </section>
 </section>
 
-    <section class="footer">
-        <ul class="footer__container container">
-            <ul class="footer__container-wrapper">
-                <ul class="footer__contacts">
-                    <img src="../assets/site-logo.svg" class="footer__logo" alt="ЛОГОТИП сайта" width="59" height="39px">
-                    
-                    <ul class="footer__contacts-wrapper1">
-                        <ul class="footer__contacts-wrapper">
-                            <li class="footer__contacts-icon">
-                                <img src="../assets/call-calling.svg" alt="" class="footer__contacts-image">
-                            </li>
+<section class="footer">
+  <ul class="footer__container container">
+    <ul class="footer__container-wrapper">
+      <ul class="footer__contacts">
+        <img
+          src="../assets/site-logo.svg"
+          class="footer__logo"
+          alt="ЛОГОТИП сайта"
+          width="59"
+          height="39px"
+        />
 
-                            <ul class="footer__contacts-content">
-                                <span class="footer__contacts-title">Контактный телефон</span>
+        <ul class="footer__contacts-wrapper1">
+          <ul class="footer__contacts-wrapper">
+            <li class="footer__contacts-icon">
+              <img
+                src="../assets/call-calling.svg"
+                alt=""
+                class="footer__contacts-image"
+              />
+            </li>
 
-                                <a class="footer__contacts-phone" href="tel:+78123090434">+ 7 (812) 309-09-34</a>
+            <ul class="footer__contacts-content">
+              <span class="footer__contacts-title">Контактный телефон</span>
 
-                                <a class="footer__contacts-phone" href="tel:+79650842909">+ 7 (965) 084-29-09</a>
-                            </ul>
-                        </ul>
+              <a class="footer__contacts-phone" href="tel:+78123090434"
+                >+ 7 (812) 309-09-34</a
+              >
 
-                        <ul class="footer__contacts-wrapper">
-                            <li class="footer__contacts-icon  ">
-                                <img src="../assets/mail.svg" alt="" class="footer__contacts-image">
-                            </li>
-
-                            <ul class="footer__contacts-content">
-                                <span class="footer__contacts-title">Электронная почта</span> 
-
-                                <span class="footer_contacts-mail" href="mailto:tustin78.mail.ru" >tustin78.mail.ru</span>
-
-                                <span class="footer_contacts-mail" href="mailto:info.tustin.ru" >info.tustin.ru</span>    
-                            </ul>
-                        </ul>
-                    </ul>
-                </ul>
-                
-                <span class="footer__inline-vertical"></span>
-
-                <ul class="footer__email">
-                    <ul class="footer__title-wrapper">
-                        <h3 class="footer__title">Остались вопросы?</h3>
-
-                        <p class="footer__label">Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</p>
-
-                        <ul class="footer__form-wrapper">
-                            <img src="../assets/mail.svg" alt="" class="footer__input-icon" width="16px" height="16px">
-
-                            <input type="email" placeholder="Введите свою почту" class="footer__input">
-
-                            <button type="submit " class="footer__email-submit">Отправить</button>
-                        </ul>
-                    </ul>
-                </ul>
+              <a class="footer__contacts-phone" href="tel:+79650842909"
+                >+ 7 (965) 084-29-09</a
+              >
             </ul>
+          </ul>
 
-            <span class="footer__inline-horizontal"></span>
+          <ul class="footer__contacts-wrapper">
+            <li class="footer__contacts-icon">
+              <img
+                src="../assets/mail.svg"
+                alt=""
+                class="footer__contacts-image"
+              />
+            </li>
 
-            <ul class="footer__navigation-wrapper">
-                <nav class="footer__navigation" >
-                    <ul class="footer__navigation-link">
-                        <span class="footer__navigation-item">{{headerItem1}}</span>
+            <ul class="footer__contacts-content">
+              <span class="footer__contacts-title">Электронная почта</span>
 
-                        <span class="footer__navigation-item">{{aboutCompany}}</span>
+              <span class="footer_contacts-mail" href="mailto:tustin78.mail.ru"
+                >tustin78.mail.ru</span
+              >
 
-                        <span class="footer__navigation-item">{{headerItem3}}</span>
-                    </ul>
-                </nav>
-
-                <ul class="footer__copyright-wrapper"> 
-                    <ul class="social-icons-wrapper">
-                        <img class="footer__social-icons" src="../assets/facebook_icon.svg" alt="">
-
-                        <img class="footer__social-icons" src="../assets/youtube_icon.svg" alt="">
-                        
-                        <img class="footer__social-icons" src="../assets/whatsapp_icon.svg" alt="">
-                    </ul>
-
-                    <span class="footer__copyright">{{footer__copyright}}</span>
-                </ul>
+              <span class="footer_contacts-mail" href="mailto:info.tustin.ru"
+                >info.tustin.ru</span
+              >
             </ul>
+          </ul>
         </ul>
-    </section>
-   
-    
-         
+      </ul>
+
+      <span class="footer__inline-vertical"></span>
+
+      <ul class="footer__email">
+        <ul class="footer__title-wrapper">
+          <h3 class="footer__title">Остались вопросы?</h3>
+
+          <p class="footer__label">
+            Узнавайте первым о скидках, предложениях и событиях еженедельно в
+            своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
+          </p>
+
+          <ul class="footer__form-wrapper">
+            <img
+              src="../assets/mail.svg"
+              alt=""
+              class="footer__input-icon"
+              width="16px"
+              height="16px"
+            />
+
+            <input
+              type="email"
+              placeholder="Введите свою почту"
+              class="footer__input"
+            />
+
+            <button type="submit " class="footer__email-submit">
+              Отправить
+            </button>
+          </ul>
+        </ul>
+      </ul>
+    </ul>
+
+    <span class="footer__inline-horizontal"></span>
+
+    <ul class="footer__navigation-wrapper">
+      <nav class="footer__navigation">
+        <ul class="footer__navigation-link">
+          <span class="footer__navigation-item">{{ headerItem1 }}</span>
+
+          <span class="footer__navigation-item">{{ aboutCompany }}</span>
+
+          <span class="footer__navigation-item">{{ headerItem3 }}</span>
+        </ul>
+      </nav>
+
+      <ul class="footer__copyright-wrapper">
+        <ul class="social-icons-wrapper">
+          <img
+            class="footer__social-icons"
+            src="../assets/facebook_icon.svg"
+            alt=""
+          />
+
+          <img
+            class="footer__social-icons"
+            src="../assets/youtube_icon.svg"
+            alt=""
+          />
+
+          <img
+            class="footer__social-icons"
+            src="../assets/whatsapp_icon.svg"
+            alt=""
+          />
+        </ul>
+
+        <span class="footer__copyright">{{ footer__copyright }}</span>
+      </ul>
+    </ul>
+  </ul>
+</section>
