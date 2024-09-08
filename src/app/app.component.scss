@@ -50,6 +50,9 @@
     height: 48px;
     width: 106px;
     color: white;
+    align-items:center;
+    gap:5px
+
     
 }
 
@@ -68,12 +71,15 @@
     display: flex;
     align-items: center;
     margin-right: 12px;
+    align-items:center;
+    gap: 7px;
 
 }
 
 .header-left-orange {
     display: flex;
     align-items: flex-start;
+    align-items:center;
 }
 
 .header-bottom-right-orange {
@@ -100,5 +106,6 @@
     display: flex;
     align-items: center;
     margin: 20px;
-    color: white
+    color: white;
+    gap: 5px;
 }
