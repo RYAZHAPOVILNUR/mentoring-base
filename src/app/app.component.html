@@ -5,11 +5,13 @@
         <img src="/assets/logo.svg" alt="logo">
       </div>
       <nav class="header-nav">
-        <div class="header-nav-item">Главная</div>
-        <div class="header-nav-item">О компании</div>
-        <div class="header-nav-item">Каталог </div>
+        <div class="header-nav-item" *ngIf="isShowCatalog">{{headerItem1}}</div>
+        <div class="header-nav-item">{{aboutCompany}}</div>
+        <div class="header-nav-item">{{headerItem3}}</div>
       </nav>
     </div>
+    <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+    <button (click)="changeMenuText()">Изменить текст</button>
     <div class="header-right">
       <div class="header-phone">
         <div class="header-phone-logo">
@@ -35,13 +37,13 @@
       <div class="topbar-logo">
         <img src="/assets/light.svg" alt="kat">
       </div>
-    Каталог
     </div>
     <nav class="topbar-nav">
-      <div class="topbar-nav-item1">Стройматериалы</div>
-      <div class="topbar-nav-item" >Инструменты</div>
-      <div class="topbar-nav-item">Электрика</div>
-      <div class="topbar-nav-item">Интерьер и одежда</div>
+      <div class="topbar-nav-item" *ngFor="let item of menuItems">{{item}}</div>
+      <!-- <div class="topbar-nav-item">{{header2Item2}}</div>
+      <div class="topbar-nav-item" >{{header2Item3}}</div>
+      <div class="topbar-nav-item">{{header2Item4}}</div>
+      <div class="topbar-nav-item">{{header2Item5}}</div> -->
     </nav>
   </div>
  <div class="topbar-right">
@@ -61,7 +63,9 @@
 </div>
 </div>
 
-<div>
+<button (click)="isShowImage = !isShowImage"> Скрыть/показать мужика</button>
+
+<div *ngIf="isShowImage">
   <img src="/assets/Rectangle5.png" alt="background-large" style="width: 100%;">
 </div>
 
@@ -86,11 +90,11 @@
   </div>
 <div class="item-cards">
   <div class="item-cards__pagination">
-    <button class="item-cards__pagination-button active-button">1</button>
-    <button class="item-cards__pagination-button">2</button>
+    <button class="item-cards__pagination-button active-button" *ngFor="let item of newPages">{{item}}</button>
+    <!-- <button class="item-cards__pagination-button">2</button>
     <button class="item-cards__pagination-button">3</button>
     <button class="item-cards__pagination-button">4</button>
-    <button class="item-cards__pagination-button">5</button>
+    <button class="item-cards__pagination-button">5</button> -->
   </div>
   <div class="item-cards__grid">
     <div class="item-cards__grid-left">
