@@ -161,6 +161,8 @@
   font-weight: 500;
 }
 
+// HERO SECTION
+
 .hero {
   position: relative;
   width: 100%;
@@ -197,3 +199,33 @@
   height: 720px;
   width: 543px;
 }
+
+// ADVANTAGES SECTION
+.advantages {
+  padding: 28px 0;
+}
+
+.advantages-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+}
+
+.advantages-item {
+  display: flex;
+  align-items: center;
+  color: #a1a0a0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.advantages-img {
+  margin-right: 16px;
+}
+
+.text-bold {
+  color: #3c3c3b;
+}
+
+// CATALOG CARDS SECTION
