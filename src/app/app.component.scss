@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.container {
+  max-width: 1320px;
+  margin: auto;
+}
+
+.header-top {
+  background-color: #4b565e;
+}
+
+.header-top-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: auto 0;
+}
+
+.header-top-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-top-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.logo {
+  margin-right: 40px;
+}
+
+.header-top-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-top-phone {
+  display: flex;
+  align-items: center;
+}
+
+.phone-img {
+  margin-right: 10px;
+}
+
+.phone-link {
+  text-decoration: none;
+  color: #f9fafb;
+}
+
+.favorites-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.basket-btn {
+  // width: 126px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #f0ba4e;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 10px 20px;
+}
+
+.basket-img {
+  margin-right: 10px;
+}
+
+.basket-btn-text {
+  font-weight: 500;
+  font-size: 16px;
+  color: #f9fafb;
+}
