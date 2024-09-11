@@ -1,3 +1,4 @@
+
 <header>
   <div class="content">
   <div class="container">
@@ -8,8 +9,26 @@
                 <div class="menu-item white-color">{{headerItemFirst}}</div>
                 <div class="menu-item white-color">{{aboutCompany}}</div>
                 <div class="menu-item white-color" *ngIf="isShowCatalog">{{headerItemThird}}</div>
-                <button (click)="isShowCatalog =!isShowCatalog">Скрыть/Показать каталог</button>
-                <button (click)="changeMenuText()">Изменить текст</button>
+                <button style="
+                  border: 1px solid #F0BA4E;
+                  border-radius: 50px;
+                  background-color: #4B565E;
+                  color: #fff;
+                  font-family: 'Inter';
+                  padding: 10px;
+                  cursor: pointer;
+                  margin-left: 10px;"
+                (click)="isShowCatalog =!isShowCatalog">Скрыть/Показать каталог</button>
+                <button style="
+                    border: 1px solid #F0BA4E;
+                    border-radius: 50px;
+                    background-color: #4B565E;
+                    color: #fff;
+                    font-family: 'Inter';
+                    padding: 10px;
+                    cursor: pointer;
+                    margin-left: 10px;"
+                (click)="changeMenuText()">Изменить текст</button>
               </div>
               <div class="header-info-container">
               <div class="call">
@@ -47,11 +66,22 @@
         </div>
       </nav>
   </div>
-</div>  
+</div>
 </header>
 
+<app-header></app-header>
+<router-outlet></router-outlet>
+
 <section> 
-<button (click)="isShowSadMan =!isShowSadMan">Скрыть/Показать грустного мужика</button>
+<button style="
+  border: 1px solid #F0BA4E;
+  border-radius: 50px;
+  background-color: #fff;
+  font-family: 'Inter';
+  padding: 10px;
+  cursor: pointer;
+  margin: 5px;"
+(click)="isShowSadMan =!isShowSadMan">Скрыть/Показать грустного мужика</button>
 <div class="content" *ngIf="isShowSadMan">
     <div class="container" >
           <p class="slogan">Инструмент для вашего бизнеса</p>
@@ -470,7 +500,8 @@
     </div>
   </div>
 </footer>     
-      
+
+
 
 
 
