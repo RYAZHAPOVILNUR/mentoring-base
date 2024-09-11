@@ -9,7 +9,8 @@
   }
 }
 .modal {
-  display: block;
+  display: flex;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
