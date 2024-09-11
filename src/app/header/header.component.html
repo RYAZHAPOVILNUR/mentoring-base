@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="header-left">
+    <div><img src="assets/Frame.svg" alt="logo"></div>
+    <nav class="header-nav">
+      <div *ngFor="let item of mainMenuItems" class="header-nav-item"><a class="header-nav-item-link" routerLink="{{item.route}}">{{ item.title }}</a></div>
+      <div class="header-nav-item">{{ aboutCompany }}</div>
+      <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+      <button (click)="menuItemCase()">Маленькие/Большие буквы</button>
+    </nav>
+  </div>
+  <div class="header-right">
+    <div class="header-right-item">
+      <img src="assets/Phone.svg" alt="phone logo" srcset="">
+      <a href="tel:+7 (965) 084-29-29" style="color: white;">+7 (965) 084-29-29</a>
+    </div>
+    <div class="header-right-item"><img src="assets/heart 1.svg" alt="heart logo" srcset=""></div>
+    <div class="header-right-item">
+      <button class="header-right-btn"><img src="assets/Mask group.svg" alt="cart logo"> <span>Пусто</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="header-2">
+  <div class="header-left-2">
+    <img src="assets/light.svg" alt="logo menu" class="menu">
+    <div class="header-nav-2">
+      <div class="header-nav-item" *ngFor="let item of secondaryMenuItems"><a class="header-2-nav-item-link" routerLink="{{item.route}}">{{ item.title }}</a></div>
+    </div>
+  </div>
+  <div class="header-right-2">
+    <form>
+      <input type="text" class="search" placeholder="Поиск, например Круг зачистной ">
+      <img src="assets/loop.svg" alt="loop" class="loop" srcset="">
+    </form>
+    <div class="map">
+      <img src="assets/map-pin (2) 1.svg" alt="">
+      <button class="country">Москва</button>
+    </div>
+  </div>
+</div>

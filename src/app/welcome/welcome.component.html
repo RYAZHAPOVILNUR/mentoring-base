@@ -1,0 +1,77 @@
+
+<div>
+  <button (click)="isBigImage = !isBigImage">Скрыть/Показать большого мужика</button>
+  <img src="assets/Rectangle 5.png" alt="main photo" width="100%" *ngIf="isBigImage">
+</div>
+
+
+<div class="content-container">
+  <div class="item-cards">
+    <div class="item-cards__pagination">
+      <button
+        *ngFor="let item of newPages"
+        class="item-cards__pagination-btn
+      active-button"
+
+      >
+
+        {{item}}
+
+      </button>
+    </div>
+
+
+    <div class="item-cards__grid">
+      <div class="item-cards__grid-left">
+        <div class="item-cards__grid-text">Строительный отделочный инструмент</div>
+        <div class="item-cards__grid-action">
+          Перейти в каталог
+          <div class="item-cards__grid-action-arrow">
+            <img src="assets/Arrow 6.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="item-cards__grid-right">
+        <div class="item-cards__grid-right-block">
+          <div class="item-cards__grid-text">Эмали</div>
+          <div class="item-cards__grid-action">
+            Перейти в каталог
+            <div class="item-cards__grid-action-arrow">
+              <img src="assets/Arrow 6.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block">
+          <div class="item-cards__grid-text">Лакокрасочные
+            материалы</div>
+          <div class="item-cards__grid-action">
+            Перейти в каталог
+            <div class="item-cards__grid-action-arrow">
+              <img src="assets/Arrow 6.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block">
+          <div class="item-cards__grid-text">Пены, клеи и <br> герметики</div>
+          <div class="item-cards__grid-action">
+            Перейти в каталог
+            <div class="item-cards__grid-action-arrow">
+              <img src="assets/Arrow 6.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block">
+          <div class="item-cards__grid-text">Розетки и выключатели</div>
+          <div class="item-cards__grid-action">
+            Перейти в каталог
+            <div class="item-cards__grid-action-arrow">
+              <img src="assets/Arrow 6.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

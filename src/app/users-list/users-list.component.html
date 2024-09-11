@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of users"  class="col-4">
+
+     <div class="card users-card">
+        <div class="card-body users-card-body">
+          Name: {{item.name}} <br> Email: {{item.email}} <br> Company: {{item.company.name}}
+        </div>
+       <div class="card-footer users-card-footer">
+         <button type="button" class="item-cards__pagination-btn btn btn-primary" (click)="openModal(item.id)">Info</button>
+          <button type="button" class="item-cards__pagination-btn btn btn-danger" (click)="deleteUser(item.id)">Delete</button>
+       </div>
+     </div>
+    </div>
+ </div>
+</div>
+
+<div *ngIf="isInfoModelOpen" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>User Info</h2>
+    <p><strong>Name:</strong> {{ selectedUser.name }}</p>
+    <p><strong>Email:</strong> <a href="mailto:{{ selectedUser.email }}"> {{ selectedUser.email }}</a></p>
+    <p><strong>Phone:</strong> <a href="tel:{{ selectedUser.phone }}"> {{ selectedUser.phone }}</a></p>
+    <p><strong>Website:</strong> <a href="https://{{ selectedUser.website }}"> {{ selectedUser.website }}</a></p>
+
+    <strong>Address:</strong>
+    <ul>
+      <li>Street: {{ selectedUser.address.street }}</li>
+      <li>Suite: {{ selectedUser.address.suite }}</li>
+      <li>City: {{ selectedUser.address.city }}</li>
+      <li>Zipcode: {{ selectedUser.address.zipcode }}</li>
+    </ul>
+
+    <p><strong>Company:</strong> {{ selectedUser.company.name }}</p>
+    <p><strong>Catch Phrase:</strong> {{ selectedUser.company.catchPhrase }}</p>
+    <p><strong>Business Strategy:</strong> {{ selectedUser.company.bs }}</p>
+
+    <button class="btn" (click)="closeModal()">Close</button>
+  </div>
+</div>
