@@ -1,6 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 // const time = new Date().getTime();
 
@@ -50,57 +51,24 @@ import { RouterOutlet } from '@angular/router';
 
 // console.log(names [2]);
 
-const menuItems = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда'];
-const upperCaseMenuItems = menuItems.map(
-  (item) => {
-    return item.toUpperCase();
-  }
-)
-console.log(upperCaseMenuItems);
+// const user = {
+//   name: 'Ilnur',
+//   surnsme: 'Ryazhapov',
+//   height: 185,
+//   wegiht: 100
+// }
 
-//домашка задание 1
-const func2 = (punkt: string) => {return punkt};
-const newPunkt = func2('О компании');
+// // user.name = 'Petr'
 
-//домашка задание 3
-const newPages = [5, 4, 3, 2, 1];
-
-
-
+// console.log (user)
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor],
+  imports: [RouterOutlet, NgIf, NgFor, RouterLink, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'mentoring-first-project';
-
-  isShowCatalog = true;
-
-  isShowBanner = true; // дз задание 2
-
-  readonly headerItem1 = 'Главная';
-  readonly aboutCompany = newPunkt; //дз задание 1
-  // readonly headerItem2 = 'О компании';
-  readonly headerItem3 = 'Каталог';
-
-  readonly header2Item1 = upperCaseMenuItems[0];
-
-  MenuItems = upperCaseMenuItems;
-
-  readonly newPages = newPages; //дз задание 3
-
-  // дз задание 4
-  isUpperCase = true;
-  
-  changeMenuText() {
-    this.MenuItems = upperCaseMenuItems.map(
-      item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
-    )
-    this.isUpperCase = !this.isUpperCase
-  }
-
 }
