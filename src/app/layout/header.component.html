@@ -1,0 +1,65 @@
+<div class="header">
+    <div class="content-container-header">
+    <div class="header-left">
+        <div class="header-logo">
+          <img src="/assets/logo.svg" alt="logo">
+        </div>
+        <nav class="header-nav">
+          <div class="header-nav-item"><a routerLink="" style="text-decoration: none; color: white;">{{headerItem1}}</a></div>
+          <div class="header-nav-item">{{aboutCompany}}</div>
+          <div class="header-nav-item"  *ngIf="isShowCatalog">{{headerItem3}}</div>
+        </nav>
+      </div>
+      <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+      <button (click)="changeMenuText()">Изменить текст</button>
+      <button><a routerLink="users" style="text-decoration: none; color: #000;">adminka</a></button>
+      <div class="header-right">
+        <div class="header-phone">
+          <div class="header-phone-logo">
+            <img src="/assets/Phone.svg" alt="phone">
+          </div>
+          +7 (965) 084-29-29
+        </div>
+        <div class="header-right-fav">
+          <img src="/assets/heart.svg" alt="избранное">
+        </div>
+        <button class="header-cart">
+          <img src="/assets/buy.svg" alt="корзина">
+          <span style="color: white;">Пусто</span>
+        </button>
+      </div>
+    </div>
+    </div>
+  
+  <div class="topbar">
+    <div class="content-container-topbar">
+    <div class="topbar-left">
+      <div class="topbar-catalog">
+        <div class="topbar-logo">
+          <img src="/assets/light.svg" alt="kat">
+        </div>
+      </div>
+      <nav class="topbar-nav">
+        <div class="topbar-nav-item" *ngFor="let item of menuItems">{{item}}</div>
+        <!-- <div class="topbar-nav-item">{{header2Item2}}</div>
+        <div class="topbar-nav-item" >{{header2Item3}}</div>
+        <div class="topbar-nav-item">{{header2Item4}}</div>
+        <div class="topbar-nav-item">{{header2Item5}}</div> -->
+      </nav>
+    </div>
+   <div class="topbar-right">
+    <div>
+        <input
+        class="topbar-input" 
+        type="text"
+        placeholder="Поиск, например Круг зачистной">
+     <img src="/assets/Search.svg" alt="иконка поиска">
+      
+    </div>
+    <div class="topbar-geo">
+      <img src="/assets/mapa.svg" alt="">
+      Москва
+    </div>
+   </div>
+  </div>
+  </div>

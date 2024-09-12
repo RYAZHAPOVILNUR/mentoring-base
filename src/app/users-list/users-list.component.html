@@ -1,0 +1,17 @@
+
+<h1 class="users-title">Компонент списка юзеров</h1>
+
+
+<div class="users-block-container">
+    <div *ngFor = "let item of users" class="user-block">
+        <div>
+        <p>{{$any(item).name}}</p>
+        <p>{{$any(item).email}}</p>
+        <p>{{$any(item).phone}}</p>
+        <p>{{$any(item).website}}</p>
+        </div>
+        <div class="button-container">
+        <button (click)="deleteUser(item.id)" class="delete-user"> Удалить </button>
+        </div>
+    </div>
+</div>
