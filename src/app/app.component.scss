@@ -25,7 +25,7 @@
 }
 
 .nav {
-  margin-right: auto;
+  margin-right: 30px;
   color: #F9FAFB;
   font-weight: 600;
 
@@ -107,7 +107,24 @@
   font-size: 14px;
   font-weight: 600;
   margin-right: auto;
+
+  &__item:first-child>&__link {
+    padding-left: 26px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('./../assets/catalog-icon.svg');
+      width: 16px;
+      height: 24px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
 }
+
 
 .search-form {
   width: 400px;
@@ -242,7 +259,7 @@
   &__btn {
     color: #A1A0A0;
 
-    &.active {
+    &:first-child {
       color: #F0BA4E;
     }
   }
@@ -425,7 +442,7 @@
   }
 
   .goods-card {
-    width: 309px;
+    max-width: 309px;
     padding: 24px;
     position: relative;
     display: flex;
@@ -445,6 +462,10 @@
 
     &.sales.new-good .sales-icon {
       top: 75px;
+    }
+
+    &__img {
+      max-width: 100%;
     }
 
     &__like-btn {
@@ -768,4 +789,18 @@
   font-size: 14px;
   opacity: 0.6;
   color: #fff;
+}
+
+.hide-bg-btn {
+  margin: 5px;
+  background-color: #F0BA4E;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.change-text-btn {
+  margin-right: auto;
+  background-color: #F0BA4E;
+  border-radius: 30px;
+  padding: 10px;
 }

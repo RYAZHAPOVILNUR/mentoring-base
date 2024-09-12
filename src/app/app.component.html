@@ -8,11 +8,14 @@
         <ul class="nav__list">
           <li class="nav__item"><a href="#" class="nav__link">Главная</a></li>
           <li class="nav__item">
-            <a href="#" class="nav__link">О компании</a>
+            <a href="#" class="nav__link">{{ aboutCompany }}</a>
           </li>
           <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
         </ul>
       </nav>
+      <button class="change-text-btn" (click)="changeMenuText()">
+        Изменить текст
+      </button>
       <a href="tel:+79650842929" class="link-phone">
         <span class="link-phone__icon"></span>
         <span class="link-phone__text">+7 (965) 084-29-29</span>
@@ -26,22 +29,13 @@
   </div>
   <div class="header__bottom">
     <div class="container header__bottom-wrapper">
-      <button class="btn-catalog">
+      <!-- <button class="btn-catalog">
         <span class="btn-catalog__icon"></span>
         <span class="btn-catalog__text">Каталог</span>
-      </button>
+      </button> -->
       <ul class="categories">
-        <li class="categories__item">
-          <a href="#" class="categories__link">Стройматериалы</a>
-        </li>
-        <li class="categories__item">
-          <a href="#" class="categories__link">Инструменты</a>
-        </li>
-        <li class="categories__item">
-          <a href="#" class="categories__link">Электрика</a>
-        </li>
-        <li class="categories__item">
-          <a href="#" class="categories__link">Интерьер и одежда</a>
+        <li class="categories__item" *ngFor="let item of menuItems">
+          <a href="#" class="categories__link">{{ item }}</a>
         </li>
       </ul>
       <form action="" class="search-form">
@@ -56,7 +50,10 @@
     </div>
   </div>
 </header>
-<div class="main-bg">
+<button class="hide-bg-btn" (click)="isShowPhoto = !isShowPhoto">
+  Скрыть/Показать фото
+</button>
+<div class="main-bg" *ngIf="isShowPhoto">
   <div class="container main-bg__wrapper">
     <h1 class="main-bg__title">Инструмент для вашего бизнеса</h1>
   </div>
@@ -107,11 +104,9 @@
   <section class="catalog-items">
     <div class="container">
       <div class="catalog-items__btns">
-        <button class="catalog-items__btn active">1</button>
-        <button class="catalog-items__btn">2</button>
-        <button class="catalog-items__btn">3</button>
-        <button class="catalog-items__btn">4</button>
-        <button class="catalog-items__btn">5</button>
+        <button class="catalog-items__btn" *ngFor="let item of newPages">
+          {{ item }}
+        </button>
       </div>
       <div class="catalog-items__cards">
         <div class="catalog-card catalog-card--tools">
