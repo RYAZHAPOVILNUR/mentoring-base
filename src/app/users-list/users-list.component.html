@@ -1,9 +1,9 @@
 <div class="content-container">
     <div class="user-card" *ngFor="let item of users">
-        <p>{{$any(item).name}}</p>
-        <p>{{$any(item).email}}</p>
-        <p>{{$any(item).website}}</p>
-        <p>{{$any(item).company.name}}</p>
+        <p>{{item.name}}</p>
+        <p>{{item.email}}</p>
+        <p>{{item.website}}</p>
+        <p>{{item.company.name}}</p>
         <button class="delete" (click)="deleteUser(item.id)">Удалить юзера</button>
     </div>
 </div>

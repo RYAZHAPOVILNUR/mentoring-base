@@ -4,6 +4,29 @@ import { Comment } from "@angular/compiler";
 import { Component, inject, Injectable } from "@angular/core";
 
 // @Injectable()
+export interface User {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    address: {
+        street: string;
+        suite: string;
+        city: string;
+        zipcode: string;
+        geo: {
+            lat: string;
+            lng: string;
+        };
+    };
+    phone: string;
+    website: string;
+    company: {
+        name: string;
+        catchPhrase: string;
+        bs: string;
+    };
+}
 
 @Component({
     selector: 'app-users-list',
@@ -14,10 +37,10 @@ import { Component, inject, Injectable } from "@angular/core";
 })
 export class UsersListComponent {
     readonly apiService = inject(HttpClient);
-    users: any = [];
+    users: User[] = [];
 
         constructor() {
-        this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe(
+        this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
             (response: any) => {
                 this.users = response;
                 console.log('Users:', this.users)
@@ -27,7 +50,6 @@ export class UsersListComponent {
 
     deleteUser(id: number) {
         this.users = this.users.filter(
-            //@ts-ignore
             item => {
                 if (id === item.id) {
                     return false
