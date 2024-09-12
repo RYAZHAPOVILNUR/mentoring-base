@@ -183,13 +183,14 @@
       <nav class="header-nav">
         <!-- <div class="header-nav-item" *ngFor="let item of headerItems">{{item}}</div> -->
 
-        <div class="header-nav-item">{{headerItem1}}</div>
+        <div class="header-nav-item" routerLink="/">{{headerItem1}}</div>
         <div class="header-nav-item">{{headerItem2}}</div>
         <!-- <div class="header-nav-item">{{headerItem3}}</div> -->
         <div class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</div>
       </nav>
       <button (click)="isShowCatalog = !isShowCatalog">Show/hide Каталог</button>
     </div>
+    <button routerLink="users">ADMINka</button>
     <div class="header-right">
       <div class="header-right-item">
         <img src="/assets/Phone.svg" alt="tel" />
@@ -236,6 +237,8 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
+
 <button (click)="isShowBanner = !isShowBanner">Show/hide Banner</button>
 <div>
   <img src="/assets/banner.png" alt="man" style="width: 100%" *ngIf="isShowBanner"/>
@@ -1184,5 +1187,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet />
