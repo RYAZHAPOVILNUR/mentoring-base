@@ -1,0 +1,326 @@
+:root {
+  font-family: Inter;
+  --container-width: 1320px;
+  --container-padding-x: 15px;
+}
+
+html, body {
+  font-family: Inter;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: calc(var(--container-width) + (var(--container-padding-x)));
+  margin-inline: auto ;
+  padding-inline: var(--container-padding-x);
+}
+
+.button {
+  border: 1px solid #F0BA4E;
+  border-radius: 50px;
+  background-color: #4B565E;
+  color: #fff;
+  font-family: 'Inter';
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+} 
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.call {
+  margin-right: 40px ;
+  margin-left: 10px;
+  font-family: Inter;
+  display: flex;
+  align-items: center;
+}
+
+.tel {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
+.nav-container {
+  display: flex;
+  width: 1320px;
+  height: 128px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-items-container {
+  font-family: Inter;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.map {
+  display: flex;
+  color: #fff;
+}
+
+.map-pin {
+  margin-right: 4px;
+}
+
+.moscow {
+  font-family: Inter;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+  margin-left: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.white-color{
+  color: #FBFBFB;
+}
+
+.header-info-container{
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  justify-content: center;
+}
+
+.cart-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  width: 125px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #F0BA4E;
+  background-color: #4B565E;
+  color: white;
+  cursor: pointer;
+}
+
+header {
+  background-color: #4B565E;
+}
+
+.search-input {
+  margin-left: 130px;
+  margin-right: 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 400px;
+  height: 28px;
+  background: url("/assets/search.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.second-nav{
+  background: #F0BA4E;
+  display: flex;
+  justify-content: center;
+}
+
+.second-nav-container {
+  width: 1320px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
