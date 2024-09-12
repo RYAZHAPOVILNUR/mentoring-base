@@ -1,6 +1,8 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './layout/header.component';
+import { FooterComponent } from "./layout/footer.component";
 
 // let name = 'Elchin';
 
@@ -31,75 +33,11 @@ import { RouterOutlet } from '@angular/router';
 //   }
 // )
 
-const menuItems = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
-
-const upperCaseMenuItems = menuItems.map(
-  (item) => {
-    return item.toUpperCase();
-  }
-)
-
-// console.log(upperCaseMenuItems);
-
-const function1 = (menuItem: string) => (menuItem);
-
-const menuItem2 = function1('О компании');
-
-const pages = [1, 2 , 3, 4, 5]
-
-const newPages = pages.reverse()
-
-// console.log(newPages);
-
-
-
-
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor],
+  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'mentoring-first-project';
-
-  isShowCatalog = true;
-
-  isShowImage = true;
-
-  readonly aboutCompany = menuItem2;
-
-  newPages = newPages
-
-  readonly headerItem1 = 'Главная';
-
-  readonly headerItem3 = 'Каталог';
-
-  readonly header2Item1 = 'Каталог';
-
-  readonly header2Item2 = 'Стройматериалы';
-
-  readonly header2Item3 = 'Инструменты';
-
-  readonly header2Item4 = 'Электрика';
-
-  readonly header2Item5 = 'Интерьер и одежда';
-
-  menuItems = upperCaseMenuItems;
-
-  isUpperCase = true;
-
-changeMenuText() {
-  this.menuItems = upperCaseMenuItems.map(
-    (item) => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
-  )
-
-  this.isUpperCase = !this.isUpperCase
-}
-
-
-
-}
+export class AppComponent {}
