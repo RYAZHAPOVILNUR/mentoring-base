@@ -2,11 +2,12 @@ import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from "@angular/common/http";
 import { Component, inject, Injectable } from "@angular/core";
 import { User} from './user-interface'
+import { RouterLink } from '@angular/router';
 
 @Component({
       selector: 'app-users-list',
       standalone: true,
-      imports: [NgFor, NgIf], 
+      imports: [NgFor, NgIf, RouterLink], 
       templateUrl: './users-list.component.html',
       styleUrl: './users-list.component.scss',
 })
