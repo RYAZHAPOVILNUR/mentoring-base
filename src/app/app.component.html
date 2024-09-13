@@ -1,47 +1,7 @@
-<div class="header">
-  <div class="header-left">
-   <div class="header-logo">
-    <img src="/assets/frame.svg" alt="лого сайта">
-   </div> 
-    <nav class="header-nav">  
-      <div class="header-nav-item">{{HeaderItem1}}
-      </div>
-      <div class="header-nav-item">{{HeaderItem2}}</div>
-      <div class="header-nav-item" *ngIf="isShowCatalog">{{HeaderItem3}}</div>
-    </nav>
-    <button (click)="isShowCatalog = !isShowCatalog">Раскрыть/свернуть</button>
-    <button (click)="changeMenuText()">Изменить текст</button>
-  </div>
-  <div class="header-right">
-<img src="/assets/phone.svg" alt="phone icon">
-<a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> +7 (965) 084-29-29 </a>
-<img src="/assets/heart1.svg" alt="fav">
-<button type="button" class="cart"> 
-  <img class="img-cart" src="/assets/cart.svg" alt="cart">
-  <span class="empty">Пусто</span>
-</button>
-  </div>
-</div>
+<app-header></app-header>
+<router-outlet></router-outlet>
 
-<div class="bar">
-<div class="bar-left">
-    <div class="bar-logo">
-      <img src="/assets/menu.svg" alt="catalogue icon"> 
-    </div>
-    <nav class="bar-nav">
-      <a class="bar-nav-item" *ngFor="let item of MenuItems">{{item}}</a>
-      <!-- <button type="button" class="bar-nav-item">{{BarItem2}}</button>
-      <button type="button" class="bar-nav-item">{{BarItem3}}</button>
-      <button type="button" class="bar-nav-item">{{BarItem4}}</button>
-      <button type="button" class="bar-nav-item">{{BarItem5}}</button> -->
-    </nav>
-</div>
-<div class="bar-right">
-  <input type="text" class="input-with-icon" placeholder="Поиск, например Круг зачистной"> 
-  <img src="/assets/pin.svg" alt="map-pin">
-  <div class="location">{{BarLocation}}</div>
-  </div>
-</div>
+
 <button (click)="isShowBanner = !isShowBanner">Раскрыть/свернуть</button>
 <div>
   <img src="/assets/banner.svg" alt="баннер" style="width: 100%;" *ngIf="isShowBanner">

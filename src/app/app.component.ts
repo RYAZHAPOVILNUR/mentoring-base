@@ -1,11 +1,12 @@
 import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf,NgFor],
+  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -38,7 +39,7 @@ export class AppComponent {
 isUpperCase = true;
 
   changeMenuText () {
-    const upperCaseMenuItems = this.MenuItems.map(
+    this.MenuItems = this.MenuItems.map(
       (item: string) => this.isUpperCase ? item.toLowerCase(): item.toUpperCase()
       )
       this.isUpperCase = !this.isUpperCase
