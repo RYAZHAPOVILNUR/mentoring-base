@@ -1,4 +1,4 @@
-import { NgFor, NgIf} from '@angular/common';
+import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
 
   readonly  aboutCompany = (item: string) => {
@@ -29,11 +30,11 @@ export class AppComponent {
 
   MenuItems = ['Каталог', ' Стройматериалы',' Инструменты',' Электроника',' Интерьер и одежда']
 
-//  readonly upperCaseMenuItems = this.MenuItems.map (
-//    (item: string) => {
-//      return item.toUpperCase();
-//    }
-//   )
+ readonly upperCaseMenuItems = this.MenuItems.map (
+   (item: string) => {
+     return item.toUpperCase();
+   }
+  )
 
 isUpperCase = true;
 
@@ -45,4 +46,22 @@ isUpperCase = true;
     }
 
   title = 'mentoring-first-project';
+  readonly HeaderItem1 = 'Главная';
+  readonly HeaderItem2 = this.aboutCompanyResult;
+  readonly HeaderItem3 = 'Каталог';
+
+  readonly BarItem1 = this.MenuItems [0];
+  readonly BarItem2 = this.MenuItems [1];
+  readonly BarItem3 = this.MenuItems [2];
+  readonly BarItem4 = this.MenuItems [3];
+  readonly BarItem5 = this.MenuItems [4];
+  readonly BarLocation = 'Москва';
+
+}
+
+const name = 'Nika'
+if (name === 'Nika') {
+  console.log ('Name is Nika') 
+} else {
+  console.log ('ERROR')
 }
