@@ -1,26 +1,16 @@
-<<<<<<< Updated upstream
-=======
 import { NgFor, NgIf} from '@angular/common';
->>>>>>> Stashed changes
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
-<<<<<<< Updated upstream
-  imports: [RouterOutlet],
-=======
-  imports: [RouterOutlet, NgIf,NgFor,],
->>>>>>> Stashed changes
+  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-<<<<<<< Updated upstream
-=======
 
   readonly  aboutCompany = (item: string) => {
     return item 
@@ -54,6 +44,5 @@ isUpperCase = true;
       this.isUpperCase = !this.isUpperCase
     }
 
->>>>>>> Stashed changes
   title = 'mentoring-first-project';
 }
