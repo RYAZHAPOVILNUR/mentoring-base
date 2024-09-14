@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from "@angular/common/http";
 import { Component, inject, Injectable } from "@angular/core";
-import { User} from './user-interface'
+import { User } from './user-interface'
 import { RouterLink } from '@angular/router';
 
 @Component({
