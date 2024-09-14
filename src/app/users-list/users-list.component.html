@@ -1,0 +1,17 @@
+<div class="page__title">
+  <div class="page__title-text">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</div>
+</div>
+
+<div class="users-block">
+  <div class="users-decoration" *ngFor="let item of users">
+    <p class="one">{{ $any(item).name }}</p>
+
+    <p class="one">{{ $any(item).username }}</p>
+
+    <p class="one">{{ $any(item).website }}</p>
+
+    <p class="one">{{ $any(item).company.name }}</p>
+
+    <button (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+  </div>
+</div>

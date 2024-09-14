@@ -1,0 +1,74 @@
+<section class="header">
+  <div class="header-left">
+    <span class="header-logo">
+      <img src="assets/site-logo.svg" alt="ЛОГОТИП сайта" />
+    </span>
+
+    <nav class="header-nav">
+      <div class="header-nav-link">
+        <a class="header-nav-item" routerLink="/">{{ headerItem1 }}</a>
+
+        <a class="header-nav-item">{{ aboutCompany }}</a>
+
+        <a class="header-nav-item" *ngIf="isShowCatalog">{{ headerItem3 }}</a>
+      </div>
+    </nav>
+    <button class="button" (click)="isShowCatalog = !isShowCatalog">
+      Каталог
+    </button>
+
+    <button class="button" (click)="changeMenuText()">текст</button>
+
+    <button class="button__users" routerLink="/users">Админка</button>
+  </div>
+
+  <div class="header-right">
+    <div class="header-logo-reversed">
+      <img src="assets/phone.svg" alt="телефон" />
+    </div>
+
+    <nav class="header__nav">
+      <a class="header__nav-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
+
+      <div class="header__nav-item">
+        <img src="assets/heart.svg" alt="лайк" />
+      </div>
+
+      <div class="header__nav-item">
+        <div class="header__cart">
+          <button class="header__cart-text">
+            <img
+              class="header__cart-img"
+              src="assets/header__cart-icon.svg"
+              alt="иконка-корзинки"
+            />Пусто
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="header-bottom">
+  <div class="header-bottom-left">
+    <div class="header-bottom-logo">
+      <img src="assets/three__stripe-icon.svg" alt="рисунок каталога" />
+    </div>
+
+    <nav class="bottom-left-nav">
+      <div class="left-nav-link">
+        <a class="left-nav-item" *ngFor="let item of menuItems">{{ item }}</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="header-right">
+    <div class="header-bottom-search">
+      <input type="text" placeholder="Поиск, например Круг зачистной" />
+    </div>
+
+    <div class="header-location">
+      <img src="assets/location.svg" alt="геопозиция" />
+    </div>
+  </div>
+</section>
