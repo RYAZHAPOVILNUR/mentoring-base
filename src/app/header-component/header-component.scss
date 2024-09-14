@@ -1,0 +1,76 @@
+.header-section {
+  width: 100%;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color:#4B565E;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.main-header-nav, .second-main-header-nav, .second-header-nav, .second-header-nav-module {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav-text {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 600px;
+  line-height: 19px;
+  color: #F9FAFB;
+  padding-right: 24px;
+}
+
+.button-properties {
+  display: flex;
+  align-items: center;
+  width: 126px;
+  height: 48px;
+  border-radius: 50px;
+  border: 1px solid #F0BA4E;
+  padding: 10px 20px 10px 20px;
+  background-color: #4B565E;
+  color: #F9FAFB;
+  font-size: 16px;
+  font-weight: 500px;
+  line-height: 19px;
+}
+
+.button-image {
+  padding-right: 10px;
+}
+
+.second-header {
+  height: 48px;
+  background-color: #F0BA4E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.second-nav-text {
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 600px;
+  line-height: 16px;
+  color: #3C3C3B;
+  padding-right: 24px;
+}
+
+.second-nav-text-module {
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 500px;
+  line-height: 14px;
+  color: #FFFFFF;
+  padding-right: 24px;
+}
+
+

@@ -1,0 +1,41 @@
+<section class="header-section">
+  <header class="main-header">
+      <nav class="main-header-nav">
+          <img class="header-icon main-nav-text" src="../assets/Header-icon.svg" alt="Иконка сайта">
+          <span class="main-nav-text">{{headerItemFirst}}</span>
+          <span class="main-nav-text">{{aboutCompany}}</span>
+          <span class="main-nav-text" *ngIf="isShowCatalog">{{headerItemThird}}</span>
+          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать О Компании</button>
+          <button>Изменить размер текста</button>
+      </nav>
+      <nav class="second-main-header-nav">
+          <img class="main-nav-text phone-icon" src="../assets/Phone-icon.svg" alt="Иконка телефона">
+          <span class="main-nav-text">{{mainheaderitem4}}</span>
+          <img class="main-nav-text" src="../assets/Heart-icon.svg" alt="Иконка сердца">
+          <button class="main-nav-text button-properties">
+              <img class="button-image" src="../assets/Basket-icon.svg" alt="Иконка корзины">
+              <span class="button-text">Пусто</span>
+          </button>
+      </nav>
+  </header>
+  <div class="second-header">
+      <nav class="second-header-nav">
+          <img class="second-nav-text catalog-icon" src="../assets/Catalog-icon.svg" alt="Иконка каталога">
+          <span class="second-nav-text">{{headerTwoItemFirst}}</span>
+          <span class="second-nav-text">{{headerTwoItemSecond}}</span>
+          <span class="second-nav-text">{{headerTwoItemThird }}</span>
+          <span class="second-nav-text">{{headerTwoItemFourth}}</span>
+          <span class="second-nav-text">{{headerTwoItemFifth}}</span>
+      </nav>
+      <nav class="second-header-nav-module">
+          <form action="">
+            <input class="second-nav-text-module search-input" type="text" placeholder="Поиск, например Круг зачистной">
+          </form>
+          <img class="second-nav-text-module search-icon" src="../assets/Mask group.svg" alt="">
+          <img class="location-icon" src="../assets/Map-pin-icon 1.svg" alt="">
+          <span class="search-region">Москва</span>
+      </nav>
+  </div>
+</section>
+
+

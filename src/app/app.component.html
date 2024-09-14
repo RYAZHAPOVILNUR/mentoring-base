@@ -1,43 +1,8 @@
 
-<section class="header-section">
-  <header class="main-header">
-      <nav class="main-header-nav">
-          <img class="header-icon main-nav-text" src="../assets/Header-icon.svg" alt="Иконка сайта">
-          <span class="main-nav-text">{{mainheaderitem1}}</span>
-          <span class="main-nav-text">{{aboutCompany}}</span>
-          <span class="main-nav-text">{{mainheaderitem3}}</span>
-          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать О Компании</button>
-          <button (click)="changeMenuText()">Изменить размер текста</button>
-      </nav>
-      <nav class="second-main-header-nav">
-          <img class="main-nav-text phone-icon" src="../assets/Phone-icon.svg" alt="Иконка телефона">
-          <span class="main-nav-text">{{mainheaderitem4}}</span>
-          <img class="main-nav-text" src="../assets/Heart-icon.svg" alt="Иконка сердца">
-          <button class="main-nav-text button-properties">
-              <img class="button-image" src="../assets/Basket-icon.svg" alt="Иконка корзины">
-              <span class="button-text">Пусто</span>
-          </button>
-      </nav>
-  </header>
-  <div class="second-header">
-      <nav class="second-header-nav">
-          <img class="second-nav-text catalog-icon" src="../assets/Catalog-icon.svg" alt="Иконка каталога">
-          <span class="second-nav-text">{{yellowheader1}}</span>
-          <span class="second-nav-text">{{yellowheader2}}</span>
-          <span class="second-nav-text">{{yellowheader3}}</span>
-          <span class="second-nav-text">{{yellowheader4}}</span>
-          <span class="second-nav-text">{{yellowheader5}}</span>
-      </nav>
-      <nav class="second-header-nav-module">
-          <form action="">
-            <input class="second-nav-text-module search-input" type="text" placeholder="Поиск, например Круг зачистной">
-          </form>
-          <img class="second-nav-text-module search-icon" src="../assets/Mask group.svg" alt="">
-          <img class="location-icon" src="../assets/Map-pin-icon 1.svg" alt="">
-          <span class="search-region">Москва</span>
-      </nav>
-  </div>
-</section>
+<app-header></app-header>
+<app-users-list></app-users-list>
+<router-outlet></router-outlet>
+
 <section class="main-picture">
   <button (click)="isShowWorker = !isShowWorker">Скрыть/Показать мужика</button>
   <div class="main-picture-block" *ngIf="isShowWorker">
@@ -70,7 +35,7 @@
 </section>
 <div class="item-cards_pagination">
 
-    <button *ngFor="let item of newPages" class="item-cards__pagination-button active-button">{{item}}</button>
+    <button class="item-cards__pagination-button active-button"></button>
 </div>
 <section class="product-cards-section">
   <div class="product-cards-block">

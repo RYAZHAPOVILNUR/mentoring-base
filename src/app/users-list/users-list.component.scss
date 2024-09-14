@@ -1,0 +1,27 @@
+.users-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.users-component-items {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+}
+
+.delete-button {
+  font-size: 16px;
+  font-weight: 500px;
+  line-height: 19px;
+  color: #3C3C3B;
+  width: 135px;
+  height: 47px;
+  border-radius: 54px;
+  border: 1px solid #F0BA4E;
+  background-color: #FFFFFF;
+}
+
+
