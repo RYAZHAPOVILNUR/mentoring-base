@@ -1,0 +1,719 @@
+// Шапка страницы
+
+.header {
+  color: white;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  background-color: #4b565e;
+}
+
+.content-container-header {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 80px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  width: 426px;
+  gap: 40px;
+}
+
+.header-logo {
+  margin-right: 20px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header-nav-item {
+  display: flex;
+}
+
+.button-box {
+  display: flex;
+  align-items: center;
+  background-color: #4b565e;
+  border: 1px solid #f0ba4e;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px 10px 20px;
+}
+
+.box {
+  margin-left: 10px;
+}
+
+.logo-phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content-header-2 {
+  background-color: #f0ba4e;
+}
+
+.header-2 {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 48px;
+}
+
+.header-logo-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left-2 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-nav-item {
+  font-family: inter;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f9fafb;
+}
+
+.header-nav-item-2 {
+  font-family: inter;
+  font-weight: 600;
+  font-size: 14px;
+  color: #3c3c3b;
+}
+
+.header-nav-2 {
+  display: flex;
+  font-size: 14px;
+  gap: 24px;
+}
+
+.header-right-2 {
+  display: flex;
+  align-items: center;
+  width: 483px;
+}
+
+.search {
+  display: flex;
+  align-self: flex-end;
+  width: 400px;
+  border: none;
+  background-color: #f0ba4e;
+  border-bottom: 1px solid #3c3c3b;
+}
+
+.search-field {
+  display: flex;
+  align-content: center;
+  width: 376px;
+}
+
+.logo-search {
+  position: relative;
+  margin: 0 0 5px -20px;
+}
+
+.country {
+  border: none;
+  color: white;
+  background-color: #f0ba4e;
+  margin-left: 5px;
+}
+
+.map {
+  display: flex;
+  margin-left: 10px;
+}
+
+// Общая информация о
+
+.info-cards-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-cards-item-block {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  width: 421px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.content-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.item-cards__pagination {
+  display: flex;
+  justify-content: end;
+
+  &-button {
+    font-family: inter;
+    border: none;
+    background: none;
+    color: #a1a0a0;
+  }
+}
+
+.active-button {
+  color: #f0ba4e;
+  font-weight: 600;
+}
+
+.item-cards-grid {
+  display: flex;
+  gap: 18px;
+}
+
+.item-cards-grid-left {
+  min-height: 428px;
+  min-width: 421px;
+  box-shadow: 0px 20px 50px 0px #3c3c3b12;
+  max-height: 428px;
+  max-width: 421px;
+  background-image: url(/assets/image_19.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-position-y: bottom;
+  background-position-x: left;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-card__grid-left-text {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 600px;
+}
+
+.item-cards__grid-left-action {
+  display: flex;
+  align-items: center;
+  align-self: end;
+}
+
+.go-catalog {
+  margin-right: 10px;
+}
+
+.item-cards__grid-left-action-link {
+  width: 40px;
+  height: 40px;
+}
+
+.item-cards__grid-right {
+  display: flex;
+  width: 900px;
+  height: 400px;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.item-cards__grid-right-block {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 421px;
+  height: 200px;
+  box-shadow: 0px 20px 50px 0px #3c3c3b12;
+}
+
+.block-1 {
+  background: url(/assets/spray-paint.svg) no-repeat;
+  background-position-y: bottom;
+  background-position-x: left;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: end;
+}
+
+.block-1_text-1 {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 600px;
+}
+
+.block-1-text-action,
+.block-2-text-action,
+.block-3-text-action,
+.block-4-text-action {
+  display: flex;
+  align-items: center;
+}
+
+.block-1,
+.block-2,
+.block-3,
+.block-4 {
+  padding: 15px;
+}
+
+.block-2 {
+  background: url(/assets/bucket.png) no-repeat;
+  background-position-y: bottom;
+  background-position-x: right;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+}
+
+.block-2-text-action {
+  display: flex;
+  align-items: center;
+}
+
+.block-3 {
+  background: url(/assets/foam.png) no-repeat;
+  background-position-y: bottom;
+  background-position-x: right;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+}
+
+.block-3-text-action {
+  display: flex;
+  align-items: center;
+}
+
+.block-4 {
+  background: url(/assets/socket.png) no-repeat;
+  background-position-y: bottom;
+  background-position-x: left;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: end;
+}
+
+.block-1_text-1 {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 600px;
+}
+
+// Популярные товары
+
+.popular-container {
+  width: 1412px;
+  margin: 0 auto;
+}
+
+.block-popular {
+  max-width: 1320px;
+  height: 491px;
+  padding: 0 46px;
+}
+
+.popular-left-button {
+  position: relative;
+  top: 280px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: none;
+  border-radius: 36px;
+}
+
+.popular-right-button {
+  position: relative;
+  top: 280px;
+  left: 1288px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: none;
+  border-radius: 36px;
+}
+
+.popular-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.left {
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.right {
+  color: #f0ba4e;
+  font-weight: 600;
+  border: none;
+  background: none;
+}
+
+.popular-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 1320px;
+}
+
+.popular-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 309px;
+  height: 429px;
+  gap: 8px;
+  box-shadow: 0px 20px 50px 0px rgba(18, 17, 39, 0.08);
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.card-container {
+  width: 261px;
+  margin: 0 auto;
+}
+
+.photo-items {
+  background: url(/assets/bolgarian-music.png) no-repeat;
+  background-position-x: center;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.item-icon-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-items {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-percent {
+  position: relative;
+  right: 146px;
+  top: 56px;
+}
+
+.popular-card-price-header {
+  color: #3c3c3b;
+}
+
+.popular-card-price {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3c3c3b;
+}
+
+.popular-card-article {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.popular-price-piece {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #a1a0a0;
+  margin: 0%;
+  margin-top: 20px;
+}
+
+.first-price {
+  text-decoration: line-through;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3c3c3b;
+  margin-right: 15px;
+}
+
+.second-price {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3c3c3b;
+}
+
+.add-to-box {
+  font-size: 16px;
+  border: 1px solid #f0ba4e;
+  width: 135px;
+  height: 47px;
+  border-radius: 54px;
+  background-color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.popular-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.popular-card-quantity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3c3c3b;
+}
+
+.adjust-count {
+  font-size: 20px;
+  word-spacing: 5px;
+  margin-top: 10px;
+}
+
+// Рекламная карточка
+
+.about-store-container {
+  width: 1320px;
+  margin: 56px auto;
+  height: 251px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-store {
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f6f6f6;
+}
+
+.block-text-store {
+  padding-left: 28px;
+}
+
+.store-header-top {
+  font-size: 28px;
+  font-weight: 500;
+  color: #3c3c3b;
+  font-family: inter;
+}
+
+.store-header-bottom {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inter;
+  color: #a1a0a0;
+}
+
+.store-footer-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f0ba4e;
+  font-family: inter;
+  margin-top: 89px;
+}
+
+.picture-man-store {
+  padding-right: 16px;
+}
+
+footer {
+  color: white;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  background-color: #4b565e;
+}
+
+.footer-container {
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 373px;
+}
+
+.footer-top-side {
+  display: flex;
+  justify-content: space-between;
+  width: 1320px;
+  height: 230px;
+  margin-top: 34px;
+}
+
+.footer-left .footer-right {
+  width: 534px;
+  height: 162px;
+}
+
+.question {
+  font-family: inter;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 21px;
+}
+
+.inter-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 534px;
+  height: 48px;
+  border: 1px solid #f0ba4e;
+  border-radius: 30px;
+}
+
+.inter-email-left {
+  width: 176px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inter-email-right {
+  width: 352px;
+  height: 36px;
+  text-align: end;
+}
+
+.message-icon {
+  margin-left: 11px;
+}
+
+.inter-your-mail {
+  font-family: inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff99;
+}
+
+.inter-email-right-button {
+  font-family: inter;
+  font-weight: 700;
+  font-size: 10px;
+  width: 94px;
+  height: 36px;
+  background-color: #f0ba4e;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+.footer-text {
+  font-family: inter;
+  width: 534px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff99;
+  line-height: 24px;
+}
+
+.footer-text {
+  flex-wrap: wrap;
+}
+
+.footer-bottom {
+  width: 1320px;
+  height: 143px;
+}
+
+.contacts {
+  display: flex;
+  width: 425px;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.contacts-phone {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.tel {
+  font-family: inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff99;
+}
+
+.phones {
+  font-family: inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.email {
+  font-family: inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff99;
+}
+
+.email-name {
+  font-family: inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.contacts-email {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.top {
+  display: flex;
+  gap: 28px;
+  font-family: inter;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-networks {
+  display: flex;
+  gap: 20px;
+}
