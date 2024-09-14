@@ -1,4 +1,3 @@
-// 1
 const data =
 [
   {
@@ -49,7 +48,7 @@ const data =
   },
   {
     "id": 3,
-    "name": "Clementine Bauch",
+    "name": "Clementine Bauch", 
     "username": "Samantha",
     "email": "Nathan@yesenia.net",
     "address": {
@@ -393,7 +392,7 @@ console.log({task5})
 
 //6 Вывести всех пользователей в обратном порядке
 
-const task6 = data.reverse (el => []);
+const task6 = data.reverse();
 console.log ({task6})
 
 /*
