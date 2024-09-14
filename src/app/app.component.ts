@@ -9,34 +9,35 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
   title = 'mentoring-first-project';
   readonly headerItem1: string = 'Главная';
-  // readonly headerItem2: string = 'О компании';
-  // headerItem2: string = aboutCompany;
-  // headerItem2;
+        // readonly headerItem2: string = 'О компании';
+        // headerItem2: string = aboutCompany;
+        // headerItem2;
   headerItem2 = aboutCompany;
   readonly headerItem3: string = 'Каталог';
-  // headerItems = upperCaseHeaderItems;
+        // headerItems = upperCaseHeaderItems;
   isShowCatalog = true;
 
   isShowBanner = true;
 
-  // readonly headerNavItem1 = 'Каталог';
-  // readonly headerNavItem2 = 'Стройматериалы';
-  // readonly headerNavItem3 = 'Инструменты';
-  // readonly headerNavItem4 = 'Электрика';
-  // readonly headerNavItem5 = 'Интерьер и одежда';
+        // readonly headerNavItem1 = 'Каталог';
+        // readonly headerNavItem2 = 'Стройматериалы';
+        // readonly headerNavItem3 = 'Инструменты';
+        // readonly headerNavItem4 = 'Электрика';
+        // readonly headerNavItem5 = 'Интерьер и одежда';
 
-  // readonly headerNavItem1 = upperCaseMenuItems[0];
-  // readonly headerNavItem2 = upperCaseMenuItems[1];
-  // readonly headerNavItem3 = upperCaseMenuItems[2];
-  // readonly headerNavItem4 = upperCaseMenuItems[3];
-  // readonly headerNavItem5 = upperCaseMenuItems[4];
+        // readonly headerNavItem1 = upperCaseMenuItems[0];
+        // readonly headerNavItem2 = upperCaseMenuItems[1];
+        // readonly headerNavItem3 = upperCaseMenuItems[2];
+        // readonly headerNavItem4 = upperCaseMenuItems[3];
+        // readonly headerNavItem5 = upperCaseMenuItems[4];
 
   menuItems = upperCaseMenuItems;
 
-  // menuItems = menuItems;
+        // menuItems = menuItems;
 
   readonly newPages = [5, 4, 3, 2, 1];
 

@@ -1,0 +1,113 @@
+.header-grey{
+    background-color: #4b565e;
+}
+
+.header-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    background-color: #4b565e;
+  }
+  
+.headerGrey-container {
+    background-color: #4b565e;
+  }
+  .headerGrey {
+    height: 80px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 0 240px;
+    font-size: 16px;
+    font-weight: bold;
+    // margin-left: auto;
+    // text-align: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  .header-logo {
+    margin-right: 20px;
+  }
+  .header-nav {
+    display: flex;
+  }
+  .header-nav-item {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .header-nav-item:hover {
+   background-color: black; 
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  .header-right-item {
+    margin-right: 30px;
+    display: flex;
+    color: white;
+    align-items: center;
+  }
+  .header-tel {
+    margin-left: 10px;
+    color: white;
+  }
+  .header-button {
+    background-color: #4b565e;
+    display: flex;
+    color: white;
+    align-items: center;
+    border: 2px solid #f0ba4e;
+    border-radius: 50px;
+  }
+  
+  .headerYellow{
+    background-color: #f0ba4e;
+  }
+  .headerYellow-container {
+    background-color: #f0ba4e;
+  }
+  .header-yellow {
+    height: 48px;
+    color: #4b565e;
+    background-color: #f0ba4e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 0 240px;
+    font-size: 14px;
+    font-weight: bold;
+    // margin-left: auto;
+    // text-align: center;
+  }
+  .header-yellow-left {
+    display: flex;
+    align-items: center;
+  }
+  .header-yellow-nav {
+    display: flex;
+    align-items: center;
+  }
+  .header-yellow-right {
+    display: flex;
+  }
+  .header-input {
+    width: 300px;
+    background-color: #f0ba4e;
+    border: none;
+    font-size: 13px;
+    border-bottom: solid;
+    outline: none;
+  }
+  .header-poisk {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    color: white;
+  }
+  .btn-catalog{
+    cursor: pointer;
+  }
