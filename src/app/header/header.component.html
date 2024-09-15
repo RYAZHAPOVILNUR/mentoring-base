@@ -10,11 +10,11 @@
                     <a class="header-nav-item">{{aboutCompany}}</a>
                     <a class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</a>
                 </nav>
-                <button (click)="isShowCatalog = !isShowCatalog"> скрыть/показать каталог</button>
-                <button (click)="changeMenuText()">изменить текст</button>
+                <button class="go" (click)="isShowCatalog = !isShowCatalog"> скрыть/показать каталог</button>
+                <button class="go" (click)="changeMenuText()">изменить текст</button>
             </div>
             <div class="header-right">
-                <button routerLink="/users" routerLinkActive="active-link">Админка</button>
+                <button class="go" routerLink="/users" routerLinkActive="active-link">Админка</button>
                 <div class="header-Phone">
                     <div>
                         <img src="/assets/phone.svg" alt="телефон">
@@ -30,6 +30,7 @@
                     </div>
                     <span>Пусто</span>
                 </button>
+                <button class="go" routerLink="/dz" routerLinkActive="active-link">Дополнительные задачи</button>
             </div>
         </div>
     </div>

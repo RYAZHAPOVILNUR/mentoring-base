@@ -22,9 +22,7 @@ const newElement = func2('О компании');
     standalone: true
 })
 export class HeaderComponent {
-    isShowCatalog = true;
-
- 
+    isShowCatalog = true; 
 
   readonly headerItem1 = 'Главная';
   readonly aboutCompany = newElement; //дз задание 1
@@ -35,9 +33,7 @@ export class HeaderComponent {
 
   MenuItems = upperCaseMenuItems;
 
-  
-
-  // дз задание 4
+    // дз задание 4
   isUpperCase = true;
   
   changeMenuText() {

@@ -1,0 +1,92 @@
+<div class="content-container">
+  <div class="box">
+    <h2>Задание 1</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="user-card" *ngFor="let item of users">
+        <p>{{ item.id }}</p>
+        <p>{{ item.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 2</h2>
+    <ul>
+      <li *ngFor="let item of users">
+        {{ item.email }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>Задание 3</h2>
+    <div>
+      <img src="assets/work3.png" />
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 4</h2>
+    <div *ngFor="let item of users4" class="user-card">
+      <p>{{ item.id }}</p>
+      <p>{{ item.name }}</p>
+      <p>{{ item.address.city }}</p>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 5</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div *ngFor="let item of users5" class="user-card">
+        <p>{{ item.id }}</p>
+        <p>{{ item.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 6</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="user-card" *ngFor="let item of users6">
+        <p>{{ item.id }}</p>
+        <p>{{ item.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 7</h2>
+    <div class="user-card">{{ ask }} пользователей</div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 8</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="user-card" *ngFor="let item of users8">
+        <p>{{ item.id }}</p>
+        <p>{{ item.name }}</p>
+        <p>{{ item.website }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 9</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="user-card" *ngFor="let item of users9">
+        <p>{{ item.id }}</p>
+        <p>{{ item.name }}</p>
+        <p>{{ item.username }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Задание 10</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div *ngFor="let item of users10" class="user-card">
+        <p>{{item}}</p>
+      </div>
+    </div>
+  </div>
+</div>
