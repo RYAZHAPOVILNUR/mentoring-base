@@ -110,3 +110,28 @@
 .bar-right {
 display: flex;
 }
+
+.button {
+  border-radius: 50px;
+  margin-left: 20px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1;
+  background-color: #4B565E;
+  color: white;
+  border-color: #F0BA4E;
+  display: flex;
+}
+
+.Admin {
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 15px;
+  border-style: solid;
+  border-width: 1;
+  background-color: #4B565E;
+  color: white;
+  border-color: #F0BA4E;
+  display: flex;
+}

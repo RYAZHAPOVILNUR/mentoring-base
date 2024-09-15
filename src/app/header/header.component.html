@@ -4,15 +4,15 @@
     <img src="/assets/frame.svg" alt="лого сайта">
    </div> 
     <nav class="header-nav">  
-      <div class="header-nav-item">{{HeaderItem1}}
-      </div>
+      <div class="header-nav-item" routerLink="/">{{HeaderItem1}}</div>
       <div class="header-nav-item">{{HeaderItem2}}</div>
       <div class="header-nav-item" *ngIf="isShowCatalog">{{HeaderItem3}}</div>
     </nav>
-    <button (click)="isShowCatalog = !isShowCatalog">Раскрыть/свернуть</button>
-    <button (click)="changeMenuText()">Изменить текст</button>
+    <button class="button" (click)="isShowCatalog = !isShowCatalog">Раскрыть/свернуть</button>
+    <button class="button" (click)="changeMenuText()">Изменить текст</button>
   </div>
   <div class="header-right">
+    <a routerLink="/users" class="Admin">Админка</a>
 <img src="/assets/phone.svg" alt="phone icon">
 <a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> +7 (965) 084-29-29 </a>
 <img src="/assets/heart1.svg" alt="fav">

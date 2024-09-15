@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, inject, Injectable } from "@angular/core";
-import { RouterLink } from '@angular/router';
+import { Component } from "@angular/core";
+import { RouterLink} from '@angular/router';
 
 const  aboutCompany = (item: string) => {
   return item 

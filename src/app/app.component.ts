@@ -2,11 +2,12 @@ import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { homeworkComponent } from './HW/homework.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent],
+  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent,homeworkComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

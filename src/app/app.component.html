@@ -1,8 +1,7 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
 
-
-<button (click)="isShowBanner = !isShowBanner">Раскрыть/свернуть</button>
+<button class="button" (click)="isShowBanner = !isShowBanner">Раскрыть/свернуть</button>
 <div>
   <img src="/assets/banner.svg" alt="баннер" style="width: 100%;" *ngIf="isShowBanner">
 </div>
