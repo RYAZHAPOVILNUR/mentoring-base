@@ -30,25 +30,7 @@ console.log(callRecording);
 export class AppComponent {
   title = 'mentoring-first-project';
 
-  menuItems = ['Каталог', 'Инструменты', 'Электрика', 'Интерьер и одежда'];
-
-  isUppercase = true;
-
-  changeMenuText() {
-    this.menuItems = this.menuItems.map(
-      item => this.isUppercase ? item.toLowerCase() : item.toUpperCase()
-    )
-
-    this.isUppercase = !this.isUppercase
-  }
-
-  isUsersPage = true;
-
   newPages = newPages;
-
-  isShowCatalog = true;
-
-  isShowPage = true;
 
   isShowMan = true;
 

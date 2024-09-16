@@ -1,33 +1,10 @@
 import { NgFor } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component, inject } from "@angular/core";
-import { RouterLink, RouterModule } from "@angular/router";
+import { RouterLink,  } from "@angular/router";
+import { User } from "./user__interface";
 
-export interface User {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
 
-    address: {
-        street: string;
-        suite: string;
-        city: string;
-        zipcode: string;
-        geo: {
-            lat: string;
-            Ing: string;
-        };
-        
-        phone: string;
-        website: string;
-        company: {
-            name: string;
-            catchPhrase: string;
-            bs: string;
-        };
-    }
-}
 
 @Component({
     selector: 'app-users-list',

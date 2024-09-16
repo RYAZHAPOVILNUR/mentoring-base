@@ -4,14 +4,10 @@
 
 <div class="users-block">
   <div class="users-decoration" *ngFor="let item of users">
-    <p class="one">{{ $any(item).name }}</p>
-
-    <p class="one">{{ $any(item).username }}</p>
-
-    <p class="one">{{ $any(item).website }}</p>
-
-    <p class="one">{{ $any(item).company.name }}</p>
-
-    <button (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+    <p>{{ item.name }}</p>
+    <p>{{ item.email }}</p>
+    <p>{{ $any(item).website }}</p>
+    <p>{{ $any(item).company.name }}</p>
+    <button (click)="deleteUser(item.id)">Удалить юзера</button>
   </div>
 </div>

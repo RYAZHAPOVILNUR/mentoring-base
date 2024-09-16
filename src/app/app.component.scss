@@ -3,6 +3,7 @@
 .safety__helmet-man {
   position: relative;
   text-align: center;
+  transition: 1s, 1s, 1s;
 
   .helmet__man-text {
     width: 543px;
@@ -23,9 +24,8 @@
 }
 
 .safety__helmet-button:hover {
-  font-weight: 600;
-  color: white;
-  background-color: black;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 // section-.content-container

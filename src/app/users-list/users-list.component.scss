@@ -1,19 +1,14 @@
 .page__title {
     display: flex;
     justify-content: center;
+    
 
     .page__title-text {
         font-size: 30px;
-            margin-top: 2%;
-            width: 470px;
-            font-weight: 600;
-            transition: 1s, 1s, 1s,;
-        }
-        
-        .page__title-text:hover {
-            background-color: #A1A0A0;
-            color: #fff;
-            transform: scale(1.1);
+        margin-top: 2%;
+        width: 600px;
+        font-weight: 600;
+        transition: 1s, 1s, 1s,;
         }
 }
 
@@ -24,54 +19,30 @@
   padding-right: 180px;
   gap: 20px;
   font-family: Inter;
-  margin-top: 50px;
-  margin-bottom: 5%;
+
+  button {
+    height: 13%;
+    margin-right: 10px;
+    background-color: transparent;
+    color: black;
+    border: solid 1px #f0ba4e;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  button:hover{ 
+    background-color: #f0ba4e;
+  }
 
   .users-decoration {
+    margin-top: 3%;
+    margin-bottom: 3%;
     padding-left: 30px;
     width: 230px;
     height: 230px;
-    box-shadow: 0px 20px 50px 0px #13131339;
-    transition-duration: 1s, 1s, 1s;
-
-    .one {
-        transition:  1s, 1s;
-        margin-top: 23px;
-        cursor: pointer;
-    }
-
-    .one:hover {
-        font-size: x-large;
-        color: #000080;
-      }
-      
-      button {
-        border-radius: 20px;
-        width: 165px;
-        height: 30px;
-        font-size: 13px;
-        font-weight: 500;
-        border: 1px solid #f0ba4e;
-        background-color: transparent;
-        cursor: pointer;
-        transition-duration: 1s, 2s;
-      }
-      
-      button:hover {
-        color: #fff;
-        background-color: black;
-        transform: scale(1.1);
-      }
+    box-shadow: 0px 20px 50px 0px #98969639;
   }
 
-  .users-decoration:hover {
-    transform: scale(1.1);
-    background-color: #FFFFF0 ;
-  }
 }
-
-
-
-
 
 

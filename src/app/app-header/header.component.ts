@@ -16,6 +16,8 @@ const newCaller = func2('О Компании');
 })
 
 export class headerComponent {
+    isShowMan = true;
+
     headerItem1 = 'Главная';
 
     headerItem3 = 'Каталог';
@@ -35,5 +37,4 @@ export class headerComponent {
   
       this.isUppercase = !this.isUppercase;
     }
-
 }
