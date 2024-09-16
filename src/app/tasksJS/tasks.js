@@ -588,13 +588,13 @@ console.log({task9})
  */
 
 //10 Привести список всех username где каждый будет в нижнем регистре
-const task10 = data.reduce((acc, curr) => [...acc, curr.username.toLocaleLowerCase()], []);
+const task10 = data.reduce((acc, curr) => [...acc,curr.username.toLocaleLowerCase()], []);
 console.log({task10})
 
 /* 
 {
   task10: [
-    'moriah.stanton',
+    'moriah.stanton',мето
     'delphine',
     'maxime_nienow',
     'elwyn.skiles',
