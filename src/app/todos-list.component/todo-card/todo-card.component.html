@@ -1,0 +1,17 @@
+<div class="users-decoration">
+  <p>ТЕКСТ ЗАДАЧИ:</p>
+  <div class="todos-title">
+    <p>{{ todo.title }}</p>
+  </div>
+
+  <p>АВТОР ЗАДАЧИ</p>
+  <div>
+    <p>{{ todo.userId }}</p>
+  </div>
+
+  <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+  <div>
+    <p>{{ todo.completed ? "ДА" : "НЕТ" }}</p>
+  </div>
+  <button class="button" (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
+</div>

@@ -4,6 +4,9 @@
 
 <div class="users-block">
   <div class="users-decoration" *ngFor="let user of users">
-    <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+    <app-user-card
+      [user]="user"
+      (deleteUser)="deleteUser($event)"
+    ></app-user-card>
   </div>
 </div>
