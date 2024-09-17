@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+component LIST of TODOS
+
+<!-- {{ $any(users[0]).name }} -->
+
+<div style="display: flex; width: 100%; flex-wrap: wrap;">
+    <div *ngFor="let todo of todos">
+       <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+    </div>
+</div>

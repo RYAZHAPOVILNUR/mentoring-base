@@ -1,7 +1,7 @@
 import { NgFor } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component, inject, Injectable } from "@angular/core";
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Header } from "../header/header.component";
 import { UserApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -37,7 +37,7 @@ export interface User {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [RouterOutlet, NgFor, RouterLink, Header, UserCardComponent],
+    imports: [ NgFor, RouterLink, Header, UserCardComponent],
 })
 
 export class UsersListComponent {

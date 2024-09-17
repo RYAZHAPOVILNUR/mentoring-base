@@ -1,0 +1,9 @@
+<div class="todo-wrapper">
+    <p>ТЕКСТ ЗАДАЧИ:</p>
+    <div>{{ todo.title }}</div>
+    <p>АВТОР ЗАДАЧИ:</p>
+    <p>{{ todo.userId }}</p>
+    <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+    <div><p>{{ todo.completed ? 'ДА' : 'НЕТ'}}</p></div>
+    <button class="todo-btn" (click)=onDeleteTodo(todo.id)>DELETE TODO</button>
+</div>
