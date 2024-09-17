@@ -3,11 +3,7 @@
 </div>
 
 <div class="users-block">
-  <div class="users-decoration" *ngFor="let item of users">
-    <p>{{ item.name }}</p>
-    <p>{{ item.email }}</p>
-    <p>{{ $any(item).website }}</p>
-    <p>{{ $any(item).company.name }}</p>
-    <button (click)="deleteUser(item.id)">Удалить юзера</button>
+  <div class="users-decoration" *ngFor="let user of users">
+    <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
   </div>
 </div>
