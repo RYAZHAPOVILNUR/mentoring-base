@@ -284,21 +284,17 @@ export class homeworkComponent {
     )
   }
 
-  readonly task3 = data.find (item => item.id === 9); 
+  readonly task3 = data.find (item =>item.id === 9); 
   readonly task4 = data.filter (item =>item.address.city === "Lebsackbury");
   readonly task5 = data.slice (0,5);
   readonly task6 = data.reverse();
   ask = data.length;
-  // readonly task8 = data.filter (item =>item.website === ".com");
+  task8 = data.filter(item =>/.com$/.exec(item.website));
   readonly task9 = data.find (item => item.username.length>12);
 
 
-  task10 = data.map (
-      (item) => {
-        return 
-        item.username.toLowerCase()
-      }
-    )
+  // task10 = data.reduce ((item, curr) => { [...item,curr.username.toLowerCase()],[])
     }
+  
 
 

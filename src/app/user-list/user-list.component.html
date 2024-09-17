@@ -1,10 +1,5 @@
-Компонент списка юзеров
 <div class="content-container_users">
-  <div *ngFor="let item of users" class="users">
-    <p>{{$any(item).name}}</p>
-    <p> {{$any(item).email}}</p>
-    <p class="userwebsite"> {{$any(item).website}}</p>
-    <p class="usercompany">{{$any(item).company.name}}</p>
-    <button (click)="deleteUser(item.id)" class="buttonforusers">Удалить юзера</button>
+  <div *ngFor="let item of users">
+    <app-user-card [user]="item" (deleteUser)="deleteUser($event)"></app-user-card>
   </div>
 </div>

@@ -1,0 +1,7 @@
+<div class="users">
+  <p>{{(user).name}}</p>
+  <p>{{(user).email}}</p>
+  <p>{{(user).website}}</p>
+  <p>{{(user).company.name}}</p>
+  <button (click)="onDeleteUser(user.id)" class="buttonforusers">Удалить юзера</button>
+</div>

@@ -1,8 +1,8 @@
 <h2 style="margin-left: 800px;margin-top: 30px;">Задание 1</h2>
 <div class="content-container_users">
   <div *ngFor="let item of users" class="homework1">
-    <p>{{$any(item).id}}</p>
-    <p> {{$any(item).username}}</p>
+    <p>{{(item).id}}</p>
+    <p> {{(item).username}}</p>
   </div>
 </div>
 
@@ -15,7 +15,7 @@
 
 <!-- <h2 style="margin-left: 800px;margin-top: 30px;">Задание 3</h2>
 <div class="content-container_users">
-  <div class="homework1" *ngFor="let item of task3">
+  <div *ngFor="let item of task3" class="homework1">
     <p>{{(item).id}}</p>
     <p>{{(item).name}}</p>
     <p>{{(item).address.city}}</p>
@@ -58,14 +58,14 @@
 </div>
 
 
-<!-- <h2 style="margin-left: 800px;margin-top: 30px;">Задание 8</h2>
+<h2 style="margin-left: 800px;margin-top: 30px;">Задание 8</h2>
 <div class="content-container_users">
   <div class="homework1" *ngFor="let item of task8">
-    <p>{{(item).id}}</p>
-    <p>{{(item).name}}</p>
-    <p>{{(item).email}}</p>
+      <p>{{ item.id }}</p>
+      <p>{{ item.name }}</p>
+      <p>{{ item.website }}</p>
   </div>
-</div> -->
+</div>
 
 <!-- <h2 style="margin-left: 800px;margin-top: 30px;">Задание 9</h2>
 <div class="content-container_users">
@@ -75,8 +75,9 @@
   </div>
 </div> -->
 
-<h2 style="margin-left: 800px;margin-top: 30px;">Задание 10</h2>
+<!-- <h2 style="margin-left: 800px;margin-top: 30px;">Задание 10</h2>
 <div class="content-container_users">
-  <div class="homework1" >fndkj
+  <div class="homework1" *ngFor="let item of task10">
+    <p>{{$any(item).username}}</p>
   </div>
-</div>
+</div> -->
