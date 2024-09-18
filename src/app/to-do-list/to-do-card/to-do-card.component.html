@@ -1,0 +1,17 @@
+<div>
+    <p>
+        Текст задачи <br>
+        {{$any(item).title}}
+    </p>
+    <p>
+        Автор задачи <br>
+        {{$any(item).userId}}
+    </p>
+        Задача Завершена <br>
+    {{$any(item).completed}}
+    <p>
+
+    <div class="button-container">
+        <button (click)="onDeleteToDo(item.id)" class="delete-todo"> Удалить </button>
+        </div>    
+</div>

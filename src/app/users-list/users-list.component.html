@@ -3,15 +3,7 @@
 
 
 <div class="users-block-container">
-    <div *ngFor = "let item of users" class="user-block">
-        <div>
-        <p>{{$any(item).name}}</p>
-        <p>{{$any(item).email}}</p>
-        <p>{{$any(item).phone}}</p>
-        <p>{{$any(item).website}}</p>
-        </div>
-        <div class="button-container">
-        <button (click)="deleteUser(item.id)" class="delete-user"> Удалить </button>
-        </div>
+    <div *ngFor = "let user of users" class="user-block">
+        <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
     </div>
 </div>
