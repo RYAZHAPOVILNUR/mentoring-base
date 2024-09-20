@@ -1,8 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {  RouterOutlet } from '@angular/router';
 import { headerComponent } from './app-header/header.component';
-import { UsersListComponent } from './users-list/users-list.component';
 
 const newPages = [5, 4, 3, 2, 1]
 
@@ -22,7 +21,7 @@ console.log(callRecording);
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink, headerComponent, UsersListComponent],
+  imports: [RouterOutlet, NgIf, NgFor, headerComponent],
   templateUrl: 'app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -30,7 +29,7 @@ console.log(callRecording);
 export class AppComponent {
   title = 'mentoring-first-project';
 
-  newPages = newPages;
+  newPages = newPages; 
 
   isShowMan = true;
 

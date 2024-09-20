@@ -10,7 +10,7 @@ import { UserCardComponent } from "./user-card/user-card.component";
     styleUrl: './users-list.component.scss',
     standalone: true,
     imports: [NgFor, UserCardComponent],
-})
+}) 
 
 export class UsersListComponent {
     readonly usersApiService = inject(UsersApiService);

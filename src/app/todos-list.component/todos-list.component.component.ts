@@ -4,7 +4,7 @@ import { Todo } from "./todo-interface";
 import { NgFor } from '@angular/common';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 
-@Component({
+@Component({ 
   selector: 'app-todos-list.component',
   standalone: true,
   imports: [NgFor, TodoCardComponent],
