@@ -1,10 +1,11 @@
-import { NgFor } from "@angular/common";
+import { NgFor, AsyncPipe } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
-import { Component, inject, Injectable } from "@angular/core";
-import { RouterLink } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Header } from "../header/header.component";
 import { UserApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
+import { UsersService } from "../users.service";
 
 // const consoleResponse = (response: unknown) => console.log(response)
 
@@ -37,26 +38,31 @@ export interface User {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [ NgFor, RouterLink, Header, UserCardComponent],
+    imports: [ NgFor, UserCardComponent, AsyncPipe],
+    changeDetection: ChangeDetectionStrategy.OnPush //не мутируем массивы, cоздаем новые ячейки в памяти
 })
 
 export class UsersListComponent {
     // readonly apiService = inject(HttpClient);// не нужен, перенесли в отдельный апи сервис
     readonly userApiService = inject(UserApiService)
-    users: User[] = [];
+    readonly usersService = inject(UsersService)
+    // users = this.usersService.users;
 
     constructor() {
         this.userApiService.getUsers().subscribe(
         (response: any) => {
-            this.users = response;
-            console.log('users: ', this.users)
+            this.usersService.setUsers(response);
+            // this.users = this.usersService.users;
             }
     )
+    // this.usersService.usersSubject.subscribe(
+    //     users => this.users = users
+    // )
+
     }
     deleteUser(id: number) {
-        this.users = this.users.filter(
-            item => item.id !== id
-        )
+        this.usersService.deleteUser(id);
+        // this.users = this.usersService.users;
     }
     
 }

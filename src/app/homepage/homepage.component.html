@@ -1,0 +1,865 @@
+
+<button (click)="isShowBanner = !isShowBanner">Show/hide Banner</button>
+<div>
+  <img src="/assets/banner.png" alt="man" style="width: 100%" *ngIf="isShowBanner"/>
+</div>
+<div class="content-container underman-container">
+  <div class="underman">
+    <img src="/assets/kirpichi.svg" alt="logo" class="underman-img" />
+    <p>
+      <b>Большой ассортимент</b><br />
+      строительных материалов всегда в наличии
+    </p>
+  </div>
+  <div class="underman">
+    <img src="/assets/truck.svg" alt="logo" class="underman-img" />
+    <p>
+      <b>Доставка стройматериалов</b><br />
+      в течении четырех часов или в<br />
+      любое удобное время
+    </p>
+  </div>
+  <div class="underman">
+    <img src="/assets/finger.svg" alt="logo" class="underman-img" />
+    <p>
+      Многоуровневая <b>система управления качеством</b> по стандарту ISO 9001
+    </p>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="item-cards">
+    <div class="item-cards__pagination">
+      <!-- <div class="header-nav-item" *ngFor="let item of menuItems">{{item}}</div> -->
+      <button class="item-cards__pagination-button active-button" *ngFor="let item of newPages">{{item}}</button>
+      <!-- <button class="item-cards__pagination-button active-button">1</button>
+      <button class="item-cards__pagination-button">2</button>
+      <button class="item-cards__pagination-button">3</button>
+      <button class="item-cards__pagination-button">4</button>
+      <button class="item-cards__pagination-button">5</button> -->
+    </div>
+    <div class="item-cards__grid">
+      <div class="item-cards__grid-left">
+        <div class="item-cards__grid-left-text">
+          Строительный отделочный инструмент
+        </div>
+        <div class="item-cards__grid-left-action">
+          <span>Перейти в каталог</span>
+          <a class="item-cards__grid-left-action-link">
+            <img src="/assets/FrameArrow.svg" alt="arrow" />
+          </a>
+        </div>
+      </div>
+      <div class="item-cards__grid-right">
+        <div class="item-cards__grid-right-block item-cards__grid-right-block-up-left">
+          <div class="item-cards__grid-left-text item-cards__grid-right-block-up-left-text">
+            Эмали
+          </div>
+          <div class="item-cards__grid-left-action">
+            <span>Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/FrameArrow.svg" alt="arrow" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block item-cards__grid-right-block-up-right">
+          <div class="item-cards__grid-left-text item-cards__grid-right-block-up-right-text">
+            Лакокрасочные<br />
+            материалы
+          </div>
+          <div class="item-cards__grid-right-block-up-right-link">
+            <span>Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/FrameArrow.svg" alt="arrow" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block item-cards__grid-right-block-down-left">
+          <div class="item-cards__grid-left-text item-cards__grid-right-block-down-left-text">
+            Пены, клеи и<br />
+            герметики
+          </div>
+          <div class="item-cards__grid-right-block-down-left-link">
+            <span>Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/FrameArrow.svg" alt="arrow" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block item-cards__grid-right-block-down-right">
+          <div class="item-cards__grid-left-text item-cards__grid-right-block-down-right-text">
+            Розетки и выключатели
+          </div>
+          <div class="item-cards__grid-left-action">
+            <span>Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/FrameArrow.svg" alt="arrow" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="newcards">
+    <div class="newcards-title">
+      <div>
+        <h2 style="font-size: 28px; font-weight: 500; color: #000000">
+          Популярные товары
+        </h2>
+      </div>
+      <div>
+        <a style="color: #f0ba4e; font-size: 18px; font-weight: 600">Посмотреть все товары</a>
+      </div>
+    </div>
+    <div class="newcards-container">
+      <button class="newcards-card-left-arrow">
+        <img src="/assets/Polygon_1.svg" alt="<" />
+      </button>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-sale">%</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <div class="newcards-card-text-price-sale">
+              <p style="
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #3c3c3b;
+                  padding-bottom: 20px;
+                  text-decoration: line-through;
+                ">
+                52 руб.
+              </p>
+              <p style="
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #3c3c3b;
+                  padding-bottom: 20px;
+                ">
+                48 руб.
+              </p>
+            </div>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-sale">%</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <div class="newcards-card-text-price-sale">
+              <p style="
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #3c3c3b;
+                  padding-bottom: 20px;
+                  text-decoration: line-through;
+                ">
+                52 руб.
+              </p>
+              <p style="
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #3c3c3b;
+                  padding-bottom: 20px;
+                ">
+                48 руб.
+              </p>
+            </div>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+            <div class="newcards-card-picture-new-sale">
+              <!-- <div> -->
+              <span class="newcards-card-picture-new">Новинка</span>
+              <!-- </div> -->
+              <div class="newcards-card-picture-sale-with_new">
+                <span class="newcards-card-picture-sale">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <div class="newcards-card-text-price-sale">
+              <p style="
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #3c3c3b;
+                  padding-bottom: 20px;
+                  text-decoration: line-through;
+                ">
+                52 руб.
+              </p>
+              <p style="
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #3c3c3b;
+                  padding-bottom: 20px;
+                ">
+                48 руб.
+              </p>
+            </div>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-new">Новинка</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              52 руб.
+            </p>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="newcards-card-right-arrow">
+        <img src="/assets/Polygon_2.svg" alt="<" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="between">
+    <div>
+      <h2 style="color: #3c3c3b; font-size: 28px; font-weight: 500">
+        БОЛЕЕ 10 000 НАИМЕНОВАНИЙ
+      </h2>
+      <p style="color: #a1a0a0; font-size: 20px; font-weight: 400">
+        Инструмент для вашего бизнеса, разнообразных марок
+      </p>
+    </div>
+    <div class="between-link">
+      <a style="color: #f0ba4e; font-size: 18px; font-weight: 600">Перейти в каталог</a>
+    </div>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="newcards">
+    <div class="newcards-title">
+      <div>
+        <h2 style="font-size: 28px; font-weight: 500; color: #000000">
+          Новинки
+        </h2>
+      </div>
+      <div>
+        <a style="color: #f0ba4e; font-size: 18px; font-weight: 600">Посмотреть все товары</a>
+      </div>
+    </div>
+    <div class="newcards-container">
+      <button class="newcards-card-left-arrow"></button>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-new">Новинка</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              52 руб.
+            </p>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-new">Новинка</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              52 руб.
+            </p>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-new">Новинка</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              52 руб.
+            </p>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newcards-card">
+        <div class="newcards-card-picture">
+          <div class="newcards-card-title">
+            <span class="newcards-card-picture-new">Новинка</span>
+            <img src="/assets/heart_black.svg" alt="heart" class="newcards-card-title-heart" />
+          </div>
+        </div>
+        <div class="newcards-card-text">
+          <div class="newcards-card-text-title">
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 10px;
+              ">
+              Круг зачистной 125х6х22
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              Артикул 00004
+            </p>
+          </div>
+          <div class="newcards-card-text-price">
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Цена за штуку
+            </p>
+            <p style="
+                font-size: 20px;
+                font-weight: 600;
+                color: #3c3c3b;
+                padding-bottom: 20px;
+              ">
+              52 руб.
+            </p>
+          </div>
+          <div class="newcards-card-text-buy">
+            <div class="newcards-card-text-buy-amount">
+              <div style="
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: #3c3c3b;
+                  padding-bottom: 10px;
+                ">
+                Количество
+              </div>
+              <div style="font-size: 20px; font-weight: 500; color: #3c3c3b">
+                - 1 +
+              </div>
+            </div>
+            <div class="newcards-card-text-buy-in">
+              <button class="newcards-card-text-buy-button">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="newcards-card-right-arrow"></button>
+    </div>
+  </div>
+</div>
+
+<div class="footer-container">
+  <div class="footer-up content-container">
+    <div class="footer-up-left">
+      <div class="footer-up-logo">
+        <img src="/assets/Frame.svg" alt="logo" />
+      </div>
+      <div class="footer-up-left-contacts">
+        <div class="footer-up-left-contacts-tel">
+          <div class="footer-up-left-contacts-tel-img">
+            <img src="/assets/call-calling.svg" alt="call" />
+          </div>
+          <div>
+            <p style="
+                font-size: 12px;
+                font-weight: 400;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Контактный телефон
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #ffffff;
+                padding-bottom: 10px;
+              ">
+              + 7 (812) 309-09-34
+            </p>
+            <p style="font-size: 16px; font-weight: 500; color: #ffffff">
+              + 7 (965) 084-29-09
+            </p>
+          </div>
+        </div>
+        <div class="footer-up-left-contacts-sms">
+          <div class="footer-up-left-contacts-sms-img">
+            <img src="/assets/sms.svg" alt="sms" />
+          </div>
+          <div>
+            <p style="
+                font-size: 12px;
+                font-weight: 400;
+                color: #a1a0a0;
+                padding-bottom: 10px;
+              ">
+              Электронная почта
+            </p>
+            <p style="
+                font-size: 16px;
+                font-weight: 500;
+                color: #ffffff;
+                padding-bottom: 10px;
+              ">
+              tustin78&#64;mail.ru
+            </p>
+            <p style="font-size: 16px; font-weight: 500; color: #ffffff">
+              info&#64;tustin.ru
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-up-right">
+      <div>
+        <h2 style="font-size: 18px; font-weight: 700; color: #ffffff">
+          Остались вопросы?
+        </h2>
+        <p style="font-size: 14px; color: #a1a0a0">
+          Узнавайте первым о скидках, предложениях и событиях еженедельно в<br />
+          своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
+        </p>
+      </div>
+      <div class="footer-up-right-input-with-button">
+        <img src="/assets/sms.svg" alt="sms" style="width: 16px; height: 16px; padding-left: 15px" />
+        <input class="footer-up-right-input" placeholder="Введите свою почту" />
+        <button type="button" class="footer-up-right-button">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-container">
+  <div class="footer content-container">
+    <div class="footer-up-left">
+      <nav class="footer-nav">
+        <div class="footer-nav-item">Главная</div>
+        <div class="footer-nav-item">О компании</div>
+        <div class="footer-nav-item">Каталог</div>
+      </nav>
+    </div>
+    <div class="footer-down-left">
+      <div class="footer-down-left-pictures">
+        <img src="/assets/facebook.svg" alt="facebook" class="footer-down-left-img" />
+        <img src="/assets/youtube.svg" alt="youtube" class="footer-down-left-img" />
+        <img src="/assets/whatsap.svg" alt="whatsap" class="footer-down-left-img" />
+      </div>
+      <div class="footer-down-left-year">© 2021-2022, EDE</div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="footer2-desktop">
+  <div class="footer content-container">
+  <div class="footer2">
+    <div class="footer2__container">
+      <div class="footer2__contacts">
+        <img src="/assets/Frame.svg" alt="logo" class="footer2__logo" />
+        <div class="footer2__contacts-wrapper1">
+          <div class="footer2__contacts-wrapper">
+            <div class="footer2__contacts-icon">
+              <img src="/assets/call-calling.svg" alt="call" class="footer2__contacts-icon" />
+            </div>
+            <div class="footer2__contacts-content">
+              <span class="footer2__contacts-title">Контактный телефон</span>
+              <span class="footer2__contacts-phone">+ 7 (812) 309-09-34</span>
+              <span class="footer2__contacts-phone">+ 7 (965) 084-29-09</span>
+            </div>
+          </div>
+          <div class="footer2__contacts-wrapper">
+            <div>
+              <img src="/assets/sms.svg" alt="sms" class="footer2__contacts-icon" />
+            </div>
+            <div class="footer2__contacts-content">
+              <span class="footer2__contacts-title">Электронная почта</span>
+              <span class="footer2__contacts-phone">tustin78&#64;mail.ru</span>
+              <span class="footer2__contacts-phone">info&#64;tustin.ru</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer2__form">
+        <div class="footer2__form-title">
+          <h3 style="font-size: 18px; font-weight: 700; color: #ffffff">
+            Остались вопросы?
+          </h3>
+          <p style="font-size: 14px; color: #a1a0a0">
+            Узнавайте первым о скидках, предложениях и событиях еженедельно в<br />
+            своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
+          </p>
+        </div>
+        <div class="footer-up-right-input-with-button">
+          <img src="/assets/sms.svg" alt="sms" style="width: 16px; height: 16px; padding-left: 15px" />
+          <input class="footer-up-right-input" placeholder="Введите свою почту" />
+          <button type="button" class="footer-up-right-button">
+            Отправить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+/</div> -->

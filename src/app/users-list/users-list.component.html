@@ -1,12 +1,10 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-
 component LIST of USERS
 
 <!-- {{ $any(users[0]).name }} -->
 
 <div style="display: flex; flex-wrap: wrap;">
-    <div *ngFor="let item of users">
+    <div *ngFor="let item of usersService.users$ | async"> 
+        <!-- сущность пайп позволяет данные из rxjs доставать и отображать, make BehaviorSubject in Array -->
        <app-user-card [user]="item" (deleteUser)="deleteUser($event)"></app-user-card>
     </div>
 </div>

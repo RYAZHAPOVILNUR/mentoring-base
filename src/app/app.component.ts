@@ -1,11 +1,12 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { Header } from "./header/header.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor,RouterLink],
+  imports: [RouterOutlet, NgIf, NgFor, Header],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
