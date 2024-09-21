@@ -1,4 +1,5 @@
 <app-header></app-header>
+<router-outlet></router-outlet>
 <main class="main">
   <button class="control-btn" (click)="isShowBigImage = !isShowBigImage">Ск/Пк картинку</button>
   <section class="hero" *ngIf="isShowBigImage">
@@ -363,60 +364,60 @@
       </div>
     </div>
   </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wrapper">
-        <div class="footer-top">
-          <div class="footer-top-left">
-            <a href="#"><img class="footer-logo" src="../assets/logo.svg" alt="Логотип компании"></a>
-            <div class="contact-info">
-              <div class="contact-block">
-                <img src="../assets/phone.svg" alt="Иконка телефона">
-                <div class="contact-text">
-                  <span class="contact-title">Контактный телефон</span>
-                  <a href="#" class="contact-item">+ 7 (812) 309-09-34</a>
-                  <a href="#" class="contact-item">+ 7 (965) 084-29-09</a>
-                </div>
-              </div>
-              <div class="contact-block">
-                <img src="../assets/email-icon.svg" alt="Иконка почты">
-                <div class="contact-text">
-                  <span class="contact-title">Электронная почта</span>
-                  <a  href="#" class="contact-item">tustin78&#64;mail.ru</a>
-                  <a href="#" class="contact-item">info&#64;tustin.ru</a>
-                </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wrapper">
+      <div class="footer-top">
+        <div class="footer-top-left">
+          <a href="#"><img class="footer-logo" src="../assets/logo.svg" alt="Логотип компании"></a>
+          <div class="contact-info">
+            <div class="contact-block">
+              <img src="../assets/phone.svg" alt="Иконка телефона">
+              <div class="contact-text">
+                <span class="contact-title">Контактный телефон</span>
+                <a href="#" class="contact-item">+ 7 (812) 309-09-34</a>
+                <a href="#" class="contact-item">+ 7 (965) 084-29-09</a>
               </div>
             </div>
-          </div>
-          <div class="footer-top-right">
-            <h3 class="footer-title">Остались вопросы?</h3>
-            <span class="footer-text">Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</span>
-            <div class="footer-form">
-              <img class="footer-form-img" src="../assets/email-icon.svg" alt="Иконка почты">
-              <input class="footer-form-input" type="text" placeholder="Введите свою почту">
-              <button class="footer-form-btn">Отправить</button>
+            <div class="contact-block">
+              <img src="../assets/email-icon.svg" alt="Иконка почты">
+              <div class="contact-text">
+                <span class="contact-title">Электронная почта</span>
+                <a  href="#" class="contact-item">tustin78&#64;mail.ru</a>
+                <a href="#" class="contact-item">info&#64;tustin.ru</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <div class="footer-nav">
-            <ul class="footer-menu-list">
-              <li class="footer-menu-item"><a class="footer-menu-link" href="">Главная</a></li>
-              <li class="footer-menu-item"><a class="footer-menu-link" href="">О компании</a></li>
-              <li class="footer-menu-item"><a class="footer-menu-link" href="">Каталог</a></li>
-            </ul>
-          </div>
-          <div class="social-links">
-            <ul class="social-links-list">
-              <li><img src="../assets/facebook-icon.svg" alt="Логотип Facebook"></li>
-              <li><img src="../assets/instagram-icon.svg" alt="Логотип Instagram"></li>
-              <li><img src="../assets/whatsapp-icon.svg" alt="Логотип WhatsApp"></li>
-            </ul>
-            <span class="footer-copyright">&#169; 2021-2022, EDE</span>
+        <div class="footer-top-right">
+          <h3 class="footer-title">Остались вопросы?</h3>
+          <span class="footer-text">Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</span>
+          <div class="footer-form">
+            <img class="footer-form-img" src="../assets/email-icon.svg" alt="Иконка почты">
+            <input class="footer-form-input" type="text" placeholder="Введите свою почту">
+            <button class="footer-form-btn">Отправить</button>
           </div>
         </div>
       </div>
+      <div class="footer-bottom">
+        <div class="footer-nav">
+          <ul class="footer-menu-list">
+            <li class="footer-menu-item"><a class="footer-menu-link" href="">Главная</a></li>
+            <li class="footer-menu-item"><a class="footer-menu-link" href="">О компании</a></li>
+            <li class="footer-menu-item"><a class="footer-menu-link" href="">Каталог</a></li>
+          </ul>
+        </div>
+        <div class="social-links">
+          <ul class="social-links-list">
+            <li><img src="../assets/facebook-icon.svg" alt="Логотип Facebook"></li>
+            <li><img src="../assets/instagram-icon.svg" alt="Логотип Instagram"></li>
+            <li><img src="../assets/whatsapp-icon.svg" alt="Логотип WhatsApp"></li>
+          </ul>
+          <span class="footer-copyright">&#169; 2021-2022, EDE</span>
+        </div>
+      </div>
     </div>
-  </footer>
-</main>
-<router-outlet></router-outlet>
+  </div>
+</footer>
+

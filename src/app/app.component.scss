@@ -294,6 +294,8 @@
   top: 0;
   right: 0;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .product-title {
@@ -371,6 +373,16 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.basket-btn {
+  background-color: transparent;
+  border: none;
+  color: #3c3c3b;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid #f0ba4e;
 }
 
 // BANNER SECTION
