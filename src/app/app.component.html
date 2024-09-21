@@ -9,10 +9,13 @@
             <nav>
               <ul class="header-top-nav">
                 <li><a class="nav-link" href="#">Главная</a></li>
-                <li><a class="nav-link" href="">О Компании</a></li>
-                <li><a class="nav-link" href="">Каталог</a></li>
+                <li><a class="nav-link" href="">{{aboutCompany}}</a></li>
+                <li><a class="nav-link" href="" *ngIf="isShowCatalog">Каталог</a></li>
               </ul>
             </nav>
+            <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button>
+            <button class="control-btn" (click)="isShowBigImage = !isShowBigImage">Ск/Пк картинку</button>
+            <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
           </div>
           <div class="header-top-right">
             <div class="header-top-phone">
@@ -37,10 +40,11 @@
                 <img class="catalog-img" src="../assets/catalog-icon.svg" alt="Иконка каталога">
                 <span>Каталог</span>
               </li>
-              <li class="nav-item"><a class="nav-item-link" href="#">Стройматериалы</a></li>
+              <li class="nav-item" *ngFor="let bottomMenuItem of bottomMenuItems"><a class="nav-item-link" href="#">{{bottomMenuItem}}</a></li>
+              <!-- <li class="nav-item"><a class="nav-item-link" href="#">Стройматериалы</a></li>
               <li class="nav-item"><a class="nav-item-link" href="#">Инструменты</a></li>
               <li class="nav-item"><a class="nav-item-link" href="#">Электрика</a></li>
-              <li class="nav-item"><a class="nav-item-link" href="#">Интерьер и одежда</a></li>
+              <li class="nav-item"><a class="nav-item-link" href="#">Интерьер и одежда</a></li> -->
             </ul>
           </nav>
         </div>
@@ -59,7 +63,7 @@
   </div>
 </header>
 <main class="main">
-  <section class="hero">
+  <section class="hero" *ngIf="isShowBigImage">
     <div class="container">
       <div class="hero-wrapper">
         <h1 class="hero-title">Инструмент для вашего бизнеса</h1>
@@ -88,11 +92,11 @@
     <div class="container">
       <div class="catalog-wrapper">
         <div class="catalog-pagination">
-          <button class="pagination-btn btn-active">1</button>
-          <button class="pagination-btn">2</button>
+          <button class="pagination-btn btn-active" *ngFor="let item of newPages">{{item}}</button>
+          <!-- <button class="pagination-btn">2</button>
           <button class="pagination-btn">3</button>
           <button class="pagination-btn">4</button>
-          <button class="pagination-btn">5</button>
+          <button class="pagination-btn">5</button> -->
         </div>
         <div class="catalog-cards">
           <div class="catalog-left">
@@ -432,16 +436,16 @@
                 <img src="../assets/phone.svg" alt="Иконка телефона">
                 <div class="contact-text">
                   <span class="contact-title">Контактный телефон</span>
-                  <span class="contact-item">+ 7 (812) 309-09-34</span>
-                  <span class="contact-item">+ 7 (965) 084-29-09</span>
+                  <a href="#" class="contact-item">+ 7 (812) 309-09-34</a>
+                  <a href="#" class="contact-item">+ 7 (965) 084-29-09</a>
                 </div>
               </div>
               <div class="contact-block">
                 <img src="../assets/email-icon.svg" alt="Иконка почты">
                 <div class="contact-text">
                   <span class="contact-title">Электронная почта</span>
-                  <span class="contact-item">tustin78&#64;mail.ru</span>
-                  <span class="contact-item">info&#64;tustin.ru</span>
+                  <a  href="#" class="contact-item">tustin78&#64;mail.ru</a>
+                  <a href="#" class="contact-item">info&#64;tustin.ru</a>
                 </div>
               </div>
             </div>
