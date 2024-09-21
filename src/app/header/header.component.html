@@ -1,0 +1,63 @@
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-wrapper">
+          <div class="header-top-left">
+            <a href="#" class="logo">
+              <img src="../assets/logo.svg" alt="Логотип компании">
+            </a>
+            <nav>
+              <ul class="header-top-nav">
+                <li><a class="nav-link" href="#">Главная</a></li>
+                <li><a class="nav-link" href="">{{aboutCompany}}</a></li>
+                <li><a class="nav-link" href="" *ngIf="isShowCatalog">Каталог</a></li>
+              </ul>
+            </nav>
+            <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button>
+            <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
+          </div>
+          <div class="header-top-right">
+            <div class="header-top-phone">
+              <a href="#">
+                <img class="phone-img" src="../assets/phone.svg" alt="Иконка телефона">
+              </a>
+              <a href="tel:++7 (965) 084-29-29" class="phone-link">+7 (965) 084-29-29</a>
+            </div>
+            <button class="favorites-btn"><img src="../assets/heart.svg" alt="Иконка фавориты"></button>
+            <button class="basket-btn"><img class="basket-img" src="../assets/basket.svg" alt="Иконка корзины"><span class="basket-btn-text">Пусто</span></button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="header-bottom">
+    <div class="container">
+      <div class="header-bottom-wrapper">
+        <div class="header-bottom-left">
+          <nav>
+            <ul class="header-bottom-nav">
+              <li class="nav-item">
+                <img class="catalog-img" src="../assets/catalog-icon.svg" alt="Иконка каталога">
+                <span>Каталог</span>
+              </li>
+              <li class="nav-item" *ngFor="let bottomMenuItem of bottomMenuItems"><a class="nav-item-link" href="#">{{bottomMenuItem}}</a></li>
+              <!-- <li class="nav-item"><a class="nav-item-link" href="#">Стройматериалы</a></li>
+              <li class="nav-item"><a class="nav-item-link" href="#">Инструменты</a></li>
+              <li class="nav-item"><a class="nav-item-link" href="#">Электрика</a></li>
+              <li class="nav-item"><a class="nav-item-link" href="#">Интерьер и одежда</a></li> -->
+            </ul>
+          </nav>
+        </div>
+        <div class="header-bottom-right">
+          <div class="search-container">
+            <input class="search-input" placeholder="Поиск, например Круг зачистной">
+            <button class="search-btn"><img src="../assets/search-icon.svg" alt="Иконка поиска"></button>
+          </div>
+          <div class="location">
+            <img class="location-img" src="../assets/map-pin-icon.svg" alt="Иконка лупы">
+            <span class="location-text">Москва</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
