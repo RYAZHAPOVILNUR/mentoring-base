@@ -1,5 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 // Task 1
 const getMenuItems = (menuItem: string) => menuItem;
@@ -10,7 +11,7 @@ const navItem = getMenuItems('О Компании');
   templateUrl: './header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterOutlet, RouterLink],
 })
 export class HeaderComponent {
   title = 'mentoring-first-project';

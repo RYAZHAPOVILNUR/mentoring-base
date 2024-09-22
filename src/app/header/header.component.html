@@ -8,13 +8,14 @@
             </a>
             <nav>
               <ul class="header-top-nav">
-                <li><a class="nav-link" href="#">Главная</a></li>
+                <li><a class="nav-link" href="#" routerLink="/">Главная</a></li>
                 <li><a class="nav-link" href="">{{aboutCompany}}</a></li>
                 <li><a class="nav-link" href="" *ngIf="isShowCatalog">Каталог</a></li>
               </ul>
             </nav>
             <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button>
             <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
+            <button routerLink="/users" class="control-btn">Админка</button>
           </div>
           <div class="header-top-right">
             <div class="header-top-phone">
@@ -61,3 +62,4 @@
     </div>
   </div>
 </header>
+<router-outlet />
