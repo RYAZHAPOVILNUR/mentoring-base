@@ -9,7 +9,22 @@ import { IUser } from '../user.interface';
 })
 export class UserCardComponent {
   @Input()
-  user: any;
+  user: IUser = {
+    id: 0,
+    name: '',
+    username: '',
+    email: '',
+    address: {
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: '',
+      geo: { lat: '', lng: '' },
+    },
+    phone: '',
+    website: '',
+    company: { name: '', catchPhrase: '', bs: '' },
+  };
 
   @Output()
   deleteUser = new EventEmitter();

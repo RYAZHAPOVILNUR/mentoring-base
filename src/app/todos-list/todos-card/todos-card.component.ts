@@ -10,7 +10,7 @@ import { ITodo } from '../todo.interface';
 })
 export class TodosCardComponent {
   @Input()
-  todo: any;
+  todo: ITodo = { userId: 0, id: 0, title: '', completed: false };
 
   @Output()
   deleteTodos = new EventEmitter();
