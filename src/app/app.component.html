@@ -6,10 +6,12 @@
         <img src="/assets/site-logo.svg" alt="логотип сайта" />
       </div>
       <nav class="header-nav">
-          <a class="header-nav-item" href="">Главная</a>
-          <a class="header-nav-item" href="">О компании</a>
-          <a class="header-nav-item" href="">Каталог</a>
+          <a class="header-nav-item" href="">{{headerItem1}}</a>
+          <a class="header-nav-item" href="">{{aboutCompany}}</a>
+          <a class="header-nav-item" *ngIf="!isShowCatalog" href="">{{headerItem3}}</a>
       </nav>
+      <button (click) = "isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+      <button class="changeMenuText" (click)="changeMenuText()">Изменить текст</button>
     </div>
     <div class="header-right">
       <div class="logo-phone">
@@ -34,11 +36,8 @@
           <img src="/assets/light.svg" alt="Логотип каталога" />
         </div>
         <nav class="header-nav-2">
-            <a class="header-nav-item2" href="">Катало</a>
-            <a class="header-nav-item2" href="">Стройматериалы</a>
-            <a class="header-nav-item2" href="">Инструменты</a>
-            <a class="header-nav-item2" href="">Электрика</a>
-            <a class="header-nav-item2" href="">Интерьер и одежда</a>
+            <a class="header-nav-item2" href="" *ngFor="let item of menuItems">{{item}}</a>
+            <button (click) = "isManOnPhoto = !isManOnPhoto">Мужик/Не мужик</button>
         </nav>
       </div>
       <div class="header-right-2">
@@ -63,11 +62,9 @@
   </div>
 </div>
 <div>
-  <img
-    src="/assets/Rectangle 5.svg"
-    alt="картинка со строителем"
-    style="width: 100%"
-  />
+  <img class="photo-man"
+    src="/assets/photo-man.svg" *ngIf="!isManOnPhoto"
+    alt="картинка со строителем" style="width: 100%"/>
 </div>
 <!-- Первый блог с товаром -->
 <div class="content-container">
@@ -99,11 +96,8 @@
   </div>
   <div class="item-cards">
     <div class="item-cards__pagination">
-      <button class="item-cards__pagination-button active-button">1</button>
-      <button class="item-cards__pagination-button">2</button>
-      <button class="item-cards__pagination-button">3</button>
-      <button class="item-cards__pagination-button">4</button>
-      <button class="item-cards__pagination-button">5</button>
+      <button *ngFor="let item of newPages"
+        class="item-cards__pagination-button active-button">{{item}}</button>
     </div>
     <div class="item-cards-grid">
       <div class="item-cards-grid-left">

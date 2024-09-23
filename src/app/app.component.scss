@@ -1,3 +1,5 @@
+@import '../app/normalize.scss';
+
 body {
   color: white;
   font-size: 16px;
@@ -21,6 +23,7 @@ body {
   display: flex;
   align-items: center;
   font-weight: 600;
+  gap: 24px;
 }
 
 .header-right {
@@ -114,7 +117,8 @@ body {
 .header-nav-2 {
   display: flex;
   font-size: 14px;
-  gap: 24px;
+  gap: 10px;
+  align-items: center;
 }
 
 .header-right-2 {
@@ -510,11 +514,10 @@ body {
 }
 
 .quantity {
-  border: none;
-  background: none;
+  @include clear-button;
 }
 
-// Рекламная карточка
+// Рекламная карточка  
 
 .about-store-container {
   width: 1320px;
