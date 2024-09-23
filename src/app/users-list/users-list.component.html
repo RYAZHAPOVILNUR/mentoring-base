@@ -3,7 +3,7 @@
 </div>
 
 <div class="users-block">
-  <div class="users-decoration" *ngFor="let user of users">
+  <div class="users-decoration" *ngFor="let user of usersService.usersSubject | async">
     <app-user-card
       [user]="user"
       (deleteUser)="deleteUser($event)"

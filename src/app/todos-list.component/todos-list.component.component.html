@@ -3,7 +3,7 @@
 </div>
 
 <div class="users-block">
-  <div class="users-decoration" *ngFor="let el of todos">
+  <div class="users-decoration" *ngFor="let el of todosService.todosSubject | async">
     <app-todo-card
       [todo]="el"
       (deleteTodo)="deleteTodo($event)"
