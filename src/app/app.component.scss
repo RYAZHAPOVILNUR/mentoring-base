@@ -109,3 +109,157 @@
     color: white;
     gap: 5px;
 }
+
+.description {
+    display: flex;
+}
+.info-cards-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-cards-item-block {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    width: 421px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+.content-container {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.item-cards__pagination {
+    display: flex;
+    justify-content: end;
+    
+    &-button {
+        font-family: inter;
+        border: none;
+        background: none;
+        color: #A1A0A0; 
+    }
+}
+
+.active-button {
+    color: #F0BA4E;
+    font-weight: 600;
+}
+
+.item-cards__grid {
+    display: flex;
+}
+
+.item-cards__grid-left {
+    height: 410px;
+    width: 488px;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    max-height: 428px;
+    max-width: 421px;
+    background-image: url(/assets/gun.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position-y: bottom;
+    background-position-x: left;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-cards__grid-left-text {
+    font-size: 26px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.item-cards__grid-left-action {
+    align-self: end;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+}
+
+.go-catalog {
+    margin-right: 10px;
+}
+
+.item-cards__grid-left-action-link {
+    width: 40px;
+    height: 40px;
+}
+
+.item-cards__grid-right {
+    display: flex;
+    width: 900px;
+    height: 400px;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  
+  .item-cards__grid-right {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку */
+    gap: 10px; /* Расстояние между блоками */
+    width: 100%; /* Ширина родительского контейнера */
+}
+
+.item-cards__grid-right-block {
+    flex: 1 1 calc(50% - 14px); /* Каждый блок занимает 50% ширины контейнера с учетом gap */
+    height: 200px; /* Фиксированная высота блоков */
+    box-shadow: 0px 20px 50px 0px #3c3c3b12;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.block-1 {
+    background: url("/assets/spray.png") no-repeat;
+    background-position: left bottom;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.block-2 {
+    background: url("/assets/can-of-paint.png") no-repeat;
+    background-position: right bottom;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.block-3 {
+    background: url("/assets/glue.png") no-repeat;
+    background-position: right bottom;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.block-4 {
+    background: url("/assets/socket.png") no-repeat;
+    background-position: left bottom;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.block-1_text-1 {
+    font-size: 26px;
+    font-family: Inter;
+    font-weight: 600;
+    
+}
+
+.block-1-text-action,
+.block-2-text-action,
+.block-3-text-action,
+.block-4-text-action {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+}
