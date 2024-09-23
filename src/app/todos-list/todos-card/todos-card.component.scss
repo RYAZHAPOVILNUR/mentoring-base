@@ -1,4 +1,4 @@
-.user {
+.todos {
   &-card-wrapper {
     display: flex;
     flex-direction: column;
@@ -6,27 +6,16 @@
     height: 250px;
   }
 
-  &-name {
-    font-size: 20px;
-    font-weight: 600;
+  &-text {
+    font-size: 12px;
+    font-weight: 700;
     margin: 0;
   }
 
-  &-email,
-  &-website {
-    cursor: pointer;
-    text-decoration: none;
+  &-task {
     color: #3c3c3b;
     font-size: 15px;
-  }
-
-  &-company {
-    font-size: 18px;
-
-    &-bold {
-      font-size: 15px;
-      font-weight: 700;
-    }
+    margin: 0;
   }
 }
 

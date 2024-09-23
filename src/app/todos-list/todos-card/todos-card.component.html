@@ -1,0 +1,9 @@
+<div class="todos-card-wrapper">
+  <p class="todos-text">Название задачи:</p>
+  <p class="todos-task">{{todo.title}}</p>
+  <p class="todos-text">Автор задачи:</p>
+  <p class="todos-task">{{todo.userId}}</p>
+  <p class="todos-text">Задача завершена:</p>
+  <p class="todos-task">{{todo.completed ? 'Да' : 'Нет'}}</p>
+  <button class="delete-btn" (click)="onDeleteTodos(todo.id)">Удалить задачу</button>
+</div>
