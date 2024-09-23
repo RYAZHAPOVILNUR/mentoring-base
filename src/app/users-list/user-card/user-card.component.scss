@@ -1,0 +1,47 @@
+.user {
+  &-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &-email,
+  &-website {
+    cursor: pointer;
+    text-decoration: none;
+    color: #3c3c3b;
+    font-size: 15px;
+  }
+
+  &-company {
+    font-size: 18px;
+
+    &-bold {
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: 1px solid #f0ba4e;
+  border-radius: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #3c3c3b;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0ba4e;
+    color: #fff;
+  }
+}
