@@ -1,4 +1,5 @@
-<div>
+<div class="todo-block">
+    <div>
     <p>
         Текст задачи <br>
         {{$any(item).title}}
@@ -8,8 +9,9 @@
         {{$any(item).userId}}
     </p>
         Задача Завершена <br>
-    {{$any(item).completed}}
+    {{$any(item).completed ? 'Да' : ' Нет'}}
     <p>
+    </div>
 
     <div class="button-container">
         <button (click)="onDeleteToDo(item.id)" class="delete-todo"> Удалить </button>
