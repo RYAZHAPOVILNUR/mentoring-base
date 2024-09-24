@@ -3,9 +3,7 @@
 
 <div class="users-wrapper">
   <div *ngFor="let item of users" class="users-component-items">
-    <p>{{$any(item).email}}</p>
-    <p>{{$any(item).website}}</p>
-    <p>{{$any(item).company.name}}/</p>
+   <app-user-card [user]="item"></app-user-card>
     <button (click)="deleteUser(item.id)" class="delete-button" >УДАЛИТЬ ЮЗЕРА</button>
   </div>
 </div>

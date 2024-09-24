@@ -4,14 +4,15 @@
           <img class="header-icon main-nav-text" src="../assets/Header-icon.svg" alt="Иконка сайта">
           <span class="main-nav-text">{{headerItemFirst}}</span>
           <span class="main-nav-text">{{aboutCompany}}</span>
-          <span class="main-nav-text" *ngIf="isShowCatalog">{{headerItemThird}}</span>
+          <span class="main-nav-text" *ngif="isShowCatalog">{{headerItemThird}}</span>
           <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать О Компании</button>
           <button>Изменить размер текста</button>
       </nav>
       <nav class="second-main-header-nav">
           <img class="main-nav-text phone-icon" src="../assets/Phone-icon.svg" alt="Иконка телефона">
-          <span class="main-nav-text">{{mainheaderitem4}}</span>
+          <span class="main-nav-text"></span>
           <img class="main-nav-text" src="../assets/Heart-icon.svg" alt="Иконка сердца">
+          <button routerlink="users" routerlinkactive="active">Админка</button>
           <button class="main-nav-text button-properties">
               <img class="button-image" src="../assets/Basket-icon.svg" alt="Иконка корзины">
               <span class="button-text">Пусто</span>
