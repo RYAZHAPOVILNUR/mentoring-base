@@ -5,7 +5,7 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsersApiService {
-  apiService = inject(HttpClient)
+  readonly apiService = inject(HttpClient)
 
   getUsers() {
     return this.apiService.get('https://jsonplaceholder.typicode.com/users')

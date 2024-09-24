@@ -10,12 +10,12 @@ export const routes: Routes = [
         
     },
     {
-    path: 'users',
-    component: UsersListComponent
+        path: 'users',
+        component: UsersListComponent
     },
     {
-    path: 'todo',
-    component: ToDoListComponent
+        path: 'todo',
+        component: ToDoListComponent
     }
     
 ];

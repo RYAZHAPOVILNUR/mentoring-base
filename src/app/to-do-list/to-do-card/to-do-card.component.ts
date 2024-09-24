@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ToDOs } from '../to-do-list.component';
+
+export interface ToDoCard {}
 
 @Component({
   selector: 'app-to-do-card',
@@ -10,7 +13,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ToDoCardComponent {
 
 @Input()
-item: any
+item!: ToDOs
 
 @Output()
 deleteToDo = new EventEmitter()
