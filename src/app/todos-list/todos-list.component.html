@@ -6,7 +6,7 @@
 
 
 <div class="content-container_todos">
-  <div *ngFor="let todo of todos">
+  <div *ngFor="let todo of todosService.todoSubject$ | async">
     <app-todo-card [todo]="todo" (deleteTodo)="DeleteTodo($event)" class="texttodo"></app-todo-card>
   </div>
 </div>

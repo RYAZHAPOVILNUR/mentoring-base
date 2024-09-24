@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
   standalone: true,
   imports: [NgFor]
 })
-
 export class TodosCardComponent {
   @Input () 
   todo: any
