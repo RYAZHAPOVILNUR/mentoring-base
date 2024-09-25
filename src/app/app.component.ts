@@ -2,11 +2,13 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./header/header.component";
+import { Footer } from './footer/footer.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, Header],
+  imports: [RouterOutlet, NgIf, NgFor, Header, Footer],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -23,18 +25,6 @@ export class AppComponent {
   isShowCatalog = true;
 
   isShowBanner = true;
-
-        // readonly headerNavItem1 = 'Каталог';
-        // readonly headerNavItem2 = 'Стройматериалы';
-        // readonly headerNavItem3 = 'Инструменты';
-        // readonly headerNavItem4 = 'Электрика';
-        // readonly headerNavItem5 = 'Интерьер и одежда';
-
-        // readonly headerNavItem1 = upperCaseMenuItems[0];
-        // readonly headerNavItem2 = upperCaseMenuItems[1];
-        // readonly headerNavItem3 = upperCaseMenuItems[2];
-        // readonly headerNavItem4 = upperCaseMenuItems[3];
-        // readonly headerNavItem5 = upperCaseMenuItems[4];
 
   menuItems = upperCaseMenuItems;
 
