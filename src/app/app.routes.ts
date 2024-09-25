@@ -10,5 +10,3 @@ export const routes: Routes = [
   {path: 'users', component: UsersListComponent},
   {path: 'todos', component: TodoListComponent}
 ];
-
-
