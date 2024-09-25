@@ -21,7 +21,6 @@ export class AppComponent {
         // headerItem2;
   headerItem2 = aboutCompany;
   readonly headerItem3: string = 'Каталог';
-        // headerItems = upperCaseHeaderItems;
   isShowCatalog = true;
 
   isShowBanner = true;
