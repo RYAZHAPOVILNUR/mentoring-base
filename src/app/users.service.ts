@@ -13,35 +13,21 @@ export class UsersService {
 
     editUser(editedUser: User) {
       this.usersSubject$.next(
-        this.usersSubject$.value.map(
-          user => {
-            if (user.id === editedUser.id) {
-              return editedUser
-              }else {
-                return user
-              }
-            }
+        this.usersSubject$.value.map(user => 
+          user.id === editedUser.id ? editedUser : user
         )
-      )
+      );
     }
 
     createUser(user: User) {
         this.usersSubject$.next (
-            [...this.usersSubject$.value, user]
+          [...this.usersSubject$.value, user]
       )
     }
 
     deleteUser(id: number) {
       this.usersSubject$.next(
-        this.usersSubject$.value.filter(
-            item => {
-              if (id === item.id) {
-                  return false
-            } else {
-                return true;
-            }
-          }
-      )
-    )
-  }
+        this.usersSubject$.value.filter(item => item.id !== id)
+      );
+    }
 }
