@@ -1,264 +1,301 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
 
-<section> 
-<button style="
-  border: 1px solid #F0BA4E;
-  border-radius: 50px;
-  background-color: #fff;
-  font-family: 'Inter';
-  padding: 10px;
-  cursor: pointer;
-  margin: 5px;"
-(click)="isShowSadMan =!isShowSadMan">Скрыть/Показать грустного мужика</button>
-<div class="content" *ngIf="isShowSadMan">
-    <div class="container" >
-          <p class="slogan">Инструмент для вашего бизнеса</p>
-          <img src="assets/banner.jpg"  height="720px">
-        </div>
-      </div> 
+<section>
+  <button
+    style="
+      border: 1px solid #f0ba4e;
+      border-radius: 50px;
+      background-color: #fff;
+      font-family: 'Inter';
+      padding: 10px;
+      cursor: pointer;
+      margin: 5px;
+    "
+    (click)="isShowSadMan = !isShowSadMan"
+  >
+    Скрыть/Показать грустного мужика
+  </button>
+  <div class="content" *ngIf="isShowSadMan">
+    <div class="container">
+      <p class="slogan">Инструмент для вашего бизнеса</p>
+      <img src="assets/banner.jpg" height="720px" />
+    </div>
+  </div>
 </section>
 
 <section>
   <div class="container">
-  <div class="advantages">
-    <div class="advantage">
-        <img src="/assets/brick.svg">
-          <div class="advantage-text">
-            <p class="advantage-text-title"><b>Большой ассортимент</b>
-            строительных материалов всегда в наличии</p>
-    </div>
+    <div class="advantages">
       <div class="advantage">
-        <img src="/assets/car.png">
+        <img src="/assets/brick.svg" />
+        <div class="advantage-text">
+          <p class="advantage-text-title">
+            <b>Большой ассортимент</b> строительных материалов всегда в наличии
+          </p>
+        </div>
+        <div class="advantage">
+          <img src="/assets/car.png" />
           <div class="advantage-text">
-        <p class="advantage-text-title"><b>Доставка стройматериалов</b>
-        в течении четырех часов или в любое удобное время</p>
-      </div>
-      <div class="advantage">
-          <img src="/assets/like.png"
-          alt="like">
-          <div class="advantage-text">
-          <p class="advantage-text-title"><b>Многоуровневая система</b>
-          управления качеством по стандарту ISO 9001</p>
+            <p class="advantage-text-title">
+              <b>Доставка стройматериалов</b> в течении четырех часов или в
+              любое удобное время
+            </p>
+          </div>
+          <div class="advantage">
+            <img src="/assets/like.png" alt="like" />
+            <div class="advantage-text">
+              <p class="advantage-text-title">
+                <b>Многоуровневая система</b> управления качеством по стандарту
+                ISO 9001
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div> 
-</section>  
+</section>
 
 <section>
-  <div class="content" >
-  <div class="container">
-  <div class="item-cards">
-    <div class="item-cards__pagination">
-      <button class="item-cards__pagination-button active-button" *ngFor="let item of newPages">{{item}}</button>
+  <div class="content">
+    <div class="container">
+      <div class="item-cards">
+        <div class="item-cards__pagination">
+          <button
+            class="item-cards__pagination-button active-button"
+            *ngFor="let item of newPages"
+          >
+            {{ item }}
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div> 
-</section>                                      
+</section>
 
 <section>
- <div class="content">
+  <div class="content">
     <div class="container">
       <div class="cells">
         <div class="cell-left-block">
           <div class="cell-left shadow">
-            <div class="cell-left-title">Стротиельный отделочный<br>инструмент</div>
+            <div class="cell-left-title">
+              Стротиельный отделочный<br />инструмент
+            </div>
             <div class="catalog-one">
-            <div class="catalog-text-one" style="margin-right: 10px;">Перейти в каталог</div>
-    <img src="assets/arrow.png">
-  </div>
-</div>   
-    </div>
-<div class="cells-right">
-  <div class="group">
-    <div class="group-item shadow">
-      <img class="decorix" src="assets/image_14.png" width="200px" hight="150px">
-      <div class="text-block">
-        <div class="group-item-title">Эмали</div>
-        <div class="catalog">
-          <div class="catalog-text">Перейти в каталог</div>
-          <img src="assets/arrow.png">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="group">
-    <div class="group-item shadow">
-      <div class="cell-right-block-three ">
-        <div class="cell-left-title">Лакокрасочные<br>материалы</div>
-          <div class="catalog-three">
-          <div class="catalog-text" style="margin-right: 10px;">Перейти в каталог</div>
-          <img src="assets/arrow.png">
-        </div>
-          </div>
-          <img class="diamond" src="/assets/image17.png" width="230px" height="150px" style="margin-top: 50px; ">
-    </div>
-  </div>
-  <div class="group">
-    <div class="group-item shadow">
-      <div class="cell-right-block-three">
-        <div class="cell-left-title">Пены, клеи и<br>герметики</div>
-          <div class="catalog-three">
-          <div class="catalog-text" style="margin-right: 10px;">Перейти в каталог</div>
-          <img src="assets/arrow.png">
-        </div>
-          </div>
-          <img class="soudal" src="/assets/image18.png">
-        </div>
-      </div>
-  <div class="group">
-    <div class="group-item shadow">
-      <div class="group-item-five">
-        <div class="cell-left-title">Розетки и выключатели</div>
-        <div class="catalog-five">
-          <div class="catalog-text" style="margin-right:10px;">Перейти в каталог</div>
-          <img src="assets/arrow.png">
-    </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-  </div>
-</div>   
-</section>
-
-<section>
- <div class="content" >
-  <div class="container">
-    <div class="popular-items">
-      <div class="popular-items-text">
-        <div class="popular-items-text-title"><b>Популярные товары</b></div>
-        <div class="seeallitems"><b>Посмотреть все товары</b></div>
-      </div>
-      <div class="circle-items"> 
-        <div class="circle-items-buy shadow ">
-        <img class="circle" src="assets/image13.png">
-        <p class="circle-size">Круг зачистной 125х6х22</p>
-        <p class="circle-article">Артикул 00004</p>
-          <div class="circle-price">
-            <p class="circle-price-text">Цена за штуку</p>
-            <div class="price">
-              <p class="old-price">52 руб.</p>
-              <p class="new-price">48 руб.</p>
-            </div>
-            <div class="buy">
-              <div class="quantry">
-                <div class="quantry-text">Количество</div>
-                  <div class="how-quantry-container">
-                    <button class="minus button-item"><b>-</b></button>
-                    <button class="how-quantry button-item"><b>1</b></button>
-                    <button class="plus button-item"><b>+</b></button>
-                  </div>
-                  </div>
-                  <button class="button-buy">В корзину</button>
+              <div class="catalog-text-one" style="margin-right: 10px">
+                Перейти в каталог
               </div>
-          </div>
-          </div>
-        <div class="circle-items-buy shadow">
-        <img class="circle" src="assets/image13.png">
-        <p class="circle-size">Круг зачистной 125х6х22</p>
-        <p class="circle-article">Артикул 00004</p>
-          <div class="circle-price">
-            <p class="circle-price-text">Цена за штуку</p>
-            <div class="price">
-              <p class="old-price">52 руб.</p>
-              <p class="new-price">48 руб.</p>
+              <img src="assets/arrow.png" />
             </div>
-            <div class="buy">
-              <div class="quantry">
-                <div class="quantry-text">Количество</div>
-                  <div class="how-quantry-container">
-                    <button class="minus button-item"><b>-</b></button>
-                    <button class="how-quantry button-item"><b>1</b></button>
-                    <button class="plus button-item"><b>+</b></button>
-                  </div>
-                  </div>
-                  <button class="button-buy">В корзину</button>
+          </div>
+        </div>
+        <div class="cells-right">
+          <div class="group">
+            <div class="group-item shadow">
+              <img
+                class="decorix"
+                src="assets/image_14.png"
+                width="200px"
+                hight="150px"
+              />
+              <div class="text-block">
+                <div class="group-item-title">Эмали</div>
+                <div class="catalog">
+                  <div class="catalog-text">Перейти в каталог</div>
+                  <img src="assets/arrow.png" />
+                </div>
               </div>
-          </div>
-          </div>
-        <div class="circle-items-buy shadow">
-        <img class="circle" src="assets/image13.png">
-        <p class="circle-size">Круг зачистной 125х6х22</p>
-        <p class="circle-article">Артикул 00004</p>
-          <div class="circle-price">
-            <p class="circle-price-text">Цена за штуку</p>
-            <div class="price">
-              <p class="old-price">52 руб.</p>
-              <p class="new-price">48 руб.</p>
             </div>
-            <div class="buy">
-              <div class="quantry">
-                <div class="quantry-text">Количество</div>
-                  <div class="how-quantry-container">
-                    <button class="minus button-item"><b>-</b></button>
-                    <button class="how-quantry button-item"><b>1</b></button>
-                    <button class="plus button-item"><b>+</b></button>
+          </div>
+          <div class="group">
+            <div class="group-item shadow">
+              <div class="cell-right-block-three">
+                <div class="cell-left-title">Лакокрасочные<br />материалы</div>
+                <div class="catalog-three">
+                  <div class="catalog-text" style="margin-right: 10px">
+                    Перейти в каталог
                   </div>
-                  </div>
-                  <button class="button-buy">В корзину</button>
+                  <img src="assets/arrow.png" />
+                </div>
               </div>
-          </div>
-          </div>
-        <div class="circle-items-buy shadow">
-        <img class="circle" src="assets/image13.png">
-        <p class="circle-size">Круг зачистной 125х6х22</p>
-        <p class="circle-article">Артикул 00004</p>
-          <div class="circle-price">
-            <p class="circle-price-text">Цена за штуку</p>
-            <div class="price">
-              <p class="old-price">52 руб.</p>
-              <p class="new-price">48 руб.</p>
+              <img
+                class="diamond"
+                src="/assets/image17.png"
+                width="230px"
+                height="150px"
+                style="margin-top: 50px"
+              />
             </div>
-            <div class="buy">
-              <div class="quantry">
-                <div class="quantry-text">Количество</div>
-                  <div class="how-quantry-container">
-                    <button class="minus button-item"><b>-</b></button>
-                    <button class="how-quantry button-item"><b>1</b></button>
-                    <button class="plus button-item"><b>+</b></button>
+          </div>
+          <div class="group">
+            <div class="group-item shadow">
+              <div class="cell-right-block-three">
+                <div class="cell-left-title">Пены, клеи и<br />герметики</div>
+                <div class="catalog-three">
+                  <div class="catalog-text" style="margin-right: 10px">
+                    Перейти в каталог
                   </div>
+                  <img src="assets/arrow.png" />
+                </div>
+              </div>
+              <img class="soudal" src="/assets/image18.png" />
+            </div>
+          </div>
+          <div class="group">
+            <div class="group-item shadow">
+              <div class="group-item-five">
+                <div class="cell-left-title">Розетки и выключатели</div>
+                <div class="catalog-five">
+                  <div class="catalog-text" style="margin-right: 10px">
+                    Перейти в каталог
                   </div>
-                  <button class="button-buy">В корзину</button>
+                  <img src="assets/arrow.png" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>   
-  <div class="content">
-  <div class="container">
-    <div class="names">
-      <div class="names-text">
-        <div class="names-text-one">Более 10 000 наименований </div>
-        <div class="names-text-two">Инструмент для вашего бизнеса, разнообразных марок</div>
-        <div class="names-text-trhee">Перейти в каталог</div>
-      </div>
-      <img class="man" src="assets/man.png">
     </div>
   </div>
-</div> 
-</section>     
+</section>
 
 <section>
- <div class="content" >
+  <div class="content">
+    <div class="container">
+      <div class="popular-items">
+        <div class="popular-items-text">
+          <div class="popular-items-text-title"><b>Популярные товары</b></div>
+          <div class="seeallitems"><b>Посмотреть все товары</b></div>
+        </div>
+        <div class="circle-items">
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="names">
+        <div class="names-text">
+          <div class="names-text-one">Более 10 000 наименований</div>
+          <div class="names-text-two">
+            Инструмент для вашего бизнеса, разнообразных марок
+          </div>
+          <div class="names-text-trhee">Перейти в каталог</div>
+        </div>
+        <img class="man" src="assets/man.png" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content">
     <div class="container">
       <div class="popular-items">
         <div class="popular-items-text">
           <div class="popular-items-text-title"><b>Новинки</b></div>
           <div class="seeallitems"><b>Посмотреть все товары</b></div>
         </div>
-        <div class="circle-items ">
+        <div class="circle-items">
           <div class="circle-items-buy shadow">
-          <img class="circle" src="assets/image13.png">
-          <p class="circle-size">Круг зачистной 125х6х22</p>
-          <p class="circle-article">Артикул 00004</p>
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
             <div class="circle-price">
               <p class="circle-price-text">Цена за штуку</p>
               <div class="price">
@@ -268,89 +305,89 @@
               <div class="buy">
                 <div class="quantry">
                   <div class="quantry-text">Количество</div>
-                    <div class="how-quantry-container">
-                      <button class="minus button-item"><b>-</b></button>
-                      <button class="how-quantry button-item"><b>1</b></button>
-                      <button class="plus button-item"><b>+</b></button>
-                    </div>
-                    </div>
-                    <button class="button-buy">В корзину</button>
-                </div>
-            </div>
-            </div>
-          <div class="circle-items-buy shadow">
-          <img class="circle" src="assets/image13.png">
-          <p class="circle-size">Круг зачистной 125х6х22</p>
-          <p class="circle-article">Артикул 00004</p>
-            <div class="circle-price">
-              <p class="circle-price-text">Цена за штуку</p>
-              <div class="price">
-                <p class="old-price">52 руб.</p>
-                <p class="new-price">48 руб.</p>
-              </div>
-              <div class="buy">
-                <div class="quantry">
-                  <div class="quantry-text">Количество</div>
-                    <div class="how-quantry-container">
-                      <button class="minus button-item"><b>-</b></button>
-                      <button class="how-quantry button-item"><b>1</b></button>
-                      <button class="plus button-item"><b>+</b></button>
-                    </div>
-                    </div>
-                    <button class="button-buy">В корзину</button>
-                </div>
-            </div>
-            </div>
-          <div class="circle-items-buy shadow">
-          <img class="circle" src="assets/image13.png">
-          <p class="circle-size">Круг зачистной 125х6х22</p>
-          <p class="circle-article">Артикул 00004</p>
-            <div class="circle-price">
-              <p class="circle-price-text">Цена за штуку</p>
-              <div class="price">
-                <p class="old-price">52 руб.</p>
-                <p class="new-price">48 руб.</p>
-              </div>
-              <div class="buy">
-                <div class="quantry">
-                  <div class="quantry-text">Количество</div>
-                    <div class="how-quantry-container">
-                      <button class="minus button-item"><b>-</b></button>
-                      <button class="how-quantry button-item"><b>1</b></button>
-                      <button class="plus button-item"><b>+</b></button>
-                    </div>
-                    </div>
-                    <button class="button-buy">В корзину</button>
-                </div>
-            </div>
-            </div>
-          <div class="circle-items-buy shadow">
-          <img class="circle" src="assets/image13.png">
-          <p class="circle-size">Круг зачистной 125х6х22</p>
-          <p class="circle-article">Артикул 00004</p>
-            <div class="circle-price">
-              <p class="circle-price-text">Цена за штуку</p>
-              <div class="price">
-                <p class="old-price">52 руб.</p>
-                <p class="new-price">48 руб.</p>
-              </div>
-              <div class="buy">
-                <div class="quantry">
-                  <div class="quantry-text">Количество</div>
-                    <div class="how-quantry-container">
+                  <div class="how-quantry-container">
                     <button class="minus button-item"><b>-</b></button>
                     <button class="how-quantry button-item"><b>1</b></button>
                     <button class="plus button-item"><b>+</b></button>
-                    </div>
-                    </div>
-                    <button class="button-buy">В корзину</button>
                   </div>
                 </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="circle-items-buy shadow">
+            <img class="circle" src="assets/image13.png" />
+            <p class="circle-size">Круг зачистной 125х6х22</p>
+            <p class="circle-article">Артикул 00004</p>
+            <div class="circle-price">
+              <p class="circle-price-text">Цена за штуку</p>
+              <div class="price">
+                <p class="old-price">52 руб.</p>
+                <p class="new-price">48 руб.</p>
+              </div>
+              <div class="buy">
+                <div class="quantry">
+                  <div class="quantry-text">Количество</div>
+                  <div class="how-quantry-container">
+                    <button class="minus button-item"><b>-</b></button>
+                    <button class="how-quantry button-item"><b>1</b></button>
+                    <button class="plus button-item"><b>+</b></button>
+                  </div>
+                </div>
+                <button class="button-buy">В корзину</button>
               </div>
             </div>
           </div>
         </div>
-  </div> 
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -358,58 +395,47 @@
     <div class="container">
       <div class="dasement">
         <div class="logo-footer">
-          <img src="assets/logo.png">
+          <img src="assets/logo.png" />
         </div>
         <div class="information">
           <div class="connection">
-            <img class="call-footer" src="assets/call.svg">
+            <img class="call-footer" src="assets/call.svg" />
             <div class="contact-tel">
-              <div class="contact-tel-text">
-                Контактный телефон
-              </div>
-              <div class="telephone">
-                + 7 (812) 309-09-34
-              </div>
-              <div class="telephone">
-                + 7 (812) 309-09-34
-              </div>
+              <div class="contact-tel-text">Контактный телефон</div>
+              <div class="telephone">+ 7 (812) 309-09-34</div>
+              <div class="telephone">+ 7 (812) 309-09-34</div>
             </div>
-            <img class="sms" src="assets/mail.svg">
+            <img class="sms" src="assets/mail.svg" />
             <div class="contact-sms">
-              <div class="contact-sms-text">
-                Элекстронная почта
-              </div>
-              <div class="sms-one">
-                tustin78mail.ru
-              </div>
-              <div class="sms-two">
-                inftustin.ru
-              </div>
+              <div class="contact-sms-text">Элекстронная почта</div>
+              <div class="sms-one">tustin78mail.ru</div>
+              <div class="sms-two">inftustin.ru</div>
             </div>
           </div>
           <div class="questions">
-              <div class="questions-text">
-                <div class="question">
-                  Остались вопросы?
-                </div>
-                <p class="comment">
-                  Узнавайте первым о скидках, предложениях и событиях еженедельно в
-                  своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
-                </p>
-                <div class="input">
-              <div class="input-mail">
-                  <img class="mail" src="assets/mail.svg">
-                  <input class="input-question"
+            <div class="questions-text">
+              <div class="question">Остались вопросы?</div>
+              <p class="comment">
+                Узнавайте первым о скидках, предложениях и событиях еженедельно
+                в своем почтовом ящике. Отпишитесь в любое время одним щелчком
+                мыши.
+              </p>
+              <div class="input">
+                <div class="input-mail">
+                  <img class="mail" src="assets/mail.svg" />
+                  <input
+                    class="input-question"
                     type="text"
-                    placeholder="Введите свою почту">
-              </div>
-                  <button class="send">Отправить</button>
+                    placeholder="Введите свою почту"
+                  />
                 </div>
+                <button class="send">Отправить</button>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
     <div class="footer-nav-section">
       <div class="footer-menu">
         <div class="footer-menu-text">
@@ -419,13 +445,13 @@
         </div>
         <div class="last-nav">
           <div class="social-icons">
-            <img src="assets/facebook.png" alt="facebook">
-            <img src="assets/youtube.png" alt="youtube">
-            <img src="assets/whatsapp.png" alt="whatsapp">
+            <img src="assets/facebook.png" alt="facebook" />
+            <img src="assets/youtube.png" alt="youtube" />
+            <img src="assets/whatsapp.png" alt="whatsapp" />
           </div>
           <div class="copyright">© 2000-2021, All rights reserved</div>
         </div>
       </div>
     </div>
   </div>
-</footer>     
+</footer>

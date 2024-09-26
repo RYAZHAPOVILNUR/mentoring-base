@@ -4,7 +4,8 @@
   --container-padding-x: 15px;
 }
 
-html, body {
+html,
+body {
   font-family: Inter;
   width: 100%;
   height: 100%;
@@ -17,7 +18,7 @@ html, body {
 
 .container {
   max-width: calc(var(--container-width) + (var(--container-padding-x)));
-  margin-inline: auto ;
+  margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
 
@@ -29,7 +30,7 @@ html, body {
 }
 
 .call {
-  margin-right: 40px ;
+  margin-right: 40px;
   margin-left: 10px;
   font-family: Inter;
   display: flex;
@@ -80,11 +81,11 @@ html, body {
   font-weight: 600;
 }
 
-.white-color{
-  color: #FBFBFB;
+.white-color {
+  color: #fbfbfb;
 }
 
-.header-info-container{
+.header-info-container {
   display: flex;
   align-items: center;
   margin-left: 40px;
@@ -98,14 +99,14 @@ html, body {
   width: 125px;
   height: 50px;
   border-radius: 50px;
-  border: 1px solid #F0BA4E;
-  background-color: #4B565E;
+  border: 1px solid #f0ba4e;
+  background-color: #4b565e;
   color: white;
   cursor: pointer;
 }
 
 header {
-  background-color: #4B565E;
+  background-color: #4b565e;
 }
 
 .search-input {
@@ -121,8 +122,8 @@ header {
   background-position: right;
 }
 
-.second-nav{
-  background: #F0BA4E;
+.second-nav {
+  background: #f0ba4e;
   display: flex;
   justify-content: center;
 }
@@ -139,19 +140,19 @@ header {
   width: 543px;
   height: 112px;
   position: absolute;
-  font-family: Inter; 
-  color: #F0BA4E;
+  font-family: Inter;
+  color: #f0ba4e;
   font-weight: 700;
   font-size: 40px;
   margin: 304px 215px 304px 300px;
 }
 
-.advantage{
+.advantage {
   display: flex;
   align-items: center;
 }
 
-.advantages{
+.advantages {
   display: flex;
   margin: 28px auto;
   display: flex;
@@ -159,13 +160,13 @@ header {
   height: 72px;
 }
 
-.advantage-text{
+.advantage-text {
   width: 333px;
   height: 66px;
   margin-left: 16px;
 }
 
-.advantage-text-title{
+.advantage-text-title {
   font-family: Inter;
   font-size: 18px;
   font-weight: 500;
@@ -181,34 +182,33 @@ header {
 }
 
 .item-cards__pagination {
-  
   display: flex;
-    &-button {
-      cursor: pointer;
-      font-family: Inter;
-      border: none;
-      background-color: white;
-      color: #A1A0A0;
+  &-button {
+    cursor: pointer;
+    font-family: Inter;
+    border: none;
+    background-color: white;
+    color: #a1a0a0;
     &:first-child {
-      color: #F0BA4E;
+      color: #f0ba4e;
       font-weight: 600;
     }
   }
 }
 
-.cells{
+.cells {
   display: flex;
   margin: 26px auto;
   width: 1320px;
   height: 421px;
 }
 
-.cell-left{
+.cell-left {
   display: flex;
   background-color: #fff;
-  background-image: url(/assets/1.png) ;
+  background-image: url(/assets/1.png);
   background-repeat: no-repeat;
-  background-position-y: bottom ;
+  background-position-y: bottom;
   display: flex;
   width: 428px;
   height: 421px;
@@ -227,24 +227,24 @@ header {
   font-size: 14px;
   font-weight: 400;
   text-align: left;
-  color: #3C3C3B;
+  color: #3c3c3b;
   margin-bottom: 16px;
   margin-left: 235px;
 }
 
-.catalog-three{
+.catalog-three {
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
   text-align: left;
-  color: #3C3C3B;
+  color: #3c3c3b;
   margin-left: 10px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
 }
 
-.cell-left-title{
+.cell-left-title {
   white-space: nowrap;
   padding: 16px;
   font-family: Inter;
@@ -252,12 +252,12 @@ header {
   font-weight: 600;
   line-height: 33.89px;
   text-align: left;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 
 .cells-right {
   margin: 0;
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   flex-wrap: wrap;
@@ -280,14 +280,14 @@ header {
   background-position: left bottom;
 }
 
-.group-item-title{
+.group-item-title {
   padding: 16px 16px 0 16px;
   font-family: Inter;
   font-size: 28px;
   font-weight: 600;
   line-height: 33.89px;
   text-align: left;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 
 .text-decoration {
@@ -303,7 +303,7 @@ header {
 
 .catalog-text {
   font-family: Inter;
-  color: #3C3C3B;
+  color: #3c3c3b;
   white-space: nowrap;
   margin-left: 10px;
   margin-right: 10px;
@@ -318,13 +318,13 @@ header {
   height: 200px;
 }
 
-.catalog-five{
+.catalog-five {
   display: flex;
   margin-left: 195px;
   margin-top: 92px;
 }
 
-.cell-right-block-three{
+.cell-right-block-three {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -341,10 +341,10 @@ li {
 
 .popular-items {
   width: 1421px;
- margin: 56px auto;
+  margin: 56px auto;
 }
 
-.popular-items-text{
+.popular-items-text {
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
@@ -361,16 +361,16 @@ li {
   font-family: Inter;
   font-weight: 600;
   font-size: 18px;
-  color: #F0BA4E;
+  color: #f0ba4e;
 }
 
 .circle-items {
   display: flex;
 }
 
-.circle-items-buy{
+.circle-items-buy {
   margin-left: 26px;
-  padding: 26px; 
+  padding: 26px;
   width: 309px;
   height: 429px;
 }
@@ -384,10 +384,10 @@ li {
   font-family: Inter;
   font-weight: 600;
   size: 20px;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 
-.circle-article{
+.circle-article {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
@@ -398,7 +398,7 @@ li {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
-  color: #A1A0A0;
+  color: #a1a0a0;
 }
 
 .price {
@@ -426,7 +426,7 @@ li {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 .how-quantry-container {
   margin-top: 10px;
@@ -436,37 +436,36 @@ li {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 .quantry-block {
   display: flex;
-} 
+}
 .button-item {
   border: none;
   cursor: pointer;
   background-color: #fff;
-  color: #3C3C3B;
+  color: #3c3c3b;
   font-weight: 500;
-
 }
 .button-buy {
   font-family: Inter;
   font-weight: 600;
   font-size: 16px;
-  margin: 3px 3px 3px 12px ;
+  margin: 3px 3px 3px 12px;
   background-color: #fff;
-  color: #3C3C3B;
+  color: #3c3c3b;
   padding: 14px 28px;
   border-radius: 54px;
   border: 1px solid;
-  border-color: #F0BA4E;
+  border-color: #f0ba4e;
 }
 
 .quantry-text {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 
 .how-quantry {
@@ -476,7 +475,7 @@ li {
   font-family: Inter;
   font-weight: 400;
   size: 16px;
-  color: #3C3C3B;
+  color: #3c3c3b;
 }
 
 .names {
@@ -485,12 +484,12 @@ li {
   margin: 0 auto;
   width: 1320px;
   height: 251px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   justify-content: space-between;
 }
 
 .names-text {
-  padding: 28px ;
+  padding: 28px;
   font-family: Inter;
   display: flex;
   flex-direction: column;
@@ -498,36 +497,36 @@ li {
 
 .names-text-one {
   text-transform: uppercase;
-  color: #3C3C3B;
+  color: #3c3c3b;
   font-weight: 500;
   font-size: 28px;
   margin-bottom: 16px;
 }
 
 .names-text-two {
-  color: #A1A0A0;
+  color: #a1a0a0;
   font-weight: 400;
   font-size: 20px;
-  margin-bottom:99px ;
+  margin-bottom: 99px;
 }
 
-.shadow{
+.shadow {
   box-shadow: 4px 4px 15px 0px rgba(34, 60, 80, 0.2);
 }
 
 .names-text-trhee {
   font-size: 18px;
   font-weight: 600;
-  color: #F0BA4E;
+  color: #f0ba4e;
 }
 
 footer {
   width: 1920px;
   height: 373px;
-  background-color: #4B565E;
+  background-color: #4b565e;
 }
 
-.basement{
+.basement {
   margin: 0 auto;
   width: 1320px;
   height: 373px;
@@ -556,17 +555,17 @@ footer {
   height: 24px;
 }
 
-.contact-tel{
+.contact-tel {
   white-space: nowrap;
   margin-left: 12px;
 }
 
 .contact-tel-text {
   font-size: 12px;
-  color: #FFFFFF99;
+  color: #ffffff99;
 }
 
-.telephone{
+.telephone {
   margin-top: 8px;
   font-family: Inter;
   font-size: 16px;
@@ -580,10 +579,10 @@ footer {
 
 .contact-sms-text {
   font-size: 12px;
-  color: #FFFFFF99;
+  color: #ffffff99;
 }
 
-.sms{
+.sms {
   margin-left: 56px;
   width: 24px;
   height: 24px;
@@ -597,7 +596,7 @@ footer {
   color: #fff;
 }
 
-.sms-two{
+.sms-two {
   margin-top: 8px;
   font-family: Inter;
   font-size: 16px;
@@ -613,21 +612,21 @@ footer {
   flex-direction: column;
 }
 
-.question{
+.question {
   font-family: Inter;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
 }
 
-.comment{
+.comment {
   margin-top: 12px;
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
-  color:  #FFFFFF99;
+  color: #ffffff99;
 }
 
 .input {
@@ -635,7 +634,7 @@ footer {
   display: flex;
   justify-content: space-between;
   height: 48px;
-  border: 1px solid #F0BA4E;
+  border: 1px solid #f0ba4e;
   border-radius: 30px;
 }
 
@@ -653,10 +652,10 @@ footer {
   border: none;
 }
 
-.send{
+.send {
   display: flex;
   align-items: center;
-  margin: 6px 6px 6px 0 ;
+  margin: 6px 6px 6px 0;
   padding: 12px 19px;
   width: 94px;
   color: #fff;
@@ -665,7 +664,7 @@ footer {
   font-weight: 700;
   line-height: 12.1px;
   text-align: center;
-  background-color: #F0BA4E;
+  background-color: #f0ba4e;
   border-radius: 30px;
   cursor: pointer;
 }

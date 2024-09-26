@@ -4,7 +4,8 @@
   --container-padding-x: 15px;
 }
 
-html, body {
+html,
+body {
   font-family: Inter;
   width: 100%;
   height: 100%;
@@ -17,20 +18,20 @@ html, body {
 
 .container {
   max-width: calc(var(--container-width) + (var(--container-padding-x)));
-  margin-inline: auto ;
+  margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
 
 .button {
-  border: 1px solid #F0BA4E;
+  border: 1px solid #f0ba4e;
   border-radius: 50px;
-  background-color: #4B565E;
+  background-color: #4b565e;
   color: #fff;
-  font-family: 'Inter';
+  font-family: "Inter";
   padding: 10px;
   cursor: pointer;
   margin-left: 10px;
-} 
+}
 
 .nav {
   display: flex;
@@ -40,7 +41,7 @@ html, body {
 }
 
 .call {
-  margin-right: 40px ;
+  margin-right: 40px;
   margin-left: 10px;
   font-family: Inter;
   display: flex;
@@ -91,11 +92,11 @@ html, body {
   font-weight: 600;
 }
 
-.white-color{
-  color: #FBFBFB;
+.white-color {
+  color: #fbfbfb;
 }
 
-.header-info-container{
+.header-info-container {
   display: flex;
   align-items: center;
   margin-left: 40px;
@@ -109,14 +110,14 @@ html, body {
   width: 125px;
   height: 50px;
   border-radius: 50px;
-  border: 1px solid #F0BA4E;
-  background-color: #4B565E;
+  border: 1px solid #f0ba4e;
+  background-color: #4b565e;
   color: white;
   cursor: pointer;
 }
 
 header {
-  background-color: #4B565E;
+  background-color: #4b565e;
 }
 
 .search-input {
@@ -132,8 +133,8 @@ header {
   background-position: right;
 }
 
-.second-nav{
-  background: #F0BA4E;
+.second-nav {
+  background: #f0ba4e;
   display: flex;
   justify-content: center;
 }

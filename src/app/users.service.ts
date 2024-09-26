@@ -1,34 +1,31 @@
-import { Injectable } from "@angular/core";
-import { User } from "./users-list/user-interface";
-import { BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { User } from './users-list/user-interface';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
-
+@Injectable({ providedIn: 'root' })
 export class UsersService {
-    private usersSubject$ = new BehaviorSubject<User[]>([]);
-    users$ = this.usersSubject$.asObservable();
+  private usersSubject$ = new BehaviorSubject<User[]>([]);
+  users$ = this.usersSubject$.asObservable();
 
-    setUsers(users: User[]) {
-        this.usersSubject$.next(users);
-    }
+  setUsers(users: User[]) {
+    this.usersSubject$.next(users);
+  }
 
-    editUser(editedUser: User) {
-      this.usersSubject$.next(
-        this.usersSubject$.value.map(user => 
-          user.id === editedUser.id ? editedUser : user
-        )
-      );
-    }
-
-    createUser(user: User) {
-        this.usersSubject$.next (
-          [...this.usersSubject$.value, user]
+  editUser(editedUser: User) {
+    this.usersSubject$.next(
+      this.usersSubject$.value.map((user) =>
+        user.id === editedUser.id ? editedUser : user
       )
-    }
+    );
+  }
 
-    deleteUser(id: number) {
-      this.usersSubject$.next(
-        this.usersSubject$.value.filter(item => item.id !== id)
-      );
-    }
+  createUser(user: User) {
+    this.usersSubject$.next([...this.usersSubject$.value, user]);
+  }
+
+  deleteUser(id: number) {
+    this.usersSubject$.next(
+      this.usersSubject$.value.filter((item) => item.id !== id)
+    );
+  }
 }

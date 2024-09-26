@@ -1,22 +1,21 @@
-import { NgFor } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { NgFor } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
-  standalone: true, 
+  standalone: true,
   imports: [NgFor],
   templateUrl: './user-card.component.html',
-  styleUrl: './user-card.component.scss'
+  styleUrl: './user-card.component.scss',
 })
-
 export class UserCardComponent {
   @Input()
-  user: any
+  user: any;
 
   @Output()
-  deleteUser = new EventEmitter()
+  deleteUser = new EventEmitter();
 
   onDeleteUser(userId: number) {
-    this.deleteUser.emit(userId)
+    this.deleteUser.emit(userId);
   }
 }

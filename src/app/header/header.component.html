@@ -1,54 +1,70 @@
 <header>
   <div class="content">
-  <div class="container">
+    <div class="container">
       <nav class="nav">
         <div class="nav-container">
           <div class="menu-items-container">
-              <img class = "logo" src="/assets/logo.png">
-                <div class="menu-item white-color" routerLink="/">{{headerItemFirst}}</div>
-                <div class="menu-item white-color">{{aboutCompany}}</div>
-                <div class="menu-item white-color" *ngIf="isShowCatalog">{{headerItemThird}}</div>
-                <button 
-                (click)="isShowCatalog =!isShowCatalog" class="button">Скрыть/Показать каталог</button>
-                <button 
-                (click)="changeMenuText()" class="button">Изменить текст</button>
-              </div>
-              <div class="header-info-container">
-                <button routerLink="/users" routerLinkActive="active-link" class="button">Админка</button>
-              <div class="call">
-                <img src="/assets/call.svg" alt="call">
-                <a class="tel" href="tel:+79650842929"> +7 (965) 084-29-29 </a>
-              </div>
-              <img class="header-info-item" 
-                    src="assets/hearticon.svg" 
-                    alt="favorites">
-              <button class="cart-button header-info-container">
-              <img 
-              src="assets/buy.svg" 
-              alt="cart">
-            <span style="margin-left: 10px;">
-              Пусто
-            </span>  
+            <img class="logo" src="/assets/logo.png" />
+            <div class="menu-item white-color" routerLink="/">
+              {{ headerItemFirst }}
+            </div>
+            <div class="menu-item white-color">{{ aboutCompany }}</div>
+            <div class="menu-item white-color" *ngIf="isShowCatalog">
+              {{ headerItemThird }}
+            </div>
+            <button (click)="isShowCatalog = !isShowCatalog" class="button">
+              Скрыть/Показать каталог
             </button>
-              </div>
+            <button (click)="changeMenuText()" class="button">
+              Изменить текст
+            </button>
           </div>
+          <div class="header-info-container">
+            <button
+              routerLink="/users"
+              routerLinkActive="active-link"
+              class="button"
+            >
+              Админка
+            </button>
+            <div class="call">
+              <img src="/assets/call.svg" alt="call" />
+              <a class="tel" href="tel:+79650842929"> +7 (965) 084-29-29 </a>
+            </div>
+            <img
+              class="header-info-item"
+              src="assets/hearticon.svg"
+              alt="favorites"
+            />
+            <button class="cart-button header-info-container">
+              <img src="assets/buy.svg" alt="cart" />
+              <span style="margin-left: 10px"> Пусто </span>
+            </button>
+          </div>
+        </div>
       </nav>
       <nav class="second-nav">
         <div class="second-nav-container">
-          <div class="menu-items-container" >
-            <img src="assets/light.png" >
+          <div class="menu-items-container">
+            <img src="assets/light.png" />
             <span class="menu-item"></span>
-            <span class="menu-item" *ngFor="let item of menuItems">{{item}}</span>
+            <span class="menu-item" *ngFor="let item of menuItems">{{
+              item
+            }}</span>
           </div>
           <div class="search">
-            <input class="search-input" type="text" placeholder="Поиск, например Круг зачистной">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Поиск, например Круг зачистной"
+            />
           </div>
           <div class="map">
-            <img class="map-pin" src="./assets/map-pin.svg">
+            <img class="map-pin" src="./assets/map-pin.svg" />
             <div class="moscow">Москва</div>
           </div>
         </div>
       </nav>
+    </div>
   </div>
-</div>
 </header>
