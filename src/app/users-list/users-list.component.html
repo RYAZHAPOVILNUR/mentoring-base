@@ -1,5 +1,5 @@
 <div class="content-container">
-    <div *ngFor="let item of users">
-        <app-user-card [user]="item" (deleteUser)="deleteUser($event)"></app-user-card>
+    <div *ngFor="let user of usersService.usersSubject$ | async">
+        <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
     </div>
 </div>

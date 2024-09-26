@@ -47,7 +47,7 @@ import { HeaderComponent } from './header/header.component';
 //   (name) => {
 //     console.log('name is:', name)
 //   }
-// ) 
+// )
 
 // console.log(names [2]);
 
@@ -63,12 +63,12 @@ import { HeaderComponent } from './header/header.component';
 // console.log (user)
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink, HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    imports: [RouterOutlet, NgIf, NgFor, RouterLink, HeaderComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'mentoring-first-project';
+    title = 'mentoring-first-project';
 }

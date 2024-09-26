@@ -1,11 +1,11 @@
 <div class="todos-card">
-  <div>
-    <p>Текст задачи</p>
-    <div>{{ todo.title }}</div>
-    <p>Автор задачи</p>
-    <div>{{ todo.userId }}</div>
-    <p>Задача решена:</p>
-    <div>{{ todo.completed ? "Да" : "Нет" }}</div>
-  </div>
-  <button class="delete" (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
+    <div>
+        <p>Текст задачи</p>
+        <div>{{ todo.title }}</div>
+        <p>Автор задачи</p>
+        <div>{{ todo.userId }}</div>
+        <p>Задача решена:</p>
+        <div>{{ todo.completed ? "Да" : "Нет" }}</div>
+    </div>
+    <button class="delete" (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
 </div>
