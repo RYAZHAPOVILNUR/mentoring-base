@@ -38,7 +38,7 @@ export class AppComponent {
 
   isShowCatalog = !!false;
 
-  isManOnPhoto = false;
+  isManOnPhoto = true;
 
   readonly headerItem1 = 'Главная';
 
