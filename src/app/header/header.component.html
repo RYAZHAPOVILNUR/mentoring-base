@@ -1,0 +1,57 @@
+<header class="header">
+  <div class="header__top">
+    <div class="container header__top-wrapper">
+      <a href="#" class="logo">
+        <img src="./../assets/logo.svg" alt="Company logo" class="logo__img" />
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link" routerLink="">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">{{ aboutCompany }}</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" routerLink="/users">Админка</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="change-text-btn" (click)="changeMenuText()">
+        Изменить текст
+      </button>
+      <a href="tel:+79650842929" class="link-phone">
+        <span class="link-phone__icon"></span>
+        <span class="link-phone__text">+7 (965) 084-29-29</span>
+      </a>
+      <button class="btn-favourites"></button>
+      <button class="btn-cart">
+        <span class="btn-cart__icon"></span>
+        <span class="btn-cart__text">Пусто</span>
+      </button>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container header__bottom-wrapper">
+      <!-- <button class="btn-catalog">
+        <span class="btn-catalog__icon"></span>
+        <span class="btn-catalog__text">Каталог</span>
+      </button> -->
+      <ul class="categories">
+        <li class="categories__item" *ngFor="let item of menuItems">
+          <a href="#" class="categories__link">{{ item }}</a>
+        </li>
+      </ul>
+      <form action="" class="search-form">
+        <input
+          type="text"
+          class="search-form__input"
+          placeholder="Поиск, например Круг зачистной"
+        />
+        <button class="search-form__btn"></button>
+      </form>
+      <a href="#" class="link-location">Москва</a>
+    </div>
+  </div>
+</header>
