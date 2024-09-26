@@ -2,18 +2,7 @@
 <router-outlet></router-outlet>
 
 <section>
-  <button
-    style="
-      border: 1px solid #f0ba4e;
-      border-radius: 50px;
-      background-color: #fff;
-      font-family: 'Inter';
-      padding: 10px;
-      cursor: pointer;
-      margin: 5px;
-    "
-    (click)="isShowSadMan = !isShowSadMan"
-  >
+  <button class="button-man" (click)="isShowSadMan = !isShowSadMan">
     Скрыть/Показать грустного мужика
   </button>
   <div class="content" *ngIf="isShowSadMan">
