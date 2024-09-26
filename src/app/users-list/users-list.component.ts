@@ -8,13 +8,12 @@ import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from '../users.service';
 
 @Component({
-      selector: 'app-users-list',
-      standalone: true,
-      imports: [NgFor, NgIf, RouterLink, UserCardComponent , AsyncPipe], 
-      templateUrl: './users-list.component.html',
-      styleUrl: './users-list.component.scss',
-      changeDetection: ChangeDetectionStrategy.OnPush
-
+  selector: 'app-users-list',
+  standalone: true,
+  imports: [NgFor, NgIf, RouterLink, UserCardComponent , AsyncPipe], 
+  templateUrl: './users-list.component.html',
+  styleUrl: './users-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class UsersListComponent {
@@ -30,6 +29,6 @@ export class UsersListComponent {
   }
 
   deleteUser(id: number) {
-  this.usersService.deleteUser(id)
+    this.usersService.deleteUser(id)
   }
 }

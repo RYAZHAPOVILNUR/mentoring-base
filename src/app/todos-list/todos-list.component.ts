@@ -14,20 +14,20 @@ import { TodoService } from "../todos.service";
   imports: [NgFor, RouterLink, TodoCardComponent, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class TodoListComponent {
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodoService);
 
- constructor() {
+constructor() {
   this.todosApiService.getTodos().subscribe(
     (response: any) => {
-      this.todosService.setUsers(response);
+      this.todosService.setTodos(response);
     }
   )
 }
 
-deleteTodo(id: number) {
-    this.todosService.deleteUser(id)
+  deleteTodo(id: number) {
+    this.todosService.deleteTodo(id)
   }
-
 }

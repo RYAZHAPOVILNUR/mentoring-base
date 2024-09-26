@@ -3,6 +3,7 @@ import { User } from "./users-list/user-interface";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
+
 export class UsersService {
     private usersSubject$ = new BehaviorSubject<User[]>([]);
     users$ = this.usersSubject$.asObservable();

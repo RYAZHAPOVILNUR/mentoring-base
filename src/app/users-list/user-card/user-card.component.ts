@@ -17,6 +17,6 @@ export class UserCardComponent {
   deleteUser = new EventEmitter()
 
   onDeleteUser(userId: number) {
-      this.deleteUser.emit(userId)
-      }
+    this.deleteUser.emit(userId)
+  }
 }
