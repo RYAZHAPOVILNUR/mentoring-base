@@ -24,7 +24,7 @@ export class UsersListComponent {
             (response: any) => {
                 this.usersService.setUsers(response);
             }
-        )
+        ) 
     }
 
     deleteUser(id: number) { 
