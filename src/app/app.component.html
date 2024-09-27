@@ -3,10 +3,12 @@
       <div class="header-logo">
           <img src="/assets/logo.svg" alt="">
       </div>
-      <div class="header-nav-item">Главная</div>
-      <div class="header-nav-item">О компании</div>
-      <div class="header-nav-item">Каталог</div>
+      <div class="header-nav-item">{{headerItem1}}</div>
+      <div class="header-nav-item">{{aboutCompany}}</div>
+      <div class="header-nav-item"  *ngIf="isShowCatalog">{{headerItem3}}</div>
   </div>
+  <button style="background-color: brown;" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+  <button style="background-color: brown;" (click)="changingLetterCase()">Изменить текст</button>
   <div class="header-right">
       <div class="header-phone-icon">
           <img src="/assets/phone.svg" alt="">
@@ -27,22 +29,22 @@
           <div class="catalog-icon">
               <img src="/assets/light.svg" alt="">
           </div>
-          <div class="header-bottom-nav-item1">
-              Каталог
+          <div class="header-bottom-nav-item1" *ngFor="let item of menuBottomItems">
+              {{item}}
           </div>
       </div>
-      <div class="header-bottom-nav-item2">
-          Стройматериалы
+      <!-- <div class="header-bottom-nav-item2">
+          {{header2Item2}}
       </div>
       <div class="header-bottom-nav-item2">
-          Инструменты
+          {{header2Item3}}
       </div>
       <div class="header-bottom-nav-item2">
-          Электрика
+          {{header2Item4}}
       </div>
       <div class="header-bottom-nav-item2">
-          Интерьер и одежда
-      </div>
+          {{header2Item5}}
+      </div> -->
   </div>
   <div class="searh-container">
       <input class="search__input" type="search" placeholder="Поиск, например Круг зачистной">
@@ -53,7 +55,8 @@
   </div>
 </div>
 <div class="banner_container">
-  <div class="banner">
+    <button style="background-color: brown;" (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
+  <div class="banner" *ngIf="isShowImg">
       <div class="banner_title">
           Инструмент для вашего <br>бизнеса
       </div>
@@ -102,11 +105,11 @@
 </div>
 <div class="product_cards_container">
   <div class="switching_pages">
-      <div class="number active">1</div>
-      <div class="number">2</div>
-      <div class="number">3</div>
-      <div class="number">4</div>
-      <div class="number">5</div>
+      <button class="number active" *ngFor="let item of switchingPagesInReverse">{{item}}</button>
+      <!-- <button class="number">2</button>
+      <button class="number">3</button>
+      <button class="number">4</button>
+      <button class="number">5</button> -->
   </div>
   <div class="product_cards">
       <div class="big_card">
