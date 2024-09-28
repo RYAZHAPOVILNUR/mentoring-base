@@ -4,7 +4,7 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosService } from '../todos.service';
 
-@Component({ 
+@Component({
   selector: 'app-todos-list.component',
   standalone: true,
   imports: [NgFor, TodoCardComponent, AsyncPipe],
@@ -13,19 +13,16 @@ import { TodosService } from '../todos.service';
   styleUrl: './todos-list.component.component.scss',
 })
 export class TodosListComponent {
-  readonly todosApiService = inject(TodosApiService)
-  readonly todosService = inject(TodosService)
-
+  readonly todosApiService = inject(TodosApiService);
+  readonly todosService = inject(TodosService);
 
   constructor() {
-    this.todosApiService.getTodos().subscribe(
-      (response: any) => {
-        this.todosService.setTodos(response)
-      }
-    )
+    this.todosApiService.getTodos().subscribe((response: any) => {
+      this.todosService.setTodos(response);
+    });
   }
-
+  //*MARK:delete-method
   deleteTodo(id: number) {
-    this.todosService.deleteTodo(id)
+    this.todosService.deleteTodo(id);
   }
 }

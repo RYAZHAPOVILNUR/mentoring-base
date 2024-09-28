@@ -1,19 +1,21 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import {  RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { headerComponent } from './app-header/header.component';
 
-const newPages = [5, 4, 3, 2, 1]
+const newPages = [5, 4, 3, 2, 1];
 
-const func2 = (caller: string) => { return caller };
+const func2 = (caller: string) => {
+  return caller;
+};
 
 const newCaller = func2('О Компании');
 
 const callNumber = (phoneNumber: number) => {
   console.log('Calling to the number: ' + phoneNumber + '...');
   console.log('Запись вашего разговора на номер ' + phoneNumber + ' сохранена');
-  return 'ВОТ ЗАПИС ВАШЕГО ДИАЛОГА: ssn. jcklmscks... sssjndnvdv dcn...'
-}
+  return 'ВОТ ЗАПИС ВАШЕГО ДИАЛОГА: ssn. jcklmscks... sssjndnvdv dcn...';
+};
 
 const callRecording: string = callNumber(770523432);
 console.log(callRecording);
@@ -25,11 +27,10 @@ console.log(callRecording);
   templateUrl: 'app.component.html',
   styleUrl: './app.component.scss',
 })
-
 export class AppComponent {
   title = 'mentoring-first-project';
 
-  newPages = newPages; 
+  newPages = newPages;
 
   isShowMan = true;
 
@@ -54,6 +55,4 @@ export class AppComponent {
   wide__pagination_action = 'Посмотреть все товары';
 
   footer__copyright = '© 2000-2021, All rights reserved';
-
 }
-

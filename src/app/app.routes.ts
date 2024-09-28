@@ -4,18 +4,18 @@ import { TodosListComponent } from './todos-list.component/todos-list.component.
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: HomeComponent,
-    },
+  {
+    path: '',
+    component: HomeComponent,
+  },
 
-    {
-        path: 'users',
-        component: UsersListComponent
-    },
+  {
+    path: 'users',
+    component: UsersListComponent,
+  },
 
-    {
-        path: 'todos',
-        component: TodosListComponent
-    }
+  {
+    path: 'todos',
+    component: TodosListComponent,
+  },
 ];

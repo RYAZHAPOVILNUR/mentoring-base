@@ -1,8 +1,10 @@
-import { NgFor, NgIf } from "@angular/common";
-import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { NgFor, NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
-const func2 = (caller: string) => { return caller };
+const func2 = (caller: string) => {
+  return caller;
+};
 
 const newCaller = func2('О Компании');
 
@@ -12,9 +14,7 @@ const newCaller = func2('О Компании');
   styleUrl: 'header.component.scss',
   standalone: true,
   imports: [NgIf, NgFor, RouterLink],
-
 })
-
 export class headerComponent {
   isShowMan = true;
 
@@ -31,8 +31,8 @@ export class headerComponent {
   isUppercase = true;
 
   changeMenuText() {
-    this.menuItems = this.menuItems.map(
-      (item) => this.isUppercase ? item.toLowerCase() : item.toUpperCase()
+    this.menuItems = this.menuItems.map((item) =>
+      this.isUppercase ? item.toLowerCase() : item.toUpperCase()
     );
 
     this.isUppercase = !this.isUppercase;
