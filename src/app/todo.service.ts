@@ -4,7 +4,8 @@ import { Todo } from "./todos-list/todos-list.component";
 
 @Injectable({providedIn: "root"})
 export class TodosService {
-    todosSubject$ = new BehaviorSubject<Todo[]>([]);
+    private todosSubject$ = new BehaviorSubject<Todo[]>([]);
+    todos$ = this.todosSubject$.asObservable();
     
     setTodos(todo: Todo[]) {
         this.todosSubject$.next(todo);
@@ -30,7 +31,7 @@ export class TodosService {
         )
     }
 
-    deleteTodos(id: number) {
+    deleteTodo(id: number) {
         this.todosSubject$.next(
             this.todosSubject$.value.filter(
                 todo => {

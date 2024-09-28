@@ -32,6 +32,6 @@ export class TodosListComponent {
     }
 
     deleteTodo(id: number) {
-        this.todosService.deleteTodos(id)
+        this.todosService.deleteTodo(id)
     }
 }
