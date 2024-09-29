@@ -23,8 +23,18 @@ export class TodosService {
     );
   }
 
-  createTodos(todo: Todo) {
-    this.todosSubject$.next([...this.todosSubject$.value, todo]);
+  createTodo(todo: Todo) {
+    const existingTodo = this.todosSubject$.value.find(
+      (currentElement) => currentElement.title === todo.title
+    );
+    console.log(existingTodo);
+
+    if (existingTodo !== undefined) {
+      alert('ТАКАЯ ЗАДАЧА УЖЕ ЗАРЕГИСРИРОВАНА');
+    } else {
+      alert('ЗАДАЧА УСПЕШНО СОЗДАНА');
+      this.todosSubject$.next([...this.todosSubject$.value, todo]);
+    }
   }
 
   deleteTodo(id: number) {

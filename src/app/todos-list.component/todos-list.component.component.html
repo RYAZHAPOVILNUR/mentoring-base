@@ -1,6 +1,4 @@
-<div class="page__title">
-  <div class="page__title-text">КОМПОНЕНТ СПИСКА ЗАДАЧ</div>
-</div>
+<app-create-todos-form (createTodo)="createTodos($event)"></app-create-todos-form>
 
 <div class="users-block">
   <div class="users-decoration" *ngFor="let el of todosService.todos$ | async">
