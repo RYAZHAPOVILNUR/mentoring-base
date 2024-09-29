@@ -1,0 +1,17 @@
+<div class="todo-form-title">
+  <h1>Create todo form</h1>
+</div>
+
+<div class="todo-form-container">
+  <form class="todo-form" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>Текст задачи:</p>
+    <input type="text" class="todo-input" [formGroup]="form" formControlName="title">
+    <p>Автор:</p>
+    <input type="text" class="todo-input" [formGroup]="form" formControlName="userId">
+    <p>Статус:</p>
+    <input type="text" class="todo-input" [formGroup]="form" formControlName="completed" placeholder="ДА/НЕТ">
+    <button class="create-todo-button" [disabled]="form.invalid">
+      Create todo
+    </button>
+  </form>
+</div>

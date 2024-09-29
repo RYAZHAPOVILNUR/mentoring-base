@@ -5,7 +5,8 @@ import { Todo } from "./todos-list/todos-list.component";
 @Injectable ({providedIn: 'root'})
 
 export class TodoService {
-  todoSubject$ = new BehaviorSubject<Todo[]>([]);
+  private todoSubject$ = new BehaviorSubject<Todo[]>([]);
+  todos$ = this.todoSubject$.asObservable();
 
   setTodos (todos: Todo[]) {
     this.todoSubject$.next(todos);
@@ -26,9 +27,16 @@ export class TodoService {
   }
 
   createTodo (todo: Todo) {
-    this.todoSubject$.next(
-      [...this.todoSubject$.value, todo]
-    )
+    const existingTodo = this.todoSubject$.value.find(
+      (currentElement) => currentElement.title === todo.title
+    );
+
+    if (existingTodo !== undefined) {
+      alert ('Такая задача уже добавлена');
+    } else {
+      this.todoSubject$.next([...this.todoSubject$.value, todo]);
+      alert ('Задача успешно добавлена');
+    }
   }
 
   deleteTodo (id: any) {
