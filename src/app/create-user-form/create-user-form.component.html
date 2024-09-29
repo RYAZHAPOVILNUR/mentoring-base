@@ -1,0 +1,60 @@
+<h1 class="heading">
+  СОЗДАТЬ ФОРМУ ДЛЯ ДОБАВЛЕНИЯ<br />
+  НОВОГО ПОЛЬЗОВАТЕЛЬЯ
+</h1>
+<div class="form">
+  <form class="form-wrapper" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>NAME</p>
+    <input type="text" class="form-input" formControlName="name" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['name'].invalid &&
+        (form.controls['name'].dirty || form.controls['name'].touched)
+      "
+    >
+      <div *ngIf="form.controls['name'].errors">ИМЯ ВВЕДЕНО НЕПРАВИЛНО</div>
+    </div>
+
+    <p>EMAIL</p>
+    <input type="text" class="form-input" formControlName="email" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['email'].invalid &&
+        (form.controls['email'].dirty || form.controls['email'].touched)
+      "
+    >
+      <div *ngIf="form.controls['email'].errors">EMAIL ВВЕДЕН НЕПРАВИЛНО</div>
+    </div>
+
+    <p>WEBSITE</p>
+    <input type="text" class="form-input" formControlName="website" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['website'].invalid &&
+        (form.controls['website'].dirty || form.controls['website'].touched)
+      "
+    >
+      <div *ngIf="form.controls['website'].errors">САЙТ ВВЕДЕН НЕПРАВИЛНО</div>
+    </div>
+
+    <p>COMPANY NAME</p>
+    <input type="text" class="form-input" formControlName="companyName" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['companyName'].invalid &&
+        (form.controls['companyName'].dirty ||
+          form.controls['companyName'].touched)
+      "
+    >
+      <div *ngIf="form.controls['companyName'].errors">
+        ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛНО
+      </div>
+    </div>
+
+    <button [disabled]="form.invalid">СОЗДАТЬ ЮЗЕРА</button>
+  </form>
+</div>

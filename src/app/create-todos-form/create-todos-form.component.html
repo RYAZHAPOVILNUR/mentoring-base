@@ -1,0 +1,48 @@
+<h1 class="heading">СОЗДАТЬ ФОРМУ ДЛЯ <br />ДОБАВЛЕНИЯ НОВОЙ ЗАДАЧИ</h1>
+
+<div class="form">
+  <form class="form-wrapper" [formGroup]="form" (ngSubmit)="submitTodo()">
+    <p>ТЕКСТ ЗАДАЧИ:</p>
+    <input type="text" class="form-input" formControlName="title" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['title'].invalid &&
+        (form.controls['title'].dirty || form.controls['title'].touched)
+      "
+    >
+      <div *ngIf="form.controls['title'].errors">
+        НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО
+      </div>
+    </div>
+
+    <p>АВТОР ЗАДАЧИ</p>
+    <input type="text" class="form-input" formControlName="userId" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['userId'].invalid &&
+        (form.controls['userId'].dirty || form.controls['userId'].touched)
+      "
+    >
+      <div *ngIf="form.controls['userId'].errors">
+        АЙДИШКА ВВЕДЕНА НЕПРАВИЛНО
+      </div>
+    </div>
+
+    <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+    <input type="text" class="form-input" formControlName="completed" />
+    <div
+      class="form__controls-wrapper"
+      *ngIf="
+        form.controls['completed'].invalid &&
+        (form.controls['completed'].dirty || form.controls['completed'].touched)
+      "
+    >
+      <div *ngIf="form.controls['completed'].errors">
+        БУЛЕАН ЗАДАЧИ ВВЕДЕНО НЕПРАВИЛНО
+      </div>
+    </div>
+    <button [disabled]="form.invalid">СОЗДАТЬ ЗАДАЧУ</button>
+  </form>
+</div>
