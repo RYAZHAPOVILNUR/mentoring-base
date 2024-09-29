@@ -1,10 +1,9 @@
 import { NgIf } from '@angular/common';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, inject } from '@angular/core';
 import {
   ReactiveFormsModule,
-  FormGroup,
-  FormControl,
   Validators,
+  FormBuilder,
 } from '@angular/forms';
 
 @Component({
@@ -18,10 +17,12 @@ export class CreateTodosFormComponent {
   @Output()
   createTodo = new EventEmitter();
 
-  public form = new FormGroup({
-    title: new FormControl('', [Validators.required, Validators.minLength(7)]),
-    userId: new FormControl('', [Validators.required, Validators.minLength(1)]),
-    completed: new FormControl('', [
+  public fb = inject(FormBuilder);
+
+  public form = this.fb.group({
+    title: this.fb.control('', [Validators.required, Validators.minLength(7)]),
+    userId: this.fb.control('', [Validators.required, Validators.minLength(1)]),
+    completed: this.fb.control('', [
       Validators.required,
       Validators.minLength(3),
     ]),

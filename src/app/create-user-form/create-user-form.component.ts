@@ -1,8 +1,7 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
-  FormControl,
-  FormGroup,
+  FormBuilder,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -18,18 +17,14 @@ export class CreateUserFormComponent {
   @Output()
   createUser = new EventEmitter();
 
-  public form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    website: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    companyName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
-  });
+  public fb = inject(FormBuilder);
+
+  public form = this.fb.group({
+     name: this.fb.control('', [Validators.required, Validators.minLength(2)]),
+     email: this.fb.control('', [Validators.required, Validators.email]),
+     website: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+     companyName: this.fb.control('', [Validators.required, Validators.minLength(2)]),
+  })
 
   public submitForm(): void {
     this.createUser.emit(this.form.value);
