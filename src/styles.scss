@@ -9,6 +9,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+
+
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -348,3 +350,5 @@ template {
 [hidden] {
   display: none;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,33 @@
+<div class="create-form-todo">
+  <div class="create-form">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
+      <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
+      <input
+        type="text"
+        placeholder="Введите текст задачи"
+        class="form-input"
+        formControlName="title"
+      />
+      <p class="subtitle">АВТОР ЗАДАЧИ:</p>
+      <input
+        type="text"
+        placeholder="Введите автора задачи"
+        class="form-input"
+        formControlName="userId"
+      />
+      <p class="subtitle">ЗАДАЧА ЗАВЕРШЕНА:</p>
+      <input
+        type="text"
+        placeholder="ДА/НЕТ"
+        class="form-input"
+        formControlName="completed"
+      />
+      <div class="create-button-position">
+        <button class="create-button" [disabled]="form.invalid">
+          СОЗДАТЬ ЗАДАЧУ
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,12 +1,13 @@
 import { NgFor } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { CreateTodoFormComponent } from "../../create-todo-form/create-todo-form.component";
 
 @Component({
   selector: 'app-todo-card',
+  standalone: true, 
+  imports: [CreateTodoFormComponent],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
-  standalone: true, 
-  imports: [NgFor]
 })
 
 export class TodoCardComponent {

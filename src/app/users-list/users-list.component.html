@@ -1,10 +1,9 @@
-<h1 class="title">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</h1>
+<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
 <div class="card">
   <div class="card-user" *ngFor="let user of usersService.users$ | async">
     <app-user-card
       [user]="user"
       (deleteUser)="deleteUser($event)"
     ></app-user-card>
-    <div class="delete-position"></div>
   </div>
 </div>

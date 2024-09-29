@@ -2,10 +2,12 @@
 <p>
   <a class="email" href="/">{{ user.email }}</a>
 </p>
+<p class="wedsite">{{ user.website }}</p>
 <p>
-  <a class="wedsite" href="/">{{ user.website }}</a>
+  <a class="company-name" href="/">{{ user.company.name }}</a>
 </p>
-<p>{{ user.company.name }}</p>
-<button class="delete-user" (click)="onDeleteUser(user.id)">
-  <div class="delete-user-text">Удалить юзера</div>
-</button>
+<div class="delete-position">
+  <button class="delete-user" (click)="onDeleteUser(user.id)">
+    <div class="delete-user-text">Удалить юзера</div>
+  </button>
+</div>

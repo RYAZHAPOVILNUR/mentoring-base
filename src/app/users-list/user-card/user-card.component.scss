@@ -11,13 +11,24 @@
 }
 
 .wedsite {
-  text-decoration: none;
+text-decoration: none;
   color: #000;
+}
+
+.company-name {
+ text-decoration: none;
+ color: #000;
+}
+
+.delete-position {
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 .delete-user {
   justify-content: center;
-  margin: 22px;
+  margin: 42px;
   border: 1px solid #f0ba4e;
   background-color: #fff;
   border-radius: 50px;
