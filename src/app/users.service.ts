@@ -7,7 +7,8 @@ import { BehaviorSubject } from "rxjs";
 export class UsersService {
     private usersSubject$ = new BehaviorSubject<User[]>([]); //указываем дженерик тип
     users$ = this.usersSubject$.asObservable();
-    // users: User[] = [];
+
+    
 
     setUsers(users: User[]) {
         // this.users = users;
@@ -38,10 +39,17 @@ export class UsersService {
     }
 
     createUser(user: User) {
-        // this.users = [...this.users, user]
-        this.usersSubject$.next(
-            [...this.usersSubject$.value, user]
+        const userIsExisting = this.usersSubject$.value.find(
+            currentElement => currentElement.email === user.email
         )
+        // console.log(userIsExisting)
+        if(userIsExisting !== undefined){
+            alert('EMAIL IS USED')
+        }else{
+            this.usersSubject$.next([...this.usersSubject$.value, user]);
+            alert('NEW USER ADDED');
+        }
+        // this.users = [...this.users, user]
     }
 
     deleteUser(id: number) {

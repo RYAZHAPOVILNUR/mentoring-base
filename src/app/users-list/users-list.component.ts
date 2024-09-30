@@ -1,20 +1,19 @@
 import { NgFor, AsyncPipe } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
 import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Header } from "../header/header.component";
 import { UserApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
+import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
 
 // const consoleResponse = (response: unknown) => console.log(response)
 
 export interface User {
         id: number;
         name: string;
-        username: string;
+        username?: string;
         email: string;
-        address: {
+        address?: {
           street: string;
           suite: string;
           city: string;
@@ -24,12 +23,12 @@ export interface User {
             lng: string
           }
         },
-        phone: string;
+        phone?: string;
         website: string;
         company: {
           name: string;
-          catchPhrase: string;
-          bs: string;
+          catchPhrase?: string;
+          bs?: string;
         };
       }
 
@@ -38,7 +37,7 @@ export interface User {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [ NgFor, UserCardComponent, AsyncPipe],
+    imports: [ NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
     changeDetection: ChangeDetectionStrategy.OnPush //не мутируем массивы, cоздаем новые ячейки в памяти
 })
 
@@ -58,11 +57,28 @@ export class UsersListComponent {
     // this.usersService.usersSubject.subscribe(
     //     users => this.users = users
     // )
+    this.usersService.users$.subscribe(
+        users => console.log(users)
+    )
 
     }
+
     deleteUser(id: number) {
         this.usersService.deleteUser(id);
         // this.users = this.usersService.users;
+    }
+
+    public createUser(formData: any) {
+        this.usersService.createUser({
+            id: new Date().getTime(),
+            name: formData.name,
+            email: formData.email,
+            website: formData.website,
+            company: {
+                name: formData.companyName,
+            },
+        });
+        console.log('from FORM: ', event)
     }
     
 }

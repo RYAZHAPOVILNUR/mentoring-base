@@ -1,7 +1,5 @@
-component LIST of USERS
 
-<!-- {{ $any(users[0]).name }} -->
-
+<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
 <div style="display: flex; flex-wrap: wrap;">
     <div *ngFor="let item of usersService.users$ | async"> 
         <!-- сущность пайп позволяет данные из rxjs доставать и отображать, make BehaviorSubject in Array -->
