@@ -1,0 +1,27 @@
+<h2>Create todo form</h2>
+<form [formGroup]="formTodo" (ngSubmit)="submitForm()">
+    <div class="wrap">
+        <p>Текст задачи</p>
+        <input type="text" formControlName="title">
+        <div *ngIf="formTodo.controls['title'].invalid && (formTodo.controls['title'].dirty || formTodo.controls['title'].touched)">
+            <div *ngIf="formTodo.controls['title'].errors" style="color: red;">
+                Текст задачи введен не правильно
+            </div>
+        </div>
+        <p>Автор задачи</p>
+        <input type="text" formControlName="userId">
+        <div *ngIf="formTodo.controls['userId'].invalid && (formTodo.controls['userId'].dirty || formTodo.controls['userId'].touched)">
+            <div *ngIf="formTodo.controls['userId'].errors" style="color: red;">
+                Автор введен не правильно
+            </div>
+        </div>
+        <p>Задача решена</p>
+        <input type="text" formControlName="completed">
+        <div *ngIf="formTodo.controls['completed'].invalid && (formTodo.controls['completed'].dirty || formTodo.controls['completed'].touched)">
+            <div *ngIf="formTodo.controls['completed'].errors" style="color: red;">
+                Ответ некорректен
+            </div>
+        </div>
+        <button style="margin-top: 20px;" [disabled]="formTodo.invalid">Create todo</button>
+    </div>
+</form>
