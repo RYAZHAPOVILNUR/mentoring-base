@@ -1,11 +1,12 @@
+--root {
+ font-family: 'Inter';
+}
 .title {
-  font-family: "Inter";
   display: flex;
   justify-content: center;
 }
 
 .card {
-  font-family: "Inter";
   display: flex;
   justify-content: center;
   width: 100%;
@@ -29,17 +30,6 @@
   font-size: 20px;
 }
 
-.email {
-  text-decoration: none;
-  color: #000;
-}
-
-.wedsite {
-  text-decoration: none;
-  color: #000;
-}
-
-
 
 .delete-user {
   margin: 22px auto;
@@ -50,12 +40,11 @@
   cursor: pointer;
 }
 .delete-position {
- display: flex;
- align-items: center;
- justify-content: center;
- }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .delete-user-text {
-  font-family: Inter;
   font-weight: 600;
 }

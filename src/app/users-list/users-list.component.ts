@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  Injectable,
 } from '@angular/core';
 import { User } from './user-interface';
 import { RouterLink } from '@angular/router';
@@ -11,6 +10,7 @@ import { UsersApiService } from './users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
+import { Todo } from '../todos-list/todo-interface';
 
 @Component({
   selector: 'app-users-list',
@@ -41,14 +41,14 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formData: any) {
+  public createUser(formData: User) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.companyName,
+        name: formData.name,
       },
     });
   }

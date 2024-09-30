@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { TodosApiService } from '../todos-api.service';
 import { TodoService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { Todo } from './todo-interface';
 
 @Component({
   selector: 'api-todos-list',
@@ -34,7 +35,7 @@ export class TodoListComponent {
     this.todosService.deleteTodo(id);
   }
 
-  public createTodo(formData: any) {
+  public createTodo(formData: Todo) {
     this.todosService.createTodo({
       id: new Date().getTime(),
       userId: formData.userId,

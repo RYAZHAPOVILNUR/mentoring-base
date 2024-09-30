@@ -1,21 +1,13 @@
+--root {
+ font-family: 'Inter';
+}
 .name {
   display: flex;
   justify-content: center;
   font-weight: 600;
   font-size: 20px;
 }
-
-.email {
-  text-decoration: none;
-  color: #000;
-}
-
-.wedsite {
-text-decoration: none;
-  color: #000;
-}
-
-.company-name {
+.subtitle {
  text-decoration: none;
  color: #000;
 }
@@ -37,6 +29,5 @@ text-decoration: none;
 }
 
 .delete-user-text {
-  font-family: Inter;
   font-weight: 600;
 }

@@ -6,7 +6,6 @@
 
 html,
 body {
-  font-family: Inter;
   width: 100%;
   height: 100%;
 }
@@ -43,7 +42,6 @@ body {
 .call {
   margin-right: 40px;
   margin-left: 10px;
-  font-family: Inter;
   display: flex;
   align-items: center;
 }
@@ -63,7 +61,6 @@ body {
 }
 
 .menu-items-container {
-  font-family: Inter;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -76,10 +73,6 @@ body {
 
 .map-pin {
   margin-right: 4px;
-}
-
-.moscow {
-  font-family: Inter;
 }
 
 .menu-item {

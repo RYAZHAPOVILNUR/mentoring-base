@@ -23,7 +23,7 @@ export class CreateTodoFormComponent {
     title: new FormControl('', [Validators.required]),
     completed: new FormControl('', [
       Validators.required,
-      Validators.minLength(3),
+      Validators.minLength(2),
     ]),
   });
 
