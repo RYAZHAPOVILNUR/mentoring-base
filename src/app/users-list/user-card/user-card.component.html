@@ -1,9 +1,9 @@
 <div class="user-block">
   <div>
-    <p>{{$any(user).name}}</p>
-    <p>{{$any(user).email}}</p>
-    <p>{{$any(user).phone}}</p>
-    <p>{{$any(user).website}}</p>
+    <p>{{user.name}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.phone}}</p>
+    <p>{{user.website}}</p>
     </div>
   <div class="button-container">
         <button (click)="onDeleteUser(user.id)" class="delete-user"> Удалить </button>

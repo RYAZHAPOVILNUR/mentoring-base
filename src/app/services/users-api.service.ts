@@ -2,14 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersApiService {
-  readonly apiService = inject(HttpClient)
+  readonly apiService = inject(HttpClient);
 
   getUsers() {
-    return this.apiService.get('https://jsonplaceholder.typicode.com/users')
-    
+    return this.apiService.get('https://jsonplaceholder.typicode.com/users');
   }
-  
 }

@@ -2,14 +2,14 @@
     <div>
     <p>
         Текст задачи <br>
-        {{$any(item).title}}
+        {{item.title}}
     </p>
     <p>
         Автор задачи <br>
-        {{$any(item).userId}}
+        {{item.userID}}
     </p>
         Задача Завершена <br>
-    {{$any(item).completed ? 'Да' : ' Нет'}}
+    {{item.completed ? 'Да' : ' Нет'}}
     <p>
     </div>
 

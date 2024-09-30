@@ -1,7 +1,11 @@
-<h1 class="todo-title">Компонент списка ToDo</h1>
+<!-- <h1 class="todo-title">Компонент списка ToDo</h1> -->
 
+<app-create-todo (createTask)="CreateTask($event)"></app-create-todo>
 <div class="todo-block-container">
-<div *ngFor="let item of ToDoService.todos$| async" class="todo-block" >
-  <app-to-do-card [item]="item" (deleteToDo)="deleteToDo($event)"></app-to-do-card>
-</div>
+  <div *ngFor="let item of ToDoService.todos$ | async" class="todo-block">
+    <app-to-do-card
+      [item]="item"
+      (deleteToDo)="deleteToDo($event)"
+    ></app-to-do-card>
+  </div>
 </div>

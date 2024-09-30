@@ -1,0 +1,20 @@
+<div class="content-container">
+  <h2 class="title">Create User Form</h2>
+  <form class="form-container" 
+  [formGroup]="form"
+  (ngSubmit)="submitForm()">
+    <label for="">Name:</label>
+    <input formControlName="name" type="text" placeholder="Введите имя" />
+    <label for="">Email:</label>
+    <input formControlName="email" type="text" placeholder="Введите email" />
+    <label for="">Phone:</label>
+    <input
+      formControlName="phone"
+      type="text"
+      placeholder="Введите номер телефона"
+    />
+    <label for="">Website:</label>
+    <input formControlName="website" type="text" placeholder="Введите сайт" />
+    <button [disabled] = "form.invalid">Create User</button>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+<div class="content-container">
+  <h2 class="title">Create ToDo</h2>
+  <form class="form-container" [formGroup]="form" (ngSubmit)="submitForm()">
+    <label for="">Текст задачи:</label>
+    <input formControlName="title" type="text"  />
+    <label for="">Автор задачи:</label>
+    <input formControlName="userID" type="text"  />
+    <button [disabled] = "form.invalid">Create task</button>
+  </form>
+</div>
