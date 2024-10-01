@@ -36,7 +36,7 @@ export class TodosListComponent {
     this.todosService.deleteTodo(id)
   }
 
-  public CreateTodo (formData:any) {
+  public CreateTodo (formData: Todo) {
     this.todosService.createTodo({
       id: new Date().getTime(),
       userId: formData.userId,

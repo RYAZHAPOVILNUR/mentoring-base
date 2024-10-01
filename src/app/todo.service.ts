@@ -39,7 +39,7 @@ export class TodoService {
     }
   }
 
-  deleteTodo (id: any) {
+  deleteTodo (id: number) {
     this.todoSubject$.next (
       this.todoSubject$.value.filter (
         todo => {
