@@ -1,6 +1,6 @@
+import { Component } from "@angular/core";
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 const switchingPagesInReverse: number[] = [5, 4, 3, 2, 1]
 
@@ -17,22 +17,18 @@ const fun1 = (value: string) => value
 const aboutCompany: string = fun1('О компании')
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-home-page',
+    templateUrl: './home-page.component.html',
+    standalone: true,
+    imports: [RouterOutlet, NgIf, NgFor],
+    styleUrl: './home-page.component.scss'
 })
-export class AppComponent {
-  title: string = 'mentoring-first-project';
-
-  readonly headerItem1 = 'Главная';
+export class HomePageCompoment {
+    readonly headerItem1 = 'Главная';
 
   readonly headerItem2 = 'О компании';  
 
   readonly headerItem3 = 'Каталог';
-
-  readonly headerItem4 = 'Админка'
 
   readonly header2Item1 = 'Каталог';
 
@@ -62,6 +58,4 @@ export class AppComponent {
   readonly aboutCompany = aboutCompany
 
   readonly switchingPagesInReverse: number[] = switchingPagesInReverse
-
-  
 }

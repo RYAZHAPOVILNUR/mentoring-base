@@ -1,0 +1,648 @@
+<div class="banner_container">
+    <button style="background-color: brown;" (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
+  <div class="banner" *ngIf="isShowImg">
+      <div class="banner_title">
+          Инструмент для вашего <br>бизнеса
+      </div>
+  </div>
+</div>
+<div class="quality_container">
+  <div class="quality large_assortment">
+      <div class="quality_icon">
+          <img src="/assets/large_assortment.svg" alt="">
+      </div>
+      <div class="quality_text_container">
+          <div class="quality_text_title">
+              Большой ассортимент
+          </div>
+          <div class="quality_text">
+              строительных материалов всегда в <br>наличии
+          </div>
+      </div>
+  </div>
+  <div class="quality delivery">
+      <div class="quality_icon">
+          <img src="/assets/delivery.svg" alt="">
+      </div>
+      <div class="quality_text_container">
+          <div class="quality_text_title">
+              Доставка стройматериалов
+          </div>
+          <div class="quality_text">
+              в течении четырех часов или в <br>любое удобное время
+          </div>
+      </div>
+  </div>
+  <div class="quality quality_control">
+      <div class="quality_icon">
+          <img src="/assets/quality_control.svg" alt="">
+      </div>
+      <div class="quality_text_container">
+          <div class="quality_text_title">
+              Многоуровневая система
+          </div>
+          <div class="quality_text">
+              управления качеством по стандарту <br>ISO 9001
+          </div>
+      </div>
+  </div>
+</div>
+<div class="product_cards_container">
+  <div class="switching_pages">
+      <button class="number active" *ngFor="let item of switchingPagesInReverse">{{item}}</button>
+  </div>
+  <div class="product_cards">
+      <div class="big_card">
+          <div class="card_title">
+              Строительный отделочный инструмент
+          </div>
+          <div class="go_to_directory big">
+              <div class="go_to_directory_text">Перейти в каталог</div>
+              <div>
+                  <button class="go_to_directory_btn">
+                      <img src="/assets/arrow.svg" alt="">
+                  </button>
+              </div>
+          </div>
+      </div>
+      <div class="mini_cards_containers">
+          <div class="mini_cards_container mleft">
+              <div class="mini_cards enamels">
+                  <div style="margin-left: 314px;" class="card_title">
+                      Эмали
+                  </div>
+                  <div class="go_to_directory mini_right">
+                      <div class="go_to_directory_text">Перейти в каталог</div>
+                      <div>
+                          <button class="go_to_directory_btn">
+                              <img src="/assets/arrow.svg" alt="">
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div class="mini_cards mleft bow">
+                  <div class="card_title">
+                      Лакокрасочные
+                      материалы
+                  </div>
+                  <div style="margin-top: 98px;" class="go_to_directory mini_left">
+                      <div class="go_to_directory_text">Перейти в каталог</div>
+                      <div>
+                          <button class="go_to_directory_btn">
+                              <img src="/assets/arrow.svg" alt="">
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="mini_cards_container mleft mtop">
+              <div class="mini_cards foam">
+                  <div class="card_title">
+                      Пены, клеи и <br>герметики
+                  </div>
+                  <div class="go_to_directory mini_left">
+                      <div class="go_to_directory_text">Перейти в каталог</div>
+                      <div>
+                          <button class="go_to_directory_btn">
+                              <img src="/assets/arrow.svg" alt="">
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div class="mini_cards mleft sockets">
+                  <div class="card_title">
+                      Розетки и выключатели
+                  </div>
+                  <div class="go_to_directory mini_right">
+                      <div class="go_to_directory_text">Перейти в каталог</div>
+                      <div>
+                          <button class="go_to_directory_btn">
+                              <img src="/assets/arrow.svg" alt="">
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="popular_product_cards_container">
+  <div class="title_container">
+      <div class="popular_products">
+          Популярные товары
+      </div>
+      <div class="button_to_view_all_products active">
+          Посмотреть все товары
+      </div>
+  </div>
+  <div class="popular_product_cards">
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/sale.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/sale.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/new.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+              <img style="margin-top: 5px;" src="assets/sale.png" alt="">
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/new.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="banner_a_large_number_of_titles">
+  <div class="title_banner">
+      БОЛЕЕ 10 000 НАИМЕНОВАНИЙ
+  </div>
+  <div class="text_banner">
+      Инструмент для вашего бизнеса, разнообразных марок
+  </div>
+  <div class="go_to_directory_banner">
+      Перейти в каталог
+  </div>
+</div>
+<div class="popular_product_cards_container">
+  <div class="title_container">
+      <div class="popular_products">
+          Новинки
+      </div>
+      <div class="button_to_view_all_products active">
+          Посмотреть все товары
+      </div>
+  </div>
+  <div class="popular_product_cards">
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/new.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/new.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/new.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+      <div class="product_card">
+          <div class="discount_and_favorites_container">
+              <div class="discount_and_favorites">
+                  <div class="discount">
+                      <div class="discount_item">
+                          <img src="assets/new.png" alt="">
+                      </div>
+                  </div>
+                  <div class="favorites">
+                      <img src="/assets/heart_black.svg" alt="Избранное">
+                  </div>
+              </div>
+          </div>
+          <div class="product_name_and_article_number">
+              <div class="product_name">
+                  Круг зачистной 125х6х22
+              </div>
+              <div class="article_number">
+                  Артикул 00004
+              </div>
+          </div>
+          <div class="price_per_piece">
+              <div class="price_per_piece_title">
+                  Цена за штуку
+              </div>
+              <div class="price">
+                  <div class="price_without_discount">
+                      52 руб.
+                  </div>
+                  <div class="discounted_price">
+                      48 руб.
+                  </div>
+              </div>
+          </div>
+          <div class="quantity_of_goods_and_cart">
+              <div class="quantity_of_goods">
+                  <div class="quantity">
+                      Количество
+                  </div>
+                  <div class="counter_container">
+                      <div class="counter_minus">-</div>
+                      <div class="quantity_counter">1</div>
+                      <div class="counter_plus">+</div>
+                  </div>
+              </div>
+              <button class="add_to_cart">
+                  В корзину
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="logo_footer">
+      <img src="/assets/logo.svg" alt="">
+  </div>
+  <div class="footer_container">
+      <div class="means_of_communication">
+          <div class="phone_numbers_container">
+              <div class="phone_numbers_icon">
+                  <img src="assets/call-calling.svg" alt="">
+                  <div class="phone_numbers_title">
+                      Контактный телефон
+                  </div>
+              </div>
+              <div class="phone_number">
+                  + 7 (812) 309-09-34
+              </div>
+              <div class="phone_number">
+                  + 7 (965) 084-29-09
+              </div>
+          </div>
+          <div class="mail_container">
+              <div class="mail_icon">
+                  <img src="assets/Icon.svg" alt="">
+                  <div class="mail_title">
+                      Электронная почта
+                  </div>
+              </div>
+              <div class="mail_address">
+                  tustin78&#64;mail.ru
+              </div>
+              <div class="mail_address">
+                  info&#64;mail.ru
+              </div>
+          </div>
+          <div></div>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="questions_container">
+          <div class="questions_title">
+              Остались вопросы?
+          </div>
+          <div class="questions_text">
+              Узнавайте первым о скидках, предложениях и событиях еженедельно в<br> своем почтовом ящике. Отпишитесь в
+              любое время
+              одним щелчком мыши.
+          </div>
+          <div class="search__input_footer_container">
+              <input class="search__input_footer" type="search" placeholder="Введите свою почту">
+              <button class="btn_footer">
+                  Отправить
+              </button>
+          </div>
+      </div>
+  </div>
+  <hr>
+  <div class="nav_footer_container">
+      <div class="nav_footer">
+          Главная
+      </div>
+      <div class="nav_footer">
+          О компании
+      </div>
+      <div class="nav_footer">
+          Каталог
+      </div>
+  </div>
+  <div class="messengers_and_copywriting_container">
+      <div class="messengers">
+          <div class="logo_messanger">
+              <img src="assets/facebook.svg" alt="">
+          </div>
+          <div class="logo_messanger">
+              <img src="assets/insta.svg" alt="">
+          </div>
+          <div class="logo_messanger">
+              <img src="assets/whatsapp.svg" alt="">
+          </div>
+      </div>
+      <div class="copywriting">
+          © 2021-2022, EDE
+           
+      </div>
+  </div>
+</div>
