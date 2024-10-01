@@ -10,7 +10,7 @@ import { Todo } from "/Users/shokhrukhabdulakimov/Desktop/newfolderfornormalizec
 })
 export class TodoCardComponent {
   @Input()
-  todo: Todo;
+  todo!: Todo;
 
   @Output()
   deleteTodo = new EventEmitter();

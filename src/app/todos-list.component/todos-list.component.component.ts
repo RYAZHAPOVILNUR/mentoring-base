@@ -15,7 +15,6 @@ import { Todo } from "../users-list/user-interface";
   styleUrl: './todos-list.component.component.scss',
 })
 export class TodosListComponent {
-[x: string]: any;
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodosService);
 

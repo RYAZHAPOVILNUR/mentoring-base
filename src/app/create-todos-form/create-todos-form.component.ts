@@ -4,7 +4,20 @@ import {
   ReactiveFormsModule,
   Validators,
   FormBuilder,
+  ValidatorFn,
+  AbstractControl,
+  ValidationErrors,
 } from '@angular/forms';
+
+export function completeValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = control.value?.trim().toLowercase();
+    if(value === 'да' || value === 'нет') {
+      return null;
+    } 
+    return {returnInvalid: true};
+  };
+}
 
 @Component({
   selector: 'app-create-todos-form',
@@ -19,17 +32,24 @@ export class CreateTodosFormComponent {
 
   public fb = inject(FormBuilder);
 
-  public form = this.fb.group({
+  public formTodo = this.fb.group({
     title: this.fb.control('', [Validators.required, Validators.minLength(7)]),
     userId: this.fb.control('', [Validators.required, Validators.minLength(1)]),
     completed: this.fb.control('', [
       Validators.required,
-      Validators.minLength(2),
+      completeValidator,
     ]),
   });
 
+  public getCompletedValue(): boolean {
+    const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
+    if(value === 'да') 
+      return true;
+    else return false;
+  }
+
   public submitTodo(): void {
-    this.createTodo.emit(this.form.value);
-    console.log(this.form.invalid);
+    this.createTodo.emit({...this.formTodo.value, completed: this.getCompletedValue});
+    console.log(this.formTodo.invalid);
   }
 }
