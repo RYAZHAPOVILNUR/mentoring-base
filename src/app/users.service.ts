@@ -11,7 +11,7 @@ export class UsersService {
         this.usersSubject$.next(users);
     }
 
-    editUsers(editedUser: User) {
+    editUser(editedUser: User) {
         this.usersSubject$.next(
             this.usersSubject$.value.map(
                 users => {
@@ -25,7 +25,7 @@ export class UsersService {
         )
     }
 
-    createUsers(user: User) {
+    createUser(user: User) {
         const existingUser = this.usersSubject$.value.find(
             currentElement => currentElement.email === user.email
         )
@@ -42,7 +42,7 @@ export class UsersService {
         
     }
 
-    deleteUsers(id: number) {
+    deleteUser(id: number) {
         this.usersSubject$.next(
             this.usersSubject$.value.filter(
                 user => {

@@ -1,6 +1,4 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
-import { Comment } from "@angular/compiler";
 import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -32,6 +30,14 @@ export interface User {
     };
 }
 
+export interface createUser {
+    id: number;
+    name: string;
+    email: string;
+    website: string;
+    companyName: string;
+}
+
 @Component({
     selector: 'app-users-list',
     templateUrl: './users-list.component.html',
@@ -53,11 +59,11 @@ export class UsersListComponent {
     }
 
     deleteUser(id: number) {
-        this.usersService.deleteUsers(id)
+        this.usersService.deleteUser(id)
     }  
     
-    createUser(formData: any) {
-        this.usersService.createUsers(
+    createUser(formData: createUser) {
+        this.usersService.createUser(
             {
                 id: new Date().getTime(),
                 name: formData.name,
