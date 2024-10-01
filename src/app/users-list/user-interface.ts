@@ -21,3 +21,17 @@ export interface User {
     bs?: string;
   };
 }
+
+export interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+export interface UserForm {
+    name: string;
+    email: string;
+    website: string;
+    companyName: string;
+}

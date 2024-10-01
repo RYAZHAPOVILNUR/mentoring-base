@@ -40,9 +40,9 @@
       "
     >
       <div *ngIf="form.controls['completed'].errors">
-        БУЛЕАН ЗАДАЧИ ВВЕДЕНО НЕПРАВИЛНО
+        ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕНО НЕПРАВИЛНО
       </div>
     </div>
-    <button [disabled]="form.invalid">СОЗДАТЬ ЗАДАЧУ</button>
+    <button class="button" [disabled]="form.invalid">СОЗДАТЬ ЗАДАЧУ</button>
   </form>
 </div>

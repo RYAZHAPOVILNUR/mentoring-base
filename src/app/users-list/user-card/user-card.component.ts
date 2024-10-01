@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { User } from "/Users/shokhrukhabdulakimov/Desktop/newfolderfornormalizecss/mentoring-base/src/app/users-list/user-interface";
 
 @Component({
     selector: 'app-user-card',
@@ -9,7 +10,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 export class UserCardComponent {
     @Input()
-    user: any
+    user: User;
 
     @Output()
     deleteUser = new EventEmitter()

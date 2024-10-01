@@ -24,7 +24,7 @@ export class CreateTodosFormComponent {
     userId: this.fb.control('', [Validators.required, Validators.minLength(1)]),
     completed: this.fb.control('', [
       Validators.required,
-      Validators.minLength(3),
+      Validators.minLength(2),
     ]),
   });
 

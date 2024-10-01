@@ -11,13 +11,12 @@
   }
 }
 
-.users-block {
+.users__block {
   display: flex;
   flex-wrap: wrap;
   padding-left: 180px;
   padding-right: 180px;
   gap: 20px;
-  font-family: Inter;
   padding-top: 3%;
   padding-bottom: 3%;
 }

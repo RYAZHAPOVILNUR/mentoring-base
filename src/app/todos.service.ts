@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todos-list.component/todo-interface';
+import { Todo } from './users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
