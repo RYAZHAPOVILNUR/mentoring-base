@@ -1,6 +1,6 @@
 <div class="create-form-user">
   <div class="create-form">
-    <form  [formGroup]="form" (ngSubmit)="submitForm()">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
       <h1 class="title">CREATE USER FORM</h1>
       <p class="subtitle">NAME:</p>
       <input
@@ -43,7 +43,17 @@
         class="form-input"
         formControlName="website"
       />
-
+      <div
+        *ngIf="
+          form.controls['website'].invalid &&
+          (form.controls['website'].dirty || form.controls['website'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="form.controls['website'].errors">
+          Поле заполнено некорректно
+        </div>
+      </div>
       <p class="subtitle">COMPANY NAME:</p>
       <input
         type="text"
@@ -51,6 +61,18 @@
         class="form-input"
         formControlName="companyName"
       />
+      <div
+        *ngIf="
+          form.controls['companyName'].invalid &&
+          (form.controls['companyName'].dirty ||
+            form.controls['companyName'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="form.controls['companyName'].errors">
+          Поле заполнено некорректно
+        </div>
+      </div>
       <div class="create-button-position">
         <button class="create-button" [disabled]="form.invalid">
           CREATE USER

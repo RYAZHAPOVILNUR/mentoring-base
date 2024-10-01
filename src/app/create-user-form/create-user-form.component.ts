@@ -19,7 +19,11 @@ export class CreateUserFormComponent {
   createUser = new EventEmitter();
 
   public form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(20),
+    ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     website: new FormControl('', [
       Validators.required,

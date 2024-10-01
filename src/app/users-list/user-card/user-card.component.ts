@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../user-interface';
+import { User } from '../../interfaces';
  
 @Component({
   selector: 'app-user-card',
