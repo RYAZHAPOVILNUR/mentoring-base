@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CreateTodoFormComponent } from '../../create-todo-form/create-todo-form.component';
-import { Todo } from '../../interfaces';
-
+import { Todo } from '../../interfaces/todo-interfaces';
 @Component({
   selector: 'app-todo-card',
   standalone: true,

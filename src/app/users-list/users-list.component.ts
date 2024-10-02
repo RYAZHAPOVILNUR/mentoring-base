@@ -1,6 +1,6 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CreateUserI } from '../interfaces';
+import { CreateUserI } from '../interfaces/user-interfaces';
 import { RouterLink } from '@angular/router';
 import { UsersApiService } from './users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';

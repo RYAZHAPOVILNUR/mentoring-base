@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import { TodosApiService } from '../todos-api.service';
 import { TodoService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
-import { Todo } from '../interfaces';
+import { Todo } from '../interfaces/todo-interfaces';
 
 @Component({
   selector: 'api-todos-list',

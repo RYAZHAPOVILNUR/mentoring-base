@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import {  NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import {
   AbstractControl,
@@ -28,7 +28,6 @@ export function completedValidator(): ValidatorFn {
   styleUrl: './create-todo-form.component.scss',
 })
 export class CreateTodoFormComponent {
-  [x: string]: any;
   @Output()
   createTodo = new EventEmitter();
 
