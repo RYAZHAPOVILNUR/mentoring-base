@@ -7,16 +7,21 @@ import {
   ValidatorFn,
   AbstractControl,
   ValidationErrors,
+  FormGroup,
+  FormControl,
 } from '@angular/forms';
 
-export function completeValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowercase();
-    if(value === 'да' || value === 'нет') {
-      return null;
-    } 
-    return {returnInvalid: true};
-  };
+export function createPasswordStrengthValidator(): ValidatorFn {
+  return (control:AbstractControl) : ValidationErrors | null => {
+
+      const value = control.value?.trim()
+      .toLowerCase();
+
+      if (value === 'да' || value === 'нет') {
+          return null;
+      }
+      return { returnInvalid: true}
+  }
 }
 
 @Component({
@@ -37,19 +42,21 @@ export class CreateTodosFormComponent {
     userId: this.fb.control('', [Validators.required, Validators.minLength(1)]),
     completed: this.fb.control('', [
       Validators.required,
-      completeValidator,
+      createPasswordStrengthValidator(),
     ]),
   });
 
   public getCompletedValue(): boolean {
     const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
-    if(value === 'да') 
-      return true;
+    if (value === 'да') return true;
     else return false;
   }
 
   public submitTodo(): void {
-    this.createTodo.emit({...this.formTodo.value, completed: this.getCompletedValue});
+    this.createTodo.emit({
+      ...this.formTodo.value,
+      completed: this.getCompletedValue(),
+    });
     console.log(this.formTodo.invalid);
   }
 }
