@@ -10,7 +10,7 @@ const newPages = [5, 4, 3, 2, 1];
   styleUrl: './home.component.scss',
   imports: [NgIf, NgFor],
 })
-export class Home {
+export class HomeComponent {
   isShowPhoto = true;
   newPages = newPages;
 }

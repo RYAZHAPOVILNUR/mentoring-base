@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { UsersApiService } from '../users-api.service';
+import { UserCardComponent } from './user-card/user-card.component';
 
 interface User {
   id: number;
@@ -31,18 +32,16 @@ interface User {
   standalone: true,
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
-  imports: [NgFor],
+  imports: [NgFor, UserCardComponent],
 })
 export class UsersListComponent {
-  readonly apiService = inject(HttpClient);
+  readonly usersApiService = inject(UsersApiService);
   users: User[] = [];
 
   constructor() {
-    this.apiService
-      .get<User[]>('https://jsonplaceholder.typicode.com/users')
-      .subscribe((res: any) => {
-        this.users = res;
-      });
+    this.usersApiService.getUsers().subscribe((res: any) => {
+      this.users = res;
+    });
   }
 
   deleteUser(id: number) {

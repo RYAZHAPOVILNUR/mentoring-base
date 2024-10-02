@@ -1,0 +1,10 @@
+<div [ngClass]="todo.completed ? 'todo-card completed' : 'todo-card'">
+  <p class="todo-card__item"><span>Задача: </span>{{ todo.title }}</p>
+  <p class="todo-card__item"><span>Автор: </span>{{ todo.userId }}</p>
+  <p class="todo-card__item">
+    <span>Завершена: </span>{{ todo.completed ? "Да" : "Нет" }}
+  </p>
+  <button class="todo-card__btn" (click)="onDeleteTodo(todo.id)">
+    Удалить задачу
+  </button>
+</div>
