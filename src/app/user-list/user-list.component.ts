@@ -29,6 +29,14 @@ export interface User {
 }
 }
 
+export interface CreateUser {
+  id: number;
+  name: string;
+  email: string;
+  website: string;
+  companyName: string;
+}
+
 @Component({
   selector: 'app-user-list',
   standalone: true,
@@ -53,7 +61,7 @@ export class UsersListComponent {
     this.usersService.deleteUser(id)
   }
 
-  public createUser (formData: any) {
+  public createUser (formData: CreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
