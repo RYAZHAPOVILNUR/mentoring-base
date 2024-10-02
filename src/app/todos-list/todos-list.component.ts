@@ -4,13 +4,7 @@ import { TodosApiService } from "../todos-api.service";
 import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { TodoService } from "../todo.service";
 import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.component";
-
-export interface Todo {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
+import { Todo } from "../interfaces/todo-interface";
 
 @Component ({
   selector: 'app-todos-list',
