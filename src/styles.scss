@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
