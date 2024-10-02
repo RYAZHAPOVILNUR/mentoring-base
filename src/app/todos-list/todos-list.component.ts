@@ -4,13 +4,7 @@ import { TodosApiService } from "../todos-api.service";
 import { AsyncPipe, NgFor } from "@angular/common";
 import { TodosService } from "../todo.service";
 import { CreateTodoForm } from "../create-todo-form/create-todo-form.component";
-
-export interface Todo {
-    userId: number;
-    id: number;
-    title: string;
-    completed: boolean
-}
+import { Todo } from "../todo-interface";
 
 @Component ({
     selector: 'app-todos-list',

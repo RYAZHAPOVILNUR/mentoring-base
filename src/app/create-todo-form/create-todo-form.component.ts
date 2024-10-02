@@ -5,9 +5,7 @@ import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validatio
 export function completedValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
         const value = control.value?.trim().toLowerCase();
-        if (value === 'да') {
-            return null;
-        } else if (value === 'нет') {
+        if (value === 'да' || value === 'нет') {
             return null;
         }
         return {invalidCompleted: true};

@@ -1,42 +1,10 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-formcomponent";
-
-// @Injectable()
-export interface User {
-    id: number;
-    name: string;
-    username?: string;
-    email: string;
-    address?: {
-        street: string;
-        suite: string;
-        city: string;
-        zipcode: string;
-        geo: {
-            lat: string;
-            lng: string;
-        };
-    };
-    phone?: string;
-    website: string;
-    company: {
-        name: string;
-        catchPhrase?: string;
-        bs?: string;
-    };
-}
-
-export interface createUser {
-    id: number;
-    name: string;
-    email: string;
-    website: string;
-    companyName: string;
-}
+import { createUser } from "../user-interface";
 
 @Component({
     selector: 'app-users-list',
