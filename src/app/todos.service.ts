@@ -5,6 +5,7 @@ import { ITodo } from './todos-list/todo.interface';
 @Injectable({ providedIn: 'root' })
 export class TodosService {
   todosSubject$ = new BehaviorSubject<ITodo[]>([]);
+  todos$ = this.todosSubject$.asObservable();
 
   setTodo(todos: ITodo[]) {
     this.todosSubject$.next(todos);
