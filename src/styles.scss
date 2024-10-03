@@ -351,68 +351,28 @@ template {
   display: none;
 }
 
-.todo-block {
-  height: 250px;
-  width: 230px;
-  flex-wrap: wrap;
-  box-shadow: 0px 20px 50px 0px #3c3c3b12;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #3c3c3b;
-  padding: 15px;
+.title {
+  max-width: 1320px;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: space-between;
+  margin: 8px auto;
+  color: #3C3C3B;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
 }
 
-.delete-todo {
-  width: 100px;
-  height: 27px;
-  border-radius: 54px;
-  border: 1px solid #f0ba4e;
-  background: none;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #3c3c3b;
-  cursor: pointer;
-}
-
-.button-container {
+.form-container {
+  max-width: 1320px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px;
+  gap: 5px;
+ 
 }
 
-.user-block {
-  height: 250px;
-  width: 230px;
-  flex-wrap: wrap;
-  box-shadow: 0px 20px 50px 0px #3c3c3b12;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #3c3c3b;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
+.content-container{
+  margin: 50px;
 }
 
-.delete-user {
-  width: 100px;
-  height: 27px;
-  border-radius: 54px;
-  border: 1px solid #f0ba4e;
-  background: none;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #3c3c3b;
-  cursor: pointer;
-}
 
-.button-container {
-  margin: 0 auto;
-}
+
+

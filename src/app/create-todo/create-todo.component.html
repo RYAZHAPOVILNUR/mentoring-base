@@ -5,6 +5,11 @@
     <input formControlName="title" type="text"  />
     <label for="">Автор задачи:</label>
     <input formControlName="userID" type="text"  />
+    <label for="">Задача Завершена:</label>
+    <input formControlName="completed" type="text"  />
+    <div *ngIf="form.get('completed')?.errors?.['invalidValue'] && (form.controls['completed'].dirty || form.controls['completed'].touched )">
+     <span style="color: red ;">Введите "да" или "нет"</span>
+    </div>
     <button [disabled] = "form.invalid">Create task</button>
   </form>
 </div>

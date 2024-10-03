@@ -6,7 +6,7 @@ import { TodoService } from '../services/todo.service';
 import { CreateTodoComponent } from "../create-todo/create-todo.component";
 
 export interface ToDOs {
-  userID: string;
+  userID: number;
   id: number;
   title: string;
   completed: boolean;
@@ -34,12 +34,12 @@ export class ToDoListComponent {
     this.ToDoService.deleteTodo(id);
   }
 
-  CreateTask(FormData: ToDOs){
+  CreateTodo(FormData: ToDOs){
     this.ToDoService.createTodo({
       id: new Date().getTime(),
       title: FormData.title,
       userID: FormData.userID,
-      completed: false
+      completed: FormData.completed
     })
   }
 }

@@ -1,19 +1,18 @@
 <div class="todo-block">
-    <div>
+  <div>
     <p>
-        Текст задачи <br>
-        {{item.title}}
+      Текст задачи <br />
+      {{ item.title }}
     </p>
     <p>
-        Автор задачи <br>
-        {{item.userID}}
+      Автор задачи <br />
+      {{ item.userID }}
     </p>
-        Задача Завершена <br>
-    {{item.completed ? 'Да' : ' Нет'}}
-    <p>
-    </div>
+    Задача Завершена <br />
+    {{ item.completed ? "Да" : " Нет" }}
+  </div>
 
-    <div class="button-container">
-        <button (click)="onDeleteToDo(item.id)" class="delete-todo"> Удалить </button>
-        </div>    
+  <div class="button-container">
+    <button (click)="onDeleteToDo(item.id)" class="delete-todo">Удалить</button>
+  </div>
 </div>
