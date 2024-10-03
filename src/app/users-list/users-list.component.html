@@ -1,0 +1,11 @@
+КОМПОНЕНТ СПИСКА ЮЗЕРОВ
+
+<div class = "component-cards">
+<div class="component-cards-item" *ngFor="let item of users">
+    <p>{{$any(item).name}}</p>
+    <p>{{$any(item).email}}</p>
+    <p>{{$any(item).website}}</p>
+    <p>{{$any(item).company.name}}</p>
+    <button class="delete-user" (click) = "deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+    </div>
+</div>

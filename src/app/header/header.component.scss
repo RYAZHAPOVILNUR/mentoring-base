@@ -1,0 +1,163 @@
+body {
+  color: white;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+// Шапка страницы
+.header {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 80px;
+}
+
+.content-container-header {
+  background-color: #4b565e;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 24px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  width: 426px;
+  gap: 40px;
+}
+
+.header-logo {
+  margin-right: 20px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header-nav-item {
+  color: white;
+  text-decoration: none;
+  font-family: inter;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f9fafb;
+}
+
+.header-nav-item2 {
+  font-weight: 600;
+  text-decoration: none;
+  font-family: inter;
+  font-size: 14px;
+  color: #3c3c3b;
+}
+
+.button-basket {
+  display: flex;
+  align-items: center;
+  background-color: #4b565e;
+  border: 1px solid #f0ba4e;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px 10px 20px;
+}
+
+.basket {
+  margin-left: 10px;
+}
+
+.logo-phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phones {
+    font-family: inter;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+.content-header-2 {
+  background-color: #f0ba4e;
+}
+
+.header-2 {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 48px;
+}
+
+.header-logo-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-nav-item-2 {
+  font-family: inter;
+  font-weight: 600;
+  font-size: 14px;
+  color: #3c3c3b;
+}
+
+.header-nav-2 {
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  align-items: center;
+}
+
+.header-right-2 {
+  display: flex;
+  align-items: center;
+  width: 483px;
+}
+
+.search {
+  display: flex;
+  align-self: flex-end;
+  width: 400px;
+  border: none;
+  background-color: #f0ba4e;
+  border-bottom: 1px solid #3c3c3b;
+}
+
+.search-field {
+  display: flex;
+  align-content: center;
+  width: 376px;
+}
+
+.logo-search {
+  position: relative;
+  margin: 0 0 5px -20px;
+}
+
+.country {
+  border: none;
+  color: white;
+  background-color: #f0ba4e;
+  margin-left: 5px;
+}
+
+.map {
+  display: flex;
+  margin-left: 10px;
+}

@@ -1,0 +1,63 @@
+<div class="content-container-header">
+    <div class="header">
+      <div class="header-left">
+        <div class="header-logo">
+          <img src="/assets/site-logo.svg" alt="логотип сайта" />
+        </div>
+        <nav class="header-nav">
+            <a class="header-nav-item" href="">{{headerItem1}}</a>
+            <a class="header-nav-item" href="">{{aboutCompany}}</a>
+            <a class="header-nav-item" *ngIf="!isShowCatalog" href="">{{headerItem3}}</a>
+        </nav>
+        <button (click) = "isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+        <button class="changeMenuText" (click)="changeMenuText()">Изменить текст</button>
+      </div>
+      <div class="header-right">
+        <div class="logo-phone">
+          <img src="/assets/Phone.svg" alt="логотип телефона" />
+          <a class="phones" href="tel:+79650842909">+7 (965) 084-29-09</a>
+        </div>
+        <div class="logo-heart">
+          <img src="/assets/Vector.svg" />
+        </div>
+        <div>
+          <button class="button-basket">
+            <img src="/assets/basket.svg" alt="корзина" />
+            <span class="basket">Пусто</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="content-header-2">
+      <div class="header-2">
+        <div class="header-left-2">
+          <div class="header-logo-2">
+            <img src="/assets/catalog-icon.svg" alt="Логотип каталога" />
+          </div>
+          <nav class="header-nav-2">
+              <a class="header-nav-item2" href="" *ngFor="let item of menuItems">{{item}}</a>
+          </nav>
+        </div>
+        <div class="header-right-2">
+          <form class="search-field">
+            <input
+              class="search"
+              type="search"
+              placeholder="Поиск, например Круг зачистной"
+            />
+            <img
+              class="logo-search"
+              src="/assets/search-icon.svg"
+              alt="иконка поиска"
+            />
+          </form>
+          <div class="map">
+            <img class="map" src="/assets/location.svg" alt="точка локации" />
+            <button class="country" type="menu">Москва</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    
