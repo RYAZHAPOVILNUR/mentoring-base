@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomehageComponent } from './homepage/homehage.component';
+import { HomepageComponent } from './homepage/homepage.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomehageComponent,
+    component: HomepageComponent,
   },
   {
     path: 'users',

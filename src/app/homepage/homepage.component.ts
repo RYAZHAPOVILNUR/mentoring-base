@@ -7,10 +7,10 @@ const myPages = [1, 2, 3, 4, 5].reverse()
   selector: 'app-homehage',
   standalone: true,
   imports: [NgIf, NgFor],
-  templateUrl: './homehage.component.html',
-  styleUrl: './homehage.component.scss'
+  templateUrl: './homepage.component.html',
+  styleUrl: './homepage.component.scss'
 })
-export class HomehageComponent {
+export class HomepageComponent {
   isShowImage = true;
 
   readonly newPages = myPages;
