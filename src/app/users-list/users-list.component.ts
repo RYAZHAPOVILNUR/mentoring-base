@@ -11,6 +11,7 @@ import { Component, inject } from "@angular/core";
   imports: [NgFor]
 })
 export class UsersListComponent {
+  title = 'mentoring-base';
   readonly apiServise = inject(HttpClient);
    users: any = [];
 

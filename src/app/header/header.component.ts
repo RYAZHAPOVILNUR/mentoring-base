@@ -27,7 +27,7 @@ const result = aboutCompany('О компании');
 export class HeaderComponent {
   title = 'mentoring-base';
 
-  isShowCatalog = !!false;
+  isShowCatalog = true;
 
   readonly headerItem1 = 'Главная';
 

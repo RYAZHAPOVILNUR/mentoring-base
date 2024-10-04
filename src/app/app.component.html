@@ -1,4 +1,5 @@
 <div>
+  <app-header></app-header>
   <router-outlet></router-outlet> 
   <button (click) = "isManOnPhoto = !isManOnPhoto">Мужик/Не мужик</button>
   <img class="photo-man"
@@ -407,88 +408,4 @@
     </div>
   </div>
 </div>
-<!-- Подвал сайта -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-top-side">
-      <div class="footer-left-top">
-        <img src="/assets/site-logo.svg" alt="логотип сайта" />
-        <div class="footer-left-bottom">
-          <div class="contacts">
-            <div class="contacts-phone">
-              <img src="/assets/logo-phone-footer.svg" alt="иконка телефона" />
-              <div class="phone-numbers">
-                <span class="tel">Контактный телефон</span>
-                <p>
-                  <a class="phones" href="tel:+78123090937"
-                    >+7 (812) 309-09-34</a
-                  >
-                </p>
-                <p>
-                  <a class="phones" href="tel:+79650842909"
-                    >+7 (965) 084-29-09</a
-                  >
-                </p>
-              </div>
-            </div>
-            <div class="contacts-email">
-              <img src="/assets/contacts-email.svg" alt="иконка почты" />
-              <div class="email-text">
-                <span class="email">Электронная почта</span>
-                <p>
-                  <a class="phones" href="mailto:tusti@mail.ru"
-                    >tusti&#64;mail.ru</a
-                  >
-                </p>
-                <p>
-                  <a class="phones" href="mailto:info@tustin.ru"
-                    >info&#64;tustin.ru</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-right">
-        <p class="question">Остались вопросы?</p>
-        <p class="footer-text">
-          Узнавайте первым о скидках, предложениях и событиях еженедельно в
-          своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
-        </p>
-        <div class="inter-email">
-          <div class="inter-email-left">
-            <img class="message-icon" src="/assets/message-icon.svg" />
-            <p class="inter-your-mail">Введите свою почту</p>
-          </div>
-          <div class="inter-email-right">
-            <button class="inter-email-right-button">Отправить</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="top">
-          <a class="header-nav-item" href="">Главная</a>
-          <a class="header-nav-item" href="">О компании</a>
-          <a class="header-nav-item" href="">Каталог</a>
-      </div>
-      <div class="bottom">
-        <div class="social-networks">
-          <button class="social-networks-button">
-            <a href=""><img src="/assets/facebook.svg" /></a>
-          </button>
-          <button class="social-networks-button">
-            <a href=""><img src="/assets/youtube.svg" /></a>
-          </button>
-          <button class="social-networks-button">
-            <a href=""><img src="/assets/whatsapp.svg" /></a>
-          </button>
-        </div>
-        <div class="years">
-          <img src="/assets/Years.svg" />
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+<app-footer></app-footer>

@@ -1,10 +1,7 @@
-body {
-  color: white;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-}
-
 // Шапка страницы
+@import '../normalize.scss';
+
+
 .header {
   max-width: 1320px;
   display: flex;
@@ -41,18 +38,11 @@ body {
 }
 
 .header-nav-item {
-  color: white;
-  text-decoration: none;
-  font-family: inter;
-  font-weight: 600;
-  font-size: 16px;
-  color: #f9fafb;
+  @include body;
 }
 
 .header-nav-item2 {
-  font-weight: 600;
-  text-decoration: none;
-  font-family: inter;
+  @include body;
   font-size: 14px;
   color: #3c3c3b;
 }
@@ -64,7 +54,7 @@ body {
   border: 1px solid #f0ba4e;
   color: white;
   border-radius: 50px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
 }
 
 .basket {

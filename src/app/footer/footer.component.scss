@@ -1,0 +1,188 @@
+// Подвал сайта
+
+@import '../normalize.scss';
+
+footer {
+  @include body;
+  background-color: #4b565e;
+}
+
+.footer-container {
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 373px;
+}
+
+.footer-top-side {
+  display: flex;
+  justify-content: space-between;
+  width: 1320px;
+  height: 230px;
+  margin-top: 34px;
+}
+
+.footer-left .footer-right {
+  width: 534px;
+  height: 162px;
+}
+
+.question {
+  font-family: inter;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 21px;
+}
+
+.inter-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 534px;
+  height: 48px;
+  border: 1px solid #f0ba4e;
+  border-radius: 30px;
+}
+
+.inter-email-left {
+  width: 176px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inter-email-right {
+  width: 352px;
+  height: 36px;
+  text-align: end;
+}
+
+.message-icon {
+  margin-left: 11px;
+}
+
+.inter-your-mail {
+  font-family: inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff99;
+}
+
+.inter-email-right-button {
+  font-family: inter;
+  font-weight: 700;
+  font-size: 10px;
+  width: 94px;
+  height: 36px;
+  background-color: #f0ba4e;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+.footer-text {
+  font-family: inter;
+  width: 534px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff99;
+  line-height: 24px;
+}
+
+.footer-text {
+  flex-wrap: wrap;
+}
+
+.footer-bottom {
+  width: 1320px;
+  height: 143px;
+}
+
+.contacts {
+  display: flex;
+  width: 425px;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.contacts-phone {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.tel {
+  font-family: inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff99;
+}
+
+.phones {
+  font-family: inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.email {
+  font-family: inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff99;
+}
+
+.email-name {
+  font-family: inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.contacts-email {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.top {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav-item {
+  color: white;
+  text-decoration: none;
+  font-family: inter;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f9fafb;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-networks {
+  display: flex;
+  gap: 20px;
+}
+
+.social-networks-button {
+  background: none;
+  border: none;
+}
