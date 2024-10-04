@@ -1,0 +1,39 @@
+
+<div class="container-form">
+    <form class="form-block" [formGroup]="form" (ngSubmit)="submitFormUser()">
+        <h3 class="form-title">CREATE-USER-FORM</h3>
+        <!-- [formGroup]="form" - Привязывает форму в HTML к объекту FormGroup из компонента Angular, что позволяет Angular управлять состоянием и данными формы. -->
+        <!-- "form" — это переменная, которая ссылается на экземпляр реактивной формы (объект FormGroup), определенный в TypeScript коде компонента. -->
+        <!-- (ngSubmit) —  Обработчик события для заполнения формы и на это событие (ngSubmit) мы вызываем метод который мы хотим в данный момент "submitForm()"-->
+        <p>NAME:</p>
+        <input type="text" placeholder="Введите имя..." class="form-input" formControlName="name">
+        <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['name'].errors">ИМЯ ВВЕДЕНО НЕПРАВИЛЬНО</div>
+        </div>
+        <p>EMAIL:</p>
+        <input type="text" placeholder="Введите email..." class="form-input" formControlName="email">
+        <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['email'].errors">EMAIL ВВЕДЕН НЕПРАВИЛЬНО</div>
+        </div>
+        <p>WEBSITE:</p>
+        <input type="text" placeholder="Введите website..." class="form-input" formControlName="website">
+        <div *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['website'].errors">WEBSITE ВВЕДЕН НЕПРАВИЛЬНО</div>
+        </div>
+        <p>COMPANY NAME:</p>
+        <input type="text" placeholder="Название компании..." class="form-input" formControlName="companyName">
+        <div *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['companyName'].errors">ИМЯ КОМПАНИИ НЕПРАВИЛЬНО</div>
+        </div>
+        <!-- formControlName - привязывает поле ввода к конкретному контролу формы, который управляется Angular. В вашем компоненте (файле TypeScript) должна быть определена форма, 
+         которая содержит поле companyName. Это связывает ввод данных пользователем в это поле с логикой формы в компоненте. -->
+        <button class="form-btn" type="submit" [disabled]="form.invalid">СОЗДАТЬ ЮЗЕРА</button>
+        <!--У любой кнопки по умолчанию тип - type="submit" -->
+        <!-- type="submit" - говорит браузеру и Angular, что при клике кнопка должна выполнять действия, связанные с отправкой данных, например, 
+         валидацию или отправку формы на сервер. В общем кнопка которая подтверждает заполнение формы-->
+    </form>
+</div>

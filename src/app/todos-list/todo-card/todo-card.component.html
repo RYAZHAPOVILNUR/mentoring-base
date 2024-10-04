@@ -1,0 +1,13 @@
+<div class="conteiner">
+    <div class="block_todos">
+        <p class="text">ID ЗАДАЧИ:</p>
+        <div class="text_2">{{todoInput.userId}}</div>
+
+        <p class="text">ТЕКСТ ЗАДАЧИ:</p>
+        <div class="text_2">{{todoInput.title}}</div>
+
+        <p class="text">ЗАДАЧА ЗАВЕРШЕНА!</p>
+        <div class="text_2">{{todoInput.completed ? 'ДА' : 'НЕТ'}}</div>
+    </div>
+    <button (click)="onDeleteTodo(todoInput.id)" class="btn_delete">УДАЛИТЬ</button>
+</div>

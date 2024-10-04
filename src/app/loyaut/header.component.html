@@ -1,0 +1,59 @@
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">
+      <img src="/assets/Frame.svg" alt="логотип сайта" />
+    </div>
+
+    <nav class="header-nav">
+      <div class="header-nav-item"><a routerLink="" class="mainLeft">{{ main }}</a></div>
+      <div class="header-nav-item" *ngIf="isAboutCompany">{{ aboutCompany }}</div>
+      <div class="header-nav-item">{{ textCatalog }}</div>
+    </nav>
+    <button (click)="isAboutCompany = !isAboutCompany" class="btn">Скрыть/Показать компанию</button>
+    <button (click)="changeMenuText()" class="btn">Изменить текст</button>
+    <button><a routerLink="users">Admin</a></button>
+    <button><a routerLink="todos">Todos</a></button>
+  </div>
+
+  <div class="header-right">
+    <div class="header-item">
+      <img src="/assets/Phone.svg" alt="логотип телефона" />
+      <div class="header-number">
+        <a href="tel:+7 (965) 084-29-29" style="text-decoration: none; color: white;">+7 (965) 084-29-29</a>
+      </div>
+    </div>
+
+    <div class="header-item">
+      <img src="/assets/heart1.svg" alt="логотип сердечко" />
+    </div>
+
+    <div class="header-item">
+      <button class="header-button">
+        <img class="header-img-shop-cart" src="/assets/Mask_group.svg" alt="логотип корзина" />
+        <span>Пусто</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="header-2">
+  <div class="header-second-left">
+    <img class="header-second-logo" src="/assets/light.svg" alt="" />
+    <nav class="nav-2" *ngIf="changeMenuText">
+      <div class="header-second-nav-item" *ngFor="let i of menuItems">{{ i }} </div>
+      <!-- <button class="item-cards__pagination-button">2</button>
+      <button class="item-cards__pagination-button">3</button>
+      <button class="item-cards__pagination-button">4</button>
+      <button class="item-cards__pagination-button">5</button> -->
+    </nav>
+  </div>
+  <div class="header-second-right">
+    <form class="header-second-item">
+      <input type="search" class="header-second-input" placeholder="Поиск, например Круг зачистной">
+    </form>
+    <div class="header-second-map">
+      <img src="/assets/map-pin.svg" alt="точка на карте" />
+      <button class="header-second-word">Москва</button>
+    </div>
+  </div>
+</div>

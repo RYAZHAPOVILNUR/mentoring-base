@@ -1,0 +1,201 @@
+.header {
+  display: flex; // Устанавливает элемент как Flex-контейнер.
+  justify-content: space-between; // позиционирует элементы вправо и влево
+  align-items: center; // Определяет вертикальное выравнивание для одного конкретного элемента внутри Flex-контейнера.
+  height: 80px; // задает высоту
+  color: white; // задает цвет элементу
+  background-color: #4b565e; // задает цвет заднего фона
+  padding: 0px 240px; // задает внутренние отступы: 0px отступы сверху и снизу, 240px отступы по бокам
+  align-items: center; //  Выравнивает все элементы внутри Flex-контейнера по вертикали (вдоль поперечной оси) по центру.
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; // семейство шрифтов
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin-right: 20px; // задает внешние отступы справа
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-nav-item {
+  margin-right: 20px; // задает внешние отступы справа
+  &:hover {
+    font-weight: 700;
+    color: #f1bb4e;
+    cursor: pointer;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-item {
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    font-weight: 700;
+    color: #f1bb4e;
+    cursor: pointer;
+  }
+}
+
+.header-number {
+  margin-left: 10px;
+  &:hover {
+    font-weight: 700;
+    color: #f1bb4e;
+    cursor: pointer;
+  }
+}
+
+.header-img-shop-cart {
+  align-items: center;
+  margin-right: 15px;
+}
+
+.header-button {
+  display: flex;
+  border-radius: 50px;
+  background-color: #4b565e;
+  padding: 10px 25px;
+  border-style: solid;
+  border-color: #f0ba4e;
+  border-width: 1px;
+  align-items: center;
+  color: white;
+  &:hover {
+    font-weight: 700;
+    border: 2px #c8cad6 solid;
+    color: #f0ba4e;
+    cursor: pointer;
+  }
+}
+
+.header-2 {
+  display: flex; // позиционирует элементы в одну строку
+  justify-content: space-between; // позиционирует элементы вправо и влево
+  align-items: center; // позиционирует элементы по центру
+  height: 48px; // задает высоту
+  color: #4b565e; // задает цвет элементу
+  background-color: #f0ba4e; // задает цвет заднего фона
+  padding: 0px 240px; // задает внутренние отступы: 0px отступы сверху и снизу, 240px отступы по бокам
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; // семейство шрифтов
+}
+
+.header-second-left {
+  display: flex;
+  align-self: center;
+}
+
+.nav-2 {
+  display: flex;
+  align-self: center;
+}
+
+.header-second-logo {
+  padding-right: 10px;
+  display: flex;
+  align-self: center;
+}
+
+.header-second-nav-item {
+  display: flex;
+  align-self: center;
+  color: #4b565e;
+  font-size: small;
+  font-weight: 500;
+  margin-right: 30px;
+  &:hover {
+    font-weight: 700;
+    color: wheat;
+    cursor: pointer;
+  }
+}
+
+.header-second-right {
+  display: flex;
+  align-self: center;
+}
+
+.header-second-input {
+  height: 25px;
+  width: 390px;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-right: 10px;
+  color: #4b565e;
+  border-bottom: 1px solid #4b565e;
+  font-size: 15px;
+  outline: none;
+  &:hover {
+    font-weight: 700;
+    color: #f1bb4e;
+    cursor: pointer;
+  }
+}
+
+.header-second-map {
+  display: flex;
+  align-self: center;
+  font-size: 12px;
+  color: white;
+}
+
+.header-second-word {
+  background-color: #f0ba4e;
+  border: none;
+  color: white;
+  &:hover {
+    font-weight: 700;
+    color: #4b565e;
+    cursor: pointer;
+  }
+}
+
+.header-left button {
+  margin-left: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: #4b565e;
+  font-weight: 600;
+}
+
+.mainLeft {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: #f0ba4e;
+  }
+}
+
+.header-left button a {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: #4b565e;
+  text-decoration: none;
+  font-weight: 600;
+  &:hover {
+    font-weight: 700;
+    color: #f1bb4e;
+  }
+}
+
+button.btn:hover {
+  font-weight: 700;
+  color: #f1bb4e;
+  cursor: pointer;
+}

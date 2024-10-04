@@ -1,0 +1,47 @@
+.block_users {
+  background-color: #f2f2f2;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  width: 200px;
+  box-shadow: 0px 20px 50px 0px #3c3c3b12;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #353e4e;
+  padding: 0 25px;
+  border: 1px #353e4e solid;
+  margin: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: #353e4e;
+    color: #f0f1f5;
+  }
+}
+
+.btn_delete {
+  width: 150px;
+  height: 40px;
+  font-weight: 300;
+  border: 2px solid #626e84;
+  background: #efba50;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  border-radius: 15px;
+  font-size: 15px;
+  color: #353e4e;
+  cursor: pointer;
+  margin: 10px 25px;
+  &:hover {
+    background-color: #353e4e;
+    font-weight: 600;
+    border: 3px solid #f0f1f5;
+    color: #efba50;
+  }
+}
+
+.text:hover {
+  font-weight: 600;
+  color: #efba50;
+}
