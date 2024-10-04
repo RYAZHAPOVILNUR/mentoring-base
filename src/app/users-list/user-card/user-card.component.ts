@@ -19,3 +19,4 @@ export class UserCardComponent {
     this.deleteUserCard.emit(userId);
   }
 }
+
