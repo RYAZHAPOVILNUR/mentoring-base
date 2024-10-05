@@ -1,9 +1,9 @@
 <div class="name_title">
-    <app-create-todo-form (createTodoForm)="createTodolist($event)"></app-create-todo-form>
+    <app-create-todo-form (createTodoForm)="createTodo($event)"></app-create-todo-form>
 </div>
 
 <div class="content_users">
-    <div *ngFor="let i of todoService.todos$ | async">
-        <app-todo-card [todoInput]="i" (deleteTodoCard)="deleteTodo($event)"></app-todo-card>
+    <div *ngFor="let todo of todoService.todos$ | async">
+        <app-todo-card [todoInput]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
     </div>
 </div>

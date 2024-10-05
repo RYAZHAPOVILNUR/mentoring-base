@@ -31,7 +31,7 @@ export class TodosListComponent {
     this.todoService.deleteTodo(id);
   }
 
-  public createTodolist(fromDate: TodoInterface) {
+  public createTodo(fromDate: TodoInterface) {
     this.todoService.createTodo({
       userId: fromDate.userId,
       id: fromDate.id,

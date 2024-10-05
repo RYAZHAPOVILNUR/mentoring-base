@@ -8,11 +8,11 @@
      данные из RXJS коробочки чтобы доставать и отображать данные на сайте так же async помогает
      превратить usersService.usersSubject из типа BehaviorSubject в обычные данные
      т.е. преобразует в обычный массив и затем ngFor работает без проблем -->
-    <div *ngFor="let i of usersService.users$ | async">
+    <div *ngFor="let user of usersService.users$ | async">
 
         <!-- квадратные скобки это связывание свойства (input binding) в Angular
          в [] передаем определенные данные [user_input]="i" -->
-        <app-user-card [userInput]="i" (deleteUserCard)="deleteUserList($event)"></app-user-card>
+        <app-user-card [user]="user" (deleteUser)="deleteUserList($event)"></app-user-card>
 
     </div>
 </div>

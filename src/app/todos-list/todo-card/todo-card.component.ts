@@ -13,9 +13,9 @@ export class TodoCardComponent {
   todoInput!: TodoInterface; // "!" - означает что данные обязательно будут но по позже. 
 
   @Output()
-  deleteTodoCard = new EventEmitter();
+  deleteTodo = new EventEmitter();
   
   onDeleteTodo(todoId: number) {
-    this.deleteTodoCard.emit(todoId);
+    this.deleteTodo.emit(todoId);
   }
 }

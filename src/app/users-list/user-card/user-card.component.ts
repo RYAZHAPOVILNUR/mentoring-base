@@ -10,13 +10,13 @@ import { UserInterface } from '../../interfaces/user-itesrfaces';
 })
 export class UserCardComponent {
   @Input()
-  userInput!: UserInterface; // "!" - означает что данные обязательно будут но по позже.
+  user!: UserInterface; // "!" - означает что данные обязательно будут но по позже.
 
   @Output()
-  deleteUserCard = new EventEmitter();
+  deleteUser = new EventEmitter();
 
   onDeleteUser(userId: number) {
-    this.deleteUserCard.emit(userId);
+    this.deleteUser.emit(userId);
   }
 }
 

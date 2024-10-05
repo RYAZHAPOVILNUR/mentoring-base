@@ -1,8 +1,8 @@
 <div class="block_users">
-    <p class="text">{{userInput.id}}</p>
-    <p class="text">{{userInput.name}}</p>
-    <p class="text">{{userInput.email}}</p>
-    <p class="text">{{userInput.website}}</p>
-    <p class="text">{{userInput.company.name}}</p>
-    <button (click)="onDeleteUser(userInput.id)" class="btn_delete">Удалить юзера</button>
+    <p class="text">{{user.id}}</p>
+    <p class="text">{{user.name}}</p>
+    <p class="text">{{user.email}}</p>
+    <p class="text">{{user.website}}</p>
+    <p class="text">{{user.company.name}}</p>
+    <button (click)="onDeleteUser(user.id)" class="btn_delete">Удалить юзера</button>
 </div>
