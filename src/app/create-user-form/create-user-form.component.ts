@@ -14,10 +14,10 @@ export class CreateUserFormComponent {
   createUserForm = new EventEmitter();
 
   public form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Zа-яА-я]*$")]), // [Validators.required] - означает обязательное поле для заполнения
-    email: new FormControl('',[Validators.required, Validators.email, Validators.pattern("^[a-zA-Z]*$")]),
+    name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Zа-яА-я.]*$")]), // [Validators.required] - означает обязательное поле для заполнения
+    email: new FormControl('',[Validators.required, Validators.email]),
     website: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    companyName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Zа-яА-я]*$")]),
+    companyName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Zа-яА-я._]*$")]),
   });
 
   public submitFormUser(): void {

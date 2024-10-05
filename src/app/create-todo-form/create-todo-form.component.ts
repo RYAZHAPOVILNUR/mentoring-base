@@ -28,10 +28,10 @@ export class CreateTodoFormComponent {
   createTodoForm = new EventEmitter();
 
   public form = new FormGroup({
-    userId: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Zа-яА-я.,]*$")]),
-    id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]),
+    userId: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Zа-яА-я.]*$")]),
+    id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9.]*$")]),
     title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Zа-яА-я.,]*$")]),
-    completed: new FormControl('',[Validators.required, Validators.maxLength(3)]),
+    completed: new FormControl('',[Validators.required, Validators.maxLength(3), Validators.pattern("^[a-zA-Zа-яА-я]*$")]),
   });
 
  // Метод для получения значения completed
