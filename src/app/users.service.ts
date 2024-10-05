@@ -12,8 +12,8 @@ export class UsersService {
   private usersSubject$ = new BehaviorSubject<IUser[]>([]); // [] — начальное значение, переданное в BehaviorSubject. В данном случае это пустой массив
 
   // можем обратиться к переменной users$ вне файла, использование asObservable()
-  // делает так, что другие частикода не могут изменять данные напрямую,
-  // что помогает соблюдать инкапсуляцию и правильную логику работы с данными
+  // делает так, что другие части кода не могут изменять данные напрямую,
+  // что помогает соблюдать инкапсуляцию и правильную логику работы с данными.
   users$ = this.usersSubject$.asObservable();
 
   //* установка юзеров
@@ -29,7 +29,7 @@ export class UsersService {
     this.usersSubject$.next(
       this.usersSubject$.value.map((user) => {
         if (user.id === editedUser.id) {
-          // Если это тот юзера, которого нужно отредактировать, заменяем на обновленного юзера
+          // Если это тот юзер, которого нужно отредактировать, заменяем на обновленного юзера
           return editedUser;
         } else {
           // Иначе возвращаем старого юзера без изменений
@@ -63,14 +63,14 @@ export class UsersService {
   deleteUser(id: number) {
     this.usersSubject$.next(
       this.usersSubject$.value.filter(
-        (item) => {
-          if (item.id === id) {
-            return false;
-          } else {
-            return true;
-          }
-        }
-        // item => item.id !== id короткая версия if else
+        (item) => item.id !== id //короткая версия if else
+        // (item) => {
+        //   if (item.id === id) {
+        //     return false;
+        //   } else {
+        //     return true;
+        //   }
+        // }
       )
     );
   }
