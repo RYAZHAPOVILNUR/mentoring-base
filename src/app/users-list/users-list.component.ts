@@ -4,7 +4,7 @@ import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { CreateUserInterface } from '../interfaces/user-itesrfaces';
+import { ICreateUser } from '../interfaces/user-itesrfaces';
 
 @Component({
   selector: 'app-users-list',
@@ -21,7 +21,7 @@ export class UsersListComponent {
   readonly usersService = inject(UsersService); // передали из файла users.service.ts
 
   constructor() {
-    // подписка => получение данных методом getUsers из файла users-api.service.ts
+    // подписка => получение данных методом getUsers из файла users-api.service.
     this.usersApiService.getUsers().subscribe((response: any) => {
       // подписка => установка и загрузка данных методом setUsers из файла users.service.ts
       this.usersService.setUsers(response);
@@ -35,7 +35,7 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formDate: CreateUserInterface) {
+  public createUser(formDate: ICreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formDate.name,

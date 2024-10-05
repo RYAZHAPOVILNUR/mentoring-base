@@ -22,7 +22,7 @@ export interface IUser {
     };
   }
   
-  export interface CreateUserInterface {
+  export interface ICreateUser {
     id: number;
     name: string;
     email: string;
