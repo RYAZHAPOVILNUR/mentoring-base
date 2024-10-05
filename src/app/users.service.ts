@@ -16,14 +16,14 @@ export class UsersService {
   // что помогает соблюдать инкапсуляцию и правильную логику работы с данными
   users$ = this.usersSubject$.asObservable();
 
-  // установка юзеров
+  //* установка юзеров
   // вместо User[] можем писать Array<User> кому как удобно без разницы
   setUsers(users: IUser[]) {
     // next() метод используется для обновления данных в BehaviorSubject.
     this.usersSubject$.next(users);
   }
 
-  // изменение юзера
+  //* изменение юзера
   // перезаписывает весь массив при этом элемент который изменили подменяет на новый а все остальные не трогает
   editUser(editedUser: IUser) {
     this.usersSubject$.next(
@@ -39,7 +39,7 @@ export class UsersService {
     );
   }
 
-  // создание юзера
+  //* создание юзера
   // перезаписывает на новый массив который равен старому но к нему добавляет новый элемент
   createUser(user: IUser) {
     const existingUser = this.usersSubject$.value.find(
@@ -58,7 +58,7 @@ export class UsersService {
     // и добавляет в конец новый объект user
   }
 
-  // удаление юзера
+  //* удаление юзера
   // перезаписывает на новый массив который равен старому но там будет удален юзер который мы туда положили
   deleteUser(id: number) {
     this.usersSubject$.next(
