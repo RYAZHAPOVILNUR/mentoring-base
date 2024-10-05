@@ -45,6 +45,6 @@ export class UsersListComponent {
         name: formDate.companyName,
       },
     });
-    console.log('ДАННЫЕ ФОРМЫ: ', event);
+    console.log('ДАННЫЕ ФОРМЫ: ', formDate);
   }
 }
