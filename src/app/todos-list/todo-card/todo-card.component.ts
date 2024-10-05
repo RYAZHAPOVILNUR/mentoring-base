@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TodoInterface } from '../../interfaces/todo-interfaces';
+import { ITodo } from '../../interfaces/todo-interfaces';
 
 @Component({
   selector: 'app-todo-card',
@@ -10,7 +10,7 @@ import { TodoInterface } from '../../interfaces/todo-interfaces';
 })
 export class TodoCardComponent {
   @Input()
-  todoInput!: TodoInterface; // "!" - означает что данные обязательно будут но по позже. 
+  todoInput!: ITodo; // "!" - означает что данные обязательно будут но по позже. 
 
   @Output()
   deleteTodo = new EventEmitter();

@@ -4,7 +4,7 @@ import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodoApiService } from '../todos-api.service';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
-import { TodoInterface } from '../interfaces/todo-interfaces';
+import { ITodo } from '../interfaces/todo-interfaces';
 
 @Component({
   selector: 'app-todos-list',
@@ -31,7 +31,7 @@ export class TodosListComponent {
     this.todoService.deleteTodo(id);
   }
 
-  public createTodo(fromDate: TodoInterface) {
+  public createTodo(fromDate: ITodo) {
     this.todoService.createTodo({
       userId: fromDate.userId,
       id: fromDate.id,

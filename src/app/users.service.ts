@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { UserInterface } from './interfaces/user-itesrfaces';
+import { IUser } from './interfaces/user-itesrfaces';
 
 // Паттерн singleton это паттерн проектирования, гарантирующий, что у класса будет только один экземпляр для всего приложения
 @Injectable({ providedIn: 'root' })
@@ -9,7 +9,7 @@ export class UsersService {
   // <User[]> это generic, указывающий, что BehaviorSubject будет работать с массивом объектов типа User.
   // переменная со знаком $ говорит что это переменная, которая представляет собой экземпляр BehaviorSubject.
   // BehaviorSubject это один из типов Subject'ов в RxJS (библиотека для реактивного программирования в Angular).
-  private usersSubject$ = new BehaviorSubject<UserInterface[]>([]); // [] — начальное значение, переданное в BehaviorSubject. В данном случае это пустой массив
+  private usersSubject$ = new BehaviorSubject<IUser[]>([]); // [] — начальное значение, переданное в BehaviorSubject. В данном случае это пустой массив
 
   // можем обратиться к переменной users$ вне файла, использование asObservable()
   // делает так, что другие частикода не могут изменять данные напрямую,
@@ -18,14 +18,14 @@ export class UsersService {
 
   // установка юзеров
   // вместо User[] можем писать Array<User> кому как удобно без разницы
-  setUsers(users: UserInterface[]) {
+  setUsers(users: IUser[]) {
     // next() метод используется для обновления данных в BehaviorSubject.
     this.usersSubject$.next(users);
   }
 
   // изменение юзера
   // перезаписывает весь массив при этом элемент который изменили подменяет на новый а все остальные не трогает
-  editUser(editedUser: UserInterface) {
+  editUser(editedUser: IUser) {
     this.usersSubject$.next(
       this.usersSubject$.value.map((user) => {
         if (user.id === editedUser.id) {
@@ -41,7 +41,7 @@ export class UsersService {
 
   // создание юзера
   // перезаписывает на новый массив который равен старому но к нему добавляет новый элемент
-  createUser(user: UserInterface) {
+  createUser(user: IUser) {
     const existingUser = this.usersSubject$.value.find(
       (currentElement) => currentElement.email === user.email
     );

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UserInterface } from '../../interfaces/user-itesrfaces';
+import { IUser } from '../../interfaces/user-itesrfaces';
 
 @Component({
   selector: 'app-user-card',
@@ -10,7 +10,7 @@ import { UserInterface } from '../../interfaces/user-itesrfaces';
 })
 export class UserCardComponent {
   @Input()
-  user!: UserInterface; // "!" - означает что данные обязательно будут но по позже.
+  user!: IUser; // "!" - означает что данные обязательно будут но по позже.
 
   @Output()
   deleteUser = new EventEmitter();

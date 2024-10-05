@@ -2,15 +2,14 @@ import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
-// Валидатор для поля 'completed' - только "yes" или "no"
+// Валидатор для поля 'completed' - только "да" или "нет"
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value?.trim().toLowerCase();
 
-    if (value === 'yes' || value === 'no') {
+    if (value === 'да' || value === 'нет') {
       return null; // Валидное значение
     }
-
     return { invalidCompleted: true }; // Невалидное значение
   };
 }
@@ -30,8 +29,8 @@ export class CreateTodoFormComponent {
   public form = new FormGroup({
     userId: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Zа-яА-я.]*$")]),
     id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9.]*$")]),
-    title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Zа-яА-я.,]*$")]),
-    completed: new FormControl('',[Validators.required, Validators.maxLength(3), Validators.pattern("^[a-zA-Zа-яА-я]*$")]),
+    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    completed: new FormControl('',[Validators.required, Validators.maxLength(3), completedValidator()]),
   });
 
  // Метод для получения значения completed
