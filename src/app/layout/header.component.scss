@@ -1,0 +1,157 @@
+.header {
+    display: flex; // Устанавливает элемент как Flex-контейнер.
+    justify-content: space-between; // позиционирует элементы вправо и влево
+    align-items: center; // Определяет вертикальное выравнивание для одного конкретного элемента внутри Flex-контейнера.
+    height: 80px; // задает высоту
+    color: white; // задает цвет элементу
+    background-color: #4B565E; // задает цвет заднего фона
+    padding: 0px 240px; // задает внутренние отступы: 0px отступы сверху и снизу, 240px отступы по бокам
+    align-items: center; //  Выравнивает все элементы внутри Flex-контейнера по вертикали (вдоль поперечной оси) по центру.
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // семейство шрифтов
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    margin-right: 20px; // задает внешние отступы справа
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-item {
+    margin-right: 20px; // задает внешние отступы справа
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-item {
+    margin-left: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.header-number {
+    margin-left: 10px;
+}
+
+.header-img-shop-cart {
+    align-items: center;
+    margin-right: 15px;
+}
+
+.header-button {
+    display: flex;
+    border-radius: 50px;
+    font-size: 15px;
+    background-color: #4B565E;
+    padding: 10px 25px;
+    border-style: solid;
+    border-color: #F0BA4E;
+    border-width: 1px;
+    align-items: center;
+    color: white;
+}
+
+.header-2 {
+    display: flex; // позиционирует элементы в одну строку
+    justify-content: space-between; // позиционирует элементы вправо и влево
+    align-items: center; // позиционирует элементы по центру
+    height: 48px; // задает высоту
+    color: #4B565E; // задает цвет элементу
+    background-color: #F0BA4E; // задает цвет заднего фона
+    padding: 0px 240px; // задает внутренние отступы: 0px отступы сверху и снизу, 240px отступы по бокам
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // семейство шрифтов
+}
+
+.header-second-left {
+    display: flex;
+    align-self: center;
+}
+
+.nav-2 {
+    display: flex;
+    align-self: center;
+}
+
+.header-second-logo {
+    padding-right: 10px;
+    display: flex;
+    align-self: center
+}
+
+.header-second-nav-item {
+    display: flex;
+    align-self: center;
+    color: #4B565E;
+    font-size: small;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.header-second-right {
+    display: flex;
+    align-self: center;
+}
+
+.header-second-input {
+    height: 25px;
+    width: 390px;
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-right: 10px;
+    color: #4B565E;
+    border-bottom: 1px solid #4B565E;
+    font-size: 15px;
+    outline: none;
+}
+
+.header-second-map {
+    display: flex;
+    align-self: center;
+    font-size: 12px;
+    color: white;
+}
+
+.header-second-word {
+    background-color: #F0BA4E;
+    border: none;
+    color: white;
+}
+
+.header-left button {
+    padding: 10px 10px;
+    margin-left: 30px;
+    font-size: 15px;
+    border-radius: 15px;
+    border: none;
+    & a {
+        text-decoration: none;
+        color: #4B565E;
+        font-weight: 600;
+    }
+    & a:hover {
+        color: #f0ba4e;
+        cursor: pointer;
+    }
+}
+
+// Мутируем слово Главная
+.header-nav div a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+        text-decoration: none;
+        color: #f0ba4e;
+    }
+}

@@ -1,0 +1,43 @@
+.container {
+    margin-top: 25px;
+    border: 1px solid #3C3C3B;
+    border-radius: 15px;
+    color: #3C3C3B;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    flex-direction: column;
+    background-color: #f0f1f5;
+    &:hover{
+        background-color: #3C3C3B;
+        color: #f3b81d;
+    }
+}
+.block_todos_card {
+    height: 150px;
+    width: 210px;
+    font-size: 15px;
+    padding: 25px;
+}
+
+.task_title{
+    font-weight: 600;
+}
+
+.btn_delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 45px;
+    background: #f3b81d;
+    border-radius: 30px;
+    border: none;
+    margin: 30px auto;
+    border: 1px solid #3C3C3B;
+    &:hover {
+        cursor: pointer;
+        background-color: #3C3C3B;
+        color: #f3b81d;
+        border: 1px solid #f3b81d;
+    }
+}

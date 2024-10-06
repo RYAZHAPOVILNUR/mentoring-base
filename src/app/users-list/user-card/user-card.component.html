@@ -1,0 +1,11 @@
+<h1 class="item-word">КАРТОЧКА</h1>
+
+<!-- style="width: 200px; height: 200px; border: 1px solid black; margin: 5px; padding: 10px;" -->
+<div class="block_users_card">
+    <!-- <p>{{$any(i).name}}</p> лайфхак от Ильнура с $any()-->
+    <p>{{user.name}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.website}}</p>
+    <p>{{user.company.name}}</p>
+    <button (click)="onDeleteUser(user.id)" class="btn_delete">Удалить юзера</button>
+</div>

@@ -1,0 +1,39 @@
+<div class="content_form">
+
+    <h2 class="form_title">Create todo form</h2>
+
+    <form class="block_form" [formGroup]="form" (ngSubmit)="submitFormTodo()">
+
+        <p class="form_title_input">Задание:</p>
+        <input type="text" placeholder="Ввдите задание..." class="form_input" formControlName="userId">
+        <div *ngIf="form.controls.userId.invalid && (form.controls.userId.dirty || form.controls.userId.touched)"
+            class="alert">
+            <div *ngIf="form.controls.userId.errors">Задание введено неправильно!</div>
+        </div>
+
+
+        <p class="form_title_input">Id участника:</p>
+        <input type="text" placeholder="Введите id участника..." class="form_input" formControlName="id">
+        <div *ngIf="form.controls.id.invalid && (form.controls.id.dirty || form.controls.id.touched)" class="alert">
+            <div *ngIf="form.controls.id.errors">Id введено неправильно!</div>
+        </div>
+
+
+        <p class="form_title_input">Задача:</p>
+        <input type="text" placeholder="Введите задачу..." class="form_input" formControlName="title">
+        <div *ngIf="form.controls.title.invalid && (form.controls.title.dirty || form.controls.title.touched)"
+            class="alert">
+            <div *ngIf="form.controls.title.errors">Задача введено неправильно!</div>
+        </div>
+
+
+        <p class="form_title_input">Задача решена:</p>
+        <input type="text" placeholder="Введите ДА\НЕТ...?" class="form_input" formControlName="completed">
+        <div *ngIf="form.controls.completed.invalid && (form.controls.completed.dirty || form.controls.completed.touched)"
+            class="alert">
+            <div *ngIf="form.controls.completed.errors">Решение введено неправильно!</div>
+        </div>
+
+        <button [disabled]="form.invalid" class="form_button">CREATE TASK</button>
+    </form>
+</div>

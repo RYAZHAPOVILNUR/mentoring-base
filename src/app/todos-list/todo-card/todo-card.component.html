@@ -1,0 +1,11 @@
+<div class="container">
+    
+    <div class="block_todos_card">
+        <p><span>Id участвника: </span>{{todo.id}}</p>
+        <p><span>Задание: </span>{{todo.userId}}</p>
+        <p><span class="task_title">Задача: </span>{{todo.title}}</p>
+        <p><span>Задача решена: </span>{{todo.completed ? 'YES' : 'NO'}}</p>
+    </div>
+    
+    <button (click)="onDeleteTodo(todo.id)" class="btn_delete">Удалить</button>
+</div>

@@ -1,0 +1,21 @@
+.name_title {
+    max-width: 1350px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    color: #3C3C3B;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.content_users{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1350px;
+    min-height: 600px;
+    margin: 0 auto;
+    gap: 10px;
+    margin-bottom: 50px;
+    color: #3C3C3B;
+}

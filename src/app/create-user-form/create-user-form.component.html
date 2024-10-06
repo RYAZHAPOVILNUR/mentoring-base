@@ -1,0 +1,51 @@
+<div class="content_form">
+
+    <h2 class="form_title">Create user form</h2>
+
+    <!-- [] скобки это привязка к какому то свойству, в [] скобки передаем данные formGroup это встроенный код angular к ней присвайваем from это наша созданная переменная из ts
+     и так же этот код делает так чтобы станица не перезагружалась при клике на кнопку -->
+    <form class="block_form" [formGroup]="form" (ngSubmit)="submitForm()">
+
+        <!-- formControlName — это директива в Angular, которая используется для привязки
+         элемента управления формы к объекту FormControlкоторый находится внутри объекта FormGroup -->
+        <p class="form_title">Name:</p>
+        <input type="text" placeholder="Enter your name:" class="form_input" formControlName="name">
+        <!-- проверка на то что пользователь ничего не ввел либо если кликнул на пустое поле в форме -->
+        <div *ngIf="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)"
+            class="alert">
+            <div *ngIf="form.controls.name.errors">Имя введено неправильно!</div>
+        </div>
+
+
+        <p class="form_title">Email:</p>
+        <input type="text" placeholder="Enter your Email:" class="form_input" formControlName="email">
+        <div *ngIf="form.controls.email.invalid && (form.controls.email.dirty || form.controls.email.touched)"
+            class="alert">
+            <div *ngIf="form.controls.email.errors">Email введено неправильно!</div>
+        </div>
+
+
+        <p class="form_title">Website:</p>
+        <input type="text" placeholder="Enter your Website:" class="form_input" formControlName="website">
+        <!-- проверка на то что пользователь ничего не ввел либо если кликнул на пустое поле в форме веб-сайт -->
+        <div *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['website'].errors">Веб-сайт введено неправильно!</div>
+        </div>
+
+
+        <p class="form_title">Company name:</p>
+        <input type="text" placeholder="Enter your country:" class="form_input" formControlName="companyName">
+        <div *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['companyName'].errors">Страна введено неправильно!</div>
+        </div>
+
+
+        <!-- кнопка button по умолчанию уже с типом submit и button находится внутри тега from
+          по этому при клике на кнопку button срабатывает автоматический ngSubmit обработчик события,
+          disabled означает не активный а [] скобки это привязка к свойству,
+          form.invalid это означает что когда вся форма заполнится form.invalid станет true -->
+        <button [disabled]="form.invalid" class="form_button">CREATE USER</button>
+    </form>
+</div>
