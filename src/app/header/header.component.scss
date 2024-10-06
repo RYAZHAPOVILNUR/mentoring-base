@@ -38,11 +38,12 @@
 }
 
 .header-nav-item {
-  @include body;
+  color: #f9fafb;
+  text-decoration: none;
 }
 
 .header-nav-item2 {
-  @include body;
+  text-decoration: none;
   font-size: 14px;
   color: #3c3c3b;
 }

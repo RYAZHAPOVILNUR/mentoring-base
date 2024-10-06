@@ -3,7 +3,6 @@
 @import '../normalize.scss';
 
 footer {
-  @include body;
   background-color: #4b565e;
 }
 
@@ -164,11 +163,7 @@ footer {
 }
 
 .header-nav-item {
-  color: white;
   text-decoration: none;
-  font-family: inter;
-  font-weight: 600;
-  font-size: 16px;
   color: #f9fafb;
 }
 
