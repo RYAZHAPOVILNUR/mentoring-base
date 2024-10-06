@@ -3,7 +3,7 @@ import { TodosApiService } from '../todos-api.service';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { NgFor } from '@angular/common';
 
-interface Todo {
+export interface Todo {
   userId: number;
   id: number;
   title: string;

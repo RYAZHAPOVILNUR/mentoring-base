@@ -1,5 +1,5 @@
 .footer {
-  background-color: #4B565E;
+  background-color: #4b565e;
 
   &__top {
     border-bottom: 1px solid #566169;
@@ -34,7 +34,7 @@
   width: 50%;
   flex-shrink: 0;
   border-right: 1px solid #566169;
-  padding: 34px 0;
+  padding: 34px 0px;
   color: #fff;
 
   & .logo {
@@ -51,7 +51,7 @@
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -60,11 +60,11 @@
     }
 
     &--phone::before {
-      background-image: url('./../assets/call-icon.svg')
+      background-image: url("./../assets/call-icon.svg");
     }
 
     &--email::before {
-      background-image: url('./../assets/email-icon.svg')
+      background-image: url("./../assets/email-icon.svg");
     }
   }
 
@@ -104,16 +104,16 @@
 
 .questions-form {
   width: 100%;
-  border: 1px solid #F0BA4E;
+  border: 1px solid #f0ba4e;
   border-radius: 30px;
   position: relative;
   padding: 11px 6px 11px 48px;
   height: 48px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    background-image: url('./../assets/email-small.svg');
+    background-image: url("./../assets/email-small.svg");
     width: 16px;
     height: 16px;
     left: 24px;
@@ -140,7 +140,7 @@
     right: 6px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #F0BA4E;
+    background-color: #f0ba4e;
     border-radius: 30px;
     padding: 12px 20px;
     font-size: 10px;
@@ -158,15 +158,15 @@
     height: 24px;
 
     &--facebook {
-      background-image: url('./../assets/facebook.svg');
+      background-image: url("./../assets/facebook.svg");
     }
 
     &--youtube {
-      background-image: url('./../assets/youtube.svg');
+      background-image: url("./../assets/youtube.svg");
     }
 
     &--whatsapp {
-      background-image: url('./../assets/whatsapp.svg');
+      background-image: url("./../assets/whatsapp.svg");
     }
   }
 }

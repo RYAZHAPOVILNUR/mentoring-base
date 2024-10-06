@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 
-interface User {
+export interface User {
   id: number;
   name: string;
   username: string;
