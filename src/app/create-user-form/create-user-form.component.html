@@ -3,12 +3,14 @@
     <form [formGroup]="form" (ngSubmit)="submitForm()">
       <h1 class="title">CREATE USER FORM</h1>
       <p class="subtitle">NAME:</p>
-      <input
-        type="text"
-        placeholder="Введите имя"
-        class="form-input"
-        formControlName="name"
-      />
+      <mat-form-field class="example-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Введите имя"
+          formControlName="name"
+        />
+      </mat-form-field>
       <div
         *ngIf="
           form.controls['name'].invalid &&
@@ -19,12 +21,13 @@
         <div *ngIf="form.controls['name'].errors">Слишком короткое имя</div>
       </div>
       <p class="subtitle">EMAIL:</p>
-      <input
-        type="text"
-        placeholder="Введите email@"
-        class="form-input"
-        formControlName="email"
-      />
+      <mat-form-field class="example-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Введите email@"
+          formControlName="email"
+      /></mat-form-field>
       <div
         *ngIf="
           form.controls['email'].invalid &&
@@ -37,12 +40,13 @@
         </div>
       </div>
       <p class="subtitle">WEBSITE:</p>
-      <input
-        type="text"
-        placeholder="Введите веб-сайт"
-        class="form-input"
-        formControlName="website"
-      />
+      <mat-form-field class="example-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Введите веб-сайт"
+          formControlName="website"
+      /></mat-form-field>
       <div
         *ngIf="
           form.controls['website'].invalid &&
@@ -55,12 +59,13 @@
         </div>
       </div>
       <p class="subtitle">COMPANY NAME:</p>
-      <input
-        type="text"
-        placeholder="Введите название компании"
-        class="form-input"
-        formControlName="companyName"
-      />
+      <mat-form-field class="example-width"
+        ><input
+          matInput
+          type="text"
+          placeholder="Введите название компании"
+          formControlName="companyName"
+      /></mat-form-field>
       <div
         *ngIf="
           form.controls['companyName'].invalid &&
@@ -74,9 +79,7 @@
         </div>
       </div>
       <div class="create-button-position">
-        <button class="create-button" [disabled]="form.invalid">
-          CREATE USER
-        </button>
+        <button mat-raised-button [disabled]="form.invalid">CREATE USER</button>
       </div>
     </form>
   </div>

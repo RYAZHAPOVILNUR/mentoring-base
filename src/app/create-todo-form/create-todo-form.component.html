@@ -3,55 +3,70 @@
     <form [formGroup]="formTodo" (ngSubmit)="submitForm()">
       <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
       <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
-      <input
-        type="text"
-        placeholder="Введите текст задачи"
-        class="form-input"
-        formControlName="title"
-      />
+      <mat-form-field class="example-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Введите текст задачи"
+          formControlName="title"
+        />
+      </mat-form-field>
       <div
         *ngIf="
           formTodo.controls['title'].invalid &&
-          (formTodo.controls['title'].dirty || formTodo.controls['title'].touched)
+          (formTodo.controls['title'].dirty ||
+            formTodo.controls['title'].touched)
         "
         class="alert"
       >
-        <div *ngIf="formTodo.controls['title'].errors">Недопустимая длина символов</div>
+        <div *ngIf="formTodo.controls['title'].errors">
+          Недопустимая длина символов
+        </div>
       </div>
       <p class="subtitle">АВТОР ЗАДАЧИ:</p>
-      <input
-        type="text"
-        placeholder="Введите автора задачи"
-        class="form-input"
-        formControlName="userId"
-      />
+      <mat-form-field class="example-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Введите автора задачи"
+          formControlName="userId"
+        />
+      </mat-form-field>
       <div
-      *ngIf="
-        formTodo.controls['userId'].invalid &&
-        (formTodo.controls['userId'].dirty || formTodo.controls['userId'].touched)
-      "
-      class="alert"
-    >
-      <div *ngIf="formTodo.controls['userId'].errors">Недопустимая длина символов</div>
-    </div>
+        *ngIf="
+          formTodo.controls['userId'].invalid &&
+          (formTodo.controls['userId'].dirty ||
+            formTodo.controls['userId'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="formTodo.controls['userId'].errors">
+          Недопустимая длина символов
+        </div>
+      </div>
       <p class="subtitle">ЗАДАЧА ЗАВЕРШЕНА:</p>
-      <input
-        type="text"
-        placeholder="да/нет"
-        class="form-input"
-        formControlName="completed"
-      />
+      <mat-form-field class="example-width">
+        <input
+          matInput
+          type="text"
+          placeholder="да/нет"
+          formControlName="completed"
+        />
+      </mat-form-field>
       <div
-      *ngIf="
-        formTodo.controls['completed'].invalid &&
-        (formTodo.controls['completed'].dirty || formTodo.controls['completed'].touched)
-      "
-      class="alert"
-    >
-      <div *ngIf="formTodo.controls['completed'].errors">Поле заполнено некорректно</div>
-    </div>
+        *ngIf="
+          formTodo.controls['completed'].invalid &&
+          (formTodo.controls['completed'].dirty ||
+            formTodo.controls['completed'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="formTodo.controls['completed'].errors">
+          Поле заполнено некорректно
+        </div>
+      </div>
       <div class="create-button-position">
-        <button class="create-button" [disabled]="formTodo.invalid">
+        <button mat-raised-button [disabled]="formTodo.invalid">
           СОЗДАТЬ ЗАДАЧУ
         </button>
       </div>
