@@ -21,6 +21,18 @@
   gap: 24px;
 }
 
+.changeMenuText {
+  display: flex;
+  gap: 5px;
+  margin: 0;
+}
+
+.changeMenuText-buttons {
+  border-radius: 5px;
+  border: none;
+  background-color: #F0BA4E;
+}
+
 .header-right {
   display: flex;
   align-items: center;

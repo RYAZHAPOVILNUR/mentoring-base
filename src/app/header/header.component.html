@@ -6,11 +6,14 @@
         </div>
         <nav class="header-nav">
             <a class="header-nav-item" href="">{{headerItem1}}</a>
-            <a class="header-nav-item" href="">{{aboutCompany}}</a>
+            <a class="header-nav-item" href="" routerLink="/">{{aboutCompany}}</a>
             <a class="header-nav-item" *ngIf="!isShowCatalog" href="">{{headerItem3}}</a>
         </nav>
-        <button (click) = "isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
-        <button class="changeMenuText" (click)="changeMenuText()">Изменить текст</button>
+          <div class="changeMenuText">
+        <button class="changeMenuText-buttons" (click) = "isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+        <button class="changeMenuText-buttons" (click)="changeMenuText()">Изменить текст</button>
+        <button class="changeMenuText-buttons" routerLink="users">Админ</button>
+        </div>
       </div>
       <div class="header-right">
         <div class="logo-phone">
