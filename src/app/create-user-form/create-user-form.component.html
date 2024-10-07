@@ -3,15 +3,23 @@
 </div>
 <div class="user-form-container">
     <form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
-      <p>Name:</p>
-      <input type="text" class="form-input" formControlName="name">
-      <p>email:</p>
-      <input type="text" class="form-input" formControlName="email">
-      <p>Website:</p>
-      <input type="text" class="form-input" formControlName="website">
-      <p>Company name:</p>
-      <input type="text" class="form-input" formControlName="companyName">
-      <button class="create-user-button" [disabled]="form.invalid">
+      <mat-form-field appearance="fill">
+        <mat-label>Имя пользователя*</mat-label>
+        <input matInput placeholder="Placeholder">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail*</mat-label>
+        <input matInput placeholder="Placeholder">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Website*</mat-label>
+        <input matInput placeholder="Placeholder">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Название компании*</mat-label>
+        <input matInput placeholder="Placeholder">
+      </mat-form-field>
+      <button mat-raised-button class="create-user-button" [disabled]="form.invalid">
         Create user
       </button>
     </form>
