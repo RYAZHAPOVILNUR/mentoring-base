@@ -13,17 +13,17 @@ export interface IAddress {
 
 export interface ICompany {
   name: string;
-  catchPhrase: string;
-  bs: string;
+  catchPhrase?: string;
+  bs?: string;
 }
 
 export interface IUser {
   id: number;
   name: string;
-  username: string;
+  username?: string;
   email: string;
-  address: IAddress;
-  phone: string;
+  address?: IAddress;
+  phone?: string;
   website: string;
   company: ICompany;
 }

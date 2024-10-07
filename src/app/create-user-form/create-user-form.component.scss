@@ -1,0 +1,16 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  margin-bottom: 20px;
+
+  &-btn {
+    width: 200px;
+    align-self: center;
+  }
+}
+
+.alert {
+  color: red;
+}
