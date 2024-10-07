@@ -7,16 +7,13 @@ import {
   ValidatorFn,
   AbstractControl,
   ValidationErrors,
-  FormGroup,
-  FormControl,
 } from '@angular/forms';
+import { MatButtonModule } from "@angular/material/button";
+import { MatFormFieldControl } from "@angular/material/form-field";
 
-export function createPasswordStrengthValidator(): ValidatorFn {
+export function completedValidator(): ValidatorFn {
   return (control:AbstractControl) : ValidationErrors | null => {
-
-      const value = control.value?.trim()
-      .toLowerCase();
-
+      const value = control.value?.trim().toLowerCase();
       if (value === 'да' || value === 'нет') {
           return null;
       }
@@ -42,7 +39,7 @@ export class CreateTodosFormComponent {
     userId: this.fb.control('', [Validators.required, Validators.minLength(1)]),
     completed: this.fb.control('', [
       Validators.required,
-      createPasswordStrengthValidator(),
+      completedValidator(),
     ]),
   });
 

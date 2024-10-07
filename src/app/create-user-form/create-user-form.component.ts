@@ -1,11 +1,8 @@
 import { NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   ReactiveFormsModule,
-  ValidationErrors,
-  ValidatorFn,
   Validators,
 } from '@angular/forms';
 
