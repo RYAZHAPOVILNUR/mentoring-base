@@ -2,59 +2,61 @@
   СОЗДАТЬ ФОРМУ ДЛЯ ДОБАВЛЕНИЯ<br />
   НОВОГО ПОЛЬЗОВАТЕЛЬЯ
 </h1>
+
 <div class="form">
   <form class="form-wrapper" [formGroup]="form" (ngSubmit)="submitForm()">
-    <p>NAME</p>
-    <input type="text" class="form-input" formControlName="name" />
-    <div
-      class="form__controls-wrapper"
-      *ngIf="
-        form.controls['name'].invalid &&
-        (form.controls['name'].dirty || form.controls['name'].touched)
-      "
-    >
-      <div *ngIf="form.controls['name'].errors">ИМЯ ВВЕДЕНО НЕПРАВИЛНО</div>
-    </div>
+    <mat-form-field>
+      <mat-label>ИМЯ</mat-label>
+      <input formControlName="name" matInput />
 
-    <p>EMAIL</p>
-    <input type="text" class="form-input" formControlName="email" />
-    <div
-      class="form__controls-wrapper"
+      <mat-error
+        *ngIf="
+          form.controls['name'].invalid &&
+          (form.controls['name'].dirty || form.controls['name'].touched)
+        "
+        >ИМЯ ВВЕДЕНО НЕПРАВИЛНО</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ПОЧТА</mat-label>
+      <input formControlName="email" matInput />
+
+      <mat-error
       *ngIf="
         form.controls['email'].invalid &&
         (form.controls['email'].dirty || form.controls['email'].touched)
       "
+      >ПОЧТА ВВЕДЕНА НЕПРАВИЛНО</mat-error
     >
-      <div *ngIf="form.controls['email'].errors">EMAIL ВВЕДЕН НЕПРАВИЛНО</div>
-    </div>
+    </mat-form-field>
 
-    <p>WEBSITE</p>
-    <input type="text" class="form-input" formControlName="website" />
-    <div
-      class="form__controls-wrapper"
+    <mat-form-field>
+      <mat-label>САЙТ</mat-label>
+      <input formControlName="website" matInput />
+
+      <mat-error
       *ngIf="
         form.controls['website'].invalid &&
         (form.controls['website'].dirty || form.controls['website'].touched)
       "
+      >САЙТ ВВЕДЕН НЕПРАВИЛНО</mat-error
     >
-      <div *ngIf="form.controls['website'].errors">САЙТ ВВЕДЕН НЕПРАВИЛНО</div>
-    </div>
+    </mat-form-field>
 
-    <p>COMPANY NAME</p>
-    <input type="text" class="form-input" formControlName="companyName" />
-    <div
-      class="form__controls-wrapper"
+    <mat-form-field>
+      <mat-label>ИМЯ КОМПАНИИ</mat-label>
+      <input formControlName="companyName" matInput />
+
+      <mat-error
       *ngIf="
         form.controls['companyName'].invalid &&
-        (form.controls['companyName'].dirty ||
-          form.controls['companyName'].touched)
+        (form.controls['companyName'].dirty || form.controls['companyName'].touched)
       "
+      >ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛНО</mat-error
     >
-      <div *ngIf="form.controls['companyName'].errors">
-        ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛНО
-      </div>
-    </div>
-
-    <button class="button" [disabled]="form.invalid">СОЗДАТЬ ЮЗЕРА</button>
+    </mat-form-field>
+    
+    <button mat-button [disabled]="form.invalid">СОЗДАТЬ ЮЗЕРА</button>
   </form>
 </div>

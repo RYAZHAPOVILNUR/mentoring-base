@@ -5,30 +5,10 @@
 .form {
   margin-left: 220px;
   margin-right: 220px;
-
-  .form-input {
-    width: 200px;
-  }
+  width: 320px;
 
   &-wrapper {
     display: flex;
     flex-direction: column;
-  }
-  &__controls-wrapper {
-    color: red;
-  }
-
-  .button {
-    width: 150px;
-    margin-top: 20px;
-    color: black;
-    border: solid 1px #f0ba4e;
-    border-radius: 30px;
-    cursor: pointer;
-    height: 47px;
-    margin: 0, auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
   }
 }

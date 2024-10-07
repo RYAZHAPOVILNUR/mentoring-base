@@ -2,47 +2,48 @@
 
 <div class="form">
   <form class="form-wrapper" [formGroup]="formTodo" (ngSubmit)="submitTodo()">
-    <p>ТЕКСТ ЗАДАЧИ:</p>
-    <input type="text" id="task__text" class="form-input" formControlName="title"/>
-    <div
-      class="form__controls-wrapper"
-      *ngIf="
-        formTodo.controls['title'].invalid &&
-        (formTodo.controls['title'].dirty || formTodo.controls['title'].touched)
-      "
-    >
-      <div *ngIf="formTodo.controls['title'].errors">
-        НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label>ТЕКСТ ЗАДАЧИ</mat-label>
+      <input formControlName="title" matInput/>
 
-    <p>АВТОР ЗАДАЧИ</p>
-    <input type="text" id="task__author" class="form-input" formControlName="userId" />
-    <div
-      class="form__controls-wrapper"
-      *ngIf="
-        formTodo.controls['userId'].invalid &&
-        (formTodo.controls['userId'].dirty || formTodo.controls['userId'].touched)
-      "
-    >
-      <div *ngIf="formTodo.controls['userId'].errors">
-        АЙДИШКА ВВЕДЕНА НЕПРАВИЛНО
-      </div>
-    </div>
+      <mat-error
+        *ngIf="
+          formTodo.controls['title'].invalid &&
+          (formTodo.controls['title'].dirty ||
+            formTodo.controls['title'].touched)
+        "
+        >НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО</mat-error
+      >
+    </mat-form-field>
 
-    <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
-    <input type="text" id="task__complete" placeholder="да/нет" class="form-input" formControlName="completed" />
-    <div
-      class="form__controls-wrapper"
-      *ngIf="
-        formTodo.controls['completed'].invalid &&
-        (formTodo.controls['completed'].dirty || formTodo.controls['completed'].touched)
-      "
-    >
-      <div *ngIf="formTodo.controls['completed'].errors">
-        ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕНО НЕПРАВИЛНО
-      </div>
-    </div>
-    <button [disabled]="formTodo.invalid" mat-button >СОЗДАТЬ ЗАДАЧУ</button>
+    <mat-form-field>
+      <mat-label>АВТОР ЗАДАЧИ</mat-label>
+      <input formControlName="userId" matInput/>
+
+      <mat-error
+        *ngIf="
+          formTodo.controls['userId'].invalid &&
+          (formTodo.controls['userId'].dirty ||
+            formTodo.controls['userId'].touched)
+        "
+        >АЙДИШКА ВВЕДЕНА НЕПРАВИЛНО</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
+      <input formControlName="completed" matInput />
+
+      <mat-error
+        *ngIf="
+          formTodo.controls['completed'].invalid &&
+          (formTodo.controls['completed'].dirty ||
+            formTodo.controls['completed'].touched)
+        "
+        >ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕН НЕПРАВИЛНО</mat-error
+      >
+    </mat-form-field>
+    
+    <button mat-button [disabled]="formTodo.invalid">+ Добавить Задачу</button>
   </form>
 </div>

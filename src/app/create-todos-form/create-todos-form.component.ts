@@ -8,23 +8,30 @@ import {
   AbstractControl,
   ValidationErrors,
 } from '@angular/forms';
-import { MatButtonModule } from "@angular/material/button";
-import { MatFormFieldControl } from "@angular/material/form-field";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 export function completedValidator(): ValidatorFn {
-  return (control:AbstractControl) : ValidationErrors | null => {
-      const value = control.value?.trim().toLowerCase();
-      if (value === 'да' || value === 'нет') {
-          return null;
-      }
-      return { returnInvalid: true}
-  }
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = control.value?.trim().toLowerCase();
+    if (value === 'да' || value === 'нет') {
+      return null;
+    }
+    return { returnInvalid: true };
+  };
 }
 
 @Component({
   selector: 'app-create-todos-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    NgIf,
+  ],
   templateUrl: './create-todos-form.component.html',
   styleUrl: './create-todos-form.component.scss',
 })
@@ -35,12 +42,9 @@ export class CreateTodosFormComponent {
   public fb = inject(FormBuilder);
 
   public formTodo = this.fb.group({
-    title: this.fb.control('', [Validators.required, Validators.minLength(7)]),
+    title: this.fb.control('', [Validators.required, Validators.minLength(4)]),
     userId: this.fb.control('', [Validators.required, Validators.minLength(1)]),
-    completed: this.fb.control('', [
-      Validators.required,
-      completedValidator(),
-    ]),
+    completed: this.fb.control('', [Validators.required, completedValidator()]),
   });
 
   public getCompletedValue(): boolean {
