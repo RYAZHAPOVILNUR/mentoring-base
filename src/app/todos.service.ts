@@ -12,7 +12,15 @@ export class TodosService {
   }
 
   createTodo(newTodo: ITodo) {
-    this.todosSubject$.next([...this.todosSubject$.value, newTodo]);
+    const existingTodo = this.todosSubject$.value.find(
+      (item) => item.title === newTodo.title
+    );
+
+    if (existingTodo) {
+      alert('Такая задачка уже зарегистрирована');
+    } else {
+      this.todosSubject$.next([...this.todosSubject$.value, newTodo]);
+    }
   }
 
   editTodo(editedTodo: ITodo) {

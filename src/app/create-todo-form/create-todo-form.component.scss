@@ -1,0 +1,16 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  margin-bottom: 10px;
+  align-items: start;
+
+  &-btn {
+    width: 200px;
+  }
+}
+
+.alert {
+  color: red;
+}

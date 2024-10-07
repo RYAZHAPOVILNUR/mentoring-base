@@ -21,8 +21,6 @@ export class UsersListComponent {
     this.usersApiService
       .getUsers()
       .subscribe((response) => this.usersService.setUsers(response));
-
-    this.usersService.users$.subscribe((users) => console.log(users));
   }
 
   deleteUser(id: number) {

@@ -1,0 +1,25 @@
+<h1>Create TODO form</h1>
+<form class="todo-form" [formGroup]="todoForm" (ngSubmit)="submitTodoForm()">
+  <p>Todo name:</p>
+  <input type="text" formControlName="todoName">
+  <div *ngIf="todoForm.controls['todoName'].invalid && (todoForm.controls['todoName'].dirty || todoForm.controls['todoName'].touched)" class="alert">
+    <div *ngIf="todoForm.controls['todoName'].errors">
+      Название задания введено неправильно
+    </div>
+  </div>
+  <p>Todo author id:</p>
+  <input type="number" formControlName="todoAuthor">
+  <div *ngIf="todoForm.controls['todoAuthor'].invalid && (todoForm.controls['todoAuthor'].dirty || todoForm.controls['todoAuthor'].touched)" class="alert">
+    <div *ngIf="todoForm.controls['todoAuthor'].errors">
+      Айди автора введен неправильно
+    </div>
+  </div>
+  <p>Todo is completed:</p>
+  <input type="checkbox" formControlName="todoCompleted">
+  <div *ngIf="todoForm.controls['todoCompleted'].invalid && (todoForm.controls['todoCompleted'].dirty || todoForm.controls['todoCompleted'].touched)" class="alert">
+    <div *ngIf="todoForm.controls['todoCompleted'].errors">
+      Ответ введен неправильно, только ДА/НЕТ
+    </div>
+  </div>
+  <button class="todo-form-btn" type="submit" [disabled]="todoForm.invalid">CREATE TODO</button>
+</form>
