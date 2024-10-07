@@ -4,67 +4,46 @@
       <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
       <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
       <mat-form-field class="example-width">
-        <input
-          matInput
-          type="text"
-          placeholder="Введите текст задачи"
-          formControlName="title"
-        />
+        <mat-label>Введите текст задачи</mat-label>
+        <input matInput type="text" formControlName="title" />
       </mat-form-field>
-      <div
+      <mat-error
         *ngIf="
           formTodo.controls['title'].invalid &&
           (formTodo.controls['title'].dirty ||
             formTodo.controls['title'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="formTodo.controls['title'].errors">
           Недопустимая длина символов
-        </div>
-      </div>
+      </mat-error>
       <p class="subtitle">АВТОР ЗАДАЧИ:</p>
       <mat-form-field class="example-width">
-        <input
-          matInput
-          type="text"
-          placeholder="Введите автора задачи"
-          formControlName="userId"
-        />
+        <mat-label>Введите автора задачи</mat-label>
+        <input matInput type="text" formControlName="userId" />
       </mat-form-field>
-      <div
+      <mat-error
         *ngIf="
           formTodo.controls['userId'].invalid &&
           (formTodo.controls['userId'].dirty ||
             formTodo.controls['userId'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="formTodo.controls['userId'].errors">
-          Недопустимая длина символов
-        </div>
-      </div>
+        Недопустимая длина символов
+      </mat-error>
       <p class="subtitle">ЗАДАЧА ЗАВЕРШЕНА:</p>
       <mat-form-field class="example-width">
-        <input
-          matInput
-          type="text"
-          placeholder="да/нет"
-          formControlName="completed"
-        />
+        <mat-label>да/нет</mat-label>
+        <input matInput type="text" formControlName="completed" />
       </mat-form-field>
-      <div
+      <mat-error
         *ngIf="
           formTodo.controls['completed'].invalid &&
           (formTodo.controls['completed'].dirty ||
             formTodo.controls['completed'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="formTodo.controls['completed'].errors">
-          Поле заполнено некорректно
-        </div>
-      </div>
+        Поле заполнено некорректно
+      </mat-error>
       <div class="create-button-position">
         <button mat-raised-button [disabled]="formTodo.invalid">
           СОЗДАТЬ ЗАДАЧУ

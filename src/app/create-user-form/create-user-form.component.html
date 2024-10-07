@@ -4,80 +4,57 @@
       <h1 class="title">CREATE USER FORM</h1>
       <p class="subtitle">NAME:</p>
       <mat-form-field class="example-width">
-        <input
-          matInput
-          type="text"
-          placeholder="Введите имя"
-          formControlName="name"
-        />
+        <mat-label>Введите имя</mat-label>
+        <input matInput type="text" formControlName="name" />
       </mat-form-field>
-      <div
+      <mat-error
         *ngIf="
           form.controls['name'].invalid &&
           (form.controls['name'].dirty || form.controls['name'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="form.controls['name'].errors">Слишком короткое имя</div>
-      </div>
+        Слишком короткое имя
+      </mat-error>
       <p class="subtitle">EMAIL:</p>
       <mat-form-field class="example-width">
-        <input
-          matInput
-          type="text"
-          placeholder="Введите email@"
-          formControlName="email"
+        <mat-label>Введите email{{ "@" }}</mat-label>
+        <input matInput type="text" formControlName="email"
       /></mat-form-field>
-      <div
+      <mat-error
         *ngIf="
           form.controls['email'].invalid &&
           (form.controls['email'].dirty || form.controls['email'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="form.controls['email'].errors">
-          Email должен содержать больше 3-х символов и {{ "@" }}
-        </div>
-      </div>
+        Email должен содержать больше 3-х символов и {{ "@" }}
+      </mat-error>
       <p class="subtitle">WEBSITE:</p>
       <mat-form-field class="example-width">
-        <input
-          matInput
-          type="text"
-          placeholder="Введите веб-сайт"
-          formControlName="website"
+        <mat-label>Введите веб-сайт</mat-label>
+        <input matInput type="text" formControlName="website"
       /></mat-form-field>
-      <div
+      <mat-error
         *ngIf="
           form.controls['website'].invalid &&
           (form.controls['website'].dirty || form.controls['website'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="form.controls['website'].errors">
-          Поле заполнено некорректно
-        </div>
-      </div>
+        Поле заполнено некорректно
+      </mat-error>
       <p class="subtitle">COMPANY NAME:</p>
-      <mat-form-field class="example-width"
-        ><input
-          matInput
-          type="text"
-          placeholder="Введите название компании"
-          formControlName="companyName"
-      /></mat-form-field>
-      <div
+      <mat-form-field class="example-width">
+        <mat-label>Введите название компании</mat-label>
+        <input matInput type="text" formControlName="companyName" />
+      </mat-form-field>
+      <mat-error
         *ngIf="
           form.controls['companyName'].invalid &&
           (form.controls['companyName'].dirty ||
             form.controls['companyName'].touched)
         "
-        class="alert"
       >
-        <div *ngIf="form.controls['companyName'].errors">
-          Поле заполнено некорректно
-        </div>
-      </div>
+        Поле заполнено некорректно
+      </mat-error>
       <div class="create-button-position">
         <button mat-raised-button [disabled]="form.invalid">CREATE USER</button>
       </div>

@@ -7,7 +7,7 @@
   <div>{{ todo.completed ? "ДА" : "НЕТ" }}</div>
   <div>
     <div class="delete-position">
-      <button class="delete-task" (click)="onDeleteTodo(todo.id)">
+      <button mat-raised-button (click)="onDeleteTodo(todo.id)">
         <div class="text">Удалить задачу</div>
       </button>
     </div>

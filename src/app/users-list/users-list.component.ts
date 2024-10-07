@@ -1,6 +1,6 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CreateUserI } from '../interfaces/user-interfaces';
+import { CreateUser } from '../interfaces/user-interfaces';
 import { RouterLink } from '@angular/router';
 import { UsersApiService } from './users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
@@ -36,7 +36,7 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formData: CreateUserI) {
+  public createUser(formData: CreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
