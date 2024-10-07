@@ -1,10 +1,8 @@
 
-component LIST of TODOS
-
-<!-- {{ $any(users[0]).name }} -->
+<app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
 
 <div style="display: flex; width: 100%; flex-wrap: wrap;">
-    <div *ngFor="let item of todosService.todos$ | async"> 
-        <app-todo-card [todo]="item" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+    <div *ngFor="let todo of todosService.todos$ | async"> 
+        <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
     </div>
 </div>

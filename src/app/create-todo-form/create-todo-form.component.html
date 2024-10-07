@@ -1,0 +1,29 @@
+<h1>CREATE TODO FORM</h1>
+<div style="margin: 30px 30px 30px 0;">
+    <form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitForm()">
+        <p>TITLE</p>
+        <input type="text" class="form-input" formControlName="title">
+        <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="alert">
+            <div *ngIf="form.controls['title'].errors">
+                TITLE write WRONG  
+            </div>
+        </div>
+        <p>USER ID</p>
+        <input type="text" class="form-input" formControlName="userId">
+        <div *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)" class="alert">
+            <div *ngIf="form.controls['userId'].errors">
+                userId write WRONG  
+            </div>
+        </div>
+        <p>COMPLETED</p>
+        <input type="text" class="form-input" formControlName="completed">
+        <div *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)" class="alert">
+            <div *ngIf="form.controls['completed'].errors">
+                completed write WRONG  
+            </div>
+        </div>
+        <button mat-button style="width: 150px; margin-top: 20px;" type="submit" [disabled]="form.invalid">
+            CREATE TODO
+        </button>
+    </form>
+</div>
