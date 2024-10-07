@@ -11,6 +11,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -26,6 +27,7 @@ export function completedValidator(): ValidatorFn {
   selector: 'app-create-todos-form',
   standalone: true,
   imports: [
+    MatCardModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
