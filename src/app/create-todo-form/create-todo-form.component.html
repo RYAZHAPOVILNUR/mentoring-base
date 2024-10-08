@@ -1,7 +1,31 @@
 <h1>CREATE TODO FORM</h1>
 <div style="margin: 30px 30px 30px 0;">
     <form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitForm()">
-        <p>TITLE</p>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add TITLE</mat-label>
+            <input matInput class="form-input" formControlName="title">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add USER ID</mat-label>
+            <input matInput class="form-input" formControlName="userId">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add COMPLETED</mat-label>
+            <input matInput class="form-input" formControlName="completed">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <button matIconSuffix mat-button [disabled]="form.invalid" class="mat-form-field">
+            CREATE TODO
+            <mat-icon>add_circle</mat-icon>
+        </button>
+
+        <!-- <p>TITLE</p>
         <input type="text" class="form-input" formControlName="title">
         <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="alert">
             <div *ngIf="form.controls['title'].errors">
@@ -24,6 +48,6 @@
         </div>
         <button mat-button style="width: 150px; margin-top: 20px;" type="submit" [disabled]="form.invalid">
             CREATE TODO
-        </button>
+        </button> -->
     </form>
 </div>

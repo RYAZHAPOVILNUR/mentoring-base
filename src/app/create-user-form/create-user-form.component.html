@@ -1,36 +1,67 @@
 <h1>CREATE USER FORM</h1>
 <div style="margin: 30px 30px 30px 0;">
-    <form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitForm()">
-        <p>NAME</p>
-        <input type="text" class="form-input" formControlName="name">
+    <form style="display: flex; flex-direction: column; " [formGroup]="form" (ngSubmit)="submitForm()">
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add USER</mat-label>
+            <input matInput class="form-input" formControlName="name">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add EMAIL</mat-label>
+            <input matInput class="form-input" formControlName="email">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add WEBSITE</mat-label>
+            <input matInput class="form-input" formControlName="website">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>Add COMPANY NAME</mat-label>
+            <input matInput class="form-input" formControlName="companyName">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+
+        <button matIconSuffix mat-button [disabled]="form.invalid" class="mat-form-field">
+            CREATE USER
+            <mat-icon>add_circle</mat-icon>
+        </button>
+
+
+        <!-- <p>NAME</p> -->
+        <!-- <input type="text" class="form-input" formControlName="name">
         <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert">
             <div *ngIf="form.controls['name'].errors">
                 NAME write WRONG  
             </div>
-        </div>
-        <p>EMAIL</p>
+        </div> -->
+        <!-- <p>EMAIL</p>
         <input type="text" class="form-input" formControlName="email">
         <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert">
             <div *ngIf="form.controls['email'].errors">
                 EMAIL write WRONG  
             </div>
-        </div>
-        <p>WEBSITE</p>
+        </div> -->
+        <!-- <p>WEBSITE</p>
         <input type="text" class="form-input" formControlName="website">
         <div *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)" class="alert">
             <div *ngIf="form.controls['website'].errors">
                 WEBSITE write WRONG  
             </div>
-        </div>
-        <p>COMPANY NAME</p>
+        </div> -->
+        <!-- <p>COMPANY NAME</p>
         <input type="text" class="form-input" formControlName="companyName">
         <div *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)" class="alert">
             <div *ngIf="form.controls['companyName'].errors">
                 COMPANY NAME write WRONG  
             </div>
-        </div>
-        <button mat-button style="width: 150px; margin-top: 20px;" type="submit" [disabled]="form.invalid">
+        </div> -->
+        <!-- <button style="width: 150px; margin-top: 20px;" type="submit" [disabled]="form.invalid">
             CREATE USER
-        </button>
+        </button> -->
     </form>
 </div>

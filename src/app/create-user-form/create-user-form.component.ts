@@ -2,6 +2,9 @@ import { NgIf } from "@angular/common";
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon'; 
 
 
 @Component({
@@ -9,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
     templateUrl: './create-user-form.component.html',
     styleUrl: './create-user-form.component.scss',
     standalone: true,
-    imports: [ReactiveFormsModule, NgIf, MatButtonModule],
+    imports: [ReactiveFormsModule, NgIf, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule],
 })
 
 export class CreateUserFormComponent {
@@ -24,7 +27,6 @@ export class CreateUserFormComponent {
     })
 
     public submitForm(): void {
-
         this.createUser.emit(this.form.value);
         this.form.reset();
     }
