@@ -1,39 +1,50 @@
 <div class="content_form">
 
-    <h2 class="form_title">Create todo form</h2>
+    <h2 class="title">Create todo form</h2>
 
     <form class="block_form" [formGroup]="form" (ngSubmit)="submitFormTodo()">
 
-        <p class="form_title_input">Задание:</p>
-        <input type="text" placeholder="Ввдите задание..." class="form_input" formControlName="userId">
-        <div *ngIf="form.controls.userId.invalid && (form.controls.userId.dirty || form.controls.userId.touched)"
-            class="alert">
-            <div *ngIf="form.controls.userId.errors">Задание введено неправильно!</div>
-        </div>
+        <mat-form-field color="primary" appearance="outline" class="example-full-width">
+            <mat-label>№ Задание:</mat-label>
+            <input matInput placeholder="Введите номер задание:" formControlName="userId" required>
+            <div *ngIf="form.controls.userId.invalid && (form.controls.userId.dirty || form.controls.userId.touched)"
+                class="alert">
+                <div *ngIf="form.controls.userId.errors">Задание введено неправильно!</div>
+            </div>
+        </mat-form-field>
 
+        <mat-form-field color="primary" appearance="outline" class="example-full-width">
+            <mat-label>Id задачи:</mat-label>
+            <input matInput placeholder="Введите id задачи..." formControlName="id" required>
+            <div *ngIf="form.controls.id.invalid && (form.controls.id.dirty || form.controls.id.touched)" class="alert">
+                <div *ngIf="form.controls.id.errors">Id введено неправильно!</div>
+            </div>
+        </mat-form-field>
 
-        <p class="form_title_input">Id участника:</p>
-        <input type="text" placeholder="Введите id участника..." class="form_input" formControlName="id">
-        <div *ngIf="form.controls.id.invalid && (form.controls.id.dirty || form.controls.id.touched)" class="alert">
-            <div *ngIf="form.controls.id.errors">Id введено неправильно!</div>
-        </div>
+        <mat-form-field color="primary" appearance="outline" class="example-full-width">
+            <mat-label>Задача:</mat-label>
+            <textarea matInput #message maxlength="256" placeholder="Введите задачу..." formControlName="title"
+                required></textarea>
+            <mat-hint align="start"><strong>Здесь пишем только задачу!</strong> </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+            <div *ngIf="form.controls.title.invalid && (form.controls.title.dirty || form.controls.title.touched)"
+                class="alert">
+                <div *ngIf="form.controls.title.errors">Задача введено неправильно!</div>
+            </div>
+        </mat-form-field>
 
+        <mat-form-field color="primary" appearance="outline" class="example-full-width">
+            <mat-label>Задача решена:</mat-label>
+            <mat-select formControlName="completed">
+                <mat-option value="Yes">ДА</mat-option>
+                <mat-option value="No">НЕТ</mat-option>
+            </mat-select>
+            <div *ngIf="form.controls.completed.invalid && (form.controls.completed.dirty || form.controls.completed.touched)"
+                class="alert">
+                <div *ngIf="form.controls.completed.errors">Решение введено неправильно!</div>
+            </div>
+        </mat-form-field>
 
-        <p class="form_title_input">Задача:</p>
-        <input type="text" placeholder="Введите задачу..." class="form_input" formControlName="title">
-        <div *ngIf="form.controls.title.invalid && (form.controls.title.dirty || form.controls.title.touched)"
-            class="alert">
-            <div *ngIf="form.controls.title.errors">Задача введено неправильно!</div>
-        </div>
-
-
-        <p class="form_title_input">Задача решена:</p>
-        <input type="text" placeholder="Введите ДА\НЕТ...?" class="form_input" formControlName="completed">
-        <div *ngIf="form.controls.completed.invalid && (form.controls.completed.dirty || form.controls.completed.touched)"
-            class="alert">
-            <div *ngIf="form.controls.completed.errors">Решение введено неправильно!</div>
-        </div>
-
-        <button [disabled]="form.invalid" class="form_button">CREATE TASK</button>
+        <button mat-raised-button color="primary" disabled [disabled]="form.invalid" class="form_button">СОЗДАТЬ ЗАДАЧУ=)</button>
     </form>
 </div>
