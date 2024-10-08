@@ -21,17 +21,14 @@ export class CreateTodoFormComponent {
   createTodo = new EventEmitter();
 
   public todoForm = new FormGroup({
-    todoName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    todoAuthor: new FormControl('', [
+    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    userId: new FormControl('', [
       Validators.required,
       Validators.minLength(1),
       Validators.min(1),
       this.customNumberValidator,
     ]),
-    todoCompleted: new FormControl('', [
+    completed: new FormControl('', [
       Validators.required,
       this.customYesNoValidator,
     ]),
@@ -51,22 +48,30 @@ export class CreateTodoFormComponent {
   public customYesNoValidator(
     control: AbstractControl
   ): ValidationErrors | null {
-    const enteredValue = control.value;
-    if (
-      enteredValue !== 'Да' &&
-      enteredValue !== 'Нет' &&
-      enteredValue !== 'да' &&
-      enteredValue !== 'нет' &&
-      enteredValue !== 'ДА' &&
-      enteredValue !== 'НЕТ'
-    ) {
+    const enteredValue = control.value?.trim().toLowerCase();
+    if (enteredValue !== 'да' && enteredValue !== 'нет') {
       return { invalidAnswer: true };
     }
     return null;
   }
 
+  public getTodoCompletedValue(): boolean {
+    const enteredValue = this.todoForm
+      .get('completed')
+      ?.value!.trim()
+      .toLowerCase();
+
+    if (enteredValue === 'да') {
+      return true;
+    }
+    return false;
+  }
+
   public submitTodoForm(): void {
-    this.createTodo.emit(this.todoForm.value);
+    this.createTodo.emit({
+      ...this.todoForm.value,
+      completed: this.getTodoCompletedValue(),
+    });
     this.todoForm.reset();
   }
 }

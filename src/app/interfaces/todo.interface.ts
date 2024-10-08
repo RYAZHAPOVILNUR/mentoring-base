@@ -4,10 +4,3 @@ export interface ITodo {
   title: string;
   completed: boolean;
 }
-
-export interface ITodoForm {
-  todoAuthor: number;
-  id: number;
-  todoName: string;
-  todoCompleted: boolean;
-}

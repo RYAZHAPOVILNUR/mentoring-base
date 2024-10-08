@@ -1,23 +1,23 @@
 <h1>Create TODO form</h1>
 <form class="todo-form" [formGroup]="todoForm" (ngSubmit)="submitTodoForm()">
   <p>Todo name:</p>
-  <input type="text" formControlName="todoName">
-  <div *ngIf="todoForm.controls['todoName'].invalid && (todoForm.controls['todoName'].dirty || todoForm.controls['todoName'].touched)" class="alert">
-    <div *ngIf="todoForm.controls['todoName'].errors">
+  <input type="text" formControlName="title">
+  <div *ngIf="todoForm.controls['title'].invalid && (todoForm.controls['title'].dirty || todoForm.controls['title'].touched)" class="alert">
+    <div *ngIf="todoForm.controls['title'].errors">
       Название задания введено неправильно
     </div>
   </div>
   <p>Todo author id:</p>
-  <input type="text" formControlName="todoAuthor">
-  <div *ngIf="todoForm.controls['todoAuthor'].invalid && (todoForm.controls['todoAuthor'].dirty || todoForm.controls['todoAuthor'].touched)" class="alert">
-    <div *ngIf="todoForm.controls['todoAuthor'].errors">
+  <input type="text" formControlName="userId">
+  <div *ngIf="todoForm.controls['userId'].invalid && (todoForm.controls['userId'].dirty || todoForm.controls['userId'].touched)" class="alert">
+    <div *ngIf="todoForm.controls['userId'].errors">
       Айди автора введен неправильно, вводите только цифры
     </div>
   </div>
   <p>Todo is completed:</p>
-  <input type="text" formControlName="todoCompleted">
-  <div *ngIf="todoForm.controls['todoCompleted'].invalid && (todoForm.controls['todoCompleted'].dirty || todoForm.controls['todoCompleted'].touched)" class="alert">
-    <div *ngIf="todoForm.controls['todoCompleted'].errors">
+  <input type="text" formControlName="completed">
+  <div *ngIf="todoForm.controls['completed'].invalid && (todoForm.controls['completed'].dirty || todoForm.controls['completed'].touched)" class="alert">
+    <div *ngIf="todoForm.controls['completed'].errors">
       Ответ введен неправильно, только Да/Нет
     </div>
   </div>
