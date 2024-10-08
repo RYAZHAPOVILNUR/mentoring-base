@@ -10,55 +10,30 @@
     <form class="form-wrapper" [formGroup]="form" (ngSubmit)="submitForm()">
       <mat-form-field>
         <mat-label>ИМЯ</mat-label>
-        <input formControlName="name" matInput />
-
-        <mat-error
-          *ngIf="
-            form.controls['name'].invalid &&
-            (form.controls['name'].dirty || form.controls['name'].touched)
-          "
-          >ИМЯ ВВЕДЕНО НЕПРАВИЛНО</mat-error
-        >
+        <input  formControlName="name"
+                matInput>
+        <mat-error>ИМЯ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>ПОЧТА</mat-label>
-        <input formControlName="email" matInput />
-
-        <mat-error
-          *ngIf="
-            form.controls['email'].invalid &&
-            (form.controls['email'].dirty || form.controls['email'].touched)
-          "
-          >ПОЧТА ВВЕДЕНА НЕПРАВИЛНО</mat-error
-        >
+        <input  formControlName="email"
+                matInput>
+        <mat-error>ПОЧТА ВВЕДЕНА НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>САЙТ</mat-label>
-        <input formControlName="website" matInput />
-
-        <mat-error
-          *ngIf="
-            form.controls['website'].invalid &&
-            (form.controls['website'].dirty || form.controls['website'].touched)
-          "
-          >САЙТ ВВЕДЕН НЕПРАВИЛНО</mat-error
-        >
+        <input formControlName="website"
+               matInput>
+        <mat-error>САЙТ ВВЕДЕН НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>ИМЯ КОМПАНИИ</mat-label>
-        <input formControlName="companyName" matInput />
-
-        <mat-error
-          *ngIf="
-            form.controls['companyName'].invalid &&
-            (form.controls['companyName'].dirty ||
-              form.controls['companyName'].touched)
-          "
-          >ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛНО</mat-error
-        >
+        <input formControlName="companyName"
+               matInput>
+        <mat-error>ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <button mat-button [disabled]="form.invalid">СОЗДАТЬ ЮЗЕРА</button>

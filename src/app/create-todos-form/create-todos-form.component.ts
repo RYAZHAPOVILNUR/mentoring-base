@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -33,6 +34,7 @@ export function completedValidator(): ValidatorFn {
     MatInputModule,
     MatButtonModule,
     NgIf,
+    MatIconModule
   ],
   templateUrl: './create-todos-form.component.html',
   styleUrl: './create-todos-form.component.scss',

@@ -1,8 +1,8 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title
-      >СОЗДАТЬ ФОРМУ ДЛЯ <br />ДОБАВЛЕНИЯ НОВОЙ ЗАДАЧИ</mat-card-title
-    >
+    <mat-card-title>
+      СОЗДАТЬ ФОРМУ ДЛЯ <br />ДОБАВЛЕНИЯ НОВОЙ ЗАДАЧИ
+    </mat-card-title>
   </mat-card-header>
   
   <div class="form">
@@ -11,46 +11,23 @@
         <mat-label>ТЕКСТ ЗАДАЧИ</mat-label>
         <input formControlName="title" matInput />
 
-        <mat-error
-          *ngIf="
-            formTodo.controls['title'].invalid &&
-            (formTodo.controls['title'].dirty ||
-              formTodo.controls['title'].touched)
-          "
-          >НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО</mat-error
-        >
+        <mat-error>НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>АВТОР ЗАДАЧИ</mat-label>
         <input formControlName="userId" matInput />
-
-        <mat-error
-          *ngIf="
-            formTodo.controls['userId'].invalid &&
-            (formTodo.controls['userId'].dirty ||
-              formTodo.controls['userId'].touched)
-          "
-          >АЙДИШКА ВВЕДЕНА НЕПРАВИЛНО</mat-error
-        >
+        <mat-error>АЙДИШКА ВВЕДЕНА  НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
         <input formControlName="completed" matInput />
-
-        <mat-error
-          *ngIf="
-            formTodo.controls['completed'].invalid &&
-            (formTodo.controls['completed'].dirty ||
-              formTodo.controls['completed'].touched)
-          "
-          >ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕН НЕПРАВИЛНО</mat-error
-        >
+        <mat-error>ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕН НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <button mat-button [disabled]="formTodo.invalid">
-        + Добавить Задачу
+        <mat-icon>add</mat-icon> Добавить Задачу
       </button>
     </form>
   </div>
