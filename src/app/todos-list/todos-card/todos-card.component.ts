@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ITodo } from '../todo.interface';
+import { ITodo } from '../../interfaces/todo.interface';
 
 @Component({
   selector: 'app-todos-card',

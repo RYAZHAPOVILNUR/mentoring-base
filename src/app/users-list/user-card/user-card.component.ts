@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IUser } from '../user.interface';
+import { IUser } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'app-user-card',

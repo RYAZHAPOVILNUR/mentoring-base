@@ -1,9 +1,11 @@
 import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 
@@ -27,9 +29,41 @@ export class CreateTodoFormComponent {
       Validators.required,
       Validators.minLength(1),
       Validators.min(1),
+      this.customNumberValidator,
     ]),
-    todoCompleted: new FormControl('', []),
+    todoCompleted: new FormControl('', [
+      Validators.required,
+      this.customYesNoValidator,
+    ]),
   });
+
+  public customNumberValidator(
+    control: AbstractControl
+  ): ValidationErrors | null {
+    const enteredValue = control.value;
+    const regex = /^\d+$/;
+    if (!regex.test(enteredValue)) {
+      return { isNotNumber: true };
+    }
+    return null;
+  }
+
+  public customYesNoValidator(
+    control: AbstractControl
+  ): ValidationErrors | null {
+    const enteredValue = control.value;
+    if (
+      enteredValue !== 'Да' &&
+      enteredValue !== 'Нет' &&
+      enteredValue !== 'да' &&
+      enteredValue !== 'нет' &&
+      enteredValue !== 'ДА' &&
+      enteredValue !== 'НЕТ'
+    ) {
+      return { invalidAnswer: true };
+    }
+    return null;
+  }
 
   public submitTodoForm(): void {
     this.createTodo.emit(this.todoForm.value);

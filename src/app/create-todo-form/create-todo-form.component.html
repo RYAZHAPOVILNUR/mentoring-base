@@ -8,17 +8,17 @@
     </div>
   </div>
   <p>Todo author id:</p>
-  <input type="number" formControlName="todoAuthor">
+  <input type="text" formControlName="todoAuthor">
   <div *ngIf="todoForm.controls['todoAuthor'].invalid && (todoForm.controls['todoAuthor'].dirty || todoForm.controls['todoAuthor'].touched)" class="alert">
     <div *ngIf="todoForm.controls['todoAuthor'].errors">
-      Айди автора введен неправильно
+      Айди автора введен неправильно, вводите только цифры
     </div>
   </div>
   <p>Todo is completed:</p>
-  <input type="checkbox" formControlName="todoCompleted">
+  <input type="text" formControlName="todoCompleted">
   <div *ngIf="todoForm.controls['todoCompleted'].invalid && (todoForm.controls['todoCompleted'].dirty || todoForm.controls['todoCompleted'].touched)" class="alert">
     <div *ngIf="todoForm.controls['todoCompleted'].errors">
-      Ответ введен неправильно, только ДА/НЕТ
+      Ответ введен неправильно, только Да/Нет
     </div>
   </div>
   <button class="todo-form-btn" type="submit" [disabled]="todoForm.invalid">CREATE TODO</button>

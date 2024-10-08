@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { IUser } from './users-list/user.interface';
+import { IUser } from './interfaces/user.interface';
 
 @Injectable({ providedIn: 'root' })
 export class UsersApiService {
