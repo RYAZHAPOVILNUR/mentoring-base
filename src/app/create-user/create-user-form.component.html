@@ -3,10 +3,30 @@
   <form class="form-container" 
   [formGroup]="form"
   (ngSubmit)="submitForm()">
-    <label for="">Name:</label>
+
+  <mat-form-field class="mat-ff">
+    <mat-label>Введите имя</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter your email</mat-label>
+    <input
+      matInput
+      placeholder="pat@example.com"
+      formControlName="email"
+      (blur)="updateErrorMessage()"
+      required
+    />
+    @if (form.get('email')?.invalid) {
+      <mat-error>{{errorMessage()}}</mat-error>
+    }
+  </mat-form-field>
+
+    <!-- <label for="">Name:</label>
     <input formControlName="name" type="text" placeholder="Введите имя" />
     <label for="">Email:</label>
-    <input formControlName="email" type="text" placeholder="Введите email" />
+    <input formControlName="email" type="text" placeholder="Введите email" /> -->
     <label for="">Phone:</label>
     <input
       formControlName="phone"
@@ -15,6 +35,9 @@
     />
     <label for="">Website:</label>
     <input formControlName="website" type="text" placeholder="Введите сайт" />
-    <button [disabled] = "form.invalid">Create User</button>
+    <button mat-raised-button [disabled] = "form.invalid">Create User</button>
   </form>
+
+  
+  
 </div>
