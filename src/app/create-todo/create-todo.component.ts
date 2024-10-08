@@ -3,6 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 export function completedValidator(control: AbstractControl): ValidationErrors | null {
   const validValues = ['да' , 'нет']
@@ -12,7 +13,7 @@ export function completedValidator(control: AbstractControl): ValidationErrors |
 @Component({
   selector: 'app-create-todo',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, MatFormFieldModule, MatInputModule],
+  imports: [ReactiveFormsModule, CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './create-todo.component.html',
   styleUrl: './create-todo.component.scss',
 })

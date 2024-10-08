@@ -6,7 +6,8 @@
 
   <mat-form-field class="mat-ff">
     <mat-label>Введите имя</mat-label>
-    <input matInput>
+    <input matInput
+    formControlName="name">
   </mat-form-field>
 
   <mat-form-field>
@@ -27,15 +28,27 @@
     <input formControlName="name" type="text" placeholder="Введите имя" />
     <label for="">Email:</label>
     <input formControlName="email" type="text" placeholder="Введите email" /> -->
-    <label for="">Phone:</label>
-    <input
-      formControlName="phone"
-      type="text"
-      placeholder="Введите номер телефона"
-    />
-    <label for="">Website:</label>
-    <input formControlName="website" type="text" placeholder="Введите сайт" />
-    <button mat-raised-button [disabled] = "form.invalid">Create User</button>
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matTextPrefix>+7 &nbsp;</span>
+      <input type="tel" matInput placeholder="999-999-99-99"
+        formControlName="phone"
+        (blur)="updateErrorMessage()"
+        required
+        appMaxlength="10">
+      <mat-icon matSuffix>call</mat-icon>
+      @if (form.get('phone')?.invalid) {
+        <mat-error>{{errorMessage()}}</mat-error>
+      }
+    </mat-form-field>
+    
+
+    <mat-form-field class="mat-ff">
+      <mat-label>Введите website</mat-label>
+      <input matInput
+      formControlName="website">
+    </mat-form-field>
+    <button class="btn" mat-raised-button color="primary" [disabled] = "form.invalid">Create User</button>
   </form>
 
   

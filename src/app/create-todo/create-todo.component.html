@@ -1,20 +1,27 @@
 <div class="content-container">
   <h2 class="title">Create ToDo</h2>
   <form class="form-container" [formGroup]="form" (ngSubmit)="submitForm()">
-    <label for="">Текст задачи:</label>
-    <input formControlName="title" type="text"  />
-    <label for="">Автор задачи:</label>
-    <input formControlName="userID" type="text"  />
-    <label for="">Задача Завершена:</label>
-    <input formControlName="completed" type="text"  />
-    <div *ngIf="form.get('completed')?.errors?.['invalidValue'] && (form.controls['completed'].dirty || form.controls['completed'].touched )">
-     <span style="color: red ;">Введите "да" или "нет"</span>
-    </div>
-    <button [disabled] = "form.invalid">Create task</button>
+
+    <mat-form-field class="mat-ff">
+      <mat-label>Текст задачи:</mat-label>
+      <input matInput
+      formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="mat-ff">
+      <mat-label>Автор задачи:</mat-label>
+      <input matInput
+      formControlName="userID">
+    </mat-form-field>
+
+    <mat-form-field class="mat-ff">
+      <mat-label>Задача завершена:</mat-label>
+      <input matInput
+      formControlName="completed">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled] = "form.invalid">Create task</button>
   </form>
 </div>
 
-<mat-form-field class="mat-ff">
-  <mat-label>Введите имя</mat-label>
-  <input matInput>
-</mat-form-field>
+
