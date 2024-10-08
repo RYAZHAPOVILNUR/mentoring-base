@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { UserInterface } from "../../interfaces/user-interfaces";
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
     selector: 'app-user-card',
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
     standalone: true,
-    imports: []
+    imports: [MatIconModule]
 })
 export class UserCardComponent {
     // @Input() user_input: any - это входное свойство для получения данных

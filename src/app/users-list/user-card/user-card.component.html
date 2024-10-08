@@ -7,5 +7,7 @@
     <p>{{user.email}}</p>
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
-    <button (click)="onDeleteUser(user.id)" class="btn_delete">Удалить юзера</button>
+    <button (click)="onDeleteUser(user.id)" class="btn_delete">
+        <mat-icon>delete_sweep</mat-icon>
+        Удалить юзера</button>
 </div>

@@ -7,5 +7,7 @@
         <p><span>Задача решена: </span>{{todo.completed ? 'YES' : 'NO'}}</p>
     </div>
     
-    <button (click)="onDeleteTodo(todo.id)" class="btn_delete">Удалить</button>
+    <button (click)="onDeleteTodo(todo.id)" class="btn_delete">
+        <mat-icon>delete_sweep</mat-icon>
+        Удалить</button>
 </div>

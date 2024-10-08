@@ -2,7 +2,7 @@
 
     <h2 class="title">Create todo form</h2>
 
-    <form class="block_form" [formGroup]="form" (ngSubmit)="submitFormTodo()">
+    <form class="block_form" [formGroup]="form">
 
         <mat-form-field color="primary" appearance="outline" class="example-full-width">
             <mat-label>№ Задание:</mat-label>
@@ -45,6 +45,8 @@
             </div>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" disabled [disabled]="form.invalid" class="form_button">СОЗДАТЬ ЗАДАЧУ=)</button>
+        <button type="submit" (click)="submitFormTodo()" mat-raised-button color="primary" disabled [disabled]="form.invalid" class="form_button">
+            <mat-icon>add_task</mat-icon>
+            СОЗДАТЬ ЗАДАЧУ</button>
     </form>
 </div>

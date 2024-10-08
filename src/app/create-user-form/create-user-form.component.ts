@@ -5,11 +5,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-create-user-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule],
+  imports: [ReactiveFormsModule, NgIf, NgFor, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss'
 })
@@ -30,7 +31,7 @@ export class CreateUserFormComponent {
     // Validators.pattern("^[a-zA-Zа-яА-я.]*$") ожидает только латиницу и русский алфавит в верхнем и нижнем регистре от A до Z и от А до Я
     name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Zа-яА-Я]*$")]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(5),]),
-    website: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern("^[a-zA-Z.]*$")]),
+    website: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern("^[a-zA-Z]*$")]),
     companyName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Zа-яА-Я.]*$")]),
   });
 
