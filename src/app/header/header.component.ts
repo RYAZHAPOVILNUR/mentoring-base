@@ -8,7 +8,6 @@ const upperCaseMenuItems = menuItems.map(
   (item) => {
     return item.toUpperCase()  }
 )
-console.log(upperCaseMenuItems);
 
 const aboutCompany = (item : string) => {
   return item;
