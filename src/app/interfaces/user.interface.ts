@@ -28,7 +28,7 @@ export interface IUser {
   company: ICompany;
 }
 
-export interface IUserForm {
+export interface CreateUser {
   id: number;
   name: string;
   email: string;

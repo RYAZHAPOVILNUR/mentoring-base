@@ -49,10 +49,11 @@ export class CreateTodoFormComponent {
     control: AbstractControl
   ): ValidationErrors | null {
     const enteredValue = control.value?.trim().toLowerCase();
-    if (enteredValue !== 'да' && enteredValue !== 'нет') {
+    if (enteredValue === 'да' && enteredValue === 'нет') {
+      return null;
+    } else {
       return { invalidAnswer: true };
     }
-    return null;
   }
 
   public getTodoCompletedValue(): boolean {
