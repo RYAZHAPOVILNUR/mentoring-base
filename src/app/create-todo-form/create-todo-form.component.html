@@ -1,27 +1,18 @@
-<h2>Create todo form</h2>
-<form [formGroup]="formTodo" (ngSubmit)="submitForm()">
-    <div class="wrap">
-        <p>Текст задачи</p>
-        <input type="text" formControlName="title">
-        <div *ngIf="formTodo.controls['title'].invalid && (formTodo.controls['title'].dirty || formTodo.controls['title'].touched)">
-            <div *ngIf="formTodo.controls['title'].errors" style="color: red;">
-                Текст задачи введен не правильно
-            </div>
-        </div>
-        <p>Автор задачи</p>
-        <input type="text" formControlName="userId">
-        <div *ngIf="formTodo.controls['userId'].invalid && (formTodo.controls['userId'].dirty || formTodo.controls['userId'].touched)">
-            <div *ngIf="formTodo.controls['userId'].errors" style="color: red;">
-                Автор введен не правильно
-            </div>
-        </div>
-        <p>Задача решена</p>
-        <input type="text" formControlName="completed">
-        <div *ngIf="formTodo.controls['completed'].invalid && (formTodo.controls['completed'].dirty || formTodo.controls['completed'].touched)">
-            <div *ngIf="formTodo.controls['completed'].errors" style="color: red;">
-                Ответ некорректен
-            </div>
-        </div>
-        <button style="margin-top: 20px;" [disabled]="formTodo.invalid">Create todo</button>
-    </div>
+<h2>Create todo card</h2>
+<form class="wrap" [formGroup]="formTodo">
+    <mat-form-field>
+        <mat-label>Введите текст задачи</mat-label>
+        <input matInput formControlName="title">
+        <mat-error>Данные введены не правильно</mat-error>
+    </mat-form-field><mat-form-field>
+        <mat-label>Автор задачи</mat-label>
+        <input matInput formControlName="userId">
+        <mat-error>Данные введены не правильно</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Задача решена</mat-label>
+        <input matInput formControlName="completed">
+        <mat-error>Данные введены не правильно</mat-error>
+    </mat-form-field>   
+    <button type="submit" (click)="submitForm()" mat-button [disabled]="formTodo.invalid" style="height: 50px">Create todo</button>    
 </form>
