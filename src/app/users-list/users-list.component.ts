@@ -46,9 +46,6 @@ export class UsersListComponent {
       });
   }
   deleteUser(id: number) {
-    this.users = this.users.filter(
-      // @ts-ignore
-      item => item.id !== id
-    )
-  }  
-}  
+    this.users = this.users.filter((item) => item.id !== id);
+  }
+}
