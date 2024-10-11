@@ -1,0 +1,406 @@
+@import '../app/normalize.scss';
+
+// Общая информация о
+
+.info-cards-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-cards-item-block {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  width: 421px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.content-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.item-cards__pagination {
+  display: flex;
+  justify-content: end;
+
+  &-button {
+    font-family: inter;
+    border: none;
+    background: none;
+    color: #a1a0a0;
+  }
+}
+
+.active-button {
+  color: #f0ba4e;
+  font-weight: 600;
+}
+
+.item-cards-grid {
+  display: flex;
+  gap: 18px;
+}
+
+.item-cards-grid-left {
+  min-height: 428px;
+  min-width: 421px;
+  box-shadow: 0px 20px 50px 0px #3c3c3b12;
+  max-height: 428px;
+  max-width: 421px;
+  background-image: url("/assets/image_19.png");
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-position-y: bottom;
+  background-position-x: left;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-card__grid-left-text {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 600px;
+}
+
+.item-cards__grid-left-action {
+  display: flex;
+  align-items: center;
+  align-self: end;
+}
+
+.go-catalog {
+  margin-right: 10px;
+}
+
+.item-cards__grid-left-action-link {
+  width: 40px;
+  height: 40px;
+}
+
+.item-cards__grid-right {
+  display: flex;
+  width: 900px;
+  height: 400px;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.item-cards__grid-right-block {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 421px;
+  height: 200px;
+  box-shadow: 0px 20px 50px 0px #3c3c3b12;
+}
+
+.block-1 {
+  background: url("/assets/spray-paint.svg") no-repeat;
+  background-position-y: bottom;
+  background-position-x: left;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: end;
+}
+
+.block-1_text-1 {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 600px;
+}
+
+.block-1-text-action,
+.block-2-text-action,
+.block-3-text-action,
+.block-4-text-action {
+  display: flex;
+  align-items: center;
+}
+
+.block-1,
+.block-2,
+.block-3,
+.block-4 {
+  padding: 15px;
+}
+
+.block-2 {
+  background: url("/assets/bucket.png") no-repeat;
+  background-position-y: bottom;
+  background-position-x: right;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+}
+
+.block-2-text-action {
+  display: flex;
+  align-items: center;
+}
+
+.block-3 {
+  background: url("/assets/foam.png") no-repeat;
+  background-position-y: bottom;
+  background-position-x: right;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+}
+
+.block-3-text-action {
+  display: flex;
+  align-items: center;
+}
+
+.block-4 {
+  background: url("/assets/socket.png") no-repeat;
+  background-position-y: bottom;
+  background-position-x: left;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: end;
+}
+
+.block-1_text-1 {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 600px;
+}
+
+// Популярные товары
+
+.popular-container {
+  width: 1412px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+.block-popular {
+  max-width: 1320px;
+  
+  padding: 0 46px;
+}
+
+.popular-left-button {
+  position: relative;
+  top: 280px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: none;
+  border-radius: 36px;
+}
+
+.popular-right-button {
+  position: relative;
+  top: 280px;
+  left: 1288px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: none;
+  border-radius: 36px;
+}
+
+.popular-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.left {
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.right {
+  color: #f0ba4e;
+  font-weight: 600;
+  border: none;
+  background: none;
+}
+
+.popular-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 1320px;
+}
+
+.popular-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 309px;
+  height: 429px;
+  gap: 8px;
+  box-shadow: 0px 20px 50px 0px rgba(18, 17, 39, 0.08);
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.card-container {
+  width: 261px;
+  margin: 0 auto;
+}
+
+.photo-items {
+  background: url("/assets/grinder disc.png") no-repeat;
+  background-position-x: center;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.item-icon-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-items {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-percent {
+  position: relative;
+  right: 146px;
+  top: 56px;
+}
+
+.popular-card-price-header {
+  color: #3c3c3b;
+}
+
+.popular-card-price {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3c3c3b;
+}
+
+.popular-card-article {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.popular-price-piece {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #a1a0a0;
+  margin: 0%;
+  margin-top: 20px;
+}
+
+.first-price {
+  text-decoration: line-through;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3c3c3b;
+  margin-right: 15px;
+}
+
+.second-price {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3c3c3b;
+}
+
+.add-to-box {
+  font-size: 16px;
+  border: 1px solid #f0ba4e;
+  width: 135px;
+  height: 47px;
+  border-radius: 54px;
+  background-color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.popular-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.popular-card-quantity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3c3c3b;
+}
+
+.adjust-count {
+  border: none;
+  background: none;
+  font-size: 20px;
+  word-spacing: 5px;
+  margin-top: 10px;
+}
+
+.quantity {
+  @include clear-button;
+}
+
+// Рекламная карточка  
+
+.about-store-container {
+  width: 1320px;
+  margin: 0 auto;
+  height: 251px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-store {
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f6f6f6;
+}
+
+.block-text-store {
+  padding-left: 28px;
+}
+
+.store-header-top {
+  font-size: 28px;
+  font-weight: 500;
+  color: #3c3c3b;
+  font-family: inter;
+}
+
+.store-header-bottom {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inter;
+  color: #a1a0a0;
+}
+
+.store-footer-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f0ba4e;
+  font-family: inter;
+  margin-top: 89px;
+}
+
+.picture-man-store {
+  padding-right: 16px;
+}
