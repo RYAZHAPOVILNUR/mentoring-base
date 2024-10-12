@@ -1,0 +1,31 @@
+<form style="display: flex; flex-direction: column; padding: 50px;" [formGroup]="form" >
+
+    <mat-form-field class="mat-form-field">
+        <mat-label>Add USER</mat-label>
+        <input matInput class="form-input" formControlName="name">
+        <mat-error>Error</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field">
+        <mat-label>Add EMAIL</mat-label>
+        <input matInput class="form-input" formControlName="email">
+        <mat-error>Error</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field">
+        <mat-label>Add WEBSITE</mat-label>
+        <input matInput class="form-input" formControlName="website">
+        <mat-error>Error</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field">
+        <mat-label>Add COMPANY NAME</mat-label>
+        <input matInput class="form-input" formControlName="companyName">
+        <mat-error>Error</mat-error>
+    </mat-form-field>
+
+    <button matIconSuffix mat-button [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedFields" class="mat-form-field">
+        EDIT USER
+        <mat-icon>add_circle</mat-icon>
+    </button>
+</form>
