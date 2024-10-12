@@ -2,7 +2,7 @@
   <p class="user-card__item"><span>Name: </span>{{ user.name }}</p>
   <p class="user-card__item"><span>Email: </span>{{ user.email }}</p>
   <p class="user-card__item"><span>Website: </span>{{ user.website }}</p>
-  <p class="user-card__item"><span>Username: </span>{{ user.username }}</p>
+  <p class="user-card__item"><span>Company: </span>{{ user.company.name }}</p>
   <button class="user-card__btn" (click)="onDeleteUser(user.id)">
     Удалить юзера
   </button>

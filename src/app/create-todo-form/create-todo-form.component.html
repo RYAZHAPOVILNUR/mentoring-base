@@ -1,0 +1,5 @@
+<form class="todo-form" [formGroup]="form" (ngSubmit)="submitForm()">
+  <input type="text" placeholder="Что сделать?" formControlName="taskName" />
+  <input type="text" placeholder="Автор" formControlName="author" />
+  <button [disabled]="form.invalid">Создать задачу</button>
+</form>

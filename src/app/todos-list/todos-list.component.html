@@ -1,4 +1,7 @@
 <div class="container">
+  <app-create-todo-form
+    (createNewTodo)="createNewTodo($event)"
+  ></app-create-todo-form>
   <div class="todos">
     <div *ngFor="let todo of todosService.todos$ | async">
       <app-todo-card
