@@ -11,7 +11,7 @@ import { Todo } from '../todos-list.component';
 })
 export class TodoCardComponent {
   @Input()
-  todo: Todo[];
+  todo: Todo;
 
   @Output()
   deleteTodo = new EventEmitter();

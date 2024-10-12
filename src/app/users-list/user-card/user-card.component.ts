@@ -10,7 +10,7 @@ import { User } from '../users-list.component';
 })
 export class UserCardComponent {
   @Input()
-  user: User[];
+  user: User;
 
   @Output()
   deleteUser = new EventEmitter();
