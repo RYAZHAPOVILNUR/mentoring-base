@@ -23,7 +23,7 @@ export class CreateUserFormComponent {
 
   // подключаем к html переменную form
   // класс FormGroup обеденяет все FormControl так как FormControl это элемент класса FormGroup
-  public form = new FormGroup({
+  public formUser = new FormGroup({
     // каждую переменную класс FormControl будем передавать в файле html в тег input по названиям
     // [Validators.required] поле обязательно для заполнения
     // [Validators.email] поле ожидает обязательное заполнение c @
@@ -38,8 +38,8 @@ export class CreateUserFormComponent {
   public submitForm(): void {
     // emit() используется для генерации или отправки события от дочернего компонента к родительскому.
     // Он вызывается на объекте EventEmitter, который был создан с помощью декоратора @Output().
-    this.createUserForm.emit(this.form.value);
+    this.createUserForm.emit(this.formUser.value);
     // reset очишает форму после заполнения
-    this.form.reset();
+    this.formUser.reset();
   }
 }

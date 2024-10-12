@@ -36,9 +36,10 @@
 
 .form_button {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 250px;
     margin: 0 auto;
-    margin-top: 10px;
     height: 50px;
     border-radius: 10px;
     border: none;

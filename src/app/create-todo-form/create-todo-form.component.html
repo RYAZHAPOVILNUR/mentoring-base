@@ -1,52 +1,42 @@
 <div class="content_form">
 
-    <h2 class="title">Create todo form</h2>
+    <h1 class="title">Создать Todo форму</h1>
 
     <form class="block_form" [formGroup]="form">
-
-        <mat-form-field color="primary" appearance="outline" class="example-full-width">
-            <mat-label>№ Задание:</mat-label>
-            <input matInput placeholder="Введите номер задание:" formControlName="userId" required>
-            <div *ngIf="form.controls.userId.invalid && (form.controls.userId.dirty || form.controls.userId.touched)"
-                class="alert">
-                <div *ngIf="form.controls.userId.errors">Задание введено неправильно!</div>
-            </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Задание</mat-label>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+            <input matInput placeholder="Введите номер задания..." formControlName="userId">
+            <mat-error>Задание введено неправильно!</mat-error>
         </mat-form-field>
 
-        <mat-form-field color="primary" appearance="outline" class="example-full-width">
-            <mat-label>Id задачи:</mat-label>
-            <input matInput placeholder="Введите id задачи..." formControlName="id" required>
-            <div *ngIf="form.controls.id.invalid && (form.controls.id.dirty || form.controls.id.touched)" class="alert">
-                <div *ngIf="form.controls.id.errors">Id введено неправильно!</div>
-            </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Id задания</mat-label>
+            <input matInput placeholder="Введите id задания..." formControlName="id">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+            <mat-error>Id введен неправильно!</mat-error>
         </mat-form-field>
 
-        <mat-form-field color="primary" appearance="outline" class="example-full-width">
-            <mat-label>Задача:</mat-label>
-            <textarea matInput #message maxlength="256" placeholder="Введите задачу..." formControlName="title"
-                required></textarea>
-            <mat-hint align="start"><strong>Здесь пишем только задачу!</strong> </mat-hint>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Задача</mat-label>
+            <textarea matInput #message maxlength="256" placeholder="Напишите задачу..."
+                formControlName="title"></textarea>
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-            <div *ngIf="form.controls.title.invalid && (form.controls.title.dirty || form.controls.title.touched)"
-                class="alert">
-                <div *ngIf="form.controls.title.errors">Задача введено неправильно!</div>
-            </div>
+            <mat-error>Задача введена неправильно!</mat-error>
         </mat-form-field>
 
-        <mat-form-field color="primary" appearance="outline" class="example-full-width">
-            <mat-label>Задача решена:</mat-label>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Задача решена</mat-label>
             <mat-select formControlName="completed">
-                <mat-option value="Yes">ДА</mat-option>
-                <mat-option value="No">НЕТ</mat-option>
+                <mat-option value="Yes">да</mat-option>
+                <mat-option value="No">нет</mat-option>
             </mat-select>
-            <div *ngIf="form.controls.completed.invalid && (form.controls.completed.dirty || form.controls.completed.touched)"
-                class="alert">
-                <div *ngIf="form.controls.completed.errors">Решение введено неправильно!</div>
-            </div>
+            <mat-error>Решение введено неправильно!</mat-error>
         </mat-form-field>
 
-        <button type="submit" (click)="submitFormTodo()" mat-raised-button color="primary" disabled [disabled]="form.invalid" class="form_button">
-            <mat-icon>add_task</mat-icon>
-            СОЗДАТЬ ЗАДАЧУ</button>
+        <button mat-raised-button color="primary" (click)="submitFormTodo()" disabled [disabled]="form.invalid" class="form_button">
+            <mat-icon>download_done</mat-icon>
+            СОЗДАТЬ ЗАДАЧУ
+        </button>
     </form>
 </div>

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoInterface } from '../../interfaces/todo-interfaces';
 import {MatIconModule} from '@angular/material/icon';
-
+ 
 @Component({
   selector: 'app-todo-card',
   standalone: true,

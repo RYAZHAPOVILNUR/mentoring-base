@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 // Валидатор для поля 'completed'
 export function completedValidator(): ValidatorFn {
@@ -19,7 +19,7 @@ export function completedValidator(): ValidatorFn {
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule],
+  imports: [ReactiveFormsModule, NgIf, NgFor, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule],
   templateUrl: './create-todo-form.component.html',
   styleUrls: ['./create-todo-form.component.scss']
 })
@@ -27,17 +27,16 @@ export class CreateTodoFormComponent {
   @Output()
   createTodoForm = new EventEmitter();
 
-
   public form = new FormGroup({
     userId: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]),
     id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]),
-    title: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern("^[a-zA-Zа-яА-Я0-9]*$")]),
+    title: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern("^[a-zA-Zа-яА-Я0-9.,_\\- ]*$")]),
     completed: new FormControl('', [Validators.required, completedValidator(), Validators.pattern("^[a-zA-Z]*$")])
   });
 
   private getCompletedValue(): boolean {
     const value = this.form.get('completed')?.value!.trim().toLowerCase();
-    return value === 'yes';
+    return value === 'да';
   }
 
   public submitFormTodo(): void {
