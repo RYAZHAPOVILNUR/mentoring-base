@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from "/Users/shokhrukhabdulakimov/Desktop/newfolderfornormalizecss/mentoring-base/src/app/users-list/user-interface";
+import { Todo } from "/Users/mac/Desktop/link_ng_material/mentoring-base/src/app/users-list/user-interface";
 
 @Component({
   selector: 'app-todo-card',
