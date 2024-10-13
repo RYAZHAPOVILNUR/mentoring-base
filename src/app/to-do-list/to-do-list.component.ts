@@ -4,13 +4,9 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { ToDoCardComponent } from './to-do-card/to-do-card.component';
 import { TodoService } from '../services/todo.service';
 import { CreateTodoComponent } from "../create-todo/create-todo.component";
+import { ToDOs } from '../interfaces/todo.interface';
 
-export interface ToDOs {
-  userID: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
+
 
 @Component({
   selector: 'app-to-do-list',

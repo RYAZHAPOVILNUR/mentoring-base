@@ -1,0 +1,56 @@
+<div class="content-container">
+  <h2 class="title">Edit User Form</h2>
+  <form class="form-container" 
+  [formGroup]="form"
+  >
+
+  <mat-form-field class="mat-ff">
+    <mat-label>Введите имя</mat-label>
+    <input matInput
+    formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter your email</mat-label>
+    <input
+      matInput
+      placeholder="pat@example.com"
+      formControlName="email"
+      (blur)="updateErrorMessage()"
+      required
+    />
+    @if (form.get('email')?.invalid) {
+      <mat-error>{{errorMessage()}}</mat-error>
+    }
+  </mat-form-field>
+
+    <!-- <label for="">Name:</label>
+    <input formControlName="name" type="text" placeholder="Введите имя" />
+    <label for="">Email:</label>
+    <input formControlName="email" type="text" placeholder="Введите email" /> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matTextPrefix>+7 &nbsp;</span>
+      <input type="tel" matInput placeholder="999-999-99-99"
+        formControlName="phone"
+        (blur)="updateErrorMessage()"
+        required
+        appMaxlength="10">
+      <mat-icon matSuffix>call</mat-icon>
+      @if (form.get('phone')?.invalid) {
+        <mat-error>{{errorMessage()}}</mat-error>
+      }
+    </mat-form-field>
+    
+
+    <mat-form-field class="mat-ff">
+      <mat-label>Введите website</mat-label>
+      <input matInput
+      formControlName="website">
+    </mat-form-field>
+    <button class="btn" mat-raised-button color="primary" [disabled] = "form.invalid" [matDialogClose]="userWithUpdatedFields">Edit User</button>
+  </form>
+
+  
+  
+</div>

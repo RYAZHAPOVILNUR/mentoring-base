@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ToDOs } from '../to-do-list.component';
+import { ToDOs } from '../../interfaces/todo.interface';
+
 
 export interface ToDoCard {}
 

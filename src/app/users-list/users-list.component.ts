@@ -4,30 +4,9 @@ import { UsersApiService } from '../services/users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { usersService } from '../services/users.service';
 import { CreateUserFormComponent } from '../create-user/create-user-form.component';
+import { User } from '../interfaces/user.interface';
 
-export interface User {
-  id: number;
-  name: string;
-  username?: string;
-  email: string;
-  address?: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company?: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-}
+
 
 @Component({
   selector: 'app-users-list',
@@ -47,6 +26,10 @@ export class UsersListComponent {
     });
   }
 
+ editUser(user: any) {
+    this.usersService.editUser(user);
+  }
+
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
@@ -61,3 +44,5 @@ export class UsersListComponent {
     });
   }
 }
+
+

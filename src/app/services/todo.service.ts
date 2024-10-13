@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ToDOs } from '../to-do-list/to-do-list.component';
+import { ToDOs } from '../interfaces/todo.interface';
+
 
 @Injectable({
   providedIn: 'root',

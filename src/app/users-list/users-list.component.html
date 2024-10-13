@@ -5,6 +5,9 @@
 
 <div class="users-block-container">
     <div *ngFor = "let user of usersService.users$ | async" class="user-block">
-        <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+        <app-user-card [user]="user" 
+        (deleteUser)="deleteUser($event)"
+        (editUser)="editUser($event)"
+        ></app-user-card>
     </div>
 </div>
