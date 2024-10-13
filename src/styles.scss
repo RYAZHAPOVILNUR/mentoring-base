@@ -352,12 +352,11 @@ template {
 }
 
 .title {
-  max-width: 1320px;
-  display: flex;
-  margin: 8px auto;
   color: #3C3C3B;
   font-size: 20px;
   font-family: 'Inter', sans-serif;
+  margin: 0;
+  margin-top: 20px;
 }
 
 .form-container {
@@ -372,6 +371,7 @@ template {
 .content-container{
   margin: 50px;
 }
+
 
 
 

@@ -1,9 +1,12 @@
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateEditUserDialogComponent } from '../users-list/create-edit-user-dialog/create-edit-user-dialog.component';
+import { User } from '../interfaces/user.interface';
 
 
 
@@ -15,6 +18,24 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule],
 })
 export class CreateUserFormComponent {
+  readonly dialog = inject(MatDialog)
+  openDialog() {
+    const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
+      data: {user: "", isEdit: false},
+    });
+
+    dialogRef.afterClosed().subscribe(createResult => {
+      console.log('The dialog was closed. Result:', createResult);
+      if (createResult) {
+        this.createUser.emit(createResult)
+      }
+      
+    });
+  }
+
+  @Input()
+  user!: User;
+
   @Output()
   createUser = new EventEmitter();
 

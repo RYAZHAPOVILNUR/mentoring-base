@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ToDOs } from '../../interfaces/todo.interface';
 
 
-export interface ToDoCard {}
 
 @Component({
   selector: 'app-to-do-card',

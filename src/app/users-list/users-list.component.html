@@ -1,8 +1,9 @@
 
 <!-- <h1 class="users-title">Компонент списка юзеров</h1> -->
 
+<!-- <app-create-user (createUser)="CreateUser($event)"></app-create-user> -->
+ 
 <app-create-user (createUser)="CreateUser($event)"></app-create-user>
-
 <div class="users-block-container">
     <div *ngFor = "let user of usersService.users$ | async" class="user-block">
         <app-user-card [user]="user" 

@@ -1,6 +1,6 @@
 import { Component, inject, signal } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogClose } from "@angular/material/dialog";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
@@ -10,13 +10,13 @@ import { User } from "../../interfaces/user.interface";
 
 @Component({
   selector: '',
-  templateUrl: './edit-user-dialog.component.html',
-  styleUrls: ['./edit-user-dialog.component.scss'],
+  templateUrl: './create-edit-user-dialog.component.html',
+  styleUrls: ['./create-edit-user-dialog.component.scss'],
   imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, ReactiveFormsModule, MatDialogClose],
   standalone: true,
 })
-export class EditUserDialogComponent {
-  readonly data = inject<{user: User}>(MAT_DIALOG_DATA);
+export class CreateEditUserDialogComponent {
+  readonly data = inject<{user: User; isEdit: boolean}>(MAT_DIALOG_DATA);
 
   public form = new FormGroup({
     name: new FormControl(this.data.user.name, [Validators.required, Validators.minLength(2)]),
@@ -24,6 +24,17 @@ export class EditUserDialogComponent {
     phone: new FormControl(this.data.user.phone, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
     website: new FormControl(this.data.user.website, [Validators.required, Validators.minLength(2)]),
   })
+
+  get title(): string {
+    return this.data.isEdit ? 'Редактировать пользователя' : 'Создать пользователя';
+  }
+
+  get userWithUpdatedFields() {
+    return {
+      ...this.form.value,
+      id: this.data.user.id
+    }
+  }
 
   errorMessage = signal('');
 
@@ -46,10 +57,5 @@ export class EditUserDialogComponent {
     }
   }
 
-  get userWithUpdatedFields() {
-    return {
-      ...this.form.value,
-      id: this.data.user.id
-    }
-  }
+  
 }

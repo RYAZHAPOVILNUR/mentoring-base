@@ -1,22 +1,24 @@
-.title {
+.content-container {
   max-width: 1320px;
-  display: flex;
-  margin: 8px auto;
-  color: #3C3C3B;
-  font-size: 20px;
-  font-family: 'Inter', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  border: 1px dashed black;
+  margin-top: 20px;
+  background-color: #f0ba4e;
+  border-radius: 10px;
 }
 
-
-.content-container{
-  margin: 50px;
-}
-
-mat-ff{
-  overflow: visible;
-}
-
-.btn{
-   background-color:aqua !important;
+.btn {
+width: 100px;
+height: 27px;
+border-radius: 54px;
+border: 1px solid #3C3C3B;
+background: white;
+font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 500;
+color: #3C3C3B;
+cursor: pointer;
 }
 

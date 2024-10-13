@@ -1,5 +1,5 @@
 <div class="content-container">
-  <h2 class="title">Edit User Form</h2>
+  <h2 class="title"> {{title}}</h2>
   <form class="form-container" 
   [formGroup]="form"
   >
@@ -48,7 +48,7 @@
       <input matInput
       formControlName="website">
     </mat-form-field>
-    <button class="btn" mat-raised-button color="primary" [disabled] = "form.invalid" [matDialogClose]="userWithUpdatedFields">Edit User</button>
+    <button class="btn" mat-raised-button color="primary" [disabled] = "form.invalid" [matDialogClose]="userWithUpdatedFields">{{title}}</button>
   </form>
 
   

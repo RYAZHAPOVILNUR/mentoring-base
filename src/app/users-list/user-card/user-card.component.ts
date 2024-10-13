@@ -8,8 +8,9 @@ import {
 } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
-import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
+
 import { User } from '../../interfaces/user.interface';
+import { CreateEditUserDialogComponent } from '../create-edit-user-dialog/create-edit-user-dialog.component';
 
 @Component({
   selector: 'app-user-card',
@@ -23,8 +24,8 @@ export class UserCardComponent {
   readonly dialog = inject(MatDialog);
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(EditUserDialogComponent, {
-      data: {user: this.user},
+    const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
+      data: {user: this.user, isEdit: true},
     });
 
     dialogRef.afterClosed().subscribe(editResult => {
