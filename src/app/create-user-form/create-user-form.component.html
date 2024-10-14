@@ -1,52 +1,66 @@
 <div class="content_form">
+  <h2 class="title">Создать User форму</h2>
 
-    <h2 class="title">Создать User форму</h2>
-
-    <!-- [] скобки это привязка к какому то свойству, в [] скобки передаем данные formGroup это встроенный код angular к ней присвайваем from это наша созданная переменная из ts
+  <!-- [] скобки это привязка к какому то свойству, в [] скобки передаем данные formGroup это встроенный код angular к ней присвайваем from это наша созданная переменная из ts
      и так же этот код делает так чтобы станица не перезагружалась при клике на кнопку -->
-    <form class="block_form" [formGroup]="formUser">
-
-        <!-- formControlName — это директива в Angular, которая используется для привязки
+  <form class="block_form" [formGroup]="formUser">
+    <!-- formControlName — это директива в Angular, которая используется для привязки
          элемента управления формы к объекту FormControlкоторый находится внутри объекта FormGroup -->
-        <mat-form-field class="example-full-width">
-            <mat-label>Name</mat-label>
-            <input matInput type="text" placeholder="Enter your name:" formControlName="name">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-            <mat-error>Имя введено неправильно!</mat-error>
-        </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Enter your name:"
+        formControlName="name"
+      />
+      <mat-icon matSuffix>mode_edit</mat-icon>
+      <mat-error>Имя введено неправильно!</mat-error>
+    </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Enter your Email:" formControlName="email">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-            <mat-error>Email введено неправильно!</mat-error>
-        </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your Email:" formControlName="email" />
+      <mat-icon matSuffix>mode_edit</mat-icon>
+      <mat-error>Email введено неправильно!</mat-error>
+    </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <mat-label>Website</mat-label>
+      <input
+        matInput
+        placeholder="Enter your Website:"
+        formControlName="website"
+      />
+      <mat-icon matSuffix>mode_edit</mat-icon>
+      <mat-error>website введен неправильно!</mat-error>
+    </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Website</mat-label>
-            <input matInput placeholder="Enter your Website:" formControlName="website">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-            <mat-error>website введен неправильно!</mat-error>
-        </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Company name</mat-label>
+      <input
+        matInput
+        placeholder="Enter your Website:"
+        formControlName="companyName"
+      />
+      <mat-icon matSuffix>mode_edit</mat-icon>
+      <mat-error>Страна введена неправильно!</mat-error>
+    </mat-form-field>
 
-
-        <mat-form-field class="example-full-width">
-            <mat-label>Company name</mat-label>
-            <input matInput placeholder="Enter your Website:" formControlName="companyName">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-            <mat-error>Страна введена неправильно!</mat-error>
-        </mat-form-field>
-
-
-        <!-- кнопка button по умолчанию уже с типом submit и button находится внутри тега from
+    <!-- кнопка button по умолчанию уже с типом submit и button находится внутри тега from
           по этому при клике на кнопку button срабатывает автоматический ngSubmit обработчик события,
           disabled означает не активный а [] скобки это привязка к свойству,
           form.invalid это означает что когда вся форма заполнится form.invalid станет true -->
-        <button type="submit" (click)="submitForm()" mat-raised-button color="primary" [disabled]="formUser.invalid"
-            class="form_button">
-            <mat-icon>add</mat-icon>
-            CREATE USER
-        </button>
-    </form>
+    <button
+      type="submit"
+      (click)="submitForm()"
+      mat-raised-button
+      color="primary"
+      [disabled]="formUser.invalid"
+      class="form_button"
+    >
+      <mat-icon>add</mat-icon>
+      CREATE USER
+    </button>
+  </form>
 </div>

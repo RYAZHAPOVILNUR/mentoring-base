@@ -10,12 +10,12 @@ export class TodosService {
     // переменную todos$ можно использовать вне файла
     todos$ = this.todosSubject$.asObservable();
 
-    // установка todos
+    //* установка todos
     setTodos(todos: TodoInterface[]) {
         this.todosSubject$.next(todos);
     }
 
-    // изменение todos
+    //* изменение todos
     editTodo(editedTodo: TodoInterface) {
         // next перезаписывает данные по новому и возвращает обновленный массив после завершения функции map
         this.todosSubject$.next(
@@ -31,7 +31,7 @@ export class TodosService {
         );
     }
 
-    // создание todo
+    //* создание todo
     createTodo(todo: TodoInterface) {
         const existingTask = this.todosSubject$.value.find(
             (currentElement) => currentElement.title === todo.title
@@ -45,7 +45,7 @@ export class TodosService {
         }
     }
 
-    // удаление todo
+    //* удаление todo
     deleteTodo(id: number) {
         // next перезаписывает данные по новому и возвращает обновленный массив
         this.todosSubject$.next(
