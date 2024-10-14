@@ -4,18 +4,7 @@ import { TodoCardComponent } from './todo-card/todo-card.component';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
-
-export interface Todo {
-  userId: number | string;
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-interface TodoFormData {
-  taskName: string;
-  author: string;
-}
+import { Todo } from '../interfaces/todo-interface';
 
 @Component({
   standalone: true,
@@ -39,12 +28,12 @@ export class TodosListComponent {
     this.todosService.deleteTodo(id);
   }
 
-  createNewTodo(formData: TodoFormData) {
+  createNewTodo(formData: Todo) {
     this.todosService.createTodo({
       id: new Date().getDate(),
-      userId: formData.author,
-      title: formData.taskName,
-      completed: false,
+      userId: formData.userId,
+      title: formData.title,
+      completed: formData.completed,
     });
   }
 }

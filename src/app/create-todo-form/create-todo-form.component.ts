@@ -15,8 +15,9 @@ import {
 })
 export class CreateTodoFormComponent {
   public form = new FormGroup({
-    taskName: new FormControl('', [Validators.required]),
-    author: new FormControl('', [Validators.required]),
+    title: new FormControl('', [Validators.required]),
+    userId: new FormControl('', [Validators.required]),
+    completed: new FormControl(false),
   });
 
   @Output()

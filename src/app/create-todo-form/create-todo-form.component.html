@@ -1,5 +1,26 @@
 <form class="todo-form" [formGroup]="form" (ngSubmit)="submitForm()">
-  <input type="text" placeholder="Что сделать?" formControlName="taskName" />
-  <input type="text" placeholder="Автор" formControlName="author" />
-  <button [disabled]="form.invalid">Создать задачу</button>
+  <input
+    type="text"
+    class="todo-form__input"
+    placeholder="Что сделать?"
+    formControlName="title"
+  />
+  <input
+    type="text"
+    class="todo-form__input"
+    placeholder="Автор"
+    formControlName="userId"
+  />
+  <label for="isCompleted" class="todo-form__label">
+    <input
+      type="checkbox"
+      id="isCompleted"
+      class="todo-form__input"
+      formControlName="completed"
+    />
+    Задача завершена?
+  </label>
+  <button class="todo-form__btn" [disabled]="form.invalid">
+    Создать задачу
+  </button>
 </form>

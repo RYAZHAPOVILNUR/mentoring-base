@@ -1,5 +1,10 @@
 <form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
-  <input type="text" placeholder="Имя" formControlName="name" />
+  <input
+    type="text"
+    class="user-form__input"
+    placeholder="Имя"
+    formControlName="name"
+  />
   <div
     *ngIf="
       form.controls['name'].invalid &&
@@ -11,7 +16,12 @@
       Имя введено некорректно
     </div>
   </div>
-  <input type="text" placeholder="Email" formControlName="email" />
+  <input
+    type="text"
+    class="user-form__input"
+    placeholder="Email"
+    formControlName="email"
+  />
   <div
     *ngIf="
       form.controls['email'].invalid &&
@@ -23,7 +33,12 @@
       Email введен некорректно
     </div>
   </div>
-  <input type="text" placeholder="Website" formControlName="website" />
+  <input
+    type="text"
+    class="user-form__input"
+    placeholder="Website"
+    formControlName="website"
+  />
   <div
     *ngIf="
       form.controls['website'].invalid &&
@@ -35,7 +50,12 @@
       Вебсайт введен некорректно
     </div>
   </div>
-  <input type="text" placeholder="Компания" formControlName="companyName" />
+  <input
+    type="text"
+    class="user-form__input"
+    placeholder="Компания"
+    formControlName="companyName"
+  />
   <div
     *ngIf="
       form.controls['companyName'].invalid &&
@@ -48,5 +68,7 @@
       Название компании введено некорректно
     </div>
   </div>
-  <button [disabled]="form.invalid">Создать юзера</button>
+  <button class="user-form__btn" [disabled]="form.invalid">
+    Создать юзера
+  </button>
 </form>

@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from '../todos-list.component';
+import { Todo } from './../../interfaces/todo-interface';
 
 @Component({
   standalone: true,
