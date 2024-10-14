@@ -4,7 +4,7 @@
     <mat-label>Enter your name</mat-label>
     <input matInput type="text" formControlName="name">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert">
+    <mat-error>
       Имя введено неправильно
      </mat-error>
   </mat-form-field>
@@ -12,7 +12,7 @@
     <mat-label>Enter your email</mat-label>
     <input matInput type="text" formControlName="email">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert">
+    <mat-error>
       Почта введена неправильно
     </mat-error>
   </mat-form-field>
@@ -20,7 +20,7 @@
     <mat-label>Enter your website</mat-label>
     <input matInput type="text" formControlName="website">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)" class="alert">
+    <mat-error>
       Вебсайт введен неправильно
     </mat-error>
   </mat-form-field>
@@ -28,7 +28,7 @@
     <mat-label>Enter your company name</mat-label>
     <input matInput type="text" formControlName="companyName">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)" class="alert">
+    <mat-error>
       Название компании введено неправильно
     </mat-error>
   </mat-form-field>

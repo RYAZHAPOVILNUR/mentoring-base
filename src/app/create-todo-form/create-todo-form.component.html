@@ -4,7 +4,7 @@
     <mat-label>Enter your todo name</mat-label>
     <input matInput type="text" formControlName="title">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="todoForm.controls['title'].invalid && (todoForm.controls['title'].dirty || todoForm.controls['title'].touched)" class="alert">
+    <mat-error>
       Название задания введено неправильно
     </mat-error>
   </mat-form-field>
@@ -12,7 +12,7 @@
     <mat-label>Enter your id</mat-label>
     <input matInput type="text" formControlName="userId">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="todoForm.controls['userId'].invalid && (todoForm.controls['userId'].dirty || todoForm.controls['userId'].touched)" class="alert">
+    <mat-error>
       Айди автора введен неправильно, вводите только цифры
     </mat-error>
   </mat-form-field>
@@ -20,7 +20,7 @@
     <mat-label>Todo completed: yes/no</mat-label>
     <input matInput type="text" formControlName="completed">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-error *ngIf="todoForm.controls['completed'].invalid && (todoForm.controls['completed'].dirty || todoForm.controls['completed'].touched)" class="alert">
+    <mat-error>
       Ответ введен неправильно, только Да/Нет
     <!-- <div *ngIf="todoForm.controls['completed'].errors">
       Ответ введен неправильно, только Да/Нет
