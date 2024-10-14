@@ -1,25 +1,34 @@
-<h1>Create TODO form</h1>
-<form class="todo-form" [formGroup]="todoForm" (ngSubmit)="submitTodoForm()">
-  <p>Todo name:</p>
-  <input type="text" formControlName="title">
-  <div *ngIf="todoForm.controls['title'].invalid && (todoForm.controls['title'].dirty || todoForm.controls['title'].touched)" class="alert">
-    <div *ngIf="todoForm.controls['title'].errors">
+<h1 class="form-title">Create TODO form</h1>
+<form class="todo-form" [formGroup]="todoForm">
+  <mat-form-field>
+    <mat-label>Enter your todo name</mat-label>
+    <input matInput type="text" formControlName="title">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error *ngIf="todoForm.controls['title'].invalid && (todoForm.controls['title'].dirty || todoForm.controls['title'].touched)" class="alert">
       Название задания введено неправильно
-    </div>
-  </div>
-  <p>Todo author id:</p>
-  <input type="text" formControlName="userId">
-  <div *ngIf="todoForm.controls['userId'].invalid && (todoForm.controls['userId'].dirty || todoForm.controls['userId'].touched)" class="alert">
-    <div *ngIf="todoForm.controls['userId'].errors">
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Enter your id</mat-label>
+    <input matInput type="text" formControlName="userId">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error *ngIf="todoForm.controls['userId'].invalid && (todoForm.controls['userId'].dirty || todoForm.controls['userId'].touched)" class="alert">
       Айди автора введен неправильно, вводите только цифры
-    </div>
-  </div>
-  <p>Todo is completed:</p>
-  <input type="text" formControlName="completed">
-  <div *ngIf="todoForm.controls['completed'].invalid && (todoForm.controls['completed'].dirty || todoForm.controls['completed'].touched)" class="alert">
-    <div *ngIf="todoForm.controls['completed'].errors">
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Todo completed: yes/no</mat-label>
+    <input matInput type="text" formControlName="completed">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error *ngIf="todoForm.controls['completed'].invalid && (todoForm.controls['completed'].dirty || todoForm.controls['completed'].touched)" class="alert">
       Ответ введен неправильно, только Да/Нет
-    </div>
-  </div>
-  <button class="todo-form-btn" type="submit" [disabled]="todoForm.invalid">CREATE TODO</button>
+    <!-- <div *ngIf="todoForm.controls['completed'].errors">
+      Ответ введен неправильно, только Да/Нет
+    </div> -->
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="submitTodoForm()" class="todo-form-btn" type="submit" [disabled]="todoForm.invalid">
+    <mat-icon>add</mat-icon>
+    CREATE TODO
+  </button>
 </form>

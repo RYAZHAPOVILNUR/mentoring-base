@@ -4,17 +4,30 @@ import {
   AbstractControl,
   FormControl,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-create-todo-form',
   templateUrl: './create-todo-form.component.html',
   styleUrl: './create-todo-form.component.scss',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [
+    ReactiveFormsModule,
+    NgIf,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
 })
 export class CreateTodoFormComponent {
   @Output()
@@ -49,9 +62,13 @@ export class CreateTodoFormComponent {
     control: AbstractControl
   ): ValidationErrors | null {
     const enteredValue = control.value?.trim().toLowerCase();
-    if (enteredValue === 'да' && enteredValue === 'нет') {
+    if (enteredValue === 'да' || enteredValue === 'нет') {
+      console.log(enteredValue);
+      console.log('yess');
       return null;
     } else {
+      console.log(enteredValue);
+      console.log('nooo');
       return { invalidAnswer: true };
     }
   }

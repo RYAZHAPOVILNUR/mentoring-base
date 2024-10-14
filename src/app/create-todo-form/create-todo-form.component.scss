@@ -1,13 +1,20 @@
+.form-title {
+  margin-top: 20px;
+}
+
 .todo-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 200px;
-  margin-bottom: 10px;
-  align-items: start;
+  width: 400px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   &-btn {
     width: 200px;
+    align-self: center;
   }
 }
 
