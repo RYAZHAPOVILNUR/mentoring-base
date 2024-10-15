@@ -6,6 +6,8 @@ import { UsersApiService } from './users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
+import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
+
 
 @Component({
   selector: 'app-users-list',
@@ -17,12 +19,16 @@ import { CreateUserFormComponent } from '../create-user-form/create-user-form.co
     UserCardComponent,
     AsyncPipe,
     CreateUserFormComponent,
-  ],
+    CreateUserDialogComponent
+],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
+openCreateUserDialog() {
+throw new Error('Method not implemented.');
+}
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
 
@@ -46,7 +52,7 @@ export class UsersListComponent {
   }
 
   public createUser(formData: CreateUser) {
-    this.usersService.CreateUser({
+    this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
@@ -56,4 +62,6 @@ export class UsersListComponent {
       },
     });
   }
+
+  
 }

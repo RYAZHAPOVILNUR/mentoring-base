@@ -1,8 +1,11 @@
+
+<mat-card class="example-card" >
 <h1 mat-dialog-title>Подтверждение удаления</h1>
 <div mat-dialog-content>
   <p>Вы действительно хотите удалить пользователя?</p>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="cancelDelete()">Нет</button>
-  <button mat-button (click)="confirmDelete()">Да</button>
+<div mat-dialog-actions class="button-position">
+  <button mat-raised-button (click)="cancelDelete()">Нет</button>
+  <button mat-raised-button (click)="confirmDelete()">Да</button>
 </div>
+</mat-card>

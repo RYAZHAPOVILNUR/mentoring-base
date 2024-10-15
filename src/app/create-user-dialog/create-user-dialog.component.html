@@ -56,8 +56,12 @@
        Поле заполнено некорректно
      </mat-error>
      <div class="create-button-position">
+      <button mat-button (click)="onNoClick()">Cancel</button>
        <button type="submit" (click)="submitForm()" mat-raised-button [disabled]="form.invalid">CREATE USER</button>
      </div>
    </form>
  </div>
 </div>
+
+
+

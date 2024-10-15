@@ -1,37 +1,21 @@
-import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { Component, Inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { UsersService } from '../users.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { UsersService } from '../users.service';
-import { CreateUserDialogComponent } from "../create-user-dialog/create-user-dialog.component";
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-create-user-form',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    NgIf,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSnackBarModule,
-    CreateUserDialogComponent
-],
-  templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss',
+  imports: [ReactiveFormsModule, NgIf, MatButtonModule, MatInputModule, MatFormFieldModule],
+  selector: 'app-create-user-dialog',
+  templateUrl: './create-user-dialog.component.html',
+  styleUrls: ['./create-user-dialog.component.scss']
 })
-export class CreateUserFormComponent {
-  @Output()
-  createUser = new EventEmitter();
-
+export class CreateUserDialogComponent {
   public form = new FormGroup({
     name: new FormControl('', [
       Validators.required,
@@ -50,6 +34,8 @@ export class CreateUserFormComponent {
   });
 
   constructor(
+    public dialogRef: MatDialogRef<CreateUserDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private snackBar: MatSnackBar,
     private userService: UsersService
   ) {}
@@ -64,12 +50,17 @@ export class CreateUserFormComponent {
           duration: 3000,
         });
       } else {
-        this.createUser.emit(user);
-        this.form.reset();
+        this.dialogRef.close(user);
         this.snackBar.open('Новый пользователь успешно добавлен!', '🍕', {
           duration: 5000,
         });
       }
     }
   }
+
+  public onNoClick(): void {
+    this.dialogRef.close();
+  }
 }
+
+

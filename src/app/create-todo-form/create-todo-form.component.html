@@ -1,6 +1,6 @@
 <div class="create-form-todo">
   <div class="create-form">
-    <form [formGroup]="formTodo" (ngSubmit)="submitForm()">
+    <form [formGroup]="formTodo" >
       <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
       <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
       <mat-form-field class="example-width">
@@ -45,7 +45,7 @@
         Поле заполнено некорректно
       </mat-error>
       <div class="create-button-position">
-        <button mat-raised-button [disabled]="formTodo.invalid">
+        <button type="submit" (click)="submitForm()" mat-raised-button [disabled]="formTodo.invalid">
           СОЗДАТЬ ЗАДАЧУ
         </button>
       </div>

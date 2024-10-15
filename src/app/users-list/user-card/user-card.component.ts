@@ -32,7 +32,7 @@ export class UserCardComponent {
       })
       .afterClosed()
       .subscribe((editResult) => {
-        console.log('МОДАЛКА ЗАКРЫЛАСЬ', 'ЗНАЧЕНИЕ ФОРМЫ: ', editResult);
+        
         if (editResult) {
           this.editUser.emit(editResult);
         }
