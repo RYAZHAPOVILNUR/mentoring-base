@@ -1,15 +1,15 @@
 .users {
-  height: 250px;
   width: 300px;
-  box-shadow: 0px 20px 50px 0px #3C3C3B12;
   display: flex;
   flex-direction: column;
   padding: 15px;
-  margin-bottom: 12px;
-  align-items: center;
+  margin: 30px;
+  align-content: center;
+  text-align: center;
 }
 
 .buttonforusers {
+  margin-top: 10px;
   border-radius: 50px;
   margin-left: 20px;
   padding: 10px;
@@ -19,4 +19,17 @@
   color: #4B565E;
   border-color: #F0BA4E;
   display: flex;
+}
+
+.buttoncontainer {
+  display: flex;
+}
+
+.custom-button {
+  background-color: #F0BA4E; 
+  color: white;
+}
+
+.custom-button:hover {
+  background-color: #4B565E;
 }

@@ -4,21 +4,34 @@
 <div class="user-form-container">
     <form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
       <mat-form-field appearance="fill">
-        <mat-label>Имя пользователя*</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>Введите имя</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <input matInput placeholder="Имя пользователя*">
       </mat-form-field>
+        <mat-error *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
+          Слишком короткое имя
+        </mat-error>
       <mat-form-field appearance="fill">
-        <mat-label>E-mail*</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>E-mail*{{ "@" }}</mat-label>
+        <input matInput type="text" formControlName="email">
       </mat-form-field>
+        <mat-error *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
+          Email должен содержать больше 3-х символов и {{  "@" }}
+        </mat-error>
       <mat-form-field appearance="fill">
-        <mat-label>Website*</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>Website</mat-label>
+        <input matInput type="text" formControlName="website">
       </mat-form-field>
+        <mat-error *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)">
+          Поле заполнено некорректно
+        </mat-error>
       <mat-form-field appearance="fill">
-        <mat-label>Название компании*</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>Название компании</mat-label>
+        <input matInput type="text" formControlName="companyName">
       </mat-form-field>
+        <mat-error *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)">
+          Поле заполнено некорректно
+        </mat-error>
       <button mat-raised-button class="create-user-button" [disabled]="form.invalid">
         Create user
       </button>

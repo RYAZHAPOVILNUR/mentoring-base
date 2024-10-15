@@ -1,7 +1,14 @@
-<div class="users">
-  <p>{{(user).name}}</p>
-  <p>{{(user).email}}</p>
-  <p>{{(user).website}}</p>
-  <p>{{(user).company.name}}</p>
-  <button (click)="onDeleteUser(user.id)" class="buttonforusers">Удалить юзера</button>
-</div>
+<mat-card appearance="outlined" class="users">
+  <mat-card-content>
+    <p>{{(user).name}}</p>
+    <p>{{(user).email}}</p>
+    <p>{{(user).website}}</p>
+    <p>{{(user).company.name}}</p>
+    <div class="buttoncontainer">
+      <button mat-raised-button (click)="openDialog1()" style="margin: 5px;">Редактировать</button>
+      <button mat-fab class="custom-button" (click)="openDialog2(user.id)" style="margin-left: 40px ;">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

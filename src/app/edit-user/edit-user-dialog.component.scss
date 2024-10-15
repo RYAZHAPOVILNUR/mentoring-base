@@ -1,0 +1,14 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0px 30px 30px 30px;
+}
+
+.user-form {
+  flex: 1;
+}
+
+.button-container {
+  margin-top: auto; 
+}

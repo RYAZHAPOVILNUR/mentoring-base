@@ -1,0 +1,29 @@
+<div class="form-container">
+  <form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>NAME:</p>
+    <mat-form-field appearance="fill">
+      <input matInput class="form-input" type="text" formControlName="name">
+    </mat-form-field>
+
+    <p>EMAIL:</p>
+    <mat-form-field appearance="fill">
+      <input matInput class="form-input" type="text" formControlName="email">
+    </mat-form-field>
+
+    <p>WEBSITE:</p>
+    <mat-form-field appearance="fill">
+      <input matInput class="form-input" type="text" formControlName="website">
+    </mat-form-field>
+
+    <p>COMPANY NAME:</p>
+    <mat-form-field appearance="fill">
+      <input matInput class="form-input" type="text" formControlName="companyName">
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button class="create-user-button" [disabled]="form.invalid" style="width: 215px;">
+        Редактировать
+      </button>
+    </div>
+  </form>
+</div>
