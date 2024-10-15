@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { RouterLink } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 const newPages = [5, 4, 3, 2, 1];
 

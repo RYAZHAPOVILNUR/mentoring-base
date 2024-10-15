@@ -9,7 +9,10 @@
   <a class="subtitle" href="/">{{ user.company.name }}</a>
 </p>
 <div class="delete-position">
-  <button mat-raised-button (click)="onDeleteUser(user.id)">
+  <button mat-raised-button (click)="openDeleteUserDialog()">
     <div class="delete-user-text">Удалить юзера</div>
+  </button>
+  <button mat-raised-button (click)="openDialog()">
+    <div class="delete-user-text">Редактировать юзера</div>
   </button>
 </div>
