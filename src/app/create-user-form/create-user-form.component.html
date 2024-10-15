@@ -1,74 +1,68 @@
-<form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
-  <input
-    type="text"
-    class="user-form__input"
-    placeholder="Имя"
-    formControlName="name"
-  />
-  <div
-    *ngIf="
-      form.controls['name'].invalid &&
-      (form.controls['name'].dirty || form.controls['name'].touched)
-    "
-    class="alert"
+<form class="user-form" [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Имя</mat-label>
+    <input
+      matInput
+      type="text"
+      class="user-form__input"
+      formControlName="name"
+      placeholder="Минимальная длина 2 символа"
+    />
+    <mat-icon matSuffix color="primary">account_circle</mat-icon>
+    @if (form.controls.name.invalid) {
+    <mat-error>{{ nameErrorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      type="text"
+      class="user-form__input"
+      formControlName="email"
+      placeholder="test@test.com"
+    />
+    <mat-icon matSuffix color="primary">alternate_email</mat-icon>
+    @if (form.controls.email.invalid) {
+    <mat-error>{{ emailErrorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Website</mat-label>
+    <input
+      matInput
+      type="text"
+      class="user-form__input"
+      formControlName="website"
+      placeholder="Минимальная длина 3 символа"
+    />
+    <mat-icon matSuffix color="primary">http</mat-icon>
+    @if (form.controls.website.invalid) {
+    <mat-error>{{ websiteErrorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Компания</mat-label>
+    <input
+      matInput
+      type="text"
+      class="user-form__input"
+      formControlName="companyName"
+      placeholder="Минимальная длина 2 символа"
+    />
+    <mat-icon matSuffix color="primary">stars</mat-icon>
+    @if (form.controls.companyName.invalid) {
+    <mat-error>{{ companyNameErrorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+  <button
+    type="submit"
+    (click)="submitForm()"
+    mat-flat-button
+    color="primary"
+    class="user-form__btn"
+    [disabled]="form.invalid"
   >
-    <div *ngIf="form.controls['name'].errors" class="alert">
-      Имя введено некорректно
-    </div>
-  </div>
-  <input
-    type="text"
-    class="user-form__input"
-    placeholder="Email"
-    formControlName="email"
-  />
-  <div
-    *ngIf="
-      form.controls['email'].invalid &&
-      (form.controls['email'].dirty || form.controls['email'].touched)
-    "
-    class="alert"
-  >
-    <div *ngIf="form.controls['email'].errors" class="alert">
-      Email введен некорректно
-    </div>
-  </div>
-  <input
-    type="text"
-    class="user-form__input"
-    placeholder="Website"
-    formControlName="website"
-  />
-  <div
-    *ngIf="
-      form.controls['website'].invalid &&
-      (form.controls['website'].dirty || form.controls['website'].touched)
-    "
-    class="alert"
-  >
-    <div *ngIf="form.controls['website'].errors" class="alert">
-      Вебсайт введен некорректно
-    </div>
-  </div>
-  <input
-    type="text"
-    class="user-form__input"
-    placeholder="Компания"
-    formControlName="companyName"
-  />
-  <div
-    *ngIf="
-      form.controls['companyName'].invalid &&
-      (form.controls['companyName'].dirty ||
-        form.controls['companyName'].touched)
-    "
-    class="alert"
-  >
-    <div *ngIf="form.controls['companyName'].errors" class="alert">
-      Название компании введено некорректно
-    </div>
-  </div>
-  <button class="user-form__btn" [disabled]="form.invalid">
     Создать юзера
   </button>
 </form>

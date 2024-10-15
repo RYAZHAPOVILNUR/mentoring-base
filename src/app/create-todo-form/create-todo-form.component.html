@@ -1,26 +1,48 @@
-<form class="todo-form" [formGroup]="form" (ngSubmit)="submitForm()">
-  <input
-    type="text"
-    class="todo-form__input"
-    placeholder="Что сделать?"
-    formControlName="title"
-  />
-  <input
-    type="text"
-    class="todo-form__input"
-    placeholder="Автор"
-    formControlName="userId"
-  />
-  <label for="isCompleted" class="todo-form__label">
+<form class="todo-form" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Что сделать?</mat-label>
     <input
-      type="checkbox"
-      id="isCompleted"
+      matInput
+      type="text"
       class="todo-form__input"
-      formControlName="completed"
+      formControlName="title"
     />
-    Задача завершена?
-  </label>
-  <button class="todo-form__btn" [disabled]="form.invalid">
+    <mat-icon matSuffix color="primary">assignment_returned</mat-icon>
+    <mat-error
+      *ngIf="
+        (form.controls['title'].invalid && form.controls['title'].dirty) ||
+        form.controls['title'].touched
+      "
+      >Данное поле является обязательным</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Автор</mat-label>
+    <input
+      matInput
+      type="text"
+      class="todo-form__input"
+      formControlName="userId"
+    />
+    <mat-icon matSuffix color="primary">assignment_returned</mat-icon>
+    <mat-error
+      *ngIf="
+        (form.controls['userId'].invalid && form.controls['userId'].dirty) ||
+        form.controls['userId'].touched
+      "
+      >Данное поле является обязательным</mat-error
+    >
+  </mat-form-field>
+  <mat-checkbox color="primary" formControlName="completed"
+    >Задача завершена?</mat-checkbox
+  >
+  <button
+    mat-flat-button
+    color="primary"
+    class="todo-form__btn"
+    [disabled]="form.invalid"
+    (click)="submitForm()"
+  >
     Создать задачу
   </button>
 </form>

@@ -5,13 +5,27 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
   templateUrl: './create-todo-form.component.html',
   styleUrl: './create-todo-form.component.scss',
-  imports: [ReactiveFormsModule],
+  imports: [
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatCheckboxModule,
+    NgIf,
+  ],
 })
 export class CreateTodoFormComponent {
   public form = new FormGroup({
