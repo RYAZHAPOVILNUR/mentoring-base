@@ -34,7 +34,7 @@ export class TodoListComponent {
     deleteTodo(id: any) {
         this.todos = this.todos.filter(
             todo => {
-                if (id ===todo.id) {
+                if (id === todo.id) {
                     return false
                 }  else {
                     return true;

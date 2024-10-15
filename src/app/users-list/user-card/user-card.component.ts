@@ -1,15 +1,39 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
+export interface User {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    address: {
+      street: string;
+      suite: string;
+      zipcode: string;
+      city: string;
+      geo: {
+        lat: string;
+        lng: string;
+      };
+    };
+    phone: string;
+    website: string;
+    company: {
+      bs: string;
+      catchPhrase: string;
+      name: string;
+    };
+  }
+
 @Component({
     selector: 'app-user-card',
     templateUrl: './user-card-component.html',
     styleUrl: './user-card.component.scss',
-    standalone: true
+    standalone: true,
 })
 
 export class UserCardComponent {
     @Input()
-    user: any
+    user!: User
 
     @Output()
     deleteUser = new EventEmitter();
