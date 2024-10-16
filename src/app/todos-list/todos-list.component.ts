@@ -6,6 +6,8 @@ import { TodosApiService } from '../todos-api.service';
 import { TodoService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
 import { Todo } from '../interfaces/todo-interfaces';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'api-todos-list',
@@ -25,17 +27,20 @@ export class TodoListComponent {
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodoService);
 
+readonly dialog =  inject(MatDialog)
   constructor() {
     this.todosApiService.getTodos().subscribe((response: any) => {
       this.todosService.setTodos(response);
     });
   }
 
-  deleteTodo(id: number) {
+  openDeleteTodoDialog (){}
+
+  deleteTodo(id: number): void {
     this.todosService.deleteTodo(id);
   }
 
-  public createTodo(formData: Todo) {
+  public createTodo(formData: Todo): void {
     this.todosService.createTodo({
       id: new Date().getTime(),
       userId: formData.userId,
@@ -43,4 +48,25 @@ export class TodoListComponent {
       completed: formData.completed,
     });
   }
+
+
+  openCreateTodoDialog(): void {
+   const dialogRef = this.dialog.open(CreateTodoFormComponent, {
+     width: '400px',
+   });
+
+   dialogRef.afterClosed().subscribe((result: Todo) => {
+     if (result) {
+      this.todosService.createTodo({
+       id: new Date().getTime(),
+       userId: result.userId,
+       title: result.title,
+       completed: result.completed,
+     });
+     }
+   });
+ }
+
+
+
 }

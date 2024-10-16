@@ -1,54 +1,54 @@
 <div class="create-form-todo">
-  <div class="create-form">
-    <form [formGroup]="formTodo" >
-      <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
-      <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
-      <mat-form-field class="example-width">
-        <mat-label>Введите текст задачи</mat-label>
-        <input matInput type="text" formControlName="title" />
-      </mat-form-field>
-      <mat-error
-        *ngIf="
-          formTodo.controls['title'].invalid &&
-          (formTodo.controls['title'].dirty ||
-            formTodo.controls['title'].touched)
-        "
-      >
-          Недопустимая длина символов
-      </mat-error>
-      <p class="subtitle">АВТОР ЗАДАЧИ:</p>
-      <mat-form-field class="example-width">
-        <mat-label>Введите автора задачи</mat-label>
-        <input matInput type="text" formControlName="userId" />
-      </mat-form-field>
-      <mat-error
-        *ngIf="
-          formTodo.controls['userId'].invalid &&
-          (formTodo.controls['userId'].dirty ||
-            formTodo.controls['userId'].touched)
-        "
-      >
-        Недопустимая длина символов
-      </mat-error>
-      <p class="subtitle">ЗАДАЧА ЗАВЕРШЕНА:</p>
-      <mat-form-field class="example-width">
-        <mat-label>да/нет</mat-label>
-        <input matInput type="text" formControlName="completed" />
-      </mat-form-field>
-      <mat-error
-        *ngIf="
-          formTodo.controls['completed'].invalid &&
-          (formTodo.controls['completed'].dirty ||
-            formTodo.controls['completed'].touched)
-        "
-      >
-        Поле заполнено некорректно
-      </mat-error>
-      <div class="create-button-position">
-        <button type="submit" (click)="submitForm()" mat-raised-button [disabled]="formTodo.invalid">
-          СОЗДАТЬ ЗАДАЧУ
-        </button>
-      </div>
-    </form>
-  </div>
+ <div class="create-form">
+   <form [formGroup]="formTodo">
+     <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
+     <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
+     <mat-form-field class="example-width">
+       <mat-label>Введите текст задачи</mat-label>
+       <input matInput type="text" formControlName="title" />
+     </mat-form-field>
+     <mat-error
+       *ngIf="
+         formTodo.controls['title'].invalid &&
+         (formTodo.controls['title'].dirty ||
+           formTodo.controls['title'].touched)
+       "
+     >
+       Недопустимая длина символов
+     </mat-error>
+     <p class="subtitle">АВТОР ЗАДАЧИ:</p>
+     <mat-form-field class="example-width">
+       <mat-label>Введите автора задачи</mat-label>
+       <input matInput type="text" formControlName="userId" />
+     </mat-form-field>
+     <mat-error
+       *ngIf="
+         formTodo.controls['userId'].invalid &&
+         (formTodo.controls['userId'].dirty ||
+           formTodo.controls['userId'].touched)
+       "
+     >
+       Недопустимая длина символов
+     </mat-error>
+     <p class="subtitle">ЗАДАЧА ЗАВЕРШЕНА:</p>
+     <mat-form-field class="example-width">
+       <mat-label>да/нет</mat-label>
+       <input matInput type="text" formControlName="completed" />
+     </mat-form-field>
+     <mat-error
+       *ngIf="
+         formTodo.controls['completed'].invalid &&
+         (formTodo.controls['completed'].dirty ||
+           formTodo.controls['completed'].touched)
+       "
+     >
+       Поле заполнено некорректно
+     </mat-error>
+     <div class="create-button-position">
+      <button mat-raised-button (click)="closeDialog()">Закрыть</button>
+       <button mat-raised-button  [disabled]="
+       formTodo.invalid">Создать</button>
+     </div>
+   </form>
+ </div>
 </div>

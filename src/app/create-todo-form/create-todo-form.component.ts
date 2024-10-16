@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -12,6 +12,9 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -37,6 +40,8 @@ export function completedValidator(): ValidatorFn {
   styleUrl: './create-todo-form.component.scss',
 })
 export class CreateTodoFormComponent {
+readonly dialogRef = inject(MatDialogRef<CreateTodoFormComponent>)
+
   @Output()
   createTodo = new EventEmitter();
 
@@ -54,6 +59,24 @@ export class CreateTodoFormComponent {
     completed: new FormControl('', [Validators.required, completedValidator()]),
   });
 
+  constructor(
+    private snackBar: MatSnackBar,
+
+    public dialog: MatDialog
+  ) {}
+
+  openCreateTodoDialog() {
+    const dialogRef = this.dialog.open(CreateTodoFormComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.createTodo.emit(result);
+      }
+    });
+  }
+
   private getCompletedValue(): boolean {
     const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
     if (value === 'да') return true;
@@ -61,10 +84,19 @@ export class CreateTodoFormComponent {
   }
 
   public submitForm(): void {
-    this.createTodo.emit({
-      ...this.formTodo.value,
-      completed: this.getCompletedValue(),
-    });
-    this.formTodo.reset();
+    if (this.formTodo.valid) {
+      this.createTodo.emit({
+        ...this.formTodo.value,
+        completed: this.getCompletedValue(),
+      });
+      this.formTodo.reset();
+      this.snackBar.open('Задача успешно создана', '🍕', {
+        duration: 3000,
+      });
+    }
   }
+
+ public closeDialog() {
+  this.dialogRef.close()
+ }
 }

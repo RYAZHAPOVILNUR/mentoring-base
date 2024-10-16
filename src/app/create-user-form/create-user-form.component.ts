@@ -11,7 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { UsersService } from '../users.service';
-import { CreateUserDialogComponent } from "../create-user-dialog/create-user-dialog.component";
+import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-form',
@@ -23,8 +24,8 @@ import { CreateUserDialogComponent } from "../create-user-dialog/create-user-dia
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    CreateUserDialogComponent
-],
+    CreateUserDialogComponent,
+  ],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss',
 })
@@ -51,8 +52,21 @@ export class CreateUserFormComponent {
 
   constructor(
     private snackBar: MatSnackBar,
-    private userService: UsersService
+    private userService: UsersService,
+    public dialog: MatDialog
   ) {}
+
+  openCreateUserDialog() {
+    const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.createUser.emit(result);
+      }
+    });
+  }
 
   public submitForm(): void {
     if (this.form.valid) {

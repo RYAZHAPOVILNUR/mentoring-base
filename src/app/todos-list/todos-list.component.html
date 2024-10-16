@@ -4,3 +4,6 @@
     <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
   </div>
 </div>
+<button mat-raised-button (click)="openCreateTodoDialog()">
+ Создать задачу
+</button>

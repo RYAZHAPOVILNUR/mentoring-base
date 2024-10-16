@@ -26,9 +26,7 @@ import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dia
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
-openCreateUserDialog() {
-throw new Error('Method not implemented.');
-}
+
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
 
@@ -63,5 +61,4 @@ throw new Error('Method not implemented.');
     });
   }
 
-  
-}
+ }
