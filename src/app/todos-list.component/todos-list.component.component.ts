@@ -28,6 +28,12 @@ export class TodosListComponent {
     this.todosService.deleteTodo(id);
   }
 
+  editTodo(todo: Todo) {
+    this.todosService.editTodos({
+      ...todo
+    })
+  }
+
   public createTodos(formData: Todo) {
     this.todosService.createTodo({
       id: new Date().getTime(),

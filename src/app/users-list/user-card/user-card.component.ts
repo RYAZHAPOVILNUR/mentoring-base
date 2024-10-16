@@ -88,6 +88,7 @@ export class UserCardComponent {
 
   readonly snackBarCreate = inject(MatSnackBar);
 
+
   openSnackBarTwo(): void {
     this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
       duration: 2000

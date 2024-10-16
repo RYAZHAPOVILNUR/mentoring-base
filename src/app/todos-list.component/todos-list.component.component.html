@@ -5,6 +5,8 @@
     <app-todo-card
       [todo]="todo"
       (deleteTodo)="deleteTodo($event)"
+      (editTodo)="editTodo($event)"
+      (createTodo)="createTodos($event)"
     ></app-todo-card>
   </div>
 </div>
