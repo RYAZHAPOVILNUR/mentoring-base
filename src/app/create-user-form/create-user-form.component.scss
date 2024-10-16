@@ -24,6 +24,7 @@
 }
 
 .form_button {
+    align-self: center;
     width: 250px;
     margin-top: 20px;
     height: 50px;
@@ -36,12 +37,10 @@
     }
 }
 
-.form_input {
-    padding-left: 10px;
-    width: 237px;
-    height: 35px;
-    border-radius: 10px;
-    border: 1px solid #3C3C3B;
+.example-full-width {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
 }
 
 .alert{

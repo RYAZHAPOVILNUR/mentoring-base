@@ -1,7 +1,5 @@
 <div class="name_title">
-  <app-create-user-form
-    (createUserForm)="createUser($event)"
-  ></app-create-user-form>
+  <app-create-user-form (createUserForm)="createUser($event)"></app-create-user-form>
 </div>
 <div class="content_users">
   <!-- для async нужно импротировать AsyncPipe в файле UsersListComponent и async преобразует
@@ -11,9 +9,6 @@
   <div *ngFor="let user of usersService.users$ | async">
     <!-- квадратные скобки это связывание свойства (input binding) в Angular
          в [] передаем определенные данные [user_input]="i" -->
-    <app-user-card
-      [user]="user"
-      (deleteUser)="deleteUser($event)"
-    ></app-user-card>
+    <app-user-card [user]="user" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
   </div>
 </div>

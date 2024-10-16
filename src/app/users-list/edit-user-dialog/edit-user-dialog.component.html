@@ -1,0 +1,50 @@
+<form class="block_form" [formGroup]="form">
+  <h1>EDIT USER</h1>
+  <!-- formControlName — это директива в Angular, которая используется для привязки
+         элемента управления формы к объекту FormControlкоторый находится внутри объекта FormGroup -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" placeholder="Enter your name:" formControlName="name" />
+    <mat-icon matSuffix>mode_edit</mat-icon>
+    <mat-error
+      *ngIf="form.controls['name'].hasError('minlength') && !form.controls['name'].hasError('required')">Слишком
+      короткое</mat-error>
+    <mat-error *ngIf="form.controls['name'].hasError('required')">Заполните поле!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Enter your email:" formControlName="email" />
+    <mat-icon matSuffix>mode_edit</mat-icon>
+    <mat-error
+      *ngIf="form.controls['email'].hasError('email') && !form.controls['email'].hasError('required')">Пожалуйста,
+      введите действительный email!</mat-error>
+    <mat-error *ngIf="form.controls['email'].hasError('required')">Email не введен!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Website</mat-label>
+    <input matInput placeholder="Enter your website:" formControlName="website" />
+    <mat-icon matSuffix>mode_edit</mat-icon>
+    <mat-error
+      *ngIf="form.controls['website'].hasError('minlength') && !form.controls['website'].hasError('required')">Слишком
+      короткое</mat-error>
+    <mat-error *ngIf="form.controls['website'].hasError('required')">Заполните поле!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" formGroupName="company">
+    <mat-label>Company name</mat-label>
+    <input matInput placeholder="Enter your company name:" formControlName="name" />
+    <mat-icon matSuffix>mode_edit</mat-icon>
+    <mat-error
+      *ngIf="form.controls['website'].hasError('minlength') && !form.controls['website'].hasError('required')">Слишком
+      короткое</mat-error>
+    <mat-error *ngIf="form.controls['website'].hasError('required')">Заполните поле!</mat-error>
+  </mat-form-field>
+
+  <button class="form_button" type="submit" [mat-dialog-close]="userWithUpdatedField" mat-raised-button color="primary"
+    [disabled]="form.invalid">
+    <mat-icon>edit_note</mat-icon>
+    EDIT USER
+  </button>
+</form>

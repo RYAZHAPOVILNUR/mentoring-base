@@ -31,7 +31,7 @@ export class TodosListComponent {
 
   deleteTodo(id: number) {
     // удаления данных используя метод deleteTodo
-    this.todosService.deleteTodo(id);
+    this.todosService.deleteTodo(id,);
   }
 
   createTodo(formData: TodoInterface) {

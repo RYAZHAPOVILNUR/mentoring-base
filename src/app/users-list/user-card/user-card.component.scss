@@ -1,52 +1,70 @@
 .item-word {
-    width: 200px;
-    color: #3C3C3B;
-    font-family: 'Inter', sans-serif;
-    margin: 0 auto;
-    margin-top: 15px;
-    text-align: center;
+  width: 200px;
+  color: #3c3c3b;
+  font-family: "Inter", sans-serif;
+  margin: 0 auto;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .block_users_card {
-    height: 270px;
-    width: 200px;
-    flex-wrap: wrap;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    font-size: 15px;
-    padding: 0 25px;
-    border: 1px #3C3C3B solid;
-    border-radius: 15px;
-    margin: 15px 5px;
-    background-color: #f0f1f5;
-    &:hover {
-        background-color: #3C3C3B;
-        color: #f3b81d;
-    }
+  width: 200px;
+  flex-wrap: wrap;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  padding: 0 25px;
+  border: 1px #3c3c3b solid;
+  border-radius: 15px;
+  margin: 15px 5px;
+  background-color: #f0f1f5;
+  &:hover {
+    background-color: #3c3c3b;
+    color: #f3b81d;
+  }
 }
 
 .block_users_card p {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .btn_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #3c3c3b;
+  font-family: "Inter", sans-serif;
+  border-radius: 30px;
+  background: #f3b81d;
+  color: #3c3c3b;
+  margin: 15px auto;
+  margin-top: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: #3c3c3b;
+    border: 1px solid #f3b81d;
+    color: #f3b81d;
+  }
+}
+
+.btn_edit {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 45px;
-    border: 1px solid #3C3C3B;
-    font-family: 'Inter', sans-serif;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #3c3c3b;
+    font-family: "Inter", sans-serif;
     border-radius: 30px;
     background: #f3b81d;
-    color: #3C3C3B;
+    color: #3c3c3b;
     margin: 15px auto;
-    margin-top: 30px;
     cursor: pointer;
-}
-
-.btn_delete:hover {
-    background-color: #3C3C3B;
-    border: 1px solid #f3b81d;
-    color: #f3b81d;
-}
+    &:hover {
+      background-color: #3c3c3b;
+      border: 1px solid #f3b81d;
+      color: #f3b81d;
+    }
+  }

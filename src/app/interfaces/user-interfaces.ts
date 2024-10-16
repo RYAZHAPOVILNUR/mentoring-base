@@ -28,5 +28,7 @@ export interface CreateUserInterface {
     name: string;
     email: string;
     website: string;
-    companyName: string;
+    company: {
+        name: string;
+    };
 }

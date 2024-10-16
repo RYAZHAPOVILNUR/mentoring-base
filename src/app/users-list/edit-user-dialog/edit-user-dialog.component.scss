@@ -1,0 +1,33 @@
+.block_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+p {
+  font-weight: 600;
+}
+
+.example-full-width {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.form_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 250px;
+  margin-top: 20px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover{
+      background-color: #efba50;
+      border: 1px solid #3C3C3B;
+      color: #3C3C3B;
+  }
+}
