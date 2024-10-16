@@ -1,8 +1,16 @@
-<div class="users-decoration">
-  <p>{{ user.name }}</p>
-  <p>{{ user.email }}</p>
-  <p>{{ user.website }}</p>
-  <p>{{ user.company.name }}</p>
-  <button class="button" (click)="onDeleteUser(user.id)">Удалить юзера</button>
-  <button class="button" (click)="openDialog()">Редактировать</button>
+<div class="card-wrapper" >
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-content>
+      <p>{{ user.name }}</p>
+      <p>{{ user.email }}</p>
+      <p>{{ user.website }}</p>
+      <p>{{ user.company.name }}</p>
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button  (click)="mostrarDialogo()" mat-button>Удалить юзера</button>
+      <button  (click)="openDialogTwo()" mat-button>Редактировать</button>
+      <button  (click)="openDialogTwo()" mat-button>СОЗДАТЬ</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

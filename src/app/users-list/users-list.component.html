@@ -1,16 +1,7 @@
 <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
 
 <div class="users__block">
-  <div
-    class="users-decoration"
-    *ngFor="let user of usersService.users$ | async"
-  >
-    <app-user-card
-      [user]="user"
-      (deleteUser)="deleteUser($event)"
-      (editUser)="editUser($event)"
-    ></app-user-card>
+  <div class="users-decoration" *ngFor="let user of usersService.users$ | async">
+    <app-user-card [user]="user" (createUser)="createUser($event)" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
   </div>
 </div>
-
-<!-- hey bro it is a test pull request dont be mad😭 -->
