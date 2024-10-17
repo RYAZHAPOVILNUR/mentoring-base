@@ -44,7 +44,6 @@ export class UserCardComponent {
 
   openDeleteDialog(): void {
     const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
-      width: '500px',
       data: { user: this.user },
     });
 
@@ -55,7 +54,7 @@ export class UserCardComponent {
           duration: 10000
         });
       } else {
-        this.snackBar.open('Отмена удаления!', 'Undo', {
+        this.snackBar.open('Отмена удаления!', 'Ok', {
           duration: 10000
         });
       }

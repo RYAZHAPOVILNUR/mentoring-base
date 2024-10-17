@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #3C3C3B;
+  color: #efba50;
 }
 
 p {
@@ -24,10 +26,12 @@ p {
   margin-top: 20px;
   height: 50px;
   border-radius: 10px;
+  background-color: #efba50;
+  color: #3C3C3B;
   cursor: pointer;
   &:hover{
-      background-color: #efba50;
-      border: 1px solid #3C3C3B;
-      color: #3C3C3B;
+      background-color: #3C3C3B;
+      border: 1px solid #efba50;
+      color: #efba50;
   }
 }

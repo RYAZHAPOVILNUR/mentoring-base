@@ -1,0 +1,46 @@
+.container {
+  height: 150px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #353e4e;
+}
+
+.text {
+  color: #efba50;
+}
+
+.button-delete {
+  background-color: #efba50;
+  border-radius: 5px;
+  border: 1px solid #353e4e;
+  margin-right: 30px;
+  height: 25px;
+  width: 120px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+    background-color: #353e4e;
+    border: 1px solid #efba50;
+    color: #efba50;
+}
+}
+
+.button-cancel {
+  background-color: #efba50;
+  border-radius: 5px;
+  border: 1px solid #353e4e;
+  margin-left: 30px;
+  font-size: 500;
+  height: 25px;
+  width: 120px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+      background-color: #353e4e;
+      border: 1px solid #efba50;
+      color: #efba50;
+  }
+}
