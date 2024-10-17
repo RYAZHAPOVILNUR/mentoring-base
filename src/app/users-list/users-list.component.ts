@@ -4,7 +4,7 @@ import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { CreateUser } from '../interfaces/user.interface';
+import { CreateUser, IUser } from '../interfaces/user.interface';
 
 @Component({
   selector: 'app-users-list',
@@ -36,6 +36,15 @@ export class UsersListComponent {
       website: formData.website,
       company: {
         name: formData.companyName,
+      },
+    });
+  }
+
+  editUser(user: CreateUser) {
+    this.usersService.editUser({
+      ...user,
+      company: {
+        name: user.companyName,
       },
     });
   }

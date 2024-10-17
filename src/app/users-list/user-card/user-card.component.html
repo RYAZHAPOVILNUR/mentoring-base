@@ -4,4 +4,5 @@
   <a href="#" class="user-website">{{user.website}}</a>
   <p class="user-company"><span class="user-company-bold">Company:</span> {{user.company.name}}</p>
   <button class="delete-btn" (click)="onDeleteUser(user.id)">Удалить пользователя</button>
+  <button class="delete-btn" (click)="openDialog()">Редактировать пользователя</button>
 </div>
