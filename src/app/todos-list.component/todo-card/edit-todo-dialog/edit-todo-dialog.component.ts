@@ -21,8 +21,12 @@ export class EditTodoDialogComponent {
   public formTodo = this.fb.group({
     title: this.fb.control(this.data.todo.title, [Validators.required, Validators.minLength(4)]),
     userId: this.fb.control(this.data.todo.userId, [Validators.required, Validators.minLength(1)]),
-    completed: this.fb.control(this.data.todo.completed, [Validators.required, completedValidator()]),
+    completed: this.fb.control(this.booleanToString(this.data.todo.completed), [Validators.required, completedValidator()]),
   });
+
+  private booleanToString(value: boolean): string {
+    return value ? 'да' : 'нет';
+  }
 
   public getCompletedValue(): boolean {
     const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
