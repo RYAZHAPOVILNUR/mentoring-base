@@ -3,17 +3,8 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-
-export function completedValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'да' || value === 'нет') {
-      return null;
-    }
-    return { returnInvalid: true };
-  };
-}
+import {  FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { completedValidator } from "../../../users-list/custom-validators";
 
 @Component({
   selector: 'app-create-todo-dialog',

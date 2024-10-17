@@ -11,7 +11,7 @@ export class TodosService {
     this.todosSubject$.next(todos);
   }
 
-  editTodos(editedTodo: Todo) {
+  editTodo(editedTodo: Todo) {
     this.todosSubject$.next(
       this.todosSubject$.value.map((el) => {
         if (el.id === editedTodo.id) {

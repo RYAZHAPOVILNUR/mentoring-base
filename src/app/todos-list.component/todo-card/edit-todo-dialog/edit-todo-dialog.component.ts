@@ -1,20 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import {  FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-
-
-export function completedValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'да' || value === 'нет') {
-      return null;
-    }
-    return { returnInvalid: true };
-  };
-}
+import { completedValidator } from '../../../users-list/custom-validators';
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -34,10 +24,17 @@ export class EditTodoDialogComponent {
     completed: this.fb.control(this.data.todo.completed, [Validators.required, completedValidator()]),
   });
 
+  public getCompletedValue(): boolean {
+    const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
+    if (value === 'да') return true;
+    else return false;
+  }
+
   get userWithUpdatedFields() {
     return {
       ...this.formTodo.value,
-      id: this.data.todo.id
+      id: this.data.todo.id,
+      completed: this.getCompletedValue(),
     };
   }
 }

@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class DeleteTodoConfirmationComponent implements OnInit{
   constructor(
     public dialogo: MatDialogRef<DeleteTodoConfirmationComponent>,
-    @Inject(MAT_DIALOG_DATA) public mensaje: string) { }
+    @Inject(MAT_DIALOG_DATA) public message: string) { }
     readonly snackBar = inject(MatSnackBar);
 
     cancelDialog(): void {
@@ -24,7 +24,7 @@ export class DeleteTodoConfirmationComponent implements OnInit{
     }
 
     openSnackBar(): void {
-      this.snackBar.open('ЗАДАЧА удалёна🐒', 'Закрыть', {
+      this.snackBar.open('Задача удалена🐒', 'Закрыть', {
         duration: 2000
       });
     }

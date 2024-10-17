@@ -15,20 +15,8 @@ import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.com
   styleUrl: './todo-card.component.scss',
 })
 export class TodoCardComponent {
-  constructor(public dialogo: MatDialog) {}
-  mostrarDialogo(): void {
-    this.dialogo
-      .open(DeleteTodoConfirmationComponent, {
-        data: `Do you want to delete user?`
-      })
-      .afterClosed()
-      .subscribe((confirmado: Boolean) => {
-        if (confirmado) {
-          this.onDeleteTodo(this.todo.id)
-          alert("User is deleted");
-        }
-      });
-  }
+
+  constructor(public confirmationDialog: MatDialog) {}
 
   @Input()
   todo!: Todo;
@@ -46,9 +34,23 @@ export class TodoCardComponent {
     this.deleteTodo.emit(todoId);
   }
 
+  deleteTodoDialog(): void {
+    this.confirmationDialog
+      .open(DeleteTodoConfirmationComponent, {
+        data: `Do you want to delete todo?`
+      })
+      .afterClosed()
+      .subscribe((confirmation: Boolean) => {
+        if (confirmation) {
+          this.onDeleteTodo(this.todo.id)
+          alert("Todo is deleted");
+        }
+      });
+  }
+
   readonly dialog = inject(MatDialog);
 
-  openDialog(): void {
+  editTodoDialog(): void {
     const dialogRef = this.dialog.open(EditTodoDialogComponent, {
       data: { todo: this.todo },
     });
@@ -63,16 +65,15 @@ export class TodoCardComponent {
 
   readonly snackBar = inject(MatSnackBar);
 
-
   openSnackBar(): void {
-    this.snackBar.open('Пользователь редактирован🐒', 'Закрыть', {
+    this.snackBar.open('Задача редактирована🐒', 'Закрыть', {
       duration: 2000
     });
   }
 
   readonly dialogTwo = inject(MatDialog);
 
-  openDialogTwo(): void {
+  createTodoDialog(): void {
     const dialogRef = this.dialogTwo.open(CreateTodoDialogComponent, {
       data: { todo: this.todo },
     });
@@ -88,7 +89,7 @@ export class TodoCardComponent {
   readonly snackBarCreate = inject(MatSnackBar);
 
   openSnackBarTwo(): void {
-    this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
+    this.snackBar.open('Задача создана🐒', 'Закрыть', {
       duration: 2000
     });
   }

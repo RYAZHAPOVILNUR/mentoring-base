@@ -1,34 +1,33 @@
 <mat-card>
     <mat-card-header>
-      <mat-card-title>
-        СОЗДАТЬ ФОРМУ ДЛЯ <br />ДОБАВЛЕНИЯ НОВОЙ ЗАДАЧИ
-      </mat-card-title>
+        <mat-card-title>
+            СОЗДАТЬ ФОРМУ ДЛЯ <br />ДОБАВЛЕНИЯ НОВОЙ ЗАДАЧИ
+        </mat-card-title>
     </mat-card-header>
-    
+
     <div class="form">
-      <form class="form-wrapper" [formGroup]="formTodo">
-        <mat-form-field>
-          <mat-label>ТЕКСТ ЗАДАЧИ</mat-label>
-          <input formControlName="title" matInput />
-  
-          <mat-error>НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
-        </mat-form-field>
-  
-        <mat-form-field>
-          <mat-label>АВТОР ЗАДАЧИ</mat-label>
-          <input formControlName="userId" matInput />
-          <mat-error>АЙДИШКА ВВЕДЕНА  НЕПРАВИЛНО</mat-error>
-        </mat-form-field>
-  
-        <mat-form-field>
-          <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
-          <input formControlName="completed" matInput />
-          <mat-error>ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕН НЕПРАВИЛНО</mat-error>
-        </mat-form-field>
-  
-        <button mat-button [disabled]="formTodo.invalid" [mat-dialog-close]="userWithUpdatedFields"  >
-          <mat-icon>add</mat-icon> Редактировать
-        </button>
-      </form>
+        <form class="form-wrapper" [formGroup]="formTodo">
+            <mat-form-field>
+                <mat-label>ТЕКСТ ЗАДАЧИ</mat-label>
+                <input formControlName="title" matInput />
+
+                <mat-error>НАЗВАНИЕ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>АВТОР ЗАДАЧИ</mat-label>
+                <input formControlName="userId" matInput />
+                <mat-error>АЙДИШКА ВВЕДЕНА НЕПРАВИЛНО</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
+                <input formControlName="completed" matInput />
+                <mat-error>ЗНАЧЕНИЕ ЗАДАЧИ ВВЕДЕН НЕПРАВИЛНО</mat-error>
+            </mat-form-field>
+
+            <button mat-button [disabled]="formTodo.invalid"
+                [mat-dialog-close]="userWithUpdatedFields">Редактировать</button>
+        </form>
     </div>
-  </mat-card>
+</mat-card>

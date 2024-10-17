@@ -1,4 +1,7 @@
-<app-create-todos-form (createTodo)="createTodos($event)"></app-create-todos-form>
+<app-create-todos-form (createTodo)="createTodo($event)"></app-create-todos-form>
+
+<button class="button" (click)="createTodoDialog()" mat-button>СОЗДАТЬ 
+  НОВУЮ <br/>ЗАДАЧУ </button>
 
 <div class="todos__block">
   <div class="users-decoration" *ngFor="let todo of todosService.todos$ | async">
@@ -6,7 +9,7 @@
       [todo]="todo"
       (deleteTodo)="deleteTodo($event)"
       (editTodo)="editTodo($event)"
-      (createTodo)="createTodos($event)"
+      (createTodo)="createTodo($event)"
     ></app-todo-card>
   </div>
 </div>

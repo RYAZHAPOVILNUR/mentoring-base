@@ -7,6 +7,7 @@ import { CreateUserFormComponent } from '../create-user-form/create-user-form.co
 import {  User, UserForm } from "./user-interface";
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-users-list',
@@ -51,5 +52,30 @@ export class UsersListComponent {
     });
     console.log('ДАННЫЕ ФОРМЫ: ', formData);
     console.log(new Date().getTime());
+  }
+
+  readonly dialogTwo = inject(MatDialog);
+
+  createUserDialog(): void {
+    const dialogRef = this.dialogTwo.open(CreateUserDialogComponent, {
+      data: { user: this.usersService.users$ },
+    });
+
+    dialogRef.afterClosed().subscribe((createResult: UserForm) => {
+      if (createResult) {
+        this.createUser(createResult);
+        this.openSnackBarTwo()
+      }
+    });
+  }
+
+  readonly snackBar = inject(MatSnackBar);
+
+  readonly snackBarCreate = inject(MatSnackBar);
+
+  openSnackBarTwo(): void {
+    this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
+      duration: 2000
+    });
   }
 }

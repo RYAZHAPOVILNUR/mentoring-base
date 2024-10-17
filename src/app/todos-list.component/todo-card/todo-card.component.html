@@ -1,38 +1,25 @@
-<!-- <div class="users-decoration">
-  <p>ТЕКСТ ЗАДАЧИ:</p>
-  <div class="todos-title">
-    <p>{{ todo.title }}</p>
-  </div>
-
-  <p>АВТОР ЗАДАЧИ</p>
-  <div>
-    <p>{{ todo.userId }}</p>
-  </div>
-
-  <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
-  <div>
-    <p>{{ todo.completed ? "ДА" : "НЕТ" }}</p>
-  </div>
-  <button class="button" (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
-</div> -->
-
 <div class="card-wrapper" >
   <mat-card class="example-card" appearance="outlined">
     <mat-card-content>
-      <p>ТЕКСТ ЗАДАЧИ:</p>
+      <div>
+        <p>ТЕКСТ ЗАДАЧИ:</p>
+      </div>
       <p>{{ todo.title }}</p>
 
-      <p>АВТОР ЗАДАЧИ</p>
+      <div>
+        <p>АВТОР ЗАДАЧИ</p>
+      </div>
       <p>{{ todo.userId }}</p>
 
-      <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+      <div>
+        <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+      </div>
       <p>{{ todo.completed ? "ДА" : "НЕТ" }}</p>
     </mat-card-content>
   
     <mat-card-actions>
-      <button (click)="mostrarDialogo()" mat-button>Удалить задачу</button>
-      <button (click)="openDialog()" mat-button>Редактировать</button>
-      <button (click)="openDialogTwo()" mat-button>СОЗДАТЬ</button>
+      <button (click)="deleteTodoDialog()" mat-button>Удалить задачу</button>
+      <button (click)="editTodoDialog()" mat-button>Редактировать</button>
     </mat-card-actions>
   </mat-card>
 </div>

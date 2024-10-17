@@ -5,6 +5,9 @@ import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosService } from '../todos.service';
 import { CreateTodosFormComponent } from '../create-todos-form/create-todos-form.component';
 import { Todo } from "../users-list/user-interface";
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
 
 @Component({
   selector: 'app-todos-list.component',
@@ -28,13 +31,13 @@ export class TodosListComponent {
     this.todosService.deleteTodo(id);
   }
 
-  editTodo(todo: Todo) {
-    this.todosService.editTodos({
-      ...todo
+   public editTodo(todo: Todo) {
+    this.todosService.editTodo({
+      ...todo,
     })
   }
 
-  public createTodos(formData: Todo) {
+  public createTodo(formData: Todo) {
     this.todosService.createTodo({
       id: new Date().getTime(),
       title: formData.title,
@@ -43,5 +46,30 @@ export class TodosListComponent {
     });
     console.log('ДАННЫЕ ФОРМЫ: ', formData);
     console.log(new Date().getTime());
+  }
+
+  readonly snackBar = inject(MatSnackBar);
+
+  readonly dialogTwo = inject(MatDialog);
+
+  createTodoDialog(): void {
+    const dialogRef = this.dialogTwo.open(CreateTodoDialogComponent, {
+      data: { todo: this.todosService.todos$ },
+    });
+
+    dialogRef.afterClosed().subscribe((createResult: Todo) => {
+      if (createResult) {
+        this.createTodo(createResult);
+        this.openSnackBarTwo()
+      }
+    });
+  }
+
+  readonly snackBarCreate = inject(MatSnackBar);
+
+  openSnackBarTwo(): void {
+    this.snackBar.open('Задача создана🐒', 'Закрыть', {
+      duration: 2000
+    });
   }
 }

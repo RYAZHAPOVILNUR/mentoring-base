@@ -13,15 +13,15 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class DeleteUserConfirmationComponent implements OnInit {
 
   constructor(
-    public dialogo: MatDialogRef<DeleteUserConfirmationComponent>,
-    @Inject(MAT_DIALOG_DATA) public mensaje: string) { }
+    public todoDeleteDialog: MatDialogRef<DeleteUserConfirmationComponent>,
+    @Inject(MAT_DIALOG_DATA) public message: string) { }
     readonly snackBar = inject(MatSnackBar);
 
     cancelDialog(): void {
-      this.dialogo.close(false);
+      this.todoDeleteDialog.close(false);
     }
-    confirmado(): void {
-      this.dialogo.close(true);
+    confirmation(): void {
+      this.todoDeleteDialog.close(true);
       this.openSnackBar()
     }
 

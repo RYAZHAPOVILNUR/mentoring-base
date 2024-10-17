@@ -16,20 +16,7 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class UserCardComponent {
 
-  constructor(public dialogo: MatDialog) {}
-  mostrarDialogo(): void {
-    this.dialogo
-      .open(DeleteUserConfirmationComponent, {
-        data: `Do you want to delete user?`
-      })
-      .afterClosed()
-      .subscribe((confirmado: Boolean) => {
-        if (confirmado) {
-          this.onDeleteUser(this.user.id)
-          alert("User is deleted");
-        }
-      });
-  }
+  constructor(public confirmationDialog: MatDialog) {}
 
   @Input()
   user!: User;
@@ -47,9 +34,23 @@ export class UserCardComponent {
     this.deleteUser.emit(userId);
   }
 
+  deleteUserDialog(): void {
+    this.confirmationDialog
+      .open(DeleteUserConfirmationComponent, {
+        data: `Do you want to delete user?`
+      })
+      .afterClosed()
+      .subscribe((confirmation: Boolean) => {
+        if (confirmation) {
+          this.onDeleteUser(this.user.id)
+          alert("User is deleted");
+        }
+      });
+  }
+
   readonly dialog = inject(MatDialog);
 
-  openDialog(): void {
+  editUserDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
@@ -64,7 +65,6 @@ export class UserCardComponent {
 
   readonly snackBar = inject(MatSnackBar);
 
-
   openSnackBar(): void {
     this.snackBar.open('Пользователь редактирован🐒', 'Закрыть', {
       duration: 2000
@@ -73,7 +73,7 @@ export class UserCardComponent {
 
   readonly dialogTwo = inject(MatDialog);
 
-  openDialogTwo(): void {
+  createUserDialog(): void {
     const dialogRef = this.dialogTwo.open(CreateUserDialogComponent, {
       data: { user: this.user },
     });
@@ -87,7 +87,6 @@ export class UserCardComponent {
   }
 
   readonly snackBarCreate = inject(MatSnackBar);
-
 
   openSnackBarTwo(): void {
     this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
