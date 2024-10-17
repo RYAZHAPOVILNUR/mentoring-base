@@ -1,0 +1,38 @@
+<form class="user-form" [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your name</mat-label>
+    <input matInput type="text" formControlName="name">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error>
+      Имя введено неправильно
+     </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput type="text" formControlName="email">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error>
+      Почта введена неправильно
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your website</mat-label>
+    <input matInput type="text" formControlName="website">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error>
+      Вебсайт введен неправильно
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your company name</mat-label>
+    <input matInput type="text" formControlName="companyName">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error>
+      Название компании введено неправильно
+    </mat-error>
+  </mat-form-field>
+  <button mat-flat-button color="primary" type="submit" [mat-dialog-close]="userWithUpdatedFields" class="user-form-btn" [disabled]="form.invalid">
+    <mat-icon>add</mat-icon>
+    SAVE CHANGES
+  </button>
+</form>
