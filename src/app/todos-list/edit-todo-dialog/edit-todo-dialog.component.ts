@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -9,16 +9,17 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { ITodo } from '../../interfaces/todo.interface';
 
 @Component({
-  selector: 'app-create-todo-form',
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss',
-  standalone: true,
+  selector: 'app-edit-todo-dialog',
+  templateUrl: './edit-todo.component.html',
+  styleUrl: './edit-todo.component.scss',
   imports: [
     ReactiveFormsModule,
     NgIf,
@@ -27,21 +28,25 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogClose,
   ],
+  standalone: true,
 })
-export class CreateTodoFormComponent {
-  @Output()
-  createTodo = new EventEmitter();
+export class EditTodoDialogComponent {
+  readonly data = inject<{ todo: ITodo }>(MAT_DIALOG_DATA);
 
-  public todoForm = new FormGroup({
-    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    userId: new FormControl('', [
+  public editTodoForm = new FormGroup({
+    title: new FormControl(this.data.todo.title, [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    userId: new FormControl(this.data.todo.userId, [
       Validators.required,
       Validators.minLength(1),
       Validators.min(1),
       this.customNumberValidator,
     ]),
-    completed: new FormControl('', [
+    completed: new FormControl(this.data.todo.completed ? 'Да' : 'Нет', [
       Validators.required,
       this.customYesNoValidator,
     ]),
@@ -70,7 +75,7 @@ export class CreateTodoFormComponent {
   }
 
   public getTodoCompletedValue(): boolean {
-    const enteredValue = this.todoForm
+    const enteredValue = this.editTodoForm
       .get('completed')
       ?.value!.trim()
       .toLowerCase();
@@ -81,11 +86,11 @@ export class CreateTodoFormComponent {
     return false;
   }
 
-  public submitTodoForm(): void {
-    this.createTodo.emit({
-      ...this.todoForm.value,
+  get todoWithUpdatedFields() {
+    return {
+      ...this.editTodoForm.value,
       completed: this.getTodoCompletedValue(),
-    });
-    this.todoForm.reset();
+      id: this.data.todo.id,
+    };
   }
 }

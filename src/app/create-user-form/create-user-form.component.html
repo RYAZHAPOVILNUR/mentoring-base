@@ -1,7 +1,7 @@
-<h1>Create user form</h1>
+<h1>Форма для создания пользователя</h1>
 <form class="user-form" [formGroup]="form">
   <mat-form-field appearance="fill">
-    <mat-label>Enter your name</mat-label>
+    <mat-label>Введите свое имя</mat-label>
     <input matInput type="text" formControlName="name">
     <mat-icon matSuffix>edit</mat-icon>
     <mat-error>
@@ -9,7 +9,7 @@
      </mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
+    <mat-label>Введите свою почту</mat-label>
     <input matInput type="text" formControlName="email">
     <mat-icon matSuffix>edit</mat-icon>
     <mat-error>
@@ -17,7 +17,7 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Enter your website</mat-label>
+    <mat-label>Введите ваш вебсайт</mat-label>
     <input matInput type="text" formControlName="website">
     <mat-icon matSuffix>edit</mat-icon>
     <mat-error>
@@ -25,7 +25,7 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Enter your company name</mat-label>
+    <mat-label>Введите название компании</mat-label>
     <input matInput type="text" formControlName="companyName">
     <mat-icon matSuffix>edit</mat-icon>
     <mat-error>
@@ -34,6 +34,6 @@
   </mat-form-field>
   <button mat-flat-button color="primary" type="submit" (click)="submitForm()" class="user-form-btn" [disabled]="form.invalid">
     <mat-icon>add</mat-icon>
-    CREATE USER
+    СОЗДАТЬ
   </button>
 </form>

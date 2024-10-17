@@ -36,4 +36,8 @@ export class TodosListComponent {
   deleteTodos(id: number) {
     this.todosService.deleteTodo(id);
   }
+
+  editTodos(todo: ITodo) {
+    this.todosService.editTodo(todo);
+  }
 }

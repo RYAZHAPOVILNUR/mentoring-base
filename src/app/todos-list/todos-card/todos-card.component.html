@@ -6,4 +6,5 @@
   <p class="todos-text">Задача завершена:</p>
   <p class="todos-task">{{todo.completed ? 'Да' : 'Нет'}}</p>
   <button class="delete-btn" (click)="onDeleteTodos(todo.id)">Удалить задачу</button>
+  <button class="delete-btn" (click)="openDialog()">Редактировать</button>
 </div>
