@@ -7,12 +7,13 @@
   <p>{{ user.email }}</p>
   <p>{{ user.website }}</p>
   <p>{{ user.company.name }}</p>
+  
+  <button (click)="openEditDialog()" class="btn_edit">
+    <mat-icon>edit_note</mat-icon>
+    EDIT USER</button>
 
-  <button (click)="onDeleteUser(user.id)" class="btn_delete">
+  <button (click)="openDeleteDialog()" class="btn_delete">
     <mat-icon>delete_sweep</mat-icon>
     DELETE</button>
 
-  <button (click)="openDialog()" class="btn_edit">
-    <mat-icon>edit_note</mat-icon>
-    EDIT USER</button>
 </div>

@@ -1,17 +1,20 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { UserInterface } from '../../interfaces/user-interfaces';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
+import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, MatDialogModule,],
 })
 export class UserCardComponent {
+
   // @Input() user_input: any - это входное свойство для получения данных
   @Input()
   user!: UserInterface;
@@ -19,26 +22,43 @@ export class UserCardComponent {
   // @Output() — декоратор, используемый для создания событий
   @Output()
   // EventEmitter — это класс Angular, он же обработчик события который создает событие
-  deleteUser = new EventEmitter(); // deleteUser_card используем в файле html и в файле html закидываем в круглые скобки(deleteUser_card)="здесь он будет вызывать другую переменную"
+  public deleteUser = new EventEmitter<number>(); // deleteUser_card используем в файле html и в файле html закидываем в круглые скобки(deleteUser_card)="здесь он будет вызывать другую переменную"
 
   @Output()
-  editUser = new EventEmitter();
+  public editUser = new EventEmitter<UserInterface>();
 
-  // onDeleteUser используем в файле html user-card.component.html
-  onDeleteUser(userId: number) {
-    // emit() выбрасывает и запускает событие и передаёт данные через userId родительскому компоненту.
-    this.deleteUser.emit(userId);
-  }
 
   readonly dialog = inject(MatDialog);
 
-  openDialog(): void {
+  openEditDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
 
     dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) this.editUser.emit(editResult);
+    });
+  }
+
+  public snackBar = inject(MatSnackBar);
+
+  openDeleteDialog(): void {
+    const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
+      width: '500px',
+      data: { user: this.user },
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
+      if (result) {
+        this.deleteUser.emit(this.user.id)
+        this.snackBar.open('Пользователь удален!', 'Ok', {
+          duration: 10000
+        });
+      } else {
+        this.snackBar.open('Отмена удаления!', 'Undo', {
+          duration: 10000
+        });
+      }
     });
   }
 

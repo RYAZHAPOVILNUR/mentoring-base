@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MyErrorStateMatcher } from '../utils/error-estate-matcher';
+import { UserInterface } from '../interfaces/user-interfaces';
 
 @Component({
   selector: 'app-create-user-form',
