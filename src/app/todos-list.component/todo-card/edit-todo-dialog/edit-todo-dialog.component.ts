@@ -1,15 +1,22 @@
 import { Component, inject } from '@angular/core';
 import {  FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogClose} from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { completedValidator } from '../../../users-list/custom-validators';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-edit-todo-dialog',
   standalone: true,
-  imports: [MatCardModule, ReactiveFormsModule, MatFormFieldModule, MatDialogModule, MatIconModule],
+  imports: [    
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDialogClose,],
   templateUrl: './edit-todo-dialog.component.html',
   styleUrl: './edit-todo-dialog.component.scss'
 })

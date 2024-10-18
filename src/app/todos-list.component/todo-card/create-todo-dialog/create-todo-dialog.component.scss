@@ -1,15 +1,6 @@
-mat-card-header {
-    margin-left: 210px;
-    margin-bottom: 20px;
-  }
-  
-  .form {
-    margin-left: 220px;
-    margin-right: 220px;
-    width: 320px;
-  
-    &-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 430px;
+}

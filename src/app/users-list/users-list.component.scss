@@ -22,5 +22,13 @@
 }
 
 .button {
-  margin-left: 183px;
+  margin-left: 11%;
+}
+
+::ng-deep .button {
+  font-size: 10px;
+}
+
+.button:hover {
+  transform: scale(1.7);
 }

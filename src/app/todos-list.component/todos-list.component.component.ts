@@ -26,7 +26,7 @@ export class TodosListComponent {
       this.todosService.setTodos(response);
     });
   }
-  //*MARK:delete-method
+  //*MARK:delete-method 
   deleteTodo(id: number) {
     this.todosService.deleteTodo(id);
   }

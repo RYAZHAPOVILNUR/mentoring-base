@@ -6,11 +6,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateTodoDialogComponent } from './create-todo-dialog/create-todo-dialog.component';
 import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 @Component({
   selector: 'app-todo-card',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatButtonToggleModule],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
 })

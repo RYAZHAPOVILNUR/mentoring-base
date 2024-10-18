@@ -1,11 +1,29 @@
-.card-wrapper {
-  width: 100%;
+::ng-deep .example-card {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 240px;
+  width: 240px;
+}
 
-  .example-card {
-    max-width: 400px;
-    min-height: 200px;
-  }
+.example-card:hover {
+  transform: scale(1.1);
+}
+
+::ng-deep .button-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  bottom: 16px;
+  right: 50px;
+  align-self: flex-start;
+}
+
+.button-one:hover {
+  transform: scale(1.1);
+}
+
+.button-two:hover {
+  transform: scale(1.1);
 }

@@ -1,8 +1,8 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogClose, MatDialogModule} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogClose} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 

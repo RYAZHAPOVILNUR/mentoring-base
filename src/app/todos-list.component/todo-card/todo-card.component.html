@@ -1,25 +1,23 @@
-<div class="card-wrapper" >
-  <mat-card class="example-card" appearance="outlined">
-    <mat-card-content>
-      <div>
-        <p>ТЕКСТ ЗАДАЧИ:</p>
-      </div>
-      <p>{{ todo.title }}</p>
-
-      <div>
-        <p>АВТОР ЗАДАЧИ</p>
-      </div>
-      <p>{{ todo.userId }}</p>
-
-      <div>
-        <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
-      </div>
-      <p>{{ todo.completed ? "ДА" : "НЕТ" }}</p>
-    </mat-card-content>
-  
-    <mat-card-actions>
-      <button (click)="deleteTodoDialog()" mat-button>Удалить задачу</button>
-      <button (click)="editTodoDialog()" mat-button>Редактировать</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+    <mat-card class="example-card" appearance="outlined">
+        <mat-card-content>
+          <div>
+            <p>ТЕКСТ ЗАДАЧИ:</p>
+          </div>
+          <p>{{ todo.title }}</p>
+    
+          <div>
+            <p>АВТОР ЗАДАЧИ</p>
+          </div>
+          <p>{{ todo.userId }}</p>
+    
+          <div>
+            <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+          </div>
+          <p>{{ todo.completed ? "ДА" : "НЕТ" }}</p>
+        </mat-card-content>
+      
+        <mat-card-actions class="button-wrapper" >
+          <button (click)="deleteTodoDialog()" mat-button class="button-one" >Удалить задачу</button>
+          <button (click)="editTodoDialog()" mat-button class="button-two" >Редактировать</button>
+        </mat-card-actions>
+      </mat-card>
