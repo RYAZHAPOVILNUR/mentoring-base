@@ -11,12 +11,13 @@
               <a href="#">{{headerItem1}}</a>
             </li>
             <li class="header-nav-item">
-              <a href="#">{{headerItem2}}</a>
+              <a href="#">{{aboutCompany}}</a>
             </li>
             <li class="header-nav-item">
               <a href="#" *ngIf="isShowCatalog">{{headerItem3}}</a>
             </li>
             <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+            <button (click)="changeMenuText()">Изменить текст</button>
           </ul>
         </nav>
       </div>
@@ -45,20 +46,8 @@
             <div class="menu-img">
               <img src="../assets/light.svg" alt="menu">
             </div>
-            <li class="header-bottom-nav-item">
-              <a href="#">{{header2Item1}}</a>
-            </li>
-            <li class="header-bottom-nav-item">
-              <a href="#">Стройматериалы</a>
-            </li>
-            <li class="header-bottom-nav-item">
-              <a href="#">Инструменты</a>
-            </li>
-            <li class="header-bottom-nav-item">
-              <a href="#">Электрика</a>
-            </li>
-            <li class="header-bottom-nav-item">
-              <a href="#">Интерьер и одежда</a>
+            <li *ngFor="let item of menuItems" class="header-bottom-nav-item">
+              <a href="#">{{item}}</a>
             </li>
           </ul>
         </div>
@@ -77,7 +66,8 @@
   </div>
 </div>
 
-<div class="banner">
+<button (click)="isShowBanner = !isShowBanner">Скрыть/Показать баннер</button>
+<div class="banner" *ngIf="isShowBanner">
   <div class="banner-text">Инструмент для вашего бизнеса</div>
 </div>
 
@@ -107,11 +97,7 @@
 <div class="item-cards">
   <div class="container">
     <div class="item-cards__pagination">
-      <button class="item-cards__pagination-btn">1</button>
-      <button class="item-cards__pagination-btn">2</button>
-      <button class="item-cards__pagination-btn">3</button>
-      <button class="item-cards__pagination-btn">4</button>
-      <button class="item-cards__pagination-btn">5</button>
+      <button *ngFor="let page of newPages" class="item-cards__pagination-btn active-button">{{page}}</button>
     </div>
   
     <div class="item-cards__grid">
