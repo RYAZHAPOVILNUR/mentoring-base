@@ -1,5 +1,5 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Todo } from "/Users/mac/Desktop/link_ng_material/mentoring-base/src/app/users-list/user-interface";
+import { Todo } from "../../users-list/user-interface";
 import { MatCardModule } from "@angular/material/card";
 import { DeleteTodoConfirmationComponent } from './delete-todo-confirmation/delete-todo-confirmation.component';
 import { MatDialog } from '@angular/material/dialog';
