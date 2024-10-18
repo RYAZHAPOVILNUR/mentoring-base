@@ -3,8 +3,8 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { User } from '../../interfaces/user-interfaces';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
-import { DeleteUserDialogComponent } from '../../delete-user-dialog/delete-user-dialog.component';
+import { EditUserDialogComponent } from '../../dialogs/user-dialogs/edit-user-dialog/edit-user-dialog.component';
+import { DeleteUserDialogComponent } from '../../dialogs/user-dialogs/delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-user-card',

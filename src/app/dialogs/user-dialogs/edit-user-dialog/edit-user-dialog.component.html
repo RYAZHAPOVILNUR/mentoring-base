@@ -1,5 +1,5 @@
 <form style="padding: 50px" [formGroup]="form" >
- <h1 class="title">CREATE USER FORM</h1>
+ <h1 class="title">Редактировать юзера</h1>
  <p class="subtitle">NAME:</p>
  <mat-form-field class="example-width">
    <mat-label>Введите имя</mat-label>
@@ -40,20 +40,21 @@
    Поле заполнено некорректно
  </mat-error>
  <p class="subtitle">COMPANY NAME:</p>
- <mat-form-field class="example-width">
+ <mat-form-field class="example-width" formGroupName="company">
    <mat-label>Введите название компании</mat-label>
-   <input matInput type="text" formControlName="companyName" />
+   <input matInput type="text" formControlName="name" />
  </mat-form-field>
  <mat-error
    *ngIf="
-     form.controls['companyName'].invalid &&
-     (form.controls['companyName'].dirty ||
-       form.controls['companyName'].touched)
+     form.controls['name'].invalid &&
+     (form.controls['name'].dirty ||
+       form.controls['name'].touched)
    "
  >
    Поле заполнено некорректно
  </mat-error>
- <div class="create-button-position">
-   <button mat-raised-button [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedFields">Редактировать</button>
+ <div class="button-position" >
+  <button mat-button (click)="onNoClick()">Закрыть</button>
+  <button mat-raised-button type="submit" [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedFields">Редактировать</button>
  </div>
 </form>

@@ -1,13 +1,13 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CreateUser } from '../interfaces/user-interfaces';
+import { CreateUser, User } from '../interfaces/user-interfaces';
 import { RouterLink } from '@angular/router';
-import { UsersApiService } from './users-api.service';
+import { UsersApiService } from '../services/users-services/users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../users.service';
+import { UsersService } from '../services/users-services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
-
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-users-list',
@@ -19,16 +19,16 @@ import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dia
     UserCardComponent,
     AsyncPipe,
     CreateUserFormComponent,
-    CreateUserDialogComponent
-],
+  ],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
-
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
+  readonly dialog = inject(MatDialog);
+  readonly snackBar = inject(MatSnackBar);
 
   constructor() {
     this.usersApiService.getUsers().subscribe((response: any) => {
@@ -40,13 +40,9 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  editUser( user: any) {
-   this.usersService.editUser({
-    ...user,
-    company: {
-     name: user.companyName,
-    }
-   });
+  editUser(user: User) {
+    this.usersService.editUser(user);
+    console.log(user);
   }
 
   public createUser(formData: CreateUser) {
@@ -56,9 +52,8 @@ export class UsersListComponent {
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.companyName,
+        name: formData.company.name,
       },
     });
   }
-
- }
+}

@@ -28,7 +28,7 @@ export function completedValidator(): ValidatorFn {
   };
 }
 @Component({
-  selector: 'app-create-todo-form',
+  selector: 'app-create-todo-dialog',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -39,11 +39,11 @@ export function completedValidator(): ValidatorFn {
     MatFormFieldModule,
     MatDialogModule,
   ],
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss',
+  templateUrl: './create-todo-dialog.component.html',
+  styleUrl: './create-todo-dialog.component.scss',
 })
-export class CreateTodoFormComponent {
-  readonly dialogRef = inject(MatDialogRef<CreateTodoFormComponent>);
+export class CreateTodoDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>);
   @Output()
   createTodo = new EventEmitter();
 
@@ -64,7 +64,7 @@ export class CreateTodoFormComponent {
   constructor(public dialog: MatDialog) {}
 
   openCreateTodoDialog() {
-    const dialogRef = this.dialog.open(CreateTodoFormComponent, {
+    const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
       width: '400px',
     });
 

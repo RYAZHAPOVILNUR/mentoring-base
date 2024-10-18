@@ -10,9 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { UsersService } from '../users.service';
-import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { UsersService } from '../services/users-services/users.service';
+import { CreateUserDialogComponent } from '../dialogs/user-dialogs/create-user-dialog/create-user-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-form',
@@ -74,13 +74,13 @@ export class CreateUserFormComponent {
       const email = user.email;
 
       if (email && this.userService.existingUser(email)) {
-        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', '🍓', {
+        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Ок', {
           duration: 3000,
         });
       } else {
         this.createUser.emit(user);
         this.form.reset();
-        this.snackBar.open('Новый пользователь успешно добавлен!', '🍕', {
+        this.snackBar.open('Новый пользователь успешно добавлен!', 'Ок', {
           duration: 5000,
         });
       }

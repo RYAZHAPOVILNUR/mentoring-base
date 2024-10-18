@@ -1,16 +1,17 @@
-import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { RouterLink } from '@angular/router';
-import { TodosApiService } from '../todos-api.service';
-import { TodoService } from '../todos.service';
+import { TodosApiService } from '../services/todos-services/todos-api.service';
+import { TodoService } from '../services/todos-services/todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
 import { Todo } from '../interfaces/todo-interfaces';
 import { MatDialog } from '@angular/material/dialog';
+import { AsyncPipe, NgFor } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { CreateTodoDialogComponent } from '../dialogs/todo-dialogs/create-todo-dialog/create-todo-dialog.component';
 @Component({
-  selector: 'api-todos-list',
+  selector: 'app-todos-list',
   standalone: true,
   imports: [
     NgFor,
@@ -18,26 +19,32 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     TodoCardComponent,
     AsyncPipe,
     CreateTodoFormComponent,
+    MatButtonModule,
   ],
   templateUrl: './todos-list.component.html',
   styleUrl: './todos-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoListComponent {
+export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodoService);
+  readonly snackBar = inject(MatSnackBar);
 
-readonly dialog =  inject(MatDialog)
+  readonly dialog = inject(MatDialog);
   constructor() {
     this.todosApiService.getTodos().subscribe((response: any) => {
       this.todosService.setTodos(response);
     });
   }
 
-  openDeleteTodoDialog (){}
-
   deleteTodo(id: number): void {
     this.todosService.deleteTodo(id);
+  }
+
+  editTodo(todo: Todo) {
+   this.todosService.editTodo({
+    ...todo,
+   })
   }
 
   public createTodo(formData: Todo): void {
@@ -48,25 +55,18 @@ readonly dialog =  inject(MatDialog)
       completed: formData.completed,
     });
   }
-
-
   openCreateTodoDialog(): void {
-   const dialogRef = this.dialog.open(CreateTodoFormComponent, {
-     width: '400px',
-   });
+    const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
+      width: '400px',
+    });
 
-   dialogRef.afterClosed().subscribe((result: Todo) => {
-     if (result) {
-      this.todosService.createTodo({
-       id: new Date().getTime(),
-       userId: result.userId,
-       title: result.title,
-       completed: result.completed,
-     });
-     }
-   });
- }
-
-
-
+    dialogRef.afterClosed().subscribe((result: Todo) => {
+      if (result) {
+        this.createTodo(result);
+        this.snackBar.open('Новая задача успешно создана!', '🍕', {
+          duration: 5000,
+        });
+      }
+    });
+  }
 }

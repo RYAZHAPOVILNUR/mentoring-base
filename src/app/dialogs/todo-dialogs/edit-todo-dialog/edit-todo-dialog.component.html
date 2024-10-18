@@ -1,6 +1,6 @@
 <div class="create-form-todo">
  <form [formGroup]="formTodo">
-   <h1 class="title">СОЗДАТЬ ЗАДАЧУ</h1>
+   <h1 class="title">Редактировать задачу</h1>
    <p class="subtitle">ТЕКСТ ЗАДАЧИ:</p>
    <mat-form-field class="example-width">
      <mat-label>Введите текст задачи</mat-label>
@@ -44,11 +44,9 @@
      Поле заполнено некорректно
    </mat-error>
    <div class="create-button-position">
-    <mat-card-actions>
      <button mat-raised-button (click)="onNoClick()">Закрыть</button>
-     <button mat-raised-button type="submit" [mat-dialog-close]="submitForm()" [disabled]="
-     formTodo.invalid">Создать задачу</button>
-    </mat-card-actions>
+     <button mat-raised-button type="submit"  [disabled]="
+     formTodo.invalid" [mat-dialog-close]="userWithUpdatedFields">Редактировать задачу</button>
    </div>
  </form>
 </div>

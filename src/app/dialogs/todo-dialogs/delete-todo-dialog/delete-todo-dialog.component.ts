@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [MatCardModule, MatButtonModule],
   templateUrl: './delete-todo-dialog.component.html',
-  styleUrl: './delete-todo-dialog.component.scss'
+  styleUrl: './delete-todo-dialog.component.scss',
 })
 export class DeleteTodoDialogComponent {
   constructor(public dialogRef: MatDialogRef<DeleteTodoDialogComponent>) {}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from './interfaces/user-interfaces';
+import { User } from '../../interfaces/user-interfaces';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -33,6 +33,6 @@ export class UsersService {
   }
 
   existingUser(email: string): boolean {
-   return this.usersSubject$.value.some(user => user.email === email);
- }
+    return this.usersSubject$.value.some((user) => user.email === email);
+  }
 }
