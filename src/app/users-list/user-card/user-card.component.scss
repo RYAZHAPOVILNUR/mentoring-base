@@ -1,25 +1,16 @@
 .user-card {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #fff;
-  box-shadow: 0px 20px 50px 0px rgba(18, 17, 39, 0.2);
-  color: #3C3C3B;
+  border-radius: 10px;
 
-  &__item {
-    span {
-      font-weight: 700;
-      font-size: 20px;
-    }
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0px;
+    margin-top: 20px;
   }
 
   &__btn {
-    background-color: #F0BA4E;
-    padding: 20px;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 20px;
     text-transform: uppercase;
+    width: 100%;
   }
 }

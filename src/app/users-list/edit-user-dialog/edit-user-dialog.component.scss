@@ -1,0 +1,14 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0px;
+  margin: 20px;
+
+  &__input::placeholder {
+    font-size: 10px;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+  }
+}

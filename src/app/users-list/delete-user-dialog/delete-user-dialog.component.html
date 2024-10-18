@@ -1,0 +1,16 @@
+<div class="dialog">
+  <mat-dialog-content class="dialog__content">
+    <p>Вы действительно хотите удалить пользователя?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions class="dialog__btns">
+    <button mat-flat-button color="primary" (click)="onNoDelete()">Нет</button>
+    <button
+      mat-flat-button
+      color="warn"
+      [mat-dialog-close]="onYesDelete()"
+      cdkFocusInitial
+    >
+      Да
+    </button>
+  </mat-dialog-actions>
+</div>

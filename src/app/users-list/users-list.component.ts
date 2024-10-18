@@ -4,19 +4,31 @@ import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { CreateUser } from '../interfaces/user-interface';
+import { CreateUser, User } from '../interfaces/user-interface';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
-  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+  imports: [
+    NgFor,
+    UserCardComponent,
+    AsyncPipe,
+    CreateUserFormComponent,
+    MatButtonModule,
+    MatIconModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
+  readonly dialog = inject(MatDialog);
 
   constructor() {
     this.usersApiService.getUsers().subscribe((res: any) => {
@@ -37,6 +49,22 @@ export class UsersListComponent {
       company: {
         name: formData.companyName,
       },
+    });
+  }
+
+  editUser(user: User) {
+    this.usersService.editUser(user);
+  }
+
+  openCreateUserDialog(): void {
+    const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.createUser(result);
+      }
     });
   }
 }

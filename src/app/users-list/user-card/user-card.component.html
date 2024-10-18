@@ -1,9 +1,32 @@
-<div class="user-card">
-  <p class="user-card__item"><span>Name: </span>{{ user.name }}</p>
-  <p class="user-card__item"><span>Email: </span>{{ user.email }}</p>
-  <p class="user-card__item"><span>Website: </span>{{ user.website }}</p>
-  <p class="user-card__item"><span>Company: </span>{{ user.company.name }}</p>
-  <button class="user-card__btn" (click)="onDeleteUser(user.id)">
-    Удалить юзера
-  </button>
-</div>
+<mat-card appearance="outlined" align="center" class="user-card">
+  <mat-card-content>
+    <mat-card-subtitle>Name:</mat-card-subtitle>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>Email:</mat-card-subtitle>
+    <mat-card-title>{{ user.email }}</mat-card-title>
+    <mat-card-subtitle>Website:</mat-card-subtitle>
+    <mat-card-title>{{ user.website }}</mat-card-title>
+    <mat-card-subtitle>Company:</mat-card-subtitle>
+    <mat-card-title>{{ user.company.name }}</mat-card-title>
+  </mat-card-content>
+  <mat-card-actions class="user-card__btns">
+    <button
+      mat-flat-button
+      color="primary"
+      class="user-card__btn"
+      (click)="openDeleteUserDialog()"
+    >
+      <mat-icon matSuffix>delete</mat-icon>
+      Удалить юзера
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      class="user-card__btn"
+      (click)="openEditUserDialog()"
+    >
+      <mat-icon matSuffix>edit</mat-icon>
+      Редактировать юзера
+    </button>
+  </mat-card-actions>
+</mat-card>
