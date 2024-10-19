@@ -10,13 +10,14 @@ import {
 } from '../interfaces/user-interfaces';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { CreateUserFormBtnAddDialogComponent } from './create-user-form-btn-add-dialog/create-user-form-btn-add-dialog.component';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, UserCardComponent, AsyncPipe, CreateUserFormComponent, MatIcon, MatButtonModule],
+  imports: [NgFor, NgIf, UserCardComponent, AsyncPipe, CreateUserFormComponent, MatIcon, MatButtonModule, CreateUserFormBtnAddDialogComponent],
   // changeDetection: ChangeDetectionStrategy.OnPush для реактивных данных RXJS
   // с это функцией OnPush работа кода и сайта с данными идет намного быстрее
   changeDetection: ChangeDetectionStrategy.OnPush,

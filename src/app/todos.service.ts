@@ -12,7 +12,7 @@ export class TodosService {
 
     //* установка todos
     setTodos(todos: TodoInterface[]) {
-        this.todosSubject$.next(todos);
+        this.todosSubject$.next(todos.slice(0, 15));
     }
 
     //* изменение todos

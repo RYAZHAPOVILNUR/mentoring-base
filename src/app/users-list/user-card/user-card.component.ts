@@ -27,8 +27,9 @@ export class UserCardComponent {
   @Output()
   public editUser = new EventEmitter<UserInterface>();
 
-
   readonly dialog = inject(MatDialog);
+  
+  public snackBar = inject(MatSnackBar);
 
   openEditDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
@@ -49,7 +50,6 @@ export class UserCardComponent {
     });
   }
 
-  public snackBar = inject(MatSnackBar);
 
   openDeleteDialog(): void {
     const dialogRef = this.dialog.open(DeleteUserDialogComponent, {

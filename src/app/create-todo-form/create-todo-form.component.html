@@ -4,22 +4,15 @@
 
     <form class="block_form" [formGroup]="form">
         <mat-form-field class="example-full-width">
-            <mat-label>Задание</mat-label>
+            <mat-label>Задача номер</mat-label>
             <mat-icon matSuffix>mode_edit</mat-icon>
-            <input matInput placeholder="Введите номер задания..." formControlName="userId">
+            <input matInput placeholder="Введите номер задачи..." formControlName="userId">
             <mat-error>Задание введено неправильно!</mat-error>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Id задания</mat-label>
-            <input matInput placeholder="Введите id задания..." formControlName="id">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-            <mat-error>Id введен неправильно!</mat-error>
-        </mat-form-field>
-
         <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Задача</mat-label>
-            <textarea matInput #message maxlength="256" placeholder="Напишите задачу..."
+            <mat-label>Введите задачу</mat-label>
+            <textarea matInput #message maxlength="256" placeholder="Введите вашу задачу..."
                 formControlName="title"></textarea>
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
             <mat-error>Задача введена неправильно!</mat-error>

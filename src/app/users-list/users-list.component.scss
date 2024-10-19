@@ -1,24 +1,18 @@
 .name_title {
-    max-width: 1337px;
-    margin: 0 auto;
-    color: #3C3C3B;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
+  max-width: 1337px;
+  margin: 0 auto;
+  color: #3c3c3b;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 }
 
-.content_users{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1350px;
-    min-height: 600px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    color: #3C3C3B;
+.content_users {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1350px;
+  min-height: 600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  color: #3c3c3b;
 }
 
-.btn_create_user{
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    scale: 1.5;
-  }

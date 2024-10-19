@@ -37,7 +37,7 @@ export class TodosListComponent {
   createTodo(formData: TodoInterface) {
     this.todosService.createTodo({
       userId: formData.userId,
-      id: formData.id,
+      id: new Date().getTime(),
       title: formData.title,
       completed: formData.completed,
     });

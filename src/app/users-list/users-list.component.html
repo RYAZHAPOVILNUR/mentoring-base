@@ -1,6 +1,6 @@
 <div class="name_title">
   <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
-  
+
 </div>
 <div class="content_users">
   <!-- для async нужно импротировать AsyncPipe в файле UsersListComponent и async преобразует
@@ -13,4 +13,4 @@
     <app-user-card [user]="user" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
   </div>
 </div>
-<button class="btn_create_user" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
+<app-create-user-form-btn-add-dialog (createUserButton)="createUser($event)"></app-create-user-form-btn-add-dialog>

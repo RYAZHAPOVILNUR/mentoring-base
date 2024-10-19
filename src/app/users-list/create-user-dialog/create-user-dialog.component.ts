@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from '../../utils/error-estate-matcher';
 import { NgFor, NgIf } from '@angular/common';
@@ -6,8 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { CreateUserInterface } from '../../interfaces/user-interfaces';
-import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import { MatDialogClose } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-dialog',
