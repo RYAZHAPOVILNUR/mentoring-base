@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  inject,
   Output,
 } from '@angular/core';
 import {
@@ -16,6 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import { IUser } from '../interfaces/user.interface';
 
 @Component({
   selector: 'app-create-user-form',
@@ -30,10 +33,13 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogClose,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateUserFormComponent {
+  readonly data = inject<{ user: IUser }>(MAT_DIALOG_DATA);
+
   @Output()
   createUser = new EventEmitter();
 
@@ -49,8 +55,15 @@ export class CreateUserFormComponent {
       Validators.minLength(2),
     ]),
   });
-  public submitForm(): void {
-    this.createUser.emit(this.form.value);
-    this.form.reset();
+
+  // public submitForm(): void {
+  //   this.createUser.emit(this.form.value);
+  //   this.form.reset();
+  // }
+
+  get userWithFilledFields() {
+    console.log('data', this.data);
+    console.log('form value', this.form.value);
+    return this.form.value;
   }
 }
