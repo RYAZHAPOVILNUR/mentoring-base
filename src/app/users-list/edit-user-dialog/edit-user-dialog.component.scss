@@ -21,13 +21,32 @@ p {
   width: 300px;
 }
 
-.form_button {
+.btn_edit {
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: center;
   width: 250px;
   margin-top: 20px;
+  margin-bottom: 10px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #efba50;
+  background-color: #3C3C3B;
+  color: #efba50;
+  cursor: pointer;
+  &:hover{
+    background-color: #efba50;
+    color: #3C3C3B;
+  }
+}
+
+.btn_cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 250px;
   margin-bottom: 30px;
   height: 50px;
   border-radius: 10px;

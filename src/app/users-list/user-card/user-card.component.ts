@@ -36,7 +36,16 @@ export class UserCardComponent {
     });
 
     dialogRef.afterClosed().subscribe((editResult) => {
-      if (editResult) this.editUser.emit(editResult);
+      if (editResult) {
+        this.editUser.emit(editResult);
+        this.snackBar.open('Пользователь изменен!', 'Ok', {
+          duration: 5000
+        });
+      } else {
+        this.snackBar.open('Отмена измения !', 'Ok', {
+          duration: 5000
+        });
+      }
     });
   }
 
@@ -49,13 +58,13 @@ export class UserCardComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
       if (result) {
-        this.deleteUser.emit(this.user.id)
+        this.deleteUser.emit(this.user.id);
         this.snackBar.open('Пользователь удален!', 'Ok', {
-          duration: 10000
+          duration: 5000
         });
       } else {
         this.snackBar.open('Отмена удаления!', 'Ok', {
-          duration: 10000
+          duration: 5000
         });
       }
     });
