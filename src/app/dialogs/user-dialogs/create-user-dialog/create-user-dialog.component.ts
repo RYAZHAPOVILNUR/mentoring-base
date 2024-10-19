@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UsersService } from '../../../services/users-services/users.service';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,6 +21,7 @@ import { NgIf } from '@angular/common';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatDialogClose,
   ],
   selector: 'app-create-user-dialog',
   templateUrl: './create-user-dialog.component.html',
@@ -64,9 +65,5 @@ export class CreateUserDialogComponent {
         });
       }
     }
-  }
-
-  public onNoClick(): void {
-    this.dialogRef.close();
   }
 }

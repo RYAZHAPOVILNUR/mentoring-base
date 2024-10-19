@@ -29,27 +29,27 @@ export class TodoCardComponent {
     this.deleteTodo.emit(todoId);
   }
 
-  openDialog(): void {
-   const dialogRef = this.dialog.open(EditTodoDialogComponent, {
-    data: { todo: this.todo },
+  openEditTodoDialog(): void {
+    const dialogRef = this.dialog.open(EditTodoDialogComponent, {
+      data: { todo: this.todo },
     });
 
-     dialogRef.afterClosed().subscribe((editResult) => {
+    dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) {
         this.editTodo.emit(editResult);
       }
     });
- }
+  }
 
- openDeleteTodoDialog(): void {
-  const dialogRef = this.dialog.open(DeleteTodoDialogComponent, {
-    width: '400px',
-  });
+  openDeleteTodoDialog(): void {
+    const dialogRef = this.dialog.open(DeleteTodoDialogComponent, {
+      width: '400px',
+    });
 
-  dialogRef.afterClosed().subscribe(result => {
-    if (result) {
-      this.deleteTodo.emit(this.todo.id);
-    }
-  });
-}
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.deleteTodo.emit(this.todo.id);
+      }
+    });
+  }
 }

@@ -6,11 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import {
-  MAT_DIALOG_DATA,
-  MatDialogClose,
-  MatDialogRef,
-} from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,7 +29,6 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class EditUserDialogComponent {
   readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
-  constructor(public dialogRef: MatDialogRef<EditUserDialogComponent>) {}
 
   form = new FormGroup({
     name: new FormControl(this.data.user.name, [
@@ -61,8 +56,5 @@ export class EditUserDialogComponent {
       ...this.form.value,
       id: this.data.user.id,
     };
-  }
-  public onNoClick(): void {
-    this.dialogRef.close();
   }
 }

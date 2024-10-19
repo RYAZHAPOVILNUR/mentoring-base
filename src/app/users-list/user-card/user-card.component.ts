@@ -32,7 +32,6 @@ export class UserCardComponent {
       })
       .afterClosed()
       .subscribe((editResult) => {
-        
         if (editResult) {
           this.editUser.emit(editResult);
         }
@@ -40,14 +39,14 @@ export class UserCardComponent {
   }
 
   openDeleteUserDialog(): void {
-   const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
-     width: '400px',
-   });
+    const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
+      width: '400px',
+    });
 
-   dialogRef.afterClosed().subscribe(result => {
-     if (result) {
-       this.deleteUser.emit(this.user.id);
-     }
-   });
- }
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.deleteUser.emit(this.user.id);
+      }
+    });
+  }
 }

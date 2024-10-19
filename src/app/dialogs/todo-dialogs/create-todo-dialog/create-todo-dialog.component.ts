@@ -1,14 +1,13 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidationErrors,
-  ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { CompletedValueGetter } from '../../../completed-value-getter';
 import { MatButtonModule } from '@angular/material/button';
+import { completedValidator } from '../../../validator';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,15 +17,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { NgIf } from '@angular/common';
-export function completedValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'да' || value === 'нет') {
-      return null;
-    }
-    return { invalidCompleted: true };
-  };
-}
+
 @Component({
   selector: 'app-create-todo-dialog',
   standalone: true,
@@ -44,6 +35,7 @@ export function completedValidator(): ValidatorFn {
 })
 export class CreateTodoDialogComponent {
   readonly dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>);
+
   @Output()
   createTodo = new EventEmitter();
 
@@ -61,33 +53,12 @@ export class CreateTodoDialogComponent {
     completed: new FormControl('', [Validators.required, completedValidator()]),
   });
 
-  constructor(public dialog: MatDialog) {}
-
-  openCreateTodoDialog() {
-    const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.createTodo.emit(result);
-      }
-    });
-  }
-
-  private getCompletedValue(): boolean {
-    const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
-    if (value === 'да') return true;
-    else return false;
-  }
+  private completedValueGetter = new CompletedValueGetter(this.formTodo);
 
   submitForm() {
     return {
       ...this.formTodo.value,
-      completed: this.getCompletedValue(),
+      completed: this.completedValueGetter.getCompletedValue(),
     };
   }
-  public onNoClick(): void {
-   this.dialogRef.close();
- }
 }
