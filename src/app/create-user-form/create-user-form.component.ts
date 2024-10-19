@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { CreateUserDialogComponent } from '../users-list/create-user-dialog/create-user-dialog.component';
 import { CreateUserInterface } from '../interfaces/user-interfaces';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-create-user-form',
   standalone: true,
@@ -21,6 +22,8 @@ export class CreateUserFormComponent {
   public createUser = new EventEmitter<CreateUserInterface>();
 
   readonly dailog = inject(MatDialog);
+  
+  public snackBar = inject(MatSnackBar);
 
   openCreateDialog(): void {
     // открываем модалку. Ничего внутрь не передаем, а зачем нам передавать data { user }? мы же его только создаем. То, что ты передашь будет = undefined
@@ -30,6 +33,35 @@ export class CreateUserFormComponent {
       // если результат true (то-есть данные пришли), тогда эмитим(отправляем) эти данные в users-list
       if (result) {
         this.createUser.emit(result);
+        this.snackBar.open('Пользователь создан!', 'Ok', {
+          duration: 5000
+        });
+      } else {
+        this.snackBar.open('Отмена создания!', 'Ok', {
+          duration: 5000
+        });
+      }
+    })
+  }
+  
+  @Output()
+  public createUserAdd = new EventEmitter<CreateUserInterface>();
+  
+  openCreateDialogAdd(): void {
+    // открываем модалку. Ничего внутрь не передаем, а зачем нам передавать data { user }? мы же его только создаем. То, что ты передашь будет = undefined
+    const dialogRef = this.dailog.open(CreateUserDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result: CreateUserInterface) => {
+      // если результат true (то-есть данные пришли), тогда эмитим(отправляем) эти данные в users-list
+      if (result) {
+        this.createUser.emit(result);
+        this.snackBar.open('Пользователь создан!', 'Ok', {
+          duration: 5000
+        });
+      } else {
+        this.snackBar.open('Отмена создания!', 'Ok', {
+          duration: 5000
+        });
       }
     })
   }

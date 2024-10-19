@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports: [MatIconModule, MatDialogModule,],
+  imports: [MatIconModule, MatDialogModule],
 })
 export class UserCardComponent {
 
