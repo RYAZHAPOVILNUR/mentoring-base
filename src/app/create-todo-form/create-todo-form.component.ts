@@ -1,11 +1,8 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidationErrors,
-  ValidatorFn,
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,15 +15,8 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { NgIf } from '@angular/common';
-export function completedValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'да' || value === 'нет') {
-      return null;
-    }
-    return { invalidCompleted: true };
-  };
-}
+import { completedValidator } from '../validator';
+import { CompletedValueGetter } from '../completed-value-getter';
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
@@ -44,6 +34,7 @@ export function completedValidator(): ValidatorFn {
 })
 export class CreateTodoFormComponent {
   readonly dialogRef = inject(MatDialogRef<CreateTodoFormComponent>);
+  private dialog = inject(MatDialog);
   @Output()
   createTodo = new EventEmitter();
 
@@ -61,7 +52,7 @@ export class CreateTodoFormComponent {
     completed: new FormControl('', [Validators.required, completedValidator()]),
   });
 
-  constructor(public dialog: MatDialog) {}
+  private completedValueGetter = new CompletedValueGetter(this.formTodo);
 
   openCreateTodoDialog() {
     const dialogRef = this.dialog.open(CreateTodoFormComponent, {
@@ -75,19 +66,10 @@ export class CreateTodoFormComponent {
     });
   }
 
-  private getCompletedValue(): boolean {
-    const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
-    if (value === 'да') return true;
-    else return false;
-  }
-
   submitForm() {
     return {
       ...this.formTodo.value,
-      completed: this.getCompletedValue(),
+      completed: this.completedValueGetter.getCompletedValue(),
     };
   }
-  public onNoClick(): void {
-   this.dialogRef.close();
- }
 }

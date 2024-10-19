@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Todo } from '../../../interfaces/todo-interfaces';
 import { MatCardModule } from '@angular/material/card';
-import { completedValidator } from '../../../create-todo-form/create-todo-form.component';
+import { completedValidator } from '../../../validator';
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -35,7 +35,7 @@ import { completedValidator } from '../../../create-todo-form/create-todo-form.c
 })
 export class EditTodoDialogComponent {
   readonly data = inject<{ todo: Todo }>(MAT_DIALOG_DATA);
-  constructor(public dialogRef: MatDialogRef<EditTodoDialogComponent>) {}
+  private dialogRef = inject(MatDialogRef<EditTodoDialogComponent>);
 
   public formTodo = new FormGroup({
     title: new FormControl(this.data.todo.title, [
@@ -53,6 +53,7 @@ export class EditTodoDialogComponent {
       completedValidator(),
     ]),
   });
+  
 
   get userWithUpdatedFields() {
     return {
@@ -62,12 +63,7 @@ export class EditTodoDialogComponent {
     };
   }
 
-  public onNoClick(): void {
-    this.dialogRef.close();
-  }
   public onSubmit(): void {
-    if (this.formTodo.valid) {
       this.dialogRef.close(this.userWithUpdatedFields);
-    }
   }
 }

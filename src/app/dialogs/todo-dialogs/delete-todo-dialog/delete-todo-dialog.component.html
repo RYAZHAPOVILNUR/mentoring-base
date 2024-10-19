@@ -4,7 +4,7 @@
    <p>Вы действительно хотите удалить задачу?</p>
  </div>
  <div mat-dialog-actions class="button-position">
-   <button mat-raised-button (click)="cancelDelete()">Нет</button>
+   <button mat-raised-button [mat-dialog-close]>Нет</button>
    <button mat-raised-button (click)="confirmDelete()">Да</button>
  </div>
  </mat-card>
