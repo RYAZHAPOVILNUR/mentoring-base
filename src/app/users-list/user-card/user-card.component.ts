@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { User } from '../../interfaces/user.interface';
 import { CreateEditUserDialogComponent } from '../create-edit-user-dialog/create-edit-user-dialog.component';
+import { DeleteUserDialogComponent } from '../../delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-user-card',
@@ -32,6 +33,8 @@ export class UserCardComponent {
 
   readonly dialog = inject(MatDialog);
 
+  readonly deleteDialog = inject(MatDialog);
+
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
       data: {user: this.user, isEdit: true},
@@ -46,7 +49,19 @@ export class UserCardComponent {
     });
   }
 
-  onDeleteUser(userID: number) {
-    this.deleteUser.emit(userID);
+  openDeleteDialog() {
+    const dialogRef = this.deleteDialog.open(DeleteUserDialogComponent, {
+      data: {user: this.user},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed. Result:', result);
+      if (result) {
+        this.deleteUser.emit(result)
+      }
+      
+    });
   }
+
+  
 }

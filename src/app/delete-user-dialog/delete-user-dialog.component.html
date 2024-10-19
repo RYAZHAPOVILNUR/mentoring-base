@@ -1,0 +1,7 @@
+<mat-dialog-content>
+  <p>Вы действительно ходите удалить пользователя {{this.data.user.name}}?</p>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-raised-button color="primary" mat-dialog-close="" >Нет</button>
+  <button mat-raised-button color="primary" [matDialogClose]="this.data.user.id" >Да</button>
+</mat-dialog-actions>

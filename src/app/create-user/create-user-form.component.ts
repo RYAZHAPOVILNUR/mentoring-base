@@ -18,6 +18,12 @@ import { User } from '../interfaces/user.interface';
   imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule],
 })
 export class CreateUserFormComponent {
+  @Input()
+  user!: User;
+
+  @Output()
+  createUser = new EventEmitter();
+
   readonly dialog = inject(MatDialog)
   openDialog() {
     const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
@@ -32,12 +38,6 @@ export class CreateUserFormComponent {
       
     });
   }
-
-  @Input()
-  user!: User;
-
-  @Output()
-  createUser = new EventEmitter();
 
   errorMessage = signal('');
 
