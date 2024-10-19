@@ -6,6 +6,10 @@
    <input matInput type="text" formControlName="name" />
  </mat-form-field>
  <mat-error
+ *ngIf="
+ form.controls['name'].invalid &&
+ (form.controls['name'].dirty || form.controls['name'].touched)
+"
  >
    Слишком короткое имя
  </mat-error>
@@ -15,6 +19,10 @@
    <input matInput type="text" formControlName="email"
  /></mat-form-field>
  <mat-error
+ *ngIf="
+ form.controls['email'].invalid &&
+ (form.controls['email'].dirty || form.controls['email'].touched)
+"
  >
    Email должен содержать больше 3-х символов и {{ "@" }}
  </mat-error>
@@ -24,6 +32,10 @@
    <input matInput type="text" formControlName="website"
  /></mat-form-field>
  <mat-error
+ *ngIf="
+ form.controls['website'].invalid &&
+ (form.controls['website'].dirty || form.controls['website'].touched)
+"
  >
    Поле заполнено некорректно
  </mat-error>
@@ -33,6 +45,11 @@
    <input matInput type="text" formControlName="name" />
  </mat-form-field>
  <mat-error
+ *ngIf="
+ form.controls['name'].invalid &&
+ (form.controls['name'].dirty ||
+   form.controls['name'].touched)
+"
  >
    Поле заполнено некорректно
  </mat-error>
