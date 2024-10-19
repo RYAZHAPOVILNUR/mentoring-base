@@ -21,6 +21,15 @@ import { CreateEditUserDialogComponent } from '../create-edit-user-dialog/create
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCardComponent {
+  @Input()
+  user!: User;
+
+  @Output()
+  deleteUser = new EventEmitter();
+
+  @Output()
+  editUser = new EventEmitter();
+
   readonly dialog = inject(MatDialog);
 
   openDialog(): void {
@@ -36,15 +45,6 @@ export class UserCardComponent {
       
     });
   }
-
-  @Input()
-  user!: User;
-
-  @Output()
-  deleteUser = new EventEmitter();
-
-  @Output()
-  editUser = new EventEmitter();
 
   onDeleteUser(userID: number) {
     this.deleteUser.emit(userID);

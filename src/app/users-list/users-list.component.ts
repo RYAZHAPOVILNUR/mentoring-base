@@ -26,7 +26,7 @@ export class UsersListComponent {
     });
   }
 
- editUser(user: any) {
+ editUser(user: User) {
     this.usersService.editUser(user);
   }
 

@@ -1,6 +1,6 @@
 <div class="content-container">
   <h2 class="title">Create ToDo</h2>
-  <form class="form-container" [formGroup]="form" (ngSubmit)="submitForm()">
+  <form class="form-container" [formGroup]="form">
 
     <mat-form-field class="mat-ff">
       <mat-label>Текст задачи:</mat-label>
@@ -20,7 +20,7 @@
       formControlName="completed">
     </mat-form-field>
 
-    <button mat-raised-button color="primary" [disabled] = "form.invalid">Create task</button>
+    <button type="submit" (click)="submitForm()" mat-raised-button color="primary" [disabled] = "form.invalid">Create task</button>
   </form>
 </div>
 
