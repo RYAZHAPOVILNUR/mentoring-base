@@ -1,12 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MyErrorStateMatcher } from '../../utils/error-estate-matcher';
+import { NgFor, NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { CreateUserInterface } from '../../interfaces/user-interfaces';
+import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-dialog',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, NgIf, NgFor, MatButtonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatDialogClose],
   templateUrl: './create-user-dialog.component.html',
   styleUrl: './create-user-dialog.component.scss'
 })
 export class CreateUserDialogComponent {
+  // бесполезная фигня, мы никакие данные не получаем. Мы же не изменяем уже существующего пользователя 
+  // и не удаляем его по id, как мы можем что-то передать, если на момент открытия модалки - его еще не существует. Надеюсь мысль уловил.
+  public readonly data = inject<{ user: CreateUserInterface }>(MAT_DIALOG_DATA);
 
+  public matcher = new MyErrorStateMatcher();
+
+  public form = new FormGroup({
+    // Validators.pattern("^[a-zA-Zа-яА-я.]*$")
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      Validators.minLength(3),
+    ]),
+    website: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    company: new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+    })
+  });
 }

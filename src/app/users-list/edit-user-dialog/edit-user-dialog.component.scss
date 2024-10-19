@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 350px;
   padding: 20px;
   background-color: #3C3C3B;
+}
+.text {
+  margin-top: 20px;
   color: #efba50;
 }
 
@@ -24,14 +28,15 @@ p {
   align-self: center;
   width: 250px;
   margin-top: 20px;
+  margin-bottom: 30px;
   height: 50px;
   border-radius: 10px;
-  background-color: #efba50;
-  color: #3C3C3B;
+  border: 1px solid #efba50;
+  background-color: #3C3C3B;
+  color: #efba50;
   cursor: pointer;
   &:hover{
-      background-color: #3C3C3B;
-      border: 1px solid #efba50;
-      color: #efba50;
+    background-color: #efba50;
+    color: #3C3C3B;
   }
 }

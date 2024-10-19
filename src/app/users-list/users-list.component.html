@@ -1,5 +1,5 @@
 <div class="name_title">
-  <app-create-user-form (createUserForm)="createUser($event)"></app-create-user-form>
+  <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
   
 </div>
 <div class="content_users">
@@ -13,3 +13,4 @@
     <app-user-card [user]="user" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
   </div>
 </div>
+<button class="btn_create_user" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
