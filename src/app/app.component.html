@@ -1,69 +1,31 @@
-<!-- шапка -->
+<!-- header start -->
 <header>
-  <div class="first_line_header">
-    <div class="first_header_left">
-      <div class="logo"><svg width="61" height="40" viewBox="0 0 61 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_12636_109)">
-            <path
-              d="M23.8532 10.126V14.6163H20.081V11.9918L12.2396 5.51478L4.77063 11.6838V36.7927H20.9691V40H0V10.126L12.2594 0L23.8532 10.126Z"
-              fill="#F0BA4E" />
-            <path d="M23.8532 15.8076H7.354V20.0001H23.8532V15.8076Z" fill="#C9CFCC" />
-            <path d="M7.354 23.1387H23.8532V27.5373H11.9266V30.1948H23.8532V34.4101H7.354V23.1387Z" fill="#C9CFCC" />
-            <path d="M61 15.8076H44.5007V20.0001H61V15.8076Z" fill="#C9CFCC" />
-            <path d="M44.5007 23.1387H61V27.5373H49.0734V30.1948H61V34.4101H44.5007V23.1387Z" fill="#C9CFCC" />
-            <path
-              d="M43.5579 25.0172C43.5581 27.1259 42.8138 29.1708 41.4494 30.8103C40.085 32.4498 38.1832 33.5846 36.0615 34.0252C33.9399 34.4657 31.727 34.1854 29.7924 33.2309C27.8579 32.2765 26.3189 30.7057 25.4325 28.781C24.5461 26.8564 24.366 24.6944 24.9223 22.6562C25.4786 20.618 26.7376 18.8271 28.489 17.5825C30.2404 16.338 32.3781 15.7153 34.545 15.8184C36.7119 15.9215 38.7768 16.7441 40.3948 18.149L36.7932 21.6495C35.9874 21.1228 35.0375 20.8429 34.0663 20.8461C33.0952 20.8494 32.1473 21.1356 31.3452 21.6677C30.5431 22.1999 29.9235 22.9535 29.5665 23.8314C29.2096 24.7092 29.1316 25.671 29.3427 26.5923C29.5537 27.5137 30.0442 28.3524 30.7507 29.0001C31.4571 29.6478 32.3472 30.0748 33.3058 30.2258C34.2645 30.3769 35.2477 30.2451 36.1285 29.8475C37.0093 29.45 37.7473 28.8048 38.247 27.9955H32.4327V24.4216H43.5381C43.5513 24.6189 43.5579 24.8175 43.5579 25.0172Z"
-              fill="#C9CFCC" />
-          </g>
-          <defs>
-            <clipPath id="clip0_12636_109">
-              <rect width="61" height="40" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      </div>
+
+  <!-- header first line start -->
+  <div class="header_first_line">
+    <div class="left_box">
+      <div class="logo"><img src="/assets/logo.svg" alt="logo"></div>
       <nav>
         <a href="#">Главная</a>
         <a href="#">О компании</a>
-        <a href="#">каталог</a>
+        <a href="#">Каталог</a>
       </nav>
     </div>
-    <div class="first_header_right">
-      <div class="telephone"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <rect width="28" height="28" fill="url(#pattern0_12636_124)" />
-          <defs>
-            <pattern id="pattern0_12636_124" patternContentUnits="objectBoundingBox" width="1" height="1">
-              <use xlink:href="#image0_12636_124" transform="scale(0.01)" />
-            </pattern>
-            <image id="image0_12636_124" width="100" height="100"
-              xlink:href="data:image/png;base64,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" />
-          </defs>
-        </svg>
-        +7 (965) 084-29-29</div>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M20.8401 4.61012C20.3294 4.09912 19.7229 3.69376 19.0555 3.4172C18.388 3.14064 17.6726 2.99829 16.9501 2.99829C16.2276 2.99829 15.5122 3.14064 14.8448 3.4172C14.1773 3.69376 13.5709 4.09912 13.0601 4.61012L12.0001 5.67012L10.9401 4.61012C9.90843 3.57842 8.50915 2.99883 7.05012 2.99883C5.59109 2.99883 4.19181 3.57842 3.16012 4.61012C2.12843 5.64181 1.54883 7.04108 1.54883 8.50012C1.54883 9.95915 2.12843 11.3584 3.16012 12.3901L4.22012 13.4501L12.0001 21.2301L19.7801 13.4501L20.8401 12.3901C21.3511 11.8794 21.7565 11.2729 22.033 10.6055C22.3096 9.93801 22.4519 9.2226 22.4519 8.50012C22.4519 7.77763 22.3096 7.06222 22.033 6.39476C21.7565 5.7273 21.3511 5.12087 20.8401 4.61012V4.61012Z"
-          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <div class="bin"><img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABEUlEQVR4nO2UvY0CMRCFTQIFICpAOm0NkEAVUMJml3IF8NcDiJAGrgNExPVwCT/xASl8yGIQi4CTxrYWAn/R7mrezLP32cZEIpF3A5hzZQt08jYw45YjUM3VxAVgKiZS8wqAVAxM5f0XP0ZaA4kIN0ABmHgaaLnswgBd5dI2fhLCf2sikbfjBAKs+5wc90HlAAAAAElFTkSuQmCC">Пусто
+
+    <div class="right_box">
+      <div class="telephone_icon">
+        <img src="/assets/phone.svg" alt="">+7 (965) 084-29-29
       </div>
+      <img src="/assets/heart.svg" alt="">
+      <div class="bin_icon"><img src="/assets/bin.svg" alt="">Пусто</div>
     </div>
   </div>
-  <div class="second_line_header">
+  <!-- header first line end -->
+
+  <!-- header second line start -->
+  <div class="header_second_line">
     <div class="left_box">
-      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M0 12C0 11.4477 0.447715 11 1 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H1C0.447715 13 0 12.5523 0 12Z"
-          fill="#3C3C3B" />
-        <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M0 16C0 15.4477 0.335786 15 0.75 15H11.25C11.6642 15 12 15.4477 12 16C12 16.5523 11.6642 17 11.25 17H0.75C0.335786 17 0 16.5523 0 16Z"
-          fill="#3C3C3B" />
-        <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M0 8C0 7.44772 0.447715 7 1 7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H1C0.447715 9 0 8.55228 0 8Z"
-          fill="#3C3C3B" />
-      </svg>
+      <img src="/assets/list.svg" alt="list">
       <nav>
         <a href="#">Каталог</a>
         <a href="#">Стройматериалы</a>
@@ -72,17 +34,13 @@
         <a href="#">Интерьер и одежда</a>
       </nav>
     </div>
+
     <div class="right_box">
       <div class="input"><input type="text" placeholder="Поиск, например Круг зачистной"></div>
-      <div class="geo"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M10.5 5C10.5 8.5 6 11.5 6 11.5C6 11.5 1.5 8.5 1.5 5C1.5 3.80653 1.97411 2.66193 2.81802 1.81802C3.66193 0.974106 4.80653 0.5 6 0.5C7.19347 0.5 8.33807 0.974106 9.18198 1.81802C10.0259 2.66193 10.5 3.80653 10.5 5Z"
-            stroke="#4B565E" stroke-linecap="round" stroke-linejoin="round" />
-          <path
-            d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z"
-            fill="#4B565E" stroke="#4B565E" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        Москва</div>
+      <div class="geo_icon"><img src="/assets/geo.svg" alt="geo">Москва</div>
     </div>
   </div>
+  <!-- header second line end -->
+
 </header>
+<!-- header end -->
