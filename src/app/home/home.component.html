@@ -1,0 +1,290 @@
+<button (click)="isShowBanner = !isShowBanner">Скрыть/Показать баннер</button>
+<div class="banner" *ngIf="isShowBanner">
+  <div class="banner-text">Инструмент для вашего бизнеса</div>
+</div>
+
+<div class="advantages-container">
+  <div class="container">
+    <div class="advantage">
+      <img class="advantage-img" src="../assets/Mask group.svg" alt="adv-1">
+      <div class="advantage-text">
+        <span>Большой ассортимент</span> строительных материалов всегда в наличии
+      </div>
+    </div>
+    <div class="advantage">
+      <img class="advantage-img" src="../assets/Mask group-1.svg" alt="adv-2">
+      <div class="advantage-text">
+        <span>Доставка стройматериалов</span> в течении четырех часов или в любое удобное время
+      </div>
+    </div>
+    <div class="advantage">
+      <img class="advantage-img" src="../assets/Mask group-2.svg" alt="adv-3">
+      <div class="advantage-text">
+        Многоуровневая <span>система управления качеством</span> по стандарту ISO 9001
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="item-cards">
+  <div class="container">
+    <div class="item-cards__pagination">
+      <button *ngFor="let page of newPages" class="item-cards__pagination-btn active-button">{{page}}</button>
+    </div>
+  
+    <div class="item-cards__grid">
+      <div class="item-cards__grid-left">
+        <div class="item-cards__grid-left-title">Строительный отделочный инструмент</div>
+        <a class="item-cards__grid-left-link" href="#">
+          Перейти в каталог
+          <div>
+            <img src="../assets/Arrow-6.svg" alt="arrow">
+          </div>
+        </a>
+      </div>
+      <div class="item-cards__grid-right">
+        <div class="item-cards__grid-right-block block-1">
+          <div class="block-1-title">Эмали</div>
+          <img class="block-1-img" src="../assets/item-cards-2.png" alt="emali">
+          <a class="block-1-link" href="#">
+            Перейти в каталог
+            <div>
+              <img src="../assets/Arrow-6.svg" alt="arrow">
+            </div>
+          </a>
+        </div>
+        <div class="item-cards__grid-right-block block-2">
+          <div class="block-2-title">Лакокрасочные<br>материалы</div>
+          <img class="block-2-img" src="../assets/item-cards-3.png" alt="kraski">
+          <a class="block-2-link" href="#">
+            Перейти в каталог
+            <div>
+              <img src="../assets/Arrow-6.svg" alt="arrow">
+            </div>
+          </a>
+        </div>
+        <div class="item-cards__grid-right-block block-3">
+          <div class="block-3-title">Пены, клеи и<br> герметики</div>
+          <img class="block-3-img" src="../assets/item-cards-4.png" alt="glue">
+          <a class="block-3-link" href="#">
+            Перейти в каталог
+            <div>
+              <img src="../assets/Arrow-6.svg" alt="arrow">
+            </div>
+          </a>
+        </div>
+        <div class="item-cards__grid-right-block block-4">
+          <div class="block-4-title">Розетки и выключатели</div>
+          <img class="block-4-img" src="../assets/item-cards-5.png" alt="rozetka">
+          <a class="block-4-link" href="#">
+            Перейти в каталог
+            <div>
+              <img src="../assets/Arrow-6.svg" alt="arrow">
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-cards">
+  <div class="container">
+    <div class="scroll-cards__title">
+      <div class="scroll-cards__title-text">Популярные товары</div>
+      <a href="#" class="scroll-cards__title-link">Посмотреть все товары</a>
+    </div>
+
+    <div class="scroll-cards__wrapper">
+      <div class="scroll-cards__wrapper-card">
+        <div class="scroll-cards__wrapper-card-percent">%</div>
+        <img class="scroll-cards__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards__wrapper-card-price">
+          <span class="old-price">52 руб.</span>
+          <span class="new-price">48 руб.</span>
+        </div>
+        <div class="scroll-cards__wrapper-card-cart-wrapper">
+          <div class="scroll-cards__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="scroll-cards__wrapper-card">
+        <div class="scroll-cards__wrapper-card-percent">%</div>
+        <img class="scroll-cards__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards__wrapper-card-price">
+          <span class="old-price">52 руб.</span>
+          <span class="new-price">48 руб.</span>
+        </div>
+        <div class="scroll-cards__wrapper-card-cart-wrapper">
+          <div class="scroll-cards__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="scroll-cards__wrapper-card">
+        <div class="scroll-cards__wrapper-card-new">Новинка</div>
+        <div class="scroll-cards__wrapper-card-percent-alternative">%</div>
+        <img class="scroll-cards__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards__wrapper-card-price">
+          <span class="old-price">52 руб.</span>
+          <span class="new-price">48 руб.</span>
+        </div>
+        <div class="scroll-cards__wrapper-card-cart-wrapper">
+          <div class="scroll-cards__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="scroll-cards__wrapper-card">
+        <div class="scroll-cards__wrapper-card-new">Новинка</div>
+        <img class="scroll-cards__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards__wrapper-card-price">
+          <span class="new-price">52 руб.</span>
+        </div>
+        <div class="scroll-cards__wrapper-card-cart-wrapper">
+          <div class="scroll-cards__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner-catalog">
+  <div class="container">
+    <div class="banner-catalog__wrapper">
+      <div>
+        <div class="banner-catalog__wrapper-title">Более 10 000 наименований</div>
+        <div class="banner-catalog__wrapper-text">Инструмент для вашего бизнеса, разнообразных марок</div>
+      </div>
+      <a href="#" class="banner-catalog__wrapper-link">Перейти в каталог</a>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-cards-new">
+  <div class="container">
+    <div class="scroll-cards-new__title">
+      <div class="scroll-cards-new__title-text">Новинки</div>
+      <a href="#" class="scroll-cards-new__title-link">Посмотреть все товары</a>
+    </div>
+
+    <div class="scroll-cards-new__wrapper">
+      <div class="scroll-cards-new__wrapper-card">
+        <div class="scroll-cards-new__wrapper-card-new">Новинка</div>
+        <img class="scroll-cards-new__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards-new__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards-new__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards-new__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards-new__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards-new__wrapper-card-price">
+          <span class="new-price">52 руб.</span>
+        </div>
+        <div class="scroll-cards-new__wrapper-card-cart-wrapper">
+          <div class="scroll-cards-new__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards-new__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="scroll-cards-new__wrapper-card">
+        <div class="scroll-cards-new__wrapper-card-new">Новинка</div>
+        <img class="scroll-cards-new__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards-new__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards-new__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards-new__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards-new__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards-new__wrapper-card-price">
+          <span class="new-price">52 руб.</span>
+        </div>
+        <div class="scroll-cards-new__wrapper-card-cart-wrapper">
+          <div class="scroll-cards-new__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards-new__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="scroll-cards-new__wrapper-card">
+        <div class="scroll-cards-new__wrapper-card-new">Новинка</div>
+        <img class="scroll-cards-new__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards-new__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards-new__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards-new__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards-new__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards-new__wrapper-card-price">
+          <span class="new-price">52 руб.</span>
+        </div>
+        <div class="scroll-cards-new__wrapper-card-cart-wrapper">
+          <div class="scroll-cards-new__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards-new__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="scroll-cards-new__wrapper-card">
+        <div class="scroll-cards-new__wrapper-card-new">Новинка</div>
+        <img class="scroll-cards-new__wrapper-card-disc-img" src="../assets/disc-image.png" alt="disc">
+        <img class="scroll-cards-new__wrapper-card-heart-img" src="../assets/Vector.svg" alt="heart">
+        <div class="scroll-cards-new__wrapper-card-product">Круг зачистной 125х6х22</div>
+        <div class="scroll-cards-new__wrapper-card-articul">Артикул 00004</div>
+        <div class="scroll-cards-new__wrapper-card-price-title">Цена за штуку</div>
+        <div class="scroll-cards-new__wrapper-card-price">
+          <span class="new-price">52 руб.</span>
+        </div>
+        <div class="scroll-cards-new__wrapper-card-cart-wrapper">
+          <div class="scroll-cards-new__wrapper-card-cart-wrapper-quantity-block">
+            <div class="quantity">Количество</div>
+            <span class="minus-button">-</span>
+            <span class="quantity-number">1</span>
+            <span class="plus-button">+</span>
+          </div>
+          <button class="scroll-cards-new__wrapper-card-cart-wrapper-cart-btn">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

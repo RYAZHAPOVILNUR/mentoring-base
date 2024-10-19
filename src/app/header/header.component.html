@@ -1,0 +1,67 @@
+<div class="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-left">
+          <div class="header-logo">
+            <img src="../assets/Frame.svg" alt="logo">
+          </div>
+          <nav class="header-nav">
+            <ul>
+              <li class="header-nav-item">
+                <a href="#">{{headerItem1}}</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="#">{{aboutCompany}}</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="#" *ngIf="isShowCatalog">{{headerItem3}}</a>
+              </li>
+              <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+              <button (click)="changeMenuText()">Изменить текст</button>
+            </ul>
+          </nav>
+        </div>
+    
+        <div class="header-right">
+          <div class="call">
+            <img src="../assets/Phone.svg" alt="call">
+            <div class="call-number">+7 (965) 084-29-29</div>
+          </div>
+          <div class="heart">
+            <img class="heart-img" src="../assets/heart1.svg" alt="???">
+          </div>
+          <button class="cart-button">
+            <img class="cart-img" src="../assets/cart.svg" alt="cart">
+            Пусто
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="header-bottom">
+      <div class="container">
+        <div class="header-bottom-left">
+          <div class="header-bottom-nav">
+            <ul>
+              <div class="menu-img">
+                <img src="../assets/light.svg" alt="menu">
+              </div>
+              <li *ngFor="let item of menuItems" class="header-bottom-nav-item">
+                <a href="#">{{item}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="header-bottom-right">
+          <div class="search-block">
+            <input placeholder="Поиск, например Круг зачистной" type="text" class="search-input" name="search">
+          </div>
+          <div class="address">
+            <img src="../assets/map-moscow.svg" alt="Moscow">
+            Москва
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

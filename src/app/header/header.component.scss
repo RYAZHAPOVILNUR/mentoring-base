@@ -1,0 +1,136 @@
+.container {
+    max-width: 1320px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+.header-top {
+    background-color: #4B565E;
+}
+.header-top>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+// header left side
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    padding: 0 40px 0 0;
+}
+.header-nav>ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header-nav-item {
+    margin-right: 24px;
+}
+.header-nav-item:last-child {
+    margin-right: 0;
+}
+.header-nav-item>a {
+    display: block;
+    text-decoration: none;
+    color: #F9FAFB;
+    font-size: 16px;
+    font-weight: 600;
+}
+// header right side
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.call {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+.call-number {
+    margin-left: 10px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+}
+.heart {
+    margin-right: 40px;
+}
+.cart-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4B565E;
+    border-radius: 50px;
+    border: 1px solid #F0BA4E;
+    font-size: 16px;
+    font-weight: 500;
+    color: #F9FAFB;
+}
+.cart-img {
+    margin-right: 10px;
+}
+// header-bottom
+// header-bottom-left
+.header-bottom {
+    background-color: #F0BA4E;
+}
+.header-bottom>.container {
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+}
+.header-bottom-left {
+    display: flex;
+    align-items: center;
+}
+.menu-img {
+    display: flex;
+    margin-right: 6px;
+}
+.header-bottom-nav>ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header-bottom-nav-item {
+    margin-right: 24px;
+}
+.header-bottom-nav-item:last-child {
+    margin-right: 0;
+}
+.header-bottom-nav-item>a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3C3C3B;
+    text-decoration: none;
+}
+// header-bottom-right
+.header-bottom-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-block {
+    margin-right: 24px;
+}
+.search-input {
+    width: 350px;
+    height: 29px;
+    border: none;
+    border-bottom: 1px solid #3C3C3B;
+    background-color: transparent;
+    background: url("..//..//assets/search.svg") no-repeat right;
+    color: rgba(75, 86, 94, 0.6);
+}
+.search-input:focus {
+    outline: none;
+}
+.address {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
