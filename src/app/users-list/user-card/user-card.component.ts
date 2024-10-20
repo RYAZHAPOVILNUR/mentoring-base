@@ -6,12 +6,11 @@ import {
   Input,
   Output,
 } from '@angular/core';
-
 import { MatDialog } from '@angular/material/dialog';
-
 import { User } from '../../interfaces/user.interface';
 import { CreateEditUserDialogComponent } from '../create-edit-user-dialog/create-edit-user-dialog.component';
 import { DeleteUserDialogComponent } from '../../delete-user-dialog/delete-user-dialog.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-card',
@@ -35,6 +34,8 @@ export class UserCardComponent {
 
   readonly deleteDialog = inject(MatDialog);
 
+  readonly snackbar = inject(MatSnackBar);
+
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
       data: {user: this.user, isEdit: true},
@@ -44,8 +45,10 @@ export class UserCardComponent {
       console.log('The dialog was closed. Result:', editResult);
       if (editResult) {
         this.editUser.emit(editResult)
-      }
-      
+        this.snackbar.open(`Пользователь ${this.user.name} был изменен`, 'Ок', {
+          duration: 3000
+        })
+      } 
     });
   }
 
@@ -57,7 +60,14 @@ export class UserCardComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed. Result:', result);
       if (result) {
-        this.deleteUser.emit(result)
+        this.deleteUser.emit(this.user.id)
+        this.snackbar.open(`Пользователь ${this.user.name} был удален`, 'Ок', {
+          duration: 3000
+        })
+      } else {
+        this.snackbar.open('Отмена удаления', 'Ок', {
+          duration: 3000
+        })
       }
       
     });

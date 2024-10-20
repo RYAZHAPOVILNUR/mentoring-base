@@ -21,7 +21,5 @@ export class DeleteUserDialogComponent {
 
   readonly data = inject<{user: User}>(MAT_DIALOG_DATA);
 
-  onDeleteUser(userID: number) {
-    this.deleteUser.emit(userID);
-  }
+
 }

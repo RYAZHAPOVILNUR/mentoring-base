@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEditUserDialogComponent } from '../users-list/create-edit-user-dialog/create-edit-user-dialog.component';
 import { User } from '../interfaces/user.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -25,6 +26,8 @@ export class CreateUserFormComponent {
   createUser = new EventEmitter();
 
   readonly dialog = inject(MatDialog)
+
+  readonly snackbar = inject(MatSnackBar)
   openDialog() {
     const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
       data: {user: "", isEdit: false},
@@ -34,7 +37,8 @@ export class CreateUserFormComponent {
       console.log('The dialog was closed. Result:', createResult);
       if (createResult) {
         this.createUser.emit(createResult)
-      }
+        
+      } 
       
     });
   }
