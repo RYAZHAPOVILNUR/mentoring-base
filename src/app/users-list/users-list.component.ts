@@ -1,10 +1,12 @@
 import { NgFor, AsyncPipe } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Injectable, Input, Output } from "@angular/core";
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
 
 // const consoleResponse = (response: unknown) => console.log(response)
 
@@ -42,6 +44,15 @@ export interface User {
 })
 
 export class UsersListComponent {
+    @Input()
+    user!: User
+
+    readonly dialog = inject(MatDialog);
+
+    @Output()
+    createModalUser = new EventEmitter ();
+
+
     // readonly apiService = inject(HttpClient);// не нужен, перенесли в отдельный апи сервис
     readonly userApiService = inject(UserApiService)
     readonly usersService = inject(UsersService)
@@ -86,6 +97,20 @@ export class UsersListComponent {
         });
         console.log('from FORM: ', event)
     }
+
+    openCreateDialog(): void {
+        const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+          data: {user: this.user},
+        });
+
+        dialogRef.afterClosed().subscribe((createResult) => {
+          console.log('MODAL CLOSED', createResult);
+            if(createResult){
+                this.createUser(createResult);
+            }
+        });
+      }
+
     
 }
 

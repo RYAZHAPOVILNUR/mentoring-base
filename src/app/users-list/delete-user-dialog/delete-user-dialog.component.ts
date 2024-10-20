@@ -22,23 +22,11 @@ export class DeleteUserDialogComponent {
         console.log(this.data)
     }
 
-    submitFormDelete() {
-        this.dialogRef.close(this.data.user.id)
-        return this.data.user.id;
-    }
+    // submitFormDelete() {
+    //     this.dialogRef.close(this.data.user.id)
+    //     return this.data.user.id;
+    // } //  закрываем с удалением
 
-    // get userWithFields(){
-    //     return {
-            // ...this.form.value, id: this.data.user.id
-    //         this.dialogRef.close(this.form.value)
-    //     }
-    // }
-
-    // get userWithoutUpdatedFields(){
-    //     return {
-    //         ...this.form.value
-    //     }
-    // }
 
     // submitForm() {
         // this.dialogRef.close(this.form.value)
