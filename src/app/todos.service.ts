@@ -4,7 +4,9 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
-  todoSubject$ = new BehaviorSubject<Todo[]>([]);
+  private todoSubject$ = new BehaviorSubject<Todo[]>([]);
+  todos$ = this.todoSubject$.asObservable();
+
   setTodos(todos: Todo[]) {
     this.todoSubject$.next(todos);
   }
