@@ -3,14 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { TodosApiService } from "../todos-api.servise";
 import { TodoCardComponent } from "./todo-card/todo-card.component";
 import { TodosService } from "../todos.service";
-
-export interface Todo {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
-}
-
+import { ITodo } from "../Interfaces/todo.interface";
 
 @Component({
     selector: 'app-todos-list',
@@ -28,7 +21,7 @@ export class TodosListComponent {
     constructor() {
 
         this.todosApiService.getTodos().subscribe(
-            (response: any) => {
+            (response: ITodo[]) => {
                 this.todosService.setTodos(response)
             }
         )

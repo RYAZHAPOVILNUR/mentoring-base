@@ -1,28 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-
-export interface User {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    address: {
-      street: string;
-      suite: string;
-      zipcode: string;
-      city: string;
-      geo: {
-        lat: string;
-        lng: string;
-      };
-    };
-    phone: string;
-    website: string;
-    company: {
-      bs: string;
-      catchPhrase: string;
-      name: string;
-    };
-  }
+import { IUser } from "../../Interfaces/user.interface";
 
 @Component({
     selector: 'app-user-card',
@@ -33,7 +10,7 @@ export interface User {
 
 export class UserCardComponent {
     @Input()
-    user!: User
+    user!: IUser
 
     @Output()
     deleteUser = new EventEmitter();

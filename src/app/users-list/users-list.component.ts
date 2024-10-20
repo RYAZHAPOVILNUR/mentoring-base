@@ -3,30 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.servise';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
-
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    zipcode: string;
-    city: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    bs: string;
-    catchPhrase: string;
-    name: string;
-  };
-}
+import { IUser } from '../Interfaces/user.interface';
 
 @Component({
   selector: 'app-users-list',
@@ -42,7 +19,7 @@ export class UsersListComponent {
   
   constructor() {
     this.usersApiService.getUsers().subscribe(
-      (response: any) => {
+      (response: IUser[]) => {
       this.usersService.setUsers(response);
     }
   )
