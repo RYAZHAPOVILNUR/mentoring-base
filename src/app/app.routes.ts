@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
-import { TodoListComponent } from './todo-list/todos-list.component';
+import { TodosListComponent } from './todo-list/todos-list.component';
+
 
 
 export const routes: Routes = [
@@ -10,6 +11,6 @@ export const routes: Routes = [
   },
   {
     path: 'todos',
-    component: TodoListComponent
+    component: TodosListComponent
   }
 ];
