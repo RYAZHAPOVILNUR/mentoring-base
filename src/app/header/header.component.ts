@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { NgFor, NgIf } from "@angular/common";
+import { RouterLink } from "@angular/router";
 
 const menuItems = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда'];
 const upperCaseMenuItems = menuItems.map(item => item.toUpperCase());
@@ -10,7 +11,7 @@ const aboutCompany = setMenuName('О компании')
 @Component({
     selector: 'app-header',
     standalone: true,
-    imports: [NgIf, NgFor],
+    imports: [NgIf, NgFor, RouterLink],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
