@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogClose } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-todo-form',
@@ -27,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogClose,
   ],
 })
 export class CreateTodoFormComponent {
@@ -70,10 +72,9 @@ export class CreateTodoFormComponent {
   }
 
   public getTodoCompletedValue(): boolean {
-    const enteredValue = this.todoForm
-      .get('completed')
-      ?.value!.trim()
-      .toLowerCase();
+    let enteredValue = this.todoForm.get('completed')?.value;
+
+    if (enteredValue) enteredValue = enteredValue.trim().toLowerCase();
 
     if (enteredValue === 'да') {
       return true;
@@ -87,5 +88,9 @@ export class CreateTodoFormComponent {
       completed: this.getTodoCompletedValue(),
     });
     this.todoForm.reset();
+  }
+
+  get todoWithFilledValues() {
+    return { ...this.todoForm.value, completed: this.getTodoCompletedValue() };
   }
 }

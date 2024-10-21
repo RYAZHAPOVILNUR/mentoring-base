@@ -19,10 +19,6 @@ export class CreateUserDialogComponent {
   @Output()
   createUser = new EventEmitter();
 
-  onCreateUser(user: IUser) {
-    this.createUser.emit(user);
-  }
-
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateUserFormComponent);
 

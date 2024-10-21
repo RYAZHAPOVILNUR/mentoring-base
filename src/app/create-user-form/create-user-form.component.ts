@@ -38,8 +38,6 @@ import { IUser } from '../interfaces/user.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateUserFormComponent {
-  readonly data = inject<{ user: IUser }>(MAT_DIALOG_DATA);
-
   @Output()
   createUser = new EventEmitter();
 
