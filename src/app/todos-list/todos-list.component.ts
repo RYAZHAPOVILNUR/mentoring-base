@@ -25,7 +25,6 @@ export class TodoListComponent {
     todos: ITodo[] = []
 
     constructor() {
-
         this.todosApiService.getTodos().subscribe(
             (response: any) => {
                 this.todos = response
@@ -35,7 +34,6 @@ export class TodoListComponent {
 
     deleteTodo(id: number) {
         this.todos = this.todos.filter(
-            
             item => {
                 if (id === item.id) {
                     return false

@@ -1,7 +1,7 @@
 КОМПОНЕНТ СПИСКА ЮЗЕРОВ
 
 <div class="users_cards_container">
-    <div class="users_cards" *ngFor="let item of users">
-        <app-user-card [user]="item" (deleteUser)="deleteUser($event)"></app-user-card>
+    <div class="users_cards" *ngFor="let user of users">
+        <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
     </div>
 </div>
