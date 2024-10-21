@@ -56,14 +56,12 @@ export class CreateUserFormComponent {
     ]),
   });
 
-  // public submitForm(): void {
-  //   this.createUser.emit(this.form.value);
-  //   this.form.reset();
-  // }
+  public submitForm(): void {
+    this.createUser.emit(this.form.value);
+    this.form.reset();
+  }
 
   get userWithFilledFields() {
-    console.log('data', this.data);
-    console.log('form value', this.form.value);
     return this.form.value;
   }
 }

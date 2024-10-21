@@ -32,9 +32,8 @@
       Название компании введено неправильно
     </mat-error>
   </mat-form-field>
-  <button mat-flat-button color="primary" type="submit" class="user-form-btn" [disabled]="form.invalid" (click)="userWithFilledFields">
+  <button mat-flat-button color="primary" type="submit" class="user-form-btn" [disabled]="form.invalid" (click)="submitForm()" [mat-dialog-close]="userWithFilledFields">
     <mat-icon>add</mat-icon>
     СОЗДАТЬ
   </button>
 </form>
-<!-- [mat-dialog-close]="submitForm()" -->

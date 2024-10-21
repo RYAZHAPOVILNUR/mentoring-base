@@ -27,8 +27,6 @@ export class CreateUserDialogComponent {
     const dialogRef = this.dialog.open(CreateUserFormComponent);
 
     dialogRef.afterClosed().subscribe((createdResult: IUser) => {
-      console.log('The dialog was closed');
-      console.log(createdResult);
       if (createdResult) {
         this.createUser.emit(createdResult);
       }
