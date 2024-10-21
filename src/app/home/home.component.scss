@@ -1,15 +1,15 @@
 .container {
     max-width: 1320px;
-    padding: 0 30px;
+    padding: 0px 30px;
     margin: 0 auto;
 }
 .banner {
-    background: url("..//..//assets/banner.jpg") 0 0/100% no-repeat;
+    background: url("../../assets/banner.jpg") 0 0/100% no-repeat;
     height: 720px;
 }
 .banner-text {
     width: 500px;
-    padding: 304px 0 0 300px;
+    padding: 304px 0px 0px 300px;
     font-size: 40px;
     font-weight: 700;
     color:#F0BA4E;
@@ -76,7 +76,7 @@
     box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
     padding: 16px;
     margin-right: 28px;
-    background: url("..//..//assets/item-cards-1.png") 0px 147px/auto auto no-repeat;
+    background: url("../../assets/item-cards-1.png") 0px 147px/auto auto no-repeat;
     background-color: #FFFFFF;
     overflow: hidden;
     &-title {
@@ -394,7 +394,7 @@
     font-weight: 500;
     font-size: 20px;
     color: #3C3C3B;
-    margin: 0 16px;
+    margin: 0px 16px;
 }
 .plus-button {
     font-weight: 400;
@@ -411,7 +411,7 @@
     justify-content: space-between;
     height: 195px;
     padding: 28px;
-    background: url("..//..//assets/pngwing-1.png") 819px 0px/auto auto no-repeat;
+    background: url("../../assets/pngwing-1.png") 819px 0px/auto auto no-repeat;
     background-color: #F6F6F6;
     &-title {
         font-weight: 500;

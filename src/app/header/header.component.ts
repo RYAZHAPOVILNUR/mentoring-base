@@ -22,9 +22,9 @@ export class HeaderComponent {
 
     changeMenuText() {
         this.menuItems = this.upperCaseMenuItems.map(
-        (item) => {
-            return this.isUpperCase ? item.toUpperCase() : item.toLowerCase()
-        }
+            (item) => {
+                return this.isUpperCase ? item.toUpperCase() : item.toLowerCase()
+            }
         )
 
         this.isUpperCase = !this.isUpperCase;
