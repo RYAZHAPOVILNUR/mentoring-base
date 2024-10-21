@@ -2,6 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap; margin-left: 300px;">
     <div *ngFor="let todo of todosService.todos$ | async">
+        
         <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
     </div>
 </div>

@@ -37,6 +37,7 @@ export interface IUser {
     imports: [NgFor, UserCardComponent, AsyncPipe],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class UsersListComponent {
     readonly usersApiServise = inject(UsersApiService)
     readonly usersService = inject(UsersService)
