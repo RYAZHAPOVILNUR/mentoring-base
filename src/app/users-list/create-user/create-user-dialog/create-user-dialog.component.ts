@@ -17,13 +17,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
-import { IUser } from '../interfaces/user.interface';
+import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-create-user-form',
-  templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss',
+  selector: 'app-create-user-dialog',
+  templateUrl: './create-user-dialog.component.html',
+  styleUrl: './create-user-dialog.component.scss',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -37,7 +36,9 @@ import { IUser } from '../interfaces/user.interface';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateUserFormComponent {
+export class CreateUserDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
+
   @Output()
   createUser = new EventEmitter();
 
@@ -54,12 +55,11 @@ export class CreateUserFormComponent {
     ]),
   });
 
-  public submitForm(): void {
-    this.createUser.emit(this.form.value);
-    this.form.reset();
-  }
-
   get userWithFilledFields() {
     return this.form.value;
+  }
+
+  onCancelClick() {
+    this.dialogRef.close();
   }
 }

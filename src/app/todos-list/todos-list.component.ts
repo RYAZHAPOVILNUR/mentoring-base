@@ -3,9 +3,9 @@ import { TodosApiService } from '../todos-api.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosCardComponent } from './todos-card/todos-card.component';
 import { TodosService } from '../todos.service';
-import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { CreateTodoDialogComponent } from './create-todo/create-todo-dialog/create-todo-dialog.component';
 import { ITodo } from '../interfaces/todo.interface';
-import { CreateTodoDialogComponent } from './create-todo-dialog/create-todo-dialog.component';
+import { CreateTodoComponent } from './create-todo/create-todo.component';
 
 @Component({
   selector: 'app-todos-list',
@@ -16,7 +16,7 @@ import { CreateTodoDialogComponent } from './create-todo-dialog/create-todo-dial
     NgFor,
     TodosCardComponent,
     AsyncPipe,
-    CreateTodoFormComponent,
+    CreateTodoComponent,
     CreateTodoDialogComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

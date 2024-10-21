@@ -1,12 +1,10 @@
 import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,6 +13,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ITodo } from '../../interfaces/todo.interface';
+import {
+  customNumberValidator,
+  customYesNoValidator,
+} from '../../custom-validators/custom-validators';
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -44,35 +46,13 @@ export class EditTodoDialogComponent {
       Validators.required,
       Validators.minLength(1),
       Validators.min(1),
-      this.customNumberValidator,
+      customNumberValidator,
     ]),
     completed: new FormControl(this.data.todo.completed ? 'Да' : 'Нет', [
       Validators.required,
-      this.customYesNoValidator,
+      customYesNoValidator,
     ]),
   });
-
-  public customNumberValidator(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const enteredValue = control.value;
-    const regex = /^\d+$/;
-    if (!regex.test(enteredValue)) {
-      return { isNotNumber: true };
-    }
-    return null;
-  }
-
-  public customYesNoValidator(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const enteredValue = control.value?.trim().toLowerCase();
-    if (enteredValue === 'да' || enteredValue === 'нет') {
-      return null;
-    } else {
-      return { invalidAnswer: true };
-    }
-  }
 
   public getTodoCompletedValue(): boolean {
     const enteredValue = this.editTodoForm

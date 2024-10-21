@@ -3,9 +3,9 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
-import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
+import { CreateUserDialogComponent } from './create-user/create-user-dialog/create-user-dialog.component';
 import { CreateUser } from '../interfaces/user.interface';
-import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.components';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @Component({
   selector: 'app-users-list',
@@ -16,7 +16,7 @@ import { CreateUserDialogComponent } from './create-user-dialog/create-user-dial
     NgFor,
     UserCardComponent,
     AsyncPipe,
-    CreateUserFormComponent,
+    CreateUserComponent,
     CreateUserDialogComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

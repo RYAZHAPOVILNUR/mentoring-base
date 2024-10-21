@@ -1,24 +1,26 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogClose } from '@angular/material/dialog';
+import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
+import {
+  customNumberValidator,
+  customYesNoValidator,
+} from '../../../custom-validators/custom-validators';
 
 @Component({
-  selector: 'app-create-todo-form',
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss',
+  selector: 'app-create-todo-dialog',
+  templateUrl: './create-todo-dialog.component.html',
+  styleUrl: './create-todo-dialog.component.scss',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -31,7 +33,9 @@ import { MatDialogClose } from '@angular/material/dialog';
     MatDialogClose,
   ],
 })
-export class CreateTodoFormComponent {
+export class CreateTodoDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>);
+
   @Output()
   createTodo = new EventEmitter();
 
@@ -41,35 +45,10 @@ export class CreateTodoFormComponent {
       Validators.required,
       Validators.minLength(1),
       Validators.min(1),
-      this.customNumberValidator,
+      customNumberValidator,
     ]),
-    completed: new FormControl('', [
-      Validators.required,
-      this.customYesNoValidator,
-    ]),
+    completed: new FormControl('', [Validators.required, customYesNoValidator]),
   });
-
-  public customNumberValidator(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const enteredValue = control.value;
-    const regex = /^\d+$/;
-    if (!regex.test(enteredValue)) {
-      return { isNotNumber: true };
-    }
-    return null;
-  }
-
-  public customYesNoValidator(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const enteredValue = control.value?.trim().toLowerCase();
-    if (enteredValue === 'да' || enteredValue === 'нет') {
-      return null;
-    } else {
-      return { invalidAnswer: true };
-    }
-  }
 
   public getTodoCompletedValue(): boolean {
     let enteredValue = this.todoForm.get('completed')?.value;
@@ -82,15 +61,11 @@ export class CreateTodoFormComponent {
     return false;
   }
 
-  public submitTodoForm(): void {
-    this.createTodo.emit({
-      ...this.todoForm.value,
-      completed: this.getTodoCompletedValue(),
-    });
-    this.todoForm.reset();
-  }
-
   get todoWithFilledValues() {
     return { ...this.todoForm.value, completed: this.getTodoCompletedValue() };
+  }
+
+  onCancelClick() {
+    this.dialogRef.close();
   }
 }

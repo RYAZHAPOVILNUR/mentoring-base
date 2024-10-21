@@ -24,8 +24,11 @@
       Ответ введен неправильно, только Да/Нет
     </mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="submitTodoForm()" [mat-dialog-close]="todoWithFilledValues" class="todo-form-btn" type="submit" [disabled]="todoForm.invalid">
+  <button mat-raised-button color="primary" [mat-dialog-close]="todoWithFilledValues" class="todo-form-btn" type="submit" [disabled]="todoForm.invalid">
     <mat-icon>add</mat-icon>
     СОЗДАТЬ ЗАДАЧУ
+  </button>
+  <button mat-stroked-button color="primary" (click)="onCancelClick()" class="todo-form-btn">
+    ОТМЕНА
   </button>
 </form>
