@@ -14,7 +14,8 @@ export class TodoCardComponent {
         userId: 0,
         id: 0,
         title: '',
-        completed: false}
+        completed: false
+    }
 
     @Output()
     deleteTodo = new EventEmitter()

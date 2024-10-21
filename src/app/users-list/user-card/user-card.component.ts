@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { IUser } from "../users-list.component";
 
-@Component ({
+@Component({
     selector: 'app-user-card',
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
@@ -12,26 +12,26 @@ export class UserCardComponent {
     @Input()
     user: IUser = {
         "id": 0,
-    "name": '',
-    "username": '',
-    "email": '',
-    "address": {
-        "street": '',
-        "suite": '',
-        "city": '',
-        "zipcode": '',
-        "geo": {
-            "lat": '',
-            "lng": ''
-        }
-    },
-    "phone": '',
-    "website": '',
-    "company": {
         "name": '',
-        "catchPhrase": '',
-        "bs": ''
-    }
+        "username": '',
+        "email": '',
+        "address": {
+            "street": '',
+            "suite": '',
+            "city": '',
+            "zipcode": '',
+            "geo": {
+                "lat": '',
+                "lng": ''
+            }
+        },
+        "phone": '',
+        "website": '',
+        "company": {
+            "name": '',
+            "catchPhrase": '',
+            "bs": ''
+        }
     }
 
     @Output()
