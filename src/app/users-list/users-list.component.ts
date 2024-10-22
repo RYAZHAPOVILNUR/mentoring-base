@@ -4,7 +4,7 @@ import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserDialogComponent } from './create-user/create-user-dialog/create-user-dialog.component';
-import { CreateUser } from '../interfaces/user.interface';
+import { CreateUser, IUser } from '../interfaces/user.interface';
 import { CreateUserComponent } from './create-user/create-user.component';
 
 @Component({
@@ -42,16 +42,17 @@ export class UsersListComponent {
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.companyName,
+        name: formData.company.name,
       },
     });
+    console.log(formData);
   }
 
-  editUser(user: CreateUser) {
+  editUser(user: IUser) {
     this.usersService.editUser({
       ...user,
       company: {
-        name: user.companyName,
+        name: user.company.name,
       },
     });
   }
