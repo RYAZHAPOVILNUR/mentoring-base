@@ -1,0 +1,124 @@
+.header-container {
+  max-width: 1920px;
+  background: #4b565e;
+}
+
+.header {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 80px;
+  font-family: Inter;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin-right: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-item {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.card-button {
+  width: 125px;
+  height: 50px;
+  color: white;
+  border-radius: 50px;
+  border: 1px solid #F0BA4E;
+  background-color: #4B565E;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-info-items {
+  margin-left: 40px;
+}
+
+.Phone {
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.header-bottom-container {
+  max-width: 1920px;
+  background: #F0BA4E;
+}
+
+.header-bottom{
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 48px;
+  align-items: center;
+  color: #3C3C3B;
+  font-family: Inter;
+}
+
+.header-bottom-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  margin-left: 3.5px;
+}
+
+.header-bottom-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom-nav {
+  display: flex;
+}
+
+.header-bottom-nav-item {
+  margin-left: 24px;
+  color: #3C3C3B;
+  text-decoration: none;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 400px;
+  height: 30px;
+  background: url("/assets/lupa.svg") no-repeat right;
+  margin-right: 24px;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location-city {
+  color: white;
+  margin-left: 4px;
+}
