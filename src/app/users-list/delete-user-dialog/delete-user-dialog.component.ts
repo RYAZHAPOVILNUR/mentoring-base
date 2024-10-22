@@ -13,5 +13,5 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class DeleteUserDialogComponent {
   public readonly data = inject<{user: UserInterface}>(MAT_DIALOG_DATA)
   
-  readonly dialog = inject(MatDialog)
+  // readonly dialog = inject(MatDialog)
 }

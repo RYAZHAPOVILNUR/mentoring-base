@@ -1,7 +1,7 @@
 <div class="container">
-    <h2 mat-dialog-title class="text">Удалить пользователя: {{this.data.user.name}}?</h2>
-<mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="true" class="button-delete">Удалить</button>
-    <button mat-button [mat-dialog-close]="false" class="button-cancel">Отмена</button>
-</mat-dialog-actions>
+    <h2 mat-dialog-title class="text">Delete user: <span style="padding-left: 10px;">{{this.data.user.name}}?</span></h2>
+    <mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="true" class="button-delete">DELETE</button>
+        <button mat-button [mat-dialog-close]="false" class="button-cancel">CANCEL</button>
+    </mat-dialog-actions>
 </div>

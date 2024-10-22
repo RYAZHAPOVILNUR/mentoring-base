@@ -12,5 +12,5 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/d
 export class DeleteTodoDialogComponent {
   public readonly data = inject<{todo: TodoInterface}>(MAT_DIALOG_DATA)
   
-  readonly dialog = inject(MatDialog)
+  // readonly dialog = inject(MatDialog)
 }

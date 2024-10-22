@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 mat-dialog-title class="text"> Удалить задачу: {{this.data.todo.userId}}</h2>
+    <h2 mat-dialog-title class="text"> Удалить задачу: <span style="padding-left: 10px;">{{this.data.todo.userId}}?</span></h2>
     <mat-dialog-actions>
         <button mat-button [mat-dialog-close]="true" class="button-delete">Удалить</button>
         <button mat-button [mat-dialog-close]="false" class="button-cancel">Отмена</button>

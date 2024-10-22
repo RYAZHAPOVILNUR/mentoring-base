@@ -28,6 +28,27 @@
   margin-top: 25px;
 }
 
+.btn_edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #3c3c3b;
+  font-family: "Inter", sans-serif;
+  border-radius: 30px;
+  background: #f3b81d;
+  color: #3c3c3b;
+  margin: 15px auto;
+  margin-top: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: #3c3c3b;
+    border: 1px solid #f3b81d;
+    color: #f3b81d;
+  }
+}
+
 .btn_delete {
   display: flex;
   align-items: center;
@@ -47,24 +68,3 @@
     color: #f3b81d;
   }
 }
-
-.btn_edit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 30px;
-    border: 1px solid #3c3c3b;
-    font-family: "Inter", sans-serif;
-    border-radius: 30px;
-    background: #f3b81d;
-    color: #3c3c3b;
-    margin: 15px auto;
-    margin-top: 30px;
-    cursor: pointer;
-    &:hover {
-      background-color: #3c3c3b;
-      border: 1px solid #f3b81d;
-      color: #f3b81d;
-    }
-  }

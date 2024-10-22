@@ -32,16 +32,38 @@
     font-weight: 600;
 }
 
-.btn_delete {
+.btn_edit {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 200px;
     height: 30px;
     background: #f3b81d;
     border-radius: 30px;
     border: none;
-    margin: 30px auto;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid #3C3C3B;
+    &:hover {
+        cursor: pointer;
+        background-color: #3C3C3B;
+        color: #f3b81d;
+        border: 1px solid #f3b81d;
+    }
+}
+
+.btn_delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+    background: #f3b81d;
+    border-radius: 30px;
+    border: none;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
     border: 1px solid #3C3C3B;
     &:hover {
         cursor: pointer;

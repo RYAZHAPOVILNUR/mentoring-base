@@ -1,0 +1,70 @@
+.content_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 30px;
+    color: #3C3C3B;
+    &:hover{
+        background-color: #f0f1f5;
+        color: #3f51b5;
+    }
+}
+
+.title{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.example-full-width {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.btn_edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background-color: #efba50;
+        border: 1px solid #3C3C3B;
+        color: #3C3C3B;
+    }
+}
+
+.btn_cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    &:hover{
+        background-color: #efba50;
+        border: 1px solid #3C3C3B;
+        color: #3C3C3B;
+    }
+}
+
+.alert{
+    display: flex;
+    color: red;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+}

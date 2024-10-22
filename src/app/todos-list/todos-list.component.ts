@@ -6,11 +6,12 @@ import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
 import { TodoInterface } from '../interfaces/todo-interfaces';
 import { CreateTodoFormBtnAddDialogComponent } from './create-todo-form-btn-add-dialog/create-todo-form-btn-add-dialog.component';
+import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [NgFor, NgIf, TodoCardComponent, AsyncPipe, CreateTodoFormComponent, CreateTodoFormBtnAddDialogComponent],
+  imports: [NgFor, NgIf, TodoCardComponent, AsyncPipe, CreateTodoFormComponent, CreateTodoFormBtnAddDialogComponent,EditTodoDialogComponent],
   templateUrl: './todos-list.component.html',
   styleUrl: './todos-list.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush делает работу с данными намного быстрее
@@ -41,6 +42,12 @@ export class TodosListComponent {
       id: new Date().getTime(),
       title: formData.title,
       completed: formData.completed,
+    });
+  }
+  
+  editTodo(todo: TodoInterface) {
+    this.todosService.editTodo({
+      ...todo,
     });
   }
 }

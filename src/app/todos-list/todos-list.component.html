@@ -4,7 +4,7 @@
 
 <div class="content_users">
     <div *ngFor="let todo of todosService.todos$ | async">
-        <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+        <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todo-card>
     </div>
 </div> 
 

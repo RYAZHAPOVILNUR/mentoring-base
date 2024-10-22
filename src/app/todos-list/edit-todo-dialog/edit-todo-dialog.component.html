@@ -1,1 +1,40 @@
-<p>edit-todo-dialog works!</p>
+<div class="content_form">
+
+    <h2 class="title">EDIT TODO</h2>
+
+    <form class="block_form" [formGroup]="form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Изменить id задачи</mat-label>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+            <input matInput placeholder="Введите id задачи" formControlName="userId">
+            <mat-error>Id задачи не верный!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Изменить задачу</mat-label>
+            <textarea matInput #message maxlength="256" placeholder="Введите вашу задачу"
+                formControlName="title"></textarea>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+            <mat-error>Задача введена неправильно!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Задача решена</mat-label>
+            <mat-select placeholder="Введите Yes/No" formControlName="completed">
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+            </mat-select>
+            <mat-error>Введите верный ответ!</mat-error>
+        </mat-form-field>
+
+        <button class="btn_edit" mat-raised-button color="primary" [mat-dialog-close]="userWithUpdatedField"
+            [disabled]="form.invalid">
+            <mat-icon>edit_note</mat-icon>
+            ИЗМЕНИТЬ
+        </button>
+        <button class="btn_cancel" mat-raised-button color="primary" [mat-dialog-close]="false">
+            <mat-icon>close</mat-icon>
+            ОТМЕНА
+        </button>
+    </form>
+</div>
