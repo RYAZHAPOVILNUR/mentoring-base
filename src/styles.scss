@@ -22,7 +22,10 @@ html {
 
 /* Sections
    ========================================================================== */
-
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
 /**
  * Remove the margin in all browsers.
  */
@@ -359,5 +362,11 @@ template {
   display: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

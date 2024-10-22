@@ -8,7 +8,7 @@ export class TodosApiService {
 
   getTodosList() {
     return this.apiService.get<ITodo[]>(
-      'https://jsonplaceholder.typicode.com/todos'
+      'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
     );
   }
 }

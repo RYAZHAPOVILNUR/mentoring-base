@@ -17,7 +17,7 @@ export class CreateUserComponent {
   readonly dialog = inject(MatDialog);
 
   @Output()
-  createUser = new EventEmitter();
+  createUser = new EventEmitter<IUser>();
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateUserDialogComponent);

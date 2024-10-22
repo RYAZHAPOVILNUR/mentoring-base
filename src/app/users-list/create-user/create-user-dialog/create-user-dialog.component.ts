@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
+import { IUser } from '../../../interfaces/user.interface';
 
 @Component({
   selector: 'app-create-user-dialog',
@@ -40,7 +41,7 @@ export class CreateUserDialogComponent {
   readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
 
   @Output()
-  createUser = new EventEmitter();
+  createUser = new EventEmitter<IUser>();
 
   public form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),

@@ -45,7 +45,6 @@ export class UsersListComponent {
         name: formData.company.name,
       },
     });
-    console.log(formData);
   }
 
   editUser(user: IUser) {
