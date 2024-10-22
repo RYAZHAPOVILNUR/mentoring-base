@@ -23,14 +23,16 @@
       Вебсайт введен неправильно
     </mat-error>
   </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Введите название компании</mat-label>
-    <input matInput type="text" formControlName="companyName">
-    <mat-icon matSuffix>edit</mat-icon>
-    <mat-error>
-      Название компании введено неправильно
-    </mat-error>
-  </mat-form-field>
+  <div formGroupName="company">
+    <mat-form-field appearance="fill">
+      <mat-label>Введите название компании</mat-label>
+      <input matInput type="text" formControlName="name">
+      <mat-icon matSuffix>edit</mat-icon>
+      <mat-error>
+        Название компании введено неправильно
+      </mat-error>
+    </mat-form-field>
+  </div>
   <button mat-flat-button color="primary" type="submit" [mat-dialog-close]="userWithUpdatedFields" class="user-form-btn" [disabled]="form.invalid">
     <mat-icon>add</mat-icon>
     СОХРАНИТЬ

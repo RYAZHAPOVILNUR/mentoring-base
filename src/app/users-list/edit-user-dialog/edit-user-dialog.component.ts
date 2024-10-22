@@ -46,10 +46,12 @@ export class EditUserDialogComponent {
       Validators.required,
       Validators.minLength(3),
     ]),
-    companyName: new FormControl(this.data.user.company.name, [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
+    company: new FormGroup({
+      name: new FormControl(this.data.user.company.name, [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+    }),
   });
 
   get userWithUpdatedFields() {
