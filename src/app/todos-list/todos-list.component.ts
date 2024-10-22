@@ -5,11 +5,12 @@ import { TodosApiService } from '../todos-api.service';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
 import { TodoInterface } from '../interfaces/todo-interfaces';
+import { CreateTodoFormBtnAddDialogComponent } from './create-todo-form-btn-add-dialog/create-todo-form-btn-add-dialog.component';
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [NgFor, NgIf, TodoCardComponent, AsyncPipe, CreateTodoFormComponent],
+  imports: [NgFor, NgIf, TodoCardComponent, AsyncPipe, CreateTodoFormComponent, CreateTodoFormBtnAddDialogComponent],
   templateUrl: './todos-list.component.html',
   styleUrl: './todos-list.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush делает работу с данными намного быстрее

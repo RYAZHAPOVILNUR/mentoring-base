@@ -1,12 +1,16 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateTodoDialogComponent } from '../todos-list/create-todo-dialog/create-todo-dialog.component';
+import { TodoInterface } from '../interfaces/todo-interfaces';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 // Валидатор для поля 'completed'
 export function completedValidator(): ValidatorFn {
@@ -25,22 +29,28 @@ export function completedValidator(): ValidatorFn {
 })
 export class CreateTodoFormComponent {
   @Output()
-  createTodoForm = new EventEmitter();
+  public createTodo = new EventEmitter<TodoInterface>();
 
-  public form = new FormGroup({
-    userId: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]),
-    title: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern("^[a-zA-Zа-яА-Я0-9.,_\\- ]*$")]),
-    completed: new FormControl('', [Validators.required, completedValidator(), Validators.pattern("^[a-zA-Z]*$")])
-  });
+  readonly dialog = inject(MatDialog);
 
-  private getCompletedValue(): boolean {
-    const value = this.form.get('completed')?.value!.trim().toLowerCase();
-    return value === 'yes';
-  }
+  public snackBar = inject(MatSnackBar)
 
-  public submitFormTodo(): void {
-    const formData = { ...this.form.value, completed: this.getCompletedValue() };
-    this.createTodoForm.emit(formData);
-    this.form.reset();
+  openCreateDialog(): void {
+    const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
+      width: '350px'
+    });
+
+    dialogRef.afterClosed().subscribe((result: TodoInterface) => {
+      if (result) { 
+        this.createTodo.emit(result);
+        this.snackBar.open('ЗАДАЧА СОЗДАНА!', 'Ok', {
+          duration: 5000
+        });
+      } else {
+        this.snackBar.open('ОТМЕНА СОЗДАНИЯ!', 'Ok', {
+          duration: 5000
+        });
+      }
+    });
   }
 }

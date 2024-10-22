@@ -4,10 +4,7 @@ import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import {
-  CreateUserInterface,
-  UserInterface,
-} from '../interfaces/user-interfaces';
+import { CreateUserInterface, UserInterface } from '../interfaces/user-interfaces';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CreateUserFormBtnAddDialogComponent } from './create-user-form-btn-add-dialog/create-user-form-btn-add-dialog.component';

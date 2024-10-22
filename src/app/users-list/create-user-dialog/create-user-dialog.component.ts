@@ -24,24 +24,11 @@ export class CreateUserDialogComponent {
 
   public form = new FormGroup({
     // Validators.pattern("^[a-zA-Zа-яА-я.]*$")
-    name: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email,
-      Validators.minLength(3),
-    ]),
-    website: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
+    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),
+    website: new FormControl('', [Validators.required, Validators.minLength(3)]),
     company: new FormGroup({
-      name: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-      ]),
-    })
+      name: new FormControl('', [Validators.required, Validators.minLength(3)])
+    }),
   });
 }

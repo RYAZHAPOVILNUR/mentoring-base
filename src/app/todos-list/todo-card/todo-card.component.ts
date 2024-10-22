@@ -1,10 +1,10 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { TodoInterface } from '../../interfaces/todo-interfaces';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DeleteTodoDialogComponent } from '../delete-todo-dialog/delete-todo-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
- 
+
 @Component({
   selector: 'app-todo-card',
   standalone: true,
@@ -18,14 +18,14 @@ export class TodoCardComponent {
 
   @Output()
   public deleteTodo = new EventEmitter<number>();
-  
+
   readonly dialog = inject(MatDialog);
-  
+
   public snackBar = inject(MatSnackBar);
-  
+
   openDeleteDialog(): void {
     const dialogRef = this.dialog.open(DeleteTodoDialogComponent, {
-      data: {todo: this.todo},
+      data: { todo: this.todo },
     });
 
     dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
@@ -41,5 +41,4 @@ export class TodoCardComponent {
       }
     });
   }
-
-  }
+}

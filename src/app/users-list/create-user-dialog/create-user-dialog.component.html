@@ -42,9 +42,9 @@
             <input matInput placeholder="Enter your company name:" formControlName="name" />
             <mat-icon matSuffix>mode_edit</mat-icon>
             <mat-error
-                *ngIf="form.controls['website'].hasError('minlength') && !form.controls['website'].hasError('required')">Слишком
+                *ngIf="form.controls['company'].hasError('minlength') && !form.controls['company'].hasError('required')">Слишком
                 короткое</mat-error>
-            <mat-error *ngIf="form.controls['website'].hasError('required')">Заполните поле!</mat-error>
+            <mat-error *ngIf="form.controls['name'].hasError('required')">Заполните поле!</mat-error>
         </mat-form-field>
 
         <!-- кнопка button по умолчанию уже с типом submit и button находится внутри тега from

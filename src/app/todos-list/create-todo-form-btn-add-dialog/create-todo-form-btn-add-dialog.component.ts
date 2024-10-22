@@ -1,42 +1,46 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { TodoInterface } from '../../interfaces/todo-interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CreateUserInterface } from '../../interfaces/user-interfaces';
-import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
+import { CreateTodoDialogComponent } from '../create-todo-dialog/create-todo-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-create-user-form-btn-add-dialog',
+  selector: 'app-create-todo-form-btn-add-dialog',
   standalone: true,
   imports: [MatIconModule, MatButtonModule],
-  templateUrl: './create-user-form-btn-add-dialog.component.html',
-  styleUrl: './create-user-form-btn-add-dialog.component.scss'
+  templateUrl: './create-todo-form-btn-add-dialog.component.html',
+  styleUrl: './create-todo-form-btn-add-dialog.component.scss'
 })
-export class CreateUserFormBtnAddDialogComponent {
+export class CreateTodoFormBtnAddDialogComponent {
+
   @Output()
-  public createUserButtonAdd= new EventEmitter<CreateUserInterface>();
+  public createTodoButtonAdd = new EventEmitter<TodoInterface>();
 
   readonly dailog = inject(MatDialog);
-  
+
   public snackBar = inject(MatSnackBar);
 
   openCreateOpenButtonAddDialog(): void {
     // открываем модалку. Ничего внутрь не передаем, а зачем нам передавать data { user }? мы же его только создаем. То, что ты передашь будет = undefined
-    const dialogRef = this.dailog.open(CreateUserDialogComponent);
+    const dialogRef = this.dailog.open(CreateTodoDialogComponent, {
+      width: '350px',
+    });
 
-    dialogRef.afterClosed().subscribe((result: CreateUserInterface) => {
+    dialogRef.afterClosed().subscribe((result: TodoInterface) => {
       // если результат true (то-есть данные пришли), тогда эмитим(отправляем) эти данные в users-list
       if (result) {
-        this.createUserButtonAdd.emit(result);
-        this.snackBar.open('Пользователь создан!', 'Ok', {
+        this.createTodoButtonAdd.emit(result);
+        this.snackBar.open('ЗАДАЧА СОЗДАНА!', 'Ok', {
           duration: 5000
         });
       } else {
-        this.snackBar.open('Отмена создания!', 'Ok', {
+        this.snackBar.open('ОТМЕНА СОЗДАНИЯ!', 'Ok', {
           duration: 5000
         });
       }
     })
   }
+
 }
