@@ -1,0 +1,94 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: white;
+    background-color: #4B565E;
+    padding: 0 100px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    margin-right: 40px;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-item {
+    margin-right: 20px;
+}
+
+.header-right {
+    align-items: center;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+}
+
+.number {
+    margin-right: 10px;
+}
+
+.heart {
+    align-items: center;
+    display: flex;
+}
+
+.knopka {
+    align-items: center;
+    display: flex;
+    margin: 20px;
+}
+
+.subheader {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    color: black;
+    background-color: #F0BA4E;
+    padding: 0 100px;
+}
+
+.subheader-left {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.subheader-nav {
+    align-items: center;
+    display: flex;
+}
+
+.subheader-nav-item {
+    display: flex;
+    margin-right: 20px;
+}
+
+.subheader-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search {
+    width: 220px;
+    height: 28px;
+    border: none;
+    border-bottom: 1px solid #3C3C3B;
+    background-color: transparent;
+}
+
+.content-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}

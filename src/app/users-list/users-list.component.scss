@@ -1,0 +1,16 @@
+.users-list-cards {
+    width: 240px;
+        height: 200px;
+        padding: 20px;
+        border: 1px solid black;
+        margin: 5px;
+        box-shadow: 1px 1px 1px black;
+        align-items: center;
+        font-family: inter;
+            gap: 10px;
+}
+
+.delete-user {
+    border: 2px solid #F0BA4E;
+    border-radius: 40px;
+}
