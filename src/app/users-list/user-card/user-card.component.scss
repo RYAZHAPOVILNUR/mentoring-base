@@ -1,0 +1,27 @@
+.users-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 215px;
+    height: 200px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+    font-weight: 500;
+    font-size: 16px;
+    color: #3C3C3B;
+}
+.users-card>p {
+    margin: 0;
+}
+.users-card-btn {
+    width: 145px;
+    height: 40px;
+    border-radius: 57px;
+    border: 1px solid #F0BA4E;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3C3C3B;
+    margin: 0 auto;
+}
