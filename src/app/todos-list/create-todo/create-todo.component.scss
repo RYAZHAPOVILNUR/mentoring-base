@@ -1,6 +1,7 @@
-.create-todo-card {
-  margin: 20px 0;
-  width: 400px;
-  align-items: center;
-  padding: 15px;
+.create-todo-btn {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  scale: 1.5;
+  z-index: 9999;
 }
