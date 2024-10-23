@@ -1,9 +1,8 @@
-import { NgIf, NgFor } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
-import { Component, inject, Injectable } from "@angular/core";
+import { NgIf, NgFor } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, Injectable } from '@angular/core';
 
-Injectable()
-
+Injectable();
 
 @Component({
   selector: 'app-users-list',
@@ -14,16 +13,26 @@ Injectable()
 })
 export class UsersListComponent {
   readonly apiService = inject(HttpClient);
-  users: any[] = [];
+  users: User[] = [];
   constructor() {
-    this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe((response: any) => {
+    this.apiService
+      .get('https://jsonplaceholder.typicode.com/users')
+      .subscribe((response: any) => {
         this.users = response;
-      }
-    );
+      });
   }
 
   deleteUser(id: number) {
-    this.users = this.users.filter (
-        item => item.id !== id)
+    this.users = this.users.filter((item) => item.id !== id);
   }
+}
+export interface User {
+  id: number;
+  name: string;
+  username: string;
+  website: string;
+  email: string;
+  company: {
+    name: string;
+  };
 }
