@@ -1,1 +1,5 @@
-<p>delete-todo-dialog works!</p>
+<h2 mat-dialog-title>Вы действительно хотите удалить задание {{data.todo.userId}}?</h2>
+<mat-dialog-actions>
+  <button mat-stroked-button color="primary" mat-dialog-close>ОТМЕНА</button>
+  <button cdkFocusInitial mat-raised-button color="primary" [mat-dialog-close]="true">УДАЛИТЬ</button>
+</mat-dialog-actions>

@@ -20,8 +20,8 @@ import {
 
 @Component({
   selector: 'app-edit-todo-dialog',
-  templateUrl: './edit-todo.component.html',
-  styleUrl: './edit-todo.component.scss',
+  templateUrl: './edit-todo-dialog.component.html',
+  styleUrl: './edit-todo-dialog.component.scss',
   imports: [
     ReactiveFormsModule,
     NgIf,

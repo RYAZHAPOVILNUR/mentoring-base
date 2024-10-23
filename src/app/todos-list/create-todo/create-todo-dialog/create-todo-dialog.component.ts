@@ -16,6 +16,7 @@ import {
   customNumberValidator,
   customYesNoValidator,
 } from '../../../custom-validators/custom-validators';
+import { ITodo } from '../../../interfaces/todo.interface';
 
 @Component({
   selector: 'app-create-todo-dialog',
@@ -37,7 +38,7 @@ export class CreateTodoDialogComponent {
   readonly dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>);
 
   @Output()
-  createTodo = new EventEmitter();
+  createTodo = new EventEmitter<ITodo>();
 
   public todoForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
