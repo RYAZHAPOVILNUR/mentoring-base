@@ -6,6 +6,7 @@ import { UsersService } from '../users.service';
 import { CreateUserDialogComponent } from './create-user/create-user-dialog/create-user-dialog.component';
 import { CreateUser, IUser } from '../interfaces/user.interface';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-users-list',
@@ -18,6 +19,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     AsyncPipe,
     CreateUserComponent,
     CreateUserDialogComponent,
+    MatCardModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

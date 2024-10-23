@@ -1,9 +1,18 @@
 .user {
-  &-card-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 250px;
+  &-card {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 250px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+    }
   }
 
   &-name {
@@ -13,7 +22,8 @@
   }
 
   &-email,
-  &-website {
+  &-website,
+  &-company {
     cursor: pointer;
     text-decoration: none;
     color: #3c3c3b;
@@ -21,10 +31,7 @@
   }
 
   &-company {
-    font-size: 18px;
-
     &-bold {
-      font-size: 15px;
       font-weight: 700;
     }
   }
@@ -39,9 +46,17 @@
   font-weight: 600;
   color: #3c3c3b;
   cursor: pointer;
+  width: 100%;
 
   &:hover {
     background-color: #f0ba4e;
     color: #fff;
   }
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
 }

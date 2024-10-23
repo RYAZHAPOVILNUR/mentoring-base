@@ -1,9 +1,11 @@
 .todos {
-  &-card-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 250px;
+  &-card {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 250px;
+    }
   }
 
   &-text {
@@ -28,9 +30,27 @@
   font-weight: 600;
   color: #3c3c3b;
   cursor: pointer;
+  width: 100%;
 
   &:hover {
     background-color: #f0ba4e;
     color: #fff;
   }
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
 }

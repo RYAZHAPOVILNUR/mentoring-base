@@ -1,8 +1,12 @@
 <div class="user-card-wrapper">
-  <p class="user-name">{{user.name}}</p>
-  <a href="#" class="user-email">{{user.email}}</a>
-  <a href="#" class="user-website">{{user.website}}</a>
-  <p class="user-company"><span class="user-company-bold">Company:</span> {{user.company.name}}</p>
-  <button class="delete-btn" (click)="openDeleteDialog()">Удалить пользователя</button>
-  <button class="delete-btn" (click)="openDialog()">Редактировать</button>
+  <mat-card-content class="user-card-content">
+    <p class="user-name">{{user.name}}</p>
+    <a href="#" class="user-email">{{user.email}}</a>
+    <a href="#" class="user-website">{{user.website}}</a>
+    <p class="user-company"><span class="user-company-bold">Company:</span> {{user.company.name}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button color="primary" class="delete-btn" (click)="openDeleteDialog()">Удалить</button>
+    <button mat-stroked-button color="primary" class="delete-btn" (click)="openDialog()">Редактировать</button>
+  </mat-card-actions>
 </div>

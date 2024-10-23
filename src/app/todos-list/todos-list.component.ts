@@ -6,6 +6,7 @@ import { TodosService } from '../todos.service';
 import { CreateTodoDialogComponent } from './create-todo/create-todo-dialog/create-todo-dialog.component';
 import { ITodo } from '../interfaces/todo.interface';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-todos-list',
@@ -18,6 +19,7 @@ import { CreateTodoComponent } from './create-todo/create-todo.component';
     AsyncPipe,
     CreateTodoComponent,
     CreateTodoDialogComponent,
+    MatCardModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

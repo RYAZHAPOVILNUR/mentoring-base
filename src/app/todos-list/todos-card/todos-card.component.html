@@ -1,10 +1,14 @@
 <div class="todos-card-wrapper">
-  <p class="todos-text">Название задачи:</p>
-  <p class="todos-task">{{todo.title}}</p>
-  <p class="todos-text">Автор задачи:</p>
-  <p class="todos-task">{{todo.userId}}</p>
-  <p class="todos-text">Задача завершена:</p>
-  <p class="todos-task">{{todo.completed ? 'Да' : 'Нет'}}</p>
-  <button class="delete-btn" (click)="openDeleteToDoDialog()">Удалить задачу</button>
-  <button class="delete-btn" (click)="openDialog()">Редактировать</button>
+  <mat-card-content>
+    <p class="todos-text">Название задачи:</p>
+    <p class="todos-task">{{todo.title}}</p>
+    <p class="todos-text">Автор задачи:</p>
+    <p class="todos-task">{{todo.userId}}</p>
+    <p class="todos-text">Задача завершена:</p>
+    <p class="todos-task">{{todo.completed ? 'Да' : 'Нет'}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button color="primary" class="delete-btn" (click)="openDeleteToDoDialog()">Удалить задачу</button>
+    <button mat-stroked-button color="primary" class="delete-btn" (click)="openDialog()">Редактировать</button>
+  </mat-card-actions>
 </div>
