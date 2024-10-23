@@ -23,19 +23,19 @@ export class TodosCardComponent {
   todo!: ITodo;
 
   @Output()
-  deleteTodos = new EventEmitter<number>();
+  deleteTodo = new EventEmitter<number>();
 
   @Output()
-  editTodos = new EventEmitter<ITodo>();
+  editTodo = new EventEmitter<ITodo>();
 
-  public openDialog(): void {
+  public openEditDialog(): void {
     const dialogRef = this.dialog.open(EditTodoDialogComponent, {
       data: { todo: this.todo },
     });
 
     dialogRef.afterClosed().subscribe((editedResult: ITodo) => {
       if (editedResult) {
-        this.editTodos.emit(editedResult);
+        this.editTodo.emit(editedResult);
         this._snackBar.open('Задание отредактировано!', 'OK', {
           duration: 3000,
         });
@@ -51,7 +51,7 @@ export class TodosCardComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
       if (result) {
-        this.deleteTodos.emit(this.todo.id);
+        this.deleteTodo.emit(this.todo.id);
         this._snackBar.open('Задание удалено!', 'OK', { duration: 3000 });
       } else {
         this._snackBar.open('Отмена удаления задания!', 'OK', {

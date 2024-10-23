@@ -31,7 +31,7 @@ export class UserCardComponent {
   public openDeleteDialog(): void {
     const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
       width: '600px',
-      data: { user: this.user },
+      data: { username: this.user.name, id: this.user.id },
     });
 
     dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
@@ -46,7 +46,7 @@ export class UserCardComponent {
     });
   }
 
-  public openDialog(): void {
+  public openEditDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });

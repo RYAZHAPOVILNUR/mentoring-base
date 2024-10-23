@@ -11,5 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './delete-user-dialog.component.scss',
 })
 export class DeleteUserDialogComponent {
-  public readonly data = inject<{ user: IUser }>(MAT_DIALOG_DATA);
+  public readonly data = inject<{ username: string; id: number }>(
+    MAT_DIALOG_DATA
+  );
 }
