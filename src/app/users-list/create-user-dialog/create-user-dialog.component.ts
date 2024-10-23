@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -11,7 +12,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { merge } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogClose } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogClose,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { User } from '../../interfaces/user-interface';
 
 @Component({
   standalone: true,
@@ -28,6 +35,9 @@ import { MatDialogClose } from '@angular/material/dialog';
   ],
 })
 export class CreateUserDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
+  private _snackBar = inject(MatSnackBar);
+  readonly data = inject<{ users: User[] }>(MAT_DIALOG_DATA);
   public form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -35,10 +45,9 @@ export class CreateUserDialogComponent {
       Validators.required,
       Validators.minLength(3),
     ]),
-    companyName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
+    company: new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    }),
   });
 
   nameErrorMessage = signal('');
@@ -54,48 +63,69 @@ export class CreateUserDialogComponent {
       this.form.controls.email.valueChanges,
       this.form.controls.website.statusChanges,
       this.form.controls.website.valueChanges,
-      this.form.controls.companyName.statusChanges,
-      this.form.controls.companyName.valueChanges
+      this.form.controls.company.controls.name.statusChanges,
+      this.form.controls.company.controls.name.valueChanges
     )
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
   }
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, { duration: 3000 });
+  }
+
+  setErrorMessage(
+    control: AbstractControl,
+    errorMessages: { [key: string]: string }
+  ) {
+    const errorKeys = Object.keys(errorMessages);
+    for (const errorKey of errorKeys) {
+      if (control.hasError(errorKey)) {
+        return errorMessages[errorKey];
+      }
+    }
+    return '';
+  }
+
   updateErrorMessage() {
-    if (this.form.controls.name.hasError('required')) {
-      this.nameErrorMessage.set('Введите имя');
-    } else if (this.form.controls.name.hasError('minlength')) {
-      this.nameErrorMessage.set('Длина минимум 2 символа');
-    } else {
-      this.nameErrorMessage.set('');
-    }
+    this.nameErrorMessage.set(
+      this.setErrorMessage(this.form.controls.name, {
+        required: 'Введите имя',
+        minlength: 'Длина минимум 2 символа',
+      })
+    );
 
-    if (this.form.controls.email.hasError('required')) {
-      this.emailErrorMessage.set('Введите почту');
-    } else if (this.form.controls.email.hasError('email')) {
-      this.emailErrorMessage.set('Почта введена некорректно');
-    } else {
-      this.emailErrorMessage.set('');
-    }
+    this.emailErrorMessage.set(
+      this.setErrorMessage(this.form.controls.email, {
+        required: 'Введите почту',
+        email: 'Почта введена некорректно',
+      })
+    );
 
-    if (this.form.controls.website.hasError('required')) {
-      this.websiteErrorMessage.set('Введите адрес сайта');
-    } else if (this.form.controls.website.hasError('minlength')) {
-      this.websiteErrorMessage.set('Длина минимум 3 символа');
-    } else {
-      this.websiteErrorMessage.set('');
-    }
+    this.websiteErrorMessage.set(
+      this.setErrorMessage(this.form.controls.website, {
+        required: 'Введите адрес сайта',
+        minlength: 'Длина минимум 3 символа',
+      })
+    );
 
-    if (this.form.controls.companyName.hasError('required')) {
-      this.companyNameErrorMessage.set('Введите название компании');
-    } else if (this.form.controls.companyName.hasError('minlength')) {
-      this.companyNameErrorMessage.set('Длина минимум 2 символа');
-    } else {
-      this.companyNameErrorMessage.set('');
-    }
+    this.companyNameErrorMessage.set(
+      this.setErrorMessage(this.form.controls.company.controls.name, {
+        required: 'Введите название компании',
+        minlength: 'Длина минимум 3 символа',
+      })
+    );
   }
 
   submitForm() {
-    return this.form.value;
+    const isEmailExist = this.data.users.find(
+      (user) => user.email === this.form.value.email
+    );
+
+    if (isEmailExist) {
+      this.openSnackBar('Такой имэйл уже существует!', '');
+    } else {
+      this.dialogRef.close(this.form.value);
+    }
   }
 }

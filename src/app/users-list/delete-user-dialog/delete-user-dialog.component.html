@@ -7,7 +7,7 @@
     <button
       mat-flat-button
       color="warn"
-      [mat-dialog-close]="onYesDelete()"
+      (click)="confirmDelete()"
       cdkFocusInitial
     >
       Да

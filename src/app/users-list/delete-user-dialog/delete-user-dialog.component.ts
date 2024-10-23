@@ -29,7 +29,7 @@ export class DeleteUserDialogComponent {
     this.dialogRef.close();
   }
 
-  onYesDelete() {
-    return this.data.user.id;
+  confirmDelete() {
+    this.dialogRef.close(this.data.user.id);
   }
 }

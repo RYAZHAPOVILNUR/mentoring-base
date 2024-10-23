@@ -6,6 +6,7 @@ import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dia
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-card',
@@ -16,46 +17,52 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class UserCardComponent {
   readonly dialog = inject(MatDialog);
+  private _snackBar = inject(MatSnackBar);
 
   @Input()
   user: User;
 
   @Output()
-  deleteUser = new EventEmitter();
+  public deleteUser = new EventEmitter();
 
   @Output()
-  editUser = new EventEmitter();
+  public editUser = new EventEmitter();
 
-  onDeleteUser(id: number) {
+  public onDeleteUser(id: number) {
     this.deleteUser.emit(id);
   }
 
-  openDeleteUserDialog(): void {
+  private openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, { duration: 3000 });
+  }
+
+  public openDeleteUserDialog(): void {
     const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
       data: { user: this.user },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (result !== undefined) {
+      if (result) {
         this.deleteUser.emit(result);
+        this.openSnackBar('Юзер удален!', 'ОК');
+      } else {
+        this.openSnackBar('Удаление отменено', '');
       }
     });
   }
 
-  openEditUserDialog(): void {
+  public openEditUserDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (
-        result &&
-        (result.name !== this.user.name ||
-          result.email !== this.user.email ||
-          result.website !== this.user.website ||
-          result.company.name !== this.user.company.name)
-      )
+      if (result) {
         this.editUser.emit(result);
+        this.openSnackBar('Данные юзера изменены!', 'ОК');
+      } else {
+        this.openSnackBar('Редактрование отменено', '');
+      }
     });
   }
 }

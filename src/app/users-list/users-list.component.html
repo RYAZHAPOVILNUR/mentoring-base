@@ -9,9 +9,9 @@
     <mat-icon matSuffix>person_add</mat-icon>
   </button>
   <div class="users">
-    <div *ngFor="let item of usersService.users$ | async">
+    <div *ngFor="let user of usersService.users$ | async">
       <app-user-card
-        [user]="item"
+        [user]="user"
         (deleteUser)="deleteUser($event)"
         (editUser)="editUser($event)"
       ></app-user-card>

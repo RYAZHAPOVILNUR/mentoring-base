@@ -1,4 +1,4 @@
-<form class="user-form" [formGroup]="form">
+<form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
   <mat-form-field>
     <mat-label>Имя</mat-label>
     <input
@@ -6,7 +6,6 @@
       type="text"
       class="user-form__input"
       formControlName="name"
-      placeholder="Минимальная длина 2 символа"
     />
     <mat-icon matSuffix color="primary">account_circle</mat-icon>
     @if (form.controls.name.invalid) {
@@ -20,7 +19,6 @@
       type="text"
       class="user-form__input"
       formControlName="email"
-      placeholder="test@test.com"
     />
     <mat-icon matSuffix color="primary">alternate_email</mat-icon>
     @if (form.controls.email.invalid) {
@@ -34,30 +32,29 @@
       type="text"
       class="user-form__input"
       formControlName="website"
-      placeholder="Минимальная длина 3 символа"
     />
     <mat-icon matSuffix color="primary">http</mat-icon>
     @if (form.controls.website.invalid) {
     <mat-error>{{ websiteErrorMessage() }}</mat-error>
     }
   </mat-form-field>
-  <mat-form-field>
-    <mat-label>Компания</mat-label>
-    <input
-      matInput
-      type="text"
-      class="user-form__input"
-      formControlName="companyName"
-      placeholder="Минимальная длина 2 символа"
-    />
-    <mat-icon matSuffix color="primary">stars</mat-icon>
-    @if (form.controls.companyName.invalid) {
-    <mat-error>{{ companyNameErrorMessage() }}</mat-error>
-    }
-  </mat-form-field>
+  <div formGroupName="company">
+    <mat-form-field>
+      <mat-label>Компания</mat-label>
+      <input
+        matInput
+        type="text"
+        class="user-form__input"
+        formControlName="name"
+      />
+      <mat-icon matSuffix color="primary">stars</mat-icon>
+      @if (form.controls.company.controls.name.invalid) {
+      <mat-error>{{ companyNameErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+  </div>
   <button
     type="submit"
-    [mat-dialog-close]="submitForm()"
     mat-flat-button
     color="primary"
     class="user-form__btn"

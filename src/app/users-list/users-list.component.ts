@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-users-list',
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
+  private _snackBar = inject(MatSnackBar);
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
   readonly dialog = inject(MatDialog);
@@ -36,34 +38,36 @@ export class UsersListComponent {
     });
   }
 
-  deleteUser(id: number) {
+  private openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, { duration: 3000 });
+  }
+
+  public deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
 
-  createUser(formData: CreateUser) {
+  public createUser(formData: CreateUser) {
     this.usersService.createUser({
       id: new Date().getDate(),
-      name: formData.name,
-      email: formData.email,
-      website: formData.website,
-      company: {
-        name: formData.companyName,
-      },
+      ...formData,
     });
   }
 
-  editUser(user: User) {
+  public editUser(user: User) {
     this.usersService.editUser(user);
   }
 
-  openCreateUserDialog(): void {
+  public openCreateUserDialog(): void {
     const dialogRef = this.dialog.open(CreateUserDialogComponent, {
-      data: {},
+      data: { users: this.usersService.getUsers },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.createUser(result);
+        this.openSnackBar('Юзер создан!', 'ОК');
+      } else {
+        this.openSnackBar('Создание юзера отменено', '');
       }
     });
   }

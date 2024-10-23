@@ -1,5 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -11,7 +12,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { merge } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
-import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogClose,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { User } from '../../interfaces/user-interface';
 
 @Component({
@@ -28,26 +33,20 @@ import { User } from '../../interfaces/user-interface';
     MatDialogClose,
   ],
 })
-export class EditUserDialogComponent {
+export class EditUserDialogComponent implements OnInit {
   readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
+  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
 
   public form = new FormGroup({
-    name: new FormControl(this.data.user.name, [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
-    email: new FormControl(this.data.user.email, [
-      Validators.required,
-      Validators.email,
-    ]),
-    website: new FormControl(this.data.user.website, [
+    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    website: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),
-    companyName: new FormControl(this.data.user.company.name, [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
+    company: new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    }),
   });
 
   nameErrorMessage = signal('');
@@ -63,56 +62,65 @@ export class EditUserDialogComponent {
       this.form.controls.email.valueChanges,
       this.form.controls.website.statusChanges,
       this.form.controls.website.valueChanges,
-      this.form.controls.companyName.statusChanges,
-      this.form.controls.companyName.valueChanges
+      this.form.controls.company.controls.name.valueChanges,
+      this.form.controls.company.controls.name.statusChanges
     )
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
   }
 
+  setErrorMessage(
+    control: AbstractControl,
+    errorMessages: { [key: string]: string }
+  ) {
+    const errorKeys = Object.keys(errorMessages);
+    for (const errorKey of errorKeys) {
+      if (control.hasError(errorKey)) {
+        return errorMessages[errorKey];
+      }
+    }
+    return '';
+  }
+
   updateErrorMessage() {
-    if (this.form.controls.name.hasError('required')) {
-      this.nameErrorMessage.set('Введите имя');
-    } else if (this.form.controls.name.hasError('minlength')) {
-      this.nameErrorMessage.set('Длина минимум 2 символа');
-    } else {
-      this.nameErrorMessage.set('');
-    }
+    this.nameErrorMessage.set(
+      this.setErrorMessage(this.form.controls.name, {
+        required: 'Введите имя',
+        minlength: 'Длина минимум 2 символа',
+      })
+    );
 
-    if (this.form.controls.email.hasError('required')) {
-      this.emailErrorMessage.set('Введите почту');
-    } else if (this.form.controls.email.hasError('email')) {
-      this.emailErrorMessage.set('Почта введена некорректно');
-    } else {
-      this.emailErrorMessage.set('');
-    }
+    this.emailErrorMessage.set(
+      this.setErrorMessage(this.form.controls.email, {
+        required: 'Введите почту',
+        email: 'Почта введена некорректно',
+      })
+    );
 
-    if (this.form.controls.website.hasError('required')) {
-      this.websiteErrorMessage.set('Введите адрес сайта');
-    } else if (this.form.controls.website.hasError('minlength')) {
-      this.websiteErrorMessage.set('Длина минимум 3 символа');
-    } else {
-      this.websiteErrorMessage.set('');
-    }
+    this.websiteErrorMessage.set(
+      this.setErrorMessage(this.form.controls.website, {
+        required: 'Введите адрес сайта',
+        minlength: 'Длина минимум 3 символа',
+      })
+    );
 
-    if (this.form.controls.companyName.hasError('required')) {
-      this.companyNameErrorMessage.set('Введите название компании');
-    } else if (this.form.controls.companyName.hasError('minlength')) {
-      this.companyNameErrorMessage.set('Длина минимум 2 символа');
+    this.companyNameErrorMessage.set(
+      this.setErrorMessage(this.form.controls.company.controls.name, {
+        required: 'Введите название компании',
+        minlength: 'Длина минимум 3 символа',
+      })
+    );
+  }
+
+  public submitForm() {
+    if (this.form.dirty) {
+      this.dialogRef.close({ ...this.form.value, id: this.data.user.id });
     } else {
-      this.companyNameErrorMessage.set('');
+      this.dialogRef.close();
     }
   }
 
-  submitForm() {
-    return {
-      ...this.data.user,
-      name: this.form.value.name,
-      email: this.form.value.email,
-      website: this.form.value.website,
-      company: {
-        name: this.form.value.companyName,
-      },
-    };
+  ngOnInit(): void {
+    this.form.patchValue(this.data.user);
   }
 }
