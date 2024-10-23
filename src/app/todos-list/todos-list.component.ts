@@ -5,7 +5,7 @@ import { TodosApiService } from '../todos-api.service';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
 import { TodoInterface } from '../interfaces/todo-interfaces';
-import { CreateTodoFormBtnAddDialogComponent } from './create-todo-form-btn-add-dialog/create-todo-form-btn-add-dialog.component';
+import { CreateTodoFormBtnAddDialogComponent } from './todo-create-button/todo-create-button.component';
 import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
 
 @Component({

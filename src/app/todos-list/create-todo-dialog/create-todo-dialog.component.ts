@@ -17,8 +17,6 @@ import { MatDialogClose } from '@angular/material/dialog';
   styleUrl: './create-todo-dialog.component.scss'
 })
 export class CreateTodoDialogComponent {
-  @Output()
-  createTodoForm = new EventEmitter();
 
   public form = new FormGroup({
     userId: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]),

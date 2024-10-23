@@ -7,7 +7,7 @@ import { CreateUserFormComponent } from '../create-user-form/create-user-form.co
 import { CreateUserInterface, UserInterface } from '../interfaces/user-interfaces';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CreateUserFormBtnAddDialogComponent } from './create-user-form-btn-add-dialog/create-user-form-btn-add-dialog.component';
+import { CreateUserFormBtnAddDialogComponent } from './user-create-button/user-create-button.component';
 
 @Component({
   selector: 'app-users-list',

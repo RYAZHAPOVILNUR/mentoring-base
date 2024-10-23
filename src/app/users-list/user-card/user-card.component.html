@@ -3,11 +3,11 @@
 <!-- style="width: 200px; height: 200px; border: 1px solid black; margin: 5px; padding: 10px;" -->
 <div class="block_users_card">
   <!-- <p>{{$any(i).name}}</p> лайфхак от Ильнура с $any()-->
-  <p>{{ user.name }}</p>
+  <p red>{{ user.name | customUpperCase}}</p>
   <p>{{ user.email }}</p>
   <p>{{ user.website }}</p>
-  <p>{{ user.company.name }}</p>
-  
+  <p>{{ user.company.name | customUpperCase}}</p>
+
   <button (click)="openEditDialog()" class="btn_edit">
     <mat-icon>edit_note</mat-icon>
     EDIT USER</button>
