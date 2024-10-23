@@ -1,8 +1,8 @@
 <div class="container">
     КОМПОНЕНТ СПИСКА ПОЛЬЗОВАТЕЛЕЙ
     <div class="users-card-wrapper">
-        <div *ngFor="let item of users">
-            <app-user-card [user]="item" (deleteUser)="deleteUser($event)"></app-user-card>
+        <div *ngFor="let user of users">
+            <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
         </div>
     </div>
 </div>
