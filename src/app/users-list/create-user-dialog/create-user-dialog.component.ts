@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from '../../utils/error-estate-matcher';
 import { NgFor, NgIf } from '@angular/common';
@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogClose } from '@angular/material/dialog';
+import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-dialog',
@@ -20,7 +20,13 @@ export class CreateUserDialogComponent {
   // и не удаляем его по id, как мы можем что-то передать, если на момент открытия модалки - его еще не существует. Надеюсь мысль уловил.
   // public readonly data = inject<{ user: CreateUserInterface }>(MAT_DIALOG_DATA);
 
+  readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
+  
   public matcher = new MyErrorStateMatcher();
+  
+  submitForm() {
+    this.dialogRef.close(this.form.value);
+  };
 
   public form = new FormGroup({
     // Validators.pattern("^[a-zA-Zа-яА-я.]*$")

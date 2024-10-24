@@ -27,12 +27,12 @@
             <mat-error>Введите верный ответ!</mat-error>
         </mat-form-field>
 
-        <button class="btn_edit" mat-raised-button color="primary" [mat-dialog-close]="userWithUpdatedField"
+        <button class="btn_edit" mat-raised-button color="primary" (click)="submitForm()"
             [disabled]="form.invalid">
             <mat-icon>edit_note</mat-icon>
             ИЗМЕНИТЬ
         </button>
-        <button class="btn_cancel" mat-raised-button color="primary" [mat-dialog-close]="false">
+        <button class="btn_cancel" mat-raised-button color="primary" mat-dialog-close="false">
             <mat-icon>close</mat-icon>
             ОТМЕНА
         </button>

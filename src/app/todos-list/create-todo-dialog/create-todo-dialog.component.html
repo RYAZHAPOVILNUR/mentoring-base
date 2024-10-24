@@ -27,7 +27,7 @@
             <mat-error>Введите верный ответ!</mat-error>
         </mat-form-field>
 
-        <button class="btn_create" mat-raised-button color="primary" [mat-dialog-close]="this.form.value" [disabled]="form.invalid">
+        <button class="btn_create" mat-raised-button color="primary" (click)="submitForm()" [disabled]="form.invalid">
             <mat-icon>add</mat-icon>
             СОЗДАТЬ
         </button>

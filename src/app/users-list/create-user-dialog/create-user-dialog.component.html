@@ -51,7 +51,7 @@
           по этому при клике на кнопку button срабатывает автоматический ngSubmit обработчик события,
           disabled означает не активный а [] скобки это привязка к свойству,
           form.invalid это означает что когда вся форма заполнится form.invalid станет true -->
-        <button class="btn_create" type="submit" [mat-dialog-close]="this.form.value" mat-raised-button color="primary"
+        <button class="btn_create" type="submit" (click)="submitForm()" mat-raised-button color="primary"
             [disabled]="form.invalid">
             <mat-icon>add</mat-icon>
             СОЗДАТЬ

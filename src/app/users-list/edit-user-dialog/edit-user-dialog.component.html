@@ -42,7 +42,7 @@
     <mat-error *ngIf="form.controls['website'].hasError('required')">Заполните поле!</mat-error>
   </mat-form-field>
 
-  <button class="btn_edit" type="submit" [mat-dialog-close]="userWithUpdatedField" mat-raised-button color="primary"
+  <button class="btn_edit" type="submit" (click)="submitForm()" mat-raised-button color="primary"
     [disabled]="form.invalid">
     <mat-icon>edit_note</mat-icon>
     EDIT USER

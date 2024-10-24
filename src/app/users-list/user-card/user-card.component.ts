@@ -40,7 +40,7 @@ export class UserCardComponent {
     dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) {
         this.editUser.emit(editResult);
-        this.snackBar.open('Пользователь изменен!', 'Ok', {
+        this.snackBar.open('Данные пользователя обновились!', 'Ok', {
           duration: 5000
         });
       } else {

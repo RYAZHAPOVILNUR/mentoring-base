@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { MatError, MatFormFieldModule, MatLabel, } from '@angular/material/form-field';
 import { UserInterface } from '../../interfaces/user-interfaces';
 import { MatIcon } from '@angular/material/icon';
@@ -15,8 +15,15 @@ import { NgIf } from '@angular/common';
   styleUrl: './edit-user-dialog.component.scss',
 })
 export class EditUserDialogComponent {
+  
   readonly data = inject<{ user: UserInterface }>(MAT_DIALOG_DATA);
 
+  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
+  
+  submitForm() {
+    this.dialogRef.close({...this.form.value, id: this.data.user.id});
+  };
+  
   public form = new FormGroup({
     name: new FormControl(this.data.user.name, [
       Validators.required,
@@ -39,10 +46,10 @@ export class EditUserDialogComponent {
     })
   });
 
-  get userWithUpdatedField() {
-    return {
-      id: this.data.user.id,
-      ...this.form.value,
-    }
-  }
+  // get userWithUpdatedField() {
+  //   return {
+  //     id: this.data.user.id,
+  //     ...this.form.value,
+  //   }
+  // }
 }

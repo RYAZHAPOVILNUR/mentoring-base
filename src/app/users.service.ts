@@ -14,7 +14,7 @@ export class UsersService {
   // можем обратиться к переменной users$ вне файла, использование asObservable()
   // делает так, что другие частикода не могут изменять данные напрямую,
   // что помогает соблюдать инкапсуляцию и правильную логику работы с данными
-  users$ = this.usersSubject$.asObservable();
+  public readonly users$ = this.usersSubject$.asObservable();
 
   //* установка юзеров
   // вместо User[] можем писать Array<User> кому как удобно без разницы

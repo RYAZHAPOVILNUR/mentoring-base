@@ -8,7 +8,7 @@ export class TodosService {
     private todosSubject$ = new BehaviorSubject<TodoInterface[]>([]);
 
     // переменную todos$ можно использовать вне файла
-    todos$ = this.todosSubject$.asObservable();
+    public readonly todos$ = this.todosSubject$.asObservable();
 
     //* установка todos
     setTodos(todos: TodoInterface[]) {
