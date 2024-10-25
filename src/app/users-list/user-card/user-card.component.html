@@ -1,0 +1,15 @@
+<div style=
+"width: 200px; height: 200px; 
+border: 1px solid black; margin: 10px; box-shadow: 0px 20px 50px 0px #3c3c3b12; padding: 15px;
+background-color: burlywood;">
+    
+    
+    <p>{{user.email}}</p>
+     <p>{{user.website}}</p>
+     <p>{{user.phone}}</p>
+     <p>{{user.city}}</p>
+     <p>{{user.street}}</p> 
+
+     <button (click)="onDeleteUser(user.id)" 
+style="margin-left: 15px; background-color: rgb(233, 106, 106); border-radius: 10px; "
+>Удалить пользователя</button> </div>

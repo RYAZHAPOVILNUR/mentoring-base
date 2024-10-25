@@ -1,0 +1,16 @@
+
+<div class="todos-card-style">
+    <div style="height: 205px;" >
+<p style="margin-top: -10px;">Текст Задачи</p>
+    <div style="margin-top: -5px;">
+        {{todo.title}}
+    </div>
+   
+    <p>Автор задачи</p>
+  <div style="margin-top: -10px;">{{todo.userId}}</div>
+   
+  <p>Задача завершена</p>
+   <div style="margin-top: -10px;">{{todo.completed ? 'ДА' : 'НЕТ'}}</div>  
+</div>
+<button class="Todos-card-button" (click)=onDeleteTodo(todo.id)>Удалить задачу</button>
+</div>
