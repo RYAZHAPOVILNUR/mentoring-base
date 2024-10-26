@@ -1,3 +1,5 @@
+*
+
 .app-container { 
     display: flex; 
     flex-direction: column; 
@@ -29,10 +31,18 @@
     margin-right: 25px; 
     font-size: 16px; 
     font-weight: 600; 
+    text-decoration: none;
 } 
+.second-menu-item {
+    border: none;
+    background-color: transparent;
+    color: #3C3C3B;
+    cursor: pointer;
+    font-size: 14px;
+}
  
 .white-color { 
-    color: white; 
+    color: #F9FAFB; 
 } 
  
 .header-info-container { 
@@ -48,31 +58,31 @@ header {
     background-color: #4B565E; 
 } 
  
-footer { 
-    background-color: #4B565E; 
-    height: 373px; 
-} 
- 
 .cart-button { 
     width: 125px; 
     height: 50px; 
     border-radius: 50px; 
     border: 1px solid #F0BA4E; 
     background-color: #4B565E; 
-    color: white; 
+    color: #F9FAFB; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
 } 
  
 .header-phone { 
-    color: white; 
+    color: #F9FAFB; 
     justify-content: flex-end; 
     align-items: center; 
     display: flex; 
     margin-left: auto; 
     cursor: pointer; 
 } 
+
+.no-underline {
+    text-decoration: none;
+    color: #F9FAFB;
+}
  
 .phone { 
     margin-right: 10px; 
@@ -122,10 +132,13 @@ footer {
  
 .advantage-content-title { 
     font-size: 18px; 
+    color: #3C3C3B;
 } 
  
 .advantage-content-text { 
     color: #A1A0A0; 
+    font-size: 18px;
+    line-height: 21.78px;
 } 
  
 .content-conteiner { 
@@ -170,7 +183,7 @@ footer {
     box-shadow: 0px 20px 50px 0px #3C3C3B12;
     max-height: 428px;
     max-width: 421px;
-    background-image: url(/assets/kraskopult.png);
+    background-image: url("/assets/spray.png");
     background-repeat: no-repeat;
     overflow: hidden;
     background-position-y: bottom;
@@ -183,7 +196,6 @@ footer {
 }
 
 .text-section-shadow-left { 
-    font-family: Inter;
     font-size: 28px;
     font-weight: 600;
     color:#3C3C3B;
@@ -198,16 +210,11 @@ footer {
     line-height: 16.94px;
 }
 
-.shadow-left-link-strelka {
-
-}
-
 .selection-large-section-shadow1 {
     display: flex;
     justify-content: end;
 
         &-button {
-            font-family: Inter;
             border: none; 
             background: none;
             color: #A1A0A0;
@@ -236,7 +243,6 @@ footer {
     width: 421px;
     height: 200px;
     box-shadow: 0px 20px 50px 0px #3C3C3B12;
-    font-family: Inter;
     font-size: 28px;
     font-weight: 600;
     line-height: 33.89px;
@@ -246,7 +252,7 @@ footer {
 .text-right-block1 {
     //width: 421px;
     height: 200px;
-    background-image: url(/assets/emali.png);
+    background-image: url("/assets/spray_paint.png");
     background-repeat: no-repeat;
     background-position: bottom;
     box-sizing: border-box;
@@ -272,7 +278,7 @@ footer {
 
 .text-right-block2 {
     height: 200px;
-    background-image: url(/assets/lak.png);
+    background-image: url("/assets/varnish.png");
     background-repeat: no-repeat;
     background-position: bottom; 
     box-sizing: border-box;
@@ -295,7 +301,7 @@ footer {
 
 .text-right-block3 {
     height: 200px;
-    background-image: url(/assets/klei.png);
+    background-image: url("/assets/sealant.png");
     background-repeat: no-repeat;
     background-position: bottom; 
     box-sizing: border-box;
@@ -319,7 +325,7 @@ footer {
 
 .text-right-block4 {
     height: 200px;
-    background-image: url(/assets/elektrika.png);
+    background-image: url("/assets/socket.png");
     background-repeat: no-repeat;
     background-position: bottom; 
     box-sizing: border-box;
@@ -339,3 +345,8 @@ footer {
     line-height: 16.94px;
     justify-content: flex-end;
 }
+
+footer { 
+    background-color: #4B565E; 
+    height: 373px; 
+} 
