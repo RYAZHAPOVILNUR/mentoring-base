@@ -3,6 +3,6 @@
 </div>
 <div class="content-container">
     <div *ngFor="let todo of todosService.todos$ | async">
-        <app-todos-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todos-card>
+        <app-todos-card [todo]="todo" (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todos-card>
     </div>
 </div>

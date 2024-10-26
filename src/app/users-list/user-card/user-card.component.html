@@ -1,9 +1,13 @@
-<div class="user-card">
-    <div>
+<mat-card class="user-card" shadow>
+    <mat-card-content>
         <p>{{ user.name }}</p>
         <p>{{ user.email }}</p>
         <p>{{ user.website }}</p>
+        <p>{{ user.phone | editPhone}}</p>
         <p>{{ user.company.name }}</p>
-    </div>
-    <button class="delete" (click)="onDeleteUser(user.id)">Удалить юзера</button>
-</div>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: space-between;">
+        <button mat-button class="button" (click)="openDeleteDialog()"><mat-icon>delete</mat-icon></button>
+        <button mat-button class="button" (click)="openDialog()"><mat-icon>edit</mat-icon></button>
+    </mat-card-actions>
+</mat-card>

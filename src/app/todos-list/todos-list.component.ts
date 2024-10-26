@@ -30,6 +30,10 @@ export class TodosListComponent {
         this.todosService.deleteTodo(id)
     }
 
+    editTodo(todo: Todo) {
+        this.todosService.editTodos(todo)
+    }
+
     createTodo(formItem: Todo) {
         this.todosService.createTodos(
             {

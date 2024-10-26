@@ -36,10 +36,7 @@ export class UsersService {
             this.usersSubject$.next(
                 [...this.usersSubject$.value, user]
             );
-            alert('Пользователь успешно добавлен')
-        }
-
-        
+        }       
     }
 
     deleteUser(id: number) {

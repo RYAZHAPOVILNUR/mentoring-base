@@ -1,6 +1,7 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { YellowDirective } from '../directives/yellow.directive';
 
 const menuItems = [
 	'Каталог',
@@ -24,11 +25,13 @@ const newElement = func2('О компании');
 	selector: 'app-header',
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss',
-	imports: [NgFor, NgIf, RouterLink],
+	imports: [NgFor, NgIf, RouterLink, DatePipe, YellowDirective],
 	standalone: true,
 })
 export class HeaderComponent {
 	isShowCatalog = true;
+
+	readonly date = new Date();
 
 	readonly headerItem1 = 'Главная';
 	readonly aboutCompany = newElement; //дз задание 1
