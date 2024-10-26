@@ -1,7 +1,7 @@
 .header {
     background-color: #4B565E;
     height: 80px;
-    color: white;
+    color: #FFFFFF ;
     display: flex;
     justify-content: space-between;
     padding: 0px 240px;
@@ -20,10 +20,6 @@
   }
   .header-logo {
     margin-right:20px;
-  }
-  a {
-    color: white;
-    text-decoration: none;
   }
   .header-right {
     display: flex;
@@ -44,7 +40,7 @@
   .basket {
     align-items: center;
     display: flex;
-    color: white;
+    color: #FFFFFF ;
     background-color: #4B565E;
     border: 1px solid #F0BA4E;
     border-radius: 50px;
@@ -72,6 +68,14 @@
   .header-nav2 {
     display: flex;
   }
+  .header-nav-button {
+    background-color: #F0BA4E;
+    border: none;
+  }
+    .header-nav-button:hover {
+      color: #FFFFFF; /* Темнее при наведении */
+      transform: scale(1.05); 
+  }
   .header-right2 {
     display: flex;
     align-items: center;
@@ -79,13 +83,13 @@
   .search-input {
     background-color: #F0BA4E;
     border: none;
-    border-bottom: 2px solid black;
-    background: url(/assets/Search.svg) no-repeat right;
+    border-bottom: 2px solid #000000 ;
+    background: url("/assets/Search.svg") no-repeat right;
     width: 300px;
     margin-right: 10px;
   }
   .country {
     background-color: #F0BA4E;
     border: none;
-    color: white;
+    color: #FFFFFF ;
   }
