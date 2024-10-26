@@ -24,5 +24,5 @@
         <input matInput formControlName="name">
         <mat-error>Данные введены не правильно</mat-error>
     </mat-form-field>
-    <button matTooltip="Редактировать данные пользователя" mat-button class="createButton" [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedFields">Сохранить</button>
+    <button matTooltip="Редактировать данные пользователя" mat-button class="createButton" [disabled]="form.invalid" (click)="submitForm()">Сохранить</button>
 </form>

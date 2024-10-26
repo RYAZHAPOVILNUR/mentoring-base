@@ -35,7 +35,7 @@ export class UserCardComponent {
     readonly dialog = inject(MatDialog);
     readonly snackBar = inject(MatSnackBar)
 
-    openDialog(): void {
+    openEditDialog(): void {
         const dialogRef = this.dialog.open(EditUserDialogComponent, {
             data: { user: this.user },
         });
@@ -56,7 +56,7 @@ export class UserCardComponent {
         dialogRef.afterClosed().subscribe((deleteResult) => {
             if (deleteResult) {
                 this.deleteUser.emit(this.user.id);
-                this.snackBar.open('Пользователь удален', 'ok', {duration: 3000,});
+                this.snackBar.open('Пользователь удален', 'ok', {duration: 3000});
             }
         });
     }
