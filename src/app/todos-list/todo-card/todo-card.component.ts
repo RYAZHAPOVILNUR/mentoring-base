@@ -5,11 +5,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { DeleteTodoDialogComponent } from '../../dialogs/todo-dialogs/delete-todo-dialog/delete-todo-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTodoDialogComponent } from '../../dialogs/todo-dialogs/edit-todo-dialog/edit-todo-dialog.component';
-
+import { TextLenghtPipe } from '../../pipes/text-lenght.pipe';
+import { ShadowDirective } from '../../directives/shadow.directive';
+import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-todo-card',
   standalone: true,
-  imports: [CreateTodoFormComponent, MatButtonModule],
+  imports: [
+    CreateTodoFormComponent,
+    MatCardModule,
+    MatButtonModule,
+    TextLenghtPipe,
+    ShadowDirective,
+  ],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
 })

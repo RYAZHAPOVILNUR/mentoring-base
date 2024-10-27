@@ -46,7 +46,9 @@
    <div class="create-button-position">
      <button mat-raised-button [mat-dialog-close]>Закрыть</button>
      <button mat-raised-button type="submit"  [disabled]="
-     formTodo.invalid" [mat-dialog-close]="userWithUpdatedFields">Редактировать задачу</button>
+     formTodo.invalid" (click)="submitForm()"
+     matTooltip="Редактировать данные задачи"
+     >Редактировать задачу</button>
    </div>
  </form>
 </div>

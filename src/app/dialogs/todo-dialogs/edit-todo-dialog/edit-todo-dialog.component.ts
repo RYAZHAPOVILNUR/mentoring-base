@@ -17,6 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Todo } from '../../../interfaces/todo-interfaces';
 import { MatCardModule } from '@angular/material/card';
 import { completedValidator } from '../../../validator';
+import { MatTooltipModule} from '@angular/material/tooltip';
+
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -31,6 +33,7 @@ import { completedValidator } from '../../../validator';
     MatCardModule,
     MatFormFieldModule,
     MatDialogClose,
+    MatTooltipModule
   ],
 })
 export class EditTodoDialogComponent {
@@ -54,16 +57,11 @@ export class EditTodoDialogComponent {
     ]),
   });
   
-
-  get userWithUpdatedFields() {
-    return {
-      ...this.formTodo.value,
-      id: this.data.todo.id,
-      completed: this.formTodo.value.completed === 'да',
-    };
-  }
-
-  public onSubmit(): void {
-      this.dialogRef.close(this.userWithUpdatedFields);
-  }
+  submitForm() {
+   this.dialogRef.close({
+    ...this.formTodo.value,
+    id: this.data.todo.id,
+    completed: this.formTodo.value.completed === 'да'
+   });
+ }
 }

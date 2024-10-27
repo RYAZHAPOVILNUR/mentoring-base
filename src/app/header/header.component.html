@@ -4,6 +4,7 @@
       <nav class="nav">
         <div class="nav-container">
           <div class="menu-items-container">
+           <p>{{date | date:'medium'}}</p>
             <img class="logo" src="/assets/logo.png" />
             <div class="menu-item white-color" routerLink="/">
               {{ headerItemFirst }}
@@ -12,10 +13,10 @@
             <div class="menu-item white-color" *ngIf="isShowCatalog">
               {{ headerItemThird }}
             </div>
-            <button (click)="isShowCatalog = !isShowCatalog" class="button">
+            <button (click)="isShowCatalog = !isShowCatalog" class="button" yellow>
               Скрыть/Показать каталог
             </button>
-            <button (click)="changeMenuText()" class="button">
+            <button (click)="changeMenuText()" class="button" yellow>
               Изменить текст
             </button>
           </div>
@@ -23,14 +24,14 @@
             <button
               routerLink="/users"
               routerLinkActive="active-link"
-              class="button"
+              class="button" yellow
             >
               Юзеры
             </button>
             <button
               routerLink="/todos"
               routerLinkActive="active-link"
-              class="button"
+              class="button" yellow
             >
               Задачи
             </button>
@@ -38,12 +39,8 @@
               <img src="/assets/call.svg" alt="call" />
               <a class="tel" href="tel:+79650842929">+7(965)084-29-29</a>
             </div>
-            <img
-              class="header-info-item"
-              src="assets/hearticon.svg"
-              alt="favorites"
-            />
-            <button class="cart-button header-info-container">
+           <app-svg-icon></app-svg-icon>
+            <button class="cart-button header-info-container" yellow>
               <img src="assets/buy.svg" alt="cart" />
               <span style="margin-left: 10px"> Пусто </span>
             </button>

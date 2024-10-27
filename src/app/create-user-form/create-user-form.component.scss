@@ -1,61 +1,38 @@
-.create-form-user {
-  margin: 30px 0 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .create-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 680px;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  box-shadow: 4px 4px 15px 0px rgba(34, 60, 80, 0.2);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 400px;
+ height: 780px;
+ border: 1px solid #fff;
+ border-radius: 8px;
 }
 
 .example-width {
- width: 350px;
+width: 350px;
 }
 
 .title {
-  margin-left: 30px;
-  font-family: Inter;
-  font-weight: 600;
-  color: #3c3c3b;
+ margin-left: 30px;
+ font-family: Inter;
+ font-weight: 600;
+ color: #3c3c3b;
 }
 
 .subtitle {
-  margin: 10px;
-  font-weight: 600;
-  color: #3c3c3b;
+ margin: 10px;
+ font-weight: 600;
+ color: #3c3c3b;
 }
 
 .create-button-position {
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.create-button {
-  border: 1px solid #f0ba4e;
-  background-color: #fff;
-  border-radius: 50px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  color: #3c3c3b;
-}
-
-.create-button {
-  display: flex;
-  margin: 10px;
+ margin-top: 25px;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
 }
 
 .button-position {
-  display: flex;
-  margin: 20px auto;
- }
+ display: flex;
+ margin: 20px auto;
+}

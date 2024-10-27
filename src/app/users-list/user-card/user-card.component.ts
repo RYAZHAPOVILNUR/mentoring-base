@@ -5,11 +5,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../../dialogs/user-dialogs/edit-user-dialog/edit-user-dialog.component';
 import { DeleteUserDialogComponent } from '../../dialogs/user-dialogs/delete-user-dialog/delete-user-dialog.component';
-
+import {MatCardModule} from '@angular/material/card';
+import { ShadowDirective } from '../../directives/shadow.directive';
+import { EditPhonePipe } from "../../pipes/edit-phone.pipe";
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [NgFor, MatButtonModule],
+  imports: [NgFor, MatButtonModule, MatCardModule, ShadowDirective, EditPhonePipe ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
 })

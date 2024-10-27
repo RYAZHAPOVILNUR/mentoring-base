@@ -54,7 +54,9 @@
    Поле заполнено некорректно
  </mat-error>
  <div class="button-position" >
-  <button mat-button [mat-dialog-close]>Закрыть</button>
-  <button mat-raised-button type="submit" [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedFields">Редактировать</button>
+  <button mat-button mat-dialog-close>Закрыть</button>
+  <button mat-raised-button type="submit" [disabled]="form.invalid"
+   (click)="submitForm()"
+   matTooltip="Редактировать данные пользователя">Редактировать</button>
  </div>
 </form>

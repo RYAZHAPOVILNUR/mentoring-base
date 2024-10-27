@@ -1,18 +1,23 @@
-<p class="name">{{ user.name }}</p>
-<p>
-  <a href="/" class="subtitle">{{ user.email }}</a>
-</p>
-<p>
-  <a href="/" class="subtitle">{{ user.website }}</a>
-</p>
-<p>
-  <a class="subtitle" href="/">{{ user.company.name }}</a>
-</p>
-<div class="delete-position">
-  <button mat-raised-button (click)="openDeleteUserDialog()">
-  Удалить юзера
-  </button>
-  <button mat-raised-button (click)="openDialog()">
-    Редактировать юзера
-  </button>
-</div>
+<mat-card shadow>
+  <mat-card-content>
+    <p red class="name">{{ user.name }}</p>
+    <p>
+      <a red href="/" class="subtitle">{{ user.email }}</a>
+    </p>
+    <p>{{ user.phone | editPhone}}</p>
+    <p>
+      <a red href="/" class="subtitle">{{ user.website }}</a>
+    </p>
+    <p>
+      <a red class="subtitle" href="/">{{ user.company.name }}</a>
+    </p>
+  </mat-card-content>
+  <div red class="delete-position">
+    <button mat-raised-button (click)="openDeleteUserDialog()">
+      Удалить юзера
+    </button>
+    <button mat-raised-button (click)="openDialog()">
+      Редактировать юзера
+    </button>
+  </div>
+</mat-card>
