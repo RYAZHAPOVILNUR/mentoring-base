@@ -1,7 +1,6 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from "@angular/core";
 import { RouterLink} from '@angular/router';
-import { DatePipe } from '../pipes/date.pipe';
 import { DashesRemoverPipe } from '../pipes/phonenumber.pipe';
 import { YellowCart } from '../directives/cart.directive';
 
@@ -19,7 +18,7 @@ const aboutCompanyResult = aboutCompany('О компании');
 })
 
 export class HeaderComponent {
-  dateObj: Date = new Date();
+  readonly date = new Date();
 
   phoneNumber: string = '+7 (965) 084-29-29';
 
