@@ -1,14 +1,15 @@
 <div class="content-container">
+    <div>
   <div class="header">
     <div class="header-left">
       <div class="header-logo">
         <img src="/assets/Frame.svg" alt="logotip" />
       </div>
       <nav class="header-nav">
-        <div class="header-nav-item" routerLink="users">{{ headerItem1 }}</div>
-        <div class="header-nav-item" routerLink="/">{{ aboutCompany }}</div>
+        <div class="header-nav-item" routerLink="users">{{headerItem1}}</div>
+        <div class="header-nav-item" routerLink="/">{{aboutCompany}}</div>
         <div class="header-nav-item" *ngIf="isShowCatalog">
-          {{ headerItem3 }}
+          {{headerItem3}}
         </div>
       </nav>
       <button (click)="isShowCatalog = !isShowCatalog">
@@ -19,8 +20,8 @@
     <div class="header-right">
       <div class="phone">
         <img src="/assets/Phone.svg" alt="phone" />
-        <div class="number">
-          <a href="tel:79650842929"> +7(965)084-29-29 </a>
+        <div>
+          <a class="number" href="tel:79650842929">+7(965)084-29-29</a>
         </div>
         <div class="heart">
           <img src="/assets/heart 1.svg" alt="heart" />
@@ -55,4 +56,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

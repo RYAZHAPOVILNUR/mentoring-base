@@ -1,13 +1,16 @@
+
+.content-container {
+    width: 1570px;
+}
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    color: white;
+    color: #FFFFFF;
     background-color: #4B565E;
     padding: 0 100px;
 }
-
 .header-left {
     display: flex;
     align-items: center;
@@ -36,6 +39,8 @@
 
 .number {
     margin-right: 10px;
+    color: #FFFFFF;
+    text-decoration:none;
 }
 
 .heart {

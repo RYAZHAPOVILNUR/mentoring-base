@@ -9,6 +9,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+
 html {
     line-height: 1.15;
     /* 1 */
@@ -27,8 +28,9 @@ body {
     font-family: inter;
     margin: 0;
     font-size: 16px;
-    
+  
 }
+
 
 *,
 *::before,
