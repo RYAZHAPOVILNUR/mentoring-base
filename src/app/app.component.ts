@@ -3,16 +3,19 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { homeworkComponent } from './HW/homework.component';
+import { DashesRemoverPipe } from './pipes/phonenumber.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent,homeworkComponent],
+  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent,homeworkComponent, DashesRemoverPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 
 export class AppComponent {
+  phoneNumber: string = '+7 (965) 084-29-29';
+  additionalPhoneNumber: string = '+7(812)309-09-344';
 
   readonly  aboutCompany = (item: string) => {
     return item 

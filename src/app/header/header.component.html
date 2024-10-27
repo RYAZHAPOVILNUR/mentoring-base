@@ -14,12 +14,16 @@
   <div class="header-right">
     <a routerLink="/users" class="Admin">Админка</a>
 <img src="/assets/phone.svg" alt="phone icon">
-<a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> +7 (965) 084-29-29 </a>
+<a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> {{ phoneNumber | DashCut }} </a>
 <img src="/assets/heart1.svg" alt="fav">
-<button type="button" class="cart"> 
+<button type="button" class="cart" yellow> 
   <img class="img-cart" src="/assets/cart.svg" alt="cart">
   <span class="empty">Пусто</span>
 </button>
+  </div>
+
+  <div>
+    {{ dateObj | datePipe:'medium' }} 
   </div>
 </div>
 

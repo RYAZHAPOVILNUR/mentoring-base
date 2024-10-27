@@ -1,5 +1,5 @@
 <div class="form-container">
-  <form class="user-form" [formGroup]="form" (ngSubmit)="submitForm()">
+  <form class="user-form" [formGroup]="form" >
     <p>NAME:</p>
     <mat-form-field appearance="fill">
       <input matInput class="form-input" type="text" formControlName="name">
@@ -16,14 +16,16 @@
     </mat-form-field>
 
     <p>COMPANY NAME:</p>
-    <mat-form-field appearance="fill">
-      <input matInput class="form-input" type="text" formControlName="companyName">
+    <mat-form-field appearance="fill" formGroupName="company">
+      <input matInput class="form-input" type="text" formControlName="name">
     </mat-form-field>
 
     <div class="button-container">
-      <button mat-raised-button class="create-user-button" [disabled]="form.invalid" style="width: 215px;">
+      <button mat-raised-button class="create-user-button" [disabled]="form.invalid" style="width: 215px;" #tooltip="matTooltip"
+      matTooltip="Редактировать данные пользователя" (click)="submitForm()">
         Редактировать
       </button>
+      <button mat-raised-button  mat-dialog-close>Отмена</button>
     </div>
   </form>
 </div>

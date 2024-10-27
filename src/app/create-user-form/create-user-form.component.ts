@@ -26,10 +26,12 @@ export class CreateUserFormComponent {
       [Validators.required, 
       Validators.minLength(4),
       ]),
-    companyName: new FormControl('', 
-      [Validators.required, 
-      Validators.minLength(3),
-      ]),
+    company:  new FormGroup ({
+      name: new FormControl('', 
+        [Validators.required, 
+        Validators.minLength(3),
+        ]),
+    })
   });
 
   public submitForm(): void {

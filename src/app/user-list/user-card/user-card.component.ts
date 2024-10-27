@@ -7,6 +7,7 @@ import { MatButtonModule } from "@angular/material/button";
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component ({
   selector: 'app-user-card',
@@ -27,8 +28,10 @@ export class UserCardComponent {
   editUser = new EventEmitter ();
 
   readonly dialog = inject(MatDialog);
+  readonly snackBar = inject(MatSnackBar);
+  
 
-  openDialog1(): void {
+  openEditDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
@@ -36,6 +39,14 @@ export class UserCardComponent {
     dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) {
         this.editUser.emit(editResult);
+        this.snackBar.open('Пользователь отредактирован🐱', 'мяу', {
+          duration: 2000
+        });
+      }
+      else { 
+        this.snackBar.open('Отмена редактирования', ' ', {
+          duration: 2000
+        });
       }
     });
   }
@@ -44,7 +55,7 @@ export class UserCardComponent {
     this.deleteUser.emit(userId);
   }
 
-  openDialog2(userId: number): void {
+  OpenDeleteDialog(userId: number): void {
     const dialogRef = this.dialog.open(DialogDeleteUser);
 
     dialogRef.afterClosed().subscribe(result => {

@@ -5,8 +5,8 @@
     <p>{{(user).website}}</p>
     <p>{{(user).company.name}}</p>
     <div class="buttoncontainer">
-      <button mat-raised-button (click)="openDialog1()" style="margin: 5px;">Редактировать</button>
-      <button mat-fab class="custom-button" (click)="openDialog2(user.id)" style="margin-left: 40px ;">
+      <button mat-raised-button (click)="openEditDialog()" style="margin: 5px;">Редактировать</button>
+      <button mat-fab class="custom-button" (click)="OpenDeleteDialog(user.id)" style="margin-left: 40px ;">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

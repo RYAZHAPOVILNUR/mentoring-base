@@ -329,8 +329,8 @@
             </div>
               <div class="footer_contacts-content">
                 <span class="footer_contacts-title">Контактный телефон</span>
-                <span class="footer_contacts-phone">+7(812)309-09-344 </span>
-                <span class="footer_contacts-phone">+7(960)84-29-09</span>
+                <span class="footer_contacts-phone">{{ additionalPhoneNumber  | DashCut }}</span>
+                <span class="footer_contacts-phone"> {{ phoneNumber | DashCut }} </span>
               </div>
             </div>
           <div class="footer_contacts-wrapper">
@@ -366,7 +366,7 @@
           <div class="footer_copyright-wrapper">
             <div class="footer_socials-icons-wrapper">
               <img class="footer-socials-wrapper" src="/assets/facebook.svg" alt="Facebook">
-              <img class="footer-socials-wrapper" src="/assets/youtube.png" alt="Youtube">
+              <img class="footer-socials-wrapper" src="/assets/Youtube.png" alt="Youtube">
               <img class="footer-socials-wrapper" src="/assets/whatsup.svg" alt="WhatsUp">
             </div>
             <span class="footer_copyright">© 2021-2022, EDE</span>

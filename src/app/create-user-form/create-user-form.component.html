@@ -25,11 +25,11 @@
         <mat-error *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)">
           Поле заполнено некорректно
         </mat-error>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" formGroupName="company">
         <mat-label>Название компании</mat-label>
-        <input matInput type="text" formControlName="companyName">
+        <input matInput type="text" formControlName="name">
       </mat-form-field>
-        <mat-error *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)">
+        <mat-error *ngIf="form.get('company.name')?.invalid && (form.get('company.name')?.dirty || form.get('company.name')?.touched)">
           Поле заполнено некорректно
         </mat-error>
       <button mat-raised-button class="create-user-button" [disabled]="form.invalid">
