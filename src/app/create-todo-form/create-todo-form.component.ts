@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateTodoDialogComponent } from '../todos-list/create-todo-dialog/create-todo-dialog.component';
 import { TodoInterface } from '../interfaces/todo-interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // Валидатор для поля 'completed'
 export function completedValidator(): ValidatorFn {
@@ -23,7 +24,7 @@ export function completedValidator(): ValidatorFn {
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule],
+  imports: [ReactiveFormsModule, NgIf, NgFor, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule, MatTooltipModule],
   templateUrl: './create-todo-form.component.html',
   styleUrls: ['./create-todo-form.component.scss']
 })

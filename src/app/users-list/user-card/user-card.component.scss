@@ -15,9 +15,10 @@
   font-size: 15px;
   padding: 0 25px;
   border: 1px #3c3c3b solid;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 15px 5px;
   background-color: #f0f1f5;
+  transition: box-shadow 0.5s ease;
   &:hover {
     background-color: #3c3c3b;
     color: #f3b81d;
@@ -36,7 +37,7 @@
   height: 30px;
   border: 1px solid #3c3c3b;
   font-family: "Inter", sans-serif;
-  border-radius: 30px;
+  border-radius: 8px;
   background: #f3b81d;
   color: #3c3c3b;
   margin: 15px auto;
@@ -57,7 +58,7 @@
   height: 30px;
   border: 1px solid #3c3c3b;
   font-family: "Inter", sans-serif;
-  border-radius: 30px;
+  border-radius: 8px;
   background: #f3b81d;
   color: #3c3c3b;
   margin: 15px auto;

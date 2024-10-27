@@ -27,11 +27,11 @@
             <mat-error>Введите верный ответ!</mat-error>
         </mat-form-field>
 
-        <button class="btn_create" mat-raised-button color="primary" (click)="submitForm()" [disabled]="form.invalid">
+        <button class="btn_create" mat-raised-button color="primary" (click)="submitForm()" [disabled]="form.invalid" matTooltip="Создать задачу">
             <mat-icon>add</mat-icon>
             СОЗДАТЬ
         </button>
-        <button class="btn_cancel" mat-raised-button color="primary" [mat-dialog-close]="false">
+        <button class="btn_cancel" mat-raised-button color="primary" [mat-dialog-close]="false" matTooltip="Отмена">
             <mat-icon>close</mat-icon>
             ОТМЕНА
         </button>

@@ -6,11 +6,12 @@ import { UserInterface } from '../../interfaces/user-interfaces';
 import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { NgIf } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
   standalone: true,
-  imports: [NgIf, ReactiveFormsModule, MatFormFieldModule, MatLabel, MatIcon, MatError, MatInputModule, MatDialogClose, MatDialogActions],
+  imports: [NgIf, ReactiveFormsModule, MatFormFieldModule, MatLabel, MatIcon, MatError, MatInputModule, MatDialogClose, MatDialogActions, MatTooltipModule],
   templateUrl: './edit-user-dialog.component.html',
   styleUrl: './edit-user-dialog.component.scss',
 })
@@ -45,11 +46,4 @@ export class EditUserDialogComponent {
       ]),
     })
   });
-
-  // get userWithUpdatedField() {
-  //   return {
-  //     id: this.data.user.id,
-  //     ...this.form.value,
-  //   }
-  // }
 }

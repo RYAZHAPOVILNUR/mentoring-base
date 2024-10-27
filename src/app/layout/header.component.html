@@ -22,7 +22,7 @@
                 <img src="/assets/Phone.svg" alt="логотип телефона">
                 <div class="header-number">
                     <a style="text-decoration: none; color: white;" href="tel:+7 (965) 084-29-29">
-                        +7 (965) 084-29-29
+                        <p>{{'+7 (965) 084-29-29' | removeDashes}}</p>
                     </a>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="header-item">
-                <button class="header-button">
+                <button class="header-button" colorBasket>
                     <img class="header-img-shop-cart" src="/assets/shop-cart.svg" alt="логотип корзина">
                     <span>Пусто</span>
                 </button>
@@ -46,6 +46,7 @@
             <img class="header-second-logo" src="/assets/light.svg" alt="">
             <nav class="nav-2" *ngIf="changeMenuText">
                 <div class="header-second-nav-item" *ngFor="let item of menuItems">{{item}}</div>
+                <div class="header_text_two">{{header2Item4}} {{currentDate | date: 'medium'}}</div>
             </nav>
         </div>
         <div class="header-second-right">

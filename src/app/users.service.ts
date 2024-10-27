@@ -50,12 +50,13 @@ export class UsersService {
     if (existingEmail !== undefined) {
       alert('Такой email уже зарегестрирован!');
     } else {
-      // next перезаписывает данные по новому и возвращает обновленный массив
+      this.usersSubject$.next([...this.usersSubject$.value, user]);
+      alert('Новый пользователь успешно добавлен!');
+      // next перезаписывает данные по новому и возвращает обновленный массив.
       // spread operator ... - это оператор расширения,
       // создает новый массив, который включает все элементы из this.users$
       // и добавляет в конец новый объект user
-      this.usersSubject$.next([...this.usersSubject$.value, user]);
-      alert('Новый пользователь успешно добавлен!');
+      
     }
   }
 

@@ -1,18 +1,20 @@
 <h1 class="item-word">USER CARD</h1>
 
 <!-- style="width: 200px; height: 200px; border: 1px solid black; margin: 5px; padding: 10px;" -->
-<div class="block_users_card">
+<div class="block_users_card" appShadowHighlight>
   <!-- <p>{{$any(i).name}}</p> лайфхак от Ильнура с $any()-->
-  <p>{{ user.name | customUpperCase}}</p>
+  <p>{{ user.name }}</p>
   <p>{{ user.email }}</p>
   <p>{{ user.website }}</p>
   <p>{{ user.company.name | customUpperCase}}</p>
 
-  <button (click)="openEditDialog()" class="btn_edit">
+  <button (click)="openEditDialog()" mat-flat-button color="primary" class="btn_edit"
+    matTooltip="EDIT USER">
     <mat-icon>edit_note</mat-icon>
     EDIT USER</button>
-
-  <button (click)="openDeleteDialog()" class="btn_delete">
-    <mat-icon>delete_sweep</mat-icon>
+    
+    <button (click)="openDeleteDialog()" mat-flat-button color="primary" class="btn_delete"
+    matTooltip="DELETE USER">
+    <mat-icon>delete</mat-icon>
     DELETE</button>
 </div>

@@ -7,11 +7,12 @@ import { MatOption, MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-todo-dialog',
   standalone: true,
-  imports: [MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule, MatOption, MatLabel, MatSelectModule, MatDialogClose],
+  imports: [MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule, MatOption, MatLabel, MatSelectModule, MatDialogClose, MatTooltipModule],
   templateUrl: './edit-todo-dialog.component.html',
   styleUrl: './edit-todo-dialog.component.scss'
 })
@@ -31,11 +32,4 @@ export class EditTodoDialogComponent {
     title: new FormControl(this.data.todo.title, [Validators.required, Validators.minLength(3)]),
     completed: new FormControl(this.data.todo.completed, [Validators.required]),
   });
-
-  // userWithUpdatedField() {
-  //   return {
-  //     id: this.data.todo.id,
-  //     ...this.form.value,
-  //   };
-  // };
 }
