@@ -1,72 +1,64 @@
 .item-word {
-    margin: 0 auto;
-    margin-top: 15px;
-    text-align: center;
-  }
+  margin: 0 auto;
+  margin-top: 15px;
+  text-align: center;
+}
 
 .container {
-    margin-top: 25px;
-    border: 1px solid #3C3C3B;
-    border-radius: 15px;
-    color: #3C3C3B;
-    margin-bottom: 15px;
-    font-family: 'Inter', sans-serif;
-    flex-direction: column;
-    background-color: #f0f1f5;
-    transition: box-shadow 0.5s ease;
-    &:hover{
-        background-color: #3C3C3B;
-        color: #f3b81d;
-    }
+  margin-top: 25px;
+  border: 1px solid #3c3c3b;
+  border-radius: 15px;
+  color: #3c3c3b;
+  margin-bottom: 15px;
+  font-family: "Inter", sans-serif;
+  flex-direction: column;
+  background-color: #f0f1f5;
+  transition: box-shadow 0.5s ease;
+  &:hover {
+    background-color: #3c3c3b;
+    color: #f3b81d;
+  }
 }
 .block_todos_card {
-    height: 150px;
-    width: 180px;
-    font-size: 15px;
-    padding: 25px;
+  height: 150px;
+  width: 180px;
+  font-size: 15px;
+  padding: 25px;
 }
 
-.task_title{
-    font-weight: 600;
+.task_title {
+  font-weight: 600;
 }
 
 .btn_edit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 30px;
-    background: #f3b81d;
-    border-radius: 30px;
-    border: none;
-    margin: 0 auto;
-    margin-top: 30px;
-    border: 1px solid #3C3C3B;
-    &:hover {
-        cursor: pointer;
-        background-color: #3C3C3B;
-        color: #f3b81d;
-        border: 1px solid #f3b81d;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f0ba4e;
+    color: #3c3c3b;
+  }
 }
 
 .btn_delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 30px;
-    background: #f3b81d;
-    border-radius: 30px;
-    border: none;
-    margin: 0 auto;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #3C3C3B;
-    &:hover {
-        cursor: pointer;
-        background-color: #3C3C3B;
-        color: #f3b81d;
-        border: 1px solid #f3b81d;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f0ba4e;
+    color: #3c3c3b;
+  }
 }

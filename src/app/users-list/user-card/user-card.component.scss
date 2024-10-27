@@ -35,18 +35,15 @@
   justify-content: center;
   width: 200px;
   height: 30px;
-  border: 1px solid #3c3c3b;
   font-family: "Inter", sans-serif;
   border-radius: 8px;
-  background: #f3b81d;
-  color: #3c3c3b;
+  color: #f0f1f5;
   margin: 15px auto;
   margin-top: 30px;
   cursor: pointer;
   &:hover {
-    background-color: #3c3c3b;
-    border: 1px solid #f3b81d;
-    color: #f3b81d;
+    background-color: #f0ba4e;
+    color: #3c3c3b;
   }
 }
 
@@ -56,16 +53,13 @@
   justify-content: center;
   width: 200px;
   height: 30px;
-  border: 1px solid #3c3c3b;
   font-family: "Inter", sans-serif;
+  color: #f0f1f5;
   border-radius: 8px;
-  background: #f3b81d;
-  color: #3c3c3b;
   margin: 15px auto;
   cursor: pointer;
   &:hover {
-    background-color: #3c3c3b;
-    border: 1px solid #f3b81d;
-    color: #f3b81d;
+    background-color: #f0ba4e;
+    color: #3c3c3b;
   }
 }

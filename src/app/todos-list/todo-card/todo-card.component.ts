@@ -8,11 +8,12 @@ import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.co
 import { TrucantePipe } from '../../pipes/truncate.pipe';
 import { ShadowHighlightDirective } from '../../directives/shadow.directive';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-todo-card',
   standalone: true,
-  imports: [MatIconModule, MatDialogModule, TrucantePipe, ShadowHighlightDirective, MatTooltipModule],
+  imports: [MatIconModule, MatDialogModule, TrucantePipe, ShadowHighlightDirective, MatTooltipModule, MatButtonModule],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss'
 })
