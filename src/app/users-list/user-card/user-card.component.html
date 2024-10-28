@@ -8,6 +8,8 @@
     <mat-card-title>{{ user.website }}</mat-card-title>
     <mat-card-subtitle>Company:</mat-card-subtitle>
     <mat-card-title>{{ user.company.name }}</mat-card-title>
+    <mat-card-subtitle>Phone:</mat-card-subtitle>
+    <mat-card-title>{{ user.phone | customChangePhoneFormat }}</mat-card-title>
   </mat-card-content>
   <mat-card-actions class="user-card__btns">
     <button

@@ -1,5 +1,7 @@
 <div [ngClass]="todo.completed ? 'todo-card completed' : 'todo-card'">
-  <p class="todo-card__item"><span>Задача: </span>{{ todo.title }}</p>
+  <p class="todo-card__item">
+    <span>Задача: </span>{{ todo.title | customSliceTitle }}
+  </p>
   <p class="todo-card__item"><span>Автор: </span>{{ todo.userId }}</p>
   <p class="todo-card__item">
     <span>Завершена: </span>{{ todo.completed ? "Да" : "Нет" }}

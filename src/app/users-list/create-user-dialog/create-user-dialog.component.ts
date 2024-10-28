@@ -48,12 +48,14 @@ export class CreateUserDialogComponent {
     company: new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     }),
+    phone: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
   nameErrorMessage = signal('');
   emailErrorMessage = signal('');
   websiteErrorMessage = signal('');
   companyNameErrorMessage = signal('');
+  phoneErrorMessage = signal('');
 
   constructor() {
     merge(
@@ -64,7 +66,9 @@ export class CreateUserDialogComponent {
       this.form.controls.website.statusChanges,
       this.form.controls.website.valueChanges,
       this.form.controls.company.controls.name.statusChanges,
-      this.form.controls.company.controls.name.valueChanges
+      this.form.controls.company.controls.name.valueChanges,
+      this.form.controls.phone.statusChanges,
+      this.form.controls.phone.valueChanges
     )
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
@@ -113,6 +117,13 @@ export class CreateUserDialogComponent {
       this.setErrorMessage(this.form.controls.company.controls.name, {
         required: 'Введите название компании',
         minlength: 'Длина минимум 3 символа',
+      })
+    );
+
+    this.phoneErrorMessage.set(
+      this.setErrorMessage(this.form.controls.phone, {
+        required: 'Введите номер телефона',
+        minlength: 'Длина минимум 6 символов',
       })
     );
   }

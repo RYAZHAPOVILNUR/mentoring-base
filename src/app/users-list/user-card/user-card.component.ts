@@ -7,13 +7,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomChangePhoneFormatPipe } from '../../pipes/change-phone-format.pipe';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
-  imports: [MatButtonModule, MatCardModule, MatIconModule],
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    CustomChangePhoneFormatPipe,
+  ],
 })
 export class UserCardComponent {
   readonly dialog = inject(MatDialog);

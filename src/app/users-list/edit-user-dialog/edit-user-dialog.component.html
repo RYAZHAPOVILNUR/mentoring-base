@@ -55,6 +55,20 @@
     </mat-form-field>
   </div>
 
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input
+      matInput
+      type="tel"
+      class="user-form__input"
+      formControlName="phone"
+    />
+    <mat-icon matSuffix color="primary">phone</mat-icon>
+    @if (form.controls.phone.invalid) {
+    <mat-error>{{ phoneErrorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+
   <button
     (click)="submitForm()"
     type="submit"
