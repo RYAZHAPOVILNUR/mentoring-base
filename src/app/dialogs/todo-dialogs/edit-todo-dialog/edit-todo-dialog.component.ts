@@ -61,7 +61,7 @@ export class EditTodoDialogComponent {
    this.dialogRef.close({
     ...this.formTodo.value,
     id: this.data.todo.id,
-    completed: this.formTodo.value.completed === 'да'
+    completed: this.formTodo.value.completed
    });
  }
 }
