@@ -3,24 +3,29 @@
     <div class ="header-logo"></div>
     <img src="/assets/frame.svg" alt="логотип сайта">
       <nav class="header-nav">
-      <div class="header-nav-item">Главная</div>
-      <div class="header-nav-item">О компании</div>
-      <div class="header-nav-item">Каталог</div>
+        <ul class="nav_list">
+          <a href="#" class="nav__link">Главная</a>
+          <a href="#" class="nav__link">О компании</a>
+          <a href="#" class="nav__link">Каталог</a>
+        </ul>
       </nav>
-   </div>
-  <div class = "header-right">
-  <div class = "telephone">
-    <img src="/assets/phone.svg" alt="телефон"></div>
-  <div class="header-nomer">+7 (965) 084-29-29</div>
+  </div>
+<div class = "header-right">
+  <div class = "phone">
+  <img src="/assets/phone.svg" alt="phone"></div>
+  <a href = "tel: +79650842929" class = "telephone">
+    <span class="phone__icon"></span>
+    <span class="phone__text">+7 (965) 084-29-29</span>
+  </a>
   <div class = "heart">
-   <img src="/assets/heart 1.svg" alt="сердце"></div>
-   <button class="cart-button">
+    <img src="/assets/heart 1.svg" alt="сердце"></div>
+    <button class="cart-button">
     <span class="cart-icon">
         <img src="buying.svg" alt="">
     </span>
     <span class="cart-text">Пусто</span>
-  </button>
-  </div>
+    </button>
+</div>
 </div>
 
  <!-- HEADER2 -->
@@ -30,14 +35,24 @@
     <div class="header-bottom-nav-item catalog">
       <div class="catalog-icon">
         <img src="/assets/light.svg" alt=""></div>
-          <div class="header-bottom-nav-item1">Каталог</div>
-        </div>
-      <div class="header-bottom-nav-item2">Стройматериалы</div>
-      <div class="header-bottom-nav-item2">Инструменты</div>
-      <div class="header-bottom-nav-item2">Электрика</div>
-      <div class="header-bottom-nav-item2">Интерьер и одежда</div>
-  </div>
-  <div class="searh-container">
+        <ul class="categories">
+          <li class="categories__item">
+            <a href="#" class="categories__link">Каталог</a>
+          </li>
+          <li class="categories__item">
+            <a href="#" class="categories__link">Стройматериалы</a>
+          </li>
+          <li class="categories__item">
+            <a href="#" class="categories__link">Инструменты</a>
+          </li>
+          <li class="categories__item">
+            <a href="#" class="categories__link">Электрика</a>
+          </li>
+          <li class="categories__item">
+            <a href="#" class="categories__link">Интерьер и одежда</a>
+          </li>
+        </ul>
+  <div class="search-container">
       <input class="search__input" type="search" placeholder="Поиск, например Круг зачистной">
       <div class="location">
           <img src="/assets/map-pin.svg" alt="">

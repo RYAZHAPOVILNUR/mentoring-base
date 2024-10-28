@@ -5,7 +5,7 @@
     align-items: center;
     padding: 0px 240px;
     height: 80px;
-    color: white;
+    color: #ffffff;
     background-color: #4b565e;
   }
   
@@ -14,17 +14,29 @@
     align-items: center;
   }
   
+  .phone {
+    margin-right: 10px;;
+  }
+
   .header-logo {
     margin-right: 20px;
   }
   
   .header-nav {
-    display: flex;
+    margin-right: auto;
+    color: #F9FAFB;
+    font-weight: 400;
+    text-decoration: none;
   }
   
-  .header-nav-item {
-    margin-right: 20px;
-    margin-left: 35px;
+  a:visited{
+    color: #ffffff;
+  }
+
+  .nav_list {
+    display: flex;
+    gap: 24px;
+    text-decoration: none;
   }
   
 .header-right {
@@ -35,6 +47,8 @@
 .telephone {
   display: flex;
   margin-right: 10px;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .heart {
@@ -91,27 +105,28 @@
   padding-left: 18px;
 }
 
-.header-bottom-nav-item1 {
-  padding-left: 15px;
-  font-weight: 600;
-}
-
-.header-bottom-nav-item2 {
-  margin-left: 15px;
-  font-weight: 600;
-}
-
 .catalog {
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
-.header-bottom-nav {
+.categories {
   display: flex;
+  gap: 10px;
+  color: #000000;
+  font-weight: 550;
+  align-items: center;
+  list-style-type: none;
+}
+
+.categories__item {
+  margin-left: 0px;
+  margin-right: 5px;
   align-items: center;
 }
 
-.searh-container {
+.search-container {
   display: flex;
   align-items: center;
 }
@@ -122,14 +137,16 @@
   border: none;
   background-color: transparent;
   border-bottom: 1px solid #3C3C3B;
-  background: url(/assets/search.svg) no-repeat right;
   outline: none;
+  background: url("/assets/search.svg") no-repeat center left;
+  background-position: right 3px top 50%;
 }
 
 .location {
   display: flex;
   align-items: center;
   margin-left: 24px;
+
 }
 
 .city {
