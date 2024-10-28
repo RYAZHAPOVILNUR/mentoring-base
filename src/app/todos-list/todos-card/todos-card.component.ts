@@ -6,13 +6,20 @@ import { DeleteTodoDialogComponent } from '../delete-todo-dialog/delete-todo-dia
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'app-todos-card',
   templateUrl: './todos-card.component.html',
   styleUrl: './todos-card.component.scss',
   standalone: true,
-  imports: [MatDialogModule, MatSnackBarModule, MatCardModule, MatButtonModule],
+  imports: [
+    MatDialogModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatButtonModule,
+    SlicePipe,
+  ],
 })
 export class TodosCardComponent {
   private readonly dialog = inject(MatDialog);
