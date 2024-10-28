@@ -6,12 +6,19 @@ import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dia
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { CustomRemoveDashPipe } from '../../pipes/remove-dash.pipe';
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
-  imports: [MatDialogModule, MatSnackBarModule, MatButtonModule, MatCardModule],
+  imports: [
+    MatDialogModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    MatCardModule,
+    CustomRemoveDashPipe,
+  ],
   standalone: true,
 })
 export class UserCardComponent {

@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { IUser } from '../../../interfaces/user.interface';
+import { customNumberValidator } from '../../../custom-validators/custom-validators';
 
 @Component({
   selector: 'app-create-user-dialog',
@@ -49,6 +50,11 @@ export class CreateUserDialogComponent {
     website: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
+    ]),
+    phone: new FormControl('', [
+      Validators.required,
+      Validators.minLength(11),
+      customNumberValidator,
     ]),
     company: new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),

@@ -23,6 +23,14 @@
       Вебсайт введен неправильно
     </mat-error>
   </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Введите ваш номер телефона</mat-label>
+    <input matInput type="text" formControlName="phone">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-error>
+      Номер телефона введен неправильно (длина 11 символов)
+    </mat-error>
+  </mat-form-field>
   <div formGroupName="company">
     <mat-form-field appearance="fill">
       <mat-label>Введите название компании</mat-label>

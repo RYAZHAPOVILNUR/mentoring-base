@@ -23,7 +23,7 @@ export interface IUser {
   username?: string;
   email: string;
   address?: IAddress;
-  phone?: string;
+  phone: string;
   website: string;
   company: ICompany;
 }
@@ -34,4 +34,5 @@ export interface CreateUser {
   email: string;
   website: string;
   company: ICompany;
+  phone: string;
 }
