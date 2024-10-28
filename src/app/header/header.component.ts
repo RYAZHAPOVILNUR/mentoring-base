@@ -6,15 +6,14 @@ const menuItems = ['Каталог', 'Стройматериалы','Инстр�
 
 const upperCaseMenuItems = menuItems.map(
   (item) => {
-    return item.toUpperCase()  }
+    return item.toUpperCase()  
+  }
 )
 
-const aboutCompany = (item : string) => {
+const aboutCompany = (item : string) => { 
   return item;
 }
 const result = aboutCompany('О компании');
-
-
 
 @Component({
   selector: 'app-header',
@@ -34,8 +33,6 @@ export class HeaderComponent {
 
   readonly headerItem3 = 'Каталог';
 
-  readonly header2Item1 = upperCaseMenuItems[0]; 
-
   readonly header2Item2 = 'Стройматериалы';
 
   readonly header2Item3 = 'Инструменты';
@@ -52,7 +49,6 @@ export class HeaderComponent {
     this.menuItems = upperCaseMenuItems.map(
       item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
     );
-    
     this.isUpperCase = !this.isUpperCase;
   }
 }

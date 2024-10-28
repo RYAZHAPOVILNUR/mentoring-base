@@ -1,9 +1,9 @@
 export interface IUser {
     id: number;
     name: string;
-    username: string;
+    username?: string;
     email: string;
-    address: {
+    address?: {
       street: string;
       suite: string;
       zipcode: string;
@@ -13,11 +13,11 @@ export interface IUser {
         lng: string;
       };
     };
-    phone: string;
+    phone?: string;
     website: string;
     company: {
-      bs: string;
-      catchPhrase: string;
+      bs?: string;
+      catchPhrase?: string;
       name: string;
     };
   }

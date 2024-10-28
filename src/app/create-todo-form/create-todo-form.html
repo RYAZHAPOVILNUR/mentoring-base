@@ -1,0 +1,41 @@
+<div class="component-forms">
+    <h1>CREATE TODO FORM</h1>
+    <div class="form-item">
+      <form class="form-item-group" [formGroup]="form" (ngSubmit)="submitForm()">
+        <p>USER ID:</p>
+        <input type="text" class="form-input" formControlName="userId" />
+        <div
+          *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
+          class="alert"
+        >
+          <div *ngIf="form.controls['userId'].errors">
+            ИМЯ ВВЕДЕНО НЕПРАВИЛЬНО
+          </div>
+        </div>
+        <p>TITLE:</p>
+        <input type="text" class="form-input" formControlName="title" />
+        <div
+          *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
+          class="alert"
+        >
+          <div *ngIf="form.controls['title'].errors">
+            НЕВЕРНО ЗАПОЛНЕНО ПОЛЕ
+          </div>
+        </div>
+        <p>COMPLETED:</p>
+        <input type="text" class="form-input" formControlName="completed" />
+        <div
+          *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)"
+          class="alert"
+        >
+          <div *ngIf="form.controls['completed'].errors">
+            НЕВЕРНО ЗАПОЛНЕНО ПОЛЕ
+          </div>
+        </div>
+        <button style="width: 150px; margin-top: 20px" [disabled]="form.invalid">
+          CREATE USER
+        </button>
+      </form>
+    </div>
+    </div>
+    

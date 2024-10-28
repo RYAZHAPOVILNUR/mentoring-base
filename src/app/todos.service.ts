@@ -25,7 +25,17 @@ export class TodosService {
   }
 
   createTodo(todo: ITodo) {
-    this.todoSubject$.next([...this.todoSubject$.value, todo]);
+    const exitingTodo = this.todoSubject$.value.find(
+      (currentElement) => currentElement.title === todo.title
+    );
+
+    if (exitingTodo !== undefined) {
+      alert('ТАКАЯ ЗАДАЧА УЖЕ ЕСТЬ')
+    } else {
+      this.todoSubject$.next([...this.todoSubject$.value, todo]);
+      alert('НОВАЯ ЗАДАЧА УСПЕШНО ДОБАВЛЕНА')
+    }
+    
   }
 
   deleteTodo(id: number) {

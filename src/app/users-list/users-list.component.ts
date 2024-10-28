@@ -1,33 +1,52 @@
 import { AsyncPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, IterableChangeRecord } from '@angular/core';
 import { UsersApiService } from '../users-api.servise';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { IUser } from '../Interfaces/user.interface';
+import { CreateUserFormComponent } from '../create-user-form/create-user-form';
+import { ICreateUser } from '../Interfaces/create-user.interface';
+
+
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
-  
+
   constructor() {
-    this.usersApiService.getUsers().subscribe(
-      (response: IUser[]) => {
+    this.usersApiService.getUsers().subscribe((response: IUser[]) => {
       this.usersService.setUsers(response);
-    }
-  )
+    });
+
+    this.usersService.users$.subscribe(
+      users => console.log(users)
+    )
   }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
-}
+  }
+
+  public createUser(formData: ICreateUser) {
+    this.usersService.createUser({
+      id: new Date().getTime(),
+      name: formData.name,
+      email: formData.email,
+      website: formData.website,
+      company: {
+        name: formData.companyName,
+      },
+    });
+    console.log('Данные формы: ', event);
+  }
 }
 
 // // Задачи по JS
