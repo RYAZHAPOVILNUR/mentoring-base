@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 
@@ -11,13 +11,15 @@ const navItem = getMenuItems('О Компании');
   templateUrl: './header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, RouterOutlet, RouterLink],
+  imports: [NgFor, NgIf, RouterOutlet, RouterLink, DatePipe],
 })
 export class HeaderComponent {
   title = 'mentoring-first-project';
 
   isShowCatalog = true;
   isUpperCaseText = false;
+
+  today: number = Date.now();
 
   aboutCompany = navItem;
 

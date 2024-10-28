@@ -13,13 +13,14 @@
                 <li><a class="nav-link" href="" *ngIf="isShowCatalog">Каталог</a></li>
               </ul>
             </nav>
-            <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button>
+            <!-- <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button> -->
             <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
             <button routerLink="/users" class="control-btn">Админка</button>
             <button routerLink="/todos" class="control-btn">Todos</button>
           </div>
           <div class="header-top-right">
             <div class="header-top-phone">
+              <span class="date">Today is: {{today | date:'medium'}}</span>
               <a href="#">
                 <img class="phone-img" src="../assets/phone.svg" alt="Иконка телефона">
               </a>
