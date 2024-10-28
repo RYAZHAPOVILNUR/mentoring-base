@@ -1,0 +1,38 @@
+<div class="todo-form-container">
+  <form
+    class="todo-form"
+    [formGroup]="form"
+    (ngSubmit)="submitForm()"
+  >
+    <p>ТЕКСТ ЗАДАЧИ:</p>
+    <input type="text" formControlName="title">
+    <div
+      *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
+      class="alert"
+    >
+      <div *ngIf="form.controls['title']">неверно</div>
+    </div>
+    <p>АВТОР ЗАДАЧИ:</p>
+    <input type="text" formControlName="userId">
+    <div
+      *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
+      class="alert"
+    >
+      <div *ngIf="form.controls['userId']">необходиимо заполнить</div>
+    </div>
+    <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+    <input type="text" formControlName="completed">
+    <div
+      *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)"
+      class="alert"
+    >
+      <div *ngIf="form.controls['completed']">необходиимо заполнить "да" или "нет"</div>
+    </div>
+    <button
+      class="btn-delete-todo"
+      [disabled]="form.invalid"
+    >
+      Добавить
+    </button>
+  </form>
+</div>

@@ -3,7 +3,7 @@
   <div>ТЕКСТ ЗАДАЧИ:</div>
   <p>{{todo.title}}</p>
   <div>АВТОР ЗАДАЧИ:</div>
-  <p>{{todo.id}}</p>
+  <p>{{todo.userId}}</p>
   <div>ЗАДАЧА ЗАВЕРШЕНА:</div>
   <p>{{todo.completed ? 'ДА' : 'НЕТ'}}</p>
   <button class="btn-delete" (click)="onDeleteTodo(todo.id)">УДАЛИТЬ</button>
