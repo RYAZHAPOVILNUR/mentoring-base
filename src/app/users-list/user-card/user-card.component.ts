@@ -5,17 +5,17 @@ import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.co
 import { CreateUserDialogComponent } from '../../create-user-form/create-user-dialog/create-user-dialog.component';
 import { DeleteUserConfirmationComponent } from '../delete-user-confirmation/delete-user-confirmation.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { customUpperCasePipe } from '../../pipes/upper-case.pipe';
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports:[MatSnackBarModule,MatCardModule]
+  imports: [MatSnackBarModule, MatCardModule, customUpperCasePipe],
 })
 export class UserCardComponent {
-
   constructor(public confirmationDialog: MatDialog) {}
 
   @Input()
@@ -37,13 +37,13 @@ export class UserCardComponent {
   deleteUserDialog(): void {
     this.confirmationDialog
       .open(DeleteUserConfirmationComponent, {
-        data: `Do you want to delete user?`
+        data: `Do you want to delete user?`,
       })
       .afterClosed()
       .subscribe((confirmation: Boolean) => {
         if (confirmation) {
-          this.onDeleteUser(this.user.id)
-          alert("User is deleted");
+          this.onDeleteUser(this.user.id);
+          alert('User is deleted');
         }
       });
   }
@@ -58,7 +58,7 @@ export class UserCardComponent {
     dialogRef.afterClosed().subscribe((editResult: User) => {
       if (editResult) {
         this.editUser.emit(editResult);
-        this.openSnackBar()
+        this.openSnackBar();
       }
     });
   }
@@ -67,7 +67,7 @@ export class UserCardComponent {
 
   openSnackBar(): void {
     this.snackBar.open('Пользователь редактирован🐒', 'Закрыть', {
-      duration: 2000
+      duration: 2000,
     });
   }
 
@@ -81,7 +81,7 @@ export class UserCardComponent {
     dialogRef.afterClosed().subscribe((createResult: User) => {
       if (createResult) {
         this.createUser.emit(createResult);
-        this.openSnackBarTwo()
+        this.openSnackBarTwo();
       }
     });
   }
@@ -90,7 +90,7 @@ export class UserCardComponent {
 
   openSnackBarTwo(): void {
     this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
-      duration: 2000
+      duration: 2000,
     });
   }
 }

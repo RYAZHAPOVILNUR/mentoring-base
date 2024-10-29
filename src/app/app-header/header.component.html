@@ -22,6 +22,8 @@
     <button class="button__users" routerLink="/users">Админка</button>
 
     <button class="button__users" routerLink="/todos">Задачи</button>
+    
+    <div>{{ currentDate | date : "medium" }}</div>
   </div>
 
   <div class="header-right">
@@ -30,7 +32,9 @@
     </div>
 
     <nav class="header__nav">
-      <a class="header__nav-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
+      <a class="header__nav-item" href="tel:+79650842929">{{
+        phone | customNoDash
+      }}</a>
 
       <div class="header__nav-item">
         <img src="assets/heart.svg" alt="лайк" />
