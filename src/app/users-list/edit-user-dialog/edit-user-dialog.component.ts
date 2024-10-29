@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { IUser } from '../../interfaces/user.interface';
 import { customNumberValidator } from '../../custom-validators/custom-validators';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -28,6 +29,7 @@ import { customNumberValidator } from '../../custom-validators/custom-validators
     MatButtonModule,
     NgIf,
     MatDialogClose,
+    MatTooltipModule,
   ],
   standalone: true,
 })

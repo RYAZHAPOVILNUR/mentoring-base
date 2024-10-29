@@ -20,7 +20,7 @@
       Ответ введен неправильно, только Да/Нет
     </mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" [mat-dialog-close]="todoWithUpdatedFields" class="todo-form-btn" type="submit" [disabled]="editTodoForm.invalid">
+  <button mat-raised-button color="primary" [mat-dialog-close]="todoWithUpdatedFields" class="todo-form-btn" type="submit" [disabled]="editTodoForm.invalid" matTooltip="Редактировать данные задания">
     <mat-icon>add</mat-icon>
     СОХРАНИТЬ
   </button>

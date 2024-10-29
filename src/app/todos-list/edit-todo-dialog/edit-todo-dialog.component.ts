@@ -17,6 +17,7 @@ import {
   customNumberValidator,
   customYesNoValidator,
 } from '../../custom-validators/custom-validators';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -31,6 +32,7 @@ import {
     MatIconModule,
     MatButtonModule,
     MatDialogClose,
+    MatTooltipModule,
   ],
   standalone: true,
 })
