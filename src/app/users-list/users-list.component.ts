@@ -12,12 +12,10 @@ Injectable();
   imports: [NgFor],
 })
 export class UsersListComponent {
-  readonly apiService = inject(HttpClient);
+ readonly usersApiService = inject(UsersApiService);
   users: User[] = [];
   constructor() {
-    this.apiService
-      .get('https://jsonplaceholder.typicode.com/users')
-      .subscribe((response: any) => {
+    this.usersApiService.getUsers().subscribe((response: any) => {
         this.users = response;
       });
   }
