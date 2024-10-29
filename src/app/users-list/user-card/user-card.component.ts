@@ -30,48 +30,4 @@ export class UserCardComponent {
   @Output()
   editUser = new EventEmitter();
 
-  readonly dialog = inject(MatDialog);
-
-  readonly deleteDialog = inject(MatDialog);
-
-  readonly snackbar = inject(MatSnackBar);
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(CreateEditUserDialogComponent, {
-      data: {user: this.user, isEdit: true},
-    });
-
-    dialogRef.afterClosed().subscribe(editResult => {
-      console.log('The dialog was closed. Result:', editResult);
-      if (editResult) {
-        this.editUser.emit(editResult)
-        this.snackbar.open(`Пользователь ${this.user.name} был изменен`, 'Ок', {
-          duration: 3000
-        })
-      } 
-    });
-  }
-
-  openDeleteDialog() {
-    const dialogRef = this.deleteDialog.open(DeleteUserDialogComponent, {
-      data: {user: this.user},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed. Result:', result);
-      if (result) {
-        this.deleteUser.emit(this.user.id)
-        this.snackbar.open(`Пользователь ${this.user.name} был удален`, 'Ок', {
-          duration: 3000
-        })
-      } else {
-        this.snackbar.open('Отмена удаления', 'Ок', {
-          duration: 3000
-        })
-      }
-      
-    });
-  }
-
-  
 }

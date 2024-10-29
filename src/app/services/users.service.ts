@@ -1,14 +1,12 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../interfaces/user.interface';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class usersService {
-  readonly snackbar = inject(MatSnackBar);
-
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
 
@@ -36,14 +34,10 @@ export class usersService {
     );
 
     if (userIsExisting) {
-      this.snackbar.open('Такой пользователь уже существует', 'Ок', {
-        duration: 3000,
-      })
+      alert('User already exists');
+      console.log(userIsExisting)
     } else {
       this.usersSubject$.next([...this.usersSubject$.value, user]);
-      this.snackbar.open(`Пользователь ${user.name} был создан`, 'Ок', {
-        duration: 3000
-      })
     }
   }
 

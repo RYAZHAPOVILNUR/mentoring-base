@@ -3,12 +3,16 @@
 
 <!-- <app-create-user (createUser)="CreateUser($event)"></app-create-user> -->
  
-<app-create-user (createUser)="CreateUser($event)"></app-create-user>
+<!-- <app-create-user (createUser)="CreateUser($event)"></app-create-user> -->
+<div class="content-container">
+    <h2 class="title">Создать нового пользователя</h2>
+    <button (click)="openDialog()"  class="btn">Создать</button>
+</div>
 <div class="users-block-container">
     <div *ngFor = "let user of usersService.users$ | async" class="user-block">
         <app-user-card [user]="user" 
-        (deleteUser)="deleteUser($event)"
-        (editUser)="editUser($event)"
+        (deleteUser)="openDeleteDialog($event)"
+        (editUser)="openDialog($event)"
         ></app-user-card>
     </div>
 </div>

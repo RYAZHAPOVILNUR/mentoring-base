@@ -31,62 +31,53 @@ export class CreateEditUserDialogComponent {
 
  
 
-  readonly data = inject<{ user: User; isEdit: boolean }>(MAT_DIALOG_DATA);
+  readonly data = inject<{ user?: User; isEdit: boolean }>(MAT_DIALOG_DATA);
 
   public form = new FormGroup({
-    name: new FormControl(this.data.user.name, [
+    name: new FormControl(this.data.user?.name, [
       Validators.required,
       Validators.minLength(2),
     ]),
-    email: new FormControl(this.data.user.email, [
+    email: new FormControl(this.data.user?.email, [
       Validators.required,
       Validators.email,
     ]),
-    phone: new FormControl(this.data.user.phone, [
+    phone: new FormControl(this.data.user?.phone, [
       Validators.required,
       Validators.minLength(10),
       Validators.maxLength(10),
     ]),
-    website: new FormControl(this.data.user.website, [
+    website: new FormControl(this.data.user?.website, [
       Validators.required,
       Validators.minLength(2),
     ]),
   });
 
-  get title(): string {
-    return this.data.isEdit
-      ? 'Редактировать пользователя'
-      : 'Создать пользователя';
-  }
-
-
-
-
-
   get userWithUpdatedFields() {
     return {
       ...this.form.value,
-      id: this.data.user.id,
+      id: this.data.user?.id,
     };
   }
 
-  errorMessage = signal('');
+  errorMessagePhone = signal('');
+  errorMessageEmail = signal('');
 
   updateErrorMessage() {
     if (this.form.get('email')?.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
+      this.errorMessageEmail.set('You must enter a value');
     } else if (this.form.get('email')?.hasError('email')) {
-      this.errorMessage.set('Not a valid email');
+      this.errorMessageEmail.set('Not a valid email');
     } else {
-      this.errorMessage.set('');
+      this.errorMessageEmail.set('');
     }
 
     if (this.form.get('phone')?.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
+      this.errorMessagePhone.set('You must enter a value');
     } else if (this.form.get('phone')?.errors) {
-      this.errorMessage.set('Not a valid phone');
+      this.errorMessagePhone.set('Not a valid phone');
     } else {
-      this.errorMessage.set('');
+      this.errorMessagePhone.set('');
     }
   }
 

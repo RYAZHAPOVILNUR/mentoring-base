@@ -1,5 +1,5 @@
 <div class="content-container">
-  <h2 class="title"> {{title}}</h2>
+  <h2 class="title"> {{this.data.isEdit? 'Редактировать пользователя' : 'Создать пользователя'}}</h2>
   <form class="form-container" 
   [formGroup]="form"
   >
@@ -20,7 +20,7 @@
       required
     />
     @if (form.get('email')?.invalid) {
-      <mat-error>{{errorMessage()}}</mat-error>
+      <mat-error>{{errorMessageEmail()}}</mat-error>
     }
   </mat-form-field>
 
@@ -38,7 +38,7 @@
         appMaxlength="10">
       <mat-icon matSuffix>call</mat-icon>
       @if (form.get('phone')?.invalid) {
-        <mat-error>{{errorMessage()}}</mat-error>
+        <mat-error>{{errorMessagePhone()}}</mat-error>
       }
     </mat-form-field>
     
@@ -51,7 +51,7 @@
     <button class="btn" mat-raised-button color="primary" 
             [disabled] = "form.invalid" 
             [matDialogClose]="userWithUpdatedFields"
-            >{{title}}</button>
+            >{{this.data.isEdit? 'Редактировать пользователя' : 'Создать пользователя'}}</button>
   </form>
 
   
