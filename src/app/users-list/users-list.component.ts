@@ -1,4 +1,4 @@
-import { NgFor } from "@angular/common";
+import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -31,10 +31,10 @@ export interface User {
 @Component({
     selector: 'app-users-list',
     standalone: true,
-    imports: [NgFor, UserCardComponent],
+    imports: [NgFor, UserCardComponent, AsyncPipe],
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
-    // changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersListComponent {
     readonly usersApiService = inject(UsersApiService);
