@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from "@angular/core";
     pure: true,
 })
 export class TrucantePipe implements PipeTransform {
-    transform(value: string, limit: number = 20): string {
+    transform(value: string | undefined, limit: number = 20): string | undefined{
         if (!value) {
             return '';
         }

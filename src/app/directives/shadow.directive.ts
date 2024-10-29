@@ -14,7 +14,7 @@ export class ShadowHighlightDirective {
     
     @HostListener('mouseenter')
     enter() {
-        this.shadowCards = '10px 10px 8px rgba(0, 0, 0, 0.4';
+        this.shadowCards = '10px 10px 8px rgba(0, 0, 0, 0.4)';
     };
     
     @HostListener('mouseleave')

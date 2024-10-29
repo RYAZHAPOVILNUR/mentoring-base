@@ -8,8 +8,8 @@ import { Pipe, PipeTransform } from "@angular/core";
     // pure: false - Нечистый пайп, пересчитывается на каждом цикле обнаружения изменений.
 })
 export class CustomUpperCasePipe implements PipeTransform {
-    transform(text: string): string {
-        return text.toUpperCase();
+    transform(text: string | undefined): string | undefined{
+        return text?.toUpperCase();
     }
 }
 

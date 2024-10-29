@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from "@angular/core";
     pure: true,
 })
 export class RemoveDashesPide implements PipeTransform {
-    transform(value: string): string {
-        return value.replace(/[-+()]/g, '')
+    transform(value: string| undefined): string | undefined {
+        return value?.replace(/[-+()]/g, '')
     }
 }
