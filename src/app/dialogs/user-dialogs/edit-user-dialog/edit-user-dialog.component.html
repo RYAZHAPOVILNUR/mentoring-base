@@ -26,6 +26,19 @@
  >
    Email должен содержать больше 3-х символов и {{ "@" }}
  </mat-error>
+ <p class="subtitle">PHONE:</p>
+ <mat-form-field class="example-width">
+   <mat-label>Введите номер</mat-label>
+   <input matInput type="text" formControlName="phone"
+ /></mat-form-field>
+ <mat-error
+ *ngIf="
+ form.controls['phone'].invalid &&
+ (form.controls['phone'].dirty || form.controls['phone'].touched)
+"
+ >
+   Номер должен содержать минимум 6 символов
+ </mat-error>
  <p class="subtitle">WEBSITE:</p>
  <mat-form-field class="example-width">
    <mat-label>Введите веб-сайт</mat-label>

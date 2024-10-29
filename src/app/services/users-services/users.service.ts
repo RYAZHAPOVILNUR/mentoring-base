@@ -11,6 +11,10 @@ export class UsersService {
     this.usersSubject$.next(users);
   }
 
+  getUsers(): User[] {
+   return this.usersSubject$.value;
+ }
+
   editUser(editedUser: User) {
     this.usersSubject$.next(
       this.usersSubject$.value.map((user) =>

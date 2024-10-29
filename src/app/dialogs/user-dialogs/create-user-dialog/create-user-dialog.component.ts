@@ -35,6 +35,10 @@ export class CreateUserDialogComponent {
       Validators.maxLength(20),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [
+     Validators.required,
+     Validators.minLength(6),
+   ]),
     website: new FormControl('', [
       Validators.required,
       Validators.minLength(3),

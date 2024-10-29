@@ -11,6 +11,10 @@ export class TodoService {
     this.todosSubject$.next(todos.slice(0,10));
   }
 
+  getTodos(): Todo[] {
+   return this.todosSubject$.value;
+ }
+
   editTodo(editedTodo: Todo) {
     this.todosSubject$.next(
       this.todosSubject$.value.map((todo) =>
