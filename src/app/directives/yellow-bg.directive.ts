@@ -1,10 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  inject,
-} from '@angular/core';
+import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[yellow-bg]',

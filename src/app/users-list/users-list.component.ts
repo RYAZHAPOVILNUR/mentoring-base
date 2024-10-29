@@ -7,6 +7,7 @@ import { CreateUserDialogComponent } from './create-user/create-user-dialog/crea
 import { CreateUser, IUser } from '../interfaces/user.interface';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { MatCardModule } from '@angular/material/card';
+import { ShadowDirective } from '../directives/shadow.directive';
 
 @Component({
   selector: 'app-users-list',
@@ -20,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
     CreateUserComponent,
     CreateUserDialogComponent,
     MatCardModule,
+    ShadowDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

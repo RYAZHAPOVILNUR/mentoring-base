@@ -7,6 +7,7 @@ import { CreateTodoDialogComponent } from './create-todo/create-todo-dialog/crea
 import { ITodo } from '../interfaces/todo.interface';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { MatCardModule } from '@angular/material/card';
+import { ShadowDirective } from '../directives/shadow.directive';
 
 @Component({
   selector: 'app-todos-list',
@@ -20,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
     CreateTodoComponent,
     CreateTodoDialogComponent,
     MatCardModule,
+    ShadowDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

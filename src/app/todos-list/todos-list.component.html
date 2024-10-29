@@ -1,7 +1,7 @@
 <div class="container">
   <app-create-todo (createTodo)="createTodo($event)"></app-create-todo>
   <div class="todos-list">
-    <mat-card class="todos-card" *ngFor="let todo of todosService.todos$ | async">
+    <mat-card class="todos-card" *ngFor="let todo of todosService.todos$ | async" shadow>
       <app-todos-card [todo]="todo"  (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todos-card>
     </mat-card>
   </div>
