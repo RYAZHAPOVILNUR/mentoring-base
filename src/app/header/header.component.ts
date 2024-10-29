@@ -1,6 +1,7 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { YellowBgDirective } from '../directives/yellow-bg.directive';
 
 // Task 1
 const getMenuItems = (menuItem: string) => menuItem;
@@ -11,7 +12,7 @@ const navItem = getMenuItems('О Компании');
   templateUrl: './header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, RouterOutlet, RouterLink, DatePipe],
+  imports: [NgFor, NgIf, RouterOutlet, RouterLink, DatePipe, YellowBgDirective],
 })
 export class HeaderComponent {
   title = 'mentoring-first-project';
