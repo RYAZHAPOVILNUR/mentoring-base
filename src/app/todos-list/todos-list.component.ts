@@ -23,7 +23,7 @@ import { CreateTodoDialogComponent } from '../dialogs/todo-dialogs/create-todo-d
     MatButtonModule,
   ],
   templateUrl: './todos-list.component.html',
-  styleUrls: ['./todos-list.component.scss'],
+  styleUrl: './todos-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosListComponent {

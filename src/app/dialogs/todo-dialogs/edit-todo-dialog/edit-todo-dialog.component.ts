@@ -51,7 +51,7 @@ export class EditTodoDialogComponent {
       Validators.minLength(2),
       Validators.maxLength(20),
     ]),
-    completed: new FormControl(this.data.todo.completed? 'да' : 'нет', [
+    completed: new FormControl(this.data.todo.completed ? 'да' : 'нет', [
       Validators.required,
       completedValidator(),
     ]),

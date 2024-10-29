@@ -21,7 +21,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     CreateUserFormComponent,
   ],
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.scss'],
+  styleUrl: './users-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
