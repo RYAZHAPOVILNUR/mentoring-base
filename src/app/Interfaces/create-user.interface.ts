@@ -3,5 +3,7 @@ export interface ICreateUser {
   name: string;
   email: string;
   website: string;
-  companyName : string;
+  company: {
+    name: string,
+  }
 }

@@ -35,17 +35,16 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formData: ICreateUser) {
+  public createUser(user: ICreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
-      name: formData.name,
-      email: formData.email,
-      website: formData.website,
+      name: user.name,
+      email: user.email,
+      website: user.website,
       company: {
-        name: formData.companyName,
+        name: user.company.name,
       },
     });
-    console.log('Данные формы: ', event);
   }
 }
 

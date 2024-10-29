@@ -30,19 +30,22 @@
         НЕВЕРНО УКАЗАН АДРЕС САЙТА
       </div>
     </div>
+    <div formGroupName="company">
     <p>COMPANY NAME:</p>
-    <input type="text" class="form-input" formControlName="companyName" />
+    <input type="text" class="form-input" formControlName="name" />
     <div
-      *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)"
+      *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)"
       class="alert"
     >
-      <div *ngIf="form.controls['companyName'].errors">
-        НЕВЕРНОЕ НАЗВАНИЕ САЙТА
+      <div *ngIf="form.controls['name'].errors">
+        НЕВЕРНОЕ НАЗВАНИЕ КОМПАНИИ
       </div>
     </div>
+  </div>
     <button class="button-form" [disabled]="form.invalid">
       CREATE USER
     </button>
   </form>
 </div>
 </div>
+
