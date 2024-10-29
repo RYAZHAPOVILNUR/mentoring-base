@@ -2,7 +2,7 @@
   <div>
     <p>
       Текст задачи <br />
-      {{ item.title }}
+      {{ item.title | slice: 0:20 }}
     </p>
     <p>
       Автор задачи <br />

@@ -42,7 +42,7 @@ export class CreateEditUserDialogComponent {
       Validators.required,
       Validators.email,
     ]),
-    phone: new FormControl(this.data.user?.phone, [
+    phone: new FormControl(this.data.user?.phone.replace(/[^\w\s]|_/g, '').slice(0, 10), [
       Validators.required,
       Validators.minLength(10),
       Validators.maxLength(10),

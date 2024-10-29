@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 const menuItems = [
@@ -23,10 +23,12 @@ const menuItem2 = function1('О компании');
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, NgIf, RouterLink, DatePipe],
 })
 export class HeaderComponent {
   isShowCatalog = true;
+
+  readonly date = new Date();
 
   readonly aboutCompany = menuItem2;
 
