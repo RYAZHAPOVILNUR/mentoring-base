@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+
+
+function returnString(arg: string): string {
+  return arg;
+}
+const punctName = returnString("О компании");
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -9,11 +16,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  main = 'Главная';
-  aboutUs = 'О компании';
-  catalog = 'Каталог';
-  buildingMaterials = 'стройматериалы';
-  tools = 'Инструменты';
-  electrics = "Электрика";
-  interior ='Интерьер и одежда';
+  readonly main = 'Главная';
+  readonly aboutUs = 'О компании';
+  readonly catalog = 'Каталог';
+  readonly buildingMaterials = 'стройматериалы';
+  readonly tools = 'Инструменты';
+  readonly electrics = "Электрика";
+  readonly interior ='Интерьер и одежда';
+
+  readonly aboutCompany = punctName;
+
 }
