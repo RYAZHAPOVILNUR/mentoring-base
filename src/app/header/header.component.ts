@@ -1,7 +1,11 @@
 import { DatePipe, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { YellowCartDirective } from '../directives/yellow-cart.directive';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { UserService } from '../user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const getMenuItemName = (name: string) => name;
 const aboutCompanyName = getMenuItemName('О компании');
@@ -22,6 +26,10 @@ const menuItems = [
   imports: [NgFor, RouterLink, DatePipe, YellowCartDirective],
 })
 export class HeaderComponent {
+  private _snackBar = inject(MatSnackBar);
+  readonly dialog = inject(MatDialog);
+  readonly userService = inject(UserService);
+  readonly router = inject(Router);
   public aboutCompany = aboutCompanyName;
   private isUpperCaseText = true;
   public menuItems = menuItems;
@@ -33,5 +41,31 @@ export class HeaderComponent {
     );
 
     this.isUpperCaseText = !this.isUpperCaseText;
+  }
+
+  private openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, { duration: 3000 });
+  }
+
+  public checkIsAdmin() {
+    if (!this.userService.isAdmin()) {
+      this.openSnackBar('Страница доступна только для админа', '');
+    }
+  }
+
+  public logout() {
+    this.userService.logout();
+    this.router.navigate(['']);
+  }
+
+  public openLoginDialog() {
+    const dialogRef = this.dialog.open(LoginDialogComponent);
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res === 'user') {
+        this.userService.loginAsUser();
+      } else {
+        this.userService.loginAsAdmin();
+      }
+    });
   }
 }

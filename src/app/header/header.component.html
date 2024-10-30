@@ -16,7 +16,13 @@
             <a href="#" class="nav__link">Каталог</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link" routerLink="/users">Админка</a>
+            <a
+              href="#"
+              class="nav__link"
+              routerLink="/admin"
+              (click)="checkIsAdmin()"
+              >Админ</a
+            >
           </li>
         </ul>
       </nav>
@@ -30,6 +36,8 @@
         <span class="btn-cart__icon"></span>
         <span class="btn-cart__text">Пусто</span>
       </button>
+      <button (click)="openLoginDialog()">Войти</button>
+      <button (click)="logout()">Выйти</button>
     </div>
   </div>
   <div class="header__bottom">
