@@ -1,7 +1,7 @@
 <div class="container">
     КОМПОНЕНТ СПИСКА ПОЛЬЗОВАТЕЛЕЙ
     <div class="users-card-wrapper">
-        <div *ngFor="let user of usersService.usersSubject | async">
+        <div *ngFor="let user of usersService.users$ | async">
             <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
         </div>
     </div>

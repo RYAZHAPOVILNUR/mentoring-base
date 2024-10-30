@@ -4,16 +4,16 @@ import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
-    todosSubject = new BehaviorSubject<Todo[]>([])
-    todos: Todo[] = []
+    private readonly todosSubject$ = new BehaviorSubject<Todo[]>([])
+    public readonly todos$ = this.todosSubject$.asObservable()
 
     setTodos(todos: Todo[]) {
-        this.todosSubject.next(todos)
+        this.todosSubject$.next(todos)
     }
 
     editTodo(editedTodo: Todo) {
-        this.todosSubject.next(
-            this.todosSubject.value.map(
+        this.todosSubject$.next(
+            this.todosSubject$.value.map(
                 todo => {
                     if (todo.id === editedTodo.id) {
                         return editedTodo
@@ -26,10 +26,10 @@ export class TodosService {
     }
 
     createTodo(todo: Todo) {
-        this.todosSubject.next([...this.todosSubject.value, todo])
+        this.todosSubject$.next([...this.todosSubject$.value, todo])
     }
 
     deleteTodo(id: number) {
-        this.todosSubject.next(this.todosSubject.value.filter(todo => todo.id === id ? false : true))
+        this.todosSubject$.next(this.todosSubject$.value.filter(todo => todo.id === id ? false : true))
     }
 }

@@ -4,16 +4,16 @@ import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class UsersService {
-    usersSubject = new BehaviorSubject<User[]>([])
-    users: User[] = [];
+    private readonly usersSubject$ = new BehaviorSubject<User[]>([])
+    public readonly users$ = this.usersSubject$.asObservable()
 
     setUsers(users: User[]) {
-        this.usersSubject.next(users)
+        this.usersSubject$.next(users)
     }
 
     editUser(editedUser: User) {
-        this.usersSubject.next(
-            this.usersSubject.value.map(
+        this.usersSubject$.next(
+            this.usersSubject$.value.map(
                 user => {
                     if (user.id === editedUser.id) {
                         return editedUser
@@ -26,10 +26,10 @@ export class UsersService {
     }
 
     createUser(user: User) {
-        this.usersSubject.next([...this.usersSubject.value, user])
+        this.usersSubject$.next([...this.usersSubject$.value, user])
     }
 
     deleteUser(id: number) {
-        this.usersSubject.next(this.usersSubject.value.filter(user => user.id === id ? false : true))
+        this.usersSubject$.next(this.usersSubject$.value.filter(user => user.id === id ? false : true))
     }
 }

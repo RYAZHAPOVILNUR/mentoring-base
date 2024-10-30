@@ -22,7 +22,7 @@ export interface Todo {
 export class TodosListComponent {
     readonly todosApiService = inject(TodosApiService);
     readonly todosService = inject(TodosService);
-    todos = this.todosService.todos;
+    todos = this.todosService.todos$;
 
     constructor() {
         this.todosApiService.getTodos().subscribe(

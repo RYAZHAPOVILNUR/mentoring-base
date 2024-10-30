@@ -39,7 +39,7 @@ export interface User {
 export class UsersListComponent {
     readonly usersApiService = inject(UsersApiService);
     readonly usersService = inject(UsersService);
-    users = this.usersService.users;
+    users = this.usersService.users$;
 
     constructor() {
         this.usersApiService.getUsers().subscribe(
