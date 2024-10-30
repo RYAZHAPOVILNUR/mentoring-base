@@ -1,37 +1,59 @@
 import { Injectable } from '@angular/core';
 
-interface User {
-  isAdmin: boolean;
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private isAdmin: boolean = false;
+  private isLoggedIn: boolean = false;
 
-  constructor() { }
-
-  loginAsAdmin(): void {
-    const user: User = { isAdmin: true };
-    localStorage.setItem('user', JSON.stringify(user));
+  constructor() {
+    this.isAdmin = this.checkAdminStatus();
+    this.isLoggedIn = this.checkLoginStatus();
   }
 
-  loginAsUser(): void {
-    const user: User = { isAdmin: false };
-    localStorage.setItem('user', JSON.stringify(user));
+  private checkAdminStatus(): boolean {
+    return localStorage.getItem('role') === 'admin';
   }
 
-  getUser(): User | null {
-    const userString = localStorage.getItem('user');
-    return userString ? JSON.parse(userString) : null;
+  private checkLoginStatus(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 
-  logout(): void {
-    localStorage.removeItem('user');
+  public getIsLoggedIn(): boolean {
+    return this.isLoggedIn;
   }
 
-  isAdmin(): boolean {
-    const user = this.getUser();
-    return user ? user.isAdmin : false;
+  public getIsAdmin(): boolean {
+    return this.isAdmin;
+  }
+
+  public setIsAdmin(value: boolean): void {
+    this.isAdmin = value;
+  }
+
+  public setIsLoggedIn(value: boolean): void {
+    this.isLoggedIn = value;
+  }
+
+  public loginAsAdmin() {
+    localStorage.setItem('role', 'admin');
+    localStorage.setItem('token', 'admin-token');
+    this.setIsAdmin(true);
+    this.setIsLoggedIn(true);
+  }
+
+  public loginAsUser() {
+    localStorage.setItem('role', 'user');
+    localStorage.setItem('token', 'user-token');
+    this.setIsAdmin(false);
+    this.setIsLoggedIn(true);
+  }
+
+  public logout() {
+    localStorage.removeItem('role');
+    localStorage.removeItem('token');
+    this.setIsAdmin(false);
+    this.setIsLoggedIn(false);
   }
 }

@@ -1,11 +1,13 @@
-<div>
- <button (click)="loginAsAdmin()">Войти как админ</button>
- <button (click)="loginAsUser()">Войти как пользователь</button>
- <button (click)="logout()">Выйти</button>
- <div *ngIf="isAdmin()">
-   <p>Вы вошли как админ</p>
- </div>
- <div *ngIf="!isAdmin()">
-   <p>Вы вошли как пользователь</p>
- </div>
+<div class="container">
+  <h2 class="title">Только для администраторов</h2>
+  <div class="button-group">
+    <button class="btn btn-primary" (click)="loginAsAdmin()">
+      Войти как администратор
+    </button>
+    <button class="btn btn-secondary" (click)="loginAsUser()">
+      Войти как юзер
+    </button>
+    <button class="btn btn-danger" (click)="logout()">Выход</button>
+  </div>
+  <div *ngIf="isAdmin()" class="admin-message">Вы вошли как администратор</div>
 </div>
