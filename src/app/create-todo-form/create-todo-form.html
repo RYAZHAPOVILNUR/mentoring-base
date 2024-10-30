@@ -2,38 +2,24 @@
     <h1>CREATE TODO FORM</h1>
     <div class="form-item">
       <form class="form-item-group" [formGroup]="form" (ngSubmit)="submitForm()">
-        <p>USER ID:</p>
-        <input type="text" class="form-input" formControlName="userId" />
-        <div
-          *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
-          class="alert"
-        >
-          <div *ngIf="form.controls['userId'].errors">
-            НЕВЕРНО ЗАПОЛНЕНО ПОЛЕ
-          </div>
-        </div>
-        <p>TITLE:</p>
-        <input type="text" class="form-input" formControlName="title" />
-        <div
-          *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
-          class="alert"
-        >
-          <div *ngIf="form.controls['title'].errors">
-            НЕВЕРНО ЗАПОЛНЕНО ПОЛЕ
-          </div>
-        </div>
-        <p>COMPLETED:</p>
-        <input type="text" class="form-input" formControlName="completed" />
-        <div
-          *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)"
-          class="alert"
-        >
-          <div *ngIf="form.controls['completed'].errors">
-            НЕВЕРНО ЗАПОЛНЕНО ПОЛЕ
-          </div>
-        </div>
-        <button style="width: 150px; margin-top: 20px" [disabled]="form.invalid">
-          + Add Todo
+        <mat-form-field class="form-input">
+          <mat-label>Название задачи</mat-label>
+          <input matInput formControlName="userId">
+          <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-input">
+          <mat-label>Автор задачи</mat-label>
+          <input matInput formControlName="title">
+          <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-input">
+          <mat-label>Задача завершена?</mat-label>
+          <input matInput formControlName="completed">
+          <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <button class="button-form" matIconSuffix mat-raised-button [disabled]="form.invalid">
+          Add Todo
+          <mat-icon>add</mat-icon>
         </button>
       </form>
     </div>
