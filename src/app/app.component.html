@@ -30,24 +30,15 @@
 </header>
 <div class="subheader">
   <div class="container">
+    <button (click)="changeMenuText()">Изменить размер текста</button>
+
     <div class="subheader__inner">
       <ul class="menu">
-        <li>
-          <img  src="assets/svg/burger.svg" alt="">
-          <button class="menu__btn">{{catalog}}</button>
+        <img  src="assets/svg/burger.svg" alt="">
+        <li *ngFor="let item of menuItems">
+          <button class="menu__btn">{{item}}</button>
         </li>
-        <li>
-          <button class="menu__btn">{{buildingMaterials}}</button>
-        </li>
-        <li>
-          <button class="menu__btn">{{tools}}</button>
-        </li>
-        <li>
-          <button class="menu__btn">{{electrics}}</button>
-        </li>
-        <li>
-          <button class="menu__btn">{{interior}}</button>
-        </li>
+
       </ul>
       <div class="subheader_input_wrapper">
         <label class="input_label">

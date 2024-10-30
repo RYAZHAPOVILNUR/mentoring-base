@@ -18,6 +18,7 @@ const newPages =  [5,4,3,2,1];
 })
 export class AppComponent {
   isShow = false;
+  isUpperCase = false;
 
   readonly main = 'Главная';
   readonly aboutUs = 'О компании';
@@ -30,5 +31,16 @@ export class AppComponent {
   readonly aboutCompany = punctName;
 
   newPages = newPages
+
+  menuItems = [
+    'Каталог', 'стройматериалы',
+    'Инструменты',  "Электрика", 'Интерьер и одежда',
+  ]
+
+  changeMenuText() {
+    this.menuItems = this.menuItems.map(menuItem => this.isUpperCase ? menuItem.toUpperCase() : menuItem.toLowerCase());
+    this.isUpperCase = !this.isUpperCase;
+  }
+
 
 }
