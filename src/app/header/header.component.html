@@ -1,0 +1,56 @@
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__nav-wrapper">
+        <div class="logo">
+          <img class="logo__img" src="../assets/svg/logo.svg" alt="">
+        </div>
+        <nav class="nav">
+          <ul class="nav_menu">
+            <li class="nav_menu__item"><a href="#">{{main}}</a></li>
+            <li class="nav_menu__item"><a href="#">{{aboutCompany}}</a></li>
+            <li class="nav_menu__item"><a href="#">{{catalog}}</a></li>
+            <li class="nav_menu__item"><a routerLink="users">Админ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__right">
+        <div class="phone__wrapper">
+          <img class="phone" src="./assets/svg/phone.svg" alt="phone">
+          <a href="tel:+79650842929">+7 (965) 084-29-29</a>
+        </div>
+        <img src="./assets/svg/like.svg" alt="">
+        <a class="header__card">
+          <img src="assets/svg/cart.svg" alt="">
+          <span>Пусто</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</header>
+<div class="subheader">
+  <div class="container">
+    <button (click)="changeMenuText()">Изменить размер текста</button>
+
+    <div class="subheader__inner">
+      <ul class="menu">
+        <img  src="assets/svg/burger.svg" alt="">
+        <li *ngFor="let item of menuItems">
+          <button class="menu__btn">{{item}}</button>
+        </li>
+
+      </ul>
+      <div class="subheader_input_wrapper">
+        <label class="input_label">
+          <input class="subheader__search" type="text" placeholder="Поиск, например Круг зачистной ">
+          <img class="search" src="assets/svg/search.svg" alt="">
+        </label>
+        <div class="city">
+          <img class="location" src="assets/svg/location.svg" alt="">
+          <span class="city__name">Москва</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div>Компонент списука юзеров</div>
+  <div class="users_list">
+  <div class="user" *ngFor="let user of users">
+    <div class="user_content_wrapper">
+      <h3 class="user_name">{{user.name}}</h3>
+      <div class="email">email: {{user.email}}</div>
+      <div class="company_name">company: {{user.company.name}}</div>
+    </div>
+
+    <button class="remove_btn" (click)="deleteUser(user.id)">Удалить</button>
+  </div>
+  </div>
+</div>

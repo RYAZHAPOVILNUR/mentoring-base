@@ -1,0 +1,212 @@
+<button (click)="isShow = !isShow">{{isShow ? 'Скрыть' : 'Показать'}}</button>
+<img *ngIf="isShow" class="main-img" src="assets/background.jpg" alt="background-large">
+
+<div class="main-content">
+  <div class="container">
+    <div class="services">
+      <div class="services__item">
+        <img src="assets/svg/wall.svg" alt="wall">
+        <div>
+          <div class="services__item-title">Большой ассортимент</div>
+          <span class="services__item-description">строительных материалов</span>
+        </div>
+      </div>
+      <div class="services__item">
+        <img src="assets/svg/delivery.svg" alt="delivery">
+        <div>
+          <div class="services__item-title">Доставка стройматериалов</div>
+          <span class="services__item-description">в течении четырех часов или в любое удобное время</span>
+        </div>
+      </div>
+      <div class="services__item">
+        <img src="/assets/svg/quality.svg" alt="quality">
+        <div>
+          <div class="services__item-title">Многоуровневая система</div>
+          <span class="services__item-description">управления качеством по стандарту ISO 9001</span>
+        </div>
+      </div>
+    </div>
+    <div class="catalog">
+      <div class="catalog__pagination">
+        <button *ngFor="let page of newPages" class="catalog_pagination_item active">{{page}}</button>
+      </div>
+      <div class="catalog__links">
+        <div class="catalog_link_main">
+          <div class="product_link_title">
+            Строительный отделочный инструмент
+          </div>
+
+          <div class="catalog__link_wrapper f-end">
+            <span>Перейти в каталог</span>
+            <a class="catalog_link" href="#">
+              <img src="assets/svg/arrow.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="catalog_link_list">
+
+          <div class="catalog_list__item decorix ">
+            <div class="catalog_title">Эмали</div>
+            <div class="catalog__link_wrapper f-end">
+              <span>Перейти в каталог</span>
+              <a class="catalog_link" href="#">
+                <img src="assets/svg/arrow.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="catalog_list__item diamond">
+            <div class="catalog_title">Лакокрасочные
+              материалы</div>
+            <div class="catalog__link_wrapper">
+              <span>Перейти в каталог</span>
+              <a class="catalog_link" href="#">
+                <img src="assets/svg/arrow.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="catalog_list__item soudal">
+            <div class="catalog_title">Пены, клеи и
+              <div>герметики</div>
+            </div>
+
+            <div class="catalog__link_wrapper">
+              <span>Перейти в каталог</span>
+              <a class="catalog_link" href="#">
+                <img src="assets/svg/arrow.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="catalog_list__item socket">
+            <div class="catalog_title">Розетки и выключатели</div>
+            <div class="catalog__link_wrapper f-end">
+              <span>Перейти в каталог</span>
+              <a class="catalog_link" href="#">
+                <img src="assets/svg/arrow.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="popular_products">
+
+      <div class="popular_products_title_wrapper">
+        <div class="popular_products_title">Популярные товары</div>
+        <a href="#" class="look_all_product">Посмотреть все товары</a>
+      </div>
+      <div class="product_wrapper">
+        <img class="arrow_left" src="/assets/svg/orange-arrow.svg" alt="">
+        <img class="arrow_right" src="/assets/svg/orange-arrow.svg" alt="">
+        <div class="product">
+          <div class="product_header">
+            <div class="percent">%</div>
+            <img  class="like" src="./assets/svg/like-black.svg" alt="like">
+          </div>
+          <div>
+            <img class="product_img" src="/assets/bosch.png" alt="">
+            <div class="popular_product_title">Круг зачистной 125х6х22</div>
+            <div class="popular_product_subtitle">Артикул 00004</div>
+            <div class="price">
+              <div class="price_title">Цена за штуку</div>
+              <del class="old_price">52 руб.</del>
+              <span class="new_price">48 руб.</span>
+            </div>
+            <div class="product_bottom">
+              <div class="count_wrapper">
+                <div>Количество</div>
+                <div class="btn_wrapper">
+                  <button class="minus">-</button>
+                  <span class="count">1</span>
+                  <button class="plus">+</button>
+                </div>
+              </div>
+              <button class="add_to_card">В корзину</button>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product_header">
+            <div class="percent">%</div>
+            <img  class="like" src="./assets/svg/like-black.svg" alt="like">
+          </div>
+          <div>
+            <img class="product_img" src="/assets/bosch.png" alt="">
+            <div class="popular_product_title">Круг зачистной 125х6х22</div>
+            <div class="popular_product_subtitle">Артикул 00004</div>
+            <div class="price">
+              <div class="price_title">Цена за штуку</div>
+              <del class="old_price">52 руб.</del>
+              <span class="new_price">48 руб.</span>
+            </div>
+            <div class="product_bottom">
+              <div class="count_wrapper">
+                <div>Количество</div>
+                <div class="btn_wrapper">
+                  <button class="minus">-</button>
+                  <span class="count">1</span>
+                  <button class="plus">+</button>
+                </div>
+              </div>
+              <button class="add_to_card">В корзину</button>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product_header">
+            <div class="percent">%</div>
+            <img  class="like" src="./assets/svg/like-black.svg" alt="like">
+          </div>
+          <div>
+            <img class="product_img" src="/assets/bosch.png" alt="">
+            <div class="popular_product_title">Круг зачистной 125х6х22</div>
+            <div class="popular_product_subtitle">Артикул 00004</div>
+            <div class="price">
+              <div class="price_title">Цена за штуку</div>
+              <del class="old_price">52 руб.</del>
+              <span class="new_price">48 руб.</span>
+            </div>
+            <div class="product_bottom">
+              <div class="count_wrapper">
+                <div>Количество</div>
+                <div class="btn_wrapper">
+                  <button class="minus">-</button>
+                  <span class="count">1</span>
+                  <button class="plus">+</button>
+                </div>
+              </div>
+              <button class="add_to_card">В корзину</button>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product_header">
+            <div class="percent">%</div>
+            <img  class="like" src="./assets/svg/like-black.svg" alt="like">
+          </div>
+          <div>
+            <img class="product_img" src="/assets/bosch.png" alt="">
+            <div class="popular_product_title">Круг зачистной 125х6х22</div>
+            <div class="popular_product_subtitle">Артикул 00004</div>
+            <div class="price">
+              <div class="price_title">Цена за штуку</div>
+              <del class="old_price">52 руб.</del>
+              <span class="new_price">48 руб.</span>
+            </div>
+            <div class="product_bottom">
+              <div class="count_wrapper">
+                <div>Количество</div>
+                <div class="btn_wrapper">
+                  <button class="minus">-</button>
+                  <span class="count">1</span>
+                  <button class="plus">+</button>
+                </div>
+              </div>
+              <button class="add_to_card">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
