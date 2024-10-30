@@ -92,11 +92,7 @@
       </div>
       <div class="catalog">
         <div class="catalog__pagination">
-          <button class="catalog_pagination_item active">1</button>
-          <button class="catalog_pagination_item">2</button>
-          <button class="catalog_pagination_item">3</button>
-          <button class="catalog_pagination_item">4</button>
-          <button class="catalog_pagination_item">5</button>
+          <button *ngFor="let page of newPages" class="catalog_pagination_item active">{{page}}</button>
         </div>
        <div class="catalog__links">
          <div class="catalog_link_main">
