@@ -19,7 +19,8 @@ export interface User {
     name: string;
     catchPhrase?: string;
     bs?: string;
-  };
+  }
+  isAdmin: boolean;
 }
 export interface CreateUser {
   id: number;

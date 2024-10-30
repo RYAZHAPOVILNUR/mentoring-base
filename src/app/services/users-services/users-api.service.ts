@@ -1,12 +1,17 @@
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { User } from '../../interfaces/user-interfaces';
+import { Observable } from 'rxjs';
 
-
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class UsersApiService {
-  readonly apiService = inject(HttpClient);
+  http = inject(HttpClient);
 
-  getUsers() {
-    return this.apiService.get('https://jsonplaceholder.typicode.com/users');
+  private readonly baseUrl = 'https://jsonplaceholder.typicode.com';
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
 }

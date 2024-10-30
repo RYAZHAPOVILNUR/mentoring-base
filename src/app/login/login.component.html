@@ -1,0 +1,11 @@
+<div>
+ <button (click)="loginAsAdmin()">Войти как админ</button>
+ <button (click)="loginAsUser()">Войти как пользователь</button>
+ <button (click)="logout()">Выйти</button>
+ <div *ngIf="isAdmin()">
+   <p>Вы вошли как админ</p>
+ </div>
+ <div *ngIf="!isAdmin()">
+   <p>Вы вошли как пользователь</p>
+ </div>
+</div>

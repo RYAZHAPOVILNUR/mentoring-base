@@ -62,14 +62,15 @@ export class UsersListComponent {
 
   public createUser(formData: CreateUser) {
     const newUser: User = {
-      id: new Date().getTime(),
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      website: formData.website,
-      company: {
-        name: formData.company.name,
-      },
+     id: new Date().getTime(),
+     name: formData.name,
+     email: formData.email,
+     phone: formData.phone,
+     website: formData.website,
+     company: {
+      name: formData.company.name,
+     },
+     isAdmin: false
     };
 
     this.usersService.createUser(newUser);
