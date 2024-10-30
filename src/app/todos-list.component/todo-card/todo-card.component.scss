@@ -6,10 +6,6 @@
     width: 240px;
 }
 
-.example-card:hover {
-    transform: scale(1.1);
-}
-
 ::ng-deep .button-wrapper {
     position: absolute;
     display: flex;
@@ -18,12 +14,4 @@
     bottom: 16px;
     right: 50px;
     align-self: flex-start;
-}
-
-.button-one:hover {
-    transform: scale(1.1);
-}
-
-.button-two:hover {
-    transform: scale(1.1);
 }

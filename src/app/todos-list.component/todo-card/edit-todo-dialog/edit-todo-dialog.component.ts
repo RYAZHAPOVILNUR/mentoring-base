@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { completedValidator } from '../../../users-list/custom-validators';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -16,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogClose,],
+    MatDialogClose,
+    MatTooltipModule
+  ],
   templateUrl: './edit-todo-dialog.component.html',
   styleUrl: './edit-todo-dialog.component.scss'
 })

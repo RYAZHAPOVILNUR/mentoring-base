@@ -4,17 +4,24 @@ import { UsersApiService } from '../users-api-service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import {  User, UserForm } from "./user-interface";
+import { UserForm } from './user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent, CreateUserDialogComponent],
+  imports: [
+    NgFor,
+    UserCardComponent,
+    AsyncPipe,
+    CreateUserFormComponent,
+    CreateUserDialogComponent,
+    MatCardModule
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
@@ -34,10 +41,10 @@ export class UsersListComponent {
   editUser(user: UserForm) {
     this.usersService.editUser({
       ...user,
-     company: {
-      name: user.companyName
-     } 
-    })
+      company: {
+        name: user.companyName,
+      },
+    });
   }
 
   public createUser(formData: UserForm) {
@@ -64,7 +71,7 @@ export class UsersListComponent {
     dialogRef.afterClosed().subscribe((createResult: UserForm) => {
       if (createResult) {
         this.createUser(createResult);
-        this.openSnackBarTwo()
+        this.openSnackBarTwo();
       }
     });
   }
@@ -75,7 +82,7 @@ export class UsersListComponent {
 
   openSnackBarTwo(): void {
     this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
-      duration: 2000
+      duration: 2000,
     });
   }
 }

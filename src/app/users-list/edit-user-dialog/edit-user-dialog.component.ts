@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -16,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatFormFieldModule,
     MatDialogClose,
+    MatTooltipModule,
   ],
   templateUrl: './edit-user-dialog.component.html',
   styleUrl: './edit-user-dialog.component.scss',

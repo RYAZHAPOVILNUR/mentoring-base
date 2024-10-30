@@ -2,6 +2,7 @@ import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { noDashPipe } from '../pipes/no-dash.pipe';
+import { yellowDirective } from '../directives/yellow.directive';
 
 const func2 = (caller: string) => {
   return caller;
@@ -14,7 +15,7 @@ const newCaller = func2('О Компании');
   templateUrl: 'header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink, DatePipe, noDashPipe],
+  imports: [NgIf, NgFor, RouterLink, DatePipe, yellowDirective, noDashPipe],
 })
 export class headerComponent {
   isShowMan = true;
@@ -41,5 +42,5 @@ export class headerComponent {
 
   currentDate: Date = new Date();
 
-  phone = '+7 (965) 084-29-29'
+  phone = '+7 (965) 084-29-29';
 }
