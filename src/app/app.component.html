@@ -62,7 +62,8 @@
     </div>
   </div>
 </div>
-<img class="main-img" src="assets/background.jpg" alt="background-large">
+<button (click)="isShow = !isShow">{{isShow ? 'Скрыть' : 'Показать'}}</button>
+<img *ngIf="isShow" class="main-img" src="assets/background.jpg" alt="background-large">
 
 <div class="main-content">
   <div class="container">

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {NgIf} from "@angular/common";
 
 
 
@@ -11,11 +12,13 @@ const punctName = returnString("О компании");
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  isShow = false;
+
   readonly main = 'Главная';
   readonly aboutUs = 'О компании';
   readonly catalog = 'Каталог';
