@@ -22,8 +22,16 @@
     <button class="button__users" routerLink="/users">Админка</button>
 
     <button class="button__users" routerLink="/todos">Задачи</button>
-    
+
+    <button class="button__users" routerLink="/admins">
+      только для администраторов
+    </button>
+
     <div>{{ currentDate | date : "medium" }}</div>
+
+    <button class="button__users" (click)="login()">login</button>
+
+    <button class="button__users" (click)="logout()">logout</button>
   </div>
 
   <div class="header-right">

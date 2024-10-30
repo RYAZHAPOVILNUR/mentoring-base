@@ -1,8 +1,9 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { noDashPipe } from '../pipes/no-dash.pipe';
 import { yellowDirective } from '../directives/yellow.directive';
+import { AuthService } from '../auth.service';
 
 const func2 = (caller: string) => {
   return caller;
@@ -18,6 +19,18 @@ const newCaller = func2('О Компании');
   imports: [NgIf, NgFor, RouterLink, DatePipe, yellowDirective, noDashPipe],
 })
 export class headerComponent {
+  private readonly auth = inject(AuthService);
+  private readonly router = inject(Router)
+
+  login () {
+    this.auth.isLoggedIn = true
+  }
+
+  logout () {
+    this.auth.isLoggedIn = false
+    this.router.navigate(['']);
+  }
+
   isShowMan = true;
 
   headerItem1 = 'Главная';

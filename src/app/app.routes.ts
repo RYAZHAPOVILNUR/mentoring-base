@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
 import { TodosListComponent } from './todos-list.component/todos-list.component.component';
 import { HomeComponent } from './home/home.component';
+import { AdminsListComponent } from './admins-list/admins-list.component';
+import { authGuardFn } from './auth-guard';
 
 export const routes: Routes = [
   {
@@ -17,5 +19,11 @@ export const routes: Routes = [
   {
     path: 'todos',
     component: TodosListComponent,
+  },
+
+  {
+    path: 'admins',
+    component: AdminsListComponent,
+    canActivate: [authGuardFn]
   },
 ];
