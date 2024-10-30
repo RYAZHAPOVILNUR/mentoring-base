@@ -13,7 +13,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { IUser } from '../../interfaces/user.interface';
-import { customNumberValidator } from '../../custom-validators/custom-validators';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
@@ -49,10 +48,9 @@ export class EditUserDialogComponent {
       Validators.required,
       Validators.minLength(3),
     ]),
-    phone: new FormControl(this.data.user.phone, [
+    phone: new FormControl(this.data.user.phone.replace(/[-.()]/g, ''), [
       Validators.required,
       Validators.minLength(11),
-      customNumberValidator,
     ]),
     company: new FormGroup({
       name: new FormControl(this.data.user.company.name, [
