@@ -16,11 +16,13 @@ export class AdminCheckingPageComponent {
   private readonly router = inject(Router);
 
   login() {
-    this.auth.isAdmin = true;
+    this.auth.loginAsAdmin();
+    console.log(this.auth.loginAsAdmin);
   }
 
   logout() {
-    this.auth.isAdmin = false;
+    this.auth.loginAsUser();
     this.router.navigate(['user-status']);
+    console.log(this.auth.loginAsUser);
   }
 }

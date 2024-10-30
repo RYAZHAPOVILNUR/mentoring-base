@@ -1,7 +1,8 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { headerComponent } from './app-header/header.component';
+import { CurrentUserService } from './currentUser.service';
 
 const newPages = [5, 4, 3, 2, 1];
 
@@ -27,7 +28,15 @@ console.log(callRecording);
   templateUrl: 'app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private currentUserService: CurrentUserService) {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.currentUserService.setCurrentUser()
+    }, 2000)
+    
+  }
   title = 'mentoring-first-project';
 
   newPages = newPages;

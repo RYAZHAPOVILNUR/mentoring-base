@@ -3,7 +3,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { TodosListComponent } from './todos-list.component/todos-list.component.component';
 import { HomeComponent } from './home/home.component';
 import { AdminsListComponent } from './admins-list/admins-list.component';
-import { authGuardFn } from './auth-guard';
+import { AuthGuardService } from './auth-guard.service';
 import { AdminCheckingPageComponent } from './admin-checking-page/admin-checking-page.component';
 import { UserStatusComponent } from './user-status/user-status.component';
 
@@ -26,7 +26,7 @@ export const routes: Routes = [
   {
     path: 'admins',
     component: AdminsListComponent,
-    canActivate: [authGuardFn]
+    canActivate: [AuthGuardService],
   },
 
   {
