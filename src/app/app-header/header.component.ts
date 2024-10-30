@@ -3,7 +3,9 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { noDashPipe } from '../pipes/no-dash.pipe';
 import { yellowDirective } from '../directives/yellow.directive';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth-user.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const func2 = (caller: string) => {
   return caller;
@@ -16,21 +18,18 @@ const newCaller = func2('О Компании');
   templateUrl: 'header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink, DatePipe, yellowDirective, noDashPipe],
+  imports: [
+    NgIf,
+    NgFor,
+    RouterLink,
+    DatePipe,
+    yellowDirective,
+    noDashPipe,
+    MatButtonModule,
+    MatTooltipModule,
+  ],
 })
 export class headerComponent {
-  private readonly auth = inject(AuthService);
-  private readonly router = inject(Router)
-
-  login () {
-    this.auth.isLoggedIn = true
-  }
-
-  logout () {
-    this.auth.isLoggedIn = false
-    this.router.navigate(['']);
-  }
-
   isShowMan = true;
 
   headerItem1 = 'Главная';

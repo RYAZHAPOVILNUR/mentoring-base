@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth-user.service';
 
 @Component({
   selector: 'app-admins-list',
@@ -14,7 +14,7 @@ export class AdminsListComponent {
   private readonly router = inject(Router)
 
   logout () {
-    this.auth.isLoggedIn = false
+    this.auth.isAdmin = false
     this.router.navigate(['']);
   }
 }

@@ -1,0 +1,13 @@
+<p class="greeting">Choose your Admin status!!!</p>
+
+<button
+  class="button__users-admin"
+  (click)="login()"
+  matTooltip="After click you can access Admins button!"
+>
+  только для администраторов
+</button>
+
+<button class="button__users" routerLink="/user-status" (click)="logout()">
+  Not Admin
+</button>

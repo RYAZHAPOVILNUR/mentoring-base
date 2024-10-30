@@ -4,6 +4,8 @@ import { TodosListComponent } from './todos-list.component/todos-list.component.
 import { HomeComponent } from './home/home.component';
 import { AdminsListComponent } from './admins-list/admins-list.component';
 import { authGuardFn } from './auth-guard';
+import { AdminCheckingPageComponent } from './admin-checking-page/admin-checking-page.component';
+import { UserStatusComponent } from './user-status/user-status.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +27,15 @@ export const routes: Routes = [
     path: 'admins',
     component: AdminsListComponent,
     canActivate: [authGuardFn]
+  },
+
+  {
+    path: 'admin-checking',
+    component: AdminCheckingPageComponent,
+  },
+
+  {
+    path: 'user-status',
+    component: UserStatusComponent,
   },
 ];

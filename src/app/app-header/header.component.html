@@ -23,15 +23,18 @@
 
     <button class="button__users" routerLink="/todos">Задачи</button>
 
-    <button class="button__users" routerLink="/admins">
-      только для администраторов
-    </button>
-
     <div>{{ currentDate | date : "medium" }}</div>
 
-    <button class="button__users" (click)="login()">login</button>
+    <button
+      mat-button
+      class="button__users-admin"
+      routerLink="/admins"
+      matTooltip="Login first!"
+    >
+      Admins
+    </button>
 
-    <button class="button__users" (click)="logout()">logout</button>
+    <button class="button__users" routerLink="/admin-checking">Login</button>
   </div>
 
   <div class="header-right">
