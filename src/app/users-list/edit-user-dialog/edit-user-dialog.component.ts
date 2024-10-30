@@ -19,6 +19,7 @@ import {
 } from '@angular/material/dialog';
 import { User } from '../../interfaces/user-interface';
 import { CustomChangePhoneFormatPipe } from '../../pipes/change-phone-format.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   standalone: true,
@@ -32,6 +33,7 @@ import { CustomChangePhoneFormatPipe } from '../../pipes/change-phone-format.pip
     MatIconModule,
     ReactiveFormsModule,
     MatDialogClose,
+    MatTooltipModule,
   ],
 })
 export class EditUserDialogComponent implements OnInit {

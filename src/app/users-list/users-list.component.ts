@@ -10,6 +10,7 @@ import { CreateUserDialogComponent } from './create-user-dialog/create-user-dial
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BoxShadowDirective } from '../directives/box-shadow.directive';
 
 @Component({
   selector: 'app-users-list',

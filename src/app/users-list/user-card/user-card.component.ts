@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomChangePhoneFormatPipe } from '../../pipes/change-phone-format.pipe';
+import { BoxShadowDirective } from '../../directives/box-shadow.directive';
 
 @Component({
   selector: 'app-user-card',
@@ -19,6 +20,7 @@ import { CustomChangePhoneFormatPipe } from '../../pipes/change-phone-format.pip
     MatCardModule,
     MatIconModule,
     CustomChangePhoneFormatPipe,
+    BoxShadowDirective,
   ],
 })
 export class UserCardComponent {

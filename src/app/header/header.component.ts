@@ -1,6 +1,7 @@
 import { DatePipe, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { YellowCartDirective } from '../directives/yellow-cart.directive';
 
 const getMenuItemName = (name: string) => name;
 const aboutCompanyName = getMenuItemName('О компании');
@@ -18,7 +19,7 @@ const menuItems = [
   standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  imports: [NgFor, RouterLink, DatePipe],
+  imports: [NgFor, RouterLink, DatePipe, YellowCartDirective],
 })
 export class HeaderComponent {
   public aboutCompany = aboutCompanyName;
