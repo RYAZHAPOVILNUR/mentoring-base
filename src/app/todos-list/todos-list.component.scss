@@ -1,8 +1,5 @@
-:host {
-}
-.users_list {
+.todos {
   display: flex;
-  gap: 28px;
   flex-wrap: wrap;
+  gap: 20px;
 }
-

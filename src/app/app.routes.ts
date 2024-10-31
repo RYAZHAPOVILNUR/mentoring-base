@@ -3,6 +3,7 @@ import {UsersListComponent} from "./users-list/users-list.component";
 import {AppComponent} from "./app.component";
 import {LayoutComponent} from "./layout/layout.component";
 import {MainContentComponent} from "./main-content/main-content.component";
+import {TodosListComponent} from "./todos-list/todos-list.component";
 
 export const routes: Routes = [
   {
@@ -10,6 +11,7 @@ export const routes: Routes = [
     component: LayoutComponent, children: [
       {path: "", component: MainContentComponent},
       {path: "users", component: UsersListComponent},
+      {path: "todos", component: TodosListComponent},
     ]
   }
 ];

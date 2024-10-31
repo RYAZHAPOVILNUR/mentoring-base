@@ -1,6 +1,8 @@
 import {Component, inject} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {NgFor} from "@angular/common";
+import {UserCardComponent} from "./user-card/user-card.component";
+import {UsersService} from "../users-api.service";
 
 interface Geo {
   lat: string;
@@ -21,7 +23,7 @@ interface Company {
   bs: string;
 }
 
-interface User {
+export interface User {
   id: number;
   name: string;
   username: string;
@@ -33,7 +35,7 @@ interface User {
 }
 
 @Component({
-  imports:[NgFor],
+  imports: [NgFor, UserCardComponent],
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss'],
@@ -41,13 +43,17 @@ interface User {
 })
 export class UsersListComponent {
   readonly  apiService = inject(HttpClient);
+  userService = inject(UsersService);
   users: User[] = []
+
   constructor() {
-    this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users')
-      .subscribe( res => this.users = res);
-    console.log(this.users)
+    this.userService.getData().subscribe(users => {
+      this.users = (users);
+    })
   }
+
   deleteUser(id: number){
     this.users = this.users.filter((user) =>  user.id !== id)
   }
+
 }

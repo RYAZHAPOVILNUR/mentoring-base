@@ -1,0 +1,8 @@
+<div class="user_content_wrapper">
+  <div class="user">
+    <h3 class="user_name">{{user.name}}</h3>
+    <div class="email">email: {{user.email}}</div>
+    <div class="company_name">company: {{user.company.name}}</div>
+    <button class="remove_btn" (click)="onDeleteUser(user.id)">Удалить</button>
+  </div>
+</div>

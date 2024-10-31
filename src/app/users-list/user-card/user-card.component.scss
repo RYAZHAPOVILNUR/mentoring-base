@@ -1,0 +1,22 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  width: 309px;
+  height: 400px;
+  position: relative;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.0705882353);
+  color: var(--black-color);
+}
+.user_name {
+  font-weight: 600;
+  font-size: 18px;
+}
+.remove_btn {
+  border: 1px solid var(--yellow-color);
+  border-radius: 54px;
+  padding: 14px 28px;
+  cursor: pointer;
+  background: none;
+}
