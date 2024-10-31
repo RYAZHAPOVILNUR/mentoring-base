@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
   private todosSubject$ = new BehaviorSubject<Todo[]>([]);
+
   todos$ = this.todosSubject$.asObservable();
 
   setTodos(todos: Todo[]) {
-    this.todosSubject$.next(todos.slice(0, 10))
+    this.todosSubject$.next(todos.slice(0, 10));
+  }
+
+  getTodos(): Todo[] {
+    return this.todosSubject$.value;
   }
 
   editTodo(editedTodo: Todo) {

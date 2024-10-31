@@ -4,10 +4,11 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosService } from '../todos.service';
 import { CreateTodosFormComponent } from '../create-todos-form/create-todos-form.component';
-import { Todo } from "../users-list/user-interface";
+import { Todo } from '../users-list/user-interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-todos-list.component',
@@ -22,30 +23,53 @@ export class TodosListComponent {
   readonly todosService = inject(TodosService);
 
   constructor() {
-    this.todosApiService.getTodos().subscribe((response: any) => {
-      this.todosService.setTodos(response);
-    });
-  }
-  //*MARK:delete-method 
-  deleteTodo(id: number) {
-    this.todosService.deleteTodo(id);
+      this.loadTodosFromLocalStorage();
   }
 
-   public editTodo(todo: Todo) {
+  private loadTodosFromLocalStorage() {
+    const storedTodos = localStorage.getItem('todos');
+    if (storedTodos) {
+      this.todosService.setTodos(JSON.parse(storedTodos));
+    } else {
+      this.todosApiService.getTodos().subscribe((response: any) => {
+        this.todosService.setTodos(response);
+        this.saveTodosToLocalStorage(response);
+      });
+    }
+  }
+
+  private saveTodosToLocalStorage(todos: Todo[]) {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  //*MARK:delete-method
+  deleteTodo(id: number) {
+    this.todosService.deleteTodo(id);
+    this.updateLocalStorage();
+  }
+
+  public editTodo(todo: Todo) {
     this.todosService.editTodo({
       ...todo,
-    })
+    });
+
+    this.updateLocalStorage();
   }
 
   public createTodo(formData: Todo) {
-    this.todosService.createTodo({
+    const newTodo: Todo = {
       id: new Date().getTime(),
       title: formData.title,
       userId: formData.userId,
       completed: formData.completed,
-    });
-    console.log('ДАННЫЕ ФОРМЫ: ', formData);
-    console.log(new Date().getTime());
+    };
+    this.todosService.createTodo(newTodo);
+    this.updateLocalStorage();
+  }
+
+  private updateLocalStorage() {
+    const todos = this.todosService.getTodos();
+    this.saveTodosToLocalStorage(todos);
   }
 
   readonly snackBar = inject(MatSnackBar);
@@ -60,7 +84,7 @@ export class TodosListComponent {
     dialogRef.afterClosed().subscribe((createResult: Todo) => {
       if (createResult) {
         this.createTodo(createResult);
-        this.openSnackBarTwo()
+        this.openSnackBarTwo();
       }
     });
   }
@@ -69,7 +93,7 @@ export class TodosListComponent {
 
   openSnackBarTwo(): void {
     this.snackBar.open('Задача создана🐒', 'Закрыть', {
-      duration: 2000
+      duration: 2000,
     });
   }
 }

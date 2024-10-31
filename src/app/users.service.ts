@@ -11,6 +11,10 @@ export class UsersService {
     this.usersSubject$.next(users);
   }
 
+  getUsers(): User[] {
+    return this.usersSubject$.value;
+  }
+
   editUser(EditedUser: User) {
     this.usersSubject$.next(
       this.usersSubject$.value.map((user) => {
@@ -22,6 +26,8 @@ export class UsersService {
       })
     );
   }
+
+  
 
   createUser(user: User) {
     const existingUser = this.usersSubject$.value.find(

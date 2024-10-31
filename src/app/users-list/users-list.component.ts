@@ -4,10 +4,11 @@ import { UsersApiService } from '../users-api-service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { UserForm } from './user-interface';
+import { User, UserForm } from './user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';import { MatCardModule } from '@angular/material/card';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-users-list',
@@ -20,7 +21,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';import { MatCardModule
     AsyncPipe,
     CreateUserFormComponent,
     CreateUserDialogComponent,
-    MatCardModule
+    MatCardModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -29,13 +30,28 @@ export class UsersListComponent {
   readonly usersService = inject(UsersService);
 
   constructor() {
-    this.usersApiService.getUsers().subscribe((response: any) => {
-      this.usersService.setUsers(response);
-    });
+      this.loadUsersFromLocalStorage();
+  }
+
+  private loadUsersFromLocalStorage() {
+    const storedUsers = localStorage.getItem('users');
+    if (storedUsers) {
+      this.usersService.setUsers(JSON.parse(storedUsers));
+    } else {
+      this.usersApiService.getUsers().subscribe((response: any) => {
+        this.usersService.setUsers(response);
+        this.saveUsersToLocalStorage(response);
+      });
+    }
+  }
+
+  private saveUsersToLocalStorage(users: User[]) {
+    localStorage.setItem('users', JSON.stringify(users));
   }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
+    this.updateLocalStorage();
   }
 
   editUser(user: UserForm) {
@@ -45,10 +61,12 @@ export class UsersListComponent {
         name: user.companyName,
       },
     });
+
+    this.updateLocalStorage();
   }
 
   public createUser(formData: UserForm) {
-    this.usersService.createUser({
+    const newUser: User = {
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
@@ -56,9 +74,14 @@ export class UsersListComponent {
       company: {
         name: formData.companyName,
       },
-    });
-    console.log('ДАННЫЕ ФОРМЫ: ', formData);
-    console.log(new Date().getTime());
+    };
+    this.usersService.createUser(newUser);
+    this.updateLocalStorage();
+  }
+
+  private updateLocalStorage() {
+    const users = this.usersService.getUsers();
+    this.saveUsersToLocalStorage(users)
   }
 
   readonly dialogTwo = inject(MatDialog);
