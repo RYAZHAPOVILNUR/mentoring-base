@@ -8,6 +8,7 @@ import { UsersService } from '../services/users-services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LocalStorageService } from '../services/local-storage.service'; 
 
 @Component({
   selector: 'app-users-list',
@@ -29,25 +30,22 @@ export class UsersListComponent {
   readonly usersService = inject(UsersService);
   readonly dialog = inject(MatDialog);
   readonly snackBar = inject(MatSnackBar);
+  readonly localStorageService = inject(LocalStorageService); 
 
   constructor() {
     this.loadUsersFromLocalStorage();
   }
 
   private loadUsersFromLocalStorage() {
-    const storedUsers = localStorage.getItem('users');
+    const storedUsers = this.localStorageService.getUsersFromLocalStorage('users'); 
     if (storedUsers) {
-      this.usersService.setUsers(JSON.parse(storedUsers));
+      this.usersService.setUsers(storedUsers);
     } else {
       this.usersApiService.getUsers().subscribe((response: any) => {
         this.usersService.setUsers(response);
-        this.saveUsersToLocalStorage(response);
+        this.localStorageService.saveUsersToLocalStorage('users', response); 
       });
     }
-  }
-
-  private saveUsersToLocalStorage(users: User[]) {
-    localStorage.setItem('users', JSON.stringify(users));
   }
 
   deleteUser(id: number) {
@@ -62,15 +60,15 @@ export class UsersListComponent {
 
   public createUser(formData: CreateUser) {
     const newUser: User = {
-     id: new Date().getTime(),
-     name: formData.name,
-     email: formData.email,
-     phone: formData.phone,
-     website: formData.website,
-     company: {
-      name: formData.company.name,
-     },
-     isAdmin: false
+      id: new Date().getTime(),
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      website: formData.website,
+      company: {
+        name: formData.company.name,
+      },
+      isAdmin: false
     };
 
     this.usersService.createUser(newUser);
@@ -79,6 +77,6 @@ export class UsersListComponent {
 
   private updateLocalStorage() {
     const users = this.usersService.getUsers();
-    this.saveUsersToLocalStorage(users);
+    this.localStorageService.saveUsersToLocalStorage('users', users); 
   }
 }
