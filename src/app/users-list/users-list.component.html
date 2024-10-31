@@ -1,0 +1,11 @@
+User-list component
+
+    <div style="display: flex; width: 100%; flex-wrap: wrap;">
+        <div *ngFor="let item of users" style="width: 200px; height: 200px; border: 1px solid black; margin: 5px; padding: 10px;">
+            <p>{{$any(item).name}}</p>
+            <p>{{$any(item).email}}</p>
+            <p>{{$any(item).website}}</p>
+            <p>{{$any(item).company.name}}</p>
+            <button (click)="deleteUser(item.id)">Delete user</button>
+        </div>
+    </div>
