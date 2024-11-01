@@ -1,89 +1,104 @@
-<button (click)="isShowMujik = !isShowMujik">Скрыть/показать мужика</button>
-<div class="mujik" *ngIf="isShowMujik">
-  <img
-    src="/assets/Rectangle 5.png"
-    alt="background-large"
-    style="width: 1320px"
-  />
+<div class="banner-container">
+  <button class="banner-button" (click)="isShowMujik = !isShowMujik">
+    Скрыть/показать мужика
+  </button>
+  <div class="mujik" *ngIf="isShowMujik">
+    <img
+      src="/assets/Rectangle 5.png"
+      alt="background-large"
+      style="width: 1320px"
+    />
+  </div>
 </div>
 <div class="content-container">
-  <div class="item-cards"></div>
-  <div class="item-cards__pagination">
-    <button
-      class="item-cards__pagination-button active-button"
-      *ngFor="let item of newPages"
-    >
-      {{ item }}
-    </button>
-  </div>
-  <div>
+
     <div class="Frame35">
       <img src="/assets/Frame_35.svg" alt="kartinki" />
     </div>
-  </div>
-  <div class="item-cards__grid">
-    <div class="item-cards__grid-left">
-      <div class="item-cards__grid-left-text">
-        Строительный отделочный инструмент
+    <div class="catalog-list-wrapper">
+      <div class="catalog-list-button">
+        <button
+          class="item-cards__pagination-button active-button"
+          *ngFor="let item of newPages"
+        >
+          {{ item }}
+        </button>
       </div>
-      <div class="item-cards__grid-left-action">
-        <span style="margin-right: 10px"> Перейти в каталог</span>
-        <a class="item-cards__grid-left-action-link">
-          <img src="/assets/Frame_20.svg" alt="strelka" />
-        </a>
+    
+    <div class="catalog-container">
+      <div class="item-cards__grid">
+        <div class="item-cards__grid-left">
+          <div class="item-cards__grid-left-text">
+            Строительный отделочный инструмент
+          </div>
+
+          <div class="item-cards__grid-left-action">
+            <span style="margin-right: 10px"> Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/Frame_20.svg" alt="strelka" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right">
+          <div class="item-cards__right-block">
+            <div class="image14">
+              <img src="/assets/image_14.svg" alt="left1" />
+            </div>
+            <div class="item-cards__grid-right-action">
+              <span style="margin-left: 220px"> Перейти в каталог</span>
+              <a class="item-cards__grid-right-action-link">
+                <img src="/assets/Frame_20.svg" alt="strelka" />
+              </a>
+            </div>
+            <div class="item-cards__grid-right-text">Эмали</div>
+          </div>
+          <div class="item-cards__right-block">
+            <div class="item-cards__grid-right2-text">
+              Лакокрасочные материалы
+            </div>
+            <div class="image_17">
+              <img src="/assets/image_17.png" alt="vedro" />
+            </div>
+            <div class="item-cards__grid-right-action">
+              <span style="margin-left: 20px"> Перейти в каталог</span>
+              <a class="item-cards__grid-right-action-link">
+                <img src="/assets/Frame_20.svg" alt="strelka" />
+              </a>
+            </div>
+          </div>
+          <div class="item-cards__right-block">
+            <div class="item-cards__grid-right2-text">
+              Пены, клеи и герметики
+            </div>
+            <div class="image18">
+              <img src="/assets/image_18.png" alt="acril" />
+            </div>
+            <div class="item-cards__grid-right-action">
+              <span style="margin-left: 20px"> Перейти в каталог</span>
+              <a class="item-cards__grid-right-action-link">
+                <img src="/assets/Frame_20.svg" alt="strelka" />
+              </a>
+            </div>
+          </div>
+          <div class="item-cards__right-block">
+            <div class="item-cards__grid-right2-text">
+              Розетки и выключатели
+            </div>
+            <div class="image15">
+              <img src="/assets/image_15.png" alt="rozetka" />
+            </div>
+            <div class="item-cards__grid-right-action">
+              <span style="margin-left: 200px">Перейти в каталог</span>
+              <a class="item-cards__grid-right-action-link">
+                <img src="/assets/Frame_20.svg" alt="strelka" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="item-cards__grid-right">
-      <div class="item-cards__right-block">
-        <div class="image14">
-          <img src="/assets/image_14.svg" alt="left1" />
-        </div>
-        <div class="item-cards__grid-right-action">
-          <span style="margin-left: 220px"> Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link">
-            <img src="/assets/Frame_20.svg" alt="strelka" />
-          </a>
-        </div>
-        <div class="item-cards__grid-right-text">Эмали</div>
-      </div>
-      <div class="item-cards__right-block">
-        <div class="item-cards__grid-right2-text">Лакокрасочные материалы</div>
-        <div class="image_17">
-          <img src="/assets/image_17.png" alt="vedro" />
-        </div>
-        <div class="item-cards__grid-right-action">
-          <span style="margin-left: 20px"> Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link">
-            <img src="/assets/Frame_20.svg" alt="strelka" />
-          </a>
-        </div>
-      </div>
-      <div class="item-cards__right-block">
-        <div class="item-cards__grid-right2-text">Пены, клеи и герметики</div>
-        <div class="image18">
-          <img src="/assets/image_18.png" alt="acril" />
-        </div>
-        <div class="item-cards__grid-right-action">
-          <span style="margin-left: 20px"> Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link">
-            <img src="/assets/Frame_20.svg" alt="strelka" />
-          </a>
-        </div>
-      </div>
-      <div class="item-cards__right-block">
-        <div class="item-cards__grid-right2-text">Розетки и выключатели</div>
-        <div class="image15">
-          <img src="/assets/image_15.png" alt="rozetka" />
-        </div>
-        <div class="item-cards__grid-right-action">
-          <span style="margin-left: 200px">Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link">
-            <img src="/assets/Frame_20.svg" alt="strelka" />
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
+  <div class="popular-container">
   <div class="item-cards__grid-popular">
     <div class="Ptovar">Популярные товары</div>
     <div>
@@ -203,6 +218,7 @@
       </div>
     </div>
   </div>
+  </div>
   <div class="drel">
     <div class="name10">
       <span>БОЛЕЕ 10 000 НАИМЕНОВАНИЙ</span>
@@ -213,6 +229,7 @@
     <button class="next">Перейти в каталог</button>
   </div>
   <div>
+    <div class="newthings">
     <p class="ntext">Новинки</p>
     <div class="cards2">
       <div>
@@ -331,6 +348,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <footer class="footer">
       <div class="container">

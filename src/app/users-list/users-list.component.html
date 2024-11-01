@@ -1,11 +1,9 @@
-КОМПОНЕНТ СПИСКА ЮЗЕРОВ
-
-<div style="display: flex; flex-wrap:wrap">
-<div *ngFor="let item of users" class ="users-list-cards">
-    <p>{{$any(item).name}}</p>
-    <p>{{$any(item).email}}</p>
-    <p>{{$any(item).website}}</p>
-    <p>{{$any(item).company.name}}</p>
-    <button class = "delete-user" (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+<p style="text-align: center;">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</p>
+<div style = " display: flex; justify-content: center;">
+<div class="userListWrapper">
+  <div *ngFor="let user of users">
+    <app-user-card class="userCard" [user]="user" (deleteUser)="deleteUser($event)">
+    </app-user-card>
+  </div>
 </div>
 </div>

@@ -1,15 +1,17 @@
-.users-list-cards {
+.userCard {
     width: 240px;
-        height: 200px;
-        padding: 20px;
-        border: 1px solid black;
-        margin: 5px;
-        box-shadow: 1px 1px 1px black;
-        align-items: center;
-        gap: 10px;
+    height: 200px;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 5px;
+    box-shadow: 1px 1px 1px black;
+    gap: 10px;
+    display: flex;
 }
-
-.delete-user {
-    border: 2px solid #F0BA4E;
-    border-radius: 40px;
+.userListWrapper{
+    display: flex;
+    width: 1250px;
+    flex-wrap: wrap;
+   
+    align-items: center;
 }

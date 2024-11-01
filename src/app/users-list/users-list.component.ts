@@ -1,6 +1,9 @@
 import { NgIf, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, Injectable } from '@angular/core';
+import { UsersApiService } from './users-api-service';
+import { UserCardComponent } from './user-card/user-card.component';
+
 
 Injectable();
 
@@ -9,15 +12,15 @@ Injectable();
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, UserCardComponent],
 })
 export class UsersListComponent {
- readonly usersApiService = inject(UsersApiService);
+  readonly usersApiService = inject(UsersApiService);
   users: User[] = [];
   constructor() {
     this.usersApiService.getUsers().subscribe((response: any) => {
-        this.users = response;
-      });
+      this.users = response;
+    });
   }
 
   deleteUser(id: number) {

@@ -1,7 +1,5 @@
 
-.content-container {
-    width: 1570px;
-}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -94,6 +92,6 @@
 }
 
 .content-container {
-    max-width: 1320px;
+    max-width: none;
     margin: 0 auto;
 }

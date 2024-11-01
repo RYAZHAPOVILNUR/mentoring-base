@@ -11,14 +11,16 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink, HeaderComponent, HomepageComponent], 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [RouterOutlet,
+    NgIf,
+    NgFor,
+    RouterLink,
+    HeaderComponent, HomepageComponent],
+  
 })
-
-export class AppComponent {
-
-}
+export class AppComponent {}
 
 
 

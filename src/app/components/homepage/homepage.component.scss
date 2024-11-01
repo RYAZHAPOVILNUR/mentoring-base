@@ -3,7 +3,9 @@
  
 
 .mujik {
-    margin-left:  78px;
+    display: block;
+    margin: 0 auto;
+    
 }
 .item-cards__pagination {
     display: flex;
@@ -24,6 +26,7 @@
 
 .Frame35 {
     display: flex;
+    justify-content: center;
 }
 
 .item-cards__grid {
@@ -223,10 +226,8 @@
     display: flex;
     gap: 20px;
     background-color: #FFFFFF;
-    width: 1400px;
     height: 450px;
-    Top: 1400;
-    Left: 254px;
+    justify-content: center;
 }
 
 .newitems {
@@ -246,7 +247,7 @@
 }
 
 .name10 {
-    margin-left: 5px;
+    margin-left: 200px;
     font-family: inter;
     font-weight: 500;
     font-size: 28px;
@@ -256,7 +257,7 @@
     display: flex;
     margin-top: 5px;
     align-items: center;
-    margin-left: 5px;
+    margin-left: 200px;
     font-family: inter;
     color: #A1A0A0;
     font-size: 20px;
@@ -270,8 +271,9 @@
     font-weight: 600;
     text-decoration: none;
     color: #F0BA4E;
-    margin-bottom: 40px;
+    margin-top: 100px;
     border: 0;
+    margin-left: 200px;
 }
 
 .ntext {
@@ -480,3 +482,35 @@
     font-weight: 400;
     line-height: 16.94px;
 }
+.catalog-container {
+    display: flex;
+    justify-content: center;
+}
+.banner-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.banner-button {
+    height: 50px;
+}
+.catalog-list-button {
+    display: flex;
+    justify-content:end;
+}
+.catalog-list-wrapper{
+    width: 1320px;
+    display: block;
+    margin: 0 auto;
+}
+.popular-container {
+    width: 1320px;
+    display: block;
+    margin: 0 auto;
+}
+.newthings {
+    width: 1320px;
+    display: block;
+    margin: 0 auto;
+}
+
