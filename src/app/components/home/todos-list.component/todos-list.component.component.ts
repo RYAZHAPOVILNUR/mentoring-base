@@ -8,6 +8,7 @@ import { Todo } from '../users-list/user-interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
+import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({
   selector: 'app-todos-list.component',
@@ -20,31 +21,16 @@ import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodosService);
+  readonly localStorage = inject(LocalStorageService);
 
   constructor() {
-      this.loadTodosFromLocalStorage();
-  }
-
-  private loadTodosFromLocalStorage() {
-    const storedTodos = localStorage.getItem('todos');
-    if (storedTodos) {
-      this.todosService.setTodos(JSON.parse(storedTodos));
-    } else {
-      this.todosApiService.getTodos().subscribe((response: any) => {
-        this.todosService.setTodos(response);
-        this.saveTodosToLocalStorage(response);
-      });
-    }
-  }
-
-  private saveTodosToLocalStorage(todos: Todo[]) {
-    localStorage.setItem('todos', JSON.stringify(todos));
+    this.localStorage.loadTodosFromLocalStorage();
   }
 
   //*MARK:delete-method
   deleteTodo(id: number) {
     this.todosService.deleteTodo(id);
-    this.updateLocalStorage();
+    this.localStorage.updateLocalStorageTodo();
   }
 
   public editTodo(todo: Todo) {
@@ -52,7 +38,7 @@ export class TodosListComponent {
       ...todo,
     });
 
-    this.updateLocalStorage();
+    this.localStorage.updateLocalStorageTodo();
   }
 
   public createTodo(formData: Todo) {
@@ -63,12 +49,7 @@ export class TodosListComponent {
       completed: formData.completed,
     };
     this.todosService.createTodo(newTodo);
-    this.updateLocalStorage();
-  }
-
-  private updateLocalStorage() {
-    const todos = this.todosService.getTodos();
-    this.saveTodosToLocalStorage(todos);
+    this.localStorage.updateLocalStorageTodo();
   }
 
   readonly snackBar = inject(MatSnackBar);

@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({
   selector: 'app-users-list',
@@ -26,32 +27,17 @@ import { MatCardModule } from '@angular/material/card';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
+  readonly localStorage = inject(LocalStorageService);
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
 
   constructor() {
-      this.loadUsersFromLocalStorage();
-  }
-
-  private loadUsersFromLocalStorage() {
-    const storedUsers = localStorage.getItem('users');
-    if (storedUsers) {
-      this.usersService.setUsers(JSON.parse(storedUsers));
-    } else {
-      this.usersApiService.getUsers().subscribe((response: any) => {
-        this.usersService.setUsers(response);
-        this.saveUsersToLocalStorage(response);
-      });
-    }
-  }
-
-  private saveUsersToLocalStorage(users: User[]) {
-    localStorage.setItem('users', JSON.stringify(users));
+      this.localStorage.loadUsersFromLocalStorage();
   }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
-    this.updateLocalStorage();
+    this.localStorage.updateLocalStorage();
   }
 
   editUser(user: UserForm) {
@@ -62,7 +48,7 @@ export class UsersListComponent {
       },
     });
 
-    this.updateLocalStorage();
+    this.localStorage.updateLocalStorage();
   }
 
   public createUser(formData: UserForm) {
@@ -76,12 +62,7 @@ export class UsersListComponent {
       },
     };
     this.usersService.createUser(newUser);
-    this.updateLocalStorage();
-  }
-
-  private updateLocalStorage() {
-    const users = this.usersService.getUsers();
-    this.saveUsersToLocalStorage(users)
+    this.localStorage.updateLocalStorage();
   }
 
   readonly dialogTwo = inject(MatDialog);
