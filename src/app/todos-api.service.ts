@@ -1,6 +1,7 @@
 import {inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Todo} from "./todos-list/todos-list.component";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,32 @@ import {Todo} from "./todos-list/todos-list.component";
 export class TodosApiService {
   http = inject(HttpClient);
 
+  private todosSubject$= new BehaviorSubject<Todo[]>([]);
+  todos$ = this.todosSubject$.asObservable();
+  apiUrl = "https://jsonplaceholder.typicode.com/"
+
+  constructor() {
+    this.getTodos()
+  }
+
   getTodos() {
-    return this.http.get<Todo[]>("https://jsonplaceholder.typicode.com/todos")
+     this.http.get<Todo[]>(`${this.apiUrl}posts`)
+      .subscribe(
+        (todos) => this.todosSubject$.next(todos),
+      )
+    return this.todos$
+  }
+  createTodo(todo: Todo) {
+    this.todosSubject$.next([...this.todosSubject$.value, todo])
+  }
+  editTodo(editedTodo: Todo) {
+    this.todosSubject$.next(
+      this.todosSubject$.value.map((todo) => todo.id == editedTodo.id ? editedTodo : todo)
+    )
+  }
+  deleteTodo(id: number) {
+  this.todosSubject$.next(
+    this.todosSubject$.value.filter((todo => todo.id != id))
+  )
   }
 }
