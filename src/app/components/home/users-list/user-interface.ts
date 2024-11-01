@@ -51,5 +51,9 @@ export interface UserForm {
     catchPhrase?: string;
     bs?: string;
   };
-    companyName: string;
+  companyName: string;
+}
+
+export interface AuthUser {
+  isAdmin: boolean;
 }

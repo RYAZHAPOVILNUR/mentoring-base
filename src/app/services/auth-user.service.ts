@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
+import { AuthUser } from '../components/home/users-list/user-interface';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  isAdmin: boolean = false;
-  name!: string;
-  email!: string;
-
   constructor() {}
 
   loginAsAdmin() {
-    this.isAdmin = true;
-    this.name = 'admin';
-    this.email = 'adminMail'
+    const user: AuthUser = {isAdmin: true};
+    localStorage.setItem('user', JSON.stringify(user))
   }
 
   loginAsUser() {
-    this.isAdmin = false;
-    this.name = 'user'
-    this.email = 'userMail'
+    const user: AuthUser = {isAdmin: false};
+    localStorage.setItem('user', JSON.stringify(user))
   }
 }

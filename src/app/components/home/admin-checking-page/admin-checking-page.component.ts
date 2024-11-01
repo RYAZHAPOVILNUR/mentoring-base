@@ -15,6 +15,14 @@ export class AdminCheckingPageComponent {
   private readonly auth = inject(AuthService);
   private readonly router = inject(Router);
 
+  loginAsAdmin() {
+    
+  }
+  
+  loginAsUser() {
+    
+  }
+
   login() {
     this.auth.loginAsAdmin();
     console.log(this.auth.loginAsAdmin);

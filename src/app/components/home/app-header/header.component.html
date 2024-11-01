@@ -19,22 +19,31 @@
 
     <button class="button" (click)="changeMenuText()">Текст</button>
 
-    <button class="button__users" routerLink="/users">Админка</button>
+    <button
+      class="button__users"
+      routerLink="/users"
+      routerLinkActive="active-link"
+    >
+      Админка
+    </button>
 
-    <button class="button__users" routerLink="/todos">Задачи</button>
+    <button
+      class="button__users"
+      routerLink="/todos"
+      routerLinkActive="active-link"
+    >
+      Задачи
+    </button>
 
     <div>{{ currentDate | date : "medium" }}</div>
 
     <button
-      mat-button
-      class="button__users-admin"
-      routerLink="/admins"
-      matTooltip="Add any token in localStorage to access Admins page!"
+      class="button__users"
+      routerLink="/admin-checking"
+      routerLinkActive="active-link"
     >
-      Admins
+      Login
     </button>
-
-    <button class="button__users" routerLink="/admin-checking">Login</button>
   </div>
 
   <div class="header-right">

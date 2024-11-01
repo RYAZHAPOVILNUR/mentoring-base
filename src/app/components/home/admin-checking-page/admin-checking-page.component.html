@@ -1,13 +1,15 @@
-<p class="greeting">Choose your Admin status!!!</p>
-
 <button
   class="button__users-admin"
-  (click)="login()"
-  matTooltip="Add any token in localStorage to access Admins page!"
+  (click)="loginAsAdmin()"
 >
-  только для администраторов
+  Login as admin
+</button>
+
+<button class="button__users" routerLink="/user-status" (click)="loginAsUser()">
+  Login as user
 </button>
 
 <button class="button__users" routerLink="/user-status" (click)="logout()">
-  Not Admin
+  Logout
 </button>
+

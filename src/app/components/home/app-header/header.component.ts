@@ -1,6 +1,6 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { noDashPipe } from '../../../pipes/no-dash.pipe';
 import { yellowDirective } from '../../../directives/yellow.directive';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,6 +26,7 @@ const newCaller = func2('О Компании');
     noDashPipe,
     MatButtonModule,
     MatTooltipModule,
+    RouterLinkActive
   ],
 })
 export class headerComponent {
