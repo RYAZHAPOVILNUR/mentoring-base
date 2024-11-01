@@ -4,23 +4,18 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
-
-
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet,
+  imports: [
+    RouterOutlet,
     NgIf,
     NgFor,
     RouterLink,
-    HeaderComponent, HomepageComponent],
-  
+    HeaderComponent,
+    HomepageComponent,
+  ],
 })
 export class AppComponent {}
-
-
-

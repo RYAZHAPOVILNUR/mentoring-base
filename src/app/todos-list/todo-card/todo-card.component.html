@@ -1,11 +1,16 @@
 <div class="todo-card">
     <p>ТЕКСТ ЗАДАЧИ</p>
-   <div><p>{{todo.title}}</p></div>
-    
+    <div>
+        <p>{{todo.title}}</p>
+    </div>
     <p>АВТОР ЗАДАЧИ</p>
-     <div><p>{{todo.userId}}</p></div>
+    <div>
+        <p>{{todo.userId}}</p>
+    </div>
     <p>ЗАДАЧА ЗАВЕРШЕНА</p>
-   <div>{{todo.completed ? 'ДА' : 'НЕТ'}}</div>
-
-    <button  (click)="onDeleteTodo(todo.id)" >УДАЛИТЬ ЗАДАЧУ</button>
+    <div>
+        {{todo.completed ? 'ДА' : 'НЕТ'}}
+    </div>
+    <button (click)="onDeleteTodo(todo.id)">УДАЛИТЬ ЗАДАЧУ
+    </button>
 </div>
