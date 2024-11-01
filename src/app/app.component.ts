@@ -1,8 +1,8 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { headerComponent } from './app-header/header.component';
-import { CurrentUserService } from './currentUser.service';
+import { headerComponent } from './components/home/app-header/header.component';
+import { CurrentUserService } from './services/currentUser.service';
 
 const newPages = [5, 4, 3, 2, 1];
 

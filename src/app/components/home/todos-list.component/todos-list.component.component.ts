@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TodosApiService } from '../todos-api.service';
+import { TodosApiService } from '../../../services/todos-api.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodoCardComponent } from './todo-card/todo-card.component';
-import { TodosService } from '../todos.service';
+import { TodosService } from '../../../services/todos.service';
 import { CreateTodosFormComponent } from '../create-todos-form/create-todos-form.component';
 import { Todo } from '../users-list/user-interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
-import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-todos-list.component',

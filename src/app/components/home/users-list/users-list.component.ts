@@ -1,8 +1,8 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { UsersApiService } from '../users-api-service';
+import { UsersApiService } from '../../../services/users-api-service';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../users.service';
+import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { User, UserForm } from './user-interface';
 import { MatDialog } from '@angular/material/dialog';

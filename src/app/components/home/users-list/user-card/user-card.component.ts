@@ -6,9 +6,9 @@ import { CreateUserDialogComponent } from '../../create-user-form/create-user-di
 import { DeleteUserConfirmationComponent } from '../delete-user-confirmation/delete-user-confirmation.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
-import { customUpperCasePipe } from '../../pipes/upper-case.pipe';
-import { redDirective } from '../../directives/red.directive';
-import { shadowDirective } from '../../directives/shadow.directive';
+import { customUpperCasePipe } from '../../../../pipes/upper-case.pipe';
+import { redDirective } from '../../../../directives/red.directive';
+import { shadowDirective } from '../../../../directives/shadow.directive';
 
 @Component({
   selector: 'app-user-card',

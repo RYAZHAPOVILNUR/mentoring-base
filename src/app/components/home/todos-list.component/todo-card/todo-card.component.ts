@@ -7,8 +7,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateTodoDialogComponent } from './create-todo-dialog/create-todo-dialog.component';
 import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { customTitleCutPipe } from '../../pipes/title-cut.pipe';
-import { shadowDirective } from '../../directives/shadow.directive';
+import { customTitleCutPipe } from '../../../../pipes/title-cut.pipe';
+import { shadowDirective } from '../../../../directives/shadow.directive';
 
 @Component({
   selector: 'app-todo-card',

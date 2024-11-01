@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './users-list/user-interface';
+import { Todo } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {

@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
-import { User } from './users-list/user-interface';
+import { inject, Injectable } from '@angular/core';
+import { User } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
+  localStorage = inject(LocalStorageService)
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
 

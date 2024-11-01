@@ -1,9 +1,8 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { noDashPipe } from '../pipes/no-dash.pipe';
-import { yellowDirective } from '../directives/yellow.directive';
-import { AuthService } from '../auth-user.service';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { noDashPipe } from '../../../pipes/no-dash.pipe';
+import { yellowDirective } from '../../../directives/yellow.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
