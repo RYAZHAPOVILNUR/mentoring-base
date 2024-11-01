@@ -17,8 +17,6 @@ export interface User {
   website: string;
   company: {
     name: string;
-    catchPhrase?: string;
-    bs?: string;
   }
   isAdmin: boolean;
 }

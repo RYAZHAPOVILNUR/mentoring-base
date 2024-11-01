@@ -18,8 +18,6 @@ export class UsersService {
       website: '',
       company: {
         name: '',
-        catchPhrase: undefined,
-        bs: undefined
       }
     };
     this.loggedInUser = adminUser;
@@ -36,8 +34,6 @@ export class UsersService {
       website: '',
       company: {
         name: '',
-        catchPhrase: undefined,
-        bs: undefined
       }
     };
     this.loggedInUser = regularUser;

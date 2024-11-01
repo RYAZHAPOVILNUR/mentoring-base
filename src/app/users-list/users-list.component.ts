@@ -8,7 +8,7 @@ import { UsersService } from '../services/users-services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LocalStorageService } from '../services/local-storage.service'; 
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-users-list',
@@ -22,7 +22,7 @@ import { LocalStorageService } from '../services/local-storage.service';
     CreateUserFormComponent,
   ],
   templateUrl: './users-list.component.html',
-  styleUrl: './users-list.component.scss',
+  styleUrl: './users-list.component.scss', 
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
@@ -30,20 +30,20 @@ export class UsersListComponent {
   readonly usersService = inject(UsersService);
   readonly dialog = inject(MatDialog);
   readonly snackBar = inject(MatSnackBar);
-  readonly localStorageService = inject(LocalStorageService); 
+  readonly localStorageService = inject(LocalStorageService);  
 
   constructor() {
-    this.loadUsersFromLocalStorage();
+    this.loadUsers();
   }
 
-  private loadUsersFromLocalStorage() {
-    const storedUsers = this.localStorageService.getUsersFromLocalStorage('users'); 
+  private loadUsers() {
+    const storedUsers = this.localStorageService.getUsers(); 
     if (storedUsers) {
       this.usersService.setUsers(storedUsers);
     } else {
       this.usersApiService.getUsers().subscribe((response: any) => {
         this.usersService.setUsers(response);
-        this.localStorageService.saveUsersToLocalStorage('users', response); 
+        this.localStorageService.saveUsers(response); 
       });
     }
   }
@@ -77,6 +77,6 @@ export class UsersListComponent {
 
   private updateLocalStorage() {
     const users = this.usersService.getUsers();
-    this.localStorageService.saveUsersToLocalStorage('users', users); 
+    this.localStorageService.saveUsers(users); 
   }
 }
