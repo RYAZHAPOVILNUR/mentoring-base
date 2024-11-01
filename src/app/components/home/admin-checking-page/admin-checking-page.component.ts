@@ -1,36 +1,37 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../services/auth-user.service';
+import { AuthUserService } from '../../../services/auth-user.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-admin-checking-page',
   standalone: true,
-  imports: [RouterLink, MatButtonModule, MatTooltipModule],
+  imports: [NgIf, MatButtonModule, MatTooltipModule],
   templateUrl: './admin-checking-page.component.html',
   styleUrl: './admin-checking-page.component.scss',
 })
 export class AdminCheckingPageComponent {
-  private readonly auth = inject(AuthService);
+  constructor(private userService: AuthUserService) {}
   private readonly router = inject(Router);
 
   loginAsAdmin() {
-    
-  }
-  
-  loginAsUser() {
-    
+    this.userService.loginAsAdmin();
+    alert('Logged in as admin');
   }
 
-  login() {
-    this.auth.loginAsAdmin();
-    console.log(this.auth.loginAsAdmin);
+  loginAsUser() {
+    this.userService.loginAsUser();
+    alert('Logged in as user');
   }
 
   logout() {
-    this.auth.loginAsUser();
-    this.router.navigate(['user-status']);
-    console.log(this.auth.loginAsUser);
+    this.userService.logout();
+    alert('Logged out of system');
+  }
+
+  isAdmin(): boolean {
+    return this.userService.getIsAdmin();
   }
 }

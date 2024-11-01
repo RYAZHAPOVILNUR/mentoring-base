@@ -1,15 +1,7 @@
-<button
-  class="button__users-admin"
-  (click)="loginAsAdmin()"
->
-  Login as admin
-</button>
+<button class="button__users" (click)="loginAsAdmin()">Login as admin</button>
 
-<button class="button__users" routerLink="/user-status" (click)="loginAsUser()">
-  Login as user
-</button>
+<button class="button__users" (click)="loginAsUser()">Login as user</button>
 
-<button class="button__users" routerLink="/user-status" (click)="logout()">
-  Logout
-</button>
+<button class="button__users" (click)="logout()">Logout</button>
 
+<div class="admin__message" *ngIf="isAdmin()">Вы вошли как администратор</div>

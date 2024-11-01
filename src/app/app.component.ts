@@ -26,7 +26,7 @@ console.log(callRecording);
   templateUrl: 'app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent  {
+export class AppComponent {
   title = 'mentoring-first-project';
 
   newPages = newPages;

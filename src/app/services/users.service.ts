@@ -26,7 +26,6 @@ export class UsersService {
     );
   }
 
-
   createUser(user: User) {
     const existingUser = this.usersSubject$.value.find(
       (currentElement) => currentElement.email === user.email

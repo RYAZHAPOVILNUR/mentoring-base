@@ -32,7 +32,7 @@ export class LocalStorageService {
 
   public updateLocalStorage() {
     const users = this.usersService.getUsers();
-    this.saveUsersToLocalStorage(users)
+    this.saveUsersToLocalStorage(users);
   }
 
   public loadTodosFromLocalStorage() {

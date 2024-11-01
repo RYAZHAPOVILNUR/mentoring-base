@@ -26,7 +26,7 @@ const newCaller = func2('О Компании');
     noDashPipe,
     MatButtonModule,
     MatTooltipModule,
-    RouterLinkActive
+    RouterLinkActive,
   ],
 })
 export class headerComponent {
