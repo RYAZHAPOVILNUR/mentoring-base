@@ -2,5 +2,12 @@
     "editor.fontSize": 19,
     "editor.fontFamily": "Cascadia Code",
     "editor.fontLigatures": true,
-    "editor.fontWeight": 390
+    "editor.fontWeight": 390,
+    "window.closeWhenEmpty": false,
+    "window.confirmSaveUntitledWorkspace": true,
+    "search.useReplacePreview": true,
+    "window.autoDetectColorScheme": false,
+    "window.commandCenter": true,
+    "window.zoomPerWindow": true,
+    "files.simpleDialog.enable": false
 }

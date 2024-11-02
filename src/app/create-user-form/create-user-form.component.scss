@@ -1,0 +1,21 @@
+h1, form {
+    margin-left: 300px
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.form-container {
+    margin: 30px 30px 30px 0px;
+}
+
+.form-input {
+    width: 200px;
+}

@@ -11,26 +11,26 @@ import { IUser } from "../users-list.component";
 export class UserCardComponent {
     @Input()
     user: IUser = {
-        "id": 0,
-        "name": '',
-        "username": '',
-        "email": '',
-        "address": {
-            "street": '',
-            "suite": '',
-            "city": '',
-            "zipcode": '',
-            "geo": {
-                "lat": '',
-                "lng": ''
+        id: 0,
+        name: '',
+        username: '',
+        email: '',
+        address: {
+            street: '',
+            suite: '',
+            city: '',
+            zipcode: '',
+            geo: {
+                lat: '',
+                lng: ''
             }
         },
-        "phone": '',
-        "website": '',
-        "company": {
-            "name": '',
-            "catchPhrase": '',
-            "bs": ''
+        phone: '',
+        website: '',
+        company: {
+            name: '',
+            catchPhrase: '',
+            bs: ''
         }
     }
 

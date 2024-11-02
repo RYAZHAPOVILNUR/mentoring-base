@@ -1,0 +1,20 @@
+<h1>CREATE USER FORM</h1>
+
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <p>Name:</p>
+        <input type="text" class="form-input" formControlName="name">
+        <p>Email:</p>
+        <input type="text" class="form-input" formControlName="email">
+        <p>Website:</p>
+        <input type="text" class="form-input" formControlName="website">
+        <p>Company name:</p>
+        <input type="text" class="form-input" formControlName="companyName">
+        <button 
+        type="submit"
+        [disabled]="form.invalid"
+        >
+            Create User
+        </button>
+    </form>
+</div>
