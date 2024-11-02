@@ -48,7 +48,8 @@
       <input matInput
       formControlName="website">
     </mat-form-field>
-    <button class="btn" mat-raised-button color="primary" 
+    <button class="btn" mat-raised-button color="primary"
+            [matTooltip]="this.data.isEdit? 'Редактировать данные пользователя' : 'Создать нового пользователя'"
             [disabled] = "form.invalid" 
             [matDialogClose]="userWithUpdatedFields"
             >{{this.data.isEdit? 'Редактировать пользователя' : 'Создать пользователя'}}</button>

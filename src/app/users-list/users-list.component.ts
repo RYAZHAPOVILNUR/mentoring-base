@@ -8,13 +8,15 @@ import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dia
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateEditUserDialogComponent } from './create-edit-user-dialog/create-edit-user-dialog.component';
+import { ShadowDirective } from '../directives/shadow.directive';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe],
+  imports: [NgFor, UserCardComponent, AsyncPipe, ShadowDirective, MatButton],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {

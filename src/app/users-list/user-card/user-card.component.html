@@ -6,7 +6,7 @@
     <p>{{user.website}}</p>
     </div>
   <div class="button-container">
-        <button (click)="deleteUser.emit(user)" class="delete-user"> Удалить </button>
-        <button (click)="editUser.emit(user)" class="edit-user"> Редактировать </button>
+        <button mat-raised-button yellow (click)="deleteUser.emit(user)" class="delete-user"> Удалить </button>
+        <button mat-raised-button yellow (click)="editUser.emit(user)" class="edit-user"> Редактировать </button>
   </div>
 </div>

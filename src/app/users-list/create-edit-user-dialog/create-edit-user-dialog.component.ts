@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { User } from '../../interfaces/user.interface';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @Component({
@@ -24,6 +25,7 @@ import { User } from '../../interfaces/user.interface';
     MatButtonModule,
     ReactiveFormsModule,
     MatDialogClose,
+    MatTooltipModule
   ],
   standalone: true,
 })

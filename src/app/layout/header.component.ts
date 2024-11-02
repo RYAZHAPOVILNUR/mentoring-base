@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { YellowDirective } from '../directives/yellow.directive';
 
 const menuItems = [
   'Каталог',
@@ -23,7 +24,7 @@ const menuItem2 = function1('О компании');
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, DatePipe],
+  imports: [NgFor, NgIf, RouterLink, DatePipe, YellowDirective],
 })
 export class HeaderComponent {
   isShowCatalog = true;
