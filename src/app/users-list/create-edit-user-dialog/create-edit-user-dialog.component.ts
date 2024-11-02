@@ -58,7 +58,7 @@ export class CreateEditUserDialogComponent {
   get userWithUpdatedFields() {
     return {
       ...this.form.value,
-      id: this.data.user?.id,
+      id: new Date().getTime(),
     };
   }
 
