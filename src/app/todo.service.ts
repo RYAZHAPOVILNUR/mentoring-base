@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core";
 import { Todo } from "./todos-list/todos-list.component";
 import { BehaviorSubject } from "rxjs";
 
-Injectable({providedIn: 'root'})
+@Injectable({providedIn: 'root'})
 
 export class TodosService {
-   private todosSubject$ = new BehaviorSubject<Todo[]>([])
+   private todosSubject$ = new BehaviorSubject<Todo[]>([]);
    public todos$ = this.todosSubject$.asObservable();
 
    setTodo(todos: Todo[]) {
-    this.todosSubject$.next(todos);
+    this.todosSubject$.next(todos.slice(0, 10));
    }
 
    editTodo(editedTodo: Todo) {

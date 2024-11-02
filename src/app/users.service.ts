@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { User } from "./users-list/users.component";
-import { BehaviorSubject } from "rxjs";
+import { User } from "./users-list/users-list.component";
+import { BehaviorSubject, find } from "rxjs";
 
 @Injectable({providedIn: 'root'})
  
@@ -27,6 +27,19 @@ export class UsersService {
     }
 
     creatUser(user: User) {   
+
+        const userIsExisting = this.usersSubject$.value.find(
+            (currenElement) => currenElement.email === user.email
+        );
+        if(userIsExisting !== undefined) {
+            alert('ТАКОЙ EMAIL ЗАНЯТ')
+        } else {
+            this.usersSubject$.next(
+                [...this.usersSubject$.value, user]
+               )
+        }
+
+
      this.usersSubject$.next(
       [...this.usersSubject$.value, user]
      )

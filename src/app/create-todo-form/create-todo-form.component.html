@@ -1,0 +1,12 @@
+<H1>CREATE TODO FORM</H1>
+<div class="todo-form">
+    <form class="todo-form-create" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>UserId</p>
+    <input class="todo-form-input"    type="text" formControlName = "userid">
+    <p>Title</p>
+    <input  class="todo-form-input" type="text" formControlName = "title">
+    <p>Completed</p>
+    <input  class="todo-form-input" type="text" formControlName = "completed">
+    <button style="width: 150px;" [disabled]="!form.valid">CREATE TODO</button>
+    </form>
+    </div>

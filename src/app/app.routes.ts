@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { UsersListComponent } from './users-list/users.component';
+import { UsersListComponent } from './users-list/users-list.component';
 import { homePageComponent } from './homePage/homePage.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 
@@ -14,9 +14,7 @@ export const routes: Routes = [
     component: homePageComponent 
 },
 {
-path: 'todos',
-component: TodosListComponent
+    path: 'todos',
+    component: TodosListComponent
 }
-
-
 ];

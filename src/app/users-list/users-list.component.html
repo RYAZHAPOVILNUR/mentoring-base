@@ -1,0 +1,9 @@
+<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+<div style=
+      "display: flex; flex-wrap: wrap; margin-left: 200px; width: 1440px; "
+      >
+  <div *ngFor="let user of users$ | async">
+    <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+  </div>
+</div>
+      

@@ -1,7 +1,7 @@
-<span class="todos-span">Компонент списка задач</span>
-
-<div class="todos-list-style">
-  <div *ngFor="let todo of todosService.todos$ | async">
+<app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
+<div style=
+"display: flex; flex-wrap: wrap; margin-left: 200px; width: 1440px; ">
+  <div *ngFor="let todo of todos$ | async">
     <app-todo-card [todo]="todo" (deleteTodo)= "deleteTodo($event)"></app-todo-card> 
   </div>
 </div>
