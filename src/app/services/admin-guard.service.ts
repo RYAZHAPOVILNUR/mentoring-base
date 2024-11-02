@@ -5,11 +5,11 @@ import { AuthUserService } from './auth-user.service';
 Injectable({ providedIn: 'root' });
 
 export const AdminGuardFn: CanActivateFn = async () => {
-  const userService = inject(AuthUserService);
+  const authUserService = inject(AuthUserService);
   const router = inject(Router);
 
-  const isLoggedIn = userService.getIsLoggedIn();
-  const isAdmin = userService.getIsAdmin();
+  const isLoggedIn = authUserService.getIsLoggedIn();
+  const isAdmin = authUserService.getIsAdmin();
 
   function handleGuardLogic() {
     if (isLoggedIn && isAdmin) {

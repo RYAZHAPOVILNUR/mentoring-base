@@ -1,6 +1,5 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { UsersApiService } from '../../../services/users-api-service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
@@ -28,7 +27,6 @@ import { LocalStorageService } from '../../../services/local-storage.service';
 })
 export class UsersListComponent {
   readonly localStorage = inject(LocalStorageService);
-  readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
 
   constructor() {

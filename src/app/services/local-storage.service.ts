@@ -1,32 +1,30 @@
 import { inject, Injectable } from '@angular/core';
 import { Todo, User } from '../components/home/users-list/user-interface';
-import { UsersApiService } from './users-api-service';
 import { UsersService } from './users.service';
-import { TodosApiService } from './todos-api.service';
 import { TodosService } from './todos.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
-  readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
-  readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodosService);
+  readonly apiService = inject(HttpClient);
 
   public loadUsersFromLocalStorage() {
     const storedUsers = localStorage.getItem('users');
     if (storedUsers) {
       this.usersService.setUsers(JSON.parse(storedUsers));
     } else {
-      this.usersApiService.getUsers().subscribe((response: any) => {
+      this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe((response: any) => {
         this.usersService.setUsers(response);
         this.saveUsersToLocalStorage(response);
       });
     }
   }
 
-  public saveUsersToLocalStorage(users: User[]) {
+  private saveUsersToLocalStorage(users: User[]) {
     localStorage.setItem('users', JSON.stringify(users));
   }
 
@@ -40,14 +38,14 @@ export class LocalStorageService {
     if (storedTodos) {
       this.todosService.setTodos(JSON.parse(storedTodos));
     } else {
-      this.todosApiService.getTodos().subscribe((response: any) => {
+      this.apiService.get('https://jsonplaceholder.typicode.com/todos').subscribe((response: any) => {
         this.todosService.setTodos(response);
         this.saveTodosToLocalStorage(response);
       });
     }
   }
 
-  public saveTodosToLocalStorage(todos: Todo[]) {
+  private saveTodosToLocalStorage(todos: Todo[]) {
     localStorage.setItem('todos', JSON.stringify(todos));
   }
 

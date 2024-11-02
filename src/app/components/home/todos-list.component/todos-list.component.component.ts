@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TodosApiService } from '../../../services/todos-api.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosService } from '../../../services/todos.service';
@@ -19,7 +18,6 @@ import { LocalStorageService } from '../../../services/local-storage.service';
   styleUrl: './todos-list.component.component.scss',
 })
 export class TodosListComponent {
-  readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodosService);
   readonly localStorage = inject(LocalStorageService);
 

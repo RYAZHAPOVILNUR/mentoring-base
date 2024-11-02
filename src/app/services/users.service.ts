@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
+
 @Injectable({ providedIn: 'root' })
 export class UsersService {
   private usersSubject$ = new BehaviorSubject<User[]>([]);
