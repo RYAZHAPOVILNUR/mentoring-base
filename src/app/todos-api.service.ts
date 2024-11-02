@@ -11,6 +11,7 @@ export class TodosApiService {
 
   private todosSubject$= new BehaviorSubject<Todo[]>([]);
   todos$ = this.todosSubject$.asObservable();
+
   apiUrl = "https://jsonplaceholder.typicode.com/"
 
   constructor() {
@@ -25,7 +26,13 @@ export class TodosApiService {
     return this.todos$
   }
   createTodo(todo: Todo) {
-    this.todosSubject$.next([...this.todosSubject$.value, todo])
+    const user: Todo = {
+      id: new Date().getTime(),
+      title: todo.title,
+      body: todo.body,
+      userId: new Date().getTime(),
+    }
+    this.todosSubject$.next([...this.todosSubject$.value, user])
   }
   editTodo(editedTodo: Todo) {
     this.todosSubject$.next(

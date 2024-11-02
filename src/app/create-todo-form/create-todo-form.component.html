@@ -1,0 +1,7 @@
+<h1>create-todo-form works!</h1>
+
+<form [formGroup]="form" class="form">
+  <input class="input" type="text" formControlName="title" placeholder="Заголовок">
+  <input class="input" type="text" formControlName="body" placeholder="Текст">
+  <button (click)="onSubmit()" [disabled]="form.invalid">Добавить задачу</button>
+</form>
