@@ -13,25 +13,24 @@ import { NgIf } from '@angular/common';
   styleUrl: './admin-checking-page.component.scss',
 })
 export class AdminCheckingPageComponent {
-  constructor(private userService: AuthUserService) {}
-  private readonly router = inject(Router);
+  constructor(private authUserService: AuthUserService) {}
 
   loginAsAdmin() {
-    this.userService.loginAsAdmin();
-    alert('Logged in as admin');
+    this.authUserService.loginAsAdmin();
+    alert('Вы вошли как администратор');
   }
 
   loginAsUser() {
-    this.userService.loginAsUser();
-    alert('Logged in as user');
+    this.authUserService.loginAsUser();
+    alert('Вы вошли как ползователь');
   }
 
   logout() {
-    this.userService.logout();
-    alert('Logged out of system');
+    this.authUserService.logout();
+    alert('Вы выщли из системы');
   }
 
   isAdmin(): boolean {
-    return this.userService.getIsAdmin();
+    return this.authUserService.getIsAdmin();
   }
 }

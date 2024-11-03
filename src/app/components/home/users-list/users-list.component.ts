@@ -1,5 +1,5 @@
-import { AsyncPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AsyncPipe, KeyValuePipe, NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
@@ -9,6 +9,7 @@ import { CreateUserDialogComponent } from '../create-user-form/create-user-dialo
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { LocalStorageService } from '../../../services/local-storage.service';
+import { UsersApiService } from '../../../usersApi.service';
 
 @Component({
   selector: 'app-users-list',
@@ -22,35 +23,34 @@ import { LocalStorageService } from '../../../services/local-storage.service';
     CreateUserFormComponent,
     CreateUserDialogComponent,
     MatCardModule,
+    KeyValuePipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
   readonly localStorage = inject(LocalStorageService);
   readonly usersService = inject(UsersService);
+  readonly userApiService = inject(UsersApiService);
 
   constructor() {
-      this.localStorage.loadUsersFromLocalStorage();
+    this.loadTodos()
   }
 
-  deleteUser(id: number) {
-    this.usersService.deleteUser(id);
-    this.localStorage.updateLocalStorage();
-  }
+  loadTodos() {
+    const localStorageUsers = this.localStorage.getUsersFromLocalStorage();
 
-  editUser(user: UserForm) {
-    this.usersService.editUser({
-      ...user,
-      company: {
-        name: user.companyName,
-      },
+    if (localStorageUsers) {
+      this.usersService.setUsers(localStorageUsers);
+    }
+    this.userApiService.getUsers().subscribe((data) => {
+      this.usersService.setUsers(data)
+      this.localStorage.saveUsersToLocalStorage(data);
     });
-
-    this.localStorage.updateLocalStorage();
   }
+
 
   public createUser(formData: UserForm) {
-    const newUser: User = {
+    this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
@@ -58,9 +58,20 @@ export class UsersListComponent {
       company: {
         name: formData.companyName,
       },
-    };
-    this.usersService.createUser(newUser);
-    this.localStorage.updateLocalStorage();
+    });
+  }
+
+  public editUser(user: UserForm) {
+    this.usersService.editUser({
+      ...user,
+      company: {
+        name: user.companyName,
+      },
+    });
+  }
+
+  public deleteUser(id: number) {
+    this.usersService.deleteUser(id);
   }
 
   readonly dialogTwo = inject(MatDialog);

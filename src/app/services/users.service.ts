@@ -1,30 +1,21 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { User } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
+import { UsersApiService } from '../usersApi.service';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
+  private userApiService = inject(UsersApiService);
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
-
-  setUsers(users: User[]) {
-    this.usersSubject$.next(users);
-  }
 
   getUsers(): User[] {
     return this.usersSubject$.value;
   }
 
-  editUser(EditedUser: User) {
-    this.usersSubject$.next(
-      this.usersSubject$.value.map((user) => {
-        if (user.id === EditedUser.id) {
-          return EditedUser;
-        } else {
-          return user;
-        }
-      })
-    );
+  setUsers(users: User[]) {
+    this.usersSubject$.next(users);
   }
 
   createUser(user: User) {
@@ -32,23 +23,33 @@ export class UsersService {
       (currentElement) => currentElement.email === user.email
     );
     console.log(existingUser);
-
     if (existingUser !== undefined) {
       alert('ТАКОЙ ЕМЕЙЛ УЖЕ ЗАРЕГИСРИРОВАН');
-    } else {
-      alert('ЮЗЕР УСПЕШНО СОЗДАН');
-      this.usersSubject$.next([...this.usersSubject$.value, user]);
     }
+    alert('ЮЗЕР УСПЕШНО СОЗДАН');
+    this.usersSubject$.next([...this.usersSubject$.value, user]);
   }
+
+  // this.localStorage.saveUsersToLocalStorage(user);
 
   deleteUser(id: number) {
     this.usersSubject$.next(
       this.usersSubject$.value.filter((el) => {
         if (id === el.id) {
           return false;
-        } else {
-          return true;
         }
+        return true;
+      })
+    );
+  }
+
+  editUser(EditedUser: User) {
+    this.usersSubject$.next(
+      this.usersSubject$.value.map((user) => {
+        if (user.id === EditedUser.id) {
+          return EditedUser;
+        }
+        return user;
       })
     );
   }

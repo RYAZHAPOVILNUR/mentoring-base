@@ -1,45 +1,46 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Todo } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
+import { TodosApiService } from '../todosApi.service';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
   private todosSubject$ = new BehaviorSubject<Todo[]>([]);
-
+  private todosApiService = inject(TodosApiService);
   todos$ = this.todosSubject$.asObservable();
 
-  setTodos(todos: Todo[]) {
-    this.todosSubject$.next(todos.slice(0, 10));
-  }
+  // loadTodos() {
+  //   const localStorageTodos = this.localStorage.getTodosFromLocalStorage();
+
+  //   if (localStorageTodos) {
+  //     this.todosSubject$.next(localStorageTodos);
+  //   } else {
+  //     this.todosApiService.getTodos().subscribe((data) => {
+  //       this.localStorage.saveTodosToLocalStorage(data);
+  //       this.todosSubject$.next(data);
+  //     });
+  //   }
+  // }
 
   getTodos(): Todo[] {
     return this.todosSubject$.value;
   }
 
-  editTodo(editedTodo: Todo) {
-    this.todosSubject$.next(
-      this.todosSubject$.value.map((el) => {
-        if (el.id === editedTodo.id) {
-          return editedTodo;
-        } else {
-          return el;
-        }
-      })
-    );
+  setTodos(todos: Todo[]) {
+    this.todosSubject$.next(todos);
   }
 
   createTodo(todo: Todo) {
-    const existingTodo = this.todosSubject$.value.find(
+    const existingUser = this.todosSubject$.value.find(
       (currentElement) => currentElement.title === todo.title
     );
-    console.log(existingTodo);
-
-    if (existingTodo !== undefined) {
-      alert('ТАКАЯ ЗАДАЧА УЖЕ ЗАРЕГИСРИРОВАНА');
-    } else {
-      alert('ЗАДАЧА УСПЕШНО СОЗДАНА');
-      this.todosSubject$.next([...this.todosSubject$.value, todo]);
+    console.log(existingUser);
+    if (existingUser !== undefined) {
+      alert('ТАКОЙ ЕМЕЙЛ УЖЕ ЗАРЕГИСРИРОВАН');
     }
+      alert('ЮЗЕР УСПЕШНО СОЗДАН');
+      this.todosSubject$.next([...this.todosSubject$.value, todo]);
   }
 
   deleteTodo(id: number) {
@@ -47,9 +48,19 @@ export class TodosService {
       this.todosSubject$.value.filter((el) => {
         if (id === el.id) {
           return false;
-        } else {
-          return true;
         }
+          return true;
+      })
+    );
+  }
+
+  editTodo(EditedTodo: Todo) {
+    this.todosSubject$.next(
+      this.todosSubject$.value.map((todo) => {
+        if (todo.id === EditedTodo.id) {
+          return EditedTodo;
+        }
+          return todo;
       })
     );
   }

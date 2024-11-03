@@ -77,27 +77,4 @@ export class TodoCardComponent {
       duration: 2000,
     });
   }
-
-  readonly dialogTwo = inject(MatDialog);
-
-  createTodoDialog(): void {
-    const dialogRef = this.dialogTwo.open(CreateTodoDialogComponent, {
-      data: { todo: this.todo },
-    });
-
-    dialogRef.afterClosed().subscribe((createResult: Todo) => {
-      if (createResult) {
-        this.createTodo.emit(createResult);
-        this.openSnackBarTwo();
-      }
-    });
-  }
-
-  readonly snackBarCreate = inject(MatSnackBar);
-
-  openSnackBarTwo(): void {
-    this.snackBar.open('Задача создана🐒', 'Закрыть', {
-      duration: 2000,
-    });
-  }
 }

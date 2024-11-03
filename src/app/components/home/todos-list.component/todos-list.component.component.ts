@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosService } from '../../../services/todos.service';
@@ -8,9 +13,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
 import { LocalStorageService } from '../../../services/local-storage.service';
+import { TodosApiService } from '../../../todosApi.service';
 
 @Component({
-  selector: 'app-todos-list.component',
+  selector: 'app-todos-list',
   standalone: true,
   imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodosFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,34 +26,42 @@ import { LocalStorageService } from '../../../services/local-storage.service';
 export class TodosListComponent {
   readonly todosService = inject(TodosService);
   readonly localStorage = inject(LocalStorageService);
+  readonly todoApiService = inject(TodosApiService);
 
   constructor() {
-    this.localStorage.loadTodosFromLocalStorage();
+    this.loadUsers()
   }
 
-  //*MARK:delete-method
-  deleteTodo(id: number) {
-    this.todosService.deleteTodo(id);
-    this.localStorage.updateLocalStorageTodo();
+  loadUsers() {
+    const localStorageTodos = this.localStorage.getTodosFromLocalStorage();
+
+    if (localStorageTodos) {
+      this.todosService.setTodos(localStorageTodos);
+    }
+    this.todoApiService.getTodos().subscribe((data) => {
+      this.todosService.setTodos(data)
+      this.localStorage.saveTodosToLocalStorage(data);
+    });
+  }
+
+  public createTodo(formData: Todo) {
+    this.todosService.createTodo({
+      id: new Date().getTime(),
+      title: formData.title,
+      userId: formData.userId,
+      completed: formData.completed,
+    });
   }
 
   public editTodo(todo: Todo) {
     this.todosService.editTodo({
       ...todo,
     });
-
-    this.localStorage.updateLocalStorageTodo();
   }
 
-  public createTodo(formData: Todo) {
-    const newTodo: Todo = {
-      id: new Date().getTime(),
-      title: formData.title,
-      userId: formData.userId,
-      completed: formData.completed,
-    };
-    this.todosService.createTodo(newTodo);
-    this.localStorage.updateLocalStorageTodo();
+  //*MARK:delete-method
+  public deleteTodo(id: number) {
+    this.todosService.deleteTodo(id);
   }
 
   readonly snackBar = inject(MatSnackBar);

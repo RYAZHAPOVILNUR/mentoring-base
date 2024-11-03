@@ -78,27 +78,4 @@ export class UserCardComponent {
       duration: 2000,
     });
   }
-
-  readonly dialogTwo = inject(MatDialog);
-
-  createUserDialog(): void {
-    const dialogRef = this.dialogTwo.open(CreateUserDialogComponent, {
-      data: { user: this.user },
-    });
-
-    dialogRef.afterClosed().subscribe((createResult: User) => {
-      if (createResult) {
-        this.createUser.emit(createResult);
-        this.openSnackBarTwo();
-      }
-    });
-  }
-
-  readonly snackBarCreate = inject(MatSnackBar);
-
-  openSnackBarTwo(): void {
-    this.snackBar.open('Пользователь создан🐒', 'Закрыть', {
-      duration: 2000,
-    });
-  }
 }

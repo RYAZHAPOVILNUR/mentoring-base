@@ -1,7 +1,8 @@
-<button class="button__users" (click)="loginAsAdmin()">Login as admin</button>
+<div class="header">
+    <button class="button__users" (click)="loginAsAdmin()">Login as admin</button>
+    <button class="button__users" (click)="loginAsUser()">Login as user</button>
+    <button class="button__users" (click)="logout()">Logout</button>
+    <div class="admin__message" *ngIf="isAdmin()">Вы вошли как администратор</div>
+    <div class="admin__message" *ngIf="!isAdmin()">Вы вошли как ползователь</div>
+</div>
 
-<button class="button__users" (click)="loginAsUser()">Login as user</button>
-
-<button class="button__users" (click)="logout()">Logout</button>
-
-<div class="admin__message" *ngIf="isAdmin()">Вы вошли как администратор</div>
