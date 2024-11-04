@@ -8,11 +8,12 @@
         <nav class="header-nav">
           <a class="header-nav-item" href="#">{{headerNavItem1}}</a>
           <a class="header-nav-item" href="#">{{aboutCompany}}</a>
-          <a class="header-nav-item" routerLink="todos" *ngIf="isShowCatalog">{{headerNavItem3}}</a>
+          <a class="header-nav-item" *ngIf="isShowCatalog">{{headerNavItem3}}</a>
         </nav>
         <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
         <button (click)="changeMenuText()">Изменить текст</button>
         <button routerLink="users">Админка</button>
+        <button routerLink="todos">Задачи</button>
       </div>
       <div class="header-right">
         <img src="/assets/phone.svg">

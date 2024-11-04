@@ -32,7 +32,7 @@ export class MainComponent {
 
   readonly headerNavItem2 = 'О компании';
 
-  readonly headrerNavItem3 = 'Каталог';
+  readonly headerNavItem3 = 'Каталог';
 
   readonly aboutCompany = aboutCompany;
 

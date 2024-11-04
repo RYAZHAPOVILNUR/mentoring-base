@@ -2,7 +2,7 @@
   max-width: 1920px;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .form-create-user {
@@ -12,10 +12,5 @@
   width: 200px;
 }
 
-.btn-create-user {
-  margin: 20px 0 0;
-}
 
-.alert {
-  color: crimson;
-}
+

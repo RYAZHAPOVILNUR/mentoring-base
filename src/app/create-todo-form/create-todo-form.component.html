@@ -2,37 +2,44 @@
   <form
     class="todo-form"
     [formGroup]="form"
-    (ngSubmit)="submitForm()"
   >
-    <p>ТЕКСТ ЗАДАЧИ:</p>
-    <input type="text" formControlName="title">
-    <div
-      *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
-      class="alert"
-    >
-      <div *ngIf="form.controls['title']">неверно</div>
-    </div>
-    <p>АВТОР ЗАДАЧИ:</p>
-    <input type="text" formControlName="userId">
-    <div
-      *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
-      class="alert"
-    >
-      <div *ngIf="form.controls['userId']">необходиимо заполнить</div>
-    </div>
-    <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
-    <input type="text" formControlName="completed">
-    <div
-      *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)"
-      class="alert"
-    >
-      <div *ngIf="form.controls['completed']">необходиимо заполнить "да" или "нет"</div>
-    </div>
+    <mat-form-field>
+      <mat-label>Текст задачи</mat-label>
+      <input matInput formControlName="title"
+             placeholder="enter text"
+             (focus)="focused = true"
+             (blur)="focused = false">
+      <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Автор задачи</mat-label>
+      <input matInput formControlName="userId"
+           placeholder="enter author"
+             (focus)="focused = true"
+             (blur)="focused = false">
+      <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
+      <input matInput formControlName="completed"
+             (focus)="focused = true"
+             (blur)="focused = false">
+      <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>необходиимо заполнить "да" или "нет"</mat-error>
+    </mat-form-field>
+
     <button
-      class="btn-delete-todo"
+      mat-button
+      type="submit"
+      (click)="submitForm()"
       [disabled]="form.invalid"
     >
       Добавить
+      <mat-icon>post_add</mat-icon>
     </button>
   </form>
 </div>

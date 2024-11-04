@@ -34,7 +34,9 @@ export interface CreateUser {
   name: string,
   email: string,
   website: string,
-  companyName: string
+  company: {
+    name: string
+  }
 }
 
 @Component({
@@ -67,17 +69,17 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formData: CreateUser) {
+  public createUser(user: CreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
-      name: formData.name,
-      email: formData.email,
-      website: formData.website,
+      name: user.name,
+      email: user.email,
+      website: user.website,
       company: {
-        name: formData.companyName,
+        name: user.company.name,
       },
     })
-      console.log("ДАННЫЕ ФОРМЫ", formData);
+      console.log("ДАННЫЕ ФОРМЫ", user);
     console.log(new Date().getTime())
 
   }
