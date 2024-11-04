@@ -4,49 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  private loggedInUser: User | null = null; 
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
-
-  loginAsAdmin(email: string): void {
-    const adminUser: User = {
-      id: Date.now(),
-      email,
-      isAdmin: true,
-      name: '',
-      phone: '',
-      website: '',
-      company: {
-        name: '',
-      }
-    };
-    this.loggedInUser = adminUser;
-    this.createUser(adminUser);
-  }
-
-  loginAsUser(email: string): void {
-    const regularUser: User = {
-      id: Date.now(),
-      email,
-      isAdmin: false,
-      name: '',
-      phone: '',
-      website: '',
-      company: {
-        name: '',
-      }
-    };
-    this.loggedInUser = regularUser;
-    this.createUser(regularUser);
-  }
-
-  isAdmin(): boolean {
-    return this.loggedInUser?.isAdmin ?? false; 
-  }
-
-  logout() {
-    this.loggedInUser = null; 
-  }
 
   setUsers(users: User[]) {
     this.usersSubject$.next(users);

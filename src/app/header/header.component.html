@@ -4,7 +4,7 @@
       <nav class="nav">
         <div class="nav-container">
           <div class="menu-items-container">
-            <p>{{ date | date : "medium" }}</p>
+            <p style="color: #fff">{{ date | date : "medium" }}</p>
             <img class="logo" src="/assets/logo.png" />
             <div class="menu-item white-color" routerLink="/">
               {{ headerItemFirst }}
@@ -30,22 +30,25 @@
               routerLinkActive="active-link"
               class="button"
               yellow
+              *ngIf="userService.isAdmin()"
             >
               Юзеры
             </button>
             <button
+              href="#"
+              class="nav__link"
               routerLink="/admin"
-              routerLinkActive="active-link"
+              (click)="checkIsAdmin()"
               class="button"
               yellow
-            >
-              Админка
-            </button>
+              >Админ
+             </button>
             <button
               routerLink="/todos"
               routerLinkActive="active-link"
               class="button"
               yellow
+              *ngIf="userService.isAdmin()"
             >
               Задачи
             </button>
@@ -58,13 +61,16 @@
               <img src="assets/buy.svg" alt="cart" />
               <span style="margin-left: 10px"> Пусто </span>
             </button>
+            <button *ngIf="!userService.isLogged()" (click)="openLoginDialog()" class="button" yellow>
+             Войти
+           </button>
+           <button *ngIf="userService.isLogged()" (click)="logout()" class="button" yellow>Выйти</button>           
           </div>
         </div>
       </nav>
       <nav class="second-nav">
         <div class="second-nav-container">
           <div class="menu-items-container">
-            <img src="assets/light.png" />
             <span class="menu-item"></span>
             <span class="menu-item" *ngFor="let item of menuItems">{{
               item

@@ -10,9 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { UsersService } from '../services/users-services/users.service';
-import { CreateUserDialogComponent } from '../dialogs/user-dialogs/create-user-dialog/create-user-dialog.component';
+import { UserService } from '../services/users-services/user.service';
 import { MatDialog } from '@angular/material/dialog';
+import { CreateUserDialogComponent } from '../dialogs/user-dialogs/create-user-dialog/create-user-dialog.component';
 
 @Component({
   selector: 'app-create-user-form',
@@ -24,7 +24,6 @@ import { MatDialog } from '@angular/material/dialog';
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    CreateUserDialogComponent,
   ],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss',
@@ -52,7 +51,7 @@ export class CreateUserFormComponent {
 
   constructor(
     private snackBar: MatSnackBar,
-    private userService: UsersService,
+    private userService: UserService,
     public dialog: MatDialog
   ) {}
 
@@ -73,7 +72,7 @@ export class CreateUserFormComponent {
       const user = this.form.value;
       const email = user.email;
 
-      if (email && this.userService.existingUser(email)) {
+      if (localStorage.getItem('email') === email) {
         this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Ок', {
           duration: 3000,
         });

@@ -1,33 +1,31 @@
-import { Component } from '@angular/core';
-import { UserService } from '../services/users-services/user.service';
-import { NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import {
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-login',
   standalone: true,
-  imports: [NgIf],
+  selector: 'app-login-dialog',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  imports: [
+    MatDialogContent,
+    MatDialogActions,
+    MatButtonModule,
+    MatDialogClose,
+  ],
 })
-export class LoginComponent {
-  constructor(private userService: UserService) {}
+export class LoginDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<LoginDialogComponent>);
 
   loginAsAdmin(): void {
-    this.userService.loginAsAdmin();
-    alert('Вы вошли в систему как админ');
+    this.dialogRef.close('admin');
   }
 
   loginAsUser(): void {
-    this.userService.loginAsUser();
-    alert('Вы вошли в систему как пользователь');
-  }
-
-  logout(): void {
-    this.userService.logout();
-    alert('Вы вышли из системы');
-  }
-
-  isAdmin(): boolean {
-    return this.userService.getIsAdmin();
+    this.dialogRef.close('user');
   }
 }

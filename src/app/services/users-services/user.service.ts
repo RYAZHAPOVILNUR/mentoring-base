@@ -1,59 +1,34 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class UserService {
-  private isAdmin: boolean = false;
-  private isLoggedIn: boolean = false;
+  private _userSubject$ = new BehaviorSubject<{ isLogged: boolean; isAdmin: boolean }>({
+    isLogged: false,
+    isAdmin: false,
+  });
 
-  constructor() {
-    this.isAdmin = this.checkAdminStatus();
-    this.isLoggedIn = this.checkLoginStatus();
-  }
-
-  private checkAdminStatus(): boolean {
-    return localStorage.getItem('role') === 'admin';
-  }
-
-  private checkLoginStatus(): boolean {
-    return localStorage.getItem('token') !== null;
-  }
-
-  public getIsLoggedIn(): boolean {
-    return this.isLoggedIn;
-  }
-
-  public getIsAdmin(): boolean {
-    return this.isAdmin;
-  }
-
-  public setIsAdmin(value: boolean): void {
-    this.isAdmin = value;
-  }
-
-  public setIsLoggedIn(value: boolean): void {
-    this.isLoggedIn = value;
+  public get userSubject$() {
+    return this._userSubject$.asObservable();
   }
 
   public loginAsAdmin() {
-    localStorage.setItem('role', 'admin');
-    localStorage.setItem('token', 'admin-token');
-    this.setIsAdmin(true);
-    this.setIsLoggedIn(true);
+    this._userSubject$.next({ isAdmin: true, isLogged: true });
   }
 
   public loginAsUser() {
-    localStorage.setItem('role', 'user');
-    localStorage.setItem('token', 'user-token');
-    this.setIsAdmin(false);
-    this.setIsLoggedIn(true);
+    this._userSubject$.next({ isAdmin: false, isLogged: true });
+  }
+
+  public isAdmin(): boolean {
+    return this._userSubject$.value.isAdmin ?? false;
+  }
+
+  public isLogged(): boolean {
+    return this._userSubject$.value.isLogged ?? false;
   }
 
   public logout() {
-    localStorage.removeItem('role');
-    localStorage.removeItem('token');
-    this.setIsAdmin(false);
-    this.setIsLoggedIn(false);
+    this._userSubject$.next({ isAdmin: false, isLogged: false });
   }
 }

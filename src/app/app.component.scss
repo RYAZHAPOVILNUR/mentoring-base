@@ -1,24 +1,28 @@
 :root {
-  font-family: Inter;
-  --container-width: 1320px;
-  --container-padding-x: 15px;
+ font-family: Inter;
+ --container-width: 1320px;
+ --container-padding-x: 15px;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+ font-family: Inter;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ padding: 0;
 }
 
 .content {
-  max-width: 1920px;
-  margin: 0 auto;
+ max-width: 1920px;
+ margin: 0 auto;
+ padding: 0 var(--container-padding-x);
 }
 
 .container {
-  max-width: calc(var(--container-width) + (var(--container-padding-x)));
-  margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+ max-width: var(--container-width);
+ margin: 0 auto;
+ padding: 0 var(--container-padding-x);
 }
 
 .nav {
@@ -44,16 +48,13 @@ body {
 
 .nav-container {
   display: flex;
-  width: 1320px;
-  height: 128px;
-  display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .menu-items-container {
   font-family: Inter;
   display: flex;
-  justify-content: start;
   align-items: center;
 }
 
@@ -72,7 +73,7 @@ body {
 
 .menu-item {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   column-gap: 24px;
   margin-left: 24px;
   cursor: pointer;
@@ -88,7 +89,6 @@ body {
   display: flex;
   align-items: center;
   margin-left: 40px;
-  justify-content: center;
 }
 
 .cart-button {
@@ -117,8 +117,6 @@ header {
   width: 400px;
   height: 28px;
   background: url("/assets/search.svg");
-  background-repeat: no-repeat;
-  background-position: right;
 }
 
 .second-nav {
@@ -128,8 +126,6 @@ header {
 }
 
 .second-nav-container {
-  width: 1320px;
-  height: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -171,6 +167,7 @@ header {
 }
 
 .advantage-text {
+  font-family: Inter;
   width: 333px;
   height: 66px;
   margin-left: 16px;
@@ -432,25 +429,30 @@ li {
 .buy {
   display: flex;
 }
+
 .quantry-text {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
   color: #3c3c3b;
 }
+
 .how-quantry-container {
   margin-top: 10px;
   display: flex;
 }
+
 .how-quantry {
   font-family: Inter;
   font-weight: 500;
   font-size: 16px;
   color: #3c3c3b;
 }
+
 .quantry-block {
   display: flex;
 }
+
 .button-item {
   border: none;
   cursor: pointer;
@@ -458,6 +460,7 @@ li {
   color: #3c3c3b;
   font-weight: 500;
 }
+
 .button-buy {
   font-family: Inter;
   font-weight: 600;
@@ -531,8 +534,8 @@ li {
 }
 
 footer {
-  width: 1920px;
-  height: 373px;
+  width: 100%;
+  padding: 40px 0;
   background-color: #4b565e;
 }
 

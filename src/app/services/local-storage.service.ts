@@ -5,14 +5,12 @@ import { User } from '../interfaces/user-interfaces';
   providedIn: 'root',
 })
 export class LocalStorageService {
-  private readonly storageKey = 'users';
-
-  getUsers(): User[] {
-    const storedUsers = localStorage.getItem(this.storageKey);
-    return storedUsers ? JSON.parse(storedUsers) : null;
+  getUsersFromLocalStorage(key: string): User[] | null {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
   }
 
-  saveUsers(users: User[]): void {
-    localStorage.setItem(this.storageKey, JSON.stringify(users));
+  saveUsersToLocalStorage<T>(key: string, data: T) {
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }

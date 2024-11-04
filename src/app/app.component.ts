@@ -6,9 +6,8 @@ import { RouterLink } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserService } from './services/users-services/user.service';
-import { LoginComponent } from './login/login.component';
-
-const newPages = [5, 4, 3, 2, 1];
+import { LoginDialogComponent } from './login/login.component';
+import { ScrollButtonsComponent } from "./scroll-buttons/scroll-buttons.component";
 
 @Component({
   selector: 'app-root',
@@ -21,15 +20,16 @@ const newPages = [5, 4, 3, 2, 1];
     HeaderComponent,
     UsersListComponent,
     AdminComponent,
-    LoginComponent,
-  ],
+    LoginDialogComponent,
+    ScrollButtonsComponent,
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   constructor(private userService: UserService) {}
   isShowSadMan = true;
-  newPages = newPages;
+  newPages = [5, 4, 3, 2, 1];
 
   loginAsAdmin() {
     this.userService.loginAsAdmin();

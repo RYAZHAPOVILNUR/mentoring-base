@@ -1,31 +1,25 @@
-import { inject, Injectable } from '@angular/core';
+import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { UserService } from './services/users-services/user.service';
+import { map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
-Injectable({
-  providedIn: 'root',
-});
-export const AdminGuardFn: CanActivateFn = async () => {
+export const AdminGuardFn: CanActivateFn = (_route) => {
   const userService = inject(UserService);
   const router = inject(Router);
 
-  try {
-    const isLoggedIn = userService.getIsLoggedIn();
-    const isAdmin = userService.getIsAdmin();
-
-    if (isLoggedIn && isAdmin) {
-      return true;
-    } else {
-      if (router.url !== '/login') {
-        router.navigate(['/login']);
+  return userService.userSubject$.pipe( 
+    map((user) => {
+      if (user && user.isAdmin) {
+        return true;
+      } else {
+        router.navigate(['']);
+        return false;
       }
-      return false;
-    }
-  } catch (error) {
-    console.error(error);
-    if (router.url !== '/login') {
-      router.navigate(['/login']);
-    }
-    return false;
-  }
+    }),
+    catchError(() => {
+      router.navigate(['']);
+      return of(false);
+    })
+  );
 };

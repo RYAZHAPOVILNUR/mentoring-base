@@ -1,13 +1,22 @@
-<div class="container">
-  <h2 class="title">Только для администраторов</h2>
-  <div class="button-group">
-    <button class="btn btn-primary" (click)="loginAsAdmin()">
-      Войти как администратор
+<div class="dialog" mat-dialog-content>
+  <h1 class="dialog-title">Авторизация</h1>
+  <mat-dialog-actions class="dialog__btns">
+    <button
+      mat-flat-button
+      color="primary"
+      class="auth-button"
+      (click)="loginAsAdmin()"
+    >
+      Войти как админ
     </button>
-    <button class="btn btn-secondary" (click)="loginAsUser()">
+    <button
+      mat-flat-button
+      color="accent"
+      cdkFocusInitial
+      class="auth-button"
+      (click)="loginAsUser()"
+    >
       Войти как юзер
     </button>
-    <button class="btn btn-danger" (click)="logout()">Выход</button>
-  </div>
-  <div *ngIf="isAdmin()" class="admin-message">Вы вошли как администратор</div>
+  </mat-dialog-actions>
 </div>
