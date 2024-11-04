@@ -26,9 +26,4 @@ export const routes: Routes = [
     component: AdminComponent,
     canActivate: [AdminGuardFn],
   },
-
-  {
-    path: 'login',
-    component: AdminCheckingPageComponent,
-  },
 ];

@@ -24,7 +24,7 @@
       routerLink="/users"
       routerLinkActive="active-link"
     >
-      Админка
+      Users
     </button>
 
     <button
@@ -35,16 +35,29 @@
       Задачи
     </button>
 
-    <div>{{ currentDate | date : "medium" }}</div>
-
     <button
       class="button__users"
       routerLink="/admin"
       routerLinkActive="active-link"
     >
-      Login
+      Admin
     </button>
+
+    <div>{{ currentDate | date : "medium" }}</div>
+
+    <!-- <button
+      class="button__users"
+      routerLink="/login"
+      routerLinkActive="active-link"
+    >
+      Login
+    </button> -->
+    
   </div>
+  <button mat-button (click)="openDialog()">Open dialog</button>
+  
+  <button (click)="logout()">Logout</button>
+
 
   <div class="header-right">
     <div class="header-logo-reversed">

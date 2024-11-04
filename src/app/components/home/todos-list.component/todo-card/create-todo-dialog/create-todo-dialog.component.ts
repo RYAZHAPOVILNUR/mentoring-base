@@ -31,11 +31,11 @@ export class CreateTodoDialogComponent {
     completed: this.fb.control('', [Validators.required, completedValidator()]),
   });
 
-  public getCompletedValue(): boolean {
-    const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
-    if (value === 'да') return true;
-    else return false;
-  }
+  // public getCompletedValue(): boolean {
+  //   const value = this.formTodo.get('completed')?.value!.trim().toLowerCase();
+  //   if (value === 'да') return true;
+  //   else return false;
+  // }
 
   createdTodo() {
     return {

@@ -1,8 +1,14 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { User } from '../user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
-import { CreateUserDialogComponent } from '../../create-user-form/create-user-dialog/create-user-dialog.component';
 import { DeleteUserConfirmationComponent } from '../delete-user-confirmation/delete-user-confirmation.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
@@ -20,11 +26,11 @@ import { shadowDirective } from '../../../../directives/shadow.directive';
     MatCardModule,
     customUpperCasePipe,
     redDirective,
-    shadowDirective
+    shadowDirective,
   ],
 })
 export class UserCardComponent {
-  constructor(public confirmationDialog: MatDialog) {}
+  private readonly confirmationDialog = inject(MatDialog);
 
   @Input()
   user!: User;
@@ -38,11 +44,11 @@ export class UserCardComponent {
   @Output()
   editUser = new EventEmitter();
 
-  onDeleteUser(userId: number) {
+  private onDeleteUser(userId: number) {
     this.deleteUser.emit(userId);
   }
 
-  deleteUserDialog(): void {
+  public deleteUserDialog() {
     this.confirmationDialog
       .open(DeleteUserConfirmationComponent, {
         data: `Do you want to delete user?`,
@@ -56,9 +62,9 @@ export class UserCardComponent {
       });
   }
 
-  readonly dialog = inject(MatDialog);
+  private readonly dialog = inject(MatDialog);
 
-  editUserDialog(): void {
+  public editUserDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
@@ -71,11 +77,14 @@ export class UserCardComponent {
     });
   }
 
-  readonly snackBar = inject(MatSnackBar);
+  private readonly snackBar = inject(MatSnackBar);
 
-  openSnackBar(): void {
+  private openSnackBar(): void {
     this.snackBar.open('Пользователь редактирован🐒', 'Закрыть', {
       duration: 2000,
     });
   }
+}
+function deleteUserDialog() {
+  throw new Error('Function not implemented.');
 }

@@ -1,36 +1,59 @@
-import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { AuthUserService } from '../../../services/auth-user.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgIf } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-admin-checking-page',
   standalone: true,
-  imports: [NgIf, MatButtonModule, MatTooltipModule],
+  imports: [
+    NgIf,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatTooltipModule,
+  ],
   templateUrl: './admin-checking-page.component.html',
   styleUrl: './admin-checking-page.component.scss',
 })
 export class AdminCheckingPageComponent {
-  constructor(private authUserService: AuthUserService) {}
+  readonly data = inject(MAT_DIALOG_DATA);
 
-  loginAsAdmin() {
-    this.authUserService.loginAsAdmin();
-    alert('Вы вошли как администратор');
+  @Output() submitClicked = new EventEmitter<any>();
+  constructor(public dialogRef: MatDialogRef<AdminCheckingPageComponent>) {}
+
+  private authUserService = inject(AuthUserService);
+
+  // public loginAsAdmin() {
+  //   this.authUserService.loginAsAdmin();
+  //   alert('Вы вошли как администратор');
+  // }
+
+  public loginAsAdmin(): void {
+    this.submitClicked.emit(this.authUserService.loginAsAdmin());
   }
 
-  loginAsUser() {
-    this.authUserService.loginAsUser();
-    alert('Вы вошли как ползователь');
+  // public loginAsUser() {
+  //   this.authUserService.loginAsUser();
+  //   alert('Вы вошли как ползователь');
+  // }
+
+  public loginAsUser(): void {
+    this.submitClicked.emit(this.authUserService.loginAsUser());
   }
 
-  logout() {
-    this.authUserService.logout();
-    alert('Вы выщли из системы');
-  }
+  // public isAdmin(): boolean {
+  //   return this.authUserService.getIsAdmin();
+  // }
 
-  isAdmin(): boolean {
-    return this.authUserService.getIsAdmin();
+  public isAdmin(): void {
+    this.submitClicked.emit(this.authUserService.getIsAdmin());
   }
 }

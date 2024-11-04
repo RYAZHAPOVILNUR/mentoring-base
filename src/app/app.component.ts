@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { headerComponent } from './components/home/app-header/header.component';
+import { HeaderComponent } from './components/home/app-header/header.component';
 const newPages = [5, 4, 3, 2, 1];
 
 const func2 = (caller: string) => {
@@ -22,7 +22,7 @@ console.log(callRecording);
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, headerComponent],
+  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent],
   templateUrl: 'app.component.html',
   styleUrl: './app.component.scss',
 })

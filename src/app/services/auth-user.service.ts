@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthUserService {
@@ -26,29 +26,29 @@ export class AuthUserService {
     return this.isLoggedIn;
   }
 
-  public setIsAdmin(value: boolean) {
+  public setIsAdmin(value: boolean): void {
     this.isAdmin = value;
   }
 
-  public setIsLoggedIn(value: boolean) {
+  public setIsLoggedIn(value: boolean): void {
     this.isLoggedIn = value;
   }
 
-  public loginAsAdmin() {
+  public loginAsAdmin(): void {
     localStorage.setItem('role', 'admin');
     localStorage.setItem('token', 'admin-token');
     this.setIsAdmin(true);
     this.setIsLoggedIn(true);
   }
 
-  public loginAsUser() {
+  public loginAsUser(): void {
     localStorage.setItem('role', 'user');
     localStorage.setItem('token', 'user-token');
     this.setIsAdmin(false);
     this.setIsLoggedIn(true);
   }
 
-  public logout() {
+  public logout(): void {
     localStorage.removeItem('role');
     localStorage.removeItem('token');
     this.setIsAdmin(false);

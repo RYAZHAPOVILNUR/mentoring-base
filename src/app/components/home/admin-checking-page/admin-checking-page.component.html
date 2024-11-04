@@ -1,8 +1,16 @@
-<div class="header">
-    <button class="button__users" (click)="loginAsAdmin()">Login as admin</button>
-    <button class="button__users" (click)="loginAsUser()">Login as user</button>
-    <button class="button__users" (click)="logout()">Logout</button>
-    <div class="admin__message" *ngIf="isAdmin()">Вы вошли как администратор</div>
-    <div class="admin__message" *ngIf="!isAdmin()">Вы вошли как ползователь</div>
-</div>
+  <mat-card>
+    <mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="loginAsAdmin()">
+        Login as admin
+      </button>
+      <button mat-button [mat-dialog-close]="loginAsUser()">Login as user</button>
+    </mat-dialog-actions>
+  </mat-card>
 
+<!-- <button class="button__users" (click)="logout()">Logout</button> -->
+<!-- <button class="button__users" (click)="loginAsAdmin()">Login as admin</button> -->
+<!-- <button class="button__users" (click)="loginAsUser()">Login as user</button> -->
+<!-- <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+<!-- <div class="admin__message" *ngIf="isAdmin()">Вы вошли как администратор</div>
+    <div class="admin__message" *ngIf="!isAdmin()">Вы вошли как ползователь</div> -->
