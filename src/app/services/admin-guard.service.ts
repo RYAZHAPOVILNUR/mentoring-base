@@ -15,8 +15,8 @@ export const AdminGuardFn: CanActivateFn = async () => {
     if (isLoggedIn && isAdmin) {
       return true;
     } else {
-      if (router.url !== '/login') {
-        router.navigate(['/login']);
+      if (router.url !== '') {
+        router.navigate(['']);
       }
       return false;
     }
@@ -24,8 +24,8 @@ export const AdminGuardFn: CanActivateFn = async () => {
 
   function handleGuardError() {
     console.error('Error occurred while checking user status');
-    if (router.url !== '/login') {
-      router.navigate(['/login']);
+    if (router.url !== '') {
+      router.navigate(['']);
     }
     return false;
   }

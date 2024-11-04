@@ -24,20 +24,18 @@ import {
   styleUrl: './admin-checking-page.component.scss',
 })
 export class AdminCheckingPageComponent {
-  readonly data = inject(MAT_DIALOG_DATA);
+  // readonly data = inject(MAT_DIALOG_DATA);
+  private dialogRef = inject(MatDialogRef<AdminCheckingPageComponent>);
 
-  @Output() submitClicked = new EventEmitter<any>();
-  constructor(public dialogRef: MatDialogRef<AdminCheckingPageComponent>) {}
-
-  private authUserService = inject(AuthUserService);
+  // private authUserService = inject(AuthUserService);
 
   // public loginAsAdmin() {
   //   this.authUserService.loginAsAdmin();
   //   alert('Вы вошли как администратор');
   // }
 
-  public loginAsAdmin(): void {
-    this.submitClicked.emit(this.authUserService.loginAsAdmin());
+  public loginAsAdmin() {
+    this.dialogRef.close('admin');
   }
 
   // public loginAsUser() {
@@ -45,15 +43,11 @@ export class AdminCheckingPageComponent {
   //   alert('Вы вошли как ползователь');
   // }
 
-  public loginAsUser(): void {
-    this.submitClicked.emit(this.authUserService.loginAsUser());
+  public loginAsUser() {
+    this.dialogRef.close('user');
   }
 
   // public isAdmin(): boolean {
   //   return this.authUserService.getIsAdmin();
   // }
-
-  public isAdmin(): void {
-    this.submitClicked.emit(this.authUserService.getIsAdmin());
-  }
 }

@@ -34,38 +34,38 @@ const newCaller = func2('О Компании');
 })
 export class HeaderComponent {
   private authUserService = inject(AuthUserService);
-  constructor(public dialog: MatDialog) {}
-
-  private loginAsAdmin(): void {
+  public dialog = inject(MatDialog);
+  private loginAsAdmin() {
     this.authUserService.loginAsAdmin();
     alert('Вы вошли как администратор');
   }
 
-  private loginAsUser(): void {
+  private loginAsUser() {
     this.authUserService.loginAsUser();
     alert('Вы вошли как ползователь');
   }
 
-  public logout(): void {
+  public logout() {
     this.authUserService.logout();
     alert('Вы выщли из системы');
   }
 
-  private isAdmin(): boolean {
-    return this.authUserService.getIsAdmin();
-  }
+  // private isAdmin(): boolean {
+  //   return this.authUserService.getIsAdmin();
+  // }
 
-  public openDialog(): void {
+  public openDialog() {
     const dialogRef = this.dialog.open(AdminCheckingPageComponent);
-    dialogRef.componentInstance.submitClicked.subscribe(result => {
-    console.log('Got the data!', result);
-  });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'admin') {
+        this.loginAsAdmin();
+      } else if (result === 'user') {
+        this.loginAsUser();
+      }
+      // console.log(`Dialog result: ${result}`);
     });
   }
-  
 
   isShowMan = true;
 
@@ -92,5 +92,4 @@ export class HeaderComponent {
   currentDate: Date = new Date();
 
   phone = '+7 (965) 084-29-29';
-
 }
