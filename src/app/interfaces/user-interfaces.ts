@@ -18,7 +18,6 @@ export interface User {
   company: {
     name: string;
   }
-  isAdmin: boolean;
 }
 export interface CreateUser {
   id: number;
@@ -30,7 +29,7 @@ export interface CreateUser {
    name: string
   }
 }
-export interface UserState {
+export interface UserRole {
  name: string;
  email: string;
  isAdmin: boolean;

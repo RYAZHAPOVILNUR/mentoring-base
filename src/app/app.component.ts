@@ -7,7 +7,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserService } from './services/users-services/user.service';
 import { LoginDialogComponent } from './login/login.component';
-import { ScrollButtonsComponent } from "./scroll-buttons/scroll-buttons.component";
+import { ScrollButtonsComponent } from './scroll-buttons/scroll-buttons.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +22,7 @@ import { ScrollButtonsComponent } from "./scroll-buttons/scroll-buttons.componen
     AdminComponent,
     LoginDialogComponent,
     ScrollButtonsComponent,
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

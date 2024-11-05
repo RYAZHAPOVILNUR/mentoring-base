@@ -66,7 +66,7 @@ export class HeaderComponent {
   }
 
   public checkIsAdmin() {
-    if (!this.userService.isAdmin()) {
+    if (!this.userService.isAdmin) {
       this.openSnackBar('Страница доступна только для админа', 'Ок');
     }
   }

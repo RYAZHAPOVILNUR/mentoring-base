@@ -8,7 +8,6 @@ import { UsersService } from '../services/users-services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-users-list',
@@ -30,32 +29,13 @@ export class UsersListComponent {
   readonly usersService = inject(UsersService);
   readonly dialog = inject(MatDialog);
   readonly snackBar = inject(MatSnackBar);
-  readonly localStorageService = inject(LocalStorageService);  
-
-  constructor() {
-    this.loadUsers();
-  }
-
-  private loadUsers() {
-    const storedUsers = this.localStorageService.getUsersFromLocalStorage('users'); 
-    if (storedUsers) {
-      this.usersService.setUsers(storedUsers);
-    } else {
-      this.usersApiService.getUsers().subscribe((response: any) => {
-        this.usersService.setUsers(response);
-        this.localStorageService.saveUsersToLocalStorage('users', response); // Adjusted to use the method name
-      });
-    }
-  }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
-    this.updateLocalStorage();
   }
 
   editUser(user: User) {
     this.usersService.editUser(user);
-    this.updateLocalStorage();
   }
 
   public createUser(formData: CreateUser) {
@@ -68,15 +48,8 @@ export class UsersListComponent {
       company: {
         name: formData.company.name,
       },
-      isAdmin: false,
     };
 
     this.usersService.createUser(newUser);
-    this.updateLocalStorage();
-  }
-
-  private updateLocalStorage() {
-    const users = this.usersService.getUsers();
-    this.localStorageService.saveUsersToLocalStorage('users', users); 
   }
 }
