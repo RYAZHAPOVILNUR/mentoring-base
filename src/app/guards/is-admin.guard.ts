@@ -7,9 +7,9 @@ export const isAdminGuardFn: CanActivateFn = (route, state) => {
   const userService = inject(UserService);
   const router = inject(Router);
 
-  return userService.userSubject.pipe(
+  return userService.user$.pipe(
     map((user) => {
-      if (user.isAdmin) {
+      if (user?.isAdmin) {
         return true;
       } else {
         router.navigate(['']);

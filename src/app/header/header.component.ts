@@ -1,4 +1,4 @@
-import { DatePipe, NgFor } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { YellowCartDirective } from '../directives/yellow-cart.directive';
@@ -23,7 +23,7 @@ const menuItems = [
   standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  imports: [NgFor, RouterLink, DatePipe, YellowCartDirective],
+  imports: [NgFor, RouterLink, DatePipe, YellowCartDirective, AsyncPipe, NgIf],
 })
 export class HeaderComponent {
   private _snackBar = inject(MatSnackBar);
@@ -47,9 +47,12 @@ export class HeaderComponent {
     this._snackBar.open(message, action, { duration: 3000 });
   }
 
-  public checkIsAdmin() {
-    if (!this.userService.isAdmin()) {
+  public checkAuthorization() {
+    if (this.userService.isAdmin() === false) {
       this.openSnackBar('Страница доступна только для админа', '');
+    }
+    if (this.userService.isAdmin() === undefined) {
+      this.openSnackBar('Вам необходимо войти!', '');
     }
   }
 
@@ -61,10 +64,12 @@ export class HeaderComponent {
   public openLoginDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
-      if (res === 'user') {
-        this.userService.loginAsUser();
-      } else {
-        this.userService.loginAsAdmin();
+      if (res) {
+        if (res === 'user') {
+          this.userService.loginAsUser();
+        } else {
+          this.userService.loginAsAdmin();
+        }
       }
     });
   }

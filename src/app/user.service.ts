@@ -1,26 +1,29 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+interface User {
+  isAdmin: boolean;
+  isLogged: boolean;
+}
+
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  userSubject = new BehaviorSubject<{ isLogged: boolean; isAdmin: boolean }>({
-    isLogged: false,
-    isAdmin: false,
-  });
+  private userSubject$ = new BehaviorSubject<User | null>(null);
+  user$ = this.userSubject$.asObservable();
 
   public loginAsAdmin() {
-    this.userSubject.next({ isAdmin: true, isLogged: true });
+    this.userSubject$.next({ isAdmin: true, isLogged: true });
   }
 
   public loginAsUser() {
-    this.userSubject.next({ isAdmin: false, isLogged: true });
+    this.userSubject$.next({ isAdmin: false, isLogged: true });
   }
 
   public isAdmin() {
-    return this.userSubject.value.isAdmin;
+    return this.userSubject$.value?.isAdmin;
   }
 
   public logout() {
-    this.userSubject.next({ isAdmin: false, isLogged: false });
+    this.userSubject$.next(null);
   }
 }

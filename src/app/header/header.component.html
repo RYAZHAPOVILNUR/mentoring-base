@@ -20,7 +20,7 @@
               href="#"
               class="nav__link"
               routerLink="/admin"
-              (click)="checkIsAdmin()"
+              (click)="checkAuthorization()"
               >Админ</a
             >
           </li>
@@ -36,8 +36,13 @@
         <span class="btn-cart__icon"></span>
         <span class="btn-cart__text">Пусто</span>
       </button>
-      <button (click)="openLoginDialog()">Войти</button>
-      <button (click)="logout()">Выйти</button>
+
+      <button (click)="logout()" *ngIf="userService.user$ | async">
+        Выйти
+      </button>
+      <button (click)="openLoginDialog()" *ngIf="!(userService.user$ | async)">
+        Войти
+      </button>
     </div>
   </div>
   <div class="header__bottom">
