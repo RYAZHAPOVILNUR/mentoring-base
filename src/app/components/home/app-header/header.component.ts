@@ -1,6 +1,6 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { noDashPipe } from '../../../pipes/no-dash.pipe';
 import { yellowDirective } from '../../../directives/yellow.directive';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,35 +35,24 @@ const newCaller = func2('О Компании');
 export class HeaderComponent {
   private authUserService = inject(AuthUserService);
   public dialog = inject(MatDialog);
-  private loginAsAdmin() {
-    this.authUserService.loginAsAdmin();
-    alert('Вы вошли как администратор');
-  }
-
-  private loginAsUser() {
-    this.authUserService.loginAsUser();
-    alert('Вы вошли как ползователь');
-  }
+  private router = inject(Router);
 
   public logout() {
     this.authUserService.logout();
+    this.router.navigate(['']);
     alert('Вы выщли из системы');
   }
 
-  // private isAdmin(): boolean {
-  //   return this.authUserService.getIsAdmin();
-  // }
-
   public openDialog() {
     const dialogRef = this.dialog.open(AdminCheckingPageComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result === 'admin') {
-        this.loginAsAdmin();
-      } else if (result === 'user') {
-        this.loginAsUser();
+        this.authUserService.loginAsAdmin();
+        alert('Вы вошли в систему как Админ');
+      } else {
+        this.authUserService.loginAsUser();
+        alert('Вы вошли в систему как Юзер');
       }
-      // console.log(`Dialog result: ${result}`);
     });
   }
 

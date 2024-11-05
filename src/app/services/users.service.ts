@@ -1,12 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { User } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
 import { UsersApiService } from '../usersApi.service';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  private userApiService = inject(UsersApiService);
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
 
@@ -15,7 +13,7 @@ export class UsersService {
   }
 
   setUsers(users: User[]) {
-    this.usersSubject$.next(users);
+    this.usersSubject$.next(users.slice(0, 10));
   }
 
   createUser(user: User) {
@@ -29,8 +27,6 @@ export class UsersService {
     alert('ЮЗЕР УСПЕШНО СОЗДАН');
     this.usersSubject$.next([...this.usersSubject$.value, user]);
   }
-
-  // this.localStorage.saveUsersToLocalStorage(user);
 
   deleteUser(id: number) {
     this.usersSubject$.next(

@@ -1,0 +1,534 @@
+<section class="safety__helmet-man" *ngIf="isShowMan">
+  <span class="helmet__man-text">Инструмент для вашего бизнеса</span>
+
+  <img
+    src="../../../assets/safety-helmet-man.svg"
+    alt="банннер"
+    style="width: 100%"
+    alt="грустный-мужик"
+  />
+</section>
+
+<button class="safety__helmet-button" (click)="isShowMan = !isShowMan">
+  скрыть-мужика
+</button>
+
+<section class="content-container">
+  <section class="benefits">
+    <div class="benefits__content-wrapper">
+      <div class="benefits__content">
+        <div class="content-icon">
+          <img src="../../../assets/brick-wall.svg" alt="кирпичная-стена" />
+        </div>
+
+        <div class="benefits__text">
+          <span class="benefits__title">Большой ассортимент</span>
+
+          <span class="benefits__label"
+            >строительных материалов всегда в наличии</span
+          >
+        </div>
+      </div>
+
+      <div class="benefits__content">
+        <div class="content-icon">
+          <img src="../../../assets/clock-truck.svg" alt="фура__с-часиком" />
+        </div>
+
+        <div class="benefits__text">
+          <span class="benefits__title">Доставка стройматериалов</span>
+
+          <span class="benefits__label"
+            >в течении четырех часов или в любое удобное время</span
+          >
+        </div>
+      </div>
+
+      <div class="benefits__content">
+        <div class="content-icon">
+          <img src="../../../assets/thumbs-up.svg" alt="палец-вверх" />
+        </div>
+
+        <div class="benefits__text">
+          <div class="benefits__title">
+            <span>Многоуровневая система</span>
+          </div>
+
+          <div class="benefits__label">
+            <span>управления качеством по стандарту ISO 9001</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="item-cards">
+    <div class="item-cards__pagination">
+      <button
+        *ngFor="let item of newPages"
+        class="pagination-button active-button"
+      >
+        {{ item }}
+      </button>
+    </div>
+    <div class="item-cards__grid">
+      <div class="item-cards__grid-left">
+        <span class="left__text">Строительный отделочный инструмент</span>
+
+        <div class="left__action">
+          <span class="text-button" style="margin-right: 10px">{{
+            grid__left_action
+          }}</span>
+
+          <a class="left-actio-link"
+            ><img
+              src="../../../assets/right-dark-dart.svg"
+              alt="иконка кнопки направо"
+          /></a>
+        </div>
+      </div>
+      <div class="item-cards__grid-right">
+        <div class="grid__right-block">
+          <div class="right__block-first">
+            <span class="block-first__content"> Эмали </span>
+
+            <div class="block-first-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link"
+                ><img
+                  src="../../../assets/right-dark-dart.svg"
+                  alt="иконка__кнопки-направо"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid__right-block">
+          <div class="right__block-second">
+            <span class="block-second__words"> Лакокрасочные материалы </span>
+
+            <div class="block-second-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link"
+                ><img
+                  src="../../../assets/right-dark-dart.svg"
+                  alt="иконка__кнопки-направо"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid__right-block">
+          <div class="right__block-third">
+            <span class="block-third__script"> Пены, клеи и герметики </span>
+
+            <div class="block-third-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link"
+                ><img
+                  src="../../../assets/right-dark-dart.svg"
+                  alt="иконка__кнопки-направо"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid__right-block">
+          <div class="right__block-forth">
+            <span class="block-forth__wording"> Розетки и выключатели </span>
+
+            <div class="block-forth-action">
+              <span class="text-button" style="margin-right: 10px">{{
+                grid__left_action
+              }}</span>
+
+              <a class="left-actio-link"
+                ><img
+                  src="../../../assets/right-dark-dart.svg"
+                  alt="иконка__кнопки-направо"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="item-cards__wide">
+    <div class="wide__button">
+      <div class="wide__button-left">
+        <img
+          src="../../../assets/left-gold-dart.svg"
+          alt="кнопка__скролла-налево"
+        />
+      </div>
+
+      <div class="wide__button-right">
+        <img
+          src="../../../assets/right-gold-dart.svg"
+          alt="кнопка__скролла-направо"
+        />
+      </div>
+    </div>
+
+    //*MARK:item-cards-wide
+    <div class="wide__pagination">
+      <span class="wide__pagination-button"> Популярные товары </span>
+
+      <span class="wide__pagination active-button">{{
+        wide__pagination_action
+      }}</span>
+    </div>
+
+    <div class="cards__grid-wrapper">
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart">
+          <div class="sale__heart-one">
+            <button class="red__new">%</button>
+          </div>
+
+          <img
+            src="../../../assets/brand-new-heart.svg"
+            alt="кнопка-сердечко"
+          />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <div class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart">
+          <div class="sale__heart-one">
+            <button class="red__new">%</button>
+          </div>
+
+          <img
+            src="../../../assets/brand-new-heart.svg"
+            alt="кнопка-сердечко"
+          />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <div class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart second-version">
+          <div class="sale__heart-second">
+            <button class="green__new">Новинка</button>
+            <button class="red__new">%</button>
+          </div>
+          <img
+            src="../../../assets/brand-new-heart.svg"
+            alt="кнопка-сердечко"
+            style="align-self: baseline; cursor: pointer"
+          />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <div class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img
+            src="../../../assets/brand-new-heart.svg"
+            alt="кнопка-сердечко"
+          />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <div class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner__driller-man">
+    <div class="driller__man">
+      <div class="driller__man-left">
+        <div class="left__text-column">
+          <span class="ten__k-naming">БОЛЕЕ 10 000 НАИМЕНОВАНИЙ </span>
+          <span style="color: #a1a0a0; font-size: 20px; font-weight: 400"
+            >Инструмент для вашего бизнеса, разнообразных марок</span
+          >
+        </div>
+
+        <span style="color: #f0ba4e; cursor: pointer">Перейти в каталог</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="item-cards__wide">
+    <div class="wide__button">
+      <div class="wide__button-left">
+        <img src="../../../assets/left-gold-dart.svg" alt="" />
+      </div>
+
+      <div class="wide__button-right">
+        <img src="../../../assets/right-gold-dart.svg" alt="" />
+      </div>
+    </div>
+
+    <!-- item-cards__wide__pagination↓ -->
+    <div class="wide__pagination">
+      <span class="wide__pagination-button"> Популярные товары </span>
+
+      <span class="wide__pagination active-button">
+        {{ wide__pagination_action }}
+      </span>
+    </div>
+
+    <div class="cards__grid-wrapper">
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../../../assets/brand-new-heart.svg" alt="кнопка" />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </div>
+
+        <div class="block__amount-cart">
+          <div class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </div>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+
+      <ul class="grid__wrapper-block">
+        <li class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../../../assets/brand-new-heart.svg" alt="кнопка" />
+        </li>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <li class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <div class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </div>
+        </li>
+
+        <div class="block__amount-cart">
+          <li class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </li>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </ul>
+
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../../../assets/brand-new-heart.svg" alt="кнопка" />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <div class="piece__cost-one">Цена за штуку</div>
+
+          <li class="piece__cost-two">
+            <div class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </div>
+            <div class="piece__cost-four">48 руб.</div>
+          </li>
+        </div>
+
+        <div class="block__amount-cart">
+          <li class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </li>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+
+      <div class="grid__wrapper-block">
+        <div class="block__sale-heart third-version">
+          <button class="green__new">Новинка</button>
+          <img src="../../../assets/brand-new-heart.svg" alt="кнопка" />
+        </div>
+
+        <span class="block__title-size"> Круг зачистной 125х6х22 </span>
+
+        <span class="block__origin"> Артикул 00004 </span>
+
+        <div class="block__piece-cost">
+          <span class="piece__cost-one">Цена за штуку</span>
+
+          <li class="piece__cost-two">
+            <span class="piece__cost-three">
+              52 руб.
+              <span class="discount__inline-horizontal"></span>
+            </span>
+            <div class="piece__cost-four">48 руб.</div>
+          </li>
+        </div>
+
+        <div class="block__amount-cart">
+          <li class="amount">
+            <span>Количество</span>
+            <span class="adjustable__number">
+              <span class="add__remove">-</span>
+              <span style="font-size: 20px">1</span>
+              <span class="add__remove">+</span>
+            </span>
+          </li>
+          <button class="cart" style="font-size: 16px">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

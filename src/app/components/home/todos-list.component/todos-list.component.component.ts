@@ -23,12 +23,12 @@ import { TodosApiService } from '../../../todosApi.service';
   templateUrl: './todos-list.component.component.html',
   styleUrl: './todos-list.component.component.scss',
 })
-export class TodosListComponent {
+export class TodosListComponent implements OnInit {
   readonly todosService = inject(TodosService);
   readonly localStorage = inject(LocalStorageService);
   readonly todoApiService = inject(TodosApiService);
 
-  constructor() {
+  ngOnInit(): void {
     this.loadUsers()
   }
 

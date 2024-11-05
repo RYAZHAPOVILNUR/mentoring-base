@@ -1,0 +1,531 @@
+@import "../../../styles.scss";
+
+.safety__helmet-man {
+  position: relative;
+  text-align: center;
+  transition: 1s, 1s, 1s;
+
+  .helmet__man-text {
+    width: 543px;
+    height: 112px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #f0ba4e;
+    position: absolute;
+    top: 40%;
+    left: 17%;
+    text-align: left;
+  }
+}
+
+.safety__helmet-button {
+  transition: 1s, 1s;
+}
+
+.safety__helmet-button:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+// section-.content-container
+.content-container {
+  max-width: 1320px;
+  margin: 0 auto;
+
+  // section-.benefits
+  .benefits {
+    margin-top: 31px;
+    margin-bottom: 31px;
+
+    &__content-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      gap: 16px;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21px;
+      text-align: left;
+    }
+
+    &__label {
+      color: #a1a0a0;
+    }
+
+    .content-icon {
+      transform: translateY(-5px);
+    }
+  }
+
+  // section-.item-cards
+  .item-cards__pagination {
+    display: flex;
+    justify-content: end;
+    transform: translateX(-6px);
+
+    .pagination-button {
+      border: none;
+      background: none;
+      color: #a1a0a0;
+    }
+    .active-button {
+      color: #f0ba4e;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  .item-cards__grid {
+    display: flex;
+    margin-bottom: 50px;
+
+    &-left {
+      height: 428px;
+      max-width: 421px;
+      max-height: 428px;
+      box-shadow: 0px 20px 50px 0px #3c3c3b12;
+      background-image: url("../../../assets/spray.png");
+      background-repeat: no-repeat;
+      overflow: hidden;
+      background-position-y: bottom;
+      background-position-x: left;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .left__text {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .left__action {
+        display: flex;
+        align-self: self-end;
+        align-items: center;
+
+        .text-button {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16px;
+          text-align: left;
+        }
+
+        .left-actio-link {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex-wrap: wrap;
+      width: 91%;
+      height: 428px;
+      gap: 28px;
+      margin-left: 20px;
+
+      .grid__right-block {
+        width: 421px;
+        height: 200px;
+        box-shadow: 0px 20px 50px 0px #3c3c3b12;
+        height: 200px;
+        display: flex;
+        padding: 15px;
+
+        .right__block-first {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 421px;
+          height: 185px;
+          background-image: url("../../../assets/can-spray.png");
+          background-repeat: no-repeat;
+          overflow: hidden;
+
+          .block-first__content {
+            display: flex;
+            align-self: self-end;
+            font-size: 28px;
+            font-weight: 600;
+          }
+
+          .block-first-action {
+            display: flex;
+            align-self: self-end;
+            padding-bottom: 10px;
+            align-items: center;
+          }
+        }
+
+        .right__block-second {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          width: 421px;
+          height: 185px;
+          background-image: url("../../../assets/paint-container.png");
+          background-repeat: no-repeat;
+          overflow: hidden;
+          background-position-x: right;
+          background-position-y: bottom;
+
+          .block-second__words {
+            display: flex;
+            width: 231px;
+            align-self: baseline;
+            font-size: 28px;
+            font-weight: 600;
+          }
+
+          .block-second-action {
+            display: flex;
+            align-self: baseline;
+            padding-bottom: 10px;
+            align-items: center;
+          }
+        }
+
+        .right__block-third {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 421px;
+          height: 183px;
+          background-image: url("../../../assets/silicone.png");
+          background-repeat: no-repeat;
+          overflow: hidden;
+          background-position-x: right;
+
+          .block-third__script {
+            display: flex;
+            width: 218px;
+            font-size: 28px;
+            font-weight: 600;
+          }
+
+          .block-third-action {
+            display: flex;
+            align-self: baseline;
+            padding-bottom: 11px;
+            align-items: center;
+          }
+        }
+
+        .right__block-forth {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 421px;
+          height: 183px;
+          background-image: url("../../../assets/power-strip.png");
+          background-repeat: no-repeat;
+          overflow: hidden;
+          background-position-y: bottom;
+
+          .block-forth__wording {
+            display: flex;
+            width: 336px;
+            font-size: 28px;
+            font-weight: 600;
+          }
+
+          .block-forth-action {
+            display: flex;
+            align-self: self-end;
+            align-items: center;
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // section-.item-cards__wide
+  .wide__pagination {
+    display: flex;
+    justify-content: space-between;
+
+    &-button {
+      width: 282px;
+      height: 34px;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .active-button {
+      width: 218px;
+      height: 22px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 21px;
+      text-align: left;
+      color: #f0ba4e;
+      transform: translateY(6px);
+    }
+  }
+
+  .item-cards__wide {
+    position: relative;
+
+    .wide__button {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 247px;
+
+      .wide__button-left {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        box-shadow: 0px 20px 50px 0px #3c3c3b12;
+      }
+
+      .wide__button-right {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        box-shadow: 0px 20px 50px 0px #3c3c3b12;
+      }
+    }
+
+    .cards__grid-wrapper {
+      display: flex;
+      width: 100%;
+      height: 428px;
+      gap: 28px;
+      margin-bottom: 50px;
+
+      .grid__wrapper-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 309px;
+        height: 429px;
+        padding: 0px;
+        gap: 13px;
+        box-shadow: 0px 20px 50px 0px #12112714;
+        background-image: url("../../../assets/grinding-disc.png");
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position-x: center;
+        background-position-y: 35px;
+        padding: 20px;
+
+        .block__sale-heart {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding-bottom: 125px;
+
+          .red__new {
+            color: #ffff;
+            width: 54px;
+            height: 39px;
+            border: solid 1px #fa5d69;
+            border-radius: 54px;
+            background-color: #fa5d69;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+
+        .block__title-size {
+          display: flex;
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .block__origin {
+          display: flex;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        .block__piece-cost {
+          display: flex;
+          flex-direction: column;
+          width: 256px;
+          height: 73px;
+          justify-content: space-around;
+
+          .piece__cost-one {
+            font-size: 16px;
+            font-weight: 500;
+            color: #a1a0a0;
+          }
+
+          .piece__cost-two {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: baseline;
+            font-weight: 600;
+          }
+
+          .piece__cost-three {
+            font-size: 16px;
+            position: relative;
+            text-align: center;
+
+            .discount__inline-horizontal {
+              border-top: 1px solid #3c3c3b;
+              width: 60px;
+              position: absolute;
+              top: 50%;
+              right: 1%;
+            }
+          }
+
+          .piece__cost-four {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .block__amount-cart {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 261px;
+        height: 53px;
+        font-size: 16px;
+        font-weight: 500;
+        gap: 12px;
+
+        .amount {
+          width: 114px;
+          height: 53px;
+          display: flex;
+          flex-direction: column;
+
+          .adjustable__number {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+
+            .add__remove {
+              font-weight: 400;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .cart {
+          background-color: transparent;
+          border: solid 1px #f0ba4e;
+          border-radius: 54px;
+          width: 135px;
+          height: 47px;
+          gap: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .second-version {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        width: 261px;
+        position: absolute;
+        left: 695px;
+        top: 85px;
+
+        .green__new {
+          color: #ffff;
+          width: 109px;
+          height: 39px;
+          border: solid 1px #08c785;
+          border-radius: 54px;
+          background-color: #08c785;
+          font-weight: 600;
+          font-size: 16px;
+        }
+
+        .sale__heart-second {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+
+      .third-version {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 261px;
+
+        .green__new {
+          color: #ffff;
+          width: 109px;
+          height: 39px;
+          border: solid 1px #08c785;
+          border-radius: 54px;
+          background-color: #08c785;
+          font-weight: 600;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+// section-.banner__driller-man
+.banner__driller-man {
+  margin-bottom: 50px;
+
+  .driller__man {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 28px;
+    background-color: #f6f6f6;
+    background-image: url(../../../assets/driller-man.png);
+    background-repeat: no-repeat;
+    width: 1320px;
+    height: 251px;
+    background-position: 97%;
+
+    .driller__man-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .left__text-column {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .ten__k-naming {
+          font-weight: 500;
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

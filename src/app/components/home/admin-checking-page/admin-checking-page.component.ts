@@ -5,7 +5,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgIf } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import {
-  MAT_DIALOG_DATA,
+  MatDialogActions,
   MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
@@ -19,35 +19,18 @@ import {
     MatButtonModule,
     MatDialogModule,
     MatTooltipModule,
+    MatDialogActions,
   ],
   templateUrl: './admin-checking-page.component.html',
-  styleUrl: './admin-checking-page.component.scss',
 })
 export class AdminCheckingPageComponent {
-  // readonly data = inject(MAT_DIALOG_DATA);
-  private dialogRef = inject(MatDialogRef<AdminCheckingPageComponent>);
+  constructor(public dialogRef: MatDialogRef<AdminCheckingPageComponent>) {}
 
-  // private authUserService = inject(AuthUserService);
-
-  // public loginAsAdmin() {
-  //   this.authUserService.loginAsAdmin();
-  //   alert('Вы вошли как администратор');
-  // }
-
-  public loginAsAdmin() {
+  public loginAsAdmin(): void {
     this.dialogRef.close('admin');
   }
 
-  // public loginAsUser() {
-  //   this.authUserService.loginAsUser();
-  //   alert('Вы вошли как ползователь');
-  // }
-
-  public loginAsUser() {
+  public loginAsUser(): void {
     this.dialogRef.close('user');
   }
-
-  // public isAdmin(): boolean {
-  //   return this.authUserService.getIsAdmin();
-  // }
 }

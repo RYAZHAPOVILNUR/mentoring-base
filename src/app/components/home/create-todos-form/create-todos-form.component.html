@@ -4,7 +4,7 @@
       СОЗДАТЬ ФОРМУ ДЛЯ <br />ДОБАВЛЕНИЯ НОВОЙ ЗАДАЧИ
     </mat-card-title>
   </mat-card-header>
-  
+
   <div class="form">
     <form class="form-wrapper" [formGroup]="formTodo" (ngSubmit)="submitTodo()">
       <mat-form-field>
@@ -17,7 +17,7 @@
       <mat-form-field>
         <mat-label>АВТОР ЗАДАЧИ</mat-label>
         <input formControlName="userId" matInput />
-        <mat-error>АЙДИШКА ВВЕДЕНА  НЕПРАВИЛНО</mat-error>
+        <mat-error>АЙДИШКА ВВЕДЕНА НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>

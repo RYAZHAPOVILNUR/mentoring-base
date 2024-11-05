@@ -7,28 +7,14 @@ import { TodosApiService } from '../todosApi.service';
 @Injectable({ providedIn: 'root' })
 export class TodosService {
   private todosSubject$ = new BehaviorSubject<Todo[]>([]);
-  private todosApiService = inject(TodosApiService);
   todos$ = this.todosSubject$.asObservable();
-
-  // loadTodos() {
-  //   const localStorageTodos = this.localStorage.getTodosFromLocalStorage();
-
-  //   if (localStorageTodos) {
-  //     this.todosSubject$.next(localStorageTodos);
-  //   } else {
-  //     this.todosApiService.getTodos().subscribe((data) => {
-  //       this.localStorage.saveTodosToLocalStorage(data);
-  //       this.todosSubject$.next(data);
-  //     });
-  //   }
-  // }
 
   getTodos(): Todo[] {
     return this.todosSubject$.value;
   }
 
   setTodos(todos: Todo[]) {
-    this.todosSubject$.next(todos);
+    this.todosSubject$.next(todos.slice(0, 10));
   }
 
   createTodo(todo: Todo) {
@@ -39,8 +25,8 @@ export class TodosService {
     if (existingUser !== undefined) {
       alert('ТАКОЙ ЕМЕЙЛ УЖЕ ЗАРЕГИСРИРОВАН');
     }
-      alert('ЮЗЕР УСПЕШНО СОЗДАН');
-      this.todosSubject$.next([...this.todosSubject$.value, todo]);
+    alert('ЮЗЕР УСПЕШНО СОЗДАН');
+    this.todosSubject$.next([...this.todosSubject$.value, todo]);
   }
 
   deleteTodo(id: number) {
@@ -49,7 +35,7 @@ export class TodosService {
         if (id === el.id) {
           return false;
         }
-          return true;
+        return true;
       })
     );
   }
@@ -60,7 +46,7 @@ export class TodosService {
         if (todo.id === EditedTodo.id) {
           return EditedTodo;
         }
-          return todo;
+        return todo;
       })
     );
   }
