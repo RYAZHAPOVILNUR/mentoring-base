@@ -37,13 +37,13 @@ export class UsersListComponent {
   }
 
   private loadUsers() {
-    const storedUsers = this.localStorageService.getUsers(); 
+    const storedUsers = this.localStorageService.getUsersFromLocalStorage('users'); 
     if (storedUsers) {
       this.usersService.setUsers(storedUsers);
     } else {
       this.usersApiService.getUsers().subscribe((response: any) => {
         this.usersService.setUsers(response);
-        this.localStorageService.saveUsers(response); 
+        this.localStorageService.saveUsersToLocalStorage('users', response); // Adjusted to use the method name
       });
     }
   }
@@ -68,7 +68,7 @@ export class UsersListComponent {
       company: {
         name: formData.company.name,
       },
-      isAdmin: false
+      isAdmin: false,
     };
 
     this.usersService.createUser(newUser);
@@ -77,6 +77,6 @@ export class UsersListComponent {
 
   private updateLocalStorage() {
     const users = this.usersService.getUsers();
-    this.localStorageService.saveUsers(users); 
+    this.localStorageService.saveUsersToLocalStorage('users', users); 
   }
 }

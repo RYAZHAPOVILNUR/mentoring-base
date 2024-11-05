@@ -30,3 +30,8 @@ export interface CreateUser {
    name: string
   }
 }
+export interface UserState {
+ name: string;
+ email: string;
+ isAdmin: boolean;
+}

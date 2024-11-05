@@ -1,34 +1,38 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { UserState } from '../../interfaces/user-interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private _userSubject$ = new BehaviorSubject<{ isLogged: boolean; isAdmin: boolean }>({
-    isLogged: false,
-    isAdmin: false,
+  private userSubject$ = new BehaviorSubject<{ user: UserState | null }>({
+    user: null,
   });
 
-  public get userSubject$() {
-    return this._userSubject$.asObservable();
+  public isLogged(): boolean {
+    return this.userSubject$.value.user!== null;
   }
 
-  public loginAsAdmin() {
-    this._userSubject$.next({ isAdmin: true, isLogged: true });
+  public loginAsAdmin(name: string, email: string) {
+    this.userSubject$.next({ user: { name, email, isAdmin: true } });
   }
 
-  public loginAsUser() {
-    this._userSubject$.next({ isAdmin: false, isLogged: true });
+  public loginAsUser(name: string, email: string) {
+    this.userSubject$.next({ user: { name, email, isAdmin: false } });
   }
 
   public isAdmin(): boolean {
-    return this._userSubject$.value.isAdmin ?? false;
+    return this.userSubject$.value.user?.isAdmin?? false;
   }
 
-  public isLogged(): boolean {
-    return this._userSubject$.value.isLogged ?? false;
+  public getUser(): UserState | null {
+    return this.userSubject$.value.user;
   }
 
   public logout() {
-    this._userSubject$.next({ isAdmin: false, isLogged: false });
+   this.userSubject$.next({ user: null });
+  }
+
+  public getUserObservable(): Observable<{ user: UserState | null }> {
+    return this.userSubject$.asObservable();
   }
 }

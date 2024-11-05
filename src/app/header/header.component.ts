@@ -30,10 +30,6 @@ export class HeaderComponent {
   readonly userService = inject(UserService);
   readonly router = inject(Router);
 
-  get isLoggedIn(): boolean {
-    return localStorage.getItem('token') !== null;
-  }
-
   isShowCatalog = true;
   isUppercase = true;
   readonly date = new Date();
@@ -81,13 +77,13 @@ export class HeaderComponent {
   }
 
   public openLoginDialog() {
-    const dialogRef = this.dialog.open(LoginDialogComponent);
-    dialogRef.afterClosed().subscribe((res) => {
-      if (res === 'user') {
-        this.userService.loginAsUser();
-      } else {
-        this.userService.loginAsAdmin();
-      }
-    });
-  }
+   const dialogRef = this.dialog.open(LoginDialogComponent);
+   dialogRef.afterClosed().subscribe((res) => {
+     if (res === 'user') {
+       this.userService.loginAsUser('Юзер', 'user@gmail.com');
+     } else {
+       this.userService.loginAsAdmin('Админ', 'admin@gmail.com');
+     }
+   });
+ }
 }

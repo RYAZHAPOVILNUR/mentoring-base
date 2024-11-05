@@ -1,25 +1,14 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { UserService } from './services/users-services/user.service';
-import { map, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { UserState } from './interfaces/user-interfaces';
 
 export const AdminGuardFn: CanActivateFn = (_route) => {
   const userService = inject(UserService);
   const router = inject(Router);
 
-  return userService.userSubject$.pipe( 
-    map((user) => {
-      if (user && user.isAdmin) {
-        return true;
-      } else {
-        router.navigate(['']);
-        return false;
-      }
-    }),
-    catchError(() => {
-      router.navigate(['']);
-      return of(false);
-    })
+  return userService.getUserObservable().pipe(
+    map((user: { user: UserState | null }) => (user?.user?.isAdmin? true : (router.navigate(['']), false)))
   );
 };
