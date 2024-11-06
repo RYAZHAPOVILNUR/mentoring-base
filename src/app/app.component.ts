@@ -32,11 +32,11 @@ export class AppComponent {
   newPages = [5, 4, 3, 2, 1];
 
   loginAsAdmin() {
-    this.userService.loginAsAdmin('Админ', 'admin@gmail.com');
+    this.userService.loginAsAdmin();
   }
 
   loginAsUser() {
-    this.userService.loginAsUser('Юзер', 'user@gmail.com');
+    this.userService.loginAsUser();
   }
 
   logout() {

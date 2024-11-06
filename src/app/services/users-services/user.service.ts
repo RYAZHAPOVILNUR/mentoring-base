@@ -4,30 +4,28 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private userSubject$ = new BehaviorSubject<{ user: UserRole | null }>({
-   user: null,
-  });
-
-  public user$: Observable<{ user: UserRole | null }> =
-    this.userSubject$.asObservable();
-
-  public get isLogged(): boolean {
-    return this.userSubject$.value.user !== null;
+  private userSubject$ = new BehaviorSubject<UserRole | null>(null);
+  public readonly user$ =this.userSubject$.asObservable();
+    
+  private user: UserRole = {
+   name: 'Ильнур',
+   email: 'ilnur@gmail.com',
+   isAdmin: null,
   }
 
-  public loginAsAdmin(name: string, email: string) {
-    this.userSubject$.next({ user: { name, email, isAdmin: true } });
+  public loginAsAdmin() {
+    this.userSubject$.next({ ...this.user, isAdmin: true });
   }
 
-  public loginAsUser(name: string, email: string) {
-    this.userSubject$.next({ user: { name, email, isAdmin: false } });
+  public loginAsUser() {
+    this.userSubject$.next({ ...this.user, isAdmin: false });
   }
 
-  public get isAdmin(): boolean {
-    return this.userSubject$.value.user?.isAdmin ?? false;
+  public get isAdmin() {
+    return this.userSubject$.value?.isAdmin;
   }
 
   public logout() {
-    this.userSubject$.next({ user: null });
+    this.userSubject$.next(null);
   }
 }

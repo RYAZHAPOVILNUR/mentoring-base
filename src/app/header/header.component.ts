@@ -8,6 +8,7 @@ import { UserService } from '../services/users-services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginDialogComponent } from '../login/login.component';
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,7 @@ import { LoginDialogComponent } from '../login/login.component';
     HeartYellowDirective,
     SvgIconComponent,
     YellowDirective,
+    CommonModule,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -80,10 +82,11 @@ export class HeaderComponent {
    const dialogRef = this.dialog.open(LoginDialogComponent);
    dialogRef.afterClosed().subscribe((res) => {
      if (res === 'user') {
-       this.userService.loginAsUser('Юзер', 'user@gmail.com');
+       this.userService.loginAsUser();
      } else {
-       this.userService.loginAsAdmin('Админ', 'admin@gmail.com');
+       this.userService.loginAsAdmin();
      }
+     this.router.navigate([''])
    });
  }
 }

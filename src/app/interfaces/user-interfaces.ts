@@ -32,5 +32,5 @@ export interface CreateUser {
 export interface UserRole {
  name: string;
  email: string;
- isAdmin: boolean;
+ isAdmin: boolean | null;
 }

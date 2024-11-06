@@ -37,6 +37,7 @@
             <button
               href="#"
               class="nav__link"
+              *ngIf="userService.isAdmin === true"
               routerLink="/admin"
               (click)="checkIsAdmin()"
               class="button"
@@ -61,10 +62,12 @@
               <img src="assets/buy.svg" alt="cart" />
               <span style="margin-left: 10px"> Пусто </span>
             </button>
-            <button *ngIf="!userService.isLogged" (click)="openLoginDialog()" class="button" yellow>
+            <button *ngIf="(userService.user$ | async) === null" (click)="openLoginDialog()" class="button" yellow>
              Войти
            </button>
-           <button *ngIf="userService.isLogged" (click)="logout()" class="button" yellow>Выйти</button>           
+           <button *ngIf="(userService.user$ | async)!== null" (click)="logout()" class="button" yellow>
+             Выйти
+           </button>           
           </div>
         </div>
       </nav>
