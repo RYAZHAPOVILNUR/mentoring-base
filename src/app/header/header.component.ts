@@ -83,8 +83,10 @@ export class HeaderComponent {
    dialogRef.afterClosed().subscribe((res) => {
      if (res === 'user') {
        this.userService.loginAsUser();
-     } else {
+     } else if (res === 'admin') {
        this.userService.loginAsAdmin();
+     } else {
+       return;
      }
      this.router.navigate([''])
    });

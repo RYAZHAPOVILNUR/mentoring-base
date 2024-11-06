@@ -30,6 +30,10 @@ export class UsersListComponent {
   readonly dialog = inject(MatDialog);
   readonly snackBar = inject(MatSnackBar);
 
+  ngOnInit(): void {
+    this.usersService.loadUsersFromLocalStorage();
+  }
+
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
