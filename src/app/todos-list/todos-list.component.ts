@@ -1,18 +1,13 @@
 import {Component, Inject, inject} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {TodosApiService} from "../todos-api.service";
 import {TodoCardComponent} from "./todo-card/todo-card.component";
 import {AsyncPipe, NgForOf} from "@angular/common";
 import {Observable} from "rxjs";
 import {CreateTodoFormComponent} from "../create-todo-form/create-todo-form.component";
+import {Todo} from "../interfaces/todo.interface";
+import {TodosApiService} from "../api-services/todos-api.service";
+import {TodosListService} from "./todos-list.service";
 
-export interface Todo {
-  userId: number
-  id: number
-  title: string
-  body: string
-  completed?: boolean
-}
+
 @Component({
   selector: 'app-todos-list',
   standalone: true,
@@ -26,19 +21,15 @@ export interface Todo {
   styleUrl: './todos-list.component.scss'
 })
 export class TodosListComponent {
-  todoApi = inject(TodosApiService)
+  todoListService = inject(TodosListService)
+  todos$: Observable<Todo[]> = this.todoListService.todos$;
 
-  todos: Observable<Todo[]>;
 
-  constructor() {
-   this.todos =  this.todoApi.todos$
-    // this.todos =  this.todoApi.getTodos()
-    // this.todoApi.todos$.subscribe(todos => this.todos = todos)
-  }
+
     deleteTodo(id: number) {
-      this.todoApi.deleteTodo(id)
+      this.todoListService.deleteTodo(id)
     }
     createTodo(todo: Todo) {
-    this.todoApi.createTodo(todo)
+    this.todoListService.createTodo(todo)
     }
 }

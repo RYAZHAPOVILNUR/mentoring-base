@@ -1,14 +1,16 @@
 import {inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {User} from "./users-list/users-list.component";
+import {User} from "../interfaces/user.interface";
+
 
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class UsersApiService {
   http = inject(HttpClient)
-  getData(): Observable<User[]> {
+
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>("https://jsonplaceholder.typicode.com/users")
   }
 }

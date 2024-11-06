@@ -6,6 +6,7 @@ import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton} from "@angular/material/button";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-create-todo-form',
@@ -18,7 +19,9 @@ import {MatAnchor, MatButton} from "@angular/material/button";
     MatOption,
     MatInput,
     MatButton,
-    MatAnchor
+    MatAnchor,
+    MatIcon,
+    MatCheckbox
   ],
   templateUrl: './create-todo-form.component.html',
   styleUrl: './create-todo-form.component.scss'
@@ -30,7 +33,8 @@ export class CreateTodoFormComponent {
 
   form = new FormGroup({
     body: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
-    title: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(5)]),
+    title: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
+    completed: new FormControl(false, [Validators.required]),
   })
 
   onSubmit() {

@@ -9,7 +9,14 @@
     <mat-label>Описание</mat-label>
     <input matInput  type="text" formControlName="body" placeholder="Текст">
   </mat-form-field>
-  <button mat-raised-button (click)="onSubmit()" [disabled]="form.invalid">+ Добавить задачу</button>
+  <div>
+    <mat-checkbox class="mat-check" formControlName="completed"></mat-checkbox>
+  </div>
+  <button class="form_btn" mat-raised-button (click)="onSubmit()" [disabled]="form.invalid">
+    <mat-icon class="mat-icon" aria-hidden="false">+</mat-icon>
+     <span> Добавить задачу</span>
+  </button>
+
 
 </form>
 
