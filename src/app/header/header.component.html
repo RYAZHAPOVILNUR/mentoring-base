@@ -37,10 +37,8 @@
         <span class="btn-cart__text">Пусто</span>
       </button>
 
-      <button (click)="logout()" *ngIf="userService.user$ | async">
-        Выйти
-      </button>
-      <button (click)="openLoginDialog()" *ngIf="!(userService.user$ | async)">
+      <button (click)="logout()" *ngIf="userService.isUserLogged">Выйти</button>
+      <button (click)="openLoginDialog()" *ngIf="!userService.isUserLogged">
         Войти
       </button>
     </div>

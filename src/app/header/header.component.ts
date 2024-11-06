@@ -71,6 +71,7 @@ export class HeaderComponent {
           this.userService.loginAsAdmin();
         }
       }
+      console.log(this.userService.isUserLogged);
     });
   }
 }
