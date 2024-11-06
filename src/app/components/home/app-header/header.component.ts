@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AdminCheckingPageComponent } from '../admin-checking-page/admin-checking-page.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthUserService } from '../../../services/auth-user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const func2 = (caller: string) => {
   return caller;
@@ -36,11 +37,23 @@ export class HeaderComponent {
   private authUserService = inject(AuthUserService);
   public dialog = inject(MatDialog);
   private router = inject(Router);
+  private snackBar = inject(MatSnackBar);
 
   public logout() {
     this.authUserService.logout();
     this.router.navigate(['']);
     alert('Вы выщли из системы');
+  }
+
+  private openSnackBar(message: string, action: string): void {
+    this.snackBar.open(message, action, { duration: 3000 });
+  }
+
+  public checkIsAdmin() {
+    if (!this.authUserService.isAdmin()) {
+      this.openSnackBar('Страница только для Админа🐒', 'Закрыть');
+    }
+    return false;
   }
 
   public openDialog() {

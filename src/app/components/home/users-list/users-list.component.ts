@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { UsersApiService } from '../../../usersApi.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-users-list',
@@ -27,27 +28,13 @@ import { UsersApiService } from '../../../usersApi.service';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersListComponent {
-  readonly localStorage = inject(LocalStorageService);
+export class UsersListComponent implements OnInit {
   readonly usersService = inject(UsersService);
   readonly userApiService = inject(UsersApiService);
 
-  constructor() {
-    this.loadTodos()
+  ngOnInit(): void {
+    this.usersService.loadUsers()
   }
-
-  loadTodos() {
-    const localStorageUsers = this.localStorage.getUsersFromLocalStorage();
-
-    if (localStorageUsers) {
-      this.usersService.setUsers(localStorageUsers);
-    }
-    this.userApiService.getUsers().subscribe((data) => {
-      this.usersService.setUsers(data)
-      this.localStorage.saveUsersToLocalStorage(data);
-    });
-  }
-
 
   public createUser(formData: UserForm) {
     this.usersService.createUser({

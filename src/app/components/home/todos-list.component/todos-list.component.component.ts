@@ -25,24 +25,23 @@ import { TodosApiService } from '../../../todosApi.service';
 })
 export class TodosListComponent implements OnInit {
   readonly todosService = inject(TodosService);
-  readonly localStorage = inject(LocalStorageService);
   readonly todoApiService = inject(TodosApiService);
 
   ngOnInit(): void {
-    this.loadUsers()
+    this.todosService.loadTodos()
   }
 
-  loadUsers() {
-    const localStorageTodos = this.localStorage.getTodosFromLocalStorage();
+  // loadUsers() {
+  //   const localStorageTodos = this.localStorage.getTodosFromLocalStorage();
 
-    if (localStorageTodos) {
-      this.todosService.setTodos(localStorageTodos);
-    }
-    this.todoApiService.getTodos().subscribe((data) => {
-      this.todosService.setTodos(data)
-      this.localStorage.saveTodosToLocalStorage(data);
-    });
-  }
+  //   if (localStorageTodos) {
+  //     this.todosService.setTodos(localStorageTodos);
+  //   }
+  //   this.todoApiService.getTodos().subscribe((data) => {
+  //     this.todosService.setTodos(data)
+  //     this.localStorage.saveTodosToLocalStorage(data);
+  //   });
+  // }
 
   public createTodo(formData: Todo) {
     this.todosService.createTodo({

@@ -1,39 +1,21 @@
 import { inject, Injectable } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthUserService } from './auth-user.service';
+import { map } from 'rxjs';
 
 Injectable({ providedIn: 'root' });
 
-export const AdminGuardFn: CanActivateFn = async () => {
+export const AdminGuardFn: CanActivateFn = () => {
   const authUserService = inject(AuthUserService);
   const router = inject(Router);
 
-  const isLoggedIn = authUserService.getIsLoggedIn();
-  const isAdmin = authUserService.getIsAdmin();
-
-  function handleGuardLogic() {
-    if (isLoggedIn && isAdmin) {
-      return true;
-    } else {
-      if (router.url !== '') {
-        router.navigate(['']);
+  return authUserService.userSubject.pipe(
+    map((user) => {
+      if (user.isAdmin) {
+        return true
       }
-      return false;
-    }
-  }
-
-  function handleGuardError() {
-    console.error('Error occurred while checking user status');
-    if (router.url !== '') {
-      router.navigate(['']);
-    }
-    return false;
-  }
-
-  // In case userService methods can throw errors, you should catch them
-  try {
-    return handleGuardLogic();
-  } catch (error) {
-    return handleGuardError();
-  }
+      router.navigate([''])
+      return false
+    })
+  )
 };

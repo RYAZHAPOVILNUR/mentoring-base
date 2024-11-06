@@ -7,36 +7,21 @@ import { TodosService } from './todos.service';
   providedIn: 'root',
 })
 export class LocalStorageService {
-  private readonly stoarageKeyUsers = 'users';
-  private readonly stoarageKeyTodos = 'todos';
-  private usersService = inject(UsersService);
-  private todosService = inject(TodosService);
-
-  public getUsersFromLocalStorage(): User[] {
-    const data = localStorage.getItem(this.stoarageKeyUsers);
+  public getUsersFromLocalStorage(key: string): User[] | null {
+    const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : null;
   }
 
-  public saveUsersToLocalStorage(users: User[]): void {
-    localStorage.setItem(this.stoarageKeyUsers, JSON.stringify(users));
+  public saveUsersToLocalStorage<T>(key: string, data: T) {
+    localStorage.setItem(key, JSON.stringify(data));
   }
 
-  public updateLocalStorageUsers(): void {
-    const users = this.usersService.getUsers();
-    this.saveUsersToLocalStorage(users);
-  }
-
-  public getTodosFromLocalStorage(): Todo[] {
-    const data = localStorage.getItem(this.stoarageKeyTodos);
+  public getTodosFromLocalStorage(key: string): Todo[] | null {
+    const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : null;
   }
 
-  public saveTodosToLocalStorage(todos: Todo[]) {
-    localStorage.setItem(this.stoarageKeyTodos, JSON.stringify(todos));
-  }
-
-  public updateLocalStorageTodos(): void {
-    const todos = this.todosService.getTodos();
-    this.saveTodosToLocalStorage(todos);
+  public saveTodosToLocalStorage<T>(key: string , data: T) {
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }
