@@ -2,10 +2,12 @@
   <div class="header-left">
       <div class="header-logo"><img src="/assets/Logo EGE.svg" alt="Логотип сайта"></div>
       <nav class="header-nav">
-        <a href="main.html" class="header-nav-item">Главная</a>
-        <a href="about.html" class="header-nav-item">О компании</a>
-        <a href="catalog.html" class="header-nav-item">Каталог</a>
+        <a href="main.html" class="header-nav-item">{{headeritem1}}</a>
+        <a href="about.html" class="header-nav-item">{{aboutCompany}}</a>
+        <a href="catalog.html" class="header-nav-item" *ngIf="IsShowCatalog">{{headeritem3}}</a>
       </nav>
+      <button (click)="IsShowCatalog=!IsShowCatalog">Скрыть/Показать каталог</button>
+      <button (click)="changeMenuText()">Capslock</button>
   </div>
   <div class="header-right">
       <img class="header-logo2" src="/assets/Phone.svg" alt="Логотип Телефона">
@@ -21,11 +23,7 @@
   <div class="header-left2">
     <img class="Katalog" src="/assets/Menu cataloga.svg" alt="Выбор каталога">
     <nav class="header-nav2">
-      <button class="header-nav-button" onclick="location.href='catalog.html'">Каталог</button>
-      <button class="header-nav-button" onclick="location.href='building-materials.html'">Стройматериалы</button>
-      <button class="header-nav-button" onclick="location.href='tools.html'">Инструменты</button>
-      <button class="header-nav-button" onclick="location.href='electrics.html'">Электрика</button>
-      <button class="header-nav-button" onclick="location.href='interior-clothing.html'">Интерьер и одежда</button>
+      <button class="header-nav-button" onclick="location.href='catalog.html'" *ngFor="let item of menuItems">{{item}}</button>
     </nav>
   </div>
   <div class="header-right2">
@@ -39,7 +37,8 @@
   </div>
 </div>
 <div>
-  <img src="/assets/background of the page.png" alt="Фон страницы" style="width: 100%;">
+  <button (click)="isShowImg=!isShowImg">Скрыть/Показать мужика</button>
+  <img *ngIf="isShowImg" src="/assets/background of the page.png" alt="Фон страницы" style="width: 100%;">
 </div>
 
 <div class="content-navigation">
@@ -64,11 +63,7 @@
   </div>
   <div class="item-cards">
     <div class="item-cards_pagination">
-      <button class="item-cards_pagination-button active-button">1</button>
-      <button class="item-cards_pagination-button">2</button>
-      <button class="item-cards_pagination-button">3</button>
-      <button class="item-cards_pagination-button">4</button>
-      <button class="item-cards_pagination-button">5</button>
+      <button class="item-cards_pagination-button active-button" *ngFor="let item of newPages">{{item}}</button>
     </div>
     <div class="item-cards_grid">
       <div class="item-cards_grid-left">
