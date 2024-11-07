@@ -12,6 +12,7 @@ import {
   MatCardTitle
 } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
+import {FixPhoneNumberPipe} from "../../pipes/fix-phone-number.pipe";
 
 @Component({
   selector: 'app-user-card',
@@ -23,7 +24,8 @@ import {MatButton} from "@angular/material/button";
     MatCardTitle,
     MatCardActions,
     MatCardSubtitle,
-    MatButton
+    MatButton,
+    FixPhoneNumberPipe
   ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'
@@ -55,7 +57,7 @@ export class UserCardComponent {
       data: {
         name: this.user.name,
         email: this.user.email,
-        company: {name:  this.user.company.name},
+        company: {name:  this.user.company!.name},
         id: this.user.id
       },
     });

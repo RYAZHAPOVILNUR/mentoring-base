@@ -46,7 +46,7 @@ export class UsersListComponent {
     this.openSnackBar("Пользователь удален", 'Закрыть')
   }
 
-  updateUser(user:any) {
+  updateUser(user: Pick<User, "id" | "name" | "email" | "company">) {
     this.usersListService.updateUser(user)
     this.openSnackBar("Пользователь обновлен", 'Закрыть')
   }

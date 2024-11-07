@@ -16,8 +16,7 @@ export class UsersListService {
       this.usersSubject.next(users);
     })
   }
-  createUser(user: any) {
-    console.log(user, 'user')
+  createUser(user: Pick<User, "id" | "name" | "email" | "company">) {
     this.usersSubject.next([...this.usersSubject.value, user]);
   }
   deleteUser(id: number){

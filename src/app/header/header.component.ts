@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NgForOf} from "@angular/common";
+import {DatePipe, NgForOf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
 
@@ -14,7 +14,8 @@ const punctName = returnString("О компании");
   styleUrls: ["./header.component.scss"],
   imports: [
     NgForOf,
-    RouterLink
+    RouterLink,
+    DatePipe
   ],
   standalone: true
 })
@@ -29,6 +30,7 @@ export class HeaderComponent {
     'Инструменты',  "Электрика", 'Интерьер и одежда',
   ]
 
+  today = new Date();
   changeMenuText() {
     this.menuItems = this.menuItems.map(menuItem => this.isUpperCase ? menuItem.toUpperCase() : menuItem.toLowerCase());
     this.isUpperCase = !this.isUpperCase;
