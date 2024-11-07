@@ -16,7 +16,7 @@ const aboutCompanyResult = aboutCompany('О компании');
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, DatePipe, DashesRemoverPipe, YellowCart, UsersService], 
+  imports: [NgFor, NgIf, RouterLink, DatePipe, DashesRemoverPipe, YellowCart], 
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

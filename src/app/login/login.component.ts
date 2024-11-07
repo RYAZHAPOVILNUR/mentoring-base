@@ -1,11 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  imports:[MatButtonModule,MatDialogModule],
+  standalone: true,
 })
+
 export class LoginComponent {
   readonly dialogRef = inject(MatDialogRef<LoginComponent>);
 

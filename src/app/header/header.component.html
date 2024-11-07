@@ -12,9 +12,9 @@
   </div>
   <div class="header-right">
     <!-- <a routerLink="/users" class="Admin">Админка</a> -->
-    <a routerLink="/admin" class="Admin"               *ngIf="userService.isAdmin === true"
+    <a routerLink="/admin" class="Admin"               *ngIf="usersService.isAdmin === true"
     routerLink="/admin"
-    (click)="checkIsAdmin()"
+  
     class="button"
     yellow
     >Только для администратора</a>
