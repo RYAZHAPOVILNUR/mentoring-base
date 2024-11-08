@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {DatePipe, NgForOf} from "@angular/common";
 import {RouterLink} from "@angular/router";
+import {RedDirective} from "../directives/red.directive";
 
 
 function returnString(arg: string): string {
@@ -15,7 +16,8 @@ const punctName = returnString("О компании");
   imports: [
     NgForOf,
     RouterLink,
-    DatePipe
+    DatePipe,
+    RedDirective
   ],
   standalone: true
 })

@@ -13,6 +13,9 @@ import {
 } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {FixPhoneNumberPipe} from "../../pipes/fix-phone-number.pipe";
+import {RedDirective} from "../../directives/red.directive";
+import {ShadowDirective} from "../../directives/shadow.directive";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-user-card',
@@ -25,7 +28,10 @@ import {FixPhoneNumberPipe} from "../../pipes/fix-phone-number.pipe";
     MatCardActions,
     MatCardSubtitle,
     MatButton,
-    FixPhoneNumberPipe
+    FixPhoneNumberPipe,
+    RedDirective,
+    ShadowDirective,
+    MatTooltip
   ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'

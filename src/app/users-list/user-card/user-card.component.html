@@ -1,5 +1,5 @@
 <div class="user_content_wrapper">
-<mat-card class="user" appearance="outlined">
+<mat-card class="user" appearance="outlined" appShadow>
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{user.name}}</mat-card-title>
@@ -11,7 +11,9 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="onDeleteUser(user.id)">Удалить</button>
-    <button mat-button (click)="openDialog()">Редактировать</button>
+    <button mat-button (click)="openDialog()"
+            matTooltip="Редактировать данные пользователя">
+    Редактировать</button>
   </mat-card-actions>
 </mat-card>
 </div>
