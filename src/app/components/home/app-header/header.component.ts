@@ -1,4 +1,4 @@
-import { DatePipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { noDashPipe } from '../../../pipes/no-dash.pipe';
@@ -31,42 +31,36 @@ const newCaller = func2('О Компании');
     MatButtonModule,
     MatTooltipModule,
     RouterLinkActive,
+    AsyncPipe
   ],
 })
 export class HeaderComponent {
-  private authUserService = inject(AuthUserService);
+  public authUserService = inject(AuthUserService);
   public dialog = inject(MatDialog);
-  private router = inject(Router);
-  private snackBar = inject(MatSnackBar);
+  // private router = inject(Router);
+  // private snackBar = inject(MatSnackBar);
 
-  public logout() {
-    this.authUserService.logout();
-    this.router.navigate(['']);
-    alert('Вы выщли из системы');
-  }
-
-  private openSnackBar(message: string, action: string): void {
-    this.snackBar.open(message, action, { duration: 3000 });
-  }
-
-  public checkIsAdmin() {
-    if (!this.authUserService.isAdmin()) {
-      this.openSnackBar('Страница только для Админа🐒', 'Закрыть');
-    }
-    return false;
-  }
+  // private openSnackBar(message: string, action: string): void {
+  //   this.snackBar.open(message, action, { duration: 3000 });
+  // }
 
   public openDialog() {
-    const dialogRef = this.dialog.open(AdminCheckingPageComponent);
-    dialogRef.afterClosed().subscribe((result) => {
+    const dialogRef = this.dialog.open(AdminCheckingPageComponent, {
+      width: '400px',
+      height: '200px',
+    });
+    dialogRef.afterClosed().subscribe((result: string) => {
+      console.log(result)
       if (result === 'admin') {
         this.authUserService.loginAsAdmin();
-        alert('Вы вошли в систему как Админ');
-      } else {
+      } else if (result === 'user') {
         this.authUserService.loginAsUser();
-        alert('Вы вошли в систему как Юзер');
-      }
+      } else return undefined;
     });
+  }
+
+  public logout() {
+    this.authUserService.logout()
   }
 
   isShowMan = true;
@@ -95,3 +89,14 @@ export class HeaderComponent {
 
   phone = '+7 (965) 084-29-29';
 }
+
+// public checkIsAdmin() {
+//   if (!this.authUserService.isAdmin()) {
+//     this.openSnackBar('Страница только для Админа🐒', 'Закрыть');
+//   }
+//   return false;
+// }
+
+// alert('Вы вошли в систему как Юзер');
+
+// alert('Вы вошли в систему как Админ');

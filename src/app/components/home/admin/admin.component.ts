@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [RouterLink, AdminCheckingPageComponent],
+  imports: [],
   templateUrl: './admin.component.html',
 })
 export class AdminComponent {}

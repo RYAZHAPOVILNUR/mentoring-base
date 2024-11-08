@@ -1,7 +1,5 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Todo, User } from '../components/home/users-list/user-interface';
-import { UsersService } from './users.service';
-import { TodosService } from './todos.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +10,8 @@ export class LocalStorageService {
     return data ? JSON.parse(data) : null;
   }
 
-  public saveUsersToLocalStorage<T>(key: string, data: T) {
-    localStorage.setItem(key, JSON.stringify(data));
+  public saveUsersToLocalStorage(users: User[]) {
+    localStorage.setItem('users', JSON.stringify(users));
   }
 
   public getTodosFromLocalStorage(key: string): Todo[] | null {
@@ -21,7 +19,7 @@ export class LocalStorageService {
     return data ? JSON.parse(data) : null;
   }
 
-  public saveTodosToLocalStorage<T>(key: string , data: T) {
-    localStorage.setItem(key, JSON.stringify(data));
+  public saveTodosToLocalStorage(todos: Todo[]) {
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 }

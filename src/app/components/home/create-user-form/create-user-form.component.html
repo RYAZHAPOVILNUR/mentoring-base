@@ -10,29 +10,25 @@
     <form class="form-wrapper" [formGroup]="form" (ngSubmit)="submitForm()">
       <mat-form-field>
         <mat-label>ИМЯ</mat-label>
-        <input  formControlName="name"
-                matInput>
+        <input formControlName="name" matInput />
         <mat-error>ИМЯ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>ПОЧТА</mat-label>
-        <input  formControlName="email"
-                matInput>
+        <input formControlName="email" matInput />
         <mat-error>ПОЧТА ВВЕДЕНА НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>САЙТ</mat-label>
-        <input formControlName="website"
-               matInput>
+        <input formControlName="website" matInput />
         <mat-error>САЙТ ВВЕДЕН НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>ИМЯ КОМПАНИИ</mat-label>
-        <input formControlName="companyName"
-               matInput>
+        <input formControlName="companyName" matInput />
         <mat-error>ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛНО</mat-error>
       </mat-form-field>
 

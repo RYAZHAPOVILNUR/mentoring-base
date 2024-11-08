@@ -36,7 +36,7 @@
     </button>
 
     <button
-      (click)="checkIsAdmin()"
+      
       class="button__users"
       routerLink="/admin"
       routerLinkActive="active-link"
@@ -44,12 +44,10 @@
       Admin
     </button>
 
+    <!-- (click)="checkIsAdmin()" -->
+
     <div>{{ currentDate | date : "medium" }}</div>
   </div>
-  
-  <button mat-button (click)="openDialog()">Login</button>
-
-  <button mat-button (click)="logout()">Logout</button>
 
   <div class="header-right">
     <div class="header-logo-reversed">
@@ -75,6 +73,11 @@
             />Пусто
           </button>
         </div>
+      </div>
+      <div>
+        <button mat-button (click)="openDialog()" *ngIf="(authUserService.users$ | async) === null" >Login</button>
+
+        <button mat-button (click)="logout()" *ngIf="(authUserService.users$ | async) !== null">Logout</button>
       </div>
     </nav>
   </div>

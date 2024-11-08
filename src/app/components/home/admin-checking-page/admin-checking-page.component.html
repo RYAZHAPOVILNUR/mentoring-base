@@ -1,6 +1,7 @@
-<mat-card>
-  <mat-dialog-actions>
-    <button mat-button (click)="loginAsAdmin()">Login as admin</button>
-    <button mat-button (click)="loginAsUser()">Login as user</button>
-  </mat-dialog-actions>
-</mat-card>
+<div class="container">
+  <h1 class="title">Login as</h1>
+  <div class="buttons-wrapper">
+    <button class="button" mat-stroked-button mat-dialog-close="admin">Admin</button>
+    <button class="button" mat-stroked-button mat-dialog-close="user">User</button>
+  </div>
+</div>

@@ -3,14 +3,10 @@ import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/cor
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { User, UserForm } from './user-interface';
+import { User} from './user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatCardModule } from '@angular/material/card';
-import { LocalStorageService } from '../../../services/local-storage.service';
-import { UsersApiService } from '../../../usersApi.service';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-users-list',
@@ -22,37 +18,33 @@ import { BehaviorSubject } from 'rxjs';
     UserCardComponent,
     AsyncPipe,
     CreateUserFormComponent,
-    CreateUserDialogComponent,
-    MatCardModule,
-    KeyValuePipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent implements OnInit {
   readonly usersService = inject(UsersService);
-  readonly userApiService = inject(UsersApiService);
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.usersService.loadUsers()
   }
 
-  public createUser(formData: UserForm) {
+  public createUser(formData: User) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.companyName,
+        name: formData.company.name
       },
     });
   }
 
-  public editUser(user: UserForm) {
+  public editUser(user: User) {
     this.usersService.editUser({
       ...user,
       company: {
-        name: user.companyName,
+        name: user.company.name,
       },
     });
   }
@@ -68,7 +60,7 @@ export class UsersListComponent implements OnInit {
       data: { user: this.usersService.users$ },
     });
 
-    dialogRef.afterClosed().subscribe((createResult: UserForm) => {
+    dialogRef.afterClosed().subscribe((createResult: User) => {
       if (createResult) {
         this.createUser(createResult);
         this.openSnackBarTwo();

@@ -12,7 +12,6 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     MatCardModule,
     ReactiveFormsModule,
-    NgIf,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,

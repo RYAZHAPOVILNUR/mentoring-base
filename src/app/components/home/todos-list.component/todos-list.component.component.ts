@@ -12,7 +12,6 @@ import { Todo } from '../users-list/user-interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
-import { LocalStorageService } from '../../../services/local-storage.service';
 import { TodosApiService } from '../../../todosApi.service';
 
 @Component({
@@ -30,18 +29,6 @@ export class TodosListComponent implements OnInit {
   ngOnInit(): void {
     this.todosService.loadTodos()
   }
-
-  // loadUsers() {
-  //   const localStorageTodos = this.localStorage.getTodosFromLocalStorage();
-
-  //   if (localStorageTodos) {
-  //     this.todosService.setTodos(localStorageTodos);
-  //   }
-  //   this.todoApiService.getTodos().subscribe((data) => {
-  //     this.todosService.setTodos(data)
-  //     this.localStorage.saveTodosToLocalStorage(data);
-  //   });
-  // }
 
   public createTodo(formData: Todo) {
     this.todosService.createTodo({

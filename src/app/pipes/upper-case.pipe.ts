@@ -9,3 +9,5 @@ export class customUpperCasePipe implements PipeTransform {
     return text.toUpperCase();
   }
 }
+
+// return text.toUpperCase();

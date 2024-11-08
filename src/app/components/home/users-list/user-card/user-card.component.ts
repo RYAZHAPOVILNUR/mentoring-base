@@ -3,7 +3,6 @@ import {
   EventEmitter,
   inject,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 import { User } from '../user-interface';
@@ -85,6 +84,9 @@ export class UserCardComponent {
     });
   }
 }
-function deleteUserDialog() {
-  throw new Error('Function not implemented.');
-}
+
+
+
+// function deleteUserDialog() {
+//   throw new Error('Function not implemented.');
+// }

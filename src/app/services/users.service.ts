@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, OnInit } from '@angular/core';
 import { User } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
 import { UsersApiService } from '../usersApi.service';
@@ -12,24 +12,37 @@ export class UsersService {
   readonly userApiService = inject(UsersApiService);
 
   loadUsers() {
-    const localStorageUsers =
-      this.localStorage.getUsersFromLocalStorage('users');
-
-    if (localStorageUsers) {
-      this.usersSubject$.next(localStorageUsers);
+    const localStorageUsers = this.localStorage.getUsersFromLocalStorage('users');
+  
+    if (localStorageUsers && localStorageUsers.length > 0) {
+      this.usersSubject$.next(localStorageUsers.slice(0, 10));
+    } else {
+      this.userApiService.getUsers().subscribe((data) => {
+        this.usersSubject$.next(data);
+        this.localStorage.saveUsersToLocalStorage(data);
+      });
     }
-    this.userApiService.getUsers().subscribe((data) => {
-      this.usersSubject$.next(data.slice(0, 10));
-      this.localStorage.saveUsersToLocalStorage('users', data);
-    });
   }
+  
+  // loadUsers() {
+  //   const localStorageUsers =
+  //     this.localStorage.getUsersFromLocalStorage('users');
 
-  public updateLocalStorageUsers() {
-    const users = this.usersSubject$.value;
-    this.localStorage.saveUsersToLocalStorage('users', users);
-  }
+  //   if (localStorageUsers) {
+  //     this.usersSubject$.next(localStorageUsers.slice(0, 10));
+  //   }
+  // }
 
-  createUser(user: User) {
+  // public loadTodos() {
+  //   const localStorageTodos =
+  //     this.localStorage.getTodosFromLocalStorage('todos');
+
+  //   if (localStorageTodos) {
+  //     this.todosSubject$.next(localStorageTodos.slice(0, 10));
+  //   }
+  // }
+
+  public createUser(user: User) {
     const existingUser = this.usersSubject$.value.find(
       (currentElement) => currentElement.email === user.email
     );
@@ -38,43 +51,70 @@ export class UsersService {
     }
     alert('ЮЗЕР УСПЕШНО СОЗДАН');
     const newUser = [...this.usersSubject$.value, user];
-    this.localStorage.saveUsersToLocalStorage('user', newUser);
+    this.localStorage.saveUsersToLocalStorage(newUser);
     this.usersSubject$.next(newUser);
   }
 
-  editUser(editedUser: User) {
+  public editUser(editedUser: User) {
     const editUser = this.usersSubject$.value.map((user) => {
       if (user.id === editedUser.id) {
         return editedUser;
       }
       return user;
     });
-    this.localStorage.saveUsersToLocalStorage('users', editUser);
     this.usersSubject$.next(editUser);
+    this.localStorage.saveUsersToLocalStorage(this.usersSubject$.value);
   }
 
-  deleteUser(id: number) {
-    const findUser = this.usersSubject$.value.find((user) => user.id === id);
-    const deleteUser = this.usersSubject$.value.filter(
-      (user) => user.id === id
+  public deleteUser(id: number) {
+    const updatedUsers = this.usersSubject$.value.filter(
+      (user) => user.id !== id
     );
-
-    if (
-      findUser &&
-      confirm(
-        'Вы точно хотите удалить карточку пользователя ' + findUser.name + '?'
-      )
-    ) {
-      this.localStorage.saveUsersToLocalStorage('users', deleteUser);
-      this.usersSubject$.next(deleteUser);
-    }
+    this.usersSubject$.next(updatedUsers);
+    this.localStorage.saveUsersToLocalStorage(this.usersSubject$.value);
   }
+
+  // public updateLocalStorageUsers() {
+  //   const users = this.usersSubject$.value;
+  //   this.localStorage.saveUsersToLocalStorage(users);
+  // }
 }
 
-  // getUsers(): User[] {
-  //   return this.usersSubject$.value;
-  // }
+// loadUsers() {
+//   const localStorageUsers =
+//     this.localStorage.getUsersFromLocalStorage('users');
 
-  // setUsers(users: User[]) {
-  //   this.usersSubject$.next(users.slice(0, 10));
-  // }
+//   if (localStorageUsers) {
+//     this.usersSubject$.next(localStorageUsers);
+//   }
+//   this.userApiService.getUsers().subscribe((data) => {
+//     this.localStorage.saveUsersToLocalStorage('users', data);
+//     this.usersSubject$.next(data.slice(0, 10));
+//   });
+// }
+
+// deleteUser(id: number) {
+//   const updatedUsers = this.usersSubject$.value.filter((user) => user.id !== id);
+//   this.usersSubject$.next(updatedUsers);
+//   this.localStorage.saveUsersToLocalStorage('users', updatedUsers); // Save the updated list to local storage
+// }
+
+// getUsers(): User[] {
+//   return this.usersSubject$.value;
+// }
+
+// setUsers(users: User[]) {
+//   this.usersSubject$.next(users.slice(0, 10));
+// }
+
+// deleteUser(id: number) {
+//   this.usersSubject$.next(
+//     this.usersSubject$.value.filter((el) => {
+//       if (id === el.id) {
+//         return false;
+//       }
+//         return true;
+//     })
+//   );
+//   this.localStorage.saveUsersToLocalStorage('users', id);
+// }

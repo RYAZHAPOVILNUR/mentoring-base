@@ -11,25 +11,16 @@ export class TodosService {
   readonly localStorage = inject(LocalStorageService);
   readonly todoApiService = inject(TodosApiService);
 
-  loadTodos() {
+  public loadTodos() {
     const localStorageTodos =
       this.localStorage.getTodosFromLocalStorage('todos');
 
     if (localStorageTodos) {
-      this.todosSubject$.next(localStorageTodos);
+      this.todosSubject$.next(localStorageTodos.slice(0, 10));
     }
-    this.todoApiService.getTodos().subscribe((data) => {
-      this.todosSubject$.next(data.slice(0, 10));
-      this.localStorage.saveTodosToLocalStorage('todos', data);
-    });
   }
 
-  public updateLocalStorageTodos() {
-    const todos = this.todosSubject$.value;
-    this.localStorage.saveTodosToLocalStorage('todos', todos);
-  }
-
-  createTodo(todo: Todo) {
+  public createTodo(todo: Todo) {
     const existingTodo = this.todosSubject$.value.find(
       (currentElement) => currentElement.title === todo.title
     );
@@ -39,28 +30,33 @@ export class TodosService {
     }
     alert('ЗАДАЧА УСПЕШНО СОЗДАНА');
     const newTodo = [...this.todosSubject$.value, todo];
-    this.localStorage.saveTodosToLocalStorage('todo', newTodo);
+    this.todosSubject$.next(newTodo);
+    this.localStorage.saveTodosToLocalStorage(this.todosSubject$.value);
   }
 
-  editTodo(editedTodo: Todo) {
+  public editTodo(editedTodo: Todo) {
     const editTodo = this.todosSubject$.value.map((todo) => {
       if (todo.id === editedTodo.id) {
         return editedTodo;
       }
       return todo;
     });
-    this.localStorage.saveTodosToLocalStorage('todos', editTodo);
     this.todosSubject$.next(editTodo);
+    this.localStorage.saveTodosToLocalStorage(this.todosSubject$.value);
   }
 
-  deleteTodo(id: number) {
-    const findTodo = this.todosSubject$.value.find((todo) => todo.id === id);
-    const deleteTodo = this.todosSubject$.value.filter((todo) => todo.id === id);
+  public deleteTodo(id: number) {
+    const updatedTodos = this.todosSubject$.value.filter(
+      (todo) => todo.id !== id
+    );
+    this.todosSubject$.next(updatedTodos);
+    this.localStorage.saveTodosToLocalStorage(this.todosSubject$.value);
+  }
 
-    if (findTodo && confirm('Вы точно хотите удалить карточку задачи ' + findTodo.title + '?')) {
-      this.localStorage.saveTodosToLocalStorage('todos', deleteTodo);
-      this.todosSubject$.next(deleteTodo);
-    }
+  public updateLocalStorageTodos() {
+    const todos = this.todosSubject$.value;
+    this.todosSubject$.next(todos);
+    this.localStorage.saveTodosToLocalStorage(this.todosSubject$.value);
   }
 }
 
