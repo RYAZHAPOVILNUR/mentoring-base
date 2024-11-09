@@ -1,9 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Output } from '@angular/core';
 import { AsyncPipe, NgForOf, NgIf } from "@angular/common";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
-import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+import { MatIcon } from "@angular/material/icon";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
+import { MatMiniFabButton } from "@angular/material/button";
+import { EditUserDialogComponent } from "./edit-user-dialog/edit-user-dialog.component";
+import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 export interface User {
   id: number;
@@ -47,15 +52,23 @@ export interface CreateUser {
     NgIf,
     UserCardComponent,
     AsyncPipe,
-    CreateUserFormComponent,
+    MatIcon,
+    MatDialogModule,
+    MatMiniFabButton,
+    CreateUserDialogComponent
   ],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersListComponent {
+  user!: User
+
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService)
+  readonly dialog = inject(MatDialog);
+  private _snackBar = inject(MatSnackBar);
+
   constructor() {
     this.usersApiService.getUsers().subscribe(
       (response: any) => {
@@ -65,8 +78,12 @@ export class UsersListComponent {
     this.usersService.users$.subscribe((users) => console.log(users))
   }
 
-  deleteUser(id:number) {
+  public deleteUser(id:number) {
     this.usersService.deleteUser(id);
+  }
+
+  public editUser(user: CreateUser) {
+    this.usersService.editUsers(user)
   }
 
   public createUser(user: CreateUser) {
@@ -82,5 +99,21 @@ export class UsersListComponent {
       console.log("ДАННЫЕ ФОРМЫ", user);
     console.log(new Date().getTime())
 
+  }
+
+  public openCreateDialog(): void {
+    const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+      autoFocus: false
+    });
+
+    dialogRef.afterClosed().subscribe(createResult => {
+      if (createResult) {
+        this.createUser(createResult)
+      } else {
+        this._snackBar.open('Пользователь не создан', 'ok', {
+          duration: 4000
+        })
+      }
+    });
   }
 }

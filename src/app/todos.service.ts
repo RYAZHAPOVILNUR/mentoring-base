@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 import { Todo } from "./todos-list/todos-list.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
   private todosSubject$ = new BehaviorSubject<Todo[]>([]);
-  todos$ = this.todosSubject$.asObservable()
+  todos$ = this.todosSubject$.asObservable();
+  private _snackBar = inject(MatSnackBar);
 
   setTodos(todos: Todo[]) {
-    this.todosSubject$.next(todos)
+    this.todosSubject$.next(todos.slice(0,10))
   }
 
   editTodo(editedTodo: Todo) {
@@ -33,10 +35,16 @@ export class TodosService {
     )
 
     if(todoIsExisting !== undefined) {
-      alert('Такая задача уже существует')
+      // alert('Такая задача уже существует')
+      this._snackBar.open('Такая задача уже существует', 'ok', {
+        duration: 4000
+      })
     } else {
       this.todosSubject$.next([...this.todosSubject$.value, todo])
-      alert('Задача успешно добавленна')
+      // alert('Задача успешно добавленна')
+      this._snackBar.open('Задача успешно добавленна', 'ok', {
+        duration: 4000
+      })
     }
 
   }

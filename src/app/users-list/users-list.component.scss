@@ -2,6 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 25px;
 }
 
+.btn-add {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  scale: 1.5;
+  background: #5252c9;
+}
 

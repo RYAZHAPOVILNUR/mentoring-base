@@ -3,6 +3,9 @@
   <p>{{user.email}}</p>
   <p>{{user.website}}</p>
   <p>{{user.company.name}}</p>
-  <button class="btn-delete" (click)="onDeleteUser(user.id)">Delete</button>
+  <div class="btn-container">
+    <button class="btn" (click)="openDeleteDialog()">Delete</button>
+    <button class="btn" (click)="openEditDialog()">Edit</button>
+  </div>
 </div>
 

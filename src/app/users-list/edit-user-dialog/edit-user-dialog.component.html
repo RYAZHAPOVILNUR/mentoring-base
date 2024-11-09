@@ -1,6 +1,6 @@
-<div class="create-user-container">
+<div class="edit-user-container">
   <form
-    class="form-create-user"
+    class="form-edit-user"
     [formGroup]="form"
   >
     <mat-form-field>
@@ -44,14 +44,14 @@
     </mat-form-field>
 
     <button
+      class="btn-add"
       mat-button
       [disabled]="form.invalid"
       type="submit"
       (click)="submitForm()"
     >
-      ADD USER
-      <mat-icon>person_add</mat-icon>
+      EDIT USER
+      <mat-icon>edit_note</mat-icon>
     </button>
   </form>
 </div>
-

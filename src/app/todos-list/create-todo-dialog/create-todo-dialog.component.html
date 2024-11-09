@@ -1,0 +1,46 @@
+<div class="todo-form-container">
+  <form
+    class="todo-form"
+    [formGroup]="form"
+  >
+    <mat-form-field>
+      <mat-label>Текст задачи</mat-label>
+      <input matInput formControlName="title"
+             placeholder="enter text"
+             (focus)="focused = true"
+             (blur)="focused = false">
+      <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Автор задачи</mat-label>
+      <input matInput formControlName="userId"
+             placeholder="enter author"
+             (focus)="focused = true"
+             (blur)="focused = false">
+      <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
+      <input matInput formControlName="completed"
+             (focus)="focused = true"
+             (blur)="focused = false">
+      <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>необходиимо заполнить "да" или "нет"</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-button
+      class="btn-add"
+      type="submit"
+      [mat-dialog-close]="submitForm()"
+      [disabled]="form.invalid"
+    >
+      Добавить
+      <mat-icon>post_add</mat-icon>
+    </button>
+  </form>
+</div>

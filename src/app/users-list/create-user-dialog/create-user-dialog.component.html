@@ -1,0 +1,58 @@
+<form
+  class="form-create-user"
+  [formGroup]="form"
+>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name"
+           placeholder="enter name"
+           (mouseenter)="hovered = true"
+           (mouseleave)="hovered = false">
+    <mat-icon matSuffix [ngStyle]="{ visibility: hovered ? 'hidden' : 'visible' }">edit</mat-icon>
+    <mat-error>Name is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email"
+           placeholder="enter email"
+           (mouseenter)="hovered = true"
+           (mouseleave)="hovered = false">
+    <mat-icon matIconSuffix [ngStyle]="{ visibility: hovered ? 'hidden' : 'visible' }">edit</mat-icon>
+    <mat-error>Email is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Website</mat-label>
+    <input matInput formControlName="website"
+           placeholder="enter website"
+           (mouseenter)="hovered = true"
+           (mouseleave)="hovered = false">
+    <mat-icon matIconSuffix [ngStyle]="{ visibility: hovered ? 'hidden' : 'visible' }">edit</mat-icon>
+    <mat-error>Website is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <mat-form-field formGroupName="company">
+    <mat-label>Company</mat-label>
+    <input matInput formControlName="name"
+           placeholder="enter company"
+           (mouseenter)="hovered = true"
+           (mouseleave)="hovered = false">
+    <mat-icon matIconSuffix [ngStyle]="{ visibility: hovered ? 'hidden' : 'visible' }">edit</mat-icon>
+    <mat-error>Company is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <button
+    class="btn-add"
+    mat-button
+    [disabled]="form.invalid"
+    type="submit"
+    (click)="submitForm()"
+  >
+    ADD USER
+    <mat-icon>person_add</mat-icon>
+  </button>
+</form>
+
+
+

@@ -5,10 +5,11 @@
   >
     <mat-form-field>
       <mat-label>Текст задачи</mat-label>
-      <input matInput formControlName="title"
-             placeholder="enter text"
-             (focus)="focused = true"
-             (blur)="focused = false">
+      <textarea matInput formControlName="title"
+                placeholder="enter text"
+                (focus)="focused = true"
+                (blur)="focused = false"
+      ></textarea>
       <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
       <mat-error>Некорректное значение</mat-error>
     </mat-form-field>
@@ -16,7 +17,7 @@
     <mat-form-field>
       <mat-label>Автор задачи</mat-label>
       <input matInput formControlName="userId"
-           placeholder="enter author"
+             placeholder="enter author"
              (focus)="focused = true"
              (blur)="focused = false">
       <mat-icon matSuffix [ngStyle]="{ visibility: focused ? 'hidden' : 'visible' }">edit</mat-icon>
@@ -34,12 +35,14 @@
 
     <button
       mat-button
+      class="btn-add"
       type="submit"
       (click)="submitForm()"
       [disabled]="form.invalid"
     >
-      Добавить
+      Редактировать
       <mat-icon>post_add</mat-icon>
     </button>
   </form>
 </div>
+

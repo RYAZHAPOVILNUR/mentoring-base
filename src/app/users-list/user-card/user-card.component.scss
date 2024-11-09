@@ -7,7 +7,12 @@
   text-align: center;
 }
 
-.btn-delete {
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
   border-radius: 20px;
   background: black;
   color: white;

@@ -1,14 +1,26 @@
 .card {
+  display: flex;
+  flex-direction: column;
   background: #eee5b7;
   padding-top: 5px;
-  width: 200px;
+  width: 250px;
   height: 300px;
   border: 1px solid black;
   margin: 5px;
   text-align: center;
 }
-.btn-delete {
-  background: black;
+
+.btn-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.btn {
+  border-radius: 10px;
+  background: #5252c9;
   color: white;
   cursor: pointer;
 }

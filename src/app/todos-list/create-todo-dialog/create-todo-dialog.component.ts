@@ -1,17 +1,19 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { MatButtonModule } from "@angular/material/button";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {  MatIconModule } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
 import {
   AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidationErrors, ValidatorFn,
+  ValidationErrors,
+  ValidatorFn,
   Validators
 } from "@angular/forms";
 import { NgStyle } from "@angular/common";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
+import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -24,7 +26,7 @@ export function completedValidator(): ValidatorFn {
 }
 
 @Component({
-  selector: 'app-create-todo-form',
+  selector: 'app-create-todo-dialog',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -32,16 +34,19 @@ export function completedValidator(): ValidatorFn {
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
     NgStyle
   ],
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss'
+  templateUrl: './create-todo-dialog.component.html',
+  styleUrl: './create-todo-dialog.component.scss'
 })
-export class CreateTodoFormComponent {
+export class CreateTodoDialogComponent {
   @Output()
   createTodo = new EventEmitter();
 
-  focused = false;
+  readonly dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>)
+
+  public focused = false;
 
   public form = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -59,7 +64,9 @@ export class CreateTodoFormComponent {
   }
 
   public submitForm() {
-    this.createTodo.emit({...this.form.value, completed: this.getCompletedValue()})
-    this.form.reset()
+    return {
+      ...this.form.value,
+      completed: this.getCompletedValue()
+    }
   }
 }

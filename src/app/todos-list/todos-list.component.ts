@@ -3,7 +3,11 @@ import { TodosApiService } from "../todos-api.service";
 import { AsyncPipe, NgForOf } from "@angular/common";
 import { TodoCardComponent } from "./todo-card/todo-card.component";
 import { TodosService } from "../todos.service";
-import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.component";
+import { MatIcon } from "@angular/material/icon";
+import { MatMiniFabButton } from "@angular/material/button";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
+import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 export interface  Todo {
   userId: number,
@@ -25,7 +29,10 @@ export interface CreateTodo {
     NgForOf,
     TodoCardComponent,
     AsyncPipe,
-    CreateTodoFormComponent
+    CreateTodoDialogComponent,
+    MatIcon,
+    MatMiniFabButton,
+    MatDialogModule
   ],
   templateUrl: './todos-list.component.html',
   styleUrl: './todos-list.component.scss',
@@ -34,6 +41,8 @@ export interface CreateTodo {
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService)
   readonly todosService = inject(TodosService)
+  readonly dialog = inject(MatDialog);
+  private _snackBar = inject(MatSnackBar);
 
   constructor() {
     this.todosApiService.getTodos().subscribe(
@@ -47,6 +56,9 @@ export class TodosListComponent {
   deleteTodo(id:number) {
     this.todosService.deleteTodo(id);
   }
+  public editTodo(todo: Todo) {
+    this.todosService.editTodo(todo)
+  }
 
   public createTodo(formTodo: CreateTodo) {
     this.todosService.createTodo({
@@ -56,4 +68,16 @@ export class TodosListComponent {
       completed: formTodo.completed
     })
   }
+  openCreateTodoDialog() {
+    const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
+      autoFocus: false
+    });
+
+    dialogRef.afterClosed().subscribe((createResult: Todo) => {
+      if (createResult) {
+        this.createTodo(createResult)
+      }
+    })
+  };
 }
+
