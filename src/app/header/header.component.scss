@@ -64,7 +64,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  height: 48px;
+  height: 80px;
   align-items: center;
   color: #3C3C3B;
   font-family: Inter;
@@ -91,6 +91,7 @@
 
 .header-bottom-nav {
   display: flex;
+  align-items: center;
 }
 
 .header-bottom-nav-item {
@@ -99,11 +100,17 @@
   text-decoration: none;
 }
 
+.datePipe {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
 .search-input {
   background: transparent;
   border: none;
   border-bottom: 1px solid black;
-  width: 400px;
+  width: 300px;
   height: 30px;
   background: url("/assets/lupa.svg") no-repeat right;
   margin-right: 24px;

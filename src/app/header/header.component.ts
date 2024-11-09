@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgForOf, NgIf} from "@angular/common";
+import { DatePipe, NgForOf, NgIf } from "@angular/common";
 import { RouterLink, RouterOutlet } from "@angular/router";
 
 const aboutCompanyFn = (text: string) => text;
@@ -20,7 +20,8 @@ const upperCaseMenuItems = menuItems.map(
     NgForOf,
     NgIf,
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    DatePipe
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -36,6 +37,8 @@ export class HeaderComponent {
   readonly headerNavItem3 = 'Каталог';
 
   readonly aboutCompany = aboutCompany;
+
+  today: Date = new Date()
 
   menuItems = upperCaseMenuItems;
 

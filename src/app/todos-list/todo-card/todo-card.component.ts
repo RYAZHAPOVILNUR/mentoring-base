@@ -4,11 +4,12 @@ import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { DeleteTodoDialogComponent } from "../delete-todo-dialog/delete-todo-dialog.component";
 import { EditTodoDialogComponent } from "../edit-todo-dialog/edit-todo-dialog.component";
+import { LineTrimPipe } from "../../pipes/line-trim.pipe";
 
 @Component({
   selector: 'app-todo-card',
   standalone: true,
-  imports: [MatDialogModule],
+  imports: [MatDialogModule, LineTrimPipe],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss'
 })
