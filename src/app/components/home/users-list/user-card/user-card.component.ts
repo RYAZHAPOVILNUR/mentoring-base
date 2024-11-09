@@ -1,11 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Input,
-  Output,
-} from '@angular/core';
-import { User } from '../user-interface';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { User, CreateUser } from '../user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { DeleteUserConfirmationComponent } from '../delete-user-confirmation/delete-user-confirmation.component';
@@ -14,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { customUpperCasePipe } from '../../../../pipes/upper-case.pipe';
 import { redDirective } from '../../../../directives/red.directive';
 import { shadowDirective } from '../../../../directives/shadow.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-user-card',
@@ -25,6 +20,7 @@ import { shadowDirective } from '../../../../directives/shadow.directive';
     MatCardModule,
     customUpperCasePipe,
     redDirective,
+    NgIf,
     shadowDirective,
   ],
 })
@@ -68,7 +64,7 @@ export class UserCardComponent {
       data: { user: this.user },
     });
 
-    dialogRef.afterClosed().subscribe((editResult: User) => {
+    dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) {
         this.editUser.emit(editResult);
         this.openSnackBar();
@@ -84,8 +80,6 @@ export class UserCardComponent {
     });
   }
 }
-
-
 
 // function deleteUserDialog() {
 //   throw new Error('Function not implemented.');

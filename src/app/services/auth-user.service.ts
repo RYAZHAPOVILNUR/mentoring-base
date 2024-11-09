@@ -3,33 +3,33 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 export interface User {
-name: string;
-email: string
-isAdmin: boolean | null;
+  name: string;
+  email: string;
+  isAdmin: boolean | null;
 }
 
 @Injectable({ providedIn: 'root' })
 export class AuthUserService {
   private readonly userSubject$ = new BehaviorSubject<User | null>(null);
   public readonly users$ = this.userSubject$.asObservable();
-  private readonly router = inject(Router)
+  private readonly router = inject(Router);
 
   private user: User = {
     name: 'Ilnur',
     email: 'Ryazhapov',
     isAdmin: null,
-  }
+  };
 
   public loginAsAdmin(): void {
     // localStorage.setItem('role', 'admin');
     // localStorage.setItem('token', 'admin-token');
-    this.userSubject$.next({...this.user, isAdmin: true});
+    this.userSubject$.next({ ...this.user, isAdmin: true });
   }
 
   public loginAsUser(): void {
     // localStorage.setItem('role', 'user');
     // localStorage.setItem('token', 'user-token');
-    this.userSubject$.next({...this.user, isAdmin: false});
+    this.userSubject$.next({ ...this.user, isAdmin: false });
   }
 
   get isAdmin() {
@@ -40,13 +40,13 @@ export class AuthUserService {
     // localStorage.removeItem('role');
     // localStorage.removeItem('token');
     this.userSubject$.next(null);
-    this.router.navigate([''])
+    this.router.navigate(['']);
     console.log(this.userSubject$.value);
   }
 }
 
-  // isLogged: false,
-  // isAdmin: false,
+// isLogged: false,
+// isAdmin: false,
 
 // ngOnInit(): void {
 //   this.isAdmin = this.checkAdminStatus();

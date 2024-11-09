@@ -1,5 +1,5 @@
 import { inject, Injectable, OnInit } from '@angular/core';
-import { User } from '../components/home/users-list/user-interface';
+import { User, CreateUser } from '../components/home/users-list/user-interface';
 import { BehaviorSubject } from 'rxjs';
 import { UsersApiService } from '../usersApi.service';
 import { LocalStorageService } from './local-storage.service';
@@ -12,37 +12,24 @@ export class UsersService {
   readonly userApiService = inject(UsersApiService);
 
   loadUsers() {
-    const localStorageUsers = this.localStorage.getUsersFromLocalStorage('users');
-  
-    if (localStorageUsers && localStorageUsers.length > 0) {
+    const localStorageUsers =
+      this.localStorage.getUsersFromLocalStorage('users');
+    if (localStorageUsers) {
       this.usersSubject$.next(localStorageUsers.slice(0, 10));
     } else {
       this.userApiService.getUsers().subscribe((data) => {
-        this.usersSubject$.next(data);
-        this.localStorage.saveUsersToLocalStorage(data);
+        const users = data.slice(0, 10);
+        this.setUsers(users);
       });
     }
   }
-  
-  // loadUsers() {
-  //   const localStorageUsers =
-  //     this.localStorage.getUsersFromLocalStorage('users');
 
-  //   if (localStorageUsers) {
-  //     this.usersSubject$.next(localStorageUsers.slice(0, 10));
-  //   }
-  // }
+  setUsers(users: User[]) {
+    this.usersSubject$.next(users);
+    this.localStorage.saveUsersToLocalStorage('users', users);
+  }
 
-  // public loadTodos() {
-  //   const localStorageTodos =
-  //     this.localStorage.getTodosFromLocalStorage('todos');
-
-  //   if (localStorageTodos) {
-  //     this.todosSubject$.next(localStorageTodos.slice(0, 10));
-  //   }
-  // }
-
-  public createUser(user: User) {
+  public createUser(user: CreateUser) {
     const existingUser = this.usersSubject$.value.find(
       (currentElement) => currentElement.email === user.email
     );
@@ -51,34 +38,66 @@ export class UsersService {
     }
     alert('ЮЗЕР УСПЕШНО СОЗДАН');
     const newUser = [...this.usersSubject$.value, user];
-    this.localStorage.saveUsersToLocalStorage(newUser);
     this.usersSubject$.next(newUser);
+    this.localStorage.saveUsersToLocalStorage(
+      'users',
+      this.usersSubject$.value
+    );
   }
 
   public editUser(editedUser: User) {
-    const editUser = this.usersSubject$.value.map((user) => {
-      if (user.id === editedUser.id) {
-        return editedUser;
-      }
-      return user;
-    });
-    this.usersSubject$.next(editUser);
-    this.localStorage.saveUsersToLocalStorage(this.usersSubject$.value);
+    this.usersSubject$.next(
+      this.usersSubject$.value.map((user) =>
+        user.id === editedUser.id ? editedUser : user
+      )
+    );
+    this.localStorage.saveUsersToLocalStorage(
+      'users',
+      this.usersSubject$.value
+    );
+    this.updateLocalStorageUsers();
   }
 
   public deleteUser(id: number) {
-    const updatedUsers = this.usersSubject$.value.filter(
-      (user) => user.id !== id
+    this.usersSubject$.next(
+      this.usersSubject$.value.filter((user) => user.id !== id)
     );
-    this.usersSubject$.next(updatedUsers);
-    this.localStorage.saveUsersToLocalStorage(this.usersSubject$.value);
+
+    this.localStorage.saveUsersToLocalStorage(
+      'users',
+      this.usersSubject$.value
+    );
+    this.updateLocalStorageUsers();
   }
 
-  // public updateLocalStorageUsers() {
-  //   const users = this.usersSubject$.value;
-  //   this.localStorage.saveUsersToLocalStorage(users);
-  // }
+  public updateLocalStorageUsers() {
+    const users = this.usersSubject$.value;
+    this.localStorage.saveUsersToLocalStorage('users', users);
+  }
 }
+
+// loadUsers() {
+//   const localStorageUsers =
+//     this.localStorage.getUsersFromLocalStorage('users');
+
+//   localStorageUsers
+//     ? this.usersSubject$.next(localStorageUsers.slice(0, 10))
+//     : this.userApiService.getUsers().subscribe((data) => this.setUsers(data));
+// }
+
+// public loadTodos() {
+//   const localStorageTodos =
+//     this.localStorage.getTodosFromLocalStorage('todos');
+
+//   if (localStorageTodos) {
+//     this.todosSubject$.next(localStorageTodos.slice(0, 10));
+//   }
+// }
+
+// public updateLocalStorageUsers() {
+//   const users = this.usersSubject$.value;
+//   this.localStorage.saveUsersToLocalStorage(users);
+// }
 
 // loadUsers() {
 //   const localStorageUsers =

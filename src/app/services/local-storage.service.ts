@@ -10,8 +10,8 @@ export class LocalStorageService {
     return data ? JSON.parse(data) : null;
   }
 
-  public saveUsersToLocalStorage(users: User[]) {
-    localStorage.setItem('users', JSON.stringify(users));
+  public saveUsersToLocalStorage(key: string, users: User[]) {
+    localStorage.setItem(key, JSON.stringify(users));
   }
 
   public getTodosFromLocalStorage(key: string): Todo[] | null {
@@ -19,7 +19,7 @@ export class LocalStorageService {
     return data ? JSON.parse(data) : null;
   }
 
-  public saveTodosToLocalStorage(todos: Todo[]) {
-    localStorage.setItem('todos', JSON.stringify(todos));
+  public saveTodosToLocalStorage(key: string, todos: Todo[]) {
+    localStorage.setItem(key, JSON.stringify(todos));
   }
 }

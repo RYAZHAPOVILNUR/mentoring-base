@@ -40,10 +40,12 @@ export class EditUserDialogComponent {
       Validators.required,
       Validators.minLength(3),
     ]),
-    companyName: this.fb.control(this.data.user.company.name, [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
+    company: this.fb.group({
+      name: this.fb.control(this.data.user.company.name, [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+    }),
   });
 
   get userWithUpdatedFields() {

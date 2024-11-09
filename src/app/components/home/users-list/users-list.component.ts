@@ -1,9 +1,14 @@
 import { AsyncPipe, KeyValuePipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { User} from './user-interface';
+import { User, CreateUser } from './user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,19 +18,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [
-    NgFor,
-    UserCardComponent,
-    AsyncPipe,
-    CreateUserFormComponent,
-  ],
+  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent implements OnInit {
   readonly usersService = inject(UsersService);
 
   ngOnInit() {
-    this.usersService.loadUsers()
+    this.usersService.loadUsers();
   }
 
   public createUser(formData: User) {
@@ -35,7 +35,7 @@ export class UsersListComponent implements OnInit {
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.company.name
+        name: formData.company.name,
       },
     });
   }

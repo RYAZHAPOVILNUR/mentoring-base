@@ -22,6 +22,17 @@ export interface User {
   };
 }
 
+export interface CreateUser {
+  id: number;
+  name: string;
+  email: string;
+  phone?: string;
+  website: string;
+  company: {
+    name: string;
+  };
+}
+
 export interface Todo {
   userId: number;
   id: number;
