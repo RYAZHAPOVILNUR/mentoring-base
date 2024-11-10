@@ -43,7 +43,7 @@ export class CreateTodoFormComponent {
         userId: new FormControl('', [Validators.required]),
         completed: new FormControl('', [Validators.required, completedValidator()])
     })
-
+    
     private getCompletedValue(): boolean {
         const value = this.form.get('completed')?.value!.trim().toLowerCase()
         if (value === 'да') {
