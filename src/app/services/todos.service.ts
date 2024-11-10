@@ -13,7 +13,7 @@ export class TodosService {
 
   public loadTodos() {
     const localStorageTodos =
-      this.localStorage.getTodosFromLocalStorage('todos');
+      this.localStorage.getFromLocalStorage<Todo[]>('todos');
 
     if (localStorageTodos) {
       this.todosSubject$.next(localStorageTodos.slice(0, 10));
@@ -21,13 +21,13 @@ export class TodosService {
       this.todoApiService.getTodos().subscribe((data) => {
         const todos = data.slice(0, 10);
         this.setTodos(todos);
-        this.localStorage.saveTodosToLocalStorage('todos', todos);
+        this.localStorage.saveToLocalStorage('todos', todos);
       });
   }
 
   setTodos(todos: Todo[]) {
     this.todosSubject$.next(todos);
-    this.localStorage.saveTodosToLocalStorage('todos', todos);
+    this.localStorage.saveToLocalStorage('todos', todos);
   }
 
   public createTodo(todo: Todo) {
@@ -41,7 +41,7 @@ export class TodosService {
     alert('ЗАДАЧА УСПЕШНО СОЗДАНА');
     const newTodo = [...this.todosSubject$.value, todo];
     this.todosSubject$.next(newTodo);
-    this.localStorage.saveTodosToLocalStorage(
+    this.localStorage.saveToLocalStorage(
       'todos',
       this.todosSubject$.value
     );
@@ -55,7 +55,7 @@ export class TodosService {
       return todo;
     });
     this.todosSubject$.next(editTodo);
-    this.localStorage.saveTodosToLocalStorage(
+    this.localStorage.saveToLocalStorage(
       'todos',
       this.todosSubject$.value
     );
@@ -66,23 +66,9 @@ export class TodosService {
       (todo) => todo.id !== id
     );
     this.todosSubject$.next(updatedTodos);
-    this.localStorage.saveTodosToLocalStorage(
+    this.localStorage.saveToLocalStorage(
       'todos',
       this.todosSubject$.value
     );
   }
 }
-
-// public updateLocalStorageTodos() {
-//   const todos = this.todosSubject$.value;
-//   this.todosSubject$.next(todos);
-//   this.localStorage.saveTodosToLocalStorage('todos',this.todosSubject$.value);
-// }
-
-// getTodos(): Todo[] {
-//   return this.todosSubject$.value;
-// }
-
-// setTodos(todos: Todo[]) {
-//   this.todosSubject$.next(todos.slice(0, 10));
-// }

@@ -17,13 +17,3 @@ export const AdminGuardFn: CanActivateFn = () => {
   router.navigate(['']);
   return false;
 };
-
-// return authUserService.userSubject$.pipe(
-//   map((user) => {
-//     if (user.isAdmin) {
-//       return true
-//     }
-//     router.navigate([''])
-//     return false
-//   })
-// )

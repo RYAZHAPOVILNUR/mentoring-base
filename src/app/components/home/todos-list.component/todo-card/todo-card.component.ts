@@ -8,6 +8,7 @@ import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.com
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { customTitleCutPipe } from '../../../../pipes/title-cut.pipe';
 import { shadowDirective } from '../../../../directives/shadow.directive';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-todo-card',
@@ -17,6 +18,7 @@ import { shadowDirective } from '../../../../directives/shadow.directive';
     MatButtonToggleModule,
     customTitleCutPipe,
     shadowDirective,
+    MatButtonModule
   ],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',

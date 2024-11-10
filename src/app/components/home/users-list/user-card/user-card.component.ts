@@ -9,6 +9,7 @@ import { customUpperCasePipe } from '../../../../pipes/upper-case.pipe';
 import { redDirective } from '../../../../directives/red.directive';
 import { shadowDirective } from '../../../../directives/shadow.directive';
 import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-user-card',
@@ -20,8 +21,8 @@ import { NgIf } from '@angular/common';
     MatCardModule,
     customUpperCasePipe,
     redDirective,
-    NgIf,
     shadowDirective,
+    MatButtonModule
   ],
 })
 export class UserCardComponent {

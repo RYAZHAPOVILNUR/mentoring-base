@@ -5,21 +5,12 @@ import { Todo, User } from '../components/home/users-list/user-interface';
   providedIn: 'root',
 })
 export class LocalStorageService {
-  public getUsersFromLocalStorage(key: string): User[] | null {
+  public getFromLocalStorage<T>(key: string): T | null {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    return data ? (JSON.parse(data) as T) : null;
   }
 
-  public saveUsersToLocalStorage(key: string, users: User[]) {
-    localStorage.setItem(key, JSON.stringify(users));
-  }
-
-  public getTodosFromLocalStorage(key: string): Todo[] | null {
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
-  }
-
-  public saveTodosToLocalStorage(key: string, todos: Todo[]) {
-    localStorage.setItem(key, JSON.stringify(todos));
+  public saveToLocalStorage<T>(key: string, data: T) {
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }

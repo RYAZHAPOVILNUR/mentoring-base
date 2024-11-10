@@ -21,15 +21,17 @@ export class AuthUserService {
   };
 
   public loginAsAdmin(): void {
-    // localStorage.setItem('role', 'admin');
-    // localStorage.setItem('token', 'admin-token');
     this.userSubject$.next({ ...this.user, isAdmin: true });
+    localStorage.setItem('user', JSON.stringify(this.userSubject$.value));
+    localStorage.setItem('role', 'admin');
+    localStorage.setItem('token', 'admin-token');
   }
 
   public loginAsUser(): void {
-    // localStorage.setItem('role', 'user');
-    // localStorage.setItem('token', 'user-token');
     this.userSubject$.next({ ...this.user, isAdmin: false });
+    localStorage.setItem('user', JSON.stringify(this.userSubject$.value));
+    localStorage.setItem('role', 'user');
+    localStorage.setItem('token', 'user-token');
   }
 
   get isAdmin() {
@@ -37,41 +39,11 @@ export class AuthUserService {
   }
 
   public logout(): void {
-    // localStorage.removeItem('role');
-    // localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('role');
+    localStorage.removeItem('token');
     this.userSubject$.next(null);
     this.router.navigate(['']);
     console.log(this.userSubject$.value);
   }
 }
-
-// isLogged: false,
-// isAdmin: false,
-
-// ngOnInit(): void {
-//   this.isAdmin = this.checkAdminStatus();
-//   this.isLoggedIn = this.checkLoginStatus();  }
-
-// private checkAdminStatus(): boolean {
-//   return localStorage.getItem('role') === 'admin';
-// }
-
-// private checkLoginStatus(): boolean {
-//   return localStorage.getItem('token') !== null;
-// }
-
-// public getIsAdmin(): boolean {
-//   return this.isAdmin;
-// }
-
-// public getIsLoggedIn(): boolean {
-//   return this.isLoggedIn;
-// }
-
-// public setIsAdmin(value: boolean): void {
-//   this.isAdmin = value;
-// }
-
-// public setIsLoggedIn(value: boolean): void {
-//   this.isLoggedIn = value;
-// }

@@ -13,7 +13,7 @@ export class UsersService {
 
   loadUsers() {
     const localStorageUsers =
-      this.localStorage.getUsersFromLocalStorage('users');
+      this.localStorage.getFromLocalStorage<User[]>('users');
     if (localStorageUsers) {
       this.usersSubject$.next(localStorageUsers.slice(0, 10));
     } else {
@@ -26,7 +26,7 @@ export class UsersService {
 
   setUsers(users: User[]) {
     this.usersSubject$.next(users);
-    this.localStorage.saveUsersToLocalStorage('users', users);
+    this.localStorage.saveToLocalStorage('users', users);
   }
 
   public createUser(user: CreateUser) {
@@ -39,7 +39,7 @@ export class UsersService {
     alert('ЮЗЕР УСПЕШНО СОЗДАН');
     const newUser = [...this.usersSubject$.value, user];
     this.usersSubject$.next(newUser);
-    this.localStorage.saveUsersToLocalStorage(
+    this.localStorage.saveToLocalStorage(
       'users',
       this.usersSubject$.value
     );
@@ -51,7 +51,7 @@ export class UsersService {
         user.id === editedUser.id ? editedUser : user
       )
     );
-    this.localStorage.saveUsersToLocalStorage(
+    this.localStorage.saveToLocalStorage(
       'users',
       this.usersSubject$.value
     );
@@ -63,7 +63,7 @@ export class UsersService {
       this.usersSubject$.value.filter((user) => user.id !== id)
     );
 
-    this.localStorage.saveUsersToLocalStorage(
+    this.localStorage.saveToLocalStorage(
       'users',
       this.usersSubject$.value
     );
@@ -72,7 +72,7 @@ export class UsersService {
 
   public updateLocalStorageUsers() {
     const users = this.usersSubject$.value;
-    this.localStorage.saveUsersToLocalStorage('users', users);
+    this.localStorage.saveToLocalStorage('users', users);
   }
 }
 

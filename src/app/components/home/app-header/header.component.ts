@@ -46,7 +46,7 @@ export class HeaderComponent {
 
   public openDialog() {
     const dialogRef = this.dialog.open(AdminCheckingPageComponent, {
-      width: '400px',
+      width: '300px',
       height: '200px',
     });
     dialogRef.afterClosed().subscribe((result: string) => {
