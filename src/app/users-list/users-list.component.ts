@@ -7,6 +7,7 @@ import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
 import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 // const consoleResponse = (response: unknown) => console.log(response)
 
@@ -25,7 +26,7 @@ export interface User {
             lng: string
           }
         },
-        phone?: string;
+        phone: string;
         website: string;
         company: {
           name: string;
@@ -47,8 +48,6 @@ export class UsersListComponent {
     @Input()
     user!: User
 
-    readonly dialog = inject(MatDialog);
-
     @Output()
     createModalUser = new EventEmitter ();
 
@@ -56,7 +55,8 @@ export class UsersListComponent {
     // readonly apiService = inject(HttpClient);// не нужен, перенесли в отдельный апи сервис
     readonly userApiService = inject(UserApiService)
     readonly usersService = inject(UsersService)
-    // users = this.usersService.users;
+    readonly snackbar = inject(MatSnackBar);
+    readonly dialog = inject(MatDialog);
 
     constructor() {
         this.userApiService.getUsers().subscribe(
@@ -71,7 +71,6 @@ export class UsersListComponent {
     this.usersService.users$.subscribe(
         users => console.log(users)
     )
-
     }
 
     deleteUser(id: number) {
@@ -94,20 +93,24 @@ export class UsersListComponent {
             company: {
                 name: formData.companyName,
             },
+            phone: formData.phone
         });
-        console.log('from FORM: ', event)
+        console.log('from FORM: ', formData)
     }
 
     openCreateDialog(): void {
-        const dialogRef = this.dialog.open(CreateUserDialogComponent, {
-          data: {user: this.user},
-        });
+        const dialogRef = this.dialog.open(CreateUserDialogComponent);
 
         dialogRef.afterClosed().subscribe((createResult) => {
           console.log('MODAL CLOSED', createResult);
             if(createResult){
                 this.createUser(createResult);
+                console.log(createResult);
+                this.snackbar.open('USER created', 'OK', {duration: 3000})
             }
+            else {
+                this.snackbar.open('CREATE canseled', '', {duration: 3000})
+              }    
         });
       }
 

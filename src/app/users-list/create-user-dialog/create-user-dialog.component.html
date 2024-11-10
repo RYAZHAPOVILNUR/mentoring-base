@@ -1,40 +1,36 @@
-<h1>CREATE USER FORM</h1>
-<div style="margin: 30px 30px 30px 0;">
-    <form style="display: flex; flex-direction: column; " [formGroup]="form">
+<div style="padding: 15px;">
+    <h1>CREATE USER FORM</h1>
+    <div style="margin: 30px 30px 30px 0;">
+        <form style="display: flex; flex-direction: column; " [formGroup]="form">
 
-        <mat-form-field class="mat-form-field">
-            <mat-label>Add USER</mat-label>
-            <input matInput class="form-input" formControlName="name">
-            <mat-error>Error</mat-error>
-        </mat-form-field>
+            <mat-form-field class="mat-form-field">
+                <mat-label>Add USER</mat-label>
+                <input matInput class="form-input" formControlName="name">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
 
-        <mat-form-field class="mat-form-field">
-            <mat-label>Add EMAIL</mat-label>
-            <input matInput class="form-input" formControlName="email">
-            <mat-error>Error</mat-error>
-        </mat-form-field>
+            <mat-form-field class="mat-form-field">
+                <mat-label>Add EMAIL</mat-label>
+                <input matInput class="form-input" formControlName="email">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
 
-        <mat-form-field class="mat-form-field">
-            <mat-label>Add WEBSITE</mat-label>
-            <input matInput class="form-input" formControlName="website">
-            <mat-error>Error</mat-error>
-        </mat-form-field>
+            <mat-form-field class="mat-form-field">
+                <mat-label>Add WEBSITE</mat-label>
+                <input matInput class="form-input" formControlName="website">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
 
-        <mat-form-field class="mat-form-field">
-            <mat-label>Add COMPANY NAME</mat-label>
-            <input matInput class="form-input" formControlName="companyName">
-            <mat-error>Error</mat-error>
-        </mat-form-field>
+            <mat-form-field class="mat-form-field">
+                <mat-label>Add COMPANY NAME</mat-label>
+                <input matInput class="form-input" formControlName="companyName">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
 
-        <!-- <button matIconSuffix mat-button [disabled]="form.invalid" class="mat-form-field">
-            CREATE USER
-            <mat-icon>add_circle</mat-icon>
-        </button> -->
-
-        <!-- [mat-dialog-close]="userWithUpdatedFields" -->
-        <button matIconSuffix mat-button [disabled]="form.invalid" class="mat-form-field" [mat-dialog-close]="submitForm()">
-            CREATE CREATE USER
-            <mat-icon>add_circle</mat-icon>
-        </button>
-    </form>
+            <button matIconSuffix mat-raised-button matTooltip="message.value" [disabled]="form.invalid" class="mat-form-field" [mat-dialog-close]="this.form.value">
+                CREATE  USER
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </form>
+    </div>
 </div>

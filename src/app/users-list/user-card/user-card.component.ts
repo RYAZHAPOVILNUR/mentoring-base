@@ -5,12 +5,21 @@ import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.co
 import { DeleteUserDialogComponent } from "../delete-user-dialog/delete-user-dialog.component";
 import { MatSnackBar } from '@angular/material/snack-bar'; 
 import { CreateUserDialogComponent } from "../create-user-dialog/create-user-dialog.component";
+import { UpperCasePipe } from "@angular/common";
+import { CustomUpperCasePipe } from "../../pipes/upper-case.pipe";
+import { RedDirective } from "../../directives/red.directive";
+import { CustomTelephonePipe } from "../../pipes/telephone.pipe";
+import { ShadowDirective } from "../../directives/shadow.directive";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTooltipModule } from '@angular/material/tooltip'; 
 
 @Component({
     selector: 'app-user-card',
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
     standalone: true,
+    imports: [CustomUpperCasePipe, RedDirective, CustomTelephonePipe, ShadowDirective, MatButtonModule, MatIconModule, MatTooltipModule]
 })
 
 export class UserCardComponent {
@@ -70,7 +79,11 @@ export class UserCardComponent {
           console.log('MODAL CLOSED', createResult);
             if(createResult){
                 this.createUser.emit(createResult)
+                this.snackbar.open('USER created', 'OK', {duration: 3000})
             }
+            else {
+              this.snackbar.open('CREATE canseled', '', {duration: 3000})
+            }  
         });
       }
 

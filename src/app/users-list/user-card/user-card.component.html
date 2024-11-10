@@ -1,10 +1,14 @@
-<div class="card-wrapper">
-    <p>{{ user.name }}</p>
-    <p>{{ user.email }}</p>
-    <p>{{ user.website }}</p>
-    <p>{{ user.company.name }}</p>
-    <button class="card-btn" (click)=openDelDialog()>DELETE USER</button>
+<div shadow class="card-wrapper">
+    <p red>{{ user.name | customUpperCase }}</p>
+    <p red>{{ user.email | customUpperCase }}</p>
+    <p red>{{ user.website | customUpperCase }}</p>
+    <p red>{{ user.company.name | customUpperCase }}</p>
+    <p red>{{ user.phone | customTelephone }}</p>
+    <button red mat-button (click)=openDelDialog()>DELETE USER</button>
     <!-- <button class="card-btn" (click)=onDeleteUser(user.id)>DELETE USER</button> -->
-    <button class="card-btn" (click)=openDialog()>EDIT USER</button>
-    <button class="card-btn" (click)=openCreateDialog()>CREATE USER</button> 
+    <button mat-button (click)=openDialog()>
+        EDIT USER
+        <mat-icon>add_circle</mat-icon>
+    </button>
+    <!-- <button class="card-btn" (click)=openCreateDialog()>CREATE USER</button>  -->
 </div>

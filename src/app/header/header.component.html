@@ -1,73 +1,83 @@
 <div class="header-grey">
     <div class="header-container">
-<div class="headerGrey-container">
-    <div class="headerGrey content-container">
-      <div class="header-left">
-        <div class="header-logo">
-          <img src="/assets/Frame.svg" alt="logo" />
+      <div class="headerGrey-container">
+          <div class="headerGrey content-container">
+            <div class="header-left">
+              <div class="header-logo">
+                <img src="/assets/Frame.svg" alt="logo" />
+              </div>
+              <nav class="header-nav">
+                <!-- <div class="header-nav-item" *ngFor="let item of headerItems">{{item}}</div> -->
+        
+                <div class="header-nav-item" routerLink="/">{{headerItem1}}</div>
+                <div class="header-nav-item">{{headerItem2}}</div>
+                <!-- <div class="header-nav-item">{{headerItem3}}</div> -->
+                <div class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</div>
+              </nav>
+              <button (click)="isShowCatalog = !isShowCatalog" class="btn-catalog">Show/hide Каталог</button>
+            </div>
+            <button routerLink="/users">ADMINka</button>
+            <p>{{ dateObject | date:'medium' }}</p>
+            <button routerLink="/todos">TODOS</button>
+            <div class="header-right">
+              <div class="header-right-item">
+                <img src="/assets/Phone.svg" alt="tel" />
+                <p class="header-tel">+7 (965) 084-29-29</p>
+              </div>
+              <div class="header-right-item">
+                <img src="/assets/heart.svg" alt="heart" />
+              </div>
+              <div class="header-right-item">
+                <button yellow class="header-button" style="color: black;">
+                  <img src="/assets/Maskgroup.svg" alt="mask"/>Пусто</button>
+                  <!-- <p style="color: black;">Пусто</p> -->
+                  <a href="#" routerLink="/admin">admin</a>
+                  <div>
+                    <button (click)="openDialog()" *ngIf="(userService.user$ | async) === null">ВОЙТИ</button>
+                    <button (click)="logout()" *ngIf="(userService.user$ | async) !== null">ВЫЙТИ</button>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <nav class="header-nav">
-          <!-- <div class="header-nav-item" *ngFor="let item of headerItems">{{item}}</div> -->
-  
-          <div class="header-nav-item" routerLink="/">{{headerItem1}}</div>
-          <div class="header-nav-item">{{headerItem2}}</div>
-          <!-- <div class="header-nav-item">{{headerItem3}}</div> -->
-          <div class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</div>
-        </nav>
-        <button (click)="isShowCatalog = !isShowCatalog" class="btn-catalog">Show/hide Каталог</button>
       </div>
-      <button routerLink="/users">ADMINka</button>
-      <button routerLink="/todos">TODOS</button>
-      <div class="header-right">
-        <div class="header-right-item">
-          <img src="/assets/Phone.svg" alt="tel" />
-          <p class="header-tel">+7 (965) 084-29-29</p>
-        </div>
-        <div class="header-right-item">
-          <img src="/assets/heart.svg" alt="heart" />
-        </div>
-        <div class="header-right-item">
-          <button class="header-button">
-            <img src="/assets/Maskgroup.svg" alt="mask" />Пусто
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="headerYellow">
-    <div class="header-container">
-  <div class="headerYellow-container">
-    <div class="header-yellow content-container">
-      <div class="header-yellow-left">
-        <div class="header-logo">
-          <img src="/assets/light.svg" alt="logo" />
-        </div>
-        <nav class="header-yellow-nav">
-          <div class="header-nav-item" *ngFor="let item of menuItems">{{item}}</div>
-          <!-- <div class="header-nav-item" *ngIf="changeMenuText" >{{menuItems}}</div> -->
-          <button (click)="changeMenuText()">Change text</button>
-  
-          <!-- <div class="header-nav-item">{{headerNavItem1}}</div>
-          <div class="header-nav-item">{{headerNavItem2}}</div>
-          <div class="header-nav-item">{{headerNavItem3}}</div>
-          <div class="header-nav-item">{{headerNavItem4}}</div>
-          <div class="header-nav-item">{{headerNavItem5}}</div> -->
-        </nav>
-      </div>
-      <div class="header-yellow-right">
-        <div>
-          <input class="header-input" placeholder="Поиск, например, Круг зачистной" />
-        </div>
-        <img src="/assets/lupa.svg" alt="lupa" />
-        <div class="header-poisk">
-          <img src="/assets/map-pin.svg" alt="map" />
-          <span>Москва</span>
+
+      <!-- <button>OPEN</button>
+      <button>CLOSE</button> -->
+
+      <div class="headerYellow">
+          <div class="header-container">
+        <div class="headerYellow-container">
+          <div class="header-yellow content-container">
+            <div class="header-yellow-left">
+              <div class="header-logo">
+                <img src="/assets/light.svg" alt="logo" />
+              </div>
+              <nav class="header-yellow-nav">
+                <div class="header-nav-item" *ngFor="let item of menuItems">{{item}}</div>
+                <!-- <div class="header-nav-item" *ngIf="changeMenuText" >{{menuItems}}</div> -->
+                <button (click)="changeMenuText()">Change text</button>
+        
+                <!-- <div class="header-nav-item">{{headerNavItem1}}</div>
+                <div class="header-nav-item">{{headerNavItem2}}</div>
+                <div class="header-nav-item">{{headerNavItem3}}</div>
+                <div class="header-nav-item">{{headerNavItem4}}</div>
+                <div class="header-nav-item">{{headerNavItem5}}</div> -->
+              </nav>
+            </div>
+            <div class="header-yellow-right">
+              <div>
+                <input class="header-input" placeholder="Поиск, например, Круг зачистной" />
+              </div>
+              <img src="/assets/lupa.svg" alt="lupa" />
+              <div class="header-poisk">
+                <img src="/assets/map-pin.svg" alt="map" />
+                <span>Москва</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
 </div>

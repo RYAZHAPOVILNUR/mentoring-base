@@ -1,5 +1,7 @@
 
-<app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
+<button class="todo-btn" (click)=openCreateDialog() (createTodo)="createTodo($event)">CREATE TODO</button>
+<!-- <button class="btn" (click)=openCreateDialog() (createUser)="createUser($event)">CREATE USER</button> -->
+<!-- <app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form> -->
 
 <div style="display: flex; width: 100%; flex-wrap: wrap;">
     <div *ngFor="let todo of todosService.todos$ | async"> 

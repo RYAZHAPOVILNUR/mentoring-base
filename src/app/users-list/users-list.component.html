@@ -1,5 +1,5 @@
 
-<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+<!-- <app-create-user-form (createUser)="createUser($event)"></app-create-user-form> -->
 <button class="btn" (click)=openCreateDialog() (createUser)="createUser($event)">CREATE USER</button>
 <div style="display: flex; flex-wrap: wrap;">
     <div *ngFor="let item of usersService.users$ | async"> 
