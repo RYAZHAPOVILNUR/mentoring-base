@@ -44,6 +44,7 @@ export class CreateTodoFormComponent {
         completed: new FormControl('', [Validators.required, completedValidator()])
     })
     
+
     
     private getCompletedValue(): boolean {
         const value = this.form.get('completed')?.value!.trim().toLowerCase()
