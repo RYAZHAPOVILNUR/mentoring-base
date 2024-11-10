@@ -10,12 +10,7 @@ import { ITodo } from "../todos-list.component";
 
 export class TodoCardComponent {
     @Input()
-    todo: ITodo = {
-        userId: 0,
-        id: 0,
-        title: '',
-        completed: false
-    }
+    todo!: ITodo 
 
     @Output()
     deleteTodo = new EventEmitter()

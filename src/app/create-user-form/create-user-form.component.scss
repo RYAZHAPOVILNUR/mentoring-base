@@ -1,13 +1,10 @@
-h1, form {
+ .form-user {
+    display: flex;
+    flex-direction: column;
     margin-left: 300px
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-button {
+.form-button {
     width: 150px;
     margin-top: 20px;
 }
@@ -17,5 +14,13 @@ button {
 }
 
 .form-input {
+    width: 200px;
+}
+
+.custom-form-field {
+    width: 200px;
+}
+
+.custom-button-style {
     width: 200px;
 }

@@ -1,16 +1,30 @@
-<div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="submitForm()">
-        <p>Название задачи:</p>
-        <input type="text" class="form-input" formControlName="title">
-        <p>Автор задачи:</p>
-        <input type="text" class="form-input" formControlName="userId">
-        <p>Задача завершена:</p>
-        <input type="text" class="form-input" formControlName="completed">
-        <button
-        type="submit"
-        [disabled]="form.invalid"
-        >
-            Create Todo
-        </button>
-    </form>
-</div>
+<form class="form-todo" [formGroup]="form">
+    <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Название задачи</mat-label>
+        <input matInput formControlName="title">
+        <mat-error *ngIf="form.get('title')?.invalid && form.get('title')?.touched">
+            Поле не может быть пустым.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Автор задачи</mat-label>
+        <input matInput formControlName="userId">
+        <mat-error *ngIf="form.get('userId')?.invalid && form.get('userId')?.touched">
+            Поле не может быть пустым.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Задача завершена</mat-label>
+        <input matInput formControlName="completed">
+        <mat-error *ngIf="form.get('completed')?.invalid && form.get('completed')?.touched">
+            Пожалуйста, укажите статус выполнения.
+        </mat-error>
+    </mat-form-field>
+
+    <button class="custom-button-style" mat-raised-button color="primary" [disabled]="form.invalid"
+        (click)="submitForm()">
+        Создать задачу
+    </button>
+</form>

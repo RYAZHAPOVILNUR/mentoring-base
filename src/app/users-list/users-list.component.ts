@@ -30,6 +30,14 @@ export interface IUser {
     }
 }
 
+export interface ICreateUserForm {
+    id?: number,
+    name: string,
+    email: string,
+    website: string,
+    companyName: string
+}
+
 @Component({
     selector: 'app-users-list',
     templateUrl: './users-list.component.html',
@@ -58,7 +66,7 @@ export class UsersListComponent {
         this.usersService.deleteUsers(id)
     }
 
-    public createUser(formData: any) {
+    public createUser(formData: ICreateUserForm) {
         this.usersService.createUsers({
             id: new Date().getTime(),
             name: formData.name,

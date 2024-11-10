@@ -1,5 +1,13 @@
 import { Component, EventEmitter, Output } from "@angular/core";
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from "@angular/forms";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {NgIf} from "@angular/common";
+
+
 
 export function completedValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -15,7 +23,15 @@ export function completedValidator(): ValidatorFn {
     templateUrl: './create-todo-form.component.html',
     styleUrl: './create-todo-form.component.scss',
     standalone: true,
-    imports: [ReactiveFormsModule]
+  imports: [
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgIf
+  ]
 })
 
 export class CreateTodoFormComponent {
@@ -34,7 +50,7 @@ export class CreateTodoFormComponent {
             return true
         } else {
             return false
-        } 
+        }
     }
 
     public submitForm(): void {

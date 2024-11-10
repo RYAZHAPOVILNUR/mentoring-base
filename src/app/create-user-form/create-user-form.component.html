@@ -1,20 +1,40 @@
-<h1>CREATE USER FORM</h1>
+<form class="form-user" [formGroup]="form">
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      Поле не может быть пустым.
+    </mat-error>
+  </mat-form-field>
 
-<div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="submitForm()">
-        <p>Name:</p>
-        <input type="text" class="form-input" formControlName="name">
-        <p>Email:</p>
-        <input type="text" class="form-input" formControlName="email">
-        <p>Website:</p>
-        <input type="text" class="form-input" formControlName="website">
-        <p>Company name:</p>
-        <input type="text" class="form-input" formControlName="companyName">
-        <button 
-        type="submit"
-        [disabled]="form.invalid"
-        >
-            Create User
-        </button>
-    </form>
-</div>
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      Почта не валидна.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <mat-label>Website</mat-label>
+    <input matInput formControlName="website">
+    <mat-error *ngIf="form.get('website')?.invalid && form.get('website')?.touched">
+      Поле не может быть пустым.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <mat-label>Company name</mat-label>
+    <input matInput formControlName="companyName">
+    <mat-error *ngIf="form.get('companyName')?.invalid && form.get('companyName')?.touched">
+      Поле не может быть пустым.
+    </mat-error>
+  </mat-form-field>
+  <button class="custom-button-style" mat-raised-button color="primary" [disabled]="form.invalid"
+        (click)="submitForm()">
+        Add user
+    </button>
+</form>
+
+
+
