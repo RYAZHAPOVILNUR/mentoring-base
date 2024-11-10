@@ -106,13 +106,30 @@ export class UsersListComponent {
       autoFocus: false
     });
 
-    dialogRef.afterClosed().subscribe(createResult => {
+    dialogRef.afterClosed().subscribe((createResult: User) => {
       if (createResult) {
-        this.createUser(createResult)
+        // Используем метод getUsers() для получения текущего списка пользователей
+        const existingUser = this.usersService.getUsers().find(
+          (currentElement) => currentElement.email === createResult.email
+        );
+
+        if (existingUser) {
+          // Показываем сообщение, если пользователь с таким email уже существует
+          this._snackBar.open('Такой email уже зарегистрирован', 'ok', {
+            duration: 4000,
+          });
+        } else {
+          // Если пользователя с таким email нет, создаем нового пользователя
+          this.usersService.createUser(createResult);
+          this._snackBar.open('Пользователь успешно создан', 'ok', {
+            duration: 4000,
+          });
+        }
       } else {
+        // Сообщение, если создание пользователя отменено
         this._snackBar.open('Пользователь не создан', 'ok', {
-          duration: 4000
-        })
+          duration: 4000,
+        });
       }
     });
   }

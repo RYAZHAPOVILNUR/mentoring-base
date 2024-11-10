@@ -64,9 +64,7 @@ export class CreateTodoDialogComponent {
   }
 
   public submitForm() {
-    return {
-      ...this.form.value,
-      completed: this.getCompletedValue()
-    }
+    console.log(this.form.value)
+    this.dialogRef.close({...this.form.value, completed: this.getCompletedValue()})
   }
 }

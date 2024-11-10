@@ -36,7 +36,7 @@
       mat-button
       class="btn-add"
       type="submit"
-      [mat-dialog-close]="submitForm()"
+      (click)="submitForm()"
       [disabled]="form.invalid"
     >
       Добавить
