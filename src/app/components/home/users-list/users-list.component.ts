@@ -8,7 +8,7 @@ import {
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { User, CreateUser } from './user-interface';
+import { User } from './user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-form/create-user-dialog/create-user-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';

@@ -1,6 +1,36 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
+let calcScrollValue = () => {
+  let scrollProgress = document.getElementById('progress');
+  let progressValue = document.getElementById('progress-value');
+  let pos = document.documentElement.scrollTop;
+  let calcHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let scrollValue = Math.round((pos * 100) / calcHeight);
+  if (pos > 100) {
+    if (scrollProgress) {
+      scrollProgress.style.display = 'grid';
+    }
+  } else {
+    if (scrollProgress) {
+      scrollProgress.style.display = 'none';
+    }
+  }
+
+  scrollProgress?.addEventListener('click', () => {
+    document.documentElement.scrollTop = 0;
+  });
+
+  if (scrollProgress) {
+    scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+  }
+};
+
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
+
 const newPages = [5, 4, 3, 2, 1];
 
 const func2 = (caller: string) => {

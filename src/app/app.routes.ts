@@ -4,10 +4,11 @@ import { TodosListComponent } from './components/home/todos-list.component/todos
 import { HomepageComponent } from './components/home/home.component';
 import { AdminGuardFn } from './services/admin-guard.service';
 import { AdminComponent } from './components/home/admin/admin.component';
+
 export const routes: Routes = [
   {
     path: '',
-    component: HomepageComponent,
+    component: HomepageComponent
   },
 
   {

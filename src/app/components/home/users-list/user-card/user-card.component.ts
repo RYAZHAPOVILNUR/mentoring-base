@@ -1,5 +1,5 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { User, CreateUser } from '../user-interface';
+import { User } from '../user-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { DeleteUserConfirmationComponent } from '../delete-user-confirmation/delete-user-confirmation.component';
@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 import { customUpperCasePipe } from '../../../../pipes/upper-case.pipe';
 import { redDirective } from '../../../../directives/red.directive';
 import { shadowDirective } from '../../../../directives/shadow.directive';
-import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
