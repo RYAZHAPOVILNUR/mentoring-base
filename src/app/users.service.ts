@@ -19,23 +19,22 @@ export class UsersService {
         } else {
           return user;
         }
-      }
-    )
-    )
+      })
+    );
   }
 
   createUser(user: IUser) {
-  const existingUser = this.userSubject$.value.find(
-    (currentElement) => currentElement.email === user.email 
-  );
+    const existingUser = this.userSubject$.value.find(
+      (currentElement) => currentElement.email === user.email
+    );
 
-  if (existingUser !== undefined) {
-    alert('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН');
-  } else {
-    this.userSubject$.next([...this.userSubject$.value, user]);
-    alert('НОВЫЙ ЮЗЕР УСПЕШНО ДОБАВЛЕН');
+    if (existingUser !== undefined) {
+      alert('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН');
+    } else {
+      this.userSubject$.next([...this.userSubject$.value, user]);
+      // alert('НОВЫЙ ЮЗЕР УСПЕШНО ДОБАВЛЕН');
+    }
   }
-}
 
   deleteUser(id: number) {
     this.userSubject$.next(
@@ -45,8 +44,7 @@ export class UsersService {
         } else {
           return true;
         }
-      }
-    )
-    )
+      })
+    );
   }
 }

@@ -5,7 +5,8 @@
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
   </div>
-  <button class="delete-user" (click)="onDeleteUser(user.id)">
-    УДАЛИТЬ ЮЗЕРА
-  </button>
+  <div class="edit-user">
+  <button mat-stroked-button class="delete-user" (click)="openDeleteDialog()">Delete</button>
+  <button mat-stroked-button class="delete-user" (click)="openDialog()">Edit</button>
+</div>
 </div>

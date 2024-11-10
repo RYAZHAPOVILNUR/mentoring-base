@@ -14,7 +14,13 @@
 
 .delete-user {
   align-self: center;
-  width: 160px;
-  border-radius: 5px;
+  width: 70px;
+  border-radius: 18px;
+  border: none;
   background: linear-gradient(45deg, blue, purple, pink, red, transparent);
+}
+
+.edit-user { 
+  display: flex;
+  justify-content: space-between;
 }

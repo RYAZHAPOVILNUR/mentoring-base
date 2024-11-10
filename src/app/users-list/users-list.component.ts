@@ -1,13 +1,12 @@
 import { AsyncPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, IterableChangeRecord } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.servise';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
 import { IUser } from '../Interfaces/user.interface';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form';
 import { ICreateUser } from '../Interfaces/create-user.interface';
-
-
+import { _isNumberValue } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-users-list',
@@ -26,12 +25,10 @@ export class UsersListComponent {
       this.usersService.setUsers(response);
     });
 
-    this.usersService.users$.subscribe(
-      users => console.log(users)
-    )
+    this.usersService.users$.subscribe((users) => console.log(users));
   }
 
-  deleteUser(id: number) {
+  public deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
 
@@ -45,6 +42,13 @@ export class UsersListComponent {
         name: user.company.name,
       },
     });
+  }
+
+  public editUser(formDialogValue: IUser) {
+    this.usersService.editUser({
+      ...formDialogValue,
+    });
+    console.log(formDialogValue);
   }
 }
 
