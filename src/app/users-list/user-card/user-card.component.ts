@@ -5,11 +5,12 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.component";
 import { DeleteUserDialogComponent } from "../delete-user-dialog/delete-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { ChangeViewPhonePipe } from "../../pipes/change-view-phone.pipe";
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [MatDialogModule],
+  imports: [MatDialogModule, ChangeViewPhonePipe],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'
 })
@@ -47,6 +48,7 @@ export class UserCardComponent {
   }
 
   public openEditDialog(): void {
+    console.log('g')
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user},
       autoFocus: false

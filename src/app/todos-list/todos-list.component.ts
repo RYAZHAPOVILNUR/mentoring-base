@@ -75,7 +75,24 @@ export class TodosListComponent {
 
     dialogRef.afterClosed().subscribe((createResult: Todo) => {
       if (createResult) {
-        this.createTodo(createResult)
+        const existingTodo = this.todosService.getTodos().find(
+          currentElement => currentElement.title === createResult.title
+        );
+
+        if (existingTodo) {
+          this._snackBar.open('Такая задача уже существует', 'ok', {
+                duration: 4000
+              });
+        } else {
+          this.todosService.createTodo(createResult);
+          this._snackBar.open('Задача успешно добавленна', 'ok', {
+            duration: 4000,
+          });
+        }
+      } else {
+        this._snackBar.open('Задача не добавленна', 'ok', {
+          duration: 4000,
+        });
       }
     })
   };

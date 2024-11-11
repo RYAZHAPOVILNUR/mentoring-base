@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Output } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -15,6 +15,7 @@ import {MatInput} from "@angular/material/input";
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
 import { Todo } from "../todos-list.component";
 import { NgStyle } from "@angular/common";
+import { LineTrimPipe } from "../../pipes/line-trim.pipe";
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -29,21 +30,23 @@ export function completedValidator(): ValidatorFn {
 @Component({
   selector: 'app-edit-todo-dialog',
   standalone: true,
-    imports: [
-        FormsModule,
-        MatButton,
-        MatError,
-        MatFormField,
-        MatIcon,
-        MatInput,
-        MatLabel,
-        MatSuffix,
-        ReactiveFormsModule,
-        NgStyle,
-        MatDialogClose
-    ],
+  imports: [
+    FormsModule,
+    MatButton,
+    MatError,
+    MatFormField,
+    MatIcon,
+    MatInput,
+    MatLabel,
+    MatSuffix,
+    ReactiveFormsModule,
+    NgStyle,
+    MatDialogClose,
+    LineTrimPipe
+  ],
   templateUrl: './edit-todo-dialog.component.html',
-  styleUrl: './edit-todo-dialog.component.scss'
+  styleUrl: './edit-todo-dialog.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditTodoDialogComponent {
   readonly data = inject<{todo: Todo}>(MAT_DIALOG_DATA);

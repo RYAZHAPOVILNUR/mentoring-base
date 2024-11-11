@@ -38,7 +38,7 @@ export class HeaderComponent {
 
   readonly aboutCompany = aboutCompany;
 
-  today: Date = new Date()
+  readonly today : Date = new Date()
 
   menuItems = upperCaseMenuItems;
 

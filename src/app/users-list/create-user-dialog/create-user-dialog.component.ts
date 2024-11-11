@@ -35,12 +35,24 @@ export class CreateUserDialogComponent {
   public hovered = false;
 
   public form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    website: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2)]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email]),
+    website: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3)]),
     company: new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(2)])
-    })
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2)])
+    }),
+    phone: new FormControl('', [
+      Validators.required,
+      Validators.minLength(11),
+      Validators.pattern(/^\d+( \d+)?$/)])
   });
 
   public submitForm() {

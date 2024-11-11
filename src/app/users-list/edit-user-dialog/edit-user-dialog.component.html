@@ -33,6 +33,17 @@
       <mat-error>Website is <strong>required</strong></mat-error>
     </mat-form-field>
 
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone"
+             [ngModel]="(form.value.phone || '') | changeViewPhone"
+             placeholder="enter phone"
+             (mouseenter)="hovered = true"
+             (mouseleave)="hovered = false">
+      <mat-icon matIconSuffix [ngStyle]="{ visibility: hovered ? 'hidden' : 'visible' }">edit</mat-icon>
+      <mat-error>Phone is <strong>required</strong></mat-error>
+    </mat-form-field>
+
     <mat-form-field formGroupName="company">
       <mat-label>Company</mat-label>
       <input matInput formControlName="name"

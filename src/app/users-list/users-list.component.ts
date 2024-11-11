@@ -25,7 +25,7 @@ export interface User {
       lng: string;
     }
   },
-  phone?: string;
+  phone: string;
   website: string;
   company: {
     name: string;
@@ -41,7 +41,8 @@ export interface CreateUser {
   website: string,
   company: {
     name: string
-  }
+  };
+  phone: string;
 }
 
 @Component({
@@ -95,6 +96,7 @@ export class UsersListComponent {
       company: {
         name: user.company.name,
       },
+      phone: user.phone,
     })
       console.log("ДАННЫЕ ФОРМЫ", user);
     console.log(new Date().getTime())

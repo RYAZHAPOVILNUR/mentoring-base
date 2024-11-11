@@ -30,23 +30,23 @@ export class TodosService {
   }
 
   createTodo(todo: Todo) {
-    const todoIsExisting = this.todosSubject$.value.find(
-      (currentElement) => currentElement.title === todo.title
-    )
-
-    if(todoIsExisting !== undefined) {
-      // alert('Такая задача уже существует')
-      this._snackBar.open('Такая задача уже существует', 'ok', {
-        duration: 4000
-      })
-    } else {
-      this.todosSubject$.next([...this.todosSubject$.value, todo])
-      // alert('Задача успешно добавленна')
-      this._snackBar.open('Задача успешно добавленна', 'ok', {
-        duration: 4000
-      })
-    }
-
+    this.todosSubject$.next([...this.todosSubject$.value, todo])
+    // const todoIsExisting = this.todosSubject$.value.find(
+    //   (currentElement) => currentElement.title === todo.title
+    // )
+    //
+    // if(todoIsExisting !== undefined) {
+    //   // alert('Такая задача уже существует')
+    //   this._snackBar.open('Такая задача уже существует', 'ok', {
+    //     duration: 4000
+    //   })
+    // } else {
+    //   this.todosSubject$.next([...this.todosSubject$.value, todo])
+    //   // alert('Задача успешно добавленна')
+    //   this._snackBar.open('Задача успешно добавленна', 'ok', {
+    //     duration: 4000
+    //   })
+    // }
   }
 
   deleteTodo(id: number) {
@@ -55,5 +55,9 @@ export class TodosService {
         todo => todo.id !== id
       )
     )
+  }
+
+  getTodos(): Todo[] {
+    return this.todosSubject$.value
   }
 }
