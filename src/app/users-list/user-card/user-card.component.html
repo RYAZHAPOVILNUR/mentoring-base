@@ -1,12 +1,12 @@
-<div class="card">
+<div class="card" appBoxShadow>
   <p>{{user.name}}</p>
   <p>{{user.email}}</p>
   <p>{{user.website}}</p>
   <p>{{user.company.name}}</p>
   <p>{{user.phone | changeViewPhone}}</p>
   <div class="btn-container">
-    <button class="btn" (click)="openDeleteDialog()">Delete</button>
-    <button class="btn" (click)="openEditDialog()">Edit</button>
+    <button appYellow class="btn" (click)="openDeleteDialog()">Delete</button>
+    <button appYellow class="btn" (click)="openEditDialog()">Edit</button>
   </div>
 </div>
 

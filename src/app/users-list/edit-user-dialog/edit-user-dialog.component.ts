@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatButton } from "@angular/material/button";
@@ -6,9 +6,9 @@ import { MatError, MatFormField, MatLabel, MatSuffix } from "@angular/material/f
 import { MatIcon } from "@angular/material/icon";
 import { MatInput } from "@angular/material/input";
 import { NgStyle } from "@angular/common";
-import { CreateUser, User } from "../users-list.component";
+import { User } from "../users-list.component";
 import { ChangeViewPhonePipe } from "../../pipes/change-view-phone.pipe";
-import { map } from "rxjs";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -25,7 +25,8 @@ import { map } from "rxjs";
     ReactiveFormsModule,
     NgStyle,
     MatDialogClose,
-    ChangeViewPhonePipe
+    ChangeViewPhonePipe,
+    MatTooltipModule
   ],
   templateUrl: './edit-user-dialog.component.html',
   styleUrl: './edit-user-dialog.component.scss',

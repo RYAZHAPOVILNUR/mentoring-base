@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DatePipe, NgForOf, NgIf } from "@angular/common";
 import { RouterLink, RouterOutlet } from "@angular/router";
+import { YellowDirective } from "../directives/yellow.directive";
 
 const aboutCompanyFn = (text: string) => text;
 
@@ -21,7 +22,8 @@ const upperCaseMenuItems = menuItems.map(
     NgIf,
     RouterOutlet,
     RouterLink,
-    DatePipe
+    DatePipe,
+    YellowDirective
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

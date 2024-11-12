@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" appBoxShadow>
   <div>ТЕКСТ ЗАДАЧИ:</div>
   <p>{{todo.title | lineTrim}}</p>
   <div>АВТОР ЗАДАЧИ:</div>
@@ -6,7 +6,7 @@
   <div>ЗАДАЧА ЗАВЕРШЕНА:</div>
   <p>{{todo.completed ? 'ДА' : 'НЕТ'}}</p>
   <div class="btn-card">
-    <button class="btn" (click)="openDeleteTodoDialog()">УДАЛИТЬ</button>
-    <button class="btn" (click)="openEditTodoDialog()">Редактировать</button>
+    <button appYellow class="btn" (click)="openDeleteTodoDialog()">УДАЛИТЬ</button>
+    <button appYellow class="btn" (click)="openEditTodoDialog()">Редактировать</button>
   </div>
 </div>

@@ -57,7 +57,8 @@
     <button
       class="btn-add"
       mat-button
-      [disabled]="form.invalid"
+      matTooltip="Редактировать данные пользователя"
+      [disabled]="form.invalid || !form.dirty"
       type="submit"
       (click)="submitForm()"
     >

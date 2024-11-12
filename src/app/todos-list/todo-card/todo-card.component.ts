@@ -5,11 +5,18 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { DeleteTodoDialogComponent } from "../delete-todo-dialog/delete-todo-dialog.component";
 import { EditTodoDialogComponent } from "../edit-todo-dialog/edit-todo-dialog.component";
 import { LineTrimPipe } from "../../pipes/line-trim.pipe";
+import { BoxShadowDirective } from "../../directives/box-shadow.directive";
+import { YellowDirective } from "../../directives/yellow.directive";
 
 @Component({
   selector: 'app-todo-card',
   standalone: true,
-  imports: [MatDialogModule, LineTrimPipe],
+  imports: [
+    MatDialogModule,
+    LineTrimPipe,
+    BoxShadowDirective,
+    YellowDirective
+  ],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss'
 })

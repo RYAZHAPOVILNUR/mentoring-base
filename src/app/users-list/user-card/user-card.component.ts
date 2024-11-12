@@ -6,11 +6,18 @@ import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.co
 import { DeleteUserDialogComponent } from "../delete-user-dialog/delete-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { ChangeViewPhonePipe } from "../../pipes/change-view-phone.pipe";
+import { BoxShadowDirective } from "../../directives/box-shadow.directive";
+import { YellowDirective } from "../../directives/yellow.directive";
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [MatDialogModule, ChangeViewPhonePipe],
+  imports: [
+    MatDialogModule,
+    ChangeViewPhonePipe,
+    BoxShadowDirective,
+    YellowDirective
+  ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'
 })
