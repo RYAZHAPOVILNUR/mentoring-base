@@ -24,7 +24,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(m
+    expect(compiled.querySelector('h1')?.textContent).toContain
       o, mentoring-first-project');
   });
 });
