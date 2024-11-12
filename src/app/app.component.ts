@@ -5,15 +5,11 @@ import { __values } from 'tslib';
 
 // 1 задание 
 
-const aboutCompany = (value: 'О компании') => {(value);
+const func = (value: string) => {return value}
 
-  return 'О компании';
+const aboutCompany: string = 'О компании';
 
- }
-
-const aboutCompanyRt = aboutCompany('О компании');
-
-console.log(aboutCompanyRt);
+const vuzov = func(aboutCompany);
 
 //  3 задание
 
@@ -50,7 +46,7 @@ export class AppComponent {
   
   readonly headerItem2 = 'О компании';
   
-  readonly aboutCompany = 'О Компании';
+  readonly aboutCompany = vuzov;
 
   readonly headerItem3 = 'Каталог';
   
