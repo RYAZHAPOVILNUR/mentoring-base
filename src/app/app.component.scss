@@ -1,0 +1,354 @@
+*
+
+.app-container { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    height: 100%; 
+} 
+ 
+.nav { 
+    display: flex; 
+    justify-content: center; 
+    height: 100%; 
+    align-items: center; 
+    height: 80px; 
+} 
+ 
+.nav-container { 
+    width: 1080px; 
+    display: flex; 
+    justify-content: space-between; 
+} 
+ 
+.menu-items-container { 
+    display: flex; 
+    align-items: center; 
+} 
+ 
+.menu-item { 
+    cursor: pointer; 
+    margin-right: 25px; 
+    font-size: 16px; 
+    font-weight: 600; 
+    text-decoration: none;
+} 
+.second-menu-item {
+    border: none;
+    background-color: transparent;
+    color: #3C3C3B;
+    cursor: pointer;
+    font-size: 14px;
+}
+ 
+.white-color { 
+    color: #F9FAFB; 
+} 
+ 
+.header-info-container { 
+    display: flex; 
+    align-items: center; 
+} 
+ 
+.header-info-item { 
+    margin-left: 40px; 
+} 
+ 
+header { 
+    background-color: #4B565E; 
+} 
+ 
+.cart-button { 
+    width: 125px; 
+    height: 50px; 
+    border-radius: 50px; 
+    border: 1px solid #F0BA4E; 
+    background-color: #4B565E; 
+    color: #F9FAFB; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+ 
+.header-phone { 
+    color: #F9FAFB; 
+    justify-content: flex-end; 
+    align-items: center; 
+    display: flex; 
+    margin-left: auto; 
+    cursor: pointer; 
+} 
+
+.no-underline {
+    text-decoration: none;
+    color: #F9FAFB;
+}
+ 
+.phone { 
+    margin-right: 10px; 
+} 
+ 
+.second-nav { 
+    background: #F0BA4E; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+ 
+.second-nav-container { 
+    width: 1080px; 
+    height: 48px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+} 
+ 
+.search-input { 
+    background: transparent; 
+    border: none; 
+    border-bottom: 1px solid; 
+    width: 400px; 
+    height: 30px; 
+    background: url("/assets/Search.svg") no-repeat right; 
+    font-size: 16px;
+    color: #4B565E;
+} 
+ 
+.search-input:focus { 
+    outline: none; 
+} 
+ 
+.advantage { 
+    display: flex ; 
+    max-width: 420px; 
+    margin-top: 30px; 
+} 
+ 
+.advantages-container { 
+    display: flex; 
+ 
+} 
+.advantage-content { 
+    padding-top: 8px; 
+} 
+ 
+.advantage-content-title { 
+    font-size: 18px; 
+    color: #3C3C3B;
+} 
+ 
+.advantage-content-text { 
+    color: #A1A0A0; 
+    font-size: 18px;
+    line-height: 21.78px;
+} 
+ 
+.content-conteiner { 
+    max-width: 1320px; 
+    margin: 0 auto; 
+} 
+ 
+.advantage-image { 
+    margin-right: 10px; 
+} 
+ 
+.selection-large { 
+    width: 420px; 
+    height: 420px; 
+} 
+ 
+.section-shadow { 
+    box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07); 
+} 
+ 
+.home { 
+    position: relative; 
+    display: inline-block; 
+} 
+ 
+.text-home { 
+    width: 543px; 
+    position: absolute; 
+    color:  #F0BA4E; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+    height: 112px; 
+    top: 100px; 
+    left: 300px; 
+    font-size: 40px; 
+    font-weight: 700; 
+    line-height: 56px; 
+} 
+ 
+.selection-large-section-shadow-left {
+    height: 428px;
+    //width: 421px;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    max-height: 428px;
+    max-width: 421px;
+    background-image: url("/assets/spray.png");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position-y: bottom;
+    background-position-x: left;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-section-shadow-left { 
+    font-size: 28px;
+    font-weight: 600;
+    color:#3C3C3B;
+} 
+
+.text-strelka { 
+    align-self: end; 
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+}
+
+.selection-large-section-shadow1 {
+    display: flex;
+    justify-content: end;
+
+        &-button {
+            border: none; 
+            background: none;
+            color: #A1A0A0;
+        }
+}
+
+.activ-button {
+    color: #F0BA4E;
+    font-weight: 600;
+}
+
+.selection-large-section-shadow2 {
+    display: flex;
+}
+
+.selection-large-section-shadow-right {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+    margin-left: 21px;
+}
+
+.section-shadow-right-block {
+    width: 421px;
+    height: 200px;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+    text-align: left;
+}
+
+.text-right-block1 {
+    //width: 421px;
+    height: 200px;
+    background-image: url("/assets/spray_paint.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position-x: left;
+    text-align: right;
+    padding: 15px;
+    top: 16px;
+    color:#3C3C3B;
+}
+
+.text-strelka-block1 { 
+    align-self: end; 
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    justify-content: flex-end;
+}
+
+.text-right-block2 {
+    height: 200px;
+    background-image: url("/assets/varnish.png");
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position-x: right;
+    padding: 15px;
+    color:#3C3C3B;
+}
+
+.text-strelka-block2 { 
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    justify-content: flex-start;
+}
+
+.text-right-block3 {
+    height: 200px;
+    background-image: url("/assets/sealant.png");
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position-x: right;
+    padding: 15px;
+    color:#3C3C3B;
+    
+}
+
+.text-strelka-block3 { 
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    justify-content: flex-start;
+}
+
+.text-right-block4 {
+    height: 200px;
+    background-image: url("/assets/socket.png");
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position-x: left;
+    padding: 15px;
+    color:#3C3C3B;
+}
+
+.text-strelka-block4 { 
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    justify-content: flex-end;
+}
+
+footer { 
+    background-color: #4B565E; 
+    height: 373px; 
+} 

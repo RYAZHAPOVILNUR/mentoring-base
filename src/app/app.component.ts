@@ -1,13 +1,72 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { __values } from 'tslib';
+
+// 1 задание 
+
+const aboutCompany = (value: 'О компании') => {(value);
+
+  return 'О компании';
+
+ }
+
+const aboutCompanyRt = aboutCompany('О компании');
+
+console.log(aboutCompanyRt);
+
+//  3 задание
+
+const newPages: number[] = [5, 4, 3, 2, 1]
+
+// 4 задание
+
+const secondMenuItem = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
+
+const upperCaseSecondMenuItem = secondMenuItem.map (
+  (item) => {
+    return item.toUpperCase();
+  }
+)
+
+console.log(upperCaseSecondMenuItem);
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgIf, NgFor],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
+
 export class AppComponent {
+
   title = 'mentoring-first-project';
-}
+
+  isShowBigPicture = true;
+  
+  readonly headerItem1 = 'Главная';
+  
+  readonly headerItem2 = 'О компании';
+  
+  readonly aboutCompany = 'О Компании';
+
+  readonly headerItem3 = 'Каталог';
+  
+  readonly newPages: number[] = newPages;
+  
+  secondMenuItem : string[] = upperCaseSecondMenuItem;
+
+  isUpperCase : boolean = true;
+
+  changeMenuText() : void {
+    this.secondMenuItem = upperCaseSecondMenuItem.map(
+      item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
+    )
+    this.isUpperCase = !this.isUpperCase 
+  }
+
+} 
+
+
