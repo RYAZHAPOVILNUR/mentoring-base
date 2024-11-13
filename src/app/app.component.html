@@ -7,12 +7,10 @@
           alt="logo"
           class="header-main-menu-left-item-logo"
         />
-        <nav>
-          <div>
-            <a class="header-main-menu-left-item">Главная</a>
-            <a class="header-main-menu-left-item">О компании</a>
-            <a class="header-main-menu-left-item">Каталог</a>
-          </div>
+        <nav class="navigation">
+            <a class="header-main-menu-left-item">{{headerItem1}}</a>
+            <a class="header-main-menu-left-item">{{newString}}</a>
+            <a class="header-main-menu-left-item">{{headerItem3}}</a>
         </nav>
       </div>
       <div class="header-menu-right">
@@ -34,14 +32,14 @@
   </div>
 </header>
 <div class="lowbar">
-  <div class="lowbar-left-menu">
+  <div class="lowbar-left-menu" *ngIf="isShowCatalog">
     <img src="assets/light.svg" alt="меню" class="catalogue" />
-    <button class="lowbar-menu-item">Каталог</button>
-    <button class="lowbar-menu-item">Стройматериалы</button>
-    <button class="lowbar-menu-item">Инструменты</button>
-    <button class="lowbar-menu-item">Электрика</button>
-    <button class="lowbar-menu-item">Интерьер и одежда</button>
+    <button class="lowbar-menu-item" *ngFor="let item of headerAddonItems">
+{{item}}
+    </button>
   </div>
+  <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать всё</button>
+  <button (click)="changeMenuText()">Переключить регистр</button>
   <div class="lowbar-right-menu">
     <div class="lowbar-right-menu-item">
       <form action="" class="lowbar-right-menu-item-form">
@@ -57,8 +55,9 @@
     </div>
   </div>
 </div>
+<button (click)="isShowBanner = !isShowBanner">Явить/испарить касочника</button>
 <div class="banner">
-  <img src="assets/banner.svg" alt="banner" class="banner-picture" />
+  <img src="assets/banner.svg" alt="banner" class="banner-picture" *ngIf="isShowBanner" />
 </div>
 <div class="container">
   <img
@@ -70,11 +69,7 @@
 <div class="content-container">
   <div class="product-cards">
     <div class="product-cards__pagination">
-      <button class="product-cards__pagination-button active-button">1</button>
-      <button class="product-cards__pagination-button">2</button>
-      <button class="product-cards__pagination-button">3</button>
-      <button class="product-cards__pagination-button">4</button>
-      <button class="product-cards__pagination-button">5</button>
+      <button class="product-cards__pagination-button active-button" *ngFor="let item of newPages" r >{{item}}</button>
     </div>
     <div class="content-container">
       <div class="product-cards__grid">
@@ -724,12 +719,8 @@
                 <span class="footer-top-contacts-numbers-figures-text"
                   >Контактный телефон</span
                 >
-                <span class="footer-top-contacts-numbers-figures-phone"
-                  >+ 7 (812) 309-09-34</span
-                >
-                <span class="footer-top-contacts-numbers-figures-phone"
-                  >+ 7 (965) 084-29-09</span
-                >
+                <a href="tel+78123090934" class="footer-top-contacts-numbers-figures-phone">+ 7 (812) 309-09-34</a>
+                <a href="tel+79650842909" class="footer-top-contacts-numbers-figures-phone">+ 7 (965) 084-29-09</a>
               </div>
             </div>
             <div class="footer-top-contacts-mail">
@@ -742,11 +733,11 @@
                 <span class="footer-top-contacts-mail-block-text"
                   >Электронная почта</span
                 >
-                <span class="footer-top-contacts-mail-block-adress"
-                  >tustin78&#64;mail.ru</span
+                <a href="mailto tustin78&#64;mail.ru" class="footer-top-contacts-mail-block-adress"
+                  >tustin78&#64;mail.ru</a
                 >
-                <span class="footer-top-contacts-mail-block-adress"
-                  >info&#64;tustin.ru</span
+                <a href="mailto info&#64;tustin.ru" class="footer-top-contacts-mail-block-adress"
+                  >info&#64;tustin.ru</a
                 >
               </div>
             </div>

@@ -12,7 +12,7 @@
   align-items: center;
   font-family: Inter;
 
-  &-main-menu-left {
+  &-menu-left {
     display: flex;
     align-items: center;
 
@@ -27,6 +27,10 @@
       }
     }
   }
+}
+
+.navigation{
+  display: flex;
 }
 
 .header-menu-right {
@@ -53,6 +57,14 @@
 
 .basket {
   padding-right: 10px;
+}
+
+.wrapper-lowbar-menu-item{
+  @include clear-button;
+
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .lowbar {
@@ -520,6 +532,7 @@
         &-basket {
           &-purchase {
             @include clear-button;
+
             width: 135px;
             height: 47px;
             gap: 10px;
@@ -547,7 +560,7 @@
   flex-direction: column;
   justify-content: space-between;
   background: #f6f6f6;
-  background-image: url(../assets/drill.png);
+  background-image: url("../assets/drill.png");
   background-repeat: no-repeat;
   background-position: 100% 50%;
 
@@ -705,6 +718,7 @@
 
         &-string {
           @include clear-input;
+
           height: 28px;
           width: 400px;
           background-color: transparent;
