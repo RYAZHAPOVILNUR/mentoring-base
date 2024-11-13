@@ -1,18 +1,10 @@
 import { CommonModule, NgFor } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component, inject } from "@angular/core";
+import { User } from "./users-list.interface"; 
 
 // const consoleResponse = (response: any) => console.log(response);
 
-interface User {
-    id: number;
-    name: string;
-    email: string;
-    website: string;
-    company: {
-        name: string;
-    };
-}
 
 @Component({
     selector: 'app-user-list',
