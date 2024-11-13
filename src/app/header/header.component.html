@@ -1,0 +1,38 @@
+<div class="header">
+    <div class="header-left">
+        <div class="header-logo"><img src="/assets/Logo EGE.svg" alt="Логотип сайта"></div>
+        <nav class="header-nav">
+          <a routerLink="/users" class="header-nav-item">{{headerItem1}}</a>
+          <a routerLink="/" class="header-nav-item">{{aboutCompany}}</a>
+          <a href="catalog.html" class="header-nav-item" *ngIf="IsShowCatalog">{{headerItem3}}</a>
+        </nav>
+        <button (click)="IsShowCatalog=!IsShowCatalog">Скрыть/Показать каталог</button>
+        <button (click)="changeMenuText()">Capslock</button>
+    </div>
+    <div class="header-right">
+        <img class="header-logo2" src="/assets/Phone.svg" alt="Логотип Телефона">
+        <a href="tel:+7 (965) 084-29-29">+7 (965) 084-29-29</a>
+        <img class="header-logo3" src="/assets/Like.svg" alt="Логотип лайк">
+        <button class="basket">
+        <img class="header-logo4" src="/assets/Basket.svg" alt="Логотип корзины">
+        <span>Пусто</span>
+        </button> 
+    </div>
+  </div> 
+  <div class="header2">
+    <div class="header-left2">
+      <img class="Katalog" src="/assets/Menu cataloga.svg" alt="Выбор каталога">
+      <nav class="header-nav2">
+        <button class="header-nav-button" onclick="location.href='catalog.html'" *ngFor="let item of menuItems">{{item}}</button>
+      </nav>
+    </div>
+    <div class="header-right2">
+      <div class="search-container">
+        <input class="search-input" type="search" placeholder="Поиск, например Круг зачистной">
+      </div>
+      <div class="map">
+        <img src="/assets/Location.svg" alt="Локация">
+        <button class="country" type="menu">Москва</button>
+      </div>
+    </div>
+  </div>

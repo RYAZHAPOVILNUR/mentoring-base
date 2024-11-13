@@ -1,0 +1,185 @@
+<div>
+    <button (click)="isShowImg=!isShowImg">Скрыть/Показать мужика</button>
+    <img src="/assets/background of the page.png" *ngIf="isShowImg" alt="Фон страницы" style="width: 100%;">
+</div>
+  
+<div class="content-navigation">
+    <div class="description_block">
+      <div class="description_block-item">
+        <div class="description_block-item-logo"><img src="/assets/Large assortment.svg" alt="Большой ассортимент"></div>
+        <div class="description_block-item-text">
+          <span style="color: #000000;">Большой ассортимент</span> <br>строительных материалов всегда в наличии
+        </div>
+          </div>
+      <div class="description_block-item">
+        <div class="description_block-item-logo"><img src="/assets/Delivery of building materials.svg" alt="Доставка стройматериалов"></div>
+        <div class="description_block-item-text">
+          <span style="color: #000000;">Доставка стройматериалов</span><br> в течении четырех часов или в любое удобное время
+        </div>
+      </div>
+      <div class="description_block-item">
+        <div class="description_block-item-logo"><img src="/assets/Quality management System.svg" alt="система управления качеством"></div>
+        <div class="description_block-item-text">
+          Многоуровневая <span style="color: #000000;">система управления качеством</span>  по стандарту  ISO 9001 </div>
+      </div>
+    </div>
+    <div class="item-cards">
+      <div class="item-cards_pagination">
+        <button class="item-cards_pagination-button active-button" *ngFor="let page of newPages">{{page}}</button>
+      </div>
+      <div class="item-cards_grid">
+        <div class="item-cards_grid-left">
+          <div class="item-cards_grid-left-text">
+            <span style="font-size: 28px;">Строительный отделочный инструмент</span>
+          </div>
+          <div class="item-cards_grid-left-action">
+            <span style="margin-right: 10px;">Перейти в каталог</span>
+            <a class="item-cards_grid-left-action-link" href="https://www.sdvor.com/ekb/search/Строительный%20отделочный%20инструмент?freeTextSearch=Строительный%20отделочный%20инструмент&facets=categoryFacetPromo:terki-stroitelnye-6146"> <img src="/assets/Linkcatalog.svg" alt="Строительный отделочный инструмент"></a>
+          </div>
+        </div>
+        <div class="item-cards_grid-right">
+          <div class="item-cards_grid-right-block_1">
+            <div class="item-cards_grid-right-block-name_1">
+              <span style="font-size: 28px;">Эмали</span>
+            </div>
+            <div class="item-cards_grid-left-action">
+              <span style="margin-right: 10px;">Перейти в каталог</span>
+              <a class="item-cards_grid-left-action-link" href="https://www.sdvor.com/ekb/search?freeTextSearch=эмали"> <img src="/assets/Linkcatalog.svg" alt="Ссылка на эмали"></a>
+              
+            </div>
+          </div>
+          <div class="item-cards_grid-right-block_2">
+            <div class="item-cards_grid-right-block-name_2">
+              Лакокрасочные материалы
+            </div>
+            <div class="item-cards_grid-left-action">
+              <span style="margin-right: 10px;">Перейти в каталог</span>
+              <a class="item-cards_grid-left-action-link" href="https://www.sdvor.com/ekb/search?freeTextSearch=Лакокрасочный%20материалы"> <img src="/assets/Linkcatalog.svg" alt="Ссылка на Лакокрасочные материалы"></a>
+            </div>
+          </div>
+          <div class="item-cards_grid-right-block_3">
+            <div class="item-cards_grid-right-block-name_3">
+              Пены, клеи и герметики
+            </div>
+            <div class="item-cards_grid-left-action">
+              <span style="margin-right: 10px;">Перейти в каталог</span>
+              <a class="item-cards_grid-left-action-link" href="https://www.sdvor.com/ekb/search?freeTextSearch=Пены,%20клеи%20и%20герметики"> <img src="/assets/Linkcatalog.svg" alt="Ссылка на Пены, клеи и герметики"></a>
+            </div>
+          </div>
+          <div class="item-cards_grid-right-block_4">
+            <div class="item-cards_grid-right-block-name_4">
+              Розетки и выключатели
+            </div>
+            <div class="item-cards_grid-left-action">
+              <span style="margin-right: 10px;">Перейти в каталог</span>
+              <a class="item-cards_grid-left-action-link" href="https://www.sdvor.com/ekb/search?freeTextSearch=Розетки%20и%20выключатели"> <img src="/assets/Linkcatalog.svg" alt="Ссылка на Розетки и выключатели"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Popular_products">
+      <div class="Popular_products-block_1">
+        <span class="Popular_products-block_1-1">Популярные товары</span>
+        <p style="margin-right: 96px"><a href="https://www.example.com" target="products" style="color: #F0BA4E;">Посмотреть все товары</a></p>
+      </div>
+      <div class="Popular_products-block_2">
+        <div class="product-card"> 
+          <div class="badge">
+            <img src="/assets/Discount.svg" alt="Product" class="discount">
+            <img src="/assets/Favorite-icon.svg" alt="Product" class="favorite-icon">
+          </div> 
+          <div class="product-name" style="font-size: 20px;">Круг зачистной 125x6x22</div> 
+          <div class="product-article">Артикул 00004</div> 
+          <div class="price"> 
+            <div class="price_text">Цена за штуку</div> 
+            <del class="old-price">52 руб.</del><span class="new-price" style="font-size: 20px;">48 руб.</span> 
+          </div> 
+          <div class="quantity-control"> 
+            <div class="quantity-control_text">Количество
+              <div class="quantity-control_button">
+                <button class="quantity-control_button-">-</button> 
+                <div class="quantity">1</div> 
+                <button class="quantity-control_button-">+</button> 
+              </div>  
+            </div>
+          <button class="add-to-card">В корзину</button> 
+          </div>
+        </div>
+        <div class="product-card"> 
+          <div class="badge">
+            <img src="/assets/Discount.svg" alt="Product" class="discount">
+            <img src="/assets/Favorite-icon.svg" alt="Product" class="favorite-icon">
+          </div> 
+          <div class="product-name" style="font-size: 20px;">Круг зачистной 125x6x22</div> 
+          <div class="product-article">Артикул 00004</div> 
+          <div class="price"> 
+            <div class="price_text">Цена за штуку</div> 
+            <del class="old-price">52 руб.</del><span class="new-price" style="font-size: 20px;">48 руб.</span> 
+          </div> 
+          <div class="quantity-control"> 
+            <div class="quantity-control_text">Количество
+              <div class="quantity-control_button">
+                <button class="quantity-control_button-">-</button> 
+                <div class="quantity">1</div> 
+                <button class="quantity-control_button-">+</button> 
+              </div>  
+            </div>
+          <button class="add-to-card">В корзину</button> 
+          </div>
+        </div>
+        <div class="product-card"> 
+          <div class="badge">
+            <img src="/assets/New.svg" alt="Product" class="New_3">
+            <img src="/assets/Discount.svg" alt="Product" class="discount_3">
+            <img src="/assets/Favorite-icon.svg" alt="Product" class="favorite-icon_3">
+          </div> 
+          <div class="product-name" style="font-size: 20px;">Круг зачистной 125x6x22</div> 
+          <div class="product-article">Артикул 00004</div> 
+          <div class="price"> 
+            <div class="price_text">Цена за штуку</div> 
+            <del class="old-price">52 руб.</del><span class="new-price" style="font-size: 20px;">48 руб.</span> 
+          </div> 
+          <div class="quantity-control"> 
+            <div class="quantity-control_text">Количество
+              <div class="quantity-control_button">
+                <button class="quantity-control_button-">-</button> 
+                <div class="quantity">1</div> 
+                <button class="quantity-control_button-">+</button> 
+              </div>  
+            </div>
+          <button class="add-to-card">В корзину</button> 
+          </div>
+        </div>
+        <div class="product-card"> 
+          <div class="badge">
+            <img src="/assets/New.svg" alt="Product" class="New">
+            <img src="/assets/Favorite-icon.svg" alt="Product" class="favorite-icon">
+          </div> 
+          <div class="product-name" style="font-size: 20px;">Круг зачистной 125x6x22</div> 
+          <div class="product-article">Артикул 00004</div> 
+          <div class="price"> 
+            <div class="price_text">Цена за штуку</div> 
+            <span class="new-price" style="font-size: 20px;">52 руб.</span> 
+          </div> 
+          <div class="quantity-control"> 
+            <div class="quantity-control_text">Количество
+              <div class="quantity-control_button">
+                <button class="quantity-control_button-">-</button> 
+                <div class="quantity">1</div> 
+                <button class="quantity-control_button-">+</button> 
+              </div>  
+            </div>
+          <button class="add-to-card">В корзину</button> 
+          </div>
+        </div>
+      </div>  
+      <div class="Popular_products-block_3">
+          <div class="Popular_products-block_3-1">
+          <p class="Popular_products-block_3-1_1">Более 10 000 наименований <br>
+          <span class="Popular_products-block_3-1_2">Инструмент для вашего бизнеса, разнообразных марок</span></p>
+          </div>
+          <a class="Popular_products-block_3-1_3" href="https://www.example.com" target="products">Перейти в каталог</a>
+      </div>
+    </div>
+</div>
