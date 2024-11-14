@@ -28,8 +28,6 @@ import {NgIf} from "@angular/common";
 export class CreateUserFormComponent {
     @Output()
     createUser = new EventEmitter()
-
-
     
     public form = new FormGroup({
         name: new FormControl('', [Validators.required, Validators.minLength(2)]),

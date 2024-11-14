@@ -5,9 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {NgIf} from "@angular/common";
-
-
+import { NgIf } from "@angular/common";
 
 export function completedValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -18,20 +16,21 @@ export function completedValidator(): ValidatorFn {
         return { invalidComleted: true }
     }
 }
+
 @Component({
     selector: 'app-create-todo-form',
     templateUrl: './create-todo-form.component.html',
     styleUrl: './create-todo-form.component.scss',
     standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    NgIf
-  ]
+    imports: [
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        NgIf
+    ]
 })
 
 export class CreateTodoFormComponent {
@@ -43,9 +42,7 @@ export class CreateTodoFormComponent {
         userId: new FormControl('', [Validators.required]),
         completed: new FormControl('', [Validators.required, completedValidator()])
     })
-    
 
-    
     private getCompletedValue(): boolean {
         const value = this.form.get('completed')?.value!.trim().toLowerCase()
         if (value === 'да') {

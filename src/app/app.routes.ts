@@ -10,13 +10,13 @@ export const routes: Routes = [
     },
 
     {
-        path:'users',
+        path: 'users',
         component: UsersListComponent,
         pathMatch: 'full'
     },
 
     {
-        path:'todos',
+        path: 'todos',
         component: TodoListComponent,
         pathMatch: 'full'
     }

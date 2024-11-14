@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { ITodo } from "./todos-list/todos-list.component";
+import { ITodo } from "../todos-list/todos-list.component";
 
 
 

@@ -1,42 +1,10 @@
 import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { UsersApiService } from "../users-api.service";
+import { UsersApiService } from "../services/users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { UsersService } from "../user.service";
+import { UsersService } from "../services/user.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
-
-
-export interface IUser {
-    id: number,
-    name: string,
-    username?: string,
-    email: string,
-    address?: {
-        street: string,
-        suite: string,
-        city: string,
-        zipcode: string,
-        geo: {
-            lat: string,
-            lng: string
-        }
-    },
-    phone?: string,
-    website: string,
-    company: {
-        name: string,
-        catchPhrase?: string,
-        bs?: string
-    }
-}
-
-export interface ICreateUserForm {
-    id?: number,
-    name: string,
-    email: string,
-    website: string,
-    companyName: string
-}
+import { ICreateUserForm } from "../interfaces/user.interface";
 
 @Component({
     selector: 'app-users-list',
@@ -62,7 +30,7 @@ export class UsersListComponent {
             users => console.log(users)
         )
     }
-    deleteUser(id: number) {
+    public deleteUser(id: number) {
         this.usersService.deleteUsers(id)
     }
 
@@ -73,12 +41,10 @@ export class UsersListComponent {
             email: formData.email,
             website: formData.website,
             company: {
-                name: formData.companyName,
+                name: formData.company.name,
             },
         })
         console.log('Данные формы: ', event)
     }
-
-
 }
 

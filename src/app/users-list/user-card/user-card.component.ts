@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { IUser } from "../users-list.component";
+import { IUser } from "../../interfaces/user.interface";
+
+
 
 @Component({
     selector: 'app-user-card',
@@ -8,14 +10,12 @@ import { IUser } from "../users-list.component";
     standalone: true
 })
 
-export class UserCardComponent {
-    @Input()
-    user!: IUser
-
-    @Output()
-    deleteUser = new EventEmitter()
-
-    onDeleteUser(userId: number) {
+export class UserCardComponent<T extends IUser> {
+    @Input() public user!: T
+    
+    @Output() public deleteUser: EventEmitter<number> = new EventEmitter<number>()
+    
+    public onDeleteUser(userId: number): void {
         this.deleteUser.emit(userId)
     }
 }

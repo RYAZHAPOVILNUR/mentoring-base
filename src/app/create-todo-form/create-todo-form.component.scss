@@ -1,15 +1,10 @@
-form {
-    margin-left: 300px
-}
-
-form {
+.form-todo {
+    margin-left: 300px;
     display: flex;
     flex-direction: column;
 }
 
-
-
-button {
+.custom-button-style {
     width: 150px;
     margin-top: 20px;
 }
