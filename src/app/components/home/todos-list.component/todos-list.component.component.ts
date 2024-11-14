@@ -1,34 +1,35 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
-import { AsyncPipe, NgFor } from '@angular/common';
-import { TodoCardComponent } from './todo-card/todo-card.component';
-import { TodosService } from '../../../services/todos.service';
-import { CreateTodosFormComponent } from '../create-todos-form/create-todos-form.component';
-import { Todo } from '../users-list/user-interface';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-import { CreateTodoDialogComponent } from './todo-card/create-todo-dialog/create-todo-dialog.component';
-import { TodosApiService } from '../../../todosApi.service';
+import {ChangeDetectionStrategy, Component, inject,} from '@angular/core';
+import {AsyncPipe, NgFor} from '@angular/common';
+import {TodoCardComponent} from './todo-card/todo-card.component';
+import {TodosService} from '../../../services/todos.service';
+import {CreateTodosFormComponent} from '../create-todos-form/create-todos-form.component';
+import {Todo} from '../../../interfaces/user-interface';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialog} from '@angular/material/dialog';
+import {CreateTodoDialogComponent} from './todo-card/create-todo-dialog/create-todo-dialog.component';
+import {TodosApiService} from '../../../services/todosApi.service';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodosFormComponent],
+  imports: [NgFor,MatButtonModule, TodoCardComponent, AsyncPipe, CreateTodosFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './todos-list.component.component.html',
   styleUrl: './todos-list.component.component.scss',
 })
-export class TodosListComponent implements OnInit {
-  readonly todosService = inject(TodosService);
+export class TodosListComponent {
+  public todosService = inject(TodosService);
   readonly todoApiService = inject(TodosApiService);
 
-  ngOnInit(): void {
+  constructor() {
     this.todosService.loadTodos()
   }
+
+  // ngOnInit(): void {
+  //   this.todosService.loadTodos()
+  // }
 
   public createTodo(formData: Todo) {
     this.todosService.createTodo({

@@ -1,14 +1,13 @@
-import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { noDashPipe } from '../../../pipes/no-dash.pipe';
-import { yellowDirective } from '../../../directives/yellow.directive';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { AdminCheckingPageComponent } from '../admin-checking-page/admin-checking-page.component';
-import { MatDialog } from '@angular/material/dialog';
-import { AuthUserService } from '../../../services/auth-user.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {AsyncPipe, DatePipe, NgFor, NgIf} from '@angular/common';
+import {Component, inject} from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
+import {noDashPipe} from '../../../pipes/no-dash.pipe';
+import {yellowDirective} from '../../../directives/yellow.directive';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {AdminCheckingPageComponent} from '../admin-checking-page/admin-checking-page.component';
+import {MatDialog} from '@angular/material/dialog';
+import {AuthUserService} from '../../../services/auth-user.service';
 
 const func2 = (caller: string) => {
   return caller;
@@ -18,8 +17,8 @@ const newCaller = func2('О Компании');
 
 @Component({
   selector: 'app-header',
-  templateUrl: 'header.component.html',
-  styleUrl: 'header.component.scss',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
   standalone: true,
   imports: [
     NgIf,

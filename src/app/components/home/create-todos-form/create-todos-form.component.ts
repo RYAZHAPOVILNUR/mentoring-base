@@ -1,12 +1,11 @@
-import { NgIf } from '@angular/common';
-import { Component, Output, EventEmitter, inject } from '@angular/core';
-import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { completedValidator } from '../users-list/custom-validators';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
+import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {completedValidator} from '../../../validators/custom-validators';
 
 @Component({
   selector: 'app-create-todos-form',

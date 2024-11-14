@@ -1,5 +1,5 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import {NgFor, NgIf} from '@angular/common';
+import {Component} from '@angular/core';
 
 let calcScrollValue = () => {
   let scrollProgress = document.getElementById('progress');
@@ -22,6 +22,7 @@ let calcScrollValue = () => {
   scrollProgress?.addEventListener('click', () => {
     document.documentElement.scrollTop = 0;
   });
+
 
   if (scrollProgress) {
     scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;

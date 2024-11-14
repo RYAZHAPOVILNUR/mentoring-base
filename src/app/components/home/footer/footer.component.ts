@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 const func2 = (caller: string) => {
   return caller;

@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Todo } from './components/home/users-list/user-interface';
+import {HttpClient} from '@angular/common/http';
+import {inject, Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Todo} from '../interfaces/user-interface';
 
 @Injectable({ providedIn: 'root' })
 export class TodosApiService {

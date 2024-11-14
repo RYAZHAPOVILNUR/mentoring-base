@@ -1,9 +1,7 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/home/app-header/header.component';
-import { HomepageComponent } from './components/home/home.component';
-import { FooterComponent } from './components/home/footer/footer.component';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {HeaderComponent} from './components/home/app-header/header.component';
+import {FooterComponent} from './components/home/footer/footer.component';
 
 let calcScrollValue = () => {
   let scrollProgress = document.getElementById('progress');

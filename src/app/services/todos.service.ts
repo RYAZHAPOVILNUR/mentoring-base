@@ -1,8 +1,8 @@
-import { inject, Injectable } from '@angular/core';
-import { Todo } from '../components/home/users-list/user-interface';
-import { BehaviorSubject } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
-import { TodosApiService } from '../todosApi.service';
+import {inject, Injectable} from '@angular/core';
+import {Todo} from '../interfaces/user-interface';
+import {BehaviorSubject} from 'rxjs';
+import {LocalStorageService} from './local-storage.service';
+import {TodosApiService} from './todosApi.service';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
@@ -21,7 +21,6 @@ export class TodosService {
       this.todoApiService.getTodos().subscribe((data) => {
         const todos = data.slice(0, 10);
         this.setTodos(todos);
-        this.localStorage.saveToLocalStorage('todos', todos);
       });
   }
 
@@ -40,11 +39,7 @@ export class TodosService {
     }
     alert('ЗАДАЧА УСПЕШНО СОЗДАНА');
     const newTodo = [...this.todosSubject$.value, todo];
-    this.todosSubject$.next(newTodo);
-    this.localStorage.saveToLocalStorage(
-      'todos',
-      this.todosSubject$.value
-    );
+    this.setTodos(newTodo);
   }
 
   public editTodo(editedTodo: Todo) {
@@ -54,21 +49,13 @@ export class TodosService {
       }
       return todo;
     });
-    this.todosSubject$.next(editTodo);
-    this.localStorage.saveToLocalStorage(
-      'todos',
-      this.todosSubject$.value
-    );
+    this.setTodos(editTodo);
   }
 
   public deleteTodo(id: number) {
     const updatedTodos = this.todosSubject$.value.filter(
       (todo) => todo.id !== id
     );
-    this.todosSubject$.next(updatedTodos);
-    this.localStorage.saveToLocalStorage(
-      'todos',
-      this.todosSubject$.value
-    );
+    this.setTodos(updatedTodos);
   }
 }

@@ -1,14 +1,14 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Todo } from '../../users-list/user-interface';
-import { MatCardModule } from '@angular/material/card';
-import { DeleteTodoConfirmationComponent } from './delete-todo-confirmation/delete-todo-confirmation.component';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { customTitleCutPipe } from '../../../../pipes/title-cut.pipe';
-import { shadowDirective } from '../../../../directives/shadow.directive';
-import { MatButtonModule } from '@angular/material/button';
+import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
+import {Todo} from '../../../../interfaces/user-interface';
+import {MatCardModule} from '@angular/material/card';
+import {DeleteTodoConfirmationComponent} from './delete-todo-confirmation/delete-todo-confirmation.component';
+import {MatDialog} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {EditTodoDialogComponent} from './edit-todo-dialog/edit-todo-dialog.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {customTitleCutPipe} from '../../../../pipes/title-cut.pipe';
+import {shadowDirective} from '../../../../directives/shadow.directive';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-todo-card',

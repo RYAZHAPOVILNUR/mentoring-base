@@ -1,7 +1,6 @@
-import { inject, Injectable } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
-import { AuthUserService } from './auth-user.service';
-import { map } from 'rxjs';
+import {inject, Injectable} from '@angular/core';
+import {CanActivateFn, Router} from '@angular/router';
+import {AuthUserService} from '../services/auth-user.service';
 
 Injectable({ providedIn: 'root' });
 

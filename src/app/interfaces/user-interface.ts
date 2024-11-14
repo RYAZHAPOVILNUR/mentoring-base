@@ -39,3 +39,9 @@ export interface Todo {
   title: string;
   completed: boolean;
 }
+
+export interface UserGuard {
+  name: string;
+  email: string;
+  isAdmin: boolean | null;
+}
