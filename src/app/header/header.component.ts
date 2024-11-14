@@ -1,7 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DatePipe, NgForOf, NgIf } from "@angular/common";
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { YellowDirective } from "../directives/yellow.directive";
+import { MatIcon } from "@angular/material/icon";
+import { MatTooltipModule, TooltipPosition } from "@angular/material/tooltip";
+import { FormControl } from "@angular/forms";
+import { MatDialog } from "@angular/material/dialog";
+import { AuthComponent } from "../auth/auth.component";
+import { UserService } from "../user.service";
 
 const aboutCompanyFn = (text: string) => text;
 
@@ -23,27 +29,23 @@ const upperCaseMenuItems = menuItems.map(
     RouterOutlet,
     RouterLink,
     DatePipe,
-    YellowDirective
+    YellowDirective,
+    MatIcon,
+    MatTooltipModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
   isShowCatalog = true;
-
   readonly headerNavItem1 = 'Главная';
-
   readonly headerNavItem2 = 'О компании';
-
   readonly headerNavItem3 = 'Каталог';
-
   readonly aboutCompany = aboutCompany;
-
-  readonly today : Date = new Date()
-
+  readonly today: Date = new Date()
+  private readonly dialog = inject(MatDialog)
+  protected readonly userService = inject(UserService)
   menuItems = upperCaseMenuItems;
-
   isUpperCase = true;
 
   changeMenuText() {
@@ -52,5 +54,23 @@ export class HeaderComponent {
     )
 
     this.isUpperCase = !this.isUpperCase
+  }
+
+  public openDialog(): void {
+    const dialogRef = this.dialog.open(AuthComponent, {
+      width: '300px', height: '300px'
+    });
+
+    dialogRef.afterClosed().subscribe((result: string) => {
+      if (result === 'admin') {
+        this.userService.loginAsAdmin()
+      } else if (result === 'user') {
+        this.userService.loginAsUser()
+      } else return
+    });
+  }
+
+  public logout() {
+    this.userService.logout()
   }
 }

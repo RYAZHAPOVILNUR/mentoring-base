@@ -10,9 +10,16 @@
           <a class="header-nav-item" href="#">{{aboutCompany}}</a>
           <a class="header-nav-item" *ngIf="isShowCatalog">{{headerNavItem3}}</a>
         </nav>
-        <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+        <button
+          style="margin-right: 5px"
+          (click)="isShowCatalog = !isShowCatalog"
+        >{{ isShowCatalog ? 'Скрыть каталог' : 'Показать каталог' }}
+        </button>
         <button (click)="changeMenuText()">Изменить текст</button>
-        <button routerLink="users">Админка</button>
+        <div class="admin-user">
+          <button routerLink="users">Пользователи</button>
+          <button routerLink="admin" *ngIf="userService.isAdmin === true">Админка</button>
+        </div>
         <button routerLink="todos">Задачи</button>
       </div>
       <div class="header-right">
@@ -29,6 +36,25 @@
             Пусто
           </div>
         </button>
+        <div class="btn-admin">
+          <button
+            (click)="openDialog()"
+            appYellow
+            matTooltip="ВХОД"
+            [matTooltipPosition]="'right'"
+            class="btn-log"
+          ><mat-icon>login</mat-icon>
+          </button>
+          <button
+            (click)="logout()"
+            routerLink=""
+            appYellow
+            matTooltip="ВЫХОД"
+            [matTooltipPosition]="'right'"
+            class="btn-log"
+          ><mat-icon>logout</mat-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>

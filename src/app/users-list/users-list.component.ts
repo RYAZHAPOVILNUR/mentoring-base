@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, inject, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AsyncPipe, NgForOf, NgIf } from "@angular/common";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -6,7 +6,6 @@ import { UsersService } from "../users.service";
 import { MatIcon } from "@angular/material/icon";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatMiniFabButton } from "@angular/material/button";
-import { EditUserDialogComponent } from "./edit-user-dialog/edit-user-dialog.component";
 import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
@@ -34,17 +33,6 @@ export interface User {
   }
 }
 
-export interface CreateUser {
-  id: number,
-  name: string,
-  email: string,
-  website: string,
-  company: {
-    name: string
-  };
-  phone: string;
-}
-
 @Component({
   selector: 'app-users-list',
   standalone: true,
@@ -63,7 +51,7 @@ export interface CreateUser {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersListComponent {
-  user!: User
+  // user!: User
 
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService)
@@ -83,24 +71,8 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public editUser(user: CreateUser) {
+  public editUser(user: User) {
     this.usersService.editUsers(user)
-  }
-
-  public createUser(user: CreateUser) {
-    this.usersService.createUser({
-      id: new Date().getTime(),
-      name: user.name,
-      email: user.email,
-      website: user.website,
-      company: {
-        name: user.company.name,
-      },
-      phone: user.phone,
-    })
-      console.log("ДАННЫЕ ФОРМЫ", user);
-    console.log(new Date().getTime())
-
   }
 
   public openCreateDialog(): void {

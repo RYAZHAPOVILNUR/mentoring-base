@@ -32,6 +32,14 @@
   text-decoration: none;
 }
 
+.admin-user {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 0 5px;
+  gap: 5px;
+}
+
+
 .card-button {
   width: 125px;
   height: 50px;
@@ -128,4 +136,20 @@
 .location-city {
   color: white;
   margin-left: 4px;
+}
+
+.btn-admin {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.btn-log {
+  display: flex;
+  justify-content: space-between;
+  background: #4B565E;
+  color: white;
+  border: none !important;
+  cursor: pointer;
+  border-radius: 25px;
 }
