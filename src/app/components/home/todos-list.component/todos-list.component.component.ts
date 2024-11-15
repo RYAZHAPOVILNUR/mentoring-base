@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject,} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit,} from '@angular/core';
 import {AsyncPipe, NgFor} from '@angular/common';
 import {TodoCardComponent} from './todo-card/todo-card.component';
 import {TodosService} from '../../../services/todos.service';
@@ -19,17 +19,13 @@ import {MatButtonModule} from '@angular/material/button';
   templateUrl: './todos-list.component.component.html',
   styleUrl: './todos-list.component.component.scss',
 })
-export class TodosListComponent {
+export class TodosListComponent implements OnInit {
   public todosService = inject(TodosService);
   readonly todoApiService = inject(TodosApiService);
 
-  constructor() {
+  ngOnInit(): void {
     this.todosService.loadTodos()
   }
-
-  // ngOnInit(): void {
-  //   this.todosService.loadTodos()
-  // }
 
   public createTodo(formData: Todo) {
     this.todosService.createTodo({

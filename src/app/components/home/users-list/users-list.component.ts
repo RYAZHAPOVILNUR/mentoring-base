@@ -1,5 +1,5 @@
 import {AsyncPipe, NgFor} from '@angular/common';
-import {ChangeDetectionStrategy, Component, inject,} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit,} from '@angular/core';
 import {UserCardComponent} from './user-card/user-card.component';
 import {UsersService} from '../../../services/users.service';
 import {CreateUserFormComponent} from '../create-user-form/create-user-form.component';
@@ -17,16 +17,12 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [NgFor,UserCardComponent, MatButtonModule ,AsyncPipe, CreateUserFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersListComponent{
+export class UsersListComponent implements OnInit {
   public usersService = inject(UsersService);
 
-  constructor() {
-  this.usersService.loadUsers()
+  ngOnInit() {
+    this.usersService.loadUsers();
   }
-
-  // ngOnInit() {
-  //   this.usersService.loadUsers();
-  // }
 
   public createUser(formData: User) {
     this.usersService.createUser({

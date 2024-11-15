@@ -16,11 +16,10 @@ export class TodosService {
       this.localStorage.getFromLocalStorage<Todo[]>('todos');
 
     if (localStorageTodos) {
-      this.todosSubject$.next(localStorageTodos.slice(0, 10));
+      this.todosSubject$.next(localStorageTodos);
     } else
       this.todoApiService.getTodos().subscribe((data) => {
-        const todos = data.slice(0, 10);
-        this.setTodos(todos);
+        this.setTodos(data.slice(0, 10));
       });
   }
 

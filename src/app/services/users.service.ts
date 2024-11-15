@@ -15,11 +15,10 @@ export class UsersService {
     const localStorageUsers =
       this.localStorage.getFromLocalStorage<User[]>('users');
     if (localStorageUsers) {
-      this.usersSubject$.next(localStorageUsers.slice(0, 10));
+      this.usersSubject$.next(localStorageUsers);
     } else {
       this.userApiService.getUsers().subscribe((data) => {
-        const users = data.slice(0, 10);
-        this.setUsers(users);
+        this.setUsers(data);
       });
     }
   }
