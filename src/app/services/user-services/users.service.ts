@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { UserInterface } from './interfaces/user-interfaces';
+import { UserInterface } from '../../interfaces/user-interfaces';
 
 // Паттерн singleton это паттерн проектирования, гарантирующий, что у класса будет только один экземпляр для всего приложения
 @Injectable({ providedIn: 'root' })

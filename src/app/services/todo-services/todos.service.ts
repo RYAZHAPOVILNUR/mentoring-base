@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { TodoInterface } from "./interfaces/todo-interfaces";
+import { TodoInterface } from "../../interfaces/todo-interfaces";
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
