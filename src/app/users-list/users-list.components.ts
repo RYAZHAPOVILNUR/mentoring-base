@@ -17,16 +17,16 @@ export class UserListComponent {
     readonly apiServis = inject(HttpClient);
     users: User[] = [];
 
+
     constructor() {
       this.apiServis.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
           (response: User[]) => {
             this.users = response;
             console.log('USERS', this.users);
-          }
-        );
-    }
-  
-    deleteUser(id: number) {
+        });
+        
+      
+    }deleteUser(id: number) {
       this.users = this.users.filter(item => item.id !== id);
     }
 }
