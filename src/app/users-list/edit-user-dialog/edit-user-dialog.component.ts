@@ -11,7 +11,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     selector: 'app-edit-user-dialog',
     templateUrl: './edit-user-dialog.component.html',
     standalone: true,
-    imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatDialogClose, MatTooltipModule],
+    imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatTooltipModule],
 })
 export class EditUserDialogComponent {
     readonly data = inject<{user: User}>(MAT_DIALOG_DATA);

@@ -12,7 +12,7 @@ import { MAT_DIALOG_DATA, MatDialogClose } from "@angular/material/dialog";
     templateUrl: './create-user-form.component.html',
     styleUrl: './create-user-form.component.scss',
     standalone: true,
-    imports: [ReactiveFormsModule, NgIf, MatButtonModule, MatFormFieldModule, MatInputModule, MatDialogClose],
+    imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDialogClose],
 })
 export class CreateUserFormComponent {
     readonly data = inject<{user: User}>(MAT_DIALOG_DATA);

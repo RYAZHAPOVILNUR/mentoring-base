@@ -35,6 +35,12 @@
                 <button class="go" routerLink="/dz" routerLinkActive="active-link">Дополнительные задачи</button>
             </div>
         </div>
+        <div>
+            <button routerLink="/admin" routerLinkActive="active-link">админ</button>
+            <button (click)="openDialog()">вход</button>
+            <button (click)="logout()">выход</button>
+
+        </div>
     </div>
 
     <div class="menu">
@@ -44,10 +50,6 @@
                     <img src="/assets/menu.svg" alt="знак меню">
                 </div>
                 <a class="menu-left-punkt" *ngFor="let item of MenuItems">{{item}}</a>
-                <!-- <a class="menu-left-punkt">{{header2Item2}}</a>
-                <a class="menu-left-punkt">{{header2Item3}}</a>
-                <a class="menu-left-punkt">{{header2Item4}}</a>
-                <a class="menu-left-punkt">{{header2Item5}}</a> -->
             </div>
 
             <div class="menu-right">
