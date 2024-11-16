@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { UserRole } from "./interfaces/users-interface";
+import { UserRole } from "../interfaces/users-interface";
+
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  private userSubject$ = new BehaviorSubject<UserRole | null>(null);
+  private userSubject$ = new BehaviorSubject< UserRole | null>(null);
 
   public readonly user$ = this.userSubject$.asObservable();
 

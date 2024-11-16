@@ -6,7 +6,7 @@ import { YellowCart } from '../directives/cart.directive';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginComponent } from '../login/login.component';
-import { UsersService } from '../users.service';
+import { UsersService } from '../services/users.service';
 
 const  aboutCompany = (item: string) => {
   return item 

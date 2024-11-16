@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
-import { UsersApiService } from '../users-api.service';
+import { UsersApiService } from '../services/users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { CreateUser, User } from '../interfaces/user-interface';
 import { ShadowForUser } from '../directives/user.directive';
-import { StorageService } from '../local-storage/local-storage.service';
+import { StorageService } from '../services/local-storage.service';
 import { take } from 'rxjs';
 
 @Component({
@@ -25,28 +25,16 @@ export class UsersListComponent {
 
   users: User[] = [];
 
-  constructor() {
-    this.users = this.storageService.getUsers();
-
-    if (this.users.length === 0) {
-      this.usersApiService.getUsers().subscribe(
-        (response: User []) => {
-          this.usersService.setUsers(response);
-          this.storageService.saveUserList(response);
-        });
-    } else {
-      this.usersService.setUsers(this.users);
-    }
+  ngOnInit() {
+    this.usersService.loadUsers();
   }
 
   deleteUser (id: number) {
     this.usersService.deleteUser(id);
-    this.updateLocalStorage();
   }
 
   editUser (user: User) {
     this.usersService.editUser(user);
-    this.updateLocalStorage();
   }
 
   createUser (formData: CreateUser) {
@@ -60,12 +48,5 @@ export class UsersListComponent {
       },
     };
     this.usersService.createUser(newUser);
-    this.updateLocalStorage();
   }
-
-  private updateLocalStorage (): void {
-    this.usersService.getUsers().pipe(take(1)).subscribe((users: User[]) => {
-      this.storageService.saveUserList(users);
-    });
-  }
-}
+}  
