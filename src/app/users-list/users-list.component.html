@@ -1,16 +1,13 @@
 <div class="container">
-  <div>Компонент списука юзеров</div>
-<!--  <app-edit-user-dialog></app-edit-user-dialog>-->
-<!--  <app-create-user-form></app-create-user-form>-->
+  <div>Компонент списка юзеров</div>
   <button (click)="openDialog()">Создать пользователя</button>
   <div class="users_list">
-    <div  *ngFor="let user of users$ | async">
-        <app-user-card
-         (deleteUser)="deleteUser($event)"
-         (updateUser)="updateUser($event)"
-          [user]="user"
-        ></app-user-card>
+    <div *ngFor="let user of users$ | async">
+      <app-user-card
+        (deleteUser)="deleteUser($event)"
+        (updateUser)="updateUser($event)"
+        [user]="user"
+      ></app-user-card>
     </div>
   </div>
 </div>
-

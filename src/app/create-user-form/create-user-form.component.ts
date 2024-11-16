@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {MatDialogRef} from "@angular/material/dialog";
 import {MatFormField, MatInput, MatLabel} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 
@@ -19,15 +19,20 @@ import {MatButton} from "@angular/material/button";
 })
 export class CreateUserFormComponent {
   readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
-  readonly data = inject(MAT_DIALOG_DATA);
+
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
     email: new FormControl('', [Validators.email]),
-    company: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
+    company: new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
+    })
   })
 
+  constructor() {
+    console.log(this.form.value);
+  }
 
   onNoClick(): void {
-    this.dialogRef.close({...this.form.value, company: {name: this.form.value.company}, id: new Date().getTime()});
+    this.dialogRef.close({...this.form.value, id: new Date().getTime()});
   }
 }

@@ -40,30 +40,29 @@ export class UserCardComponent {
   readonly dialog = inject(MatDialog);
 
   @Input()
-    user!: User
+  user!: User
 
   @Output()
-  deleteUser = new EventEmitter();
+  deleteUser = new EventEmitter<number>();
 
   @Output()
-  updateUser = new EventEmitter();
+  updateUser = new EventEmitter<User>();
 
   onDeleteUser(id: number) {
-
     const dialogRef = this.dialog.open(DeleteUserDialogComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.deleteUser.emit(id);
       }
     });
   }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: {
         name: this.user.name,
         email: this.user.email,
-        company: {name:  this.user.company!.name},
+        company: {name: this.user.company!.name},
         id: this.user.id
       },
     });
@@ -74,5 +73,4 @@ export class UserCardComponent {
       }
     });
   }
-
 }
