@@ -6,7 +6,7 @@ import {TodoInterface} from "../../interfaces/todo-interfaces";
 @Injectable({providedIn: 'root'})
 export class TodosApiService {
 
-    private readonly apiService = inject(HttpClient);
+    private readonly apiService: HttpClient = inject(HttpClient);
 
     private readonly baseUrl = 'https://jsonplaceholder.typicode.com';
 

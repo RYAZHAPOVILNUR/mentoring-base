@@ -1,19 +1,19 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import {NgFor, NgIf} from '@angular/common';
+import {Component} from '@angular/core';
 
-const myPages = [1, 2, 3, 4, 5].reverse();
+const myPages: number[] = [1, 2, 3, 4, 5].reverse();
 
 @Component({
-  selector: 'app-homepage',
-  standalone: true,
-  imports: [NgIf, NgFor],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+    selector: 'app-homepage',
+    standalone: true,
+    imports: [NgIf, NgFor],
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
 
-  showimageMain = true;
+    showimageMain: boolean = true;
 
-  readonly newPages = myPages;
+    readonly newPages: number[] = myPages;
 
 }

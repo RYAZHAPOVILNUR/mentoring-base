@@ -21,9 +21,9 @@ export class CreateUserDialogComponent {
   // и не удаляем его по id, как мы можем что-то передать, если на момент открытия модалки - его еще не существует. Надеюсь мысль уловил.
   // public readonly data = inject<{ user: CreateUserInterface }>(MAT_DIALOG_DATA);
 
-  readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
+  readonly dialogRef: MatDialogRef<any> = inject(MatDialogRef<CreateUserDialogComponent>);
   
-  public matcher = new MyErrorStateMatcher();
+  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
   
   submitForm() {
     this.dialogRef.close(this.form.value);

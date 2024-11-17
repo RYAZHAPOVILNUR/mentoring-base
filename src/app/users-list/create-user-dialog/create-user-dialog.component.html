@@ -1,5 +1,5 @@
 <div class="content_form">
-    <h2 class="title">EDIT USER</h2>
+    <h2 class="title">CREATE USER</h2>
 
     <!-- [] скобки это привязка к какому то свойству, в [] скобки передаем данные formGroup это встроенный код angular к ней присвайваем from это наша созданная переменная из ts
        и так же этот код делает так чтобы станица не перезагружалась при клике на кнопку -->
@@ -54,7 +54,7 @@
         <button class="btn_create" type="submit" (click)="submitForm()" mat-raised-button color="primary"
             [disabled]="form.invalid" matTooltip="EDIT USER">
             <mat-icon>add</mat-icon>
-            EDIT
+            CREATE
         </button>
         <button class="btn_cancel" type="submit" [mat-dialog-close]="" mat-raised-button color="primary" matTooltip="CANCEL">
             <mat-icon>close</mat-icon>

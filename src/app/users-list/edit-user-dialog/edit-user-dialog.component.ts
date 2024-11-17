@@ -17,9 +17,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class EditUserDialogComponent {
   
-  readonly data = inject<{ user: UserInterface }>(MAT_DIALOG_DATA);
+  readonly data: {user: UserInterface} = inject<{ user: UserInterface }>(MAT_DIALOG_DATA);
 
-  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
+  readonly dialogRef: MatDialogRef<any> = inject(MatDialogRef<EditUserDialogComponent>);
   
   submitForm() {
     this.dialogRef.close({...this.form.value, id: this.data.user.id});

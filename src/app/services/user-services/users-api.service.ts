@@ -11,7 +11,7 @@ import {UserInterface} from "../../interfaces/user-interfaces";
 export class UsersApiService {
 
     // используем inject, чтобы внедрить HttpClient в класс UsersApiService
-    private readonly apiService = inject(HttpClient);
+    private readonly apiService: HttpClient = inject(HttpClient);
 
     private readonly baseUrl = 'https://jsonplaceholder.typicode.com';
     // getUsers() методе вызывается this.apiService.get(), чтобы

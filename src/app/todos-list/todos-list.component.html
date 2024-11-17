@@ -6,6 +6,6 @@
     <div *ngFor="let todo of todosService.todos$ | async">
         <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todo-card>
     </div>
-</div> 
+</div>
 
-<app-create-todo-form-btn-add-dialog (createTodoButtonAdd)="createTodo($event)"></app-create-todo-form-btn-add-dialog>
+<app-todo-create-button (createTodoButtonAdd)="createTodo($event)"></app-todo-create-button>

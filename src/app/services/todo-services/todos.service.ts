@@ -1,26 +1,26 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { TodoInterface } from "../../interfaces/todo-interfaces";
+import {Injectable} from "@angular/core";
+import {BehaviorSubject, Observable} from "rxjs";
+import {TodoInterface} from "../../interfaces/todo-interfaces";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class TodosService {
-    // доступ только в этом файле
-    private todosSubject$ = new BehaviorSubject<TodoInterface[]>([]);
-
-    // переменную todos$ можно использовать вне файла
-    public readonly todos$ = this.todosSubject$.asObservable();
+    private todosSubject$: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<TodoInterface[]>([]);
+    public readonly todos$: Observable<TodoInterface[]> = this.todosSubject$.asObservable();
 
     //* установка todos
-    setTodos(todos: TodoInterface[]) {
+    setTodos(todos: TodoInterface[]): void {
         this.todosSubject$.next(todos.slice(0, 15));
     }
 
+    public getTodo(): TodoInterface[] {
+        return this.todosSubject$.value;
+    }
+
     //* изменение todos
-    editTodo(editedTodo: TodoInterface) {
-        // next перезаписывает данные по новому и возвращает обновленный массив после завершения функции map
+    editTodo(editedTodo: TodoInterface): void {
         this.todosSubject$.next(
-            this.todosSubject$.value.map(
-                todo => {
+            this.todosSubject$.value.map( // next перезаписывает данные по новому и возвращает обновленный массив после завершения функции map
+                (todo: TodoInterface) => {
                     if (todo.id === editedTodo.id) {
                         return editedTodo;
                     } else {
@@ -32,9 +32,9 @@ export class TodosService {
     }
 
     //* создание todo
-    createTodo(todo: TodoInterface) {
-        const existingTask = this.todosSubject$.value.find(
-            (currentElement) => currentElement.title === todo.title
+    createTodo(todo: TodoInterface): void {
+        const existingTask: TodoInterface | undefined = this.todosSubject$.value.find(
+            (currentElement: TodoInterface) => currentElement.title === todo.title
         );
 
         if (existingTask !== undefined) {
@@ -46,12 +46,10 @@ export class TodosService {
     }
 
     //* удаление todo
-    deleteTodo(id: number) {
-        // next перезаписывает данные по новому и возвращает обновленный массив
+    deleteTodo(id: number): void {
         this.todosSubject$.next(
             this.todosSubject$.value.filter(
-                // метод filter проверяет если id не равны оставляет, иначе исключает
-                item => item.id !== id
+                (item: TodoInterface) => item.id !== id // метод filter проверяет если id не равны оставляет, иначе исключает.
             )
         );
     }

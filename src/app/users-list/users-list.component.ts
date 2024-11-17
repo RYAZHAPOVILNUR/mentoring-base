@@ -20,8 +20,8 @@ import { CreateUserFormBtnAddDialogComponent } from './user-create-button/user-c
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
-  readonly usersApiService = inject(UsersApiService);
-  readonly usersService = inject(UsersService); // передали из файла users.service.ts
+  readonly usersApiService: UsersApiService = inject(UsersApiService);
+  readonly usersService: UsersService = inject(UsersService); // передали из файла users.service.ts
 
   constructor() {
     // подписка => получение данных методом getUsers из файла users-api.service.ts
@@ -30,7 +30,7 @@ export class UsersListComponent {
       this.usersService.setUsers(response);
     });
 
-    this.usersService.users$.subscribe((users) => users);
+    this.usersService.users$.subscribe((users: UserInterface[]) => users);
   }
 
   deleteUser(id: number) {

@@ -1,79 +1,68 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { UserInterface } from '../../interfaces/user-interfaces';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {UserInterface} from '../../interfaces/user-interfaces';
 
-// Паттерн singleton это паттерн проектирования, гарантирующий, что у класса будет только один экземпляр для всего приложения
-@Injectable({ providedIn: 'root' })
+
+@Injectable({providedIn: 'root'}) // Паттерн singleton это паттерн проектирования, гарантирующий, что у класса будет только один экземпляр для всего приложения.
 export class UsersService {
-  // private - ограничение доступа и переменная доступна только в этом файле
-  // <User[]> это generic, указывающий, что BehaviorSubject будет работать с массивом объектов типа User.
-  // переменная со знаком $ говорит что это переменная, которая представляет собой экземпляр BehaviorSubject.
-  // BehaviorSubject это один из типов Subject'ов в RxJS (библиотека для реактивного программирования в Angular).
-  private usersSubject$ = new BehaviorSubject<UserInterface[]>([]); // [] — начальное значение, переданное в BehaviorSubject. В данном случае это пустой массив
+    private usersSubject$: BehaviorSubject<UserInterface[]> = new BehaviorSubject<UserInterface[]>([]); // [] — начальное значение пустой массив, переданное в BehaviorSubject.
+    public readonly users$: Observable<UserInterface[]> = this.usersSubject$.asObservable(); // Делаем users$ не изменяемым и только для чтения в глобальной области видимости с помощью asObservable().
 
-  // можем обратиться к переменной users$ вне файла, использование asObservable()
-  // делает так, что другие частикода не могут изменять данные напрямую,
-  // что помогает соблюдать инкапсуляцию и правильную логику работы с данными
-  public readonly users$ = this.usersSubject$.asObservable();
-
-  //* установка юзеров
-  // вместо User[] можем писать Array<User> кому как удобно без разницы
-  setUsers(users: UserInterface[]) {
-    // next() метод используется для обновления данных в BehaviorSubject.
-    this.usersSubject$.next(users);
-  }
-
-  //* изменение юзера
-  // перезаписывает весь массив при этом элемент который изменили подменяет на новый а все остальные не трогает
-  editUser(editedUser: UserInterface) {
-    this.usersSubject$.next(
-      this.usersSubject$.value.map((user) => {
-        if (user.id === editedUser.id) {
-          // Если это тот юзера, которого нужно отредактировать, заменяем на обновленного юзера
-          return editedUser;
-        } else {
-          // Иначе возвращаем старого юзера без изменений
-          return user;
-        }
-      })
-    );
-  }
-
-  //* создание юзера
-  // перезаписывает на новый массив который равен старому но к нему добавляет новый элемент
-  createUser(user: UserInterface) {
-    // проверка на одинаковые email
-    const existingEmail = this.usersSubject$.value.find(
-      (currentElement) => currentElement.email === user.email
-    );
-
-    if (existingEmail !== undefined) {
-      alert('Такой email уже зарегестрирован!');
-    } else {
-      this.usersSubject$.next([...this.usersSubject$.value, user]);
-      alert('Новый пользователь успешно добавлен!');
-      // next перезаписывает данные по новому и возвращает обновленный массив.
-      // spread operator ... - это оператор расширения,
-      // создает новый массив, который включает все элементы из this.users$
-      // и добавляет в конец новый объект user
-      
+    //* установка юзеров
+    // вместо User[] можем писать Array<User> кому как удобно без разницы
+    public setUsers(users: UserInterface[]): void {
+        this.usersSubject$.next(users);  // next() метод используется для обновления данных в BehaviorSubject.
     }
-  }
 
-  //* удаление юзера
-  // перезаписывает на новый массив который равен старому но там будет удален юзер который мы туда положили
-  deleteUser(id: number) {
-    this.usersSubject$.next(
-      this.usersSubject$.value.filter(
-        (item) => {
-          if (item.id === id) {
-            return false;
-          } else {
-            return true;
-          }
+    public getUser(): UserInterface[] {
+        return this.usersSubject$.value;
+    }
+
+    //* изменение юзера
+    // перезаписывает весь массив при этом элемент который изменили его подменяет на новый, а все остальные не трогает.
+    public editUser(editedUser: UserInterface): void {
+        this.usersSubject$.next(
+            this.usersSubject$.value.map((user: UserInterface) => {
+                if (user.id === editedUser.id) { // Если это тот юзера, которого нужно отредактировать, заменяем на обновленного юзера
+                    return editedUser;
+                } else {
+                    return user; // Иначе возвращаем старого юзера без изменений
+                }
+            })
+        );
+    }
+
+    //* создание юзера
+    // перезаписывает на новый массив который равен старому, но к нему добавляет новый элемент
+    public createUser(user: UserInterface): void {
+        const existingEmail: UserInterface | undefined = this.usersSubject$.value.find(
+            (currentElement: UserInterface) => currentElement.email === user.email // проверка на одинаковые email
+        );
+
+        if (existingEmail !== undefined) {
+            alert('Такой email уже зарегистрирован!');
+        } else {
+            this.usersSubject$.next([...this.usersSubject$.value, user]);
+            alert('Новый пользователь успешно добавлен!');
+            // spread создает новый массив, который включает все элементы из this.users$ и добавляет в конец новый объект user.
+            // И так ...rest используется для сбора оставшихся элементов, а ...spread используется для раскрытия элементов.
         }
-        // item => item.id !== id короткая версия if else
-      )
-    );
-  }
+    }
+
+    //* удаление юзера
+    // перезаписывает на новый массив который равен старому но там будет удален юзер который мы туда положили.
+    public deleteUser(id: number): void {
+        this.usersSubject$.next(
+            this.usersSubject$.value.filter(
+                (item: UserInterface) => item.id !== id //короткая версия if else
+                // (item) => {
+                //     if (item.id === id) {
+                //         return false;
+                //     } else {
+                //         return true;
+                //     }
+                // }
+            )
+        );
+    }
 }
