@@ -1,0 +1,87 @@
+.header {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.header-top {
+  background-color: #4B565E;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1440px;
+  height: 80px;
+  color: #F9FAFB;
+}
+
+.header-botton {
+  display: flex;
+  align-items: center;
+  background-color: #F0BA4E;
+  max-width: 1332px;
+  height: 48px;
+  gap: 24px;
+  color: #3C3C3B;
+}
+
+.nav-top, .nav-botton {
+  display: inherit;
+  gap: 24px;
+  margin-right: 150px;
+}
+
+.nav-botton {
+  margin-top: 5px;
+}
+
+.header-nav-item {
+  font-size: 16px;
+}
+
+input {
+  width: 400px;
+  height: 28px;
+  background-color: inherit;
+  border: none;
+  border-bottom : 1px solid #3C3C3B;
+}
+
+button {
+  padding: 10 20;
+  gap: 10px;
+  border: 1px solid #F0BA4E;
+  border-radius: 50px;
+  width: 106px;
+  color: #F9FAFB;
+  background-color: inherit;
+}
+
+.header--top-column {
+  display: block;
+  justify-content: space-around;
+
+}
+
+.content-right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.map-min {
+  background: url(../assets/Search.svg) no-repeat ;
+  border: 1px solid #3C3C3B;
+  padding: 5px 5px 5px 40px;
+  height: 20px;
+  background-position: right;
+}
+
+.photo-left {
+  margin-left: 40px;
+  margin-right: 0;
+}
+
+.basket-item {
+  font-size: 16px;
+  margin-top: 4px;
+}
