@@ -5,21 +5,21 @@ import {BehaviorSubject, Observable} from "rxjs";
 @Injectable({providedIn: 'root'})
 export class UsersListService {
   private usersSubject = new BehaviorSubject<User[]>([]);
-  users$: Observable<User[]> = this.usersSubject.asObservable()
+  public users$: Observable<User[]> = this.usersSubject.asObservable()
 
-  setUsers(users: User[]) {
+  public setUsers(users: User[]) {
     this.usersSubject.next(users);
   }
 
-  createUser(user: User) {
+  public createUser(user: User) {
     this.usersSubject.next([...this.usersSubject.value, user]);
   }
 
-  deleteUser(id: number) {
+  public deleteUser(id: number) {
     this.usersSubject.next(this.usersSubject.value.filter((user) => user.id !== id))
   }
 
-  updateUser(userArg: User) {
-    this.usersSubject.next(this.usersSubject.value.map((user) => user.id === userArg.id ? userArg : user));
+  public editUser(updateUser: User) {
+    this.usersSubject.next(this.usersSubject.value.map((user) => user.id === updateUser.id ? updateUser : user));
   }
 }

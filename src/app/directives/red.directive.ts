@@ -5,8 +5,8 @@ import {Directive, ElementRef, HostBinding, HostListener, inject} from "@angular
   standalone: true,
 })
 export class RedDirective {
-  private readonly elementRef = inject(ElementRef);
   color = ''
+  private readonly elementRef = inject(ElementRef);
 
   @HostBinding('style.background') get testing() {
     return this.color
@@ -21,5 +21,4 @@ export class RedDirective {
   onMouseLeave() {
     this.color = '';
   }
-
 }

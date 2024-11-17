@@ -5,16 +5,17 @@ import {Injectable} from "@angular/core";
 
 })
 export class UserService {
-  isAdmin: boolean = false;
+  public isAdmin: boolean = false;
 
-  loginAsAdmin() {
+  public loginAsAdmin() {
     this.isAdmin = true;
   }
 
-  loginAsUser() {
+  public loginAsUser() {
     this.isAdmin = false;
   }
-  isItAdmin() {
+
+  public isItAdmin() {
     return this.isAdmin;
   }
 }

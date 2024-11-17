@@ -10,8 +10,9 @@
       {{ user.phone | FixPhoneNumber }}
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="onDeleteUser(user.id)" mat-button>Удалить</button>
-      <button (click)="openDialog()" mat-button matTooltip="Редактировать данные пользователя">Редактировать</button>
+      <button (click)="deleteUserDialog(user.id)" mat-button>Удалить</button>
+      <button (click)="editUserDialog()" mat-button matTooltip="Редактировать данные пользователя">Редактировать
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

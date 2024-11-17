@@ -7,6 +7,7 @@ import {RedDirective} from "../directives/red.directive";
 function returnString(arg: string): string {
   return arg;
 }
+
 const punctName = returnString("О компании");
 
 @Component({
@@ -26,16 +27,17 @@ export class HeaderComponent {
   readonly aboutUs = 'О компании';
   readonly catalog = 'Каталог';
   readonly aboutCompany = punctName;
-  isUpperCase = false;
-  menuItems = [
+
+  public isUpperCase = false;
+  public menuItems = [
     'Каталог', 'стройматериалы',
-    'Инструменты',  "Электрика", 'Интерьер и одежда',
+    'Инструменты', "Электрика", 'Интерьер и одежда',
   ]
 
-  today = new Date();
-  changeMenuText() {
+  public today = new Date();
+
+  public changeMenuText() {
     this.menuItems = this.menuItems.map(menuItem => this.isUpperCase ? menuItem.toUpperCase() : menuItem.toLowerCase());
     this.isUpperCase = !this.isUpperCase;
   }
-
 }

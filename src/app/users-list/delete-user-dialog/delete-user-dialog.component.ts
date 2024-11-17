@@ -13,10 +13,11 @@ import {MatButton} from "@angular/material/button";
 export class DeleteUserDialogComponent {
   readonly dialogRef = inject(MatDialogRef<DeleteUserDialogComponent>);
 
-  onConfirm() {
+  public onConfirm() {
     this.dialogRef.close(true);
   }
-  onCancel() {
+
+  public onCancel() {
     this.dialogRef.close(false);
   }
 }

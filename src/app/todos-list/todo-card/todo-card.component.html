@@ -1,15 +1,15 @@
 <div class="todo">
   <div class="todo_text">
     <div>Текст задачи</div>
-    <div>{{todo.title | cutString}}</div>
+    <div>{{ todo.title | cutString }}</div>
   </div>
   <div class="todo_author">
     <div>Автор задачи</div>
-    <div>{{todo.id}}</div>
+    <div>{{ todo.id }}</div>
   </div>
   <div class="todo_is_finished">
     <div>Задача заверешена</div>
-    <div>{{todo.completed ? 'Да' : 'Нет'}}</div>
+    <div>{{ todo.completed ? 'Да' : 'Нет' }}</div>
   </div>
   <button (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
 </div>

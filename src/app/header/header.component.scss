@@ -1,5 +1,5 @@
 .header {
-  background: var(--black-color) ;
+  background: var(--black-color);
   color: var(--white-color);
   padding: 20px 0px;
   font-weight: 600;
@@ -11,19 +11,23 @@
   align-items: center;
   font-size: 16px;
 }
+
 .header__nav-wrapper {
   display: flex;
   gap: 40px;
 }
+
 .nav {
   display: flex;
   align-items: center;
 }
+
 .nav_menu {
   display: flex;
   align-items: center;
   gap: 24px;
 }
+
 .header__right {
   display: flex;
   align-items: center;
@@ -38,9 +42,11 @@
   font-weight: 500;
 
 }
+
 .phone {
   width: 24px;
 }
+
 .header__card {
   display: flex;
   align-items: center;
@@ -51,22 +57,26 @@
   cursor: pointer;
   font-weight: 500;
 }
+
 .subheader {
   background-color: var(--yellow-color);
   color: var(--black-color);
 }
+
 .subheader__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
 }
+
 .menu {
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 15px 0;
 }
+
 .menu li:first-child {
   gap: 10px;
   display: flex;
@@ -78,20 +88,24 @@
   align-items: center;
   gap: 24px;
 }
+
 .menu__btn {
   border: none;
   background: none;
   cursor: pointer;
 }
+
 .input_label {
   position: relative;
 }
+
 .search {
   position: absolute;
   right: 0;
   bottom: 4px;
   cursor: pointer;
 }
+
 .subheader__search {
   width: 400px;
   border: none;
@@ -99,13 +113,16 @@
   background: var(--yellow-color);
   font-size: 16px;
 }
+
 .subheader__search:active, :focus {
   outline: 0;
   outline-offset: 0;
 }
+
 .location {
   margin-right: 4px;
 }
+
 .city__name {
   color: var(--white-color);
 }

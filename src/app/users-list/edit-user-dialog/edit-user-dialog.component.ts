@@ -18,17 +18,16 @@ import {MatButton} from "@angular/material/button";
 })
 
 export class EditUserDialogComponent {
-
-  data = inject(MAT_DIALOG_DATA)
+  public data = inject(MAT_DIALOG_DATA)
   readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
 
-  form = new FormGroup({
+  public form = new FormGroup({
     name: new FormControl(this.data.name, [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
     email: new FormControl(this.data.email, [Validators.required, Validators.email]),
     company: new FormControl(this.data.company.name, [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
   })
 
-  onSubmit() {
+  public onSubmit() {
     this.dialogRef.close({...this.form.value, company: {name: this.form.value.company}, id: this.data.id});
   }
 }

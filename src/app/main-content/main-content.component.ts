@@ -13,6 +13,6 @@ const newPages = [5, 4, 3, 2, 1];
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
-  isShow = false;
-  newPages = newPages
+  public isShow = false;
+  public newPages = newPages
 }

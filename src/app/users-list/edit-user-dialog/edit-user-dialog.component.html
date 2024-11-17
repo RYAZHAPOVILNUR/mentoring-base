@@ -1,12 +1,13 @@
-<form [formGroup]="form" style="display: flex; flex-direction: column; width: 300px; justify-content: center; padding: 10px">
+<form [formGroup]="form"
+      style="display: flex; flex-direction: column; width: 300px; justify-content: center; padding: 10px">
   <mat-form-field class="example-full-width">
-    <input matInput class="input" type="text" formControlName="name" placeholder="Имя пользователя">
+    <input class="input" formControlName="name" matInput placeholder="Имя пользователя" type="text">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput class="input" type="text" formControlName="email" placeholder="Эмаил">
+    <input class="input" formControlName="email" matInput placeholder="Эмаил" type="text">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput class="input" type="text" formControlName="company" placeholder="Компания">
+    <input class="input" formControlName="company" matInput placeholder="Компания" type="text">
   </mat-form-field>
-  <button  mat-button (click)="onSubmit()">Изменить</button>
+  <button (click)="onSubmit()" mat-button>Изменить</button>
 </form>

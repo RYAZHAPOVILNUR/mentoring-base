@@ -9,5 +9,5 @@
   <mat-form-field class="example-full-width" formGroupName="company">
     <input formControlName="name" matInput placeholder="Название компании" type="text">
   </mat-form-field>
-  <button (click)="onNoClick()" [disabled]="form.invalid" mat-button>Создать</button>
+  <button (click)="createUser()" [disabled]="form.invalid" mat-button>Создать</button>
 </form>

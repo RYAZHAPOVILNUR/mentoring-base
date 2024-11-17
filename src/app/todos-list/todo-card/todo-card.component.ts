@@ -11,12 +11,12 @@ import {CutStringPipe} from "../../pipes/cut-string.pipe";
 })
 export class TodoCardComponent {
   @Input()
-  todo!: Todo
+  public todo!: Todo
 
   @Output()
-  deleteTodo = new EventEmitter()
+  public deleteTodo = new EventEmitter()
 
-  onDeleteTodo(id: number) {
+  public onDeleteTodo(id: number) {
     this.deleteTodo.emit(id)
   }
 }

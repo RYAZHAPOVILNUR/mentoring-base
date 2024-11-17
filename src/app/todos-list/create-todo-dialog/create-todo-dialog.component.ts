@@ -2,14 +2,13 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatIcon} from "@angular/material/icon";
-import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
-  selector: 'app-create-todo-form',
+  selector: 'app-create-todo-dialog',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -23,22 +22,20 @@ import {MatCheckbox} from "@angular/material/checkbox";
     MatIcon,
     MatCheckbox
   ],
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss'
+  templateUrl: './create-todo-dialog.component.html',
+  styleUrl: './create-todo-dialog.component.scss'
 })
-export class CreateTodoFormComponent {
-
+export class CreateTodoDialogComponent {
   @Output()
-  createTodo = new EventEmitter();
+  public createTodo = new EventEmitter();
 
-  form = new FormGroup({
+  public form = new FormGroup({
     body: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
     title: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]),
     completed: new FormControl(false, [Validators.required]),
   })
 
-  onSubmit() {
+  public onSubmit() {
     this.createTodo.emit(this.form.value)
-
   }
 }

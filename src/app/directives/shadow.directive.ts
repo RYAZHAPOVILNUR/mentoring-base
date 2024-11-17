@@ -15,8 +15,9 @@ export class ShadowDirective {
   onMouseEnter() {
     this.shadow = '0px 0px 5px 4px rgba(255,0,255,1)'
   }
+
   @HostListener('mouseleave')
   onMouseLeave() {
-   this.shadow = ''
+    this.shadow = ''
   }
 }

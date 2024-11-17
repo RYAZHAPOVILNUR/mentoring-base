@@ -1,22 +1,19 @@
 <h1>create-todo-form works!</h1>
-
 <form [formGroup]="form" class="form">
   <mat-form-field class="example-full-width">
     <mat-label>Название задачи</mat-label>
-    <input matInput class="input" type="text" formControlName="title" placeholder="Заголовок">
+    <input class="input" formControlName="title" matInput placeholder="Заголовок" type="text">
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <mat-label>Описание</mat-label>
-    <input matInput  type="text" formControlName="body" placeholder="Текст">
+    <input formControlName="body" matInput placeholder="Текст" type="text">
   </mat-form-field>
   <div>
     <mat-checkbox class="mat-check" formControlName="completed"></mat-checkbox>
   </div>
-  <button class="form_btn" mat-raised-button (click)="onSubmit()" [disabled]="form.invalid">
-    <mat-icon class="mat-icon" aria-hidden="false">+</mat-icon>
-     <span> Добавить задачу</span>
+  <button (click)="onSubmit()" [disabled]="form.invalid" class="form_btn" mat-raised-button>
+    <mat-icon aria-hidden="false" class="mat-icon">+</mat-icon>
+    <span> Добавить задачу</span>
   </button>
-
-
 </form>
 
