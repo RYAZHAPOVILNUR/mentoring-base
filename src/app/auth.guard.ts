@@ -1,16 +1,17 @@
-import { Inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { UserService } from './user.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  const userService = Inject(UserService);
-  const router = Inject(Router)
+  const userService = inject(UserService);
+  const router = inject(Router)
 
   if (userService.isAdmin) {
     return true;
   }  
   else {
-    alert('У вас не достаточно прав')
+    alert('У вас не достаточно прав');
+    router.navigate([''])
     return false;    
   }
 };

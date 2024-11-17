@@ -1,4 +1,5 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { BehaviorSubject } from "rxjs";
 
 export interface UserRole {
@@ -17,6 +18,7 @@ export class UserService {
 
     private readonly userSubject$ = new BehaviorSubject<UserRole | null>(null);
     public user$ = this.userSubject$.asObservable();
+    router = inject(Router)
 
     public loginAsAdmin() {
         this.userSubject$.next({...this.user, isAdmin: true})
@@ -33,9 +35,9 @@ export class UserService {
         return this.userSubject$.value?.isAdmin
     }
 
-    public logout() {
-        this.userSubject$.next(null)
-        console.log('вы вышли')
-        console.log(this.userSubject$)
+    public logout() {        
+        this.userSubject$.next(null);
+        alert('Вы вышли из системы');
+        this.router.navigate([''])
     }
 }
