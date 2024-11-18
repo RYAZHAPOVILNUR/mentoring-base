@@ -19,6 +19,7 @@
 .header-right {
   display: flex;
   align-items: center; 
+  gap: 20px;
 }
 
 .header-nav {
@@ -32,7 +33,6 @@
   border: none; 
   color: white; 
   padding: 5px 10px;
-  width: 140px;
 }
 
 .cart {
@@ -70,6 +70,7 @@
   background: none;
   border: none;
   color: #3C3C3B;
+  margin-right: 10px;
 }
 
 .location {
@@ -93,6 +94,18 @@
   border: 1px solid #F0BA4E;
   background-color: #4B565E;
   color: white;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  text-align: center;
+}
+
+.button1 {
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid #4B565E;
+  background-color: #F0BA4E;
+  color: #4B565E;
   display: flex;
   align-items: center;
   max-width: 200px;

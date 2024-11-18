@@ -8,10 +8,10 @@ export class StorageService {
 
   getUsers(key: string): User[] {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : [];
+    return data ? JSON.parse(data) : null;
   }
 
-  saveUsers(key: string, data: any): void {
+  saveUsers<T>(key: string, data: T): void {
     localStorage.setItem(key, JSON.stringify(data));
   }
 } 

@@ -20,20 +20,15 @@ export class UserService {
     } else {
       this.usersApiService.getUsers().subscribe(
         data => {
-          this.localStorage.saveUsers('users', data);
-          this.userSubject$.next(data)
+          this.setUsers(data)
         }
       )
     }
   }
 
   editUser (editedUser: User) {
-    const updatedUser = 
-    this.userSubject$.next(
-      this.userSubject$.value.map(user => user.id === editedUser.id ? editedUser : user)
-    );
-    this.localStorage.saveUsers('users', this.userSubject$.value);
-    this.userSubject$.next(this.userSubject$.value);
+    const updatedUser = this.userSubject$.value.map(user => user.id === editedUser.id ? editedUser : user);
+    this.setUsers(updatedUser);
   }
 
   createUser (user: User) {
@@ -47,14 +42,17 @@ export class UserService {
     } else {
       this.userSubject$.next([...this.userSubject$.value, user]);
       alert ('Пользователь успешно добавлен');
-      this.localStorage.saveUsers('users', newUser);
-      this.userSubject$.next(newUser);
+      this.setUsers(newUser)
     };
   }
 
   deleteUser (id: number) {
     const deleteUser = this.userSubject$.value.filter(item => item.id !== id);
-    this.localStorage.saveUsers('users', deleteUser);
-    this.userSubject$.next(deleteUser);
+    this.setUsers(deleteUser)
   }
+
+  setUsers(data: User[]): void {
+    this.localStorage.saveUsers('users', data); 
+    this.userSubject$.next(data);
+  }  
 }

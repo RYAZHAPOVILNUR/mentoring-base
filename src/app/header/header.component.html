@@ -13,24 +13,18 @@
   <div class="header-right">
     <!-- <a routerLink="/users" class="Admin">Админка</a> -->
     <a routerLink="/admin" class="Admin"               *ngIf="usersService.isAdmin === true"
-    routerLink="/admin"
-  
-    class="button"
-    yellow
-    >Только для администратора</a>
-<img src="/assets/phone.svg" alt="phone icon">
-<a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> {{ phoneNumber | DashCut }} </a>
-<img src="/assets/heart1.svg" alt="fav">
-<button type="button" class="cart" yellow> 
-  <img class="img-cart" src="/assets/cart.svg" alt="cart">
-  <span class="empty">Пусто</span>
-</button>
-  </div>
+    routerLink="/admin" class="button" yellow>Только для администратора</a>
+    <img src="/assets/phone.svg" alt="phone icon">
+    <a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> {{ phoneNumber | DashCut }} </a>
+    <img src="/assets/heart1.svg" alt="fav">
+    <button type="button" class="cart" yellow> 
+      <img class="img-cart" src="/assets/cart.svg" alt="cart">
+      <span class="empty">Пусто</span>
+    </button>
 
-  <div class="new">
-    <div class="time">
-      {{ date | date:'medium'}}
-    </div>
+      <div class="time">
+        {{ date | date:'medium'}}
+      </div>
   
     <div class="loginbutton">
       <button *ngIf="!usersService.isLogged" (click)="openLoginDialog()" class="button">
@@ -50,7 +44,7 @@
       <nav class="bar-nav">
         <a class="bar-nav-item" *ngFor="let item of MenuItems">{{item}}</a>
       </nav>
-      <button class="button" (click)="changeMenuText()">Изменить текст</button>
+      <!-- <button class="button1" (click)="changeMenuText()">Изменить текст</button> -->
   </div>
   <div class="bar-right">
     <input type="text" class="input-with-icon" placeholder="Поиск, например Круг зачистной"> 
