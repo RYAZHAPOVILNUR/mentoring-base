@@ -17,10 +17,13 @@
             <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
             <button routerLink="/users" class="control-btn">Админка</button>
             <button routerLink="/todos" class="control-btn">Todos</button>
+            <button (click)="loginAsAdmin()" class="control-btn">Войти как админ</button>
+            <button (click)="loginAsUser()" class="control-btn">Войти как юзер</button>
+            <button (click)="clearUser()" *ngIf="currentUser" class="control-btn">Выход</button>
           </div>
           <div class="header-top-right">
             <div class="header-top-phone">
-              <span class="date">Today is: {{today | date:'medium'}}</span>
+              <!-- <span class="date">Today is: {{today | date:'medium'}}</span> -->
               <a href="#">
                 <img class="phone-img" src="../assets/phone.svg" alt="Иконка телефона">
               </a>

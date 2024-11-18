@@ -36,3 +36,7 @@ export interface CreateUser {
   company: ICompany;
   phone: string;
 }
+
+export interface IAdminUser {
+  isAdmin: boolean;
+}
