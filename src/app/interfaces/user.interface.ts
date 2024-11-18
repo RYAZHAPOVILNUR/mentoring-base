@@ -37,6 +37,8 @@ export interface CreateUser {
   phone: string;
 }
 
-export interface IAdminUser {
-  isAdmin: boolean;
+export interface IUserRole {
+  name: string;
+  email: string;
+  isAdmin: boolean | null;
 }

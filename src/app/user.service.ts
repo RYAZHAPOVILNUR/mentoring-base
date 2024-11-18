@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
-import { IAdminUser } from './interfaces/user.interface';
+import { IUserRole } from './interfaces/user.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private currentUserSubject$ = new BehaviorSubject<IAdminUser | null>(null);
-  currentUser$: Observable<IAdminUser | null> =
+  private readonly currentUserSubject$ = new BehaviorSubject<IUserRole | null>(
+    null
+  );
+  public readonly currentUser$: Observable<IUserRole | null> =
     this.currentUserSubject$.asObservable();
 
+  private currentUser: IUserRole = {
+    name: 'Жансауле',
+    email: 'zhansaule@gmail.com',
+    isAdmin: null,
+  };
+
   loginAsAdmin(): void {
-    const adminUser: IAdminUser = { isAdmin: true };
-    this.currentUserSubject$.next(adminUser);
+    this.currentUserSubject$.next({ ...this.currentUser, isAdmin: true });
   }
 
   loginAsUser(): void {
-    const adminUser: IAdminUser = { isAdmin: false };
-    this.currentUserSubject$.next(adminUser);
+    this.currentUserSubject$.next({ ...this.currentUser, isAdmin: false });
   }
 
-  getCurrentUser(): IAdminUser | null {
-    return this.currentUserSubject$.getValue();
-  }
-
-  clearUser(): void {
+  logout(): void {
     return this.currentUserSubject$.next(null);
   }
 
-  isAdmin(): boolean {
-    const currentUser = this.getCurrentUser();
-    return currentUser?.isAdmin === true;
+  get isAdmin() {
+    return this.currentUserSubject$.value?.isAdmin;
   }
 }

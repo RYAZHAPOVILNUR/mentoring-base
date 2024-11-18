@@ -11,15 +11,15 @@
                 <li><a class="nav-link" href="#" routerLink="/">Главная</a></li>
                 <li><a class="nav-link" href="">{{aboutCompany}}</a></li>
                 <li><a class="nav-link" href="" *ngIf="isShowCatalog">Каталог</a></li>
+                <li><a class="nav-link" routerLink="/admin">Стр. админа</a></li>
               </ul>
             </nav>
             <!-- <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button> -->
             <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
-            <button routerLink="/users" class="control-btn">Админка</button>
-            <button routerLink="/todos" class="control-btn">Todos</button>
-            <button (click)="loginAsAdmin()" class="control-btn">Войти как админ</button>
-            <button (click)="loginAsUser()" class="control-btn">Войти как юзер</button>
-            <button (click)="clearUser()" *ngIf="currentUser" class="control-btn">Выход</button>
+            <button routerLink="/users" class="control-btn">Юзеры</button>
+            <button routerLink="/todos" class="control-btn">Задачи</button>
+            <button (click)="openDialog()" class="control-btn" *ngIf="(userService.currentUser$ | async) === null">Войти</button>
+            <button (click)="logout()" class="control-btn" *ngIf="(userService.currentUser$ | async) !== null">Выйти</button>
           </div>
           <div class="header-top-right">
             <div class="header-top-phone">

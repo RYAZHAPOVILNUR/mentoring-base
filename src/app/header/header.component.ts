@@ -1,9 +1,11 @@
-import { DatePipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { YellowBgDirective } from '../directives/yellow-bg.directive';
 import { UserService } from '../user.service';
-import { IAdminUser } from '../interfaces/user.interface';
+import { IUserRole } from '../interfaces/user.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthComponent } from '../auth/auth.component';
 
 // Task 1
 const getMenuItems = (menuItem: string) => menuItem;
@@ -14,12 +16,21 @@ const navItem = getMenuItems('О Компании');
   templateUrl: './header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, RouterOutlet, RouterLink, DatePipe, YellowBgDirective],
+  imports: [
+    NgFor,
+    NgIf,
+    RouterOutlet,
+    RouterLink,
+    DatePipe,
+    YellowBgDirective,
+    AsyncPipe,
+  ],
 })
 export class HeaderComponent {
-  readonly userService = inject(UserService);
+  public readonly userService = inject(UserService);
+  public readonly dialog = inject(MatDialog);
 
-  currentUser: IAdminUser | null = null;
+  currentUser: IUserRole | null = null;
   title = 'mentoring-first-project';
 
   isShowCatalog = true;
@@ -43,7 +54,7 @@ export class HeaderComponent {
     });
   }
 
-  changeMenuText() {
+  public changeMenuText() {
     this.bottomMenuItems = this.bottomMenuItems.map((bottomMenuItem) => {
       return !this.isUpperCaseText
         ? bottomMenuItem.toUpperCase()
@@ -51,18 +62,25 @@ export class HeaderComponent {
     });
   }
 
-  loginAsAdmin() {
-    this.userService.loginAsAdmin();
-    console.log('Logged in as Admin:', this.userService.getCurrentUser());
+  public openDialog(): void {
+    const dialogRef = this.dialog.open(AuthComponent, {
+      width: '400px',
+      height: '200px',
+    });
+
+    dialogRef.afterClosed().subscribe((result: string) => {
+      if (result === 'admin') {
+        this.userService.loginAsAdmin();
+      } else if (result === 'user') {
+        this.userService.loginAsUser();
+      } else return undefined;
+    });
   }
 
-  loginAsUser() {
-    this.userService.loginAsUser();
-    console.log('Logged in as User:', this.userService.getCurrentUser());
-  }
-
-  clearUser() {
-    this.userService.clearUser();
-    console.log('User data is reset:', this.userService.getCurrentUser());
+  public logout() {
+    if (confirm('Вы точно хотите выйти?')) {
+      return this.userService.logout();
+    }
+    return false;
   }
 }
