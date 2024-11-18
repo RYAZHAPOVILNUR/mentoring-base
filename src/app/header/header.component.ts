@@ -1,7 +1,11 @@
-import { DatePipe, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { YellowBgDirective } from '../directives/yellow-bg.directive';
+import { UserService } from '../user.service';
+import { IUserRole } from '../interfaces/user.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthComponent } from '../auth/auth.component';
 
 // Task 1
 const getMenuItems = (menuItem: string) => menuItem;
@@ -12,9 +16,21 @@ const navItem = getMenuItems('О Компании');
   templateUrl: './header.component.html',
   styleUrl: 'header.component.scss',
   standalone: true,
-  imports: [NgFor, NgIf, RouterOutlet, RouterLink, DatePipe, YellowBgDirective],
+  imports: [
+    NgFor,
+    NgIf,
+    RouterOutlet,
+    RouterLink,
+    DatePipe,
+    YellowBgDirective,
+    AsyncPipe,
+  ],
 })
 export class HeaderComponent {
+  public readonly userService = inject(UserService);
+  public readonly dialog = inject(MatDialog);
+
+  currentUser: IUserRole | null = null;
   title = 'mentoring-first-project';
 
   isShowCatalog = true;
@@ -32,11 +48,39 @@ export class HeaderComponent {
     'Интерьер и одежда',
   ];
 
-  changeMenuText() {
+  constructor() {
+    this.userService.currentUser$.subscribe((user) => {
+      this.currentUser = user;
+    });
+  }
+
+  public changeMenuText() {
     this.bottomMenuItems = this.bottomMenuItems.map((bottomMenuItem) => {
       return !this.isUpperCaseText
         ? bottomMenuItem.toUpperCase()
         : bottomMenuItem.toLowerCase();
     });
+  }
+
+  public openDialog(): void {
+    const dialogRef = this.dialog.open(AuthComponent, {
+      width: '400px',
+      height: '200px',
+    });
+
+    dialogRef.afterClosed().subscribe((result: string) => {
+      if (result === 'admin') {
+        this.userService.loginAsAdmin();
+      } else if (result === 'user') {
+        this.userService.loginAsUser();
+      } else return undefined;
+    });
+  }
+
+  public logout() {
+    if (confirm('Вы точно хотите выйти?')) {
+      return this.userService.logout();
+    }
+    return false;
   }
 }

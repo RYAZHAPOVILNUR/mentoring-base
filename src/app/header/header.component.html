@@ -11,16 +11,19 @@
                 <li><a class="nav-link" href="#" routerLink="/">Главная</a></li>
                 <li><a class="nav-link" href="">{{aboutCompany}}</a></li>
                 <li><a class="nav-link" href="" *ngIf="isShowCatalog">Каталог</a></li>
+                <li><a class="nav-link" routerLink="/admin">Стр. админа</a></li>
               </ul>
             </nav>
             <!-- <button class="control-btn" (click)="isShowCatalog = !isShowCatalog">Ск/Пк каталог</button> -->
             <button class="control-btn" (click)="changeMenuText(); isUpperCaseText = !isUpperCaseText">Изменить текст</button>
-            <button routerLink="/users" class="control-btn">Админка</button>
-            <button routerLink="/todos" class="control-btn">Todos</button>
+            <button routerLink="/users" class="control-btn">Юзеры</button>
+            <button routerLink="/todos" class="control-btn">Задачи</button>
+            <button (click)="openDialog()" class="control-btn" *ngIf="(userService.currentUser$ | async) === null">Войти</button>
+            <button (click)="logout()" class="control-btn" *ngIf="(userService.currentUser$ | async) !== null">Выйти</button>
           </div>
           <div class="header-top-right">
             <div class="header-top-phone">
-              <span class="date">Today is: {{today | date:'medium'}}</span>
+              <!-- <span class="date">Today is: {{today | date:'medium'}}</span> -->
               <a href="#">
                 <img class="phone-img" src="../assets/phone.svg" alt="Иконка телефона">
               </a>
