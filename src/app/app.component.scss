@@ -1,16 +1,18 @@
+@import '../normalize.css';
+
 .header {
-    width: 1920px;
+    max-width: 1920px;
     background-color: #4B565E;
 }
 .container {
     display: flex;
-    margin: 0 240px;
+    margin: 0 auto;
     align-items: center;
     justify-content: space-between;
 }
 
 .header__logo {
-    padding: 20px 40px;
+    padding: 20px 40px 20px 0;
 }
 
 .header__left {
@@ -22,7 +24,7 @@
     display: flex;
     align-items: center;
     gap: 24px;
-    padding: 0;
+    padding: 0px;
 }
 
 .header__ist-left {
@@ -48,11 +50,6 @@
     gap: 40px;
 }
 
-li {
-    color: white;
-    list-style: none;
-}
-
 .header__list-link {
     color: #FFFFFF;
     text-decoration: none;
@@ -70,12 +67,6 @@ li {
     background-color: #F0BA4E;
 }
 
-.under__header-container {
-    display: flex;
-    margin: 0 300px;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .under__header-item {
     display: flex;
@@ -118,4 +109,72 @@ li {
 .header__input {
     width: 400px;
     height: 28px;
+}
+
+.wallpaper {
+    background-image: url("../assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wallpaper__text {
+    font-weight: 700;
+    font-size: 40px;
+    color: #F0BA4E;
+    line-height: 56px;
+    margin: 0;
+}
+
+.advantages__item {
+    display: flex;
+}
+
+.advantages__block {
+    display: flex;
+}
+
+.advantages__title {
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+span {
+    font-size: 18px;
+    line-height: 22px;
+    color: #A1A0A0;
+}
+
+.advantages__icon {
+    padding-right: 16px;
+}
+
+.advantages__list {
+    width: 421px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.cards__wrapper {
+    display: flex;
+}
+
+.card {
+    position: relative;
+    background-color: #FFFFFF;
+}
+
+.card__title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 34px;
+    padding: 16px 16px 30px 16px;
+}
+
+.link__block {
+    display: flex;
 }

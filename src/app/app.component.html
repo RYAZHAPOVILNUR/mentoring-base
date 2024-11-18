@@ -1,59 +1,137 @@
-<div class="header">
-    <div class="container">
-        <div class="header__left">
-            <div class="header__logo">
-                <img class="logo" src="assets/Frame.svg" alt="Лого">
-            </div>
-            <nav class="header__nav-left">
-                <ul class="header__item-left">
-                    <li class="header__ist-left">Главная</li>
-                    <li class="header__ist-left">О компании</li>
-                    <li class="header__ist-left">Каталог</li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header__right">
-            <nav class="header__nav-right">
-                <ul class="header__item-right">
-                    <li class="header__list-right">
-                        <img src="assets/Phone.svg" alt="телефон" class="phone__logo">
-                        <a href="tel: +7 (965) 084-29-29" class="header__list-link">+7 (965) 084-29-29</a>
-                    </li>
-                    <li class="header__list-right">
-                        <img src="assets/heart 1.svg" alt="понравилось" class="like">
-                    </li>
-                </ul>
-            </nav>
-            <button class="header__shop">
-                <img src="assets/Mask group.svg" alt="корзина">
-                Пусто
-            </button>
-        </div>
-    </div>
-    <div class="header__wrapper">
-        <div class="under__header-container">
-            <div class="under__header-left">
-                <div class="icon">
-                    <img src="assets/light.svg" alt="иконка">
+<body>
+    <section class="section">
+        <div class="header">
+            <div class="container">
+                <div class="header__left">
+                    <div class="header__logo">
+                        <img class="logo" src="../assets/logo.svg" alt="Лого">
+                    </div>
+                    <nav class="header__nav-left">
+                        <ul class="header__item-left">
+                            <li class="header__ist-left">
+                                <a href="#" class="header__list-link">Главная</a>
+                            </li>
+                            <li class="header__ist-left">
+                                <a href="#" class="header__list-link">О компании</a>
+                            </li>
+                            <li class="header__ist-left">
+                                <a href="#" class="header__list-link">Каталог</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <ul class="under__header-item">
-                    <li class="under__header-list">Каталог</li>
-                    <li class="under__header-list">Стройматериалы</li>
-                    <li class="under__header-list">Инструменты</li>
-                    <li class="under__header-list">Электрика</li>
-                    <li class="under__header-list">Интерьер и одежда</li>
-                </ul>
+                <div class="header__right">
+                    <nav class="header__nav-right">
+                        <ul class="header__item-right">
+                            <li class="header__list-right">
+                                <img src="../assets/phone.svg" alt="телефон" class="phone__logo">
+                                <a href="tel: +7 (965) 084-29-29" class="header__list-link">+7 (965) 084-29-29</a>
+                            </li>
+                            <li class="header__list-right">
+                                <img src="../assets/heart.svg" alt="понравилось" class="like">
+                            </li>
+                        </ul>
+                    </nav>
+                    <button class="header__shop">
+                        <img src="../assets/basket.svg" alt="корзина">
+                        Пусто
+                    </button>
+                </div>
             </div>
-            <div class="under__header-right">
-                <div class="right__wrapper">
-                    <input  class="header__input" type="search" name="поиск" placeholder="Поиск, например Круг зачистной">
-                    <div class="location">
-                        <img src="assets/map-pin.svg" alt="">
-                        <p>Москва</p>
+        </div>
+        <div class="header__wrapper">
+            <div class="container">
+                <div class="under__header-left">
+                    <div class="icon">
+                        <img src="../assets/burger.svg" alt="бургер меню">
+                    </div>
+                    <ul class="under__header-item">
+                        <li class="under__header-list">Каталог</li>
+                        <li class="under__header-list">Стройматериалы</li>
+                        <li class="under__header-list">Инструменты</li>
+                        <li class="under__header-list">Электрика</li>
+                        <li class="under__header-list">Интерьер и одежда</li>
+                    </ul>
+                </div>
+                <div class="under__header-right">
+                    <div class="right__wrapper">
+                        <input  class="header__input" type="search" name="поиск" placeholder="Поиск, например Круг зачистной">
+                        <div class="location">
+                            <img src="../assets/location.svg" alt="локация">
+                            <p>Москва</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
+    </section>
+    <section class="section wallpaper">
+        <img class="wallpaper__shadow" src="../assets/shadow.png" alt="фоновое фото">
+    </section>
+    <section class="section">
+        <div class="container">
+            <ul class="advantages__item">
+                <li class="advantages__list">
+                    <div class="advantages__block">
+                        <img src="../assets/stock.svg" alt="иконка" class="advantages__icon">
+                        <div class="advantages__inform">
+                            <p class="advantages__title">
+                                Большой ассортимент
+                            </p>
+                            <span>
+                                строительных материалов всегда в наличии
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="advantages__list">
+                    <div class="advantages__block">
+                        <img src="../assets/delivery.svg" alt="иконка" class="advantages__icon">
+                        <div class="advantages__inform">
+                            <p class="advantages__title">
+                                Доставка стройматериалов
+                            </p>
+                            <span>
+                                в течении четырех часов или в любое удобное время
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="advantages__list">
+                    <div class="advantages__block">
+                        <img src="../assets/quality.svg" alt="иконка" class="advantages__icon">
+                        <div class="advantages__inform">
+                            <span>
+                                Многоуровневая <p class="advantages__title">система управления качеством</p> по стандарту ISO 9001
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="cards__wrapper">
+                <div class="card">
+                    <p class="card__title">Строительный отделочный инструмент</p>
+                    <img src="../assets/firstcard.png" alt="карточка" class="card__pic">
+                    <div class="link__block">
+                        <p class="link__name">Перейти в каталог</p>
+                        <button class="link__button">
+                            <img src="assets/Frame20.svg" alt="каталог" class="link__pic">
+                        </button>
+                    </div>
+                </div>
+                <div class="cards">
+                    <ul class="cards__item">
+                        <li class="cards__list"></li>
+                        <li class="cards__list"></li>
+                        <li class="cards__list"></li>
+                        <li class="cards__list"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
