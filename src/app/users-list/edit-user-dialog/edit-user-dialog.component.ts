@@ -15,7 +15,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { IUser } from '../../Interfaces/user.interface';
-import { ICreateUser } from '../../Interfaces/create-user.interface';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -32,11 +31,8 @@ import { ICreateUser } from '../../Interfaces/create-user.interface';
   ],
 })
 export class EditUserDialogComponent {
-  readonly data = inject<{user: IUser}>(MAT_DIALOG_DATA);
-
-  constructor() {
-    console.log(this.data);
-  }
+  readonly data = inject<{ user: IUser }>(MAT_DIALOG_DATA);
+  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
 
   public readonly form = new FormGroup({
     name: new FormControl(this.data.user.name, [
@@ -64,5 +60,9 @@ export class EditUserDialogComponent {
       ...this.form.value,
       id: this.data.user.id,
     };
+  }
+
+  submitForm() {
+    this.dialogRef.close({ ...this.form.value, id: this.data.user.id });
   }
 }

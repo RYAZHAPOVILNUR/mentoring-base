@@ -19,6 +19,11 @@
 
 .button-form {
   align-items: center;
-  width: 150px;
+  width: 130px;
   margin-top: 20px;
+}
+
+.button-position {
+  display: flex;
+  justify-content: space-between;
 }

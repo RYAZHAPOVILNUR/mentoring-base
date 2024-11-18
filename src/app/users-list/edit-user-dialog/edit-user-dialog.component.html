@@ -22,14 +22,11 @@
         <mat-error>Некорректное значение</mat-error>
       </mat-form-field>
     </div>
-    <button
-      class="button-form"
-      matIconSuffix
-      mat-raised-button
-      [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedField"
-    >
+    <div class="button-position">
+      <button class="button-form" mat-raised-button [disabled]="form.invalid" (click)="submitForm()">
       Редактировать
-      <mat-icon></mat-icon>
     </button>
+    <button class="button-form" mat-raised-button mat-dialog-close>Закрыть</button>
+  </div>
   </form>
 </div>

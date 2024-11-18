@@ -41,25 +41,26 @@ export class UserCardComponent {
         this.snackBar.open('Пользователь удален', 'ok', {
           duration: 3000,
         });
-        console.log('Пользователь удален', this.user.id);
-      } else
+      } else 
         this.snackBar.open('Отмена удаления', 'ok', {
           duration: 3000,
         });
-      console.log(result);
     });
   }
 
-  openDialog(): void {
+  openEditDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
 
-    dialogRef.afterClosed().subscribe((editResult) => {
-      console.log('МОДАЛКА ЗАКРЫЛАСЬ, ЗНАЧЕНИЕ ФОРМЫ: ', editResult);
+    dialogRef.afterClosed().subscribe((editResult: IUser) => {
       if (editResult) {
         this.editUser.emit(editResult);
         this.snackBar.open('Пользователь изменен', 'ok', {
+          duration: 3000,
+        });
+      } else {
+        this.snackBar.open('Отмена редактирования', 'ok', {
           duration: 3000,
         });
       }

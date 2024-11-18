@@ -12,8 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { IUser } from '../Interfaces/user.interface';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { IUser } from '../../Interfaces/user.interface';
+import {
+  MatDialog,
+  MatDialogClose,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -26,9 +31,9 @@ export function completedValidator(): ValidatorFn {
 }
 
 @Component({
-  selector: 'app-create-user-form',
-  templateUrl: './create-user-form.html',
-  styleUrl: './create-user-form.scss',
+  selector: 'app-create-user-dialog',
+  templateUrl: './create-user-dialog.component.html',
+  styleUrl: './create-user-dialog.component.scss',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -36,29 +41,28 @@ export function completedValidator(): ValidatorFn {
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogClose,
   ],
 })
-export class CreateUserFormComponent {
-  @Output()
-  createUser = new EventEmitter<IUser>();
-
+export class CreateUserDialogComponent {
   private snackBar = inject(MatSnackBar);
+
+  private dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
 
   public readonly form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    website: new FormControl('', [Validators.required, Validators.minLength(3),]),
+    website: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
     company: new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     }),
   });
 
   public submitForm(): void {
-    this.createUser.emit(this.form.value as IUser);
-    this.form.reset();
-    this.snackBar.open('Новый пользователь добавлен', 'ok', {
-      duration: 3000, 
-    });
+    this.dialogRef.close(this.form.value);
   }
 }

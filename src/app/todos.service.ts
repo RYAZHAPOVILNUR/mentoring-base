@@ -8,7 +8,7 @@ export class TodosService {
   todos$ = this.todoSubject$.asObservable();
 
   setTodos(todos: ITodo[]) {
-    this.todoSubject$.next(todos);
+    this.todoSubject$.next(todos.slice(0, 10));
   }
 
   editTodo(editedTodo: ITodo) {
@@ -19,9 +19,8 @@ export class TodosService {
         } else {
           return todo;
         }
-      }
-    )
-    )
+      })
+    );
   }
 
   createTodo(todo: ITodo) {
@@ -30,12 +29,11 @@ export class TodosService {
     );
 
     if (exitingTodo !== undefined) {
-      alert('ТАКАЯ ЗАДАЧА УЖЕ ЕСТЬ')
+      alert('ТАКАЯ ЗАДАЧА УЖЕ ЕСТЬ');
     } else {
       this.todoSubject$.next([...this.todoSubject$.value, todo]);
-      alert('НОВАЯ ЗАДАЧА УСПЕШНО ДОБАВЛЕНА')
+      alert('НОВАЯ ЗАДАЧА УСПЕШНО ДОБАВЛЕНА');
     }
-    
   }
 
   deleteTodo(id: number) {
@@ -46,8 +44,7 @@ export class TodosService {
         } else {
           return true;
         }
-      }
-    )
-    )
+      })
+    );
   }
 }

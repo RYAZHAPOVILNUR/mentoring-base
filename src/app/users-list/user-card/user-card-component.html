@@ -1,12 +1,12 @@
-<div class="component-cards-item">
+<div mat-card-avatar class="component-cards-item">
   <div>
     <p>{{user.name}}</p>
     <p>{{user.email}}</p>
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
   </div>
-  <div class="edit-user">
-  <button mat-stroked-button class="delete-user" (click)="openDeleteDialog()">Delete</button>
-  <button mat-stroked-button class="delete-user" (click)="openDialog()">Edit</button>
+  <div class="user-card-change">
+  <button mat-stroked-button class="user-card-buttons" (click)="openDeleteDialog()">Delete</button>
+  <button mat-stroked-button class="user-card-buttons" (click)="openEditDialog()">Edit</button>
 </div>
 </div>

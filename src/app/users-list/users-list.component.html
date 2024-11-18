@@ -1,4 +1,4 @@
-<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+<app-user-add-button (createUser)="createUser($event)"></app-user-add-button>
 <div class="component-cards">
   <div *ngFor="let user of usersService.users$ | async">
     <app-user-card

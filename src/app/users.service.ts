@@ -24,16 +24,7 @@ export class UsersService {
   }
 
   createUser(user: IUser) {
-    const existingUser = this.userSubject$.value.find(
-      (currentElement) => currentElement.email === user.email
-    );
-
-    if (existingUser !== undefined) {
-      alert('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН');
-    } else {
-      this.userSubject$.next([...this.userSubject$.value, user]);
-      // alert('НОВЫЙ ЮЗЕР УСПЕШНО ДОБАВЛЕН');
-    }
+    this.userSubject$.next([...this.userSubject$.value, user]);
   }
 
   deleteUser(id: number) {

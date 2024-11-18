@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-.delete-user {
+.user-card-buttons {
   align-self: center;
   width: 70px;
   border-radius: 18px;
@@ -20,7 +20,7 @@
   background: linear-gradient(45deg, blue, purple, pink, red, transparent);
 }
 
-.edit-user { 
+.user-card-change { 
   display: flex;
   justify-content: space-between;
 }

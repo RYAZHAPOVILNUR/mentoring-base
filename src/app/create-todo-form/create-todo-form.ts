@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import {
   AbstractControl,
@@ -31,7 +30,6 @@ export function completedValidator(): ValidatorFn {
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgIf,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
