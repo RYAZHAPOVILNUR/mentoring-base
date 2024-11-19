@@ -22,7 +22,7 @@ export class UserListComponent {
 
     constructor() {
       this.usersApiService.getUsers().subscribe(
-          (response: any) => {
+          (response: User[]) => {
             this.users = response;
             console.log('USERS', this.users);
         });

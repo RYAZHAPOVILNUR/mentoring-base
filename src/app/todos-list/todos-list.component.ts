@@ -14,12 +14,12 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
-  todos: Todo [] = [];
+  todos: Todo[] = [];
 
 
   constructor() {
     this.todosApiService.getTodos().subscribe(
-        (response: any) => {
+        (response: Todo[]) => {
           this.todos = response;
           console.log('Todos', this.todos);
       });
