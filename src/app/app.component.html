@@ -11,8 +11,8 @@
                             <li class="header__ist-left">
                                 <a href="#" class="header__list-link">Главная</a>
                             </li>
-                            <li class="header__ist-left">
-                                <a href="#" class="header__list-link">О компании</a>
+                            <li class="header__ist-left"> 
+                                <a href="#" class="header__list-link">{{aboutCompany}}</a>
                             </li>
                             <li class="header__ist-left">
                                 <a href="#" class="header__list-link">Каталог</a>
@@ -66,7 +66,9 @@
         </div>
     </section>
     <section class="section wallpaper">
-        <img class="wallpaper__shadow" src="../assets/shadow.png" alt="фоновое фото">
+        <button (click)="isShowImg = !isShowImg"></button>
+        <img *ngIf="isShowImg" class="wallpaper__shadow" src="../assets/shadow.png" alt="фоновое фото">
+        <button *ngFor="let item of newPages">{{item}}</button>
     </section>
     <section class="section">
         <div class="container">
