@@ -233,22 +233,18 @@ const User = [
 // //   1. Отобразить только id и username
 // User.forEach (
 //   (user) => {
-//   console.log ('ID #:', user.id, 'Username:', user.username )
+//   console.log ('ID #:', user.id, 'Username:', user.username );
 //   }
 // )
-
-
 // //    2. Получить из данных выше список всех эмейлов
 // User.forEach (
 //   (user) => {
-//   console.log ('Email@:', user.email)
+//   console.log ('Email@:', user.email);
 //   }
 // )
-
-
 // //    3. Вывести пользователя с id === 9
 // const user = User.find(user => user.id === 9);
-// console.log(user)
+// console.log(user);
 
 // User.find((user) => {
 //   if (user.id === 9) {
@@ -256,77 +252,63 @@ const User = [
 //     }
 //   })
 
-// const user = User.find(user => user.id === 8)
-// console.log(user)
+// const user = User.find(user => user.id === 8);
+// console.log(user);
 
 // User.find((user) => {
 //   if (user.id === 8) {
 //     console.log(user);
 //     }
 //   })
-
-
 //     // 4.Вывести всех пользователей из города 'Lebsackbury'
-// const usercity = User.filter(user => user.address.city === 'Lebsackbury')
-// console.log(usercity)
+// const usercity = User.filter(user => user.address.city === 'Lebsackbury');
+// console.log(usercity);
 
 // User.filter((user) => {
 // if (user.address.city ===  'Lebsackbury'){
 //     console.log(user);
 //     }
 // })
-
-
 // // 5. Вывести первых 5 пользователей
 // const userfindfive = User.slice(0,5);
-// console.log(userfindfive)
+// console.log(userfindfive);
 
 // for (let i=0; i<5; i++) {
-//     console.log (User[i])
+//     console.log (User[i]);
 // }
 
 // const user = User.slice (4,10);
-// console.log(user)
+// console.log(user);
 
 // for (let i=4; i<10;i++) {
-//     console.log (User[i])
+//     console.log (User[i]);
 // }
-
-
 // //    6. Вывести всех пользователей в обратном порядке
 // for (let i=User.length -1; i>=0; i--){
-//     console.log(User[i])
+//     console.log(User[i]);
 // }
 
 // const user = User.slice ().reverse();
-// console.log(user)
+// console.log(user);
 
 // for (let i=9; i>=4; i--) {
-//     console.log (User[i])
+//     console.log (User[i]);
 // }
-
-
 // //    7. Посчитать сколько всего пользователей
 // const users = User.length;
 // console.log('Всего пользователей: ',users)
-
-
 // //    8. Вывести список вебсайтов пользователей которые содержат '.com'
 // User.filter((user) => {
 // if (user.website.includes ('.com')){
 //     console.log(user);
 //     }
 // })
-
-
 // //    9. Вывести все username которые длиннее 12 символов
 // User.filter((user) => {
 // if (user.username.length > 12){
 //     console.log(user);
 //     }
 // })
-
-
 // //    10. Привести список всех username где каждый будет в нижнем регистре
-// const users = User.map (user => user.username.toLowerCase())
-// console.log (users)
+// const users = User.map (user => user.username.toLowerCase());
+// console.log (users);

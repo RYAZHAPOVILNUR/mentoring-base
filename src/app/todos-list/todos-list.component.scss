@@ -1,13 +1,13 @@
-.users {
+.todos {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     max-width: 1600px;
 }
-.users-card {
+.todos-card {
     position: relative;
-    height: 200px;
+    height: 300px;
     width: 250px;
     margin: 20px;
     padding: 10px;
