@@ -7,7 +7,7 @@ import { MatTooltipModule, TooltipPosition } from "@angular/material/tooltip";
 import { FormControl } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { AuthComponent } from "../auth/auth.component";
-import { UserService } from "../user.service";
+import { UserService } from "../services/user.service";
 
 const aboutCompanyFn = (text: string) => text;
 
@@ -52,7 +52,6 @@ export class HeaderComponent {
     this.menuItems = upperCaseMenuItems.map(
       item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
     )
-
     this.isUpperCase = !this.isUpperCase
   }
 

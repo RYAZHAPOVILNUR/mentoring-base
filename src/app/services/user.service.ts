@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
+import { IUserRole } from "../interfaces/user-role";
 
-export interface IUser {
-  name: string,
-  email: string,
-  isAdmin: null | boolean
-
-}
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private readonly userSubject$ = new BehaviorSubject<IUser | null>(null);
-  public readonly user$ = this.userSubject$.asObservable();
+  private readonly userSubject$ = new BehaviorSubject<IUserRole | null>(null);
+  public readonly user$ = this.userSubject$.asObservable(); // если он нигде не используется зачем он тут нужен вообще?
 
-  private user: IUser = {
+  private user: IUserRole = {
     name: 'Ильнур',
     email: 'Ряжапов',
     isAdmin: null
@@ -36,8 +31,8 @@ export class UserService {
     return this.userSubject$.value?.isAdmin;
   }
 
-  get isLogged() {
-    return this.userSubject$.value !== null;
-  }
+  // get isLogged() {
+  //   return this.userSubject$.value !== null;
+  // } ни где не используется, зачем он нужен ?
 
 }

@@ -1,21 +1,21 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
-import { Todo } from "./todos-list/todos-list.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { ITodo } from "../interfaces/todo"
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
-  private todosSubject$ = new BehaviorSubject<Todo[]>([]);
+  private todosSubject$ = new BehaviorSubject<ITodo[]>([]);
   todos$ = this.todosSubject$.asObservable();
   private _snackBar = inject(MatSnackBar);
 
-  setTodos(todos: Todo[]) {
+  setTodos(todos: ITodo[]) {
     this.todosSubject$.next(todos.slice(0,10))
   }
 
-  editTodo(editedTodo: Todo) {
+  editTodo(editedTodo: ITodo) {
     this.todosSubject$.next(
       this.todosSubject$.value.map(
         todo => {
@@ -29,7 +29,7 @@ export class TodosService {
     )
   }
 
-  createTodo(todo: Todo) {
+  createTodo(todo: ITodo) {
     this.todosSubject$.next([...this.todosSubject$.value, todo])
     // const todoIsExisting = this.todosSubject$.value.find(
     //   (currentElement) => currentElement.title === todo.title
@@ -57,7 +57,7 @@ export class TodosService {
     )
   }
 
-  getTodos(): Todo[] {
+  getTodos(): ITodo[] {
     return this.todosSubject$.value
   }
 }

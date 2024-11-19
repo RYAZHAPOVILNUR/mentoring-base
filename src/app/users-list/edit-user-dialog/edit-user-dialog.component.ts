@@ -6,9 +6,9 @@ import { MatError, MatFormField, MatLabel, MatSuffix } from "@angular/material/f
 import { MatIcon } from "@angular/material/icon";
 import { MatInput } from "@angular/material/input";
 import { NgStyle } from "@angular/common";
-import { User } from "../users-list.component";
 import { ChangeViewPhonePipe } from "../../pipes/change-view-phone.pipe";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { IUser } from "../../interfaces/user";
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -33,7 +33,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditUserDialogComponent {
-  readonly data = inject<{user: User}>(MAT_DIALOG_DATA);
+  readonly data = inject<{user: IUser}>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>)
   // readonly changeViewPhonePipe = inject(ChangeViewPhonePipe);
 

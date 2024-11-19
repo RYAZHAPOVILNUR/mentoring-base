@@ -1,27 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TodosApiService } from "../todos-api.service";
+import { TodosApiService } from "../services/todos-api.service";
 import { AsyncPipe, NgForOf } from "@angular/common";
 import { TodoCardComponent } from "./todo-card/todo-card.component";
-import { TodosService } from "../todos.service";
+import { TodosService } from "../services/todos.service";
 import { MatIcon } from "@angular/material/icon";
 import { MatMiniFabButton } from "@angular/material/button";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { ITodo } from "../interfaces/todo"
 
-export interface  Todo {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
-
-export interface CreateTodo {
-  id: number,
-  title: string,
-  userId: number,
-  completed: boolean,
-}
 @Component({
   selector: 'app-todos-list',
   standalone: true,
@@ -56,11 +44,11 @@ export class TodosListComponent {
   deleteTodo(id:number) {
     this.todosService.deleteTodo(id);
   }
-  public editTodo(todo: Todo) {
+  public editTodo(todo: ITodo) {
     this.todosService.editTodo(todo)
   }
 
-  public createTodo(formTodo: CreateTodo) {
+  public createTodo(formTodo: ITodo) {
     this.todosService.createTodo({
       id: new Date().getTime(),
       title: formTodo.title,
@@ -73,7 +61,7 @@ export class TodosListComponent {
       autoFocus: false
     });
 
-    dialogRef.afterClosed().subscribe((createResult: Todo) => {
+    dialogRef.afterClosed().subscribe((createResult: ITodo) => {
       if (createResult) {
         const existingTodo = this.todosService.getTodos().find(
           currentElement => currentElement.title === createResult.title

@@ -13,9 +13,9 @@ import {MatError, MatFormField, MatLabel, MatSuffix} from "@angular/material/for
 import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
-import { Todo } from "../todos-list.component";
 import { NgStyle } from "@angular/common";
 import { LineTrimPipe } from "../../pipes/line-trim.pipe";
+import { ITodo } from "../../interfaces/todo"
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -49,7 +49,7 @@ export function completedValidator(): ValidatorFn {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditTodoDialogComponent {
-  readonly data = inject<{todo: Todo}>(MAT_DIALOG_DATA);
+  readonly data = inject<{todo: ITodo}>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<EditTodoDialogComponent>)
 
   public focused = false;
