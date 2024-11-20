@@ -1,6 +1,6 @@
 КОМПОНЕНТ СПИСКА ЮЗЕРОВ
 <div class="users">
-    <div  *ngFor="let user of users"> 
+    <div  *ngFor="let user of usersService.users$ | async"> 
         <app-user-list-card class="users-card" [user]="user" (deleteUser)="deleteUser($event)"></app-user-list-card>
         <div>
     </div>

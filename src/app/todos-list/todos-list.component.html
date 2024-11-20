@@ -1,6 +1,6 @@
 КОМПОНЕНТ СПИСКА ЗАДАЧ
 <div class="todos">
-    <div  *ngFor="let todo of todos"> 
+    <div  *ngFor="let todo of todosService.todos$ | async"> 
         <app-todos-card class="todos-card" [todo]="todo" (deleteTodos)="deleteTodos($event)"></app-todos-card>
         <div>
     </div>

@@ -3,6 +3,7 @@ import { TodosApiService } from '../todos-api.service';
 import { Todo } from './todos-list.interface';
 import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { CommonModule, NgFor } from '@angular/common';
+import { TodosService } from '../todos.service';
 
 
 @Component({
@@ -14,18 +15,18 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
-  todos: Todo[] = [];
+  readonly todosService = inject(TodosService)
 
 
   constructor() {
     this.todosApiService.getTodos().subscribe(
         (response: Todo[]) => {
-          this.todos = response;
-          console.log('Todos', this.todos);
+          this.todosService.setTodos(response);
+          console.log('Todos', this.todosService);
       });
     
   }deleteTodos(id: number) {
-    this.todos = this.todos.filter(item => item.id !== id);
+    this.todosService.deletedTodos(id);
   }
 }
 

@@ -1,9 +1,9 @@
-import { CommonModule, NgFor } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
-import { Component, inject } from "@angular/core";
+import { AsyncPipe, CommonModule, NgFor } from "@angular/common";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { User } from "./users-list.interface"; 
 import { UsersApiService } from "../users-api.service";
 import { UserListCardComponent } from "./user-list-card/user-list-card.component";
+import { UsersService } from "../users.service";
 
 // const consoleResponse = (response: any) => console.log(response);
 
@@ -13,21 +13,22 @@ import { UserListCardComponent } from "./user-list-card/user-list-card.component
     templateUrl: './users-list.components.html',
     styleUrl: './users-list.components.scss',
     standalone: true,
-    imports: [NgFor, CommonModule, UserListCardComponent] ,
+    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe] ,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent {
-    readonly usersApiService = inject(UsersApiService);
-    users: User[] = [];
+    readonly UsersApiService = inject(UsersApiService)
+    readonly usersService = inject(UsersService);
 
 
     constructor() {
-      this.usersApiService.getUsers().subscribe(
+      this.UsersApiService.getUsers().subscribe(
           (response: User[]) => {
-            this.users = response;
-            console.log('USERS', this.users);
+            this.usersService.setUsers(response);
+            console.log('USERS', this.usersService);
         });
       
     }deleteUser(id: number) {
-      this.users = this.users.filter(item => item.id !== id);
+      this.usersService.deletedUsers(id);
     }
 }
