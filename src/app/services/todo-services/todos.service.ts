@@ -1,56 +1,65 @@
-import {Injectable} from "@angular/core";
+import {inject, Injectable} from "@angular/core";
 import {BehaviorSubject, Observable} from "rxjs";
 import {TodoInterface} from "../../interfaces/todo-interfaces";
+import {TodosApiService} from "./todos-api.service";
+import {LocalStorageService} from "../local-storage.service";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
     private todosSubject$: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<TodoInterface[]>([]);
     public readonly todos$: Observable<TodoInterface[]> = this.todosSubject$.asObservable();
+    private readonly localStorageService: LocalStorageService = inject(LocalStorageService);
+    private readonly todosApiService: TodosApiService = inject(TodosApiService);
+    private readonly localStorageTodoKey: 'todos' = 'todos';
 
-    //* установка todos
-    setTodos(todos: TodoInterface[]): void {
-        this.todosSubject$.next(todos.slice(0, 15));
-    }
-
-    public getTodo(): TodoInterface[] {
-        return this.todosSubject$.value;
-    }
-
-    //* изменение todos
-    editTodo(editedTodo: TodoInterface): void {
-        this.todosSubject$.next(
-            this.todosSubject$.value.map( // next перезаписывает данные по новому и возвращает обновленный массив после завершения функции map
-                (todo: TodoInterface) => {
-                    if (todo.id === editedTodo.id) {
-                        return editedTodo;
-                    } else {
-                        return todo;
-                    }
-                }
-            )
-        );
-    }
-
-    //* создание todo
-    createTodo(todo: TodoInterface): void {
-        const existingTask: TodoInterface | undefined = this.todosSubject$.value.find(
-            (currentElement: TodoInterface) => currentElement.title === todo.title
+    private setTodos(todosData: TodoInterface[]): void {
+        this.localStorageService.saveLocalStorage<TodoInterface[]>(
+            this.localStorageTodoKey, todosData
         );
 
-        if (existingTask !== undefined) {
-            alert('Такое задание уже существует!');
+        this.todosSubject$.next(todosData);
+    }
+
+    public loadTodos() {
+        const localStorageTodos: TodoInterface[] | null = this.localStorageService.getLocalStorage<TodoInterface[]>(this.localStorageTodoKey);
+
+        if (localStorageTodos) {
+            this.todosSubject$.next(localStorageTodos);
         } else {
-            this.todosSubject$.next([...this.todosSubject$.value, todo]);
-            alert('Новая задача успешно добавлена!');
+            this.todosApiService.getTodos().subscribe((todoData: TodoInterface[]) => {
+                this.setTodos(todoData.slice(1, 11));
+            });
         }
     }
 
-    //* удаление todo
-    deleteTodo(id: number): void {
-        this.todosSubject$.next(
-            this.todosSubject$.value.filter(
-                (item: TodoInterface) => item.id !== id // метод filter проверяет если id не равны оставляет, иначе исключает.
-            )
+    public editTodo(todo: TodoInterface): void {
+        const index: number = this.todosSubject$.value.findIndex((el: TodoInterface) => el.id === todo.id);
+
+        this.todosSubject$.value[index] = todo;
+        this.setTodos(this.todosSubject$.value);
+    }
+
+    public createTodo(todo: TodoInterface): void {
+        const todoExisting: TodoInterface | undefined = this.todosSubject$.value.find(
+            (currentElement: TodoInterface) => currentElement.title === todo.title
         );
+
+        if (todoExisting === undefined) {
+            const newTodo: TodoInterface[] = [...this.todosSubject$.value, todo];
+            this.setTodos(newTodo);
+        } else alert('Такой todo уже есть');
+    }
+
+    public deleteTodo(id: number): void {
+        const newArrayTodos: TodoInterface[] = this.todosSubject$.value.filter((todo: TodoInterface) => todo.id !== id);
+        const findTodo: TodoInterface | undefined = this.todosSubject$.value.find((todo: TodoInterface) => todo.id === id);
+
+        if (findTodo) {
+            this.setTodos(newArrayTodos);
+        }
+
+        if (!this.todosSubject$.value.length) {
+            this.localStorageService.removeLocalStorage(this.localStorageTodoKey);
+        }
     }
 }

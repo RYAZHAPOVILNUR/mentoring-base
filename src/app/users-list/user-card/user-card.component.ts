@@ -1,7 +1,7 @@
 import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {UserInterface} from '../../interfaces/user-interfaces';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {EditUserDialogComponent} from '../edit-user-dialog/edit-user-dialog.component';
 import {DeleteUserDialogComponent} from '../delete-user-dialog/delete-user-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -36,7 +36,7 @@ export class UserCardComponent {
     public snackBar: MatSnackBar = inject(MatSnackBar);
 
     openEditDialog(): void {
-        const dialogRef = this.dialog.open(EditUserDialogComponent, {
+        const dialogRef: MatDialogRef<EditUserDialogComponent> = this.dialog.open(EditUserDialogComponent, {
             data: {user: this.user},
         });
 
@@ -47,7 +47,7 @@ export class UserCardComponent {
                     duration: 5000
                 });
             } else {
-                this.snackBar.open('Отмена измения !', 'Ok', {
+                this.snackBar.open('Отмена изменения!', 'Ok', {
                     duration: 5000
                 });
             }
@@ -56,7 +56,7 @@ export class UserCardComponent {
 
 
     openDeleteDialog(): void {
-        const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
+        const dialogRef: MatDialogRef<DeleteUserDialogComponent> = this.dialog.open(DeleteUserDialogComponent, {
             data: {user: this.user},
         });
 

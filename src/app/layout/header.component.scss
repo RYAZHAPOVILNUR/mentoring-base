@@ -62,6 +62,10 @@
     cursor: pointer;
 }
 
+.button-login {
+    margin-left: 20px;
+}
+
 .header-2 {
     display: flex; // позиционирует элементы в одну строку
     justify-content: space-between; // позиционирует элементы вправо и влево
@@ -73,6 +77,8 @@
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // семейство шрифтов
 }
+
+
 
 .header-second-left {
     display: flex;

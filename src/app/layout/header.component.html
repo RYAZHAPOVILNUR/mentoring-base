@@ -38,7 +38,7 @@
                     <span>Пусто</span>
                 </button>
             </div>
-            <div>
+            <div class="button-login">
                 <button (click)="openDialog()" mat-raised-button color="primary" class="button-go"
                         *ngIf="(userService.user$ | async) === null">Войти
                 </button>
