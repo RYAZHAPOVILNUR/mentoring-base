@@ -6,8 +6,10 @@ import { IUser } from "../interfaces/user";
 export class UsersApiService {
   readonly apiService = inject(HttpClient);
 
+  private readonly url = 'https://jsonplaceholder.typicode.com/users';
+
   getUsers() {
-    return this.apiService.get<IUser[]>('https://jsonplaceholder.typicode.com/users')
+    return this.apiService.get<IUser[]>(this.url)
   }
   }
 

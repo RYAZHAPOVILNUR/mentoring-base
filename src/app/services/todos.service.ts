@@ -1,60 +1,52 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { ITodo } from "../interfaces/todo"
+import { LocalStorageService } from "./local-storage.service";
+import { TodosApiService } from "./todos-api.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
+  readonly localStorage = inject(LocalStorageService)
+  readonly todosApiService = inject(TodosApiService)
   private todosSubject$ = new BehaviorSubject<ITodo[]>([]);
-  todos$ = this.todosSubject$.asObservable();
-  private _snackBar = inject(MatSnackBar);
+  public readonly todos$ = this.todosSubject$.asObservable();
 
-  setTodos(todos: ITodo[]) {
-    this.todosSubject$.next(todos.slice(0,10))
-  }
-
-  editTodo(editedTodo: ITodo) {
-    this.todosSubject$.next(
-      this.todosSubject$.value.map(
-        todo => {
-          if (todo.id === editedTodo.id) {
-            return editedTodo
-          } else {
-            return todo
-          }
-        }
-      )
-    )
-  }
-
-  createTodo(todo: ITodo) {
-    this.todosSubject$.next([...this.todosSubject$.value, todo])
-    // const todoIsExisting = this.todosSubject$.value.find(
-    //   (currentElement) => currentElement.title === todo.title
-    // )
-    //
-    // if(todoIsExisting !== undefined) {
-    //   // alert('Такая задача уже существует')
-    //   this._snackBar.open('Такая задача уже существует', 'ok', {
-    //     duration: 4000
-    //   })
+  loadTodos() {
+    const localStorageTodos = this.localStorage.getFromLocalStorage<ITodo[]>('todos')
+      localStorageTodos && localStorageTodos.length > 0 ? this.todosSubject$.next(localStorageTodos) :
+        this.todosApiService.getTodos().subscribe((data: ITodo[]) => {
+              this.updatedTodos(data.slice(0,10))
+            })
+    // if (localStorageTodos && localStorageTodos.length > 0) {
+    //   this.todosSubject$.next(localStorageTodos)
     // } else {
-    //   this.todosSubject$.next([...this.todosSubject$.value, todo])
-    //   // alert('Задача успешно добавленна')
-    //   this._snackBar.open('Задача успешно добавленна', 'ok', {
-    //     duration: 4000
+    //   this.todosApiService.getTodos().subscribe((data: ITodo[]) => {
+    //     this.updatedTodos(data.slice(0,10))
     //   })
     // }
   }
 
+  updatedTodos(todos: ITodo[]) {
+    this.localStorage.saveToLocalStorage('todos', todos);
+    this.todosSubject$.next(todos);
+  }
+
+  editTodo(editedTodo: ITodo) {
+    const updatedTodo = this.todosSubject$.value.map(todo => todo.id === editedTodo.id ? editedTodo : todo);
+    this.todosSubject$.next(updatedTodo);
+    this.updatedTodos(updatedTodo);
+  }
+
+  createTodo(todo: ITodo) {
+    const newTodo = ([...this.todosSubject$.value, todo]);
+    this.updatedTodos(newTodo)
+  }
+
   deleteTodo(id: number) {
-    this.todosSubject$.next(
-      this.todosSubject$.value.filter(
-        todo => todo.id !== id
-      )
-    )
+    const deletedTodo = this.todosSubject$.value.filter(todo => todo.id !== id)
+    this.updatedTodos(deletedTodo)
   }
 
   getTodos(): ITodo[] {

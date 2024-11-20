@@ -27,18 +27,12 @@ import { ITodo } from "../interfaces/todo"
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosListComponent {
-  readonly todosApiService = inject(TodosApiService)
   readonly todosService = inject(TodosService)
   readonly dialog = inject(MatDialog);
   private _snackBar = inject(MatSnackBar);
 
   constructor() {
-    this.todosApiService.getTodos().subscribe(
-      (response: any) => {
-        this.todosService.setTodos(response)
-      }
-    )
-
+    this.todosService.loadTodos()
   }
 
   deleteTodo(id:number) {

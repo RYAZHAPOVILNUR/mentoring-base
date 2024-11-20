@@ -15,9 +15,7 @@ export class UsersService {
 
   loadUsers() {
     const localStorageUsers = this.localStorage.getFromLocalStorage<IUser[]>('users');
-
-    if (localStorageUsers) {
-
+    if (localStorageUsers && localStorageUsers.length > 0) {
       this.usersSubject$.next(localStorageUsers);
     } else {
       this.usersApiService.getUsers().subscribe((data: IUser[]) => {
@@ -27,7 +25,7 @@ export class UsersService {
   }
 
   updateUsers(users: IUser[]) {
-    this.localStorage.saveToLocalStorage('user', users);
+    this.localStorage.saveToLocalStorage('users', users);
     this.usersSubject$.next(users);
   }
 
