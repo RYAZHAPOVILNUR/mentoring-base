@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TodosApiService } from '../todos-api.service';
 import { Todo } from './todos-list.interface';
 import { TodosCardComponent } from "./todos-card/todos-card.component";
@@ -11,7 +11,8 @@ import { TodosService } from '../todos.service';
   standalone: true,
   imports: [TodosCardComponent, NgFor, CommonModule],
   templateUrl: './todos-list.component.html',
-  styleUrl: './todos-list.component.scss'
+  styleUrl: './todos-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
