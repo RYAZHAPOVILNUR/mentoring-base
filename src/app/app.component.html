@@ -1,51 +1,84 @@
-<link rel="stylesheet" href="app.component.scss">
-<header>
-  <div class="header">
-    <div class="header-top">
-      <div class="header--top-column">
-        <img class="frame-photo photo-left" src="../assets/frame.svg" alt="">
-      </div>
-      <nav class="nav-top">
-        <div class="header-nav-item">Главная</div>
-        <div class="header-nav-item">О компании</div>
-        <div class="header-nav-item">Каталог</div>
-      </nav>
-      <div class="header--top-column">
-        <img src="../assets/phone.svg" alt="">
-      </div>
-      <div class="telephone content-right">
-        <div>
-          <a href="">+7(965) 084-29-29</a>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.component.scss">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="header--top">
+        <div class="nav-top">
+          <img class="frame-photo photo-left" src="/assets/head-logo.svg" alt="Лого фирмы">
+          <a class="header--nav-item">Главная</a>
+          <a class="header--nav-item">О компании</a>
+          <a class="header--nav-item">Каталог</a>
+        </div>
+        <div class="header--right">
+          <div class="header--number-company">
+            <img src="/assets/phone-logo.svg" alt="Картинка телефона">
+            <a href="">+7(965) 084-29-29</a>
+          </div>
+          <div class="header--heart-img">
+            <img src="/assets/heart-logo.svg" alt="Картинка сердечка">
+          </div>
+          <button class="header--basket-button">
+            <img src="/assets/basket-logo.svg" alt="Картика корзины">
+            <span class="basket-item">Пусто</span>
+          </button>
         </div>
       </div>
-        <div>
-          <img class="heart" src="../assets/heart.svg" alt="">
+      <div class="header--botton">
+        <div class="nav-botton">
+          <img class="photo-left" src="/assets/fav-icon.svg" alt="Картинка favicon">
+          <button class="header--nav-item item-button">Каталог</button>
+          <button class="header--nav-item item-button">Стройматериалы</button>
+          <button class="header--nav-item item-button">Инструменты</button>
+          <button class="header--nav-item item-button">Электрика</button>
+          <button class="header--nav-item item-button">Интерьер и одежда</button>
         </div>
-      <div>
-        <button class="content-right">
-          <div class="basket-item">Пусто</div>
-          <img src="../assets/Mask-group.svg" alt="">
-        </button>
+        <div>
+          <input class="input-header" type="Поиск, например Круг зачистной " placeholder="Поиск, например Круг зачистной ">
+        </div>
+        <div class="location-icon">
+          <img class="map-pin" src="/assets/location-logo.svg" alt="Значок местоположения">
+          <span>Москва</span>
+        </div>
+      </div>
+      <div class="header--banner">
+        <img src="/assets/page-banner.svg" alt="Картина банер страницы">
       </div>
     </div>
-    <div class="header-botton">
-      <div>
-        <img class="photo-left" src="../assets/light.svg" alt="">
+  </header>
+  <main class="main">
+    <div class="main--rack rack">
+      <div class="rack--items">
+        <img src="/assets/brick-logo.svg" alt="Картинка кирпичной стены">
+        <span><b>Большой ассортимент</b><br>
+          строительных материалов всегда в<br> наличии</span>
       </div>
-      <nav class="nav-botton">
-        <div class="header-nav-item">Каталог</div>
-        <div class="header-nav-item">Стройматериалы</div>
-        <div class="header-nav-item">Инструменты</div>
-        <div class="header-nav-item">Электрика</div>
-        <div class="header-nav-item">Интерьер и одежда</div>
-      </nav>
-      <div>
-        <input class="search"  type="Поиск, например Круг зачистной " placeholder="Поиск, например Круг зачистной ">
+      <div class="rack--items">
+        <img src="/assets/truck-logo.svg" alt="Картика грузовика доставки">
+        <span><b>Доставка стройматериалов</b><br>
+          в течении четырех часов или в<br> любое удобное время</span>
       </div>
-      <div>
-        <img class="map-pin" src="../assets/map-pin.svg" alt="">
-        <div>Москва</div>
+      <div class="rack--items">
+        <img src="/assets/like-logo.svg" alt="Картинка лайк ">
+        <span>Многоуровневая <b>система<br>управления качеством</b>
+          по стандарту<br>ISO 9001</span>
       </div>
     </div>
-  </div>
-</header>
+    <div>
+
+    </div>
+  </main>
+  <footer>
+    <div>
+
+    </div>
+  </footer>
+</body>
+</html>
