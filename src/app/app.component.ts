@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+let name = 'Fehim'
+
 @Component({
   selector: 'app-root',
   standalone: true,
