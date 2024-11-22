@@ -1,0 +1,32 @@
+<h1 style="margin-left: 50px;">Create Todos Form</h1>
+<div class="todos_form">
+    <form class="form_group" [formGroup]="formTodos" (ngSubmit)="sumbitForm()">
+        <p>Задача:</p>
+        <input type="text" class="form-input" formControlTodos="title" />
+        <!-- <div
+        *ngIf="formTodos.controls['title'].invalid && (formTodos.controls['title'].dirty || formTodos.controls['title'].touched)"
+    >
+        <div class="text-error" *ngIf="formTodos.controls['title'].errors">
+            Мало текста для ЗАДАЧИ
+        </div></div> -->
+        <p>Юзер:</p>
+        <input type="number" class="form-input" formControlTodos="userId" />
+        <!-- <div
+        *ngIf="formTodos.controls['userId'].invalid && (formTodos.controls['userId'].dirty || formTodos.controls['userId'].touched)"
+    >
+        <div class="text-error" *ngIf="formTodos.controls['userId'].errors">
+            Пользователя НЕ СУЩЕСТВУЕТ
+        </div></div> -->
+        <p>Задача решена:</p>
+        <input type="text" class="form-input" formControlTodos="completed" />
+        <!-- <div
+        *ngIf="formTodos.controls['completed'].invalid && (formTodos.controls['completed'].dirty || formTodos.controls['completed'].touched)"
+    >
+        <div class="text-error" *ngIf="formTodos.controls['completed'].errors">
+            "ДА" либо "НЕТ"
+        </div></div> -->
+        <button class="add-todos" >
+            CREATE USERS
+        </button>
+    </form>
+</div>
