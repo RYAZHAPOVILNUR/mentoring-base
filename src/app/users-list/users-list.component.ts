@@ -1,13 +1,15 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, Input } from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { UsersService } from "../users.service";
 import { createUser, User } from "../user-interface";
 import { MatDialog } from "@angular/material/dialog";
 import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
+import { Store } from "@ngrx/store";
+import { UserActions } from "./store/user.actions";
+import { selectUsers } from "./store/users.selectors";
 
 @Component({
     selector: 'app-users-list',
@@ -19,9 +21,10 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class UsersListComponent {
     readonly usersApiServis = inject(UsersApiService);
-    readonly usersService = inject(UsersService);
     readonly dialog = inject(MatDialog);
-    readonly snackBar = inject(MatSnackBar)
+    readonly snackBar = inject(MatSnackBar);
+    private readonly store = inject(Store);
+    public readonly users$ = this.store.select(selectUsers);
 
     @Input()
     user!: User;
@@ -29,24 +32,22 @@ export class UsersListComponent {
     constructor() {
         this.usersApiServis.getUsers().subscribe(
             (response: any) => {
-                this.usersService.setUsers(response);
+                this.store.dispatch(UserActions.set({users: response}));
             }
         )
     }
 
     deleteUser(id: number) {
-        this.usersService.deleteUser(id)
+        this.store.dispatch(UserActions.delete({id}));
     }  
 
     editUser(user: createUser) {
-        this.usersService.editUser({
-            ...user
-        })
+        this.store.dispatch(UserActions.edit({user}));
     }
     
     createUser(formData: createUser) {
-        this.usersService.createUser(
-            {
+        this.store.dispatch(UserActions.create({
+            user: {
                 id: new Date().getTime(),
                 name: formData.name,
                 email: formData.email,
@@ -56,7 +57,7 @@ export class UsersListComponent {
                     name: formData.company.name,
                 },
             }
-        )
+        }))
     }
 
     openCreateDialog(){
