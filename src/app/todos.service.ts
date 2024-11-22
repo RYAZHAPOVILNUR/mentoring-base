@@ -21,10 +21,17 @@ export class TodosService {
                 todos => todos.id === editTodos.id ? editTodos: todos));
     }
 
-    constructor(private usersApiService: UsersApiService) {} 
-    createTodo(todo: Todo): void { // Загружаем список пользователей 
-        this.usersApiService.getUsers().subscribe((users) => { // Проверяем, существует ли пользователь с указанным userId 
-            const userExists = users.some((user) => user.id === todo.userId); 
+    constructor(private usersApiService: UsersApiService) {
+        this.loadUsers()
+    } 
+
+    private loadUsers() {
+        this.usersApiService.getUsers().subscribe((users) => {this.users= users;});
+        console.log('Load users: ', this.users)
+    }
+    createTodos(todo: Todo): void { // Загружаем список пользователей 
+        const userExists = this.users.some((user) => user.id === todo.userId);
+        console.log('User exists:', userExists)
             if (userExists) { // Добавляем задачу, если пользователь найден 
                 const currentTodos = this.todosSubject$.value; // Получаем текущий список задач
                 this.todosSubject$.next([...currentTodos, todo]); // Добавляем новую задачу 
@@ -32,7 +39,6 @@ export class TodosService {
             } else {// Показываем ошибку, если пользователь не найден 
                 alert(`Ошибка: пользователь с id ${todo.userId} не найден.`); 
             } 
-        });
     }
 
     

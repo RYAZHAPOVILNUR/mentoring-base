@@ -32,13 +32,8 @@ export class TodosListComponent {
     this.todosService.deletedTodos(id);
   }
 
-  public createTodos(formData: Todo) {
-    this.todosService.createTodos({
-      id: new Date().getTime(),
-      title: formData.title,
-      userId: formData.userId,
-      completed: formData.completed,
-    });
+  public CreateTodos(todo: Todo) {
+    this.todosService.createTodos(todo);
     console.log('Дынные формы: ', event);
     console.log(new Date().getTime());
   }
