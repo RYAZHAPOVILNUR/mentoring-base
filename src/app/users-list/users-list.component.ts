@@ -8,30 +8,7 @@ import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatMiniFabButton } from "@angular/material/button";
 import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
-
-export interface User {
-  id: number;
-  name: string;
-  username?: string;
-  email: string;
-  address?: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    }
-  },
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase?: string;
-    bs?: string;
-  }
-}
+import { IUser } from "../interfaces/interfaces";
 
 @Component({
   selector: 'app-users-list',
@@ -71,7 +48,7 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public editUser(user: User) {
+  public editUser(user: IUser) {
     this.usersService.editUsers(user)
   }
 
@@ -80,31 +57,13 @@ export class UsersListComponent {
       autoFocus: false
     });
 
-    dialogRef.afterClosed().subscribe((createResult: User) => {
-      if (createResult) {
-        // Используем метод getUsers() для получения текущего списка пользователей
-        const existingUser = this.usersService.getUsers().find(
-          (currentElement) => currentElement.email === createResult.email
-        );
-
-        if (existingUser) {
-          // Показываем сообщение, если пользователь с таким email уже существует
-          this._snackBar.open('Такой email уже зарегистрирован', 'ok', {
-            duration: 4000,
-          });
-        } else {
-          // Если пользователя с таким email нет, создаем нового пользователя
-          this.usersService.createUser(createResult);
-          this._snackBar.open('Пользователь успешно создан', 'ok', {
-            duration: 4000,
-          });
-        }
-      } else {
-        // Сообщение, если создание пользователя отменено
-        this._snackBar.open('Пользователь не создан', 'ok', {
-          duration: 4000,
-        });
-      }
+    dialogRef.afterClosed().subscribe((createResult: IUser) => {
+      const message: string = createResult
+      ? this.usersService.getUsers().some((element) => element.email === createResult.email)
+        ? 'Такой Email уже существует'
+        : (this.usersService.createUser(createResult), 'Пользователь успешно создан')
+      : 'Пользователь не создан'
+      this._snackBar.open(message, 'ok', { duration: 4000 })
     });
   }
 }

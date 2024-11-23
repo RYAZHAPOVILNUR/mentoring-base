@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Todo } from "../todos-list.component";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { DeleteTodoDialogComponent } from "../delete-todo-dialog/delete-todo-dialog.component";
@@ -7,6 +6,7 @@ import { EditTodoDialogComponent } from "../edit-todo-dialog/edit-todo-dialog.co
 import { LineTrimPipe } from "../../pipes/line-trim.pipe";
 import { BoxShadowDirective } from "../../directives/box-shadow.directive";
 import { YellowDirective } from "../../directives/yellow.directive";
+import { ITodo } from "../../interfaces/interfaces";
 
 @Component({
   selector: 'app-todo-card',
@@ -22,13 +22,13 @@ import { YellowDirective } from "../../directives/yellow.directive";
 })
 export class TodoCardComponent {
   @Input()
-  todo!: Todo
+  todo!: ITodo
 
   @Output()
   deleteTodo = new EventEmitter<number>();
 
   @Output()
-  public editTodo = new EventEmitter<Todo>();
+  public editTodo = new EventEmitter<ITodo>();
 
   readonly dialog = inject(MatDialog);
   private _snackBar = inject(MatSnackBar);

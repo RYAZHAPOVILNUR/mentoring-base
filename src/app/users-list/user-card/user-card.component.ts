@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { User } from "../users-list.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatDialogModule } from '@angular/material/dialog'
 import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.component";
@@ -8,6 +7,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { ChangeViewPhonePipe } from "../../pipes/change-view-phone.pipe";
 import { BoxShadowDirective } from "../../directives/box-shadow.directive";
 import { YellowDirective } from "../../directives/yellow.directive";
+import { IUser } from "../../interfaces/interfaces";
 
 @Component({
   selector: 'app-user-card',
@@ -23,13 +23,13 @@ import { YellowDirective } from "../../directives/yellow.directive";
 })
 export class UserCardComponent {
   @Input()
-  user!: User
+  user!: IUser
 
   @Output()
   public deleteUser = new EventEmitter<number>();
 
   @Output()
-  public editUser = new EventEmitter<User>();
+  public editUser = new EventEmitter<IUser>();
 
   readonly dialog = inject(MatDialog);
   private _snackBar = inject(MatSnackBar);
