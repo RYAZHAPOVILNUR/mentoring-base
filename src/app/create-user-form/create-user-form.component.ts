@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import {
   FormControl,
@@ -10,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { UserService } from '../services/users-services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../dialogs/user-dialogs/create-user-dialog/create-user-dialog.component';
 
@@ -19,7 +17,6 @@ import { CreateUserDialogComponent } from '../dialogs/user-dialogs/create-user-d
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgIf,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
@@ -51,7 +48,6 @@ export class CreateUserFormComponent {
 
   constructor(
     private snackBar: MatSnackBar,
-    private userService: UserService,
     public dialog: MatDialog
   ) {}
 
@@ -68,21 +64,13 @@ export class CreateUserFormComponent {
   }
 
   public submitForm(): void {
-    if (this.form.valid) {
-      const user = this.form.value;
-      const email = user.email;
-
-      if (localStorage.getItem('email') === email) {
-        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Ок', {
-          duration: 3000,
-        });
-      } else {
-        this.createUser.emit(user);
-        this.form.reset();
-        this.snackBar.open('Новый пользователь успешно добавлен!', 'Ок', {
-          duration: 5000,
-        });
-      }
-    }
-  }
+   if (this.form.valid) {
+     const user = this.form.value;
+     this.createUser.emit(user);
+     this.form.reset();
+     this.snackBar.open('Новый пользователь успешно добавлен!', 'Ок', {
+       duration: 5000,
+     });
+   }
+ }
 }

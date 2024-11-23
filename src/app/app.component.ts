@@ -1,12 +1,8 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { RouterLink } from '@angular/router';
-import { UsersListComponent } from './users-list/users-list.component';
-import { AdminComponent } from './admin/admin.component';
-import { UserService } from './services/users-services/user.service';
-import { LoginDialogComponent } from './login/login.component';
+import { AuthService } from './services/users-services/auth.service';
 import { ScrollButtonsComponent } from './scroll-buttons/scroll-buttons.component';
 
 @Component({
@@ -16,30 +12,27 @@ import { ScrollButtonsComponent } from './scroll-buttons/scroll-buttons.componen
     RouterOutlet,
     NgIf,
     NgFor,
-    RouterLink,
     HeaderComponent,
-    UsersListComponent,
-    AdminComponent,
-    LoginDialogComponent,
     ScrollButtonsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(private userService: UserService) {}
+ private authService = inject(AuthService);
+ 
   isShowSadMan = true;
   newPages = [5, 4, 3, 2, 1];
 
   loginAsAdmin() {
-    this.userService.loginAsAdmin();
+    this.authService.loginAsAdmin();
   }
 
   loginAsUser() {
-    this.userService.loginAsUser();
+    this.authService.loginAsUser();
   }
 
   logout() {
-    this.userService.logout();
+    this.authService.logout();
   }
 }

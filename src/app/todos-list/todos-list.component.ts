@@ -1,14 +1,13 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TodoCardComponent } from './todo-card/todo-card.component';
-import { RouterLink } from '@angular/router';
-import { TodosApiService } from '../services/todos-services/todos-api.service';
-import { TodoService } from '../services/todos-services/todos.service';
-import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
-import { Todo } from '../interfaces/todo-interfaces';
-import { MatDialog } from '@angular/material/dialog';
 import { AsyncPipe, NgFor } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { Todo } from '../interfaces/todo-interfaces';
+import { TodosApiService } from '../services/todos-services/todos-api.service';
+import { TodoCardComponent } from './todo-card/todo-card.component';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Store } from '@ngrx/store';
+import { TodoActions } from './store/todos.actions';
+import { selectTodos } from './store/todos.selectors';
 import { CreateTodoDialogComponent } from '../dialogs/todo-dialogs/create-todo-dialog/create-todo-dialog.component';
 
 @Component({
@@ -16,50 +15,36 @@ import { CreateTodoDialogComponent } from '../dialogs/todo-dialogs/create-todo-d
   standalone: true,
   imports: [
     NgFor,
-    RouterLink,
     TodoCardComponent,
     AsyncPipe,
-    CreateTodoFormComponent,
-    MatButtonModule,
   ],
   templateUrl: './todos-list.component.html',
-  styleUrl: './todos-list.component.scss',
+  styleUrls: ['./todos-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodosListComponent {
+export class TodosListComponent implements OnInit {
   readonly todosApiService = inject(TodosApiService);
-  readonly todosService = inject(TodoService);
-  readonly snackBar = inject(MatSnackBar);
   readonly dialog = inject(MatDialog);
+  readonly snackBar = inject(MatSnackBar);
+  private readonly store = inject(Store);
+  public readonly todos$ = this.store.select(selectTodos);
 
-  constructor() {
-    this.loadTodosFromLocalStorage();
+  ngOnInit(): void {
+    this.loadTodos();
   }
 
-  private loadTodosFromLocalStorage() {
-    const storedTodos = localStorage.getItem('todos');
-    if (storedTodos) {
-      this.todosService.setTodos(JSON.parse(storedTodos));
-    } else {
-      this.todosApiService.getTodos().subscribe((response: any) => {
-        this.todosService.setTodos(response);
-        this.saveTodosToLocalStorage(response);
-      });
-    }
-  }
-
-  private saveTodosToLocalStorage(todos: Todo[]) {
-    localStorage.setItem('todos', JSON.stringify(todos));
+  private loadTodos() {
+    this.todosApiService.getTodos().subscribe((response: Todo[]) => {
+      this.store.dispatch(TodoActions.set({ todos: response }));
+    });
   }
 
   deleteTodo(id: number): void {
-    this.todosService.deleteTodo(id);
-    this.updateLocalStorage();
+    this.store.dispatch(TodoActions.delete({ id }));
   }
 
-  editTodo(todo: Todo) {
-    this.todosService.editTodo(todo);
-    this.updateLocalStorage();
+  editTodo(todo: Todo): void {
+    this.store.dispatch(TodoActions.edit({ todo }));
   }
 
   public createTodo(formData: Todo): void {
@@ -70,13 +55,8 @@ export class TodosListComponent {
       completed: formData.completed,
     };
 
-    this.todosService.createTodo(newTodo);
-    this.updateLocalStorage();
-  }
-
-  private updateLocalStorage() {
-    const todos = this.todosService.getTodos();
-    this.saveTodosToLocalStorage(todos);
+    this.store.dispatch(TodoActions.create({ todo: newTodo }));
+    this.snackBar.open('Новая задача успешно создана!', 'Закрыть', { duration: 2000 });
   }
 
   openCreateTodoDialog(): void {
@@ -87,9 +67,6 @@ export class TodosListComponent {
     dialogRef.afterClosed().subscribe((result: Todo) => {
       if (result) {
         this.createTodo(result);
-        this.snackBar.open('Новая задача успешно создана!', 'Ок', {
-          duration: 5000,
-        });
       }
     });
   }

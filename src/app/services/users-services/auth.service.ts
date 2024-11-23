@@ -3,7 +3,7 @@ import { UserRole } from '../../interfaces/user-interfaces';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class UserService {
+export class AuthService {
   private userSubject$ = new BehaviorSubject<UserRole | null>(null);
   public readonly user$ =this.userSubject$.asObservable();
     

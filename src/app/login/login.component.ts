@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {
   MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
   MatDialogRef,
 } from '@angular/material/dialog';
@@ -15,7 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogContent,
     MatDialogActions,
     MatButtonModule,
-    MatDialogClose,
   ],
 })
 export class LoginDialogComponent {

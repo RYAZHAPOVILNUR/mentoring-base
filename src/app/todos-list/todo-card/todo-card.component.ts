@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { CreateTodoFormComponent } from '../../create-todo-form/create-todo-form.component';
 import { Todo } from '../../interfaces/todo-interfaces';
 import { MatButtonModule } from '@angular/material/button';
 import { DeleteTodoDialogComponent } from '../../dialogs/todo-dialogs/delete-todo-dialog/delete-todo-dialog.component';
@@ -12,7 +11,6 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'app-todo-card',
   standalone: true,
   imports: [
-    CreateTodoFormComponent,
     MatCardModule,
     MatButtonModule,
     TextLenghtPipe,

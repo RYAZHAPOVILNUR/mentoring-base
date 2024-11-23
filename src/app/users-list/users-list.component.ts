@@ -1,45 +1,51 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AsyncPipe, NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CreateUser, User } from '../interfaces/user-interfaces';
-import { RouterLink } from '@angular/router';
 import { UsersApiService } from '../services/users-services/users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../services/users-services/users.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Store } from '@ngrx/store';
+import { UserActions } from './store/users.actions';
+import { selectUsers } from './store/users.selectors';
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
   imports: [
     NgFor,
-    NgIf,
-    RouterLink,
     UserCardComponent,
     AsyncPipe,
     CreateUserFormComponent,
   ],
   templateUrl: './users-list.component.html',
-  styleUrl: './users-list.component.scss', 
+  styleUrls: ['./users-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersListComponent {
+export class UsersListComponent implements OnInit {
   readonly usersApiService = inject(UsersApiService);
-  readonly usersService = inject(UsersService);
   readonly dialog = inject(MatDialog);
   readonly snackBar = inject(MatSnackBar);
+  private readonly store = inject(Store);
+  public readonly users$ = this.store.select(selectUsers);
 
   ngOnInit(): void {
-    this.usersService.loadUsersFromLocalStorage();
+    this.loadUsers();
+  }
+
+  private loadUsers() {
+    this.usersApiService.getUsers().subscribe((response: User[]) => {
+      this.store.dispatch(UserActions.set({ users: response }));
+    });
   }
 
   deleteUser(id: number) {
-    this.usersService.deleteUser(id);
+    this.store.dispatch(UserActions.delete({ id }));
   }
 
   editUser(user: User) {
-    this.usersService.editUser(user);
+    this.store.dispatch(UserActions.edit({ user }));
   }
 
   public createUser(formData: CreateUser) {
@@ -54,6 +60,7 @@ export class UsersListComponent {
       },
     };
 
-    this.usersService.createUser(newUser);
+    this.store.dispatch(UserActions.create({ user: newUser }));
+    this.snackBar.open('Пользователь успешно создан!', 'Закрыть', { duration: 2000 });
   }
 }

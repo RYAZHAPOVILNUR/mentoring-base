@@ -11,7 +11,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgIf } from '@angular/common';
-import { UsersService } from '../../../services/users-services/users.service';
 
 @Component({
   standalone: true,
@@ -51,23 +50,15 @@ export class CreateUserDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<CreateUserDialogComponent>,
     private snackBar: MatSnackBar,
-    private userService: UsersService
   ) {}
 
   public submitForm(): void {
-    if (this.form.valid) {
-      const user = this.form.value;
-      const email = user.email;
-      if (email && this.userService.existingUser(email)) {
-        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Ок', {
-          duration: 3000,
-        });
-      } else {
-        this.dialogRef.close(user);
-        this.snackBar.open('Новый пользователь успешно добавлен!', 'Ок', {
-          duration: 5000,
-        });
-      }
-    }
-  }
+   if (this.form.valid) {
+     const user = this.form.value;
+     this.dialogRef.close(user);
+     this.snackBar.open('Новый пользователь успешно добавлен!', 'Ок', {
+       duration: 5000,
+     });
+   }
+ }
 }

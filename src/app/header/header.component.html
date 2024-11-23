@@ -30,14 +30,14 @@
               routerLinkActive="active-link"
               class="button"
               yellow
-              *ngIf="userService.isAdmin"
+              *ngIf="authService.isAdmin"
             >
               Юзеры
             </button>
             <button
               href="#"
               class="nav__link"
-              *ngIf="userService.isAdmin === true"
+              *ngIf="authService.isAdmin === true"
               routerLink="/admin"
               (click)="checkIsAdmin()"
               class="button"
@@ -49,7 +49,7 @@
               routerLinkActive="active-link"
               class="button"
               yellow
-              *ngIf="userService.isAdmin"
+              *ngIf="authService.isAdmin"
             >
               Задачи
             </button>
@@ -62,10 +62,10 @@
               <img src="assets/buy.svg" alt="cart" />
               <span style="margin-left: 10px"> Пусто </span>
             </button>
-            <button *ngIf="(userService.user$ | async) === null" (click)="openLoginDialog()" class="button" yellow>
+            <button *ngIf="(authService.user$ | async) === null" (click)="openLoginDialog()" class="button" yellow>
              Войти
            </button>
-           <button *ngIf="(userService.user$ | async)!== null" (click)="logout()" class="button" yellow>
+           <button *ngIf="(authService.user$ | async)!== null" (click)="logout()" class="button" yellow>
              Выйти
            </button>           
           </div>

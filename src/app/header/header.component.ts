@@ -1,10 +1,9 @@
 import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { HeartYellowDirective } from '../directives/heart-yellow.directive';
 import { SvgIconComponent } from '../app-svg-icon.component';
 import { YellowDirective } from '../directives/yellow.directive';
-import { UserService } from '../services/users-services/user.service';
+import { AuthService } from '../services/users-services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginDialogComponent } from '../login/login.component';
@@ -18,7 +17,6 @@ import { CommonModule } from '@angular/common'
     NgIf,
     RouterLink,
     DatePipe,
-    HeartYellowDirective,
     SvgIconComponent,
     YellowDirective,
     CommonModule,
@@ -29,7 +27,7 @@ import { CommonModule } from '@angular/common'
 export class HeaderComponent {
   private _snackBar = inject(MatSnackBar);
   readonly dialog = inject(MatDialog);
-  readonly userService = inject(UserService);
+  readonly authService = inject(AuthService);
   readonly router = inject(Router);
 
   isShowCatalog = true;
@@ -68,13 +66,13 @@ export class HeaderComponent {
   }
 
   public checkIsAdmin() {
-    if (!this.userService.isAdmin) {
+    if (!this.authService.isAdmin) {
       this.openSnackBar('Страница доступна только для админа', 'Ок');
     }
   }
 
   public logout() {
-    this.userService.logout();
+    this.authService.logout();
     this.router.navigate(['']);
   }
 
@@ -82,9 +80,9 @@ export class HeaderComponent {
    const dialogRef = this.dialog.open(LoginDialogComponent);
    dialogRef.afterClosed().subscribe((res) => {
      if (res === 'user') {
-       this.userService.loginAsUser();
+       this.authService.loginAsUser();
      } else if (res === 'admin') {
-       this.userService.loginAsAdmin();
+       this.authService.loginAsAdmin();
      } else {
        return;
      }

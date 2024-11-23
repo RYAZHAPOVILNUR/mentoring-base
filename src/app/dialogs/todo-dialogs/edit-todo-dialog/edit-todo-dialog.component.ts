@@ -19,7 +19,6 @@ import { MatCardModule } from '@angular/material/card';
 import { completedValidator } from '../../../validator';
 import { MatTooltipModule} from '@angular/material/tooltip';
 
-
 @Component({
   selector: 'app-edit-todo-dialog',
   standalone: true,
