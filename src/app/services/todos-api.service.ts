@@ -7,7 +7,8 @@ import { HttpClient } from "@angular/common/http";
 export class TodosApiService {
   readonly apiService = inject(HttpClient)
 
+  private readonly jsonUrl  = 'https://jsonplaceholder.typicode.com/todos';
   getTodos() {
-    return this.apiService.get('https://jsonplaceholder.typicode.com/todos')
+    return this.apiService.get(this.jsonUrl)
   }
 }

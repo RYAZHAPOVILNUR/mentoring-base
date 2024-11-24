@@ -55,7 +55,6 @@ export class UserCardComponent {
   }
 
   public openEditDialog(): void {
-    console.log('g')
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user},
       autoFocus: false

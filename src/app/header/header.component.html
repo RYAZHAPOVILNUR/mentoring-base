@@ -11,16 +11,16 @@
           <a class="header-nav-item" *ngIf="isShowCatalog">{{headerNavItem3}}</a>
         </nav>
         <button
-          style="margin-right: 5px"
+          class="btn-menu btn-admin-user"
           (click)="isShowCatalog = !isShowCatalog"
         >{{ isShowCatalog ? 'Скрыть каталог' : 'Показать каталог' }}
         </button>
-        <button (click)="changeMenuText()">Изменить текст</button>
+        <button class="btn-menu btn-admin-user" (click)="changeMenuText()">Изменить текст</button>
         <div class="admin-user">
-          <button routerLink="users">Пользователи</button>
-          <button routerLink="admin" *ngIf="userService.isAdmin === true">Админка</button>
+          <button class="btn-menu btn-admin-user" routerLink="users">Пользователи</button>
+          <button class="btn-menu btn-admin-user" routerLink="admin" *ngIf="userService.isAdmin === true">Админка</button>
         </div>
-        <button routerLink="todos">Задачи</button>
+        <button class="btn-menu btn-admin-user" routerLink="todos">Задачи</button>
       </div>
       <div class="header-right">
         <img src="/assets/phone.svg">

@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TodosApiService } from "../todos-api.service";
 import { AsyncPipe, NgForOf } from "@angular/common";
 import { TodoCardComponent } from "./todo-card/todo-card.component";
-import { TodosService } from "../todos.service";
 import { MatIcon } from "@angular/material/icon";
 import { MatMiniFabButton } from "@angular/material/button";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { ITodo } from "../interfaces/interfaces";
+import { TodosApiService } from "../services/todos-api.service";
+import { map, take, tap } from "rxjs";
+import { Store } from "@ngrx/store";
+import { TodosActions } from "./store/todos.actions";
+import { selectTodos } from "./store/todos.selector";
 
 @Component({
   selector: 'app-todos-list',
@@ -28,33 +31,33 @@ import { ITodo } from "../interfaces/interfaces";
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService)
-  readonly todosService = inject(TodosService)
   readonly dialog = inject(MatDialog);
   private _snackBar = inject(MatSnackBar);
+  private readonly store = inject(Store);
+  public readonly todos$ = this.store.select(selectTodos);
 
   constructor() {
-    this.todosApiService.getTodos().subscribe(
-      (response: any) => {
-        this.todosService.setTodos(response)
-      }
-    )
-
+    this.todosApiService.getTodos().subscribe((response: any) => {
+        this.store.dispatch(TodosActions.set({ todos: response }))
+      })
   }
 
   deleteTodo(id:number) {
-    this.todosService.deleteTodo(id);
+    this.store.dispatch(TodosActions.delete({ id }))
   }
   public editTodo(todo: ITodo) {
-    this.todosService.editTodo(todo)
+    this.store.dispatch(TodosActions.edit({ todo }))
   }
 
-  public createTodo(formTodo: ITodo) {
-    this.todosService.createTodo({
-      id: new Date().getTime(),
-      title: formTodo.title,
-      userId: formTodo.userId,
-      completed: formTodo.completed
-    })
+  public createTodo(todo: ITodo) {
+    this.store.dispatch(TodosActions.create({
+      todo: {
+        id: new Date().getTime(),
+        title: todo.title,
+        userId: todo.userId,
+        completed: todo.completed
+      }
+    }))
   }
   openCreateTodoDialog() {
     const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
@@ -62,12 +65,21 @@ export class TodosListComponent {
     });
 
     dialogRef.afterClosed().subscribe((createResult: ITodo) => {
-      const message: string = createResult
-      ? this.todosService.getTodos().some((element) => element.title === createResult.title)
-        ? 'Такая задача уже существует'
-          : (this.todosService.createTodo(createResult), 'Задача успешно добавленна')
-      : 'Задача не добавленна'
-      this._snackBar.open(message, 'ok', { duration: 4000 })
+      if (!createResult) {
+        this._snackBar.open('Задача не добавленна', 'ok', { duration: 4000 })
+        return
+      }
+      this.todos$.pipe(
+        take(1),
+        map((todo) => todo.some((todo) => todo.title === createResult.title)),
+        tap((todoExists) => {
+          const message = todoExists
+            ? 'Такая задача уже существует'
+            : (this.createTodo(createResult), 'Задача успешно добавленна');
+
+          this._snackBar.open(message, 'ok', { duration: 4000 });
+        })
+      ).subscribe()
     })
   };
 }
