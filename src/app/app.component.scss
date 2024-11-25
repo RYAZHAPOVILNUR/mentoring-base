@@ -1,3 +1,167 @@
-span{
-    color: aqua;
+.header__top{
+    height: 128px;
+    background: #4B565E;
+    display: flex;
+    align-items: center;
+
+    .header__wrapper{
+        width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .header-left{
+            display: flex;
+            align-items: center;
+
+            .header__nav{
+
+                .header__nav__list{
+                    display: flex;
+                    list-style: none;
+
+                    .header__nav__list-item{
+                        margin: 0 24px 0 0;
+
+                        a{
+                            text-decoration: none;
+                            color: #fff;
+                            font-family: "Inter";
+                            font-weight: 600;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header-right{
+            display: flex;
+            align-items: center;
+            
+            .header__tel{
+                display: flex;
+                align-items: center;
+
+                img{
+                    width: 28px;
+                    height: 28px;
+                }
+
+                p{
+                    margin: 0 0 0 4.5px;
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 16px;
+                    font-family: "Inter";
+                }
+            }
+
+            .header__favorites{
+                margin: 0 0 0 40px;
+            }
+
+            .header__btn{
+                display: flex;
+                width: 106px;
+                height: 48px;
+                border-radius: 50px;
+                border: 1px solid #F0BA4E ;
+                margin: 0 0 0 40px;
+                background: none;
+                color: #fff;
+                font-weight: 500;
+                font-size: 16px;
+                font-family: "Inter";
+
+                img{
+                    padding: 10px 5px 10px 10px;
+                }
+            }
+        }
+    }
+}
+
+.header__bottom{
+    background-color: #F0BA4E;
+    height: 48px;
+    display: flex;
+    align-items: center;
+
+    .header__wrapper-btm{
+        display: flex;
+        width: 1440px;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+
+        .header-left--btm{
+            nav{
+                ul{
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    padding: 0;
+
+                    .item-img{
+                        margin: 5px 10px 0 0;
+                    }
+
+                    .header__bottom-nav--list---item    {
+                        a{
+                            color: #3C3C3B;
+                            font-weight: 600;
+                            font-family: "Inter";
+                            font-size: 14px;
+                            margin: 0 24px 0 0;
+                            text-decoration: none;
+                
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        .header-right--btm{
+            display: flex;
+            align-items: center;
+
+            input{
+                background: url(../assets/Mask\ group.png) no-repeat 372px 0;
+                background-size: 24px 24px;
+                border: none;
+                border-bottom: 1px solid #3C3C3B;
+                width: 400px;
+                height: 28px;
+                outline: none;
+
+            }
+            ::-webkit-input-placeholder{
+                color: rgba(75, 86, 94, 0.6);
+                font-size: 16px;
+                font-family: "Inter";
+                font-weight: 400;
+            }   
+
+            .header-location{
+                display: flex;
+                align-items: center;
+
+                img{
+                    margin: 0 0 0 24px;
+                }
+
+                p{
+                    font-family: "Inter";
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #fff;
+                    margin: 0 0 0 4px;
+                }
+            }
+        }
+    }
+
 }
