@@ -1,12 +1,12 @@
 <div mat-card-avatar class="component-cards-item">
-  <div>
+  <div class="text-height">
     <p>{{user.name}}</p>
     <p>{{user.email}}</p>
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
   </div>
-  <div class="user-card-change">
-  <button mat-stroked-button class="user-card-buttons" (click)="openDeleteDialog()">Delete</button>
-  <button mat-stroked-button class="user-card-buttons" (click)="openEditDialog()">Edit</button>
+  <div class="card-change">
+  <button mat-stroked-button class="card-buttons" (click)="openDeleteDialog()">Delete</button>
+  <button mat-stroked-button class="card-buttons" (click)="openEditDialog()">Edit</button>
 </div>
 </div>

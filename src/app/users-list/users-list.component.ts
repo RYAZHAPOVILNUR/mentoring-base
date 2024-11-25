@@ -1,14 +1,14 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { UsersApiService } from '../users-api.servise';
+import { UsersApiService } from '../servises/users-api.servise';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../users.service';
+import { UsersService } from '../servises/users.service';
 import { IUser } from '../Interfaces/user.interface';
-import { _isNumberValue } from '@angular/cdk/coercion';
 import { map, pipe, take } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
-import { UserAddButtonComponent } from '../user-add-button/user-add-button.component';
+import { UserAddButtonComponent } from './user-add-button/user-add-button.component';
+
 
 @Component({
   selector: 'app-users-list',
@@ -49,7 +49,6 @@ export class UsersListComponent {
         )
       )
       .subscribe((existingUser) => {
-        console.log('Такой email уже есть', existingUser?.email);
         if (existingUser !== undefined) {
           this.snackBar.open('Такой Email уже существует', 'ok', {
             duration: 3000,
@@ -73,6 +72,5 @@ export class UsersListComponent {
 
   public editUser(formDialogValue: IUser) {
     this.usersService.editUser(formDialogValue);
-    console.log(formDialogValue);
   }
 }

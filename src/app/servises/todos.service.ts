@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ITodo } from './Interfaces/todo.interface';
+import { ITodo } from '../Interfaces/todo.interface';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
@@ -24,16 +24,7 @@ export class TodosService {
   }
 
   createTodo(todo: ITodo) {
-    const exitingTodo = this.todoSubject$.value.find(
-      (currentElement) => currentElement.title === todo.title
-    );
-
-    if (exitingTodo !== undefined) {
-      alert('ТАКАЯ ЗАДАЧА УЖЕ ЕСТЬ');
-    } else {
-      this.todoSubject$.next([...this.todoSubject$.value, todo]);
-      alert('НОВАЯ ЗАДАЧА УСПЕШНО ДОБАВЛЕНА');
-    }
+    this.todoSubject$.next([...this.todoSubject$.value, todo]);
   }
 
   deleteTodo(id: number) {

@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { ITodo } from "./Interfaces/todo.interface";
+import { ITodo } from "../Interfaces/todo.interface";
 
 @Injectable({providedIn: 'root'})
 export class TodosApiService {

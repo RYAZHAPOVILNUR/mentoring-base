@@ -2,8 +2,10 @@ import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { CreateUserDialogComponent } from '../users-list/create-user-dialog/create-user-dialog.component';
-import { IUser } from '../Interfaces/user.interface';
+import { IUser } from '../../Interfaces/user.interface';
+import { CreateUserDialogComponent } from '../user-dialog/create-user-dialog/create-user-dialog.component';
+
+
 
 @Component({
   selector: 'app-user-add-button',

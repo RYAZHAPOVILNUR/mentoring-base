@@ -1,0 +1,35 @@
+.component-forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 340px;
+    padding: 15px;
+  }
+  
+  .form-input {
+    width: 300px;
+  }
+  
+  .form-item {
+    margin: 30px auto;
+    align-self: center;
+  }
+  
+  .form-item-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button-form {
+    border-radius: 25px;
+    align-self: center;
+    width: 50px;
+    margin-top: 20px;
+  }
+  
+  .button-position {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+  }
+  

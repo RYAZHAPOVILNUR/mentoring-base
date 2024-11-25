@@ -1,5 +1,5 @@
-<div class="component-todo-item">
-  <div>
+<div class="component-cards-item">
+  <div class="text-height">
     <p>ТЕКСТ ЗАДАЧИ:</p>
     <div>{{ todo.title }}</div>
     <p>АВТОР ЗАДАЧИ</p>
@@ -7,7 +7,8 @@
     <p>ЗАДАЧА ЗАВЕРШЕНА</p>
     <div>{{ todo.completed ? "ДА" : "НЕТ" }}</div>
   </div>
-  <button class="delete-todo" (click)="onDeleteTodo(todo.id)">
-    УДАЛИТЬ ЗАДАЧУ
-  </button>
+  <div class="card-change">
+  <button mat-stroked-button class="card-buttons" (click)="openDeleteDialog()">Delete</button>
+  <button mat-stroked-button class="card-buttons" (click)="openEditDialog()">Edit</button>
+</div>
 </div>

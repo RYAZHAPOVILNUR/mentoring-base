@@ -12,13 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { IUser } from '../../Interfaces/user.interface';
-import {
-  MatDialog,
-  MatDialogClose,
-  MatDialogRef,
-} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogClose, MatDialogRef } from '@angular/material/dialog';
+import { ITodo } from '../../../Interfaces/todo.interface';
 
 export function completedValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -31,9 +27,7 @@ export function completedValidator(): ValidatorFn {
 }
 
 @Component({
-  selector: 'app-create-user-dialog',
-  templateUrl: './create-user-dialog.component.html',
-  styleUrl: './create-user-dialog.component.scss',
+  selector: 'app-create-todo-dialog',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -44,22 +38,18 @@ export function completedValidator(): ValidatorFn {
     MatSnackBarModule,
     MatDialogClose,
   ],
+  templateUrl: './create-todo-dialog.component.html',
+  styleUrl: './create-todo-dialog.component.scss',
 })
-export class CreateUserDialogComponent {
-  private snackBar = inject(MatSnackBar);
+export class CreateTodoDialogComponent {
+  @Output()
+  createTodo = new EventEmitter<ITodo>();
+  private dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>);
 
-  private dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
-
-  public readonly form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    website: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    company: new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    }),
+  public form = new FormGroup({
+    userId: new FormControl('', [Validators.required]),
+    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    completed: new FormControl('', [Validators.required, completedValidator()]),
   });
 
   public submitForm(): void {

@@ -12,7 +12,11 @@
   box-sizing: border-box;
 }
 
-.user-card-buttons {
+.text-height {
+  line-height: 15px;
+}
+
+.card-buttons {
   align-self: center;
   width: 70px;
   border-radius: 18px;
@@ -20,7 +24,7 @@
   background: linear-gradient(45deg, blue, purple, pink, red, transparent);
 }
 
-.user-card-change { 
+.card-change { 
   display: flex;
   justify-content: space-between;
 }

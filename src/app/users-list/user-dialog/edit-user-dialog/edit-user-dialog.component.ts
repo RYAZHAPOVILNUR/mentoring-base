@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { IUser } from '../../Interfaces/user.interface';
+import { IUser } from '../../../Interfaces/user.interface';
 
 @Component({
   selector: 'app-edit-user-dialog',

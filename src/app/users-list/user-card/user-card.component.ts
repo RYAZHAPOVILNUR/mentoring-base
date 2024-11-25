@@ -2,8 +2,8 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { IUser } from '../../Interfaces/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
-import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
+import { DeleteUserDialogComponent } from '../user-dialog/delete-user-dialog/delete-user-dialog.component';
+import { EditUserDialogComponent } from '../user-dialog/edit-user-dialog/edit-user-dialog.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,13 +35,12 @@ export class UserCardComponent {
     });
 
     dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
-      console.log('The dialog was closed');
       if (result) {
         this.deleteUser.emit(this.user);
         this.snackBar.open('Пользователь удален', 'ok', {
           duration: 3000,
         });
-      } else 
+      } else
         this.snackBar.open('Отмена удаления', 'ok', {
           duration: 3000,
         });
@@ -66,6 +65,7 @@ export class UserCardComponent {
       }
     });
   }
+  
   onDeleteUser(userId: IUser) {
     this.deleteUser.emit(userId);
   }

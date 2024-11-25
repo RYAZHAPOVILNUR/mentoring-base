@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { IUser } from './Interfaces/user.interface';
+import { IUser } from '../Interfaces/user.interface';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {

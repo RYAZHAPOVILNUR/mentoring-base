@@ -1,0 +1,31 @@
+<div class="component-forms">
+    <h1>CREATE TODO FORM</h1>
+    <div class="form-item">
+      <form class="form-item-group" [formGroup]="form" (ngSubmit)="submitForm()">
+        <mat-form-field class="form-input">
+          <mat-label>Текст задачи</mat-label>
+          <input matInput formControlName="title">
+          <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-input">
+          <mat-label>Автор задачи</mat-label>
+          <input matInput formControlName="userId">
+          <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-input">
+          <mat-label>Задача завершена?</mat-label>
+          <input matInput formControlName="completed" placeholder="Введите 'да' или 'нет'">
+          <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <div class="button-position">
+        <button class="button-form" matIconSuffix mat-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
+          <mat-icon class="add-element">expand_circle_down</mat-icon>
+        </button>
+        <button class="button-form" mat-button mat-dialog-close>
+          <mat-icon class="cancel-element">cancel</mat-icon>
+        </button>
+      </div>
+      </form>
+    </div>
+    </div>
+    
