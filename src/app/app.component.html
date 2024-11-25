@@ -46,12 +46,21 @@
                         <img src="../assets/burger.svg" alt="бургер меню">
                     </div>
                     <ul class="under__header-item">
-                        <button>Поменять Буквы</button>
-                        <li class="under__header-list">Каталог</li>
-                        <li class="under__header-list">Стройматериалы</li>
-                        <li class="under__header-list">Инструменты</li>
-                        <li class="under__header-list">Электрика</li>
-                        <li class="under__header-list">Интерьер и одежда</li>
+                        <li class="under__header-list">
+                            <button class="under__header-button">Каталог</button>
+                        </li>
+                        <li class="under__header-list">
+                            <button class="under__header-button">Стройматериалы</button>
+                        </li>
+                        <li class="under__header-list">
+                            <button class="under__header-button">Инструменты</button>
+                        </li>
+                        <li class="under__header-list">
+                            <button class="under__header-button">Электрика</button>
+                        </li>
+                        <li class="under__header-list">
+                            <button class="under__header-button">Интерьер и одежда</button>
+                        </li>
                     </ul>
                 </div>
                 <div class="under__header-right">
@@ -81,7 +90,7 @@
                             <p class="advantages__title">
                                 Большой ассортимент
                             </p>
-                            <span>
+                            <span class="advantages__desc">
                                 строительных материалов всегда в наличии
                             </span>
                         </div>
@@ -117,21 +126,85 @@
         <div class="container">
             <div class="cards__wrapper">
                 <div class="card">
-                    <p class="card__title">Строительный отделочный инструмент</p>
-                    <img src="../assets/firstcard.png" alt="карточка" class="card__pic">
-                    <div class="link__block">
-                        <p class="link__name">Перейти в каталог</p>
-                        <button class="link__button">
-                            <img src="assets/Frame20.svg" alt="каталог" class="link__pic">
-                        </button>
+                    <div class="card__image">
+                        <p class="card__title">Строительный отделочный инструмент</p>
+                        <img src="../assets/firstcard.png" alt="карточка" class="card__pic">
+                        <div class="link__block">
+                            <span class="click__catalog">Перейти в каталог</span>
+                            <a class="link__name">
+                                <img src="../assets/link.svg" alt="каталог" class="link__pic">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="cards">
-                    <ul class="cards__item">
-                        <li class="cards__list"></li>
-                        <li class="cards__list"></li>
-                        <li class="cards__list"></li>
-                        <li class="cards__list"></li>
+                    <ul class="cards__list">
+                        <li class="cards__list-item">
+                            <div class="card__image second__img">
+                                <img src="../assets/secondcard.png" alt="эмали">
+                            </div>
+                            <div class="cards__desc">
+                                <p class="card__title">
+                                    ЭМАЛИ
+                                </p>
+                                <div class="link__block second__block">
+                                    <span class="click__catalog">
+                                        Перейти в каталог
+                                    </span>
+                                    <img src="../assets/link.svg" alt="ссылка" class="link__pic">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cards__list-item">
+                            <div class="card__desc">
+                                <p class="card__title">
+                                    Лакокрасочные материалы
+                                </p>
+                                <div class="link__block third__block">
+                                    <span class="click__catalog">
+                                        Перейти в каталог
+                                    </span>
+                                    <img src="../assets/link.svg" alt="ссылка" class="link__pic">
+                                </div>
+                            </div>
+                            <div class="card__image third__img">
+                                <img src="../assets/thirdcard.png" alt="лак">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="cards__list">
+                        <li class="cards__list-item">
+                            <div class="card__desc">
+                                <p class="card__title">
+                                    Пены, клеи и герметики
+                                </p>
+                                <div class="link__block third__block">
+                                    <span class="click__catalog">
+                                        Перейти в каталог
+                                    </span>
+                                    <img src="../assets/link.svg" alt="ссылка" class="link__pic">
+                                </div>
+                            </div>
+                            <div class="card__image fourth__img">
+                                <img src="../assets/fourthcard.png" alt="клей">
+                            </div>
+                        </li>
+                        <li class="cards__list-item">
+                            <div class="card__image second__img">
+                                <img src="../assets/fifthcard.png" alt="розетка">
+                            </div>
+                            <div class="cards__desc">
+                                <p class="card__title">
+                                    Розетки и выключатели
+                                </p>
+                                <div class="link__block second__block">
+                                    <img src="../assets/link.svg" alt="ссылка" class="link__pic">
+                                    <span class="click__catalog">
+                                        Перейти в каталог
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

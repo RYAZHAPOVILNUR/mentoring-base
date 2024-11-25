@@ -6,13 +6,13 @@
 }
 .container {
     display: flex;
-    margin: 0 auto;
+    margin: 0px auto;
     align-items: center;
     justify-content: space-between;
 }
 
 .header__logo {
-    padding: 20px 40px 20px 0;
+    padding: 20px 40px 20px 0px;
 }
 
 .header__left {
@@ -46,7 +46,7 @@
 .header__item-right {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0px;
     gap: 40px;
 }
 
@@ -60,7 +60,7 @@
     color: white;
     background-color: #4B565E;
     border: none;
-    padding: 0;
+    padding: 0px;
 }
 
 .header__wrapper {
@@ -70,7 +70,7 @@
 
 .under__header-item {
     display: flex;
-    padding: 0;
+    padding: 0px;
 }
 
 .under__header-left {
@@ -82,22 +82,26 @@
     padding-right: 10px;
 }
 
-.under__header-list {
+
+.under__header-button {
     font-weight: 600;
     font-size: 14px;
     color: #3C3C3B;
     line-height: 17px;
     padding-right: 24px;
+    padding-left: 0;
+    background-color: #F0BA4E;
+    border: none;
 }
 
 .right__wrapper {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0px;
 }
 
 .under__header-right {
-    padding: 10px 0;
+    padding: 10px 0px;
     align-items: center;
 }
 
@@ -122,7 +126,7 @@
     font-size: 40px;
     color: #F0BA4E;
     line-height: 56px;
-    margin: 0;
+    margin: 0px;
 }
 
 .advantages__item {
@@ -140,7 +144,7 @@
     line-height: 22px;
 }
 
-span {
+.advantages__desc {
     font-size: 18px;
     line-height: 22px;
     color: #A1A0A0;
@@ -154,17 +158,13 @@ span {
     width: 421px;
 }
 
-p {
-    margin: 0;
-    padding: 0;
-}
 
 .cards__wrapper {
     display: flex;
 }
-
 .card {
-    position: relative;
+    width: 421px;
+    display: flex;
     background-color: #FFFFFF;
 }
 
@@ -172,9 +172,45 @@ p {
     font-size: 28px;
     font-weight: 600;
     line-height: 34px;
-    padding: 16px 16px 30px 16px;
+    color: #3C3C3B;
+}
+
+.card__wrap {
+    display: flex;
 }
 
 .link__block {
     display: flex;
+    align-items: center;
+}
+
+.second__block {
+    padding-top: 94px;
+}
+
+.click__catalog {
+    color: #3C3C3B;
+}
+
+.cards__list {
+    display: flex;
+}
+
+.cards__list-item {
+    width: 421px;
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 16px 16px 0px 0px; 
+}
+
+.third__block {
+    padding: 60px 14px 16px 16px;
+}
+
+.third__img {
+    padding-top: 60px;
+}
+
+.fourth__img {
+    padding: 0px;
 }
