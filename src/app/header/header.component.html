@@ -1,0 +1,51 @@
+<div class="content-container">
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="menu-items-container">
+                    <img src="/assets/Logo.svg" alt="logo" style="margin-right: 40px;">
+                    <a href="" class="menu-item">
+                        <span class="white-color">{{headerItem1}}</span>
+                    </a>
+                    <a href="" class="menu-item">
+                        <span class="white-color">{{aboutCompany}}</span>
+                    </a>
+                    <a href="" class="menu-item">
+                        <span class="white-color">{{headerItem3}}</span>
+                    </a>
+                    <a routerLink="users" class="menu-item">
+                        <span class="white-color">Пользователи</span>
+                    </a>
+                  <button (click)="changeMenuText()">Изменить текст</button>
+                </div>
+
+                <div class="header-phone">
+                    <img class="phone" src="/assets/Phone.svg" alt="Phone">
+                    <a href="tel:+79650842929" class="no-underline">
+                        <span>+7 (965) 084-29-29</span>
+                    </a>
+                </div>
+                <div class="header-info-container">
+                    <img class="header-info-item" src="assets/heart.svg" alt="favorites">
+                    <button class="cart-button header-info-item">
+                        <img src="/assets/basket.svg" alt="basket">
+                        <div style="margin-left: 14px;">Пусто</div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <nav class="second-nav">
+            <div class="second-nav-container">
+                <div class="menu-items-container">
+                    <img src="assets/сatalog.svg" alt="catalog" style="margin-right: 10px;">
+                </div>
+                <div class="second-menu-item" *ngFor="let item of secondMenuItem">{{item}}</div>
+                <div class="menu-items-container">
+                    <input class="search-input" type="text" placeholder="Поиск, например Круг зачистной">
+                </div>
+                <img src="assets/geolocation.svg" alt="map" style="margin-left: 15px;">
+                <span style="margin-left: 5px; font-size: 14px;" >Москва</span>
+            </div>
+        </nav>
+    </header>
+</div>

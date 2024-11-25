@@ -1,0 +1,12 @@
+
+Компонент Списка Юзеров
+
+<div style="display: flex; flex-wrap: wrap">
+  <div class="users" *ngFor="let item of users" >
+    <p>{{$any(item).name}}</p>
+    <p>{{$any(item).email}}</p>
+    <p>{{$any(item).website}}</p>
+    <p>{{$any(item).company.name}}</p>
+    <button class="click" (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+  </div>
+</div>
