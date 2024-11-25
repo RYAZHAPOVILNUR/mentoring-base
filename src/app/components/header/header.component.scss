@@ -1,0 +1,132 @@
+.header {
+    padding: 0px 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: #ffffff;
+    background-color: #4b565e;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo {
+    margin: 20px;
+  }
+  
+  .header-nav {
+    display: flex;
+    color: #ffffff;
+  }
+  
+  .header-nav-item {
+    margin-right: 20px;
+    color: #ffffff;
+  }
+  
+  .header2 {
+    padding: 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    color: #000000;
+    background-color: #f0ba4e;
+  }
+  
+  .header2-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header2-logo {
+    align-items: center;
+  }
+  
+  .header2-nav {
+    display: flex;
+    margin: 20px;
+  }
+  
+  .header2-nav-item {
+    margin-right: 20px;
+  }
+  
+  .text-style {
+    background: transparent;
+  }
+  .header3 {
+    padding: 0 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: #ffffff;
+    background-color: #4b565e;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-nav-right {
+    display: flex;
+    margin: 50px;
+  }
+  
+  .header-logo3 {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .Cart1 {
+    margin-left: 40px;
+    border-color: #f0ba4e;
+    display: flex;
+    border-radius: 50px;
+    background-color: #4b565e;
+    align-items: center;
+    border-style: solid;
+  }
+  
+  .empty {
+    color: #ffffff;
+    display: flex;
+    margin: 10px;
+  }
+  
+  .phone-number {
+    color: #ffffff;
+    margin: 0px 60px 0px 20px;
+    text-decoration: none;
+  }
+  
+  .search {
+    display: inline-flex;
+    border-bottom: 1px solid #000000;
+    background-color: #f0ba4e;
+  }
+  
+  .search-field {
+    width: 300px;
+    border: 0;
+    background-color: #f0ba4e;
+  }
+  
+  .location {
+    padding: 20px;
+  }
+  .locmap {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: none;
+    padding: 6px;
+    align-items: center;
+  }
