@@ -2,11 +2,9 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
-    color: #ffffff;
+    color: #F9FAFB;
     background-color:#4B565E;
     padding: 0 240px;
-    font-size:  16px;
-    font-weight: 600;
 }
 
 .header-left {
@@ -15,7 +13,7 @@
 }
 
 .header-logo{
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .header-nav{
@@ -23,7 +21,7 @@
 }
 
 .header-nav-item{
-    margin-right: 20px;
+    margin-right: 24px;
 }
 
 .header-right{
@@ -40,7 +38,7 @@
 .cart{
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: #F9FAFB;
     border: 2px #F0BA4E;
     border-style: solid;
     border-width: 1px;
@@ -53,9 +51,54 @@
 .empty{
     display: flex;
     margin-left: 10px;
+    font-weight: 500;
 }
 
 .heart{
     display: flex;
 }
 
+.header-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    background-color: #F0BA4E;
+    padding: 0 240px;
+    color: #3C3C3B;
+}
+
+.header-2-left{
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    margin-right: 10px;
+}
+
+.header-2-nav-item{
+    margin-right: 25px;
+}
+
+.header-2-right{
+    margin-right: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.search{
+    display: block;
+    align-items: center;
+    margin-right: 24px;
+    width: 400px;
+    border: none;
+    background-color: #F0BA4E;
+    border-bottom: 1px solid #3C3C3B;
+}
+
+.country{
+    border: none;
+    background-color: #F0BA4E;
+    color: #ffffff;
+}
