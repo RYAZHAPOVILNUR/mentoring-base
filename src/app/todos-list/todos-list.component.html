@@ -1,4 +1,4 @@
-<app-create-todos-form (createTodos)="CreateTodos($event)"></app-create-todos-form>
+<app-create-todos-form (createTodos)="createTodos($event)"></app-create-todos-form>
 <div class="todos">
     <div  *ngFor="let todo of todosService.todos$ | async"> 
         <app-todos-card class="todos-card" [todo]="todo" (deleteTodos)="deleteTodos($event)"></app-todos-card>

@@ -1,37 +1,24 @@
 <h1 style="margin-left: 50px;">Create Todos Form</h1>
 <div class="todos_form">
-    <form (ngSubmit)="onSumbit()" #todoForm="ngForm">
-        <p for="title">ТЕКСТ ЗАДАЧИ:</p>
-        <input
-          id="title"
-          name="title"
-          [(ngModel)]="todo.title"
-          placeholder="Введите название задачи"
-          required
-        />
-      
-        <p for="userId">Автор ЗАДАЧИ:</p>
-        <input
-          id="userId"
-          name="userId"
-          type="number"
-          [(ngModel)]="todo.userId"
-          placeholder="Введите ID пользователя"
-          required
-        />
-      
-        <p for="completed">ЗАДАЧА ЗАВЕРШЕНА:</p>
-        <select
-          id="completed"
-          name="completed"
-          [(ngModel)]="todo.completed"
-          required
-        >
-          <option [value]="true">Да</option>
-          <option [value]="false">Нет</option>
-        </select>
-        <div class="button">
-        <button type="submit">Создать задачу</button>
-        </div>
+    <form class="form_group" [formGroup]="formTodos" (ngSubmit)="sumbitForm()">
+        <p> ТЕКСТ ЗАДАЧИ:</p>
+        <input type="text" class="form-input" formControlName="title" />
+        <div
+        *ngIf="formTodos.controls['title'].invalid && (formTodos.controls['title'].dirty || formTodos.controls['title'].touched)"
+    >
+        <div class="text-error" *ngIf="formTodos.controls['title'].errors">
+            Введите больше текста для задачи
+        </div></div>
+        <p>Автор ЗАДАЧИ</p>
+        <input type="number" class="form-input" formControlName="userId" />
+        <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+        <input type="text" class="form-input" formControlName="completed" />
+    <div *ngIf="formTodos.controls['completed'].invalid && (formTodos.controls['completed'].dirty || formTodos.controls['completed'].touched)">
+        <div class="text-error" *ngIf="formTodos.controls['completed'].errors">
+          Пожалуйста, введите "да" или "нет"
+        </div></div>
+        <button class="add-todo" [disabled]="formTodos.invalid">
+            CREATE TODOS
+        </button>
     </form>
 </div>

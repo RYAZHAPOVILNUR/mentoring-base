@@ -1,9 +1,18 @@
 .todos_form {
     margin: 30px 30px 30px 150px;
+}
+
+.form_group {
     display: flex;
     flex-direction: column;
 }
-.button {
+.form-input {
+    width: 200px;
+}
+.add-todo {
+    width: 150px;
     margin-top: 20px;
 }
-
+.text-error {
+    color: #ff0000;
+}

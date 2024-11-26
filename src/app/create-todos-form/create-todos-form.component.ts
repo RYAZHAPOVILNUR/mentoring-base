@@ -1,40 +1,47 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import { Todo } from '../todos-list/todos-list.interface';
-import { TodosService } from '../todos.service';
 import { NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-create-todos-form',
   standalone: true,
-  imports: [ ReactiveFormsModule, FormsModule],
+  imports: [ ReactiveFormsModule, FormsModule, NgIf],
   templateUrl: './create-todos-form.component.html',
   styleUrl: './create-todos-form.component.scss'
 })
 export class CreateTodosFormComponent {
+
   @Output()
-  createTodos = new EventEmitter<Todo>();
-
+  createTodos = new EventEmitter();
+ 
   public formTodos = new FormGroup ({
-    title: new FormControl('', [Validators.required, Validators.minLength(10)]),})
+   userId: new FormControl('', [Validators.required]),
+   title: new FormControl('', [Validators.required, Validators.minLength(10)]),
+   completed: new FormControl('', [Validators.required, Validators.pattern(/^(да|нет)$/i)]),
+  });
+ 
+  public sumbitForm(): void {
+    const completedValue = this.formTodos.controls['completed']?.value;
 
-  todo: Todo ={
-    id: 0,
-    title: '',
-    userId: 0,
-    completed: false,
-  };
+    if (completedValue !== null && completedValue !== undefined) {
+      const isCompleted = completedValue.toLowerCase() === 'да';
+      
+      const formValue = { ...this.formTodos.value, completed: isCompleted };
 
-  constructor (private todosService: TodosService) {}
+      if (this.formTodos.valid) {
+        this.createTodos.emit(formValue);
 
-  onSumbit() {
-    if(!this.todo.title || this.todo.userId === undefined || this.todo.completed === undefined) {
-      alert("Пожалуйста, заполните все поля!");
-      return;
+        this.formTodos.reset({ completed: '' });
+      } else {
+        console.log('Form is invalid');
+      }
+      } else {
+      console.log('Completed field is null or undefined');
+      }
     }
-    this.todo.id =new Date().getTime();
-    this.todosService.createTodos(this.todo);
+ 
+  constructor () {
+   this.formTodos.valueChanges.subscribe((formValue) => console.log(formValue))
   }
-}
-
+ }
