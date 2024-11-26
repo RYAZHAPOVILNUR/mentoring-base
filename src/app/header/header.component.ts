@@ -6,6 +6,7 @@ import { UserService } from '../user.service';
 import { IUserRole } from '../interfaces/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthComponent } from '../auth/auth.component';
+import { Router } from '@angular/router';
 
 // Task 1
 const getMenuItems = (menuItem: string) => menuItem;
@@ -29,6 +30,7 @@ const navItem = getMenuItems('О Компании');
 export class HeaderComponent {
   public readonly userService = inject(UserService);
   public readonly dialog = inject(MatDialog);
+  public router = inject(Router);
 
   currentUser: IUserRole | null = null;
   title = 'mentoring-first-project';
@@ -79,6 +81,7 @@ export class HeaderComponent {
 
   public logout() {
     if (confirm('Вы точно хотите выйти?')) {
+      this.router.navigate(['/']);
       return this.userService.logout();
     }
     return false;
