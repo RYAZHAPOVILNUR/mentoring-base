@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit,} from '@angular/core';
 import {AsyncPipe, NgFor} from '@angular/common';
 import {TodoCardComponent} from './todo-card/todo-card.component';
-import {TodosService} from '../../../services/todos.service';
 import {CreateTodosFormComponent} from '../create-todos-form/create-todos-form.component';
 import {Todo} from '../../../interfaces/user-interface';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -9,6 +8,9 @@ import {MatDialog} from '@angular/material/dialog';
 import {CreateTodoDialogComponent} from './todo-card/create-todo-dialog/create-todo-dialog.component';
 import {TodosApiService} from '../../../services/todosApi.service';
 import {MatButtonModule} from '@angular/material/button';
+import {Store} from "@ngrx/store";
+import {TodoActions} from "./todos-store/todo.actions";
+import {selectTodos} from "./todos-store/todos.selectors";
 
 
 @Component({
@@ -20,31 +22,41 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './todos-list.component.component.scss',
 })
 export class TodosListComponent implements OnInit {
-  public todosService = inject(TodosService);
-  readonly todoApiService = inject(TodosApiService);
+  readonly todosApiService = inject(TodosApiService);
+  private readonly store = inject(Store);
+  public readonly todos$ = this.store.select(selectTodos);
 
-  ngOnInit(): void {
-    this.todosService.loadTodos()
+
+  ngOnInit() {
+    this.todosApiService.getTodos().subscribe((response: any) => {
+      this.store.dispatch(TodoActions.set({todos: response.slice(0, 6)}));
+    })
   }
 
   public createTodo(formData: Todo) {
-    this.todosService.createTodo({
-      id: new Date().getTime(),
-      title: formData.title,
-      userId: formData.userId,
-      completed: formData.completed,
-    });
+    this.store.dispatch(
+      TodoActions.create({
+        todo: {
+          id: new Date().getTime(),
+          title: formData.title,
+          userId: formData.userId,
+          completed: formData.completed,
+        }
+      })
+    )
   }
 
   public editTodo(todo: Todo) {
-    this.todosService.editTodo({
-      ...todo,
-    });
+    this.store.dispatch(
+      TodoActions.edit({todo})
+    )
   }
 
   //*MARK:delete-method
   public deleteTodo(id: number) {
-    this.todosService.deleteTodo(id);
+    this.store.dispatch(
+      TodoActions.delete({id})
+    )
   }
 
   readonly snackBar = inject(MatSnackBar);
@@ -53,7 +65,7 @@ export class TodosListComponent implements OnInit {
 
   createTodoDialog(): void {
     const dialogRef = this.dialogTwo.open(CreateTodoDialogComponent, {
-      data: { todo: this.todosService.todos$ },
+      data: { todo: this.todos$ },
     });
 
     dialogRef.afterClosed().subscribe((createResult: Todo) => {

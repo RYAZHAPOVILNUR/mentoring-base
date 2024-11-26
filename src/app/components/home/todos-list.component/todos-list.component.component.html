@@ -4,7 +4,7 @@
   НОВУЮ <br/>ЗАДАЧУ </button>
 
 <div class="todos__block">
-  <div class="users-decoration" *ngFor="let todo of todosService.todos$ | async">
+  <div class="users-decoration" *ngFor="let todo of todos$ | async">
     <app-todo-card
       [todo]="todo"
       (deleteTodo)="deleteTodo($event)"

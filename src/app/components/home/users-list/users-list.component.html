@@ -8,7 +8,7 @@
 <div class="users__block">
   <div
     class="users-decoration"
-    *ngFor="let user of usersService.users$ | async"
+    *ngFor="let user of users$ | async"
   >
     <app-user-card
       [user]="user"
