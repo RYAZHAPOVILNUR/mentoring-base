@@ -214,3 +214,274 @@
 .fourth__img {
     padding: 0px;
 }
+
+.catalog__list-item {
+    padding: 24px;
+}
+.catalog__list {
+    display: flex;
+}
+
+.catalog__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog__like {
+    background-color: #FFFFFF;
+    border: none;
+}
+.catalog__name {
+    font-size: 20px;
+    line-height: 24.2px;
+    color: #3C3C3B;
+    font-weight: 600;
+}
+
+.articul__desc {
+    padding: 12px 0px;
+}
+
+.quantity {
+    display: flex;
+}
+
+.quantity__inner {
+    width: 114px;
+}
+
+.counter {
+    background-color: #FFFFFF;
+    border: none;
+}
+.btn__order {
+    border: 1px solid #F0BA4E;
+    border-radius: 54px;
+    background-color: #FFFFFF;
+    align-items: center;
+    padding: 14px 28px;
+}
+
+.input {
+    width: 39px;
+    border: none;
+}
+
+.articul__title {
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 500;
+    color: #3C3C3B;
+}
+
+.item-price {
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 500;
+    color: #A1A0A0;
+}
+
+.last__price {
+    display: flex;
+}
+
+.first__price {
+    font-size: 16px;
+    line-height: 19.36px;
+    text-decoration: line-through;
+    color: #3C3C3B;
+}
+
+.sales__price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    color: #3C3C3B;
+}
+
+.section__desc {
+    padding: 28px;
+}
+.section__inner {
+    background-color: #F6F6F6;
+}
+
+.section__title {
+    font-size: 28px;
+    line-height: 33.89px;
+    font-weight: 500;
+    color: #3C3C3B;
+    padding-bottom: 16px;
+}
+
+.section__subtitle {
+    font-size: 20px;
+    line-height: 24.2px;
+    font-weight: 400;
+    color: #A1A0A0;
+    padding-bottom: 99px;
+}
+
+.section__inner {
+    width: 100%;
+    background-image: url('../assets/section-back.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+.section__btn {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    border: none;
+    color: #F0BA4E;
+    background-color: #F6F6F6;
+}
+
+.new__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.all__items {
+    border: none;
+    color: #F0BA4E;
+    background-color: #FFFFFF;
+}
+
+.new__catalog {
+    display: flex;
+}
+
+.new__price {
+    font-size: 20px;
+    line-height: 24.2px;
+    font-weight: 600;
+    color: #3C3C3B;
+}
+
+.footer {
+    width: 100%;
+    background-color: #4B565E;
+    padding: 34px 0px 32px 0px;
+}
+
+.footer__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #566169;
+}
+
+.footer__contacts {
+    width: 100%;
+    border-right: 1px solid #566169;
+    padding: 34px 126px 34px 0px;
+}
+
+.contacts__inner {
+    display: flex;
+}
+
+.contacts__phone {
+    padding: 32px 56px 0px 0px;
+}
+
+.phone__logo {
+    display: flex;
+}
+
+.sub__title {
+    color: #FFFFFF99;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    padding-left: 12px;
+}
+
+.phone {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.contacts__email {
+    padding: 32px;
+}
+.mail {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.mail__logo {
+    display: flex;
+}
+
+.feedback {
+    width: 100%;
+    padding: 34px 0px 34px 126px;
+}
+.questions__title {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.78px;
+    padding-bottom: 12px;
+}
+
+.promotions__desc {
+    color: #FFFFFF99;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    padding-bottom: 32px;
+}
+
+.email__enter {
+    border: 1px solid #F0BA4E;
+    border-radius: 30px;
+    padding: 16.5px 366px 16.5px 24px;
+}
+
+.btn {
+    background-color: #F0BA4E;
+    color: #FFFFFF;
+    padding: 12px 19.5px;
+    border: none;
+    border-radius: 30px;
+}
+
+.form__request {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__underwrap{
+    width: 100%;
+    padding: 34px 0px 32px 0px;
+}
+.underwrap__list {
+    display: flex;
+    margin: 0px;
+    padding-bottom: 36px;
+}
+
+.social__list {
+    display: flex;
+    height: 24px;
+}
+
+.social__btn {
+    background-color: #4B565E;
+    border: none;
+}
