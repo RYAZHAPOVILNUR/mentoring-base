@@ -2,12 +2,13 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TodosApiService } from '../todos-api.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosCardComponent } from './todos-card/todos-card.component';
-import { TodosService } from '../todos.service';
-import { CreateTodoDialogComponent } from './create-todo/create-todo-dialog/create-todo-dialog.component';
 import { ITodo } from '../interfaces/todo.interface';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { MatCardModule } from '@angular/material/card';
 import { ShadowDirective } from '../directives/shadow.directive';
+import { Store } from '@ngrx/store';
+import { TodoActions } from './store/todo.actions';
+import { selectTodos } from './store/todo.selectors';
 
 @Component({
   selector: 'app-todos-list',
@@ -19,7 +20,6 @@ import { ShadowDirective } from '../directives/shadow.directive';
     TodosCardComponent,
     AsyncPipe,
     CreateTodoComponent,
-    CreateTodoDialogComponent,
     MatCardModule,
     ShadowDirective,
   ],
@@ -27,28 +27,33 @@ import { ShadowDirective } from '../directives/shadow.directive';
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
-  readonly todosService = inject(TodosService);
+  private readonly store = inject(Store);
+  public readonly todos$ = this.store.select(selectTodos);
 
   constructor() {
-    this.todosApiService
-      .getTodosList()
-      .subscribe((response) => this.todosService.setTodo(response));
-  }
-
-  createTodo(formData: ITodo) {
-    this.todosService.createTodo({
-      id: new Date().getTime(),
-      userId: formData.userId,
-      title: formData.title,
-      completed: formData.completed,
+    this.todosApiService.getTodosList().subscribe((response) => {
+      this.store.dispatch(TodoActions.set({ todos: response }));
     });
   }
 
+  createTodo(formData: ITodo) {
+    this.store.dispatch(
+      TodoActions.create({
+        todo: {
+          id: new Date().getTime(),
+          userId: formData.userId,
+          title: formData.title,
+          completed: formData.completed,
+        },
+      })
+    );
+  }
+
   deleteTodo(id: number) {
-    this.todosService.deleteTodo(id);
+    this.store.dispatch(TodoActions.delete({ id }));
   }
 
   editTodo(todo: ITodo) {
-    this.todosService.editTodo(todo);
+    this.store.dispatch(TodoActions.edit({ todo }));
   }
 }

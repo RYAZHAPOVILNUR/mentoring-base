@@ -1,4 +1,4 @@
-import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { YellowBgDirective } from '../directives/yellow-bg.directive';
@@ -22,7 +22,6 @@ const navItem = getMenuItems('О Компании');
     NgIf,
     RouterOutlet,
     RouterLink,
-    DatePipe,
     YellowBgDirective,
     AsyncPipe,
   ],

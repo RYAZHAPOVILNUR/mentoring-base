@@ -2,12 +2,13 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../users.service';
-import { CreateUserDialogComponent } from './create-user/create-user-dialog/create-user-dialog.component';
 import { CreateUser, IUser } from '../interfaces/user.interface';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { MatCardModule } from '@angular/material/card';
 import { ShadowDirective } from '../directives/shadow.directive';
+import { Store } from '@ngrx/store';
+import { UserActions } from './store/users.actions';
+import { selectUsers } from './store/users.selectors';
 
 @Component({
   selector: 'app-users-list',
@@ -19,7 +20,6 @@ import { ShadowDirective } from '../directives/shadow.directive';
     UserCardComponent,
     AsyncPipe,
     CreateUserComponent,
-    CreateUserDialogComponent,
     MatCardModule,
     ShadowDirective,
   ],
@@ -27,37 +27,37 @@ import { ShadowDirective } from '../directives/shadow.directive';
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiService);
-  readonly usersService = inject(UsersService);
+  private readonly store = inject(Store);
+  public readonly users$ = this.store.select(selectUsers);
 
   constructor() {
-    this.usersApiService
-      .getUsers()
-      .subscribe((response) => this.usersService.setUsers(response));
+    this.usersApiService.getUsers().subscribe((response) => {
+      this.store.dispatch(UserActions.set({ users: response }));
+    });
   }
 
   deleteUser(id: number) {
-    this.usersService.deleteUser(id);
+    this.store.dispatch(UserActions.delete({ id }));
   }
 
   createUser(formData: CreateUser) {
-    this.usersService.createUser({
-      id: new Date().getTime(),
-      name: formData.name,
-      email: formData.email,
-      website: formData.website,
-      phone: formData.phone,
-      company: {
-        name: formData.company.name,
-      },
-    });
+    this.store.dispatch(
+      UserActions.create({
+        user: {
+          id: new Date().getTime(),
+          name: formData.name,
+          email: formData.email,
+          website: formData.website,
+          phone: formData.phone,
+          company: {
+            name: formData.company.name,
+          },
+        },
+      })
+    );
   }
 
   editUser(user: IUser) {
-    this.usersService.editUser({
-      ...user,
-      company: {
-        name: user.company.name,
-      },
-    });
+    this.store.dispatch(UserActions.edit({ user }));
   }
 }
