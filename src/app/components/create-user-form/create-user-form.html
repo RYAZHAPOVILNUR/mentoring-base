@@ -1,0 +1,17 @@
+
+<div style="margin: 30px 30px 30px 160px;">
+    <h1>create-user-form</h1>
+<form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>Name</p>
+    <input type="text" class="form-input" formControlName="name">
+    <p>Email</p>
+    <input type="text" class="form-input" formControlName="email">
+    <p>Website</p>
+    <input type="text" class="form-input" formControlName="website">
+    <p>Company name</p>
+    <input type="text" class="form-input" formControlName="companyName">
+    <button style="width: 150px; margin-top: 20px;" (ngSubmit)="submitForm()" type="submit" [disabled]="form.invalid">
+        CREATE USER
+    </button>
+</form>
+</div>

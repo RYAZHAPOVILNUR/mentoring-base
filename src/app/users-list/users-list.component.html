@@ -1,7 +1,8 @@
-<p style="text-align: center;">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</p>
+<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+
 <div style = " display: flex; justify-content: center;">
 <div class="userListWrapper">
-  <div *ngFor="let user of users">
+  <div *ngFor="let user of users$ | async">
     <app-user-card class="userCard" [user]="user" (deleteUser)="deleteUser($event)">
     </app-user-card>
   </div>

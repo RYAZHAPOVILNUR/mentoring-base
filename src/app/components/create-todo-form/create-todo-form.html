@@ -1,0 +1,15 @@
+<div style="margin: 30px 30px 30px 30px;">
+    <h1>create-todo-form</h1>
+    <form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitForm()">
+        <p>ТЕКСТ ЗАДАЧИ</p>
+        <input type="text" class="form-input" formControlName="title">
+        <p>АВТОР ЗАДАЧИ</p>
+        <input type="text" class="form-input" formControlName="author">
+        <p>ЗАДАЧА ЗАВЕРШЕНА</p>
+        <input type="text" class="form-input" formControlName="completed">
+        <button style="width: 150px; margin-top: 20px;" (ngSubmit)="submitForm()" type="submit"
+            [disabled]="form.invalid">
+            CREATE TODO
+        </button>
+    </form>
+</div>
