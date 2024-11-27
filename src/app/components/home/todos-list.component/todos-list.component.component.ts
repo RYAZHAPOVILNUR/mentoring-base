@@ -28,7 +28,7 @@ export class TodosListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.todosApiService.getTodos().subscribe((response: any) => {
+    this.todosApiService.getTodos().subscribe((response: Todo[]) => {
       this.store.dispatch(TodoActions.set({todos: response.slice(0, 6)}));
     })
   }
@@ -64,9 +64,7 @@ export class TodosListComponent implements OnInit {
   readonly dialogTwo = inject(MatDialog);
 
   createTodoDialog(): void {
-    const dialogRef = this.dialogTwo.open(CreateTodoDialogComponent, {
-      data: { todo: this.todos$ },
-    });
+    const dialogRef = this.dialogTwo.open(CreateTodoDialogComponent);
 
     dialogRef.afterClosed().subscribe((createResult: Todo) => {
       if (createResult) {

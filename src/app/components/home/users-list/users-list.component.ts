@@ -26,7 +26,7 @@ export class UsersListComponent implements OnInit {
   public readonly users$ = this.store.select(selectUsers)
 
   ngOnInit() {
-    this.userApiService.getUsers().subscribe((response: any) => {
+    this.userApiService.getUsers().subscribe((response: User[]) => {
       this.store.dispatch(UserActions.set({users: response.slice(0, 6)}));
     })
   }
@@ -64,9 +64,7 @@ export class UsersListComponent implements OnInit {
   readonly dialogTwo = inject(MatDialog);
 
   createUserDialog(): void {
-    const dialogRef = this.dialogTwo.open(CreateUserDialogComponent, {
-      data: { user: this.users$ },
-    });
+    const dialogRef = this.dialogTwo.open(CreateUserDialogComponent);
 
     dialogRef.afterClosed().subscribe((createResult: User) => {
       if (createResult) {
