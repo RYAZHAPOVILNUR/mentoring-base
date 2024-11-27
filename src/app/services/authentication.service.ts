@@ -4,7 +4,7 @@ import { UserRole } from "../interfaces/users-interface";
 
 
 @Injectable({ providedIn: 'root' })
-export class UsersService {
+export class AuthService {
   private userSubject$ = new BehaviorSubject< UserRole | null>(null);
 
   public readonly user$ = this.userSubject$.asObservable();
@@ -14,6 +14,7 @@ export class UsersService {
     email: 'Nika@gmail.com',
     isAdmin: null,
   };
+  static user$: any;
 
   public loginAsAdmin() {
     this.userSubject$.next({ ...this.user, isAdmin: true });

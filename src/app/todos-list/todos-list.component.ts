@@ -4,7 +4,9 @@ import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.component";
 import { Todo } from "../interfaces/todo-interface";
 import { TodosApiService } from "../services/todos-api.service";
-import { TodoService } from "../services/todo.service";
+import { Store } from "@ngrx/store";
+import { selectTodos } from "./store/todo.selector";
+import { TodosActions } from "./store/todo.actions";
 
 @Component ({
   selector: 'app-todos-list',
@@ -17,25 +19,34 @@ import { TodoService } from "../services/todo.service";
 
 export class TodosListComponent {
   readonly todosApiService = inject (TodosApiService);
-  readonly todosService = inject (TodoService);
+  private readonly store = inject(Store);
+  public readonly todos$ = this.store.select(selectTodos)
 
-  constructor () {
-    this.todosApiService.getTodos().subscribe(
-        (response:any) => {this.todosService.setTodos(response)
-      }
-    )
+  ngOnInit() {
+    this.loadTodos();
+  }
+   
+  private loadTodos() {
+    this.todosApiService.getTodos().subscribe((response: Todo[]) => {
+      this.store.dispatch(TodosActions.set({ todos: response }));
+    });
   }
 
   DeleteTodo(id:number) {
-    this.todosService.deleteTodo(id)
+    this.store.dispatch(TodosActions.delete({id}));
+  }
+
+  editTodo (todo: Todo) {
+    this.store.dispatch(TodosActions.edit({todo}));
   }
 
   public CreateTodo (formData: Todo) {
-    this.todosService.createTodo({
+    const newTodo: Todo = {
       id: new Date().getTime(),
       userId: formData.userId,
       title: formData.title,
       completed: formData.completed,
-    })
+    }
+    this.store.dispatch(TodosActions.create({todo: newTodo}))
   }
 }

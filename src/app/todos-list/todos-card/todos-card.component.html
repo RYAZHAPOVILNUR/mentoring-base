@@ -7,5 +7,6 @@
 
   <p>Задача завершена:</p>
   <div>{{todo.completed ? "ДА" : "НЕТ"}}</div>
+  <button mat-raised-button (click)="openEditDialog()" style="margin: 5px;">Редактировать</button>
   <button (click)=onDeleteTodo(todo.id) class="buttonfortodo">Удалить задачу</button>
 </div>

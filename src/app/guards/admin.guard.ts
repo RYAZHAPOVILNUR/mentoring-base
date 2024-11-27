@@ -3,13 +3,13 @@ import { Router } from "@angular/router";
 import { CanActivateFn } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { UserRole } from "../interfaces/users-interface";
-import { UsersService } from "../services/users.service";
+import { AuthService } from "../services/authentication.service";
 
 export const isAdminGuard: CanActivateFn = (route, state) => {
-  const usersService = inject(UsersService);
+  const usersService = inject(AuthService);
   const router = inject(Router);
 
-  return usersService.user$.pipe(
+  return AuthService.user$.pipe(
     map((user: UserRole | null) => {
       if (user?.isAdmin) {
         return true;

@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { UsersApiService } from '../services/users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UserService } from '../services/user.service';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { CreateUser, User } from '../interfaces/user-interface';
 import { ShadowForUser } from '../directives/user.directive';
-import { StorageService } from '../services/local-storage.service';
-import { take } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { UsersActions } from './store/user.actions';
+import { selectUsers } from './store/user.selector';
 
 @Component({
   selector: 'app-user-list',
@@ -15,26 +15,30 @@ import { take } from 'rxjs';
   imports: [NgFor, UserCardComponent, AsyncPipe,CreateUserFormComponent, ShadowForUser],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class UsersListComponent {
+export class UsersListComponent implements OnInit {
   readonly usersApiService = inject(UsersApiService);
-  readonly usersService = inject(UserService);
-  readonly storageService = inject(StorageService);
-
-  users: User[] = [];
+  private readonly store = inject(Store);
+  public readonly users$ = this.store.select(selectUsers)
 
   ngOnInit() {
-    this.usersService.loadUsers();
+    this.loadUsers();
   }
-
+   
+  private loadUsers() {
+    this.usersApiService.getUsers().subscribe((response: User[]) => {
+      this.store.dispatch(UsersActions.set({ users: response }));
+    });
+  }
+  
   deleteUser (id: number) {
-    this.usersService.deleteUser(id);
+    this.store.dispatch(UsersActions.delete({id}));
   }
 
   editUser (user: User) {
-    this.usersService.editUser(user);
+    this.store.dispatch(UsersActions.edit({user}))
   }
 
   createUser (formData: CreateUser) {
@@ -47,6 +51,6 @@ export class UsersListComponent {
         name: formData.company.name,
       },
     };
-    this.usersService.createUser(newUser);
+    this.store.dispatch(UsersActions.create({user: newUser}))
   }
 }  

@@ -1,31 +1,24 @@
-<div class="todo-form-title">
-  <h1>Create todo form</h1>
-</div>
-
-<div class="todo-form-container">
+<div class="form-container">
   <form class="todo-form" [formGroup]="form" (ngSubmit)="submitForm()">
-    <!-- Текст задачи -->
+    <p>ТЕКСТ ЗАДАЧИ:</p>
     <mat-form-field appearance="fill">
-      <mat-label>Введите текст задачи*</mat-label>
-      <input matInput type="text" formControlName="title" />
+      <input matInput class="form-input" type="text" formControlName="title" />
     </mat-form-field>
     <mat-error *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
-      Текст задачи должен быть заполнен
+      Текст задачи должен быть заполнен (минимум 4 символа)
     </mat-error>
 
-    <!-- Автор задачи -->
+    <p>АВТОР ЗАДАЧИ:</p>
     <mat-form-field appearance="fill">
-      <mat-label>Автор задачи*</mat-label>
-      <input matInput type="text" formControlName="userId" />
+      <input matInput class="form-input" type="text" formControlName="userId" />
     </mat-form-field>
     <mat-error *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)">
       Поле автор должно быть заполнено
     </mat-error>
 
-    <!-- Статус задачи -->
+    <p>СТАТУС ЗАДАЧИ:</p>
     <mat-form-field appearance="fill">
-      <mat-label>Задача завершена?*</mat-label>
-      <mat-select formControlName="completed">
+      <mat-select class="form-input" formControlName="completed">
         <mat-option [value]="true">да</mat-option>
         <mat-option [value]="false">нет</mat-option>
       </mat-select>
@@ -34,8 +27,11 @@
       Укажите статус задачи
     </mat-error>
 
-    <button mat-raised-button class="create-todo-button" [disabled]="form.invalid">
-      Create todo
-    </button>
+    <div class="button-container">
+      <button mat-raised-button class="create-todo-button" [disabled]="form.invalid" matTooltip="Редактировать данные задачи">
+        Редактировать
+      </button>
+      <button mat-raised-button mat-dialog-close>Отмена</button>
+    </div>
   </form>
 </div>

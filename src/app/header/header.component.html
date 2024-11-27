@@ -12,7 +12,7 @@
   </div>
   <div class="header-right">
     <!-- <a routerLink="/users" class="Admin">Админка</a> -->
-    <a routerLink="/admin" class="Admin"               *ngIf="usersService.isAdmin === true"
+    <a routerLink="/admin" class="Admin"               *ngIf="authService.isAdmin === true"
     routerLink="/admin" class="button" yellow>Только для администратора</a>
     <img src="/assets/phone.svg" alt="phone icon">
     <a href="tel:+79650842929" class=phonenum style="margin-right: 20px;"> {{ phoneNumber | DashCut }} </a>
@@ -27,11 +27,11 @@
       </div>
   
     <div class="loginbutton">
-      <button *ngIf="!usersService.isLogged" (click)="openLoginDialog()" class="button">
+      <button *ngIf="!authService.isLogged" (click)="openLoginDialog()" class="button">
         Войти
       </button>          
       
-      <button *ngIf="usersService.isLogged" (click)="logout()" class="button">Выйти</button>    
+      <button *ngIf="authService.isLogged" (click)="logout()" class="button">Выйти</button>    
     </div>    
   </div>
 </div>
