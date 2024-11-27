@@ -18,28 +18,13 @@ export class CreateTodosFormComponent {
   public formTodos = new FormGroup ({
    userId: new FormControl('', [Validators.required]),
    title: new FormControl('', [Validators.required, Validators.minLength(10)]),
-   completed: new FormControl('', [Validators.required, Validators.pattern(/^(да|нет)$/i)]),
+   completed: new FormControl(false),
   });
  
-  public sumbitForm(): void {
-    const completedValue = this.formTodos.controls['completed']?.value;
-
-    if (completedValue !== null && completedValue !== undefined) {
-      const isCompleted = completedValue.toLowerCase() === 'да';
-      
-      const formValue = { ...this.formTodos.value, completed: isCompleted };
-
-      if (this.formTodos.valid) {
-        this.createTodos.emit(formValue);
-
-        this.formTodos.reset({ completed: '' });
-      } else {
-        console.log('Form is invalid');
-      }
-      } else {
-      console.log('Completed field is null or undefined');
-      }
-    }
+  public submitForm(): void {
+    this.createTodos.emit(this.formTodos.value);
+    this.formTodos.reset();
+   }
  
   constructor () {
    this.formTodos.valueChanges.subscribe((formValue) => console.log(formValue))

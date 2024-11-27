@@ -1,6 +1,6 @@
 <h1 style="margin-left: 50px;">Create Todos Form</h1>
 <div class="todos_form">
-    <form class="form_group" [formGroup]="formTodos" (ngSubmit)="sumbitForm()">
+    <form class="form_group" [formGroup]="formTodos" (ngSubmit)="submitForm()">
         <p> ТЕКСТ ЗАДАЧИ:</p>
         <input type="text" class="form-input" formControlName="title" />
         <div
@@ -12,11 +12,10 @@
         <p>Автор ЗАДАЧИ</p>
         <input type="number" class="form-input" formControlName="userId" />
         <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
-        <input type="text" class="form-input" formControlName="completed" />
-    <div *ngIf="formTodos.controls['completed'].invalid && (formTodos.controls['completed'].dirty || formTodos.controls['completed'].touched)">
-        <div class="text-error" *ngIf="formTodos.controls['completed'].errors">
-          Пожалуйста, введите "да" или "нет"
-        </div></div>
+        <select class="form-input"  formControlName="completed">
+            <option [value]="true">Да</option>
+            <option [value]="false">Нет</option>
+        </select>
         <button class="add-todo" [disabled]="formTodos.invalid">
             CREATE TODOS
         </button>
