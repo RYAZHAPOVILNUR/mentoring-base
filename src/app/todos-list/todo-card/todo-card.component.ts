@@ -11,7 +11,7 @@ import { CustomSlicePipe } from "../../pipes/slice.pipe";
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
     standalone: true,
-    imports: [NgFor, CustomSlicePipe]
+    imports: [CustomSlicePipe]
 })
 
 export class TodoCardComponent {

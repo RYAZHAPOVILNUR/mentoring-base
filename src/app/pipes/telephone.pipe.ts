@@ -8,6 +8,6 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 export class CustomTelephonePipe implements PipeTransform{
     transform(text: string): string {
-        return text.replace(/\W|_/g, '')
+        return text.replace(/\W|_/g, '-')
     }
 }

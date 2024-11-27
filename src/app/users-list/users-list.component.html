@@ -2,8 +2,8 @@
 <!-- <app-create-user-form (createUser)="createUser($event)"></app-create-user-form> -->
 <button class="btn" (click)=openCreateDialog() (createUser)="createUser($event)">CREATE USER</button>
 <div style="display: flex; flex-wrap: wrap;">
-    <div *ngFor="let item of usersService.users$ | async"> 
+    <div *ngFor="let user of users$ | async"> 
         <!-- сущность пайп позволяет данные из rxjs доставать и отображать, make BehaviorSubject in Array -->
-       <app-user-card [user]="item" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
+       <app-user-card [user]="user" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
     </div>
 </div>

@@ -12,33 +12,19 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     selector: 'app-create-user-dialog',
     templateUrl: './create-user-dialog.component.html',
     standalone: true,
-    imports: [ReactiveFormsModule, NgIf, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogClose, MatTooltipModule],
+    imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogClose, MatTooltipModule],
 
 })
 export class CreateUserDialogComponent {
-    // readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
-    // readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
-    // @Output()
-    // createModalUser = new EventEmitter();
 
     public form = new FormGroup({
         name: new FormControl('', [Validators.required, Validators.minLength(2)]), //обязательно к заполнению
         email: new FormControl('', [Validators.required, Validators.email]),
         website: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        companyName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-        // message: new FormControl("Edit user's data")
+        company: new FormGroup({
+            name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+        })
     })
     message = new FormControl('Создать данные пользователя');
-
-
-    // public submitForm() {
-        // this.createModalUser.emit(this.form.value);
-        // return this.form.value
-        // console.log(this.form.value)
-        // this.form.reset();
-    // }
 }
-// export class TooltipMessageExample {
-//     message = new FormControl('Редактировать данные пользователя');
-//   }
   

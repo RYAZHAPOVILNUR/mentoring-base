@@ -9,6 +9,9 @@ import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.co
 import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Store } from "@ngrx/store";
+import { TodosActions } from "./store/todos.actions";
+import { selectTodos } from "./store/todos.selector";
 
 
 export interface Todo {
@@ -23,41 +26,45 @@ export interface Todo {
     templateUrl: './todos-list.component.html',
     styleUrl: './todos-list.component.scss',
     standalone: true,
-    imports: [NgFor, TodoCardComponent, Header, AsyncPipe, CreateTodoFormComponent],
+    imports: [NgFor, TodoCardComponent, AsyncPipe],
     changeDetection: ChangeDetectionStrategy.OnPush //не мутируем массивы, cоздаем новые ячейки в памяти
 })
 
 export class TodosListComponent {
-    @Input()
-    todo!: Todo
 
     @Output()
     createModalTodo = new EventEmitter ();
 
-    readonly todoApiService = inject(TodosApiService)
+    readonly todosApiService = inject(TodosApiService)
     readonly todosService = inject(TodosService)
     readonly dialog = inject(MatDialog);
     readonly snackbar = inject(MatSnackBar);
+    private readonly store = inject(Store);
+    public readonly todos$ = this.store.select(selectTodos);
+    // todos: Todo[] = []
 
     constructor() {
-        this.todoApiService.getTodos().subscribe(
-        (response: any) => {
-            this.todosService.setTodos(response);
-            }
-    )
+        this.todosApiService.getTodos().subscribe(
+        (response: Todo[]) => {
+            this.store.dispatch(TodosActions.set({ todos: response }));
+            });
     }
     deleteTodo(id: number) {
         this.todosService.deleteTodo(id);
+        this.store.dispatch(TodosActions.delete({ id }));
     }
 
-    public createTodo(formData: any) {
-        this.todosService.createTodo({
-            id: new Date().getTime(),
-            title: formData.title,
-            userId: formData.userId,
-            completed: formData.completed,
-        });
-        console.log('from FORM: ', formData)
+    public createTodo(formData: Todo) {
+        this.store.dispatch(
+            TodosActions.create({
+                todo: {
+                    id: new Date().getTime(),
+                    title: formData.title,
+                    userId: formData.userId,
+                    completed: formData.completed,        
+                }
+            })
+        )
     }
 
     openCreateDialog(): void {
@@ -74,8 +81,5 @@ export class TodosListComponent {
                 this.snackbar.open('CREATE canseled', '', {duration: 3000})
               }    
         });
-      }
-
-
-    
+      }    
 }

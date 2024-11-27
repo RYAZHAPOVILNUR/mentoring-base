@@ -13,7 +13,7 @@ import { User } from "../users-list.component";
     selector: 'app-edit-user-dialog',
     templateUrl: './edit-user-dialog.component.html',
     standalone: true,
-    imports: [ReactiveFormsModule, NgIf, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogClose],
+    imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogClose],
 
 })
 export class EditUserDialogComponent {
@@ -24,7 +24,9 @@ export class EditUserDialogComponent {
         name: new FormControl(this.data.user.name, [Validators.required, Validators.minLength(2)]), //обязательно к заполнению
         email: new FormControl(this.data.user.email, [Validators.required, Validators.email]),
         website: new FormControl(this.data.user.website, [Validators.required, Validators.minLength(3)]),
-        companyName: new FormControl(this.data.user.company.name, [Validators.required, Validators.minLength(2)]),
+        company: new FormGroup({
+            name: new FormControl(this.data.user.company.name, [Validators.required, Validators.minLength(2)]),
+        })
     })
 
     get userWithUpdatedFields(){

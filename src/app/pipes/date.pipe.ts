@@ -1,4 +1,4 @@
-import { DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, DatePipeConfig, formatDate } from "@angular/common";
+import { DATE_PIPE_DEFAULT_OPTIONS, DatePipe, DatePipeConfig, formatDate } from "@angular/common";
 import { Inject, LOCALE_ID, Optional, Pipe, PipeTransform } from "@angular/core";
 
 

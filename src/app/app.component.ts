@@ -8,7 +8,7 @@ import { Footer } from './footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, Header, Footer],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -31,7 +31,7 @@
                 <button yellow class="header-button" style="color: black;">
                   <img src="/assets/Maskgroup.svg" alt="mask"/>Пусто</button>
                   <!-- <p style="color: black;">Пусто</p> -->
-                  <a href="#" routerLink="/admin">admin</a>
+                  <a routerLink="/admin">admin</a>
                   <div>
                     <button (click)="openDialog()" *ngIf="(userService.user$ | async) === null">ВОЙТИ</button>
                     <button (click)="logout()" *ngIf="(userService.user$ | async) !== null">ВЫЙТИ</button>

@@ -3,6 +3,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AdminComponent } from './admin/admin.component';
+import { isAdminFn } from './guards/is-admin.guard';
 
 export const routes: Routes = [
     {
@@ -24,6 +25,7 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        canActivate: [isAdminFn]
     }
 ];

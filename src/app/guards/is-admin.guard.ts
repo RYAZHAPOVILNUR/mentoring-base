@@ -15,9 +15,10 @@ export const isAdminFn: CanActivateFn = (route, state) => {
         return true;
     } else {
         console.log(userService.isAdmin)
-        // router.navigate([''])
+        router.navigate([''])
         return false;
     }
+
 
     // if (userService.isAdmin) {
     //     return true

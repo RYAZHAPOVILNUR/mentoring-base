@@ -8,6 +8,9 @@ import { CreateUserFormComponent } from "../create-user-form/create-user-form.co
 import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Store } from "@ngrx/store";
+import { UsersActions } from "./store/users.actions";
+import { selectUsers } from "./store/users.selector";
 
 // const consoleResponse = (response: unknown) => console.log(response)
 
@@ -40,7 +43,7 @@ export interface User {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [ NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+    imports: [ NgFor, UserCardComponent, AsyncPipe],
     changeDetection: ChangeDetectionStrategy.OnPush //не мутируем массивы, cоздаем новые ячейки в памяти
 })
 
@@ -51,51 +54,51 @@ export class UsersListComponent {
     @Output()
     createModalUser = new EventEmitter ();
 
-
-    // readonly apiService = inject(HttpClient);// не нужен, перенесли в отдельный апи сервис
     readonly userApiService = inject(UserApiService)
     readonly usersService = inject(UsersService)
     readonly snackbar = inject(MatSnackBar);
     readonly dialog = inject(MatDialog);
+    private readonly store = inject(Store);
+    public readonly users$ = this.store.select(selectUsers);
 
     constructor() {
         this.userApiService.getUsers().subscribe(
         (response: any) => {
             this.usersService.setUsers(response);
-            // this.users = this.usersService.users;
+            this.store.dispatch(UsersActions.set({ users: response }));
             }
     )
-    // this.usersService.usersSubject.subscribe(
-    //     users => this.users = users
-    // )
     this.usersService.users$.subscribe(
         users => console.log(users)
-    )
-    }
+    )}
 
     deleteUser(id: number) {
         this.usersService.deleteUser(id);
-        // this.users = this.usersService.users;
+        this.store.dispatch(UsersActions.delete({ id }));
     }
 
     editUser(user: any) {
         this.usersService.editUser({
-            ...user, company: {name: user.companyName}
-        })
+            ...user, company: {name: user.company.name}
+        });
+        this.store.dispatch(UsersActions.edit({ user }));
     }
 
     public createUser(formData: any) {
-        this.usersService.createUser({
-            id: new Date().getTime(),
-            name: formData.name,
-            email: formData.email,
-            website: formData.website,
-            company: {
-                name: formData.companyName,
-            },
-            phone: formData.phone
-        });
-        console.log('from FORM: ', formData)
+        this.store.dispatch(
+            UsersActions.create({
+                user: {
+                    id: new Date().getTime(),
+                    name: formData.name,
+                    email: formData.email,
+                    website: formData.website,
+                    company: {
+                        name: formData.company.name,
+                    },
+                    phone: formData.phone         
+                }
+            })
+        )
     }
 
     openCreateDialog(): void {

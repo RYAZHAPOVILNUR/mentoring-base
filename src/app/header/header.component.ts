@@ -8,11 +8,11 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { UserService } from "../user.service";
 import { MatDialog } from '@angular/material/dialog';
 import { AdminDialogComponent } from '../admin-dialog/admin-dialog.component';
-
+ 
 @Component({
     selector: 'app-header',
     standalone: true,
-    imports: [NgIf, NgFor, RouterLink, CustomDatePipe, YellowDirective, DatePipe, AsyncPipe],
+    imports: [NgIf, NgFor, RouterLink, YellowDirective, DatePipe, AsyncPipe],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
 })
@@ -73,10 +73,10 @@ export class Header {
             console.log(res)
             if (res === 'user') {
                 this.userService.loginAsUser();
-                this.router.navigate(['users']);
+                // this.router.navigate(['users']);
             } else if(res === 'admin') {
                 this.userService.loginAsAdmin();
-                this.router.navigate(['admin']);
+                // this.router.navigate(['admin']);
             } else {
                 return undefined
             }
