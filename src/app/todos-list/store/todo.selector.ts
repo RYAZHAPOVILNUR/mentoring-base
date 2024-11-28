@@ -1,6 +1,13 @@
 import { createSelector } from "@ngrx/store";
-import { AppState, TodoState } from "../../interfaces/todostate-interface";
+import { Todo } from "../../interfaces/todo-interface";
 
+export interface TodoState {
+  todos: Todo[],
+}
+
+export interface AppState {
+  todos: TodoState,
+}
 export const selectTodoFeature = (state: AppState) => state.todos;
 
 export const selectTodos = createSelector(

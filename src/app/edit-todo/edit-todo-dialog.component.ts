@@ -29,11 +29,6 @@ export class EditTodoDialogComponent {
   });
   
   public submitForm() {
-    if (this.form.valid) {
-      this.dialogRef.close({...this.form.value, id: this.data.todo.id
-      });
-    } else {
-      this.snackBar.open('Пожалуйста, исправьте ошибки в форме', 'Закрыть', { duration: 2000 });
-    }
+   this.dialogRef.close({...this.form.value, id: this.data.todo.id});
   }
 }

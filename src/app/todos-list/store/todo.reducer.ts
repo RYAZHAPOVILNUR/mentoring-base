@@ -15,27 +15,12 @@ export const todoReducer = createReducer (
   })),
   on(TodosActions.edit, (state, payload) => ({
     ...state,
-    todos: state.todos.map((todo) => {
-        if (todo.id === payload.todo.id) {
-          return payload.todo 
-        } else {
-          return todo
-        }
-    })
+    todos: state.todos.map((todo) => todo.id === payload.todo.id ? payload.todo : todo)
   })),
-  on(TodosActions.create, (state, payload ) => {
-    const existingTodo = state.todos.find((currentTodo) => currentTodo.title === payload.todo.title);
-  
-    if (existingTodo) {
-      alert('Такая задача уже добавлена');
-      return state;
-    }
-
-    return {
-      ...state,
-      todos: [...state.todos, payload.todo],
-    };
-  }),
+  on(TodosActions.create, (state, payload ) => ({
+    ...state,
+     todos: [...state.todos, payload.todo]
+    })),
   on(TodosActions.delete, (state, payload) => ({
     ...state,
     todos: state.todos.filter((todo) => todo.id !== payload.id)
