@@ -46,12 +46,8 @@
                         <img src="../assets/burger.svg" alt="бургер меню">
                     </div>
                     <ul class="under__header-item">
-                        <button>Поменять Буквы</button>
-                        <li class="under__header-list">Каталог</li>
-                        <li class="under__header-list">Стройматериалы</li>
-                        <li class="under__header-list">Инструменты</li>
-                        <li class="under__header-list">Электрика</li>
-                        <li class="under__header-list">Интерьер и одежда</li>
+                        <button (click)="changeText()">Поменять Буквы</button>
+                        <li *ngFor="let item of menuItems ">{{item}}</li>
                     </ul>
                 </div>
                 <div class="under__header-right">

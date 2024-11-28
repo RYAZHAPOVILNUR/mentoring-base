@@ -13,14 +13,16 @@ const newPages = [1, 2, 3, 4, 5];
 
 const newArray = newPages.reverse(); 
 
+//1. Каждое слово в массиве сделать маленьким шрифтом(или большим) 
+//2. Потом сделать сравнение: если в массиве слова все с маленькой буквой, при клике сделать всё большими буквами, или же наоборот 
 
 let menuItems = ['Каталог','Стройматериалы','Инструменты','Электрика','Интерьер и одежда']; 
 
-function changeMenuItems() {
-  return menuItems.map((item:string) => item.toUpperCase()); 
-}
+// function changeMenuItems() {
+//   return menuItems.map((item:string) => item.toUpperCase()); 
+// }
 
-console.log(changeMenuItems());
+
 
 @Component({
   selector: 'app-root',
@@ -34,13 +36,19 @@ console.log(changeMenuItems());
 export class AppComponent {
   title = 'mentoring-first-project';
 
-  readonly aboutCompany = newName; 
-  readonly newPages = newPages;
-  readonly menuArrayItems = changeMenuItems(); 
+  public readonly aboutCompany = newName; 
+  public readonly newPages = newPages;
+  public menuItems = menuItems; 
 
-  isShowImg = false; 
-  isUpperCase = true; 
+  
+  public isUpperCase = true; 
+  public isShowImg = false; 
+
+  changeText() {
+    this.menuItems = this.menuItems.map(item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
+    ); 
+    this.isUpperCase = !this.isUpperCase; 
+  }
 }
-
 
 
