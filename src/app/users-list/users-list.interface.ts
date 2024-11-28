@@ -1,6 +1,3 @@
-
-
-
 export interface User {
     id: number;
     name: string;
@@ -24,6 +21,12 @@ export interface User {
       bs?: string;
     };
 }
-
+export interface createUser {
+  id: number;
+  name: string;
+  email: string;
+  website: string;
+  companyName: string;
+}
 
 

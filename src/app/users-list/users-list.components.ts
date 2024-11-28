@@ -1,10 +1,11 @@
 import { AsyncPipe, CommonModule, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { User } from "./users-list.interface"; 
+import { createUser, User } from "./users-list.interface"; 
 import { UsersApiService } from "../users-api.service";
 import { UserListCardComponent } from "./user-list-card/user-list-card.component";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+
 
 // const consoleResponse = (response: any) => console.log(response);
 
@@ -33,7 +34,7 @@ export class UserListComponent {
       this.usersService.deletedUsers(id);
     }
 
-    public createUser(formData: User) {
+    public createUser(formData: createUser) {
       this.usersService.createUsers({
         id: new Date().getTime(),
         name: formData.name,

@@ -1,5 +1,11 @@
 .todos_form {
-    margin: 30px 30px 30px 150px;
+    width: 300px;
+    margin-left: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form_group {
@@ -9,8 +15,11 @@
 .form-input {
     width: 200px;
 }
-.add-todo {
-    width: 150px;
+button.add-user {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
     margin-top: 20px;
 }
 .text-error {
