@@ -45,22 +45,9 @@
                     <div class="icon">
                         <img src="../assets/burger.svg" alt="бургер меню">
                     </div>
+                    <button (click)="changeText()" class="under__header-change"></button>
                     <ul class="under__header-item">
-                        <li class="under__header-list">
-                            <button class="under__header-button">Каталог</button>
-                        </li>
-                        <li class="under__header-list">
-                            <button class="under__header-button">Стройматериалы</button>
-                        </li>
-                        <li class="under__header-list">
-                            <button class="under__header-button">Инструменты</button>
-                        </li>
-                        <li class="under__header-list">
-                            <button class="under__header-button">Электрика</button>
-                        </li>
-                        <li class="under__header-list">
-                            <button class="under__header-button">Интерьер и одежда</button>
-                        </li>
+                        <li *ngFor="let item of menuItems">{{item}}</li>
                     </ul>
                 </div>
                 <div class="under__header-right">
