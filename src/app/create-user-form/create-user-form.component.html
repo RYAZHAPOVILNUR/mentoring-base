@@ -1,6 +1,6 @@
 <h1 style="margin-left: 50px;">Create User Form</h1>
 <div class="user_form">
-    <form class="form_group" [formGroup]="formUser" (ngSubmit)="submitForm()">
+    <form class="form_group" [formGroup]="formUser">
         <mat-form-field class="form-field">
             <mat-label>Имя</mat-label>
             <input matInput type="text" formControlName="name" />
@@ -8,7 +8,6 @@
                 Имя введено НЕ ВЕРНО
             </mat-error>
         </mat-form-field>
-
         <mat-form-field class="form-field">
             <mat-label>Email</mat-label>
             <input matInput type="email" formControlName="email" />
@@ -23,14 +22,14 @@
                 Сайт введён НЕ ВЕРНО
             </mat-error>
         </mat-form-field>
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" formGroupName ="company">
             <mat-label>Название компании</mat-label>
-            <input matInput type="text" formControlName="companyName" />
-            <mat-error *ngIf="formUser.controls['companyName'].invalid && (formUser.controls['companyName'].dirty || formUser.controls['companyName'].touched)">
+            <input matInput type="text" formControlName="name" />
+            <mat-error *ngIf="formUser.controls['name'].invalid && (formUser.controls['name'].dirty || formUser.controls['name'].touched)">
                 Название компании введено НЕ ВЕРНО
             </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="add-user" [disabled]="formUser.invalid">
+        <button mat-raised-button color="primary" class="add-user" (click)="OnSubmit()"  [disabled]="formUser.invalid">
             Создать Пользователя
         </button>
     </form>
