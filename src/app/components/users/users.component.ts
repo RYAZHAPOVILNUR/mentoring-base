@@ -2,8 +2,6 @@ import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 
-const apiservise = '';
-
 export interface User {
   id: number;
   name: string;
