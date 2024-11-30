@@ -23,12 +23,10 @@
     </mat-error>
   </mat-form-field>
   
-
-  
-  <mat-form-field appearance="fill" class="custom-form-field">
+  <mat-form-field formGroupName="company" appearance="fill" class="custom-form-field">
     <mat-label>Company name</mat-label>
-    <input matInput formControlName="companyName">
-    <mat-error *ngIf="form.get('companyName')?.invalid && form.get('companyName')?.touched">
+    <input matInput formControlName="name">
+    <mat-error *ngIf="form.get('company')?.invalid && form.get('company')?.touched">
       Поле не может быть пустым.
     </mat-error>
   </mat-form-field>
@@ -37,6 +35,4 @@
         Add user
     </button>
 </form>
-
-
 

@@ -22,8 +22,8 @@ export interface IUser {
     }
 }
 
-export interface ICreateUserForm {
-    id?: number,
+export interface ICreateUser {
+    id: number,
     name: string,
     email: string,
     website: string,

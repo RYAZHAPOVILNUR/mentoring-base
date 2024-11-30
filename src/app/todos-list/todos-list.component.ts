@@ -4,16 +4,7 @@ import { AsyncPipe, NgFor } from "@angular/common";
 import { TodoCardComponent } from "./todo-card/todo-card.component";
 import { TodosService } from "../services/todo.service";
 import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.component";
-
-
-          
-export interface ITodo {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
-}
-
+       
 @Component({
     selector: 'app-todos-list',
     templateUrl: './todos-list.component.html',
@@ -22,7 +13,6 @@ export interface ITodo {
     imports: [TodoCardComponent, NgFor, AsyncPipe, CreateTodoFormComponent],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 
 export class TodoListComponent {
     readonly todosApiService = inject(TodosApiService)

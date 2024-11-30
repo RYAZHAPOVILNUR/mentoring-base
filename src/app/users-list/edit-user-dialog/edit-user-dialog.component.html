@@ -1,0 +1,36 @@
+<form class="form-user" [formGroup]="form">
+    <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+        <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+            Поле не может быть пустым.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            Почта не валидна.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Website</mat-label>
+        <input matInput formControlName="website">
+        <mat-error *ngIf="form.get('website')?.invalid && form.get('website')?.touched">
+            Поле не может быть пустым.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field formGroupName="company" appearance="fill" class="custom-form-field">
+        <mat-label>Company name</mat-label>
+        <input matInput formControlName="name">
+        <mat-error *ngIf="form.get('company')?.invalid && form.get('company')?.touched">
+            Поле не может быть пустым.
+        </mat-error>
+    </mat-form-field>
+    <button class="custom-button-style" mat-raised-button color="primary" [disabled]="form.invalid" (click)="submitForm()">
+        Edit user
+    </button>
+</form>

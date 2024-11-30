@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { ITodo } from "../todos-list.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component ({
     selector: 'app-todo-card',
@@ -9,6 +10,8 @@ import { ITodo } from "../todos-list.component";
 })
 
 export class TodoCardComponent {
+    constructor(private snackBar: MatSnackBar) {}
+
     @Input()
     todo!: ITodo 
 
@@ -17,5 +20,9 @@ export class TodoCardComponent {
 
     onDeleteTodo(userId: number) {
         this.deleteTodo.emit(userId)
-    } 
+    }
+    
+    snackBarTodo() {
+        this.snackBar.open('Задача успешно удалена', 'Закрыть')
+    }
 }
