@@ -19,13 +19,13 @@ export interface User {
       lng: string;
     };
   };
-phone: string;
-website: string;
-company: {
-  name: string;
-  catchphrase: string;
-  bs: string;
-};
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchphrase: string;
+    bs: string;
+  };
 }
 
 @Component({
@@ -38,7 +38,7 @@ company: {
 export class UsersComponent {
   readonly apiservise = inject(HttpClient);
 
-  users: User [] = [];
+  users: User[] = [];
 
   constructor() {
     this.apiservise
@@ -50,14 +50,12 @@ export class UsersComponent {
   }
 
   deleteUser(id: number) {
-    this.users = this.users.filter(
-      item => {
-        if (id === item.id) {
-          return false
-        } else {
-          return true;
-        }
+    this.users = this.users.filter((item) => {
+      if (id === item.id) {
+        return false;
+      } else {
+        return true;
       }
-    );
+    });
   }
 }

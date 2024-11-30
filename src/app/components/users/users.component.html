@@ -1,12 +1,12 @@
-<p style="margin-left: 200px;">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</p>
-<div style="display: flex; width: 100%; flex-wrap: wrap;;">
+<p class="componenttext">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</p>
+<div class="positionboxes">
   <div
     *ngFor="let item of users"
-    style="width: 200px;height: 200px;border: 1px solid black;margin: 5px;padding: 10px; box-shadow:0 0 20px rgb(219, 217, 217);">
+    class="userslist">
     <p>{{ $any(item).name }}</p>
     <p>{{ $any(item).email }}</p>
     <p>{{ $any(item).website }}</p>
     <p>{{ $any(item).company.name }}</p>
-    <button style="border-radius: 50px; border-color: orange; border-radius: px; padding: 10px;" (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+    <button class="buton" (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
   </div>
 </div>
