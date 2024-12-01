@@ -26,7 +26,7 @@ export class UserCardComponent {
     // @Output() — декоратор, используемый для создания событий
     @Output()
     // EventEmitter — это класс Angular, он же обработчик события который создает событие
-    public deleteUser: EventEmitter<number> = new EventEmitter<number>(); // deleteUser_card используем в файле html и в файле html закидываем в круглые скобки(deleteUser_card)="здесь он будет вызывать другую переменную"
+    public deleteUser: EventEmitter<number> = new EventEmitter<number>(); // deleteUser используем в файле html и в файле html закидываем в круглые скобки(deleteUser)="здесь он будет вызывать другую переменную"
 
     @Output()
     public editUser: EventEmitter<UserInterface> = new EventEmitter<UserInterface>();

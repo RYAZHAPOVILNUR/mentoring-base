@@ -4,7 +4,7 @@
     <div class="block_todos_card">
         <p><span>Задача id: </span>{{todo.userId}}</p>
         <p><span class="task_title">Задача: </span>{{todo.title | trucante}}</p>
-        <p><span>Задача решена: </span>{{todo.completed ? 'YES' : 'NO'}}</p>
+        <p><span>Задача решена: </span>{{todo.completed ? 'ДА' : 'НЕТ'}}</p>
     </div>
     <button (click)="openEditDialog()" mat-raised-button color="primary" class="btn_edit" matTooltip="Редактировать задачу">
         <mat-icon>edit_note</mat-icon>

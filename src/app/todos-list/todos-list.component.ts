@@ -1,4 +1,4 @@
-import {AsyncPipe, NgFor, NgIf} from '@angular/common';
+import {AsyncPipe, NgFor} from '@angular/common';
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {TodoCardComponent} from './todo-card/todo-card.component';
 import {TodosApiService} from '../services/todo-services/todos-api.service';
@@ -40,7 +40,7 @@ export class TodosListComponent {
 
     editTodo(todo: TodoInterface) {
         this.todosService.editTodo({
-            ...todo,
+            ...todo
         });
     }
 }

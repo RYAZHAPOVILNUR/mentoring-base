@@ -10,7 +10,7 @@ export class TodosService {
     public readonly todos$: Observable<TodoInterface[]> = this.todosSubject$.asObservable();
     private readonly localStorageService: LocalStorageService = inject(LocalStorageService);
     private readonly todosApiService: TodosApiService = inject(TodosApiService);
-    private readonly localStorageTodoKey: 'todos' = 'todos';
+    private readonly localStorageTodoKey = 'todos';
 
     private setTodos(todosData: TodoInterface[]): void {
         this.localStorageService.saveLocalStorage<TodoInterface[]>(
@@ -58,7 +58,7 @@ export class TodosService {
             this.setTodos(newArrayTodos);
         }
 
-        if (!this.todosSubject$.value.length) {
+        if (!localStorage.getItem(this.localStorageTodoKey)) {
             this.localStorageService.removeLocalStorage(this.localStorageTodoKey);
         }
     }

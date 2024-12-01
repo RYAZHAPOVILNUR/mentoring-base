@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {FormGroup, FormControl, Validators, ReactiveFormsModule} from '@angular/forms';
+import {Validators, ReactiveFormsModule, FormBuilder} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatOption} from '@angular/material/core';
@@ -20,16 +20,17 @@ export class CreateTodoDialogComponent {
 
     readonly dialogRef: MatDialogRef<any> = inject(MatDialogRef<CreateTodoDialogComponent>);
 
-    submitForm() {
-        this.dialogRef.close(this.form.value);
-    };
+    private fb: FormBuilder = inject(FormBuilder);
 
-    public form = new FormGroup({
-        userId: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]),
-        title: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        completed: new FormControl('', [Validators.required]),
+    public form = this.fb.group({
+        userId: ['', [Validators.required, Validators.minLength(1), Validators.pattern("^[0-9]*$")]],
+        title: ['', [Validators.required, Validators.minLength(3)]],
+        completed: ['', [Validators.required]],
     });
 
+    submitForm() {
+        this.dialogRef.close(this.form.value);
+    }
 
     // private getCompletedValue(): boolean {
     //   const value = this.form.get('completed')?.value!.trim().toLowerCase();

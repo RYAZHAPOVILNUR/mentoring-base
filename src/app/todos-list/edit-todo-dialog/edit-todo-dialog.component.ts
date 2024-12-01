@@ -20,7 +20,7 @@ export class EditTodoDialogComponent {
 
     readonly data: { todo: TodoInterface } = inject<{ todo: TodoInterface }>(MAT_DIALOG_DATA);
 
-    readonly dialogRef: MatDialogRef<any> = inject(MatDialogRef<EditTodoDialogComponent>);
+    readonly dialogRef: MatDialogRef<TodoInterface> = inject(MatDialogRef<EditTodoDialogComponent>);
 
     submitForm() {
         this.dialogRef.close({...this.form.value, id: this.data.todo.id})

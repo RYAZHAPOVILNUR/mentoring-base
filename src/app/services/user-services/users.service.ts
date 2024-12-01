@@ -11,15 +11,7 @@ export class UsersService {
     public readonly users$: Observable<UserInterface[]> = this.usersSubject$.asObservable();
     private readonly localStorageService: LocalStorageService = inject(LocalStorageService);
     private readonly usersApiService: UsersApiService = inject(UsersApiService);
-    private readonly localStorageUsersKey: 'users' = 'users';
-
-    private setUsers(usersData: UserInterface[]) {
-        this.localStorageService.saveLocalStorage<UserInterface[]>(
-            this.localStorageUsersKey, usersData
-        );
-
-        this.usersSubject$.next(usersData);
-    }
+    private readonly localStorageUsersKey = 'users';
 
     public loadUsers(): void {
         const localStorageUsers: UserInterface[] | null =
@@ -32,6 +24,14 @@ export class UsersService {
                 this.setUsers(users);
             });
         }
+    }
+
+    private setUsers(usersData: UserInterface[]) {
+        this.localStorageService.saveLocalStorage<UserInterface[]>(
+            this.localStorageUsersKey, usersData
+        );
+
+        this.usersSubject$.next(usersData);
     }
 
     public editUser(user: UserInterface): void {
@@ -48,24 +48,24 @@ export class UsersService {
         if (userExisting === undefined) {
             const newUser: CreateUserInterface[] = [...this.usersSubject$.value, user];
             this.setUsers(newUser);
-            // spread создает новый массив, который включает все элементы из this.users$ и добавляет в конец новый объект user.
-            // И так ...rest используется для сбора оставшихся элементов, а ...spread используется для раскрытия элементов.
+            // ,,,spread создает новый массив, который включает все элементы из this.users$ и добавляет в конец новый объект user.
+            // ...rest используется для сбора оставшихся элементов, а ...spread используется для раскрытия элементов.
         } else alert('Такой Email уже есть');
     }
 
     public deleteUser(userId: number): void {
         const newArrayUsers: UserInterface[] = this.usersSubject$.value.filter(
-            (user: UserInterface) => user.id !== userId
+            (user: UserInterface) => user.id !== userId // Условие: оставляем только тех пользователей, чей id не равен userId
         );
         const findUser: UserInterface | undefined = this.usersSubject$.value.find(
-            (user: UserInterface) => user.id === userId
+            (user: UserInterface) => user.id === userId // Условие: ищем пользователя с id равным userId
         );
 
         if (findUser) {
             this.setUsers(newArrayUsers);
         }
 
-        if (!this.usersSubject$.value.length) {
+        if (!localStorage.getItem(this.localStorageUsersKey)) {
             this.localStorageService.removeLocalStorage(this.localStorageUsersKey);
         }
     }

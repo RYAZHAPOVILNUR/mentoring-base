@@ -1,7 +1,8 @@
 <div class="container">
-    <h2 mat-dialog-title class="text">Delete user: <span style="padding-left: 10px;">{{this.data.user.name}}?</span></h2>
+    <h2 mat-dialog-title class="text">Delete user: <span style="padding-left: 10px;">{{ this.data.user.name }}?</span>
+    </h2>
     <mat-dialog-actions>
         <button mat-button [mat-dialog-close]="true" class="button-delete" matTooltip="DELETE USER">DELETE</button>
-        <button mat-button [mat-dialog-close]="false" class="button-cancel"matTooltip="CANCEL">CANCEL</button>
+        <button mat-button [mat-dialog-close]="false" class="button-cancel" matTooltip="CANCEL">CANCEL</button>
     </mat-dialog-actions>
 </div>

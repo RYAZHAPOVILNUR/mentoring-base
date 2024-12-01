@@ -1,4 +1,4 @@
-import {AsyncPipe, NgFor, NgIf} from '@angular/common';
+import {AsyncPipe, NgFor} from '@angular/common';
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {UsersApiService} from '../services/user-services/users-api.service';
 import {UserCardComponent} from './user-card/user-card.component';
@@ -13,7 +13,7 @@ import {CreateUserFormBtnAddDialogComponent} from './user-create-button/user-cre
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [NgFor, NgIf, UserCardComponent, AsyncPipe, CreateUserFormComponent, MatButtonModule, CreateUserFormBtnAddDialogComponent],
+    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent, MatButtonModule, CreateUserFormBtnAddDialogComponent],
     // changeDetection: ChangeDetectionStrategy.OnPush для реактивных данных RXJS
     // с это функцией OnPush работа кода и сайта с данными идет намного быстрее
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -45,10 +45,7 @@ export class UsersListComponent {
 
     editUser(user: UserInterface) {
         this.usersService.editUser({
-            ...user,
-            company: {
-                name: user.company.name,
-            }
+            ...user
         });
     }
 }

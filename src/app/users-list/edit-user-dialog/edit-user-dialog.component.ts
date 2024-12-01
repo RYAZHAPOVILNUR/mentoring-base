@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators,} from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogRef} from '@angular/material/dialog';
+import {FormBuilder, ReactiveFormsModule, Validators,} from '@angular/forms';
+import {MAT_DIALOG_DATA, MatDialogClose, MatDialogRef} from '@angular/material/dialog';
 import {MatError, MatFormFieldModule, MatLabel,} from '@angular/material/form-field';
 import {UserInterface} from '../../interfaces/user-interfaces';
 import {MatIcon} from '@angular/material/icon';
@@ -19,31 +19,22 @@ export class EditUserDialogComponent {
 
     readonly data: { user: UserInterface } = inject<{ user: UserInterface }>(MAT_DIALOG_DATA);
 
-    readonly dialogRef: MatDialogRef<any> = inject(MatDialogRef<EditUserDialogComponent>);
+    readonly dialogRef: MatDialogRef<UserInterface> = inject(MatDialogRef<EditUserDialogComponent>);
+
+    private fb: FormBuilder = inject(FormBuilder);
+
+    public form = this.fb.group({
+        name: [this.data.user.name, [Validators.required, Validators.minLength(3)]],
+        email: [this.data.user.email, [Validators.required, Validators.email, Validators.minLength(3)]],
+        website: [this.data.user.website, [Validators.required, Validators.minLength(3)]],
+        company: this.fb.group({
+            name: [this.data.user.company.name, [Validators.required, Validators.minLength(3)]],
+        }),
+    });
 
     submitForm() {
         this.dialogRef.close({...this.form.value, id: this.data.user.id});
     };
 
-    public form = new FormGroup({
-        name: new FormControl(this.data.user.name, [
-            Validators.required,
-            Validators.minLength(3),
-        ]),
-        email: new FormControl(this.data.user.email, [
-            Validators.required,
-            Validators.email,
-            Validators.minLength(3),
-        ]),
-        website: new FormControl(this.data.user.website, [
-            Validators.required,
-            Validators.minLength(3),
-        ]),
-        company: new FormGroup({
-            name: new FormControl(this.data.user.company.name, [
-                Validators.required,
-                Validators.minLength(3),
-            ]),
-        })
-    });
+
 }
