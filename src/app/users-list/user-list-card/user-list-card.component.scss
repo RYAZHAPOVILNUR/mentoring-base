@@ -1,11 +1,19 @@
-.delete {
-    width: 150px;
+.buttons {
     display: flex;
-    justify-content: right;
-    margin-left: 80px;
+    justify-content: space-between;
+}
+.edit {
+    width: 60px;
+    border: 4px solid #1E90FF;
+    border-radius: 50px;
+    padding: 5px 0px 5px 0px;
+    background-color: #1E90FF; 
+}
+.delete {
+    width: 60px;
     border: 4px solid #FF0000;
     border-radius: 50px;
-    padding: 5px 10px 5px 0px;
+    padding: 5px 0px 5px 0px;
     background-color: #FF0000; 
 }
 .delete_1{
@@ -14,5 +22,5 @@
     color:#FFFFFF
 }
 .delete_1:hover {
-    color: #00FF00;
+    color: #000000;
 }

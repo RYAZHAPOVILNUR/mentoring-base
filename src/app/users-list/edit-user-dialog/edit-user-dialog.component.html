@@ -1,0 +1,33 @@
+<form class="form_group" [formGroup]="formUser">
+    <mat-form-field class="form-field">
+        <mat-label>Имя</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <mat-error *ngIf="formUser.controls['name'].invalid && (formUser.controls['name'].dirty || formUser.controls['name'].touched)">
+            Имя введено НЕ ВЕРНО
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error *ngIf="formUser.controls['email'].invalid && (formUser.controls['email'].dirty || formUser.controls['email'].touched)">
+            Email введён НЕ ВЕРНО
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Сайт</mat-label>
+        <input matInput type="url" formControlName="website" />
+        <mat-error *ngIf="formUser.controls['website'].invalid && (formUser.controls['website'].dirty || formUser.controls['website'].touched)">
+            Сайт введён НЕ ВЕРНО
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field" formGroupName ="company">
+        <mat-label>Название компании</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <mat-error *ngIf="formUser.controls['name'].invalid && (formUser.controls['name'].dirty || formUser.controls['name'].touched)">
+            Название компании введено НЕ ВЕРНО
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="add-user" [mat-dialog-close]="userWithUpdatedFieilds"  [disabled]="formUser.invalid">
+        Редактировать Пользователя
+    </button>
+</form>

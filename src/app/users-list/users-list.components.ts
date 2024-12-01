@@ -34,6 +34,17 @@ export class UserListComponent {
       this.usersService.deletedUsers(id);
     }
 
+    editUser(user: User) {
+      this.usersService.editUser({
+        ...user,
+        company: {
+          name: user.company.name
+        }
+
+      })
+        
+  }
+
     public createUser(formData: createUser) {
       this.usersService.createUsers({
         id: new Date().getTime(),

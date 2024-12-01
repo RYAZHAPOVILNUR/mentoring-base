@@ -1,5 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { User } from '../users-list.interface';
+import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-user-list-card',
@@ -11,7 +14,23 @@ import { User } from '../users-list.interface';
 export class UserListCardComponent {
   @Input()
   user!: User;
+  readonly dialog = inject(MatDialog);
 
+  @Output()
+  editUser = new EventEmitter()
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(EditUserDialogComponent, {
+      data: {user: this.user},
+    });
+
+    dialogRef.afterClosed().subscribe((editResult) => {
+      if (editResult) {
+      this.editUser.emit(editResult);
+      }
+    });
+  }
+  
   @Output()
   deleteUser = new EventEmitter()
 

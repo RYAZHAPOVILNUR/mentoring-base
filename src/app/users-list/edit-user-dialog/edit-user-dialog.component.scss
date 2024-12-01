@@ -1,0 +1,26 @@
+.user_form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form_group {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+.form-input {
+    width: 200px;
+}
+add-user {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.text-error {
+    color: #ff0000;
+}
