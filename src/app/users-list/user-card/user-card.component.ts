@@ -7,13 +7,22 @@ import { EditUserDialogComponent } from '../user-dialog/edit-user-dialog/edit-us
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
+import { PhonePipe } from "../../pipes/phone.pipe";
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card-component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports: [MatDialogModule, MatSnackBarModule, MatCardModule, MatButtonModule],
+  imports: [
+    MatDialogModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatButtonModule,
+    CustomUpperCasePipe,
+    PhonePipe
+],
 })
 export class UserCardComponent {
   @Input()
@@ -65,7 +74,7 @@ export class UserCardComponent {
       }
     });
   }
-  
+
   onDeleteUser(userId: IUser) {
     this.deleteUser.emit(userId);
   }

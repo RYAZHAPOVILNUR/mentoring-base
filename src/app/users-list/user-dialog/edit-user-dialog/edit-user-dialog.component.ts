@@ -53,6 +53,10 @@ export class EditUserDialogComponent {
         Validators.minLength(2),
       ]),
     }),
+    phone: new FormControl(this.data.user.phone, [
+      Validators.required,
+      Validators.minLength(7),
+    ]),
   });
 
   get userWithUpdatedField() {

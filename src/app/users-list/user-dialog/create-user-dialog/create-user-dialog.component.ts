@@ -54,6 +54,7 @@ export class CreateUserDialogComponent {
     company: new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     }),
+    phone: new FormControl('', [Validators.required, Validators.minLength(7)]),
   });
 
   public submitForm(): void {

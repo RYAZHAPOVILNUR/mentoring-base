@@ -24,6 +24,12 @@
           <mat-error>Некорректное значение</mat-error>
         </mat-form-field>
       </div>
+      <mat-form-field class="form-input">
+        <mat-label>Введите номер телефона</mat-label>
+        <input type="tel" placeholder="+7-xxx-xxx-xx-xx"
+        matInput formControlName="phone" />
+        <mat-error>Некорректное значение</mat-error>
+      </mat-form-field>
       <div class="button-position">
         <button class="button-form" matIconSuffix mat-icon-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
           <mat-icon>expand_circle_down</mat-icon>

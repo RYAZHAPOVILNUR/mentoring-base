@@ -1,9 +1,10 @@
 <div mat-card-avatar class="component-cards-item">
   <div class="text-height">
-    <p>{{user.name}}</p>
-    <p>{{user.email}}</p>
-    <p>{{user.website}}</p>
+    <p>{{user.name | CustomUpperCase}}</p>
+    <p>{{user.email | CustomUpperCase}}</p>
+    <p>{{user.website | CustomUpperCase}}</p>
     <p>{{user.company.name}}</p>
+    <p>{{user.phone | phone}}</p>
   </div>
   <div class="card-change">
   <button mat-stroked-button class="card-buttons" (click)="openDeleteDialog()">Delete</button>

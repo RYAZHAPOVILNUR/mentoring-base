@@ -1,30 +1,39 @@
 <div class="component-forms">
-    <div class="form-item">
-      <form class="form-item-group" [formGroup]="form">
-        <mat-form-field class="form-input">
-          <mat-label>Текст задачи</mat-label>
-          <input matInput formControlName="title">
-          <mat-error>Некорректное значение</mat-error>
-        </mat-form-field>
-        <mat-form-field class="form-input">
-          <mat-label>Автор задачи</mat-label>
-          <input matInput formControlName="userId">
-          <mat-error>Некорректное значение</mat-error>
-        </mat-form-field>
-        <mat-form-field class="form-input">
-          <mat-label>Задача завершена?</mat-label>
-          <input matInput formControlName="completed">
-          <mat-error>Некорректное значение</mat-error>
-        </mat-form-field>
-        <div class="button-position">
-        <button class="button-form" matIconSuffix mat-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
+  <div class="form-item">
+    <form class="form-item-group" [formGroup]="form">
+      <mat-form-field class="form-input">
+        <mat-label>Текст задачи</mat-label>
+        <input matInput formControlName="title" />
+        <mat-error>Некорректное значение</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-input">
+        <mat-label>Автор задачи</mat-label>
+        <input matInput formControlName="userId" />
+        <mat-error>Некорректное значение</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-input">
+        <mat-label>Задача завершена?</mat-label>
+        <mat-select formControlName="completed">
+          <mat-option [value]="true">Да</mat-option>
+          <mat-option [value]="false">Нет</mat-option>
+        </mat-select>
+        <mat-error>Некорректное значение</mat-error>
+      </mat-form-field>
+      <div class="button-position">
+        <button
+          class="button-form"
+          matIconSuffix
+          mat-button
+          [disabled]="form.invalid"
+          type="submit"
+          (click)="submitForm()"
+        >
           <mat-icon class="add-element">expand_circle_down</mat-icon>
         </button>
         <button class="button-form" mat-button mat-dialog-close>
           <mat-icon class="cancel-element">cancel</mat-icon>
         </button>
       </div>
-      </form>
-    </div>
-    </div>
-    
+    </form>
+  </div>
+</div>

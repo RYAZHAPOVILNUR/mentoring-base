@@ -62,6 +62,7 @@ export class UsersListComponent {
             company: {
               name: user.company.name,
             },
+            phone: user.phone,
           });
           this.snackBar.open('Новый пользователь создан', 'ok', {
             duration: 3000,

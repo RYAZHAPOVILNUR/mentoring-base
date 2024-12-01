@@ -7,13 +7,20 @@ import { EditTodoDialogComponent } from '../todo-dialog/edit-todo-dialog/edit-to
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { CutTextPipe } from '../../pipes/max-lenght.pipe';
 
 @Component({
   selector: 'app-todo-card',
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
   standalone: true,
-  imports: [MatDialogModule, MatSnackBarModule, MatCardModule, MatButtonModule],
+  imports: [
+    MatDialogModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatButtonModule,
+    CutTextPipe,
+  ],
 })
 export class TodoCardComponent {
   @Input()

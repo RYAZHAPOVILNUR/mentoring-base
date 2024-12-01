@@ -1,28 +1,34 @@
-import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router"; 
-import { NgFor, NgIf } from "@angular/common";
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 
-const menuItems = ['Каталог', 'Стройматериалы','Инструменты', 'Электрика', 'Интерьер и одежда']
+const menuItems = [
+  'Каталог',
+  'Стройматериалы',
+  'Инструменты',
+  'Электрика',
+  'Интерьер и одежда',
+];
 
-const upperCaseMenuItems = menuItems.map(
-  (item) => {
-    return item.toUpperCase()  
-  }
-)
+const upperCaseMenuItems = menuItems.map((item) => {
+  return item.toUpperCase();
+});
 
-const aboutCompany = (item : string) => { 
+const aboutCompany = (item: string) => {
   return item;
-}
+};
 const result = aboutCompany('О компании');
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, NgIf, RouterLink, DatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  today: Date = new Date();
+
   title = 'mentoring-base';
 
   isShowCatalog = true;
@@ -44,13 +50,12 @@ export class HeaderComponent {
   menuItems = upperCaseMenuItems;
 
   isUpperCase = true;
+  currentdt: any;
 
   changeMenuText() {
-    this.menuItems = upperCaseMenuItems.map(
-      item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
+    this.menuItems = upperCaseMenuItems.map((item) =>
+      this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
     );
     this.isUpperCase = !this.isUpperCase;
   }
 }
-
-

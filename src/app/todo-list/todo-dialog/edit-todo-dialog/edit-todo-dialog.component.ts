@@ -1,11 +1,8 @@
 import { Component, inject } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidationErrors,
-  ValidatorFn,
   Validators,
 } from '@angular/forms';
 import {
@@ -18,17 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ITodo } from '../../../Interfaces/todo.interface';
-
-export function completedValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'да' || value === 'нет') {
-      return null;
-    }
-    return { invalidCompleted: true };
-  };
-}
-
+import { MatOption } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 @Component({
   selector: 'app-edit-todo-dialog',
   templateUrl: './edit-todo-dialog.component.html',
@@ -41,33 +29,25 @@ export function completedValidator(): ValidatorFn {
     MatInputModule,
     MatFormFieldModule,
     MatDialogClose,
+    MatOption,
+    MatSelectModule,
   ],
-
 })
 export class EditTodoDialogComponent {
   readonly data = inject<{ todo: ITodo }>(MAT_DIALOG_DATA);
   private dialogRef = inject(MatDialogRef<EditTodoDialogComponent>);
 
   public readonly form = new FormGroup({
+    id: new FormControl(this.data.todo.id),
     userId: new FormControl(this.data.todo.userId, [Validators.required]),
     title: new FormControl(this.data.todo.title, [
       Validators.required,
       Validators.minLength(3),
     ]),
-    completed: new FormControl(this.data.todo.completed? 'да' : 'нет', [
-      Validators.required,
-      completedValidator(),
-    ]),
+    completed: new FormControl(this.data.todo.completed, [Validators.required]),
   });
-
-  get todoWithUpdatedField() {
-    return {
-      ...this.form.value,
-      id: this.data.todo.id,
-    };
-  }
-
   public submitForm(): void {
     this.dialogRef.close(this.form.value);
+    console.log('Форма работает', this.form.value);
   }
 }

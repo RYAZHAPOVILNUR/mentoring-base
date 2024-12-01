@@ -1,6 +1,5 @@
 // Шапка страницы
-@import '../normalize.scss';
-
+@import "../normalize.scss";
 
 .header {
   max-width: 1320px;
@@ -30,7 +29,7 @@
 .changeMenuText-buttons {
   border-radius: 5px;
   border: none;
-  background-color: #F0BA4E;
+  background-color: #f0ba4e;
 }
 
 .header-right {
@@ -81,12 +80,12 @@
 }
 
 .phones {
-    font-family: inter;
-    font-weight: 500;
-    font-size: 16px;
-    color: #ffffff;
-    text-decoration: none;
-  }
+  font-family: inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
 
 .content-header-2 {
   background-color: #f0ba4e;
@@ -161,6 +160,12 @@
 }
 
 .map {
-  display: flex;
-  margin-left: 10px;
+  margin-left: 5px;
+  line-height: 13px;
+}
+
+.date-time {
+  font-weight: 500;
+  margin: 0;
+  font-size: 15px;
 }
