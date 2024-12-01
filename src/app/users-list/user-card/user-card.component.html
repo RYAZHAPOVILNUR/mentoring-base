@@ -6,7 +6,12 @@ background-color: burlywood;">
      <p>{{user.email}}</p>
      <p>{{user.website}}</p>
      <p>{{user.company.name}}</p>
-
-     <button (click)="onDeleteUser(user.id)" 
+     <button mat-button (click)="onDeleteUser(user.id)" 
 style="margin-left: 15px; background-color: rgb(233, 106, 106); border-radius: 10px; "
->Удалить пользователя</button> </div>
+>Удалить пользователя
+</button>
+     <button (click)="openDialog()"
+style="margin-left: 15px; background-color: rgb(233, 106, 106); border-radius: 10px; "
+>Редактировать
+</button> 
+</div>

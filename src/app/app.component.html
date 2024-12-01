@@ -8,11 +8,11 @@
 <div class="header-nav-item">{{headeritem2}}</div>
 <div class="header-nav-item" *ngIf="isShowCatalog">{{headeritem3}}</div>
             </nav>
-          <div class="header-buttons"><button  class="header-buttons-item"   (click)="isShowCatalog = !isShowCatalog">Скрыть/показать каталог</button>
-          <button (click)="isShowBanner = !isShowBanner" class="header-buttons-item">Баннер</button>
-          <button (click)="changeMenuText()" class="header-buttons-item">Изменить текст</button>
-          <button class="header-buttons-item" routerLink="users">Админка</button></div>
-          <button class="header-buttons-item" routerLink="todos" style="margin-left: 3px;">Задачи</button>
+          <div class="header-buttons"><button  class="header-buttons-item"   (click)="isShowCatalog = !isShowCatalog" mat-button>Скрыть/показать каталог</button>
+          <button (click)="isShowBanner = !isShowBanner" class="header-buttons-item" mat-button>Баннер</button>
+          <button (click)="changeMenuText()" class="header-buttons-item" mat-button>Изменить текст</button>
+          <button class="header-buttons-item" routerLink="users" mat-button>Админка</button></div>
+          <button class="header-buttons-item" routerLink="todos" style="margin-left: 3px;" mat-button>Задачи</button>
     </div>
             <div class="header-right">
    <div class="header-number"> <img src="/assets/Frame number.svg" alt="номер"></div>

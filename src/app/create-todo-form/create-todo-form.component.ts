@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import {MatInputModule} from '@angular/material/input';
+import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from "@angular/material/button";
 
 
 
@@ -8,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angula
    templateUrl: 'create-todo-form.component.html',
    styleUrl: 'create-todo-form.component.scss',
    standalone: true,
-   imports: [ReactiveFormsModule]
+   imports: [ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule]
 })
 
 export class CreateTodoFormComponent {

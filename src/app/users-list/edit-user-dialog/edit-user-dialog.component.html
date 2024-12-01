@@ -1,0 +1,11 @@
+<form class="user-form-create" [formGroup]="form">
+    <p>NAME</p>
+    <input class="user-form-input"    type="text" formControlName = "name">
+    <p>EMAIL</p>
+    <input  class="user-form-input" type="text" formControlName  = "email">
+    <p>WEBSITE</p>
+    <input  class="user-form-input" type="text" formControlName = "website">
+    <p>COMPANY NAME</p>
+    <input  class="user-form-input" type="text" formControlName = "companyName">
+    <p><button style="width: 150px;" [disabled]="!form.valid" [mat-dialog-close]="userWithUpdatedFields">edit user</button></p>
+    </form>

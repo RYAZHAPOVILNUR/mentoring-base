@@ -1,12 +1,24 @@
 <H1>CREATE TODO FORM</H1>
 <div class="todo-form">
     <form class="todo-form-create" [formGroup]="form" (ngSubmit)="submitForm()">
-    <p>UserId</p>
-    <input class="todo-form-input"    type="text" formControlName = "userid">
-    <p>Title</p>
-    <input  class="todo-form-input" type="text" formControlName = "title">
-    <p>Completed</p>
-    <input  class="todo-form-input" type="text" formControlName = "completed">
-    <button style="width: 150px;" [disabled]="!form.valid">CREATE TODO</button>
+        <mat-form-field class="todo-form-input">
+            <mat-label>Введите ID пользователя</mat-label>
+            <input matInput formControlName="userid">
+            <mat-error>Неверное значение</mat-error>
+         </mat-form-field>
+        
+         <mat-form-field class="todo-form-input">
+            <mat-label>Введите заголовок</mat-label>
+            <input matInput formControlName="title">
+            <mat-error>Неверное значение</mat-error>
+         </mat-form-field>
+
+         <mat-form-field class="todo-form-input">
+            <mat-label>Завершение </mat-label>
+            <input matInput formControlName="completed">
+            <mat-error>Неверное значение</mat-error>
+         </mat-form-field>
+
+    <button style="width: 150px;" [disabled]="form.invalid">CREATE TODO</button>
     </form>
     </div>

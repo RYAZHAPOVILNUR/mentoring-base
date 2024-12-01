@@ -2,9 +2,15 @@
     display: flex;
     flex-direction: column;  
 }
+.user-form {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
 .user-form-input {
-    width: 200px;
+    width: 300px;
+    margin-top: 20px;
 }
 .user-form {
-    margin: 0 0 30px 250px;
+    margin: 0 0 30px 25px;
 }

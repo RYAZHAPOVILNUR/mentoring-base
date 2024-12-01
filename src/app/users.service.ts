@@ -26,7 +26,7 @@ export class UsersService {
       )
     }
 
-    creatUser(user: User) {   
+    createUser(user: User) {   
 
         const userIsExisting = this.usersSubject$.value.find(
             (currenElement) => currenElement.email === user.email

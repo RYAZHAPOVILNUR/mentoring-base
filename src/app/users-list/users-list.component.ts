@@ -1,11 +1,14 @@
 import { AsyncPipe, NgFor } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
-import { Component, inject, Injectable } from "@angular/core";
+import { Component, EventEmitter, inject, Injectable, Output } from "@angular/core";
 import { usersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
 import { ChangeDetectionStrategy } from "@angular/core";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+import { EditUserDialog } from "./edit-user-dialog/edit-user-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { MatButtonModule } from "@angular/material/button";
 
 
 export interface User {
@@ -38,7 +41,7 @@ export interface User {
  templateUrl: './users-list.component.html',
  styleUrl: './users-list.component.scss',
  standalone: true , 
- imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+ imports: [NgFor, UserCardComponent, AsyncPipe, MatButtonModule],
  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
@@ -60,8 +63,13 @@ constructor() {
         this.usersService.deleteUser(id)
         this.users$ = this.usersService.users$
       } 
+      editUser(user: any) {
+        this.usersService.editUser({
+          ...user, company: {name: user.companyName}
+        })
+      }
      public createUser(formData: any) {
-        this.usersService.creatUser({
+        this.usersService.createUser({
           id: new Date().getTime(),
           name: formData.name,
           email: formData.email,
@@ -70,6 +78,13 @@ constructor() {
             name: formData.companyName
           }
         })
-      }
       
+    }
+    readonly dialog = inject(MatDialog)
+
+    CreateUserDialog(): void {
+      const dialogRef = this.dialog.open(CreateUserFormComponent, {
+          data: { user: this.users$ }
+      })
+  }
 }

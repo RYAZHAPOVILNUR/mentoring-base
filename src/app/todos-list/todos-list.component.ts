@@ -41,7 +41,7 @@ export interface Todo {
         this.todosService.deleteTodo(id)
         this.todos$ = this.todosService.todos$
     }
-    public createTodo(formData: any) {
+    public createTodo(formData: Todo) {
         this.todosService.creatTodo({
             id: new Date().getTime(),
             userId: formData.userId,
