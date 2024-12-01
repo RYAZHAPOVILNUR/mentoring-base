@@ -19,6 +19,8 @@ import {
 } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from '../../interfaces/user-interface';
+import { Store } from '@ngrx/store';
+import { selectUsers } from '../store/users.selectors';
 
 @Component({
   standalone: true,
@@ -35,9 +37,10 @@ import { User } from '../../interfaces/user-interface';
   ],
 })
 export class CreateUserDialogComponent {
+  private readonly store = inject(Store);
+  public readonly users$ = this.store.select(selectUsers);
   readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>);
   private _snackBar = inject(MatSnackBar);
-  readonly data = inject<{ users: User[] }>(MAT_DIALOG_DATA);
   public form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -129,14 +132,16 @@ export class CreateUserDialogComponent {
   }
 
   submitForm() {
-    const isEmailExist = this.data.users.find(
-      (user) => user.email === this.form.value.email
-    );
+    this.users$.subscribe((users) => {
+      const isEmailExist = users.find(
+        (user) => user.email === this.form.value.email
+      );
 
-    if (isEmailExist) {
-      this.openSnackBar('Такой имэйл уже существует!', '');
-    } else {
-      this.dialogRef.close(this.form.value);
-    }
+      if (isEmailExist) {
+        this.openSnackBar('Такой имэйл уже существует!', '');
+      } else {
+        this.dialogRef.close(this.form.value);
+      }
+    });
   }
 }
