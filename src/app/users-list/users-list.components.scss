@@ -17,3 +17,14 @@
     border: solid 2px  #0000FF;
     box-shadow: 5px 5px 10px #0000FF;
 }
+.custom-button {
+    margin: 20px 0px 0px 60px;
+    background-color: #ff5722;  /* Оранжевый фон */
+    color: white;
+    font-size: 18px;
+    padding: 14px 28px;
+    border-radius: 10px;
+}
+.custom-button:hover {
+    background-color: #e64a19; /* Темнее оранжевый при наведении */
+}

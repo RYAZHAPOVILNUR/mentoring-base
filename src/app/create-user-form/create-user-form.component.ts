@@ -1,10 +1,12 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatError } from '@angular/material/form-field';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {  User } from '../users-list/users-list.interface';
 
 
 @Component({
@@ -15,6 +17,9 @@ import { MatError } from '@angular/material/form-field';
   styleUrl: './create-user-form.component.scss'
 })
 export class CreateUserFormComponent {
+ readonly data =inject<{ user: User }>(MAT_DIALOG_DATA);
+ 
+
  @Output()
  creatUser = new EventEmitter();
 
@@ -27,12 +32,15 @@ export class CreateUserFormComponent {
   }),
 });
 
- public OnSubmit(): void {
-  this.creatUser.emit(this.formUser.value);
-  this.formUser.reset();
- }
-
- constructor () {
-  this.formUser.valueChanges.subscribe((formValue) => console.log(formValue))
- }
+public onSubmit(event: Event) {
+  event.preventDefault();
+  if (this.formUser.valid) {
+    this.dialogRef.close(this.formUser.value); 
+  }
 }
+
+ constructor(public dialogRef: MatDialogRef<CreateUserFormComponent>) {
+  this.formUser.valueChanges.subscribe((formValue) =>
+    console.log('Form Value:', formValue)
+  );
+}}

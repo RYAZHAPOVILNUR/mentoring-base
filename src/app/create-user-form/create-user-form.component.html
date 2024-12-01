@@ -29,7 +29,7 @@
                 Название компании введено НЕ ВЕРНО
             </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="add-user" (click)="OnSubmit()"  [disabled]="formUser.invalid">
+        <button mat-raised-button color="primary" class="add-user" (click)="onSubmit($event)"  [disabled]="formUser.invalid">
             Создать Пользователя
         </button>
     </form>

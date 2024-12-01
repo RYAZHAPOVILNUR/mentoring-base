@@ -1,10 +1,12 @@
 import { AsyncPipe, CommonModule, NgFor } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, Input } from "@angular/core";
 import { createUser, User } from "./users-list.interface"; 
 import { UsersApiService } from "../users-api.service";
 import { UserListCardComponent } from "./user-list-card/user-list-card.component";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+import { MatDialog} from "@angular/material/dialog";
+import { DeleteUserDialogComponent } from "./delete-user-dialog/delete-user-dialog.component";
 
 
 // const consoleResponse = (response: any) => console.log(response);
@@ -21,7 +23,10 @@ import { CreateUserFormComponent } from "../create-user-form/create-user-form.co
 export class UserListComponent {
     readonly UsersApiService = inject(UsersApiService)
     readonly usersService = inject(UsersService);
-
+  
+  @Input()
+  user!: User;
+  readonly dialog = inject(MatDialog);
 
     constructor() {
       this.UsersApiService.getUsers().subscribe(
@@ -29,8 +34,17 @@ export class UserListComponent {
             this.usersService.setUsers(response);
             console.log('USERS', this.usersService);
         });
-      
-    }deleteUser(id: number) {
+    }openDeleteDialog(id: number): void {
+      const dialogRef = this.dialog.open(DeleteUserDialogComponent);
+  
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.deleteUser(id); 
+        }
+      });
+    }
+
+    deleteUser(id: number) {
       this.usersService.deletedUsers(id);
     }
 
@@ -45,6 +59,19 @@ export class UserListComponent {
         
   }
 
+    openCreateUserDialog(): void {
+      const dialogRef = this.dialog.open(CreateUserFormComponent, {
+        width: '500px', height: '500px',
+        data: {user: this.user} 
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.createUser(result); 
+        }
+      });
+    }
+
     public createUser(formData: createUser) {
       this.usersService.createUsers({
         id: new Date().getTime(),
@@ -58,4 +85,5 @@ export class UserListComponent {
       console.log('Дынные формы: ', event);
       console.log(new Date().getTime());
     }
-}
+
+  }   
