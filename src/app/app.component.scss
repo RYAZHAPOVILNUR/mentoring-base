@@ -1,6 +1,3 @@
-body {
-  margin: 0 auto;
-}
 
 .header {
   max-width: 1920px;
@@ -25,12 +22,8 @@ body {
 
 .nav-top, .nav-botton {
   display: inherit;
+  justify-content: space-around;
   gap: 24px;
-  margin-right: 150px;
-}
-
-.photo-left {
-  margin-left: 40px;
 }
 
 .header--nav-item {
@@ -188,6 +181,11 @@ body {
   width: 1320px;
   height: 463px;
   margin: 28px 300px;
+}
+
+.item-cards :first-child {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .item-cards--pagination {

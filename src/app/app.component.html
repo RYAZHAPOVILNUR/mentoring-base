@@ -13,9 +13,11 @@
       <section class="header--top">
         <div class="nav-top">
           <img class="frame-photo photo-left" src="/assets/head-logo.svg" alt="Лого фирмы">
-          <a class="header--nav-item">Главная</a>
-          <a class="header--nav-item">О компании</a>
-          <a class="header--nav-item">Каталог</a>
+          <a class="header--nav-item">{{headerItem1}}</a>
+          <a class="header--nav-item">{{aboutCompany}}</a>
+          <a class="header--nav-item"*ngIf="isShowCatalog">{{headerItem3}}</a>
+          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+          <button (click)="changeMenuText()">Изменить текст</button>
         </div>
         <div class="header--right">
           <div class="header--number-company">
@@ -32,13 +34,14 @@
         </div>
       </section>
       <section class="header--botton">
-        <div class="nav-botton">
-          <img class="photo-left" src="/assets/fav-icon.svg" alt="Картинка favicon">
-          <button class="header--nav-item item-button">Каталог</button>
-          <button class="header--nav-item item-button">Стройматериалы</button>
-          <button class="header--nav-item item-button">Инструменты</button>
-          <button class="header--nav-item item-button">Электрика</button>
-          <button class="header--nav-item item-button">Интерьер и одежда</button>
+        <img class="photo-left" src="/assets/fav-icon.svg" alt="Картинка favicon">
+        <div class="nav-botton" *ngFor="let item of menuItems">{{item}}
+          <!--<button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+        -->
         </div>
         <div>
           <input class="input-header" type="Поиск, например Круг зачистной " placeholder="Поиск, например Круг зачистной ">
@@ -49,7 +52,8 @@
         </div>
       </section>
       <section class="header--banner">
-        <img src="/assets/page-banner.svg" alt="Картина банер страницы">
+        <button (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
+        <img *ngIf="isShowImg" src="/assets/page-banner.svg" alt="Картина банер страницы">
       </section>
     </div>
   </header>
@@ -71,12 +75,10 @@
         </div>
       </section>
       <section class="item-cards">
-        <div class="item-cards--pagination">
-          <button class="item-cards--pagination-button pagination-button-yellow">1</button>
-          <button class="item-cards--pagination-button">2</button>
-          <button class="item-cards--pagination-button">3</button>
-          <button class="item-cards--pagination-button">4</button>
-          <button class="item-cards--pagination-button">5</button>
+        <div>
+          <button class="item-cards--pagination item-cards--pagination-button pagination-button-yellow" *ngFor="let item of newPages">
+          {{item}}
+          </button>
         </div>
         <div class="item-cards--grid">
           <div class="item-cards--grid-left grid-left">
