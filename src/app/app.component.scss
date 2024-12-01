@@ -1,3 +1,7 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -35,6 +39,8 @@
     display: flex;
     align-items: center;
     margin: 20px;
+    color: inherit;
+    text-decoration: none;
 }
 
 .header-heart {
@@ -52,8 +58,6 @@
     color: white;
     align-items:center;
     gap:5px
-
-    
 }
 
 .header-bottom {
@@ -63,8 +67,7 @@
     height: 48px;
     color: black;
     background-color: #F0BA4E;
-    ;
-    padding: 0 240px;
+    padding: 0 225px;
 }
 
 .header-right-orange {
@@ -73,7 +76,8 @@
     margin-right: 12px;
     align-items:center;
     gap: 7px;
-
+    background-color: #F0BA4E;
+    border: none;
 }
 
 .header-left-orange {
@@ -90,7 +94,6 @@
     display: flex;
     align-items: center;
     width: 350px;
-
 }
 
 .serch-line {
@@ -119,7 +122,6 @@
   }
   
   .info-cards-item-block {
-    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 18px;
     width: 421px;
@@ -138,7 +140,6 @@
     justify-content: end;
     
     &-button {
-        font-family: inter;
         border: none;
         background: none;
         color: #A1A0A0; 
@@ -160,7 +161,7 @@
     box-shadow: 0px 20px 50px 0px #3C3C3B12;
     max-height: 428px;
     max-width: 421px;
-    background-image: url(/assets/gun.png);
+    background-image: url("/assets/gun.png");
     background-repeat: no-repeat;
     overflow: hidden;
     background-position-y: bottom;
@@ -174,7 +175,6 @@
 
 .item-cards__grid-left-text {
     font-size: 26px;
-    font-family: Inter;
     font-weight: 600;
 }
 
@@ -204,14 +204,14 @@
   
   .item-cards__grid-right {
     display: flex;
-    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку */
-    gap: 10px; /* Расстояние между блоками */
-    width: 100%; /* Ширина родительского контейнера */
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
 }
 
 .item-cards__grid-right-block {
-    flex: 1 1 calc(50% - 14px); /* Каждый блок занимает 50% ширины контейнера с учетом gap */
-    height: 200px; /* Фиксированная высота блоков */
+    flex: 1 1 calc(50% - 14px);
+    height: 200px;
     box-shadow: 0px 20px 50px 0px #3c3c3b12;
     display: flex;
     flex-direction: column;
@@ -250,9 +250,7 @@
 
 .block-1_text-1 {
     font-size: 26px;
-    font-family: Inter;
     font-weight: 600;
-    
 }
 
 .block-1-text-action,
@@ -270,7 +268,6 @@
     height: 555px;
     margin: 0% auto;
     margin-bottom: 48px;
-
 }
 
 .block-popular {
@@ -308,7 +305,6 @@
 }
 
 .text-popular {
-    font-family: "Inter", sans-serif;
     font-size: 28px;
     font-weight: 500;
     text-align: left;
@@ -341,7 +337,6 @@
     border: none;
     border-radius: 36px;
 }
-  
   
   .popular-cards {
     display: flex;
@@ -396,20 +391,17 @@
   }
   
   .popular-card-price {
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #3c3c3b;
   }
   
   .popular-card-article {
-    font-family: "Inter", sans-serif;
     margin: 0;
     margin-top: 8px;
   }
   
   .popular-price-piece {
-    font-family: "Inter", sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: #a1a0a0;
@@ -419,7 +411,6 @@
   
   .first-price {
     text-decoration: line-through;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #3c3c3b;
@@ -427,7 +418,6 @@
   }
   
 .second-price {
-font-family: "Inter", sans-serif;
 font-size: 20px;
 font-weight: 600;
 color: #3c3c3b;
@@ -440,7 +430,6 @@ width: 135px;
 height: 47px;
 border-radius: 54px;
 background-color: white;
-font-family: "Inter", sans-serif;
 }
 
 .popular-card-bottom {
@@ -454,7 +443,6 @@ margin-top: 20px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-font-family: "Inter", sans-serif;
 font-size: 16px;
 font-weight: 500;
 color: #3c3c3b;
@@ -491,13 +479,11 @@ padding-left: 28px;
 font-size: 28px;
 font-weight: 500;
 color: #3c3c3b;
-font-family: inter;
 }
 
 .store-header-bottom {
 font-size: 20px;
 font-weight: 400;
-font-family: inter;
 color: #a1a0a0;
 }
 
@@ -505,7 +491,6 @@ color: #a1a0a0;
 font-size: 18px;
 font-weight: 600;
 color: #f0ba4e;
-font-family: inter;
 margin-top: 89px;
 }
 
@@ -516,7 +501,6 @@ padding-right: 16px;
 footer {
 color: white;
 font-size: 16px;
-font-family: "Inter", sans-serif;
 background-color: #4b565e;
 }
 
@@ -544,7 +528,6 @@ height: 162px;
 }
 
 .question {
-font-family: inter;
 font-weight: 700;
 font-size: 18px;
 color: #ffffff;
@@ -579,14 +562,12 @@ margin-left: 11px;
 }
 
 .inter-your-mail {
-font-family: inter;
 font-weight: 400;
 font-size: 12px;
 color: #ffffff99;
 }
 
 .inter-email-right-button {
-font-family: inter;
 font-weight: 700;
 font-size: 10px;
 width: 94px;
@@ -599,7 +580,6 @@ margin-right: 8px;
 }
 
 .footer-text {
-font-family: inter;
 width: 534px;
 height: 48px;
 font-size: 14px;
@@ -631,14 +611,12 @@ align-items: flex-start;
 }
 
 .tel {
-font-family: inter;
 font-weight: 400;
 font-size: 12px;
 color: #ffffff99;
 }
 
 .phones {
-font-family: inter;
 font-weight: 500;
 font-size: 16px;
 color: #ffffff;
@@ -646,14 +624,12 @@ text-decoration: none;
 }
 
 .email {
-font-family: inter;
 font-weight: 400;
 font-size: 12px;
 color: #ffffff99;
 }
 
 .email-name {
-font-family: inter;
 font-weight: 500;
 font-size: 16px;
 color: #ffffff;
@@ -674,7 +650,6 @@ justify-content: space-around;
 .top {
 display: flex;
 gap: 28px;
-font-family: inter;
 font-size: 14px;
 font-weight: 400;
 }
@@ -683,7 +658,6 @@ font-weight: 400;
     font-size: 17px;
     font-weight: 500;
     color: #FFFFFF;
-    font-family: inter;
     text-decoration: none;
 }
 
