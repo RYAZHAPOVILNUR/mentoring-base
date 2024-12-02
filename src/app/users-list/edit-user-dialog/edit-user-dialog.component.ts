@@ -7,11 +7,12 @@ import {MatIcon} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {NgIf} from '@angular/common';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButton} from "@angular/material/button";
 
 @Component({
     selector: 'app-edit-user-dialog',
     standalone: true,
-    imports: [NgIf, ReactiveFormsModule, MatFormFieldModule, MatLabel, MatIcon, MatError, MatInputModule, MatDialogClose, MatTooltipModule],
+    imports: [NgIf, ReactiveFormsModule, MatFormFieldModule, MatLabel, MatIcon, MatError, MatInputModule, MatDialogClose, MatTooltipModule, MatButton],
     templateUrl: './edit-user-dialog.component.html',
     styleUrl: './edit-user-dialog.component.scss',
 })
@@ -35,6 +36,4 @@ export class EditUserDialogComponent {
     submitForm() {
         this.dialogRef.close({...this.form.value, id: this.data.user.id});
     };
-
-
 }

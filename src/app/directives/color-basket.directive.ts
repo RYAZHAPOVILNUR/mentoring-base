@@ -5,9 +5,9 @@ import { Directive, HostBinding, HostListener } from "@angular/core";
     standalone: true,
 })
 export class ColorBasketDirective {
-    color_one = '';
-    color_two = '';
-    text = '';
+    color_one: string = '';
+    color_two: string = '';
+    text: string = '';
 
     @HostBinding('style.backgroundColor')
     get backgroundColor() {
