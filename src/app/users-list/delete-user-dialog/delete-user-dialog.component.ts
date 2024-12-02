@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -9,8 +9,8 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './delete-user-dialog.component.scss'
 })
 export class DeleteUserDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<DeleteUserDialogComponent>)
 
-  constructor(public dialogRef: MatDialogRef<DeleteUserDialogComponent>) {}
 
   onConfirm(): void {
     this.dialogRef.close(true);

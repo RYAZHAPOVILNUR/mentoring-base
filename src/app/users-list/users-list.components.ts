@@ -25,7 +25,6 @@ export class UserListComponent {
     readonly usersService = inject(UsersService);
   
   @Input()
-  user!: User;
   readonly dialog = inject(MatDialog);
 
     constructor() {
@@ -49,23 +48,16 @@ export class UserListComponent {
     }
 
     editUser(user: User) {
-      this.usersService.editUser({
-        ...user,
-        company: {
-          name: user.company.name
-        }
-
-      })
-        
-  }
+      this.usersService.editUser(user)
+    }
 
     openCreateUserDialog(): void {
       const dialogRef = this.dialog.open(CreateUserFormComponent, {
         width: '500px', height: '500px',
-        data: {user: this.user} 
+        data: {} 
       });
 
-      dialogRef.afterClosed().subscribe(result => {
+      dialogRef.afterClosed().subscribe((result) => {
         if (result) {
           this.createUser(result); 
         }

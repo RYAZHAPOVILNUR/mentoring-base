@@ -26,7 +26,8 @@ export class UserListCardComponent {
 
     dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) {
-      this.editUser.emit(editResult);
+        console.log('editResult:', editResult)
+        this.editUser.emit(editResult);
       }
     });
   }

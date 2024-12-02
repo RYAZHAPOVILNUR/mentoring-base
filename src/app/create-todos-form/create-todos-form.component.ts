@@ -16,6 +16,10 @@ import { MatOptionModule } from '@angular/material/core';
 })
 export class CreateTodosFormComponent {
 
+  constructor () {
+    this.formTodos.valueChanges.subscribe((formValue) => console.log(formValue))
+   }
+   
   @Output()
   createTodos = new EventEmitter();
  
@@ -29,8 +33,5 @@ export class CreateTodosFormComponent {
     this.createTodos.emit(this.formTodos.value);
     this.formTodos.reset();
    }
- 
-  constructor () {
-   this.formTodos.valueChanges.subscribe((formValue) => console.log(formValue))
-  }
+
  }

@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatError } from '@angular/material/form-field';
 import { NgIf } from '@angular/common';
-import { User } from '../users-list.interface';
 
 
 
@@ -18,7 +17,8 @@ import { User } from '../users-list.interface';
   styleUrl: './edit-user-dialog.component.scss'
 })
 export class EditUserDialogComponent {
-  readonly data =inject<{ user: User }>(MAT_DIALOG_DATA);
+  readonly data = inject(MAT_DIALOG_DATA);
+  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>)
   
 
   public formUser = new FormGroup ({
@@ -30,10 +30,8 @@ export class EditUserDialogComponent {
     }),
   });
   
-  get userWithUpdatedFieilds() {
-    return {
-      ...this.formUser.value, 
-      id: this.data.user.id
-    };
-  }
+  submitForm() {
+    this.dialogRef.close({...this.formUser.value,  id: this.data.user.id,});
+    console.log(this.formUser.value)
+  };
 }

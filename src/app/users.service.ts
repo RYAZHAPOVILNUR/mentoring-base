@@ -19,9 +19,7 @@ export class UsersService {
         this.usersSubject$.next(
             this.usersSubject$.value.map(
                 users => users.id === editUser.id ? editUser: users));
-        this.snackBar.open('Пользователь успешно обновлен', 'Закрыть', {
-            duration: 3000,
-            });
+        this.snackBar.open('Пользователь успешно обновлен', 'Закрыть',);
     }
 
     createUsers(user: User) {
@@ -30,14 +28,10 @@ export class UsersService {
     );
 
     if (existingUser !== undefined) {
-        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Закрыть', {
-          duration: 3000,
-        });
+        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Закрыть',);
       } else {
         this.usersSubject$.next([...this.usersSubject$.value, user]);
-        this.snackBar.open('НОВЫЙ ПОЛЬЗОВАТЕЛЬ ДОБАВЛЕН', 'Закрыть', {
-          duration: 3000,
-        });
+        this.snackBar.open('НОВЫЙ ПОЛЬЗОВАТЕЛЬ ДОБАВЛЕН', 'Закрыть',);
       }
     }
 
@@ -46,9 +40,7 @@ export class UsersService {
             this.usersSubject$.value.filter(
                 item => item.id !== id ));
 
-        this.snackBar.open('ПОЛЬЗОВАТЕЛЬ УДАЛЕН', 'Закрыть', {
-            duration: 3000,
-        });
+        this.snackBar.open('ПОЛЬЗОВАТЕЛЬ УДАЛЕН', 'Закрыть',);
     }
 }
 

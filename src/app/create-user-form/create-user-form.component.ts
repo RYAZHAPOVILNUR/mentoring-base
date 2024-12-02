@@ -18,7 +18,13 @@ import {  User } from '../users-list/users-list.interface';
 })
 export class CreateUserFormComponent {
  readonly data =inject<{ user: User }>(MAT_DIALOG_DATA);
- 
+ readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>)
+
+ constructor() {
+  this.formUser.valueChanges.subscribe((formValue) =>
+    console.log('Form Value:', formValue)
+  );
+ }
 
  @Output()
  creatUser = new EventEmitter();
@@ -30,17 +36,9 @@ export class CreateUserFormComponent {
   company: new FormGroup ({
    name: new FormControl('', [Validators.required, Validators.minLength(2)])
   }),
-});
+ });
 
-public onSubmit(event: Event) {
-  event.preventDefault();
-  if (this.formUser.valid) {
+ public onSubmit(event: Event) {
     this.dialogRef.close(this.formUser.value); 
-  }
+ }
 }
-
- constructor(public dialogRef: MatDialogRef<CreateUserFormComponent>) {
-  this.formUser.valueChanges.subscribe((formValue) =>
-    console.log('Form Value:', formValue)
-  );
-}}
