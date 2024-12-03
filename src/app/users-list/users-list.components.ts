@@ -17,7 +17,7 @@ import { DeleteUserDialogComponent } from "./delete-user-dialog/delete-user-dial
     templateUrl: './users-list.components.html',
     styleUrl: './users-list.components.scss',
     standalone: true,
-    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe, CreateUserFormComponent] ,
+    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe,] ,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent {
@@ -53,7 +53,7 @@ export class UserListComponent {
 
     openCreateUserDialog(): void {
       const dialogRef = this.dialog.open(CreateUserFormComponent, {
-        width: '500px', height: '500px',
+        width: '500px', height: '600px',
         data: {} 
       });
 
@@ -73,6 +73,7 @@ export class UserListComponent {
         company: {
           name: formData.name
         },
+        phone: formData.phone,
       });
       console.log('Дынные формы: ', event);
       console.log(new Date().getTime());

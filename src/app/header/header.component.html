@@ -2,12 +2,14 @@
     <div class="header-left">
         <div class="header-logo"><img src="/assets/Logo EGE.svg" alt="Логотип сайта"></div>
         <nav class="header-nav">
-          <a routerLink="/users" class="header-nav-item">{{headerItem1}}</a>
-          <a routerLink="/" class="header-nav-item">{{aboutCompany}}</a>
+          <a routerLink="/" class="header-nav-item">{{headerItem1}}</a>
+          <a routerLink="/" class="header-nav-item">{{aboutCompany}} </a>
           <a href="catalog.html" class="header-nav-item" *ngIf="IsShowCatalog">{{headerItem3}}</a>
         </nav>
         <button (click)="IsShowCatalog=!IsShowCatalog">Скрыть/Показать каталог</button>
         <button (click)="changeMenuText()">Capslock</button>
+        <button  routerLink="users">Админка</button>
+        <button  routerLink="todos">Задачи</button>
     </div>
     <div class="header-right">
         <img class="header-logo2" src="/assets/Phone.svg" alt="Логотип Телефона">
@@ -33,6 +35,7 @@
       <div class="map">
         <img src="/assets/Location.svg" alt="Локация">
         <button class="country" type="menu">Москва</button>
+        <p>{{ today | date : "MMM d, y, h:mm:ss a" }}</p>
       </div>
     </div>
   </div>

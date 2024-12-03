@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -15,13 +15,10 @@ const upperCasemenuItems = menuItems.map (
 )
 console.log (upperCasemenuItems)
 
-
-
-
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, NgIf, RouterLink, DatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -38,6 +35,7 @@ export class HeaderComponent {
   readonly headerItemnav5 = "Интерьер и одежда";
   menuItems = upperCasemenuItems; 
   isUpperCase = true;
+  today: Date = new Date();
 
   changeMenuText() {
     this.menuItems = upperCasemenuItems.map (

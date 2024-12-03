@@ -2,12 +2,13 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { User } from '../users-list.interface';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-
+import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
+import { PhonePipe } from '../../pipes/phone.pipe';
 
 @Component({
   selector: 'app-user-list-card',
   standalone: true,
-  imports: [],
+  imports: [CustomUpperCasePipe, PhonePipe,],
   templateUrl: './user-list-card.component.html',
   styleUrl: './user-list-card.component.scss'
 })
