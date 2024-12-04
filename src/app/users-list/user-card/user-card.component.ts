@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output} from "@angular/core";
-import { UsersListComponent } from "../users-list.component";
 @Component({
     selector: 'app-user-card',
     templateUrl: './user-card.component.html',
