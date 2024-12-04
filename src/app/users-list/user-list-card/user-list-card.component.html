@@ -1,11 +1,11 @@
 <div>
-  <p> {{ user.name | customUpperCase}}</p>
-  <p> {{ user.email | customUpperCase}}</p>
-  <p> {{ user.website | customUpperCase}}</p>
-  <p> {{ user.company.name }}</p>
+  <p red> {{ user.name | customUpperCase}}</p>
+  <p red> {{ user.email | customUpperCase}}</p>
+  <p red> {{ user.website | customUpperCase}}</p>
+  <p red> {{ user.company.name }}</p>
   <p> {{ user.phone | phonePipe}}</p>
 </div>
 <div class="buttons"> 
-  <div class="edit"><button class="delete_1" (click)="openDialog()">Edit</button></div>
-  <div class="delete"><button class="delete_1" (click)="onDeleteUser(user.id)">Delete</button></div>
+  <div  class="edit"><button class="delete_1" (click)="openDialog()">Edit</button></div>
+  <div  class="delete"><button class="delete_1" (click)="onDeleteUser(user.id)">Delete</button></div>
 </div>

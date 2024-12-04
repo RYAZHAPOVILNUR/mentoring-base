@@ -4,11 +4,12 @@ import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.co
 import { MatDialog } from '@angular/material/dialog';
 import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
 import { PhonePipe } from '../../pipes/phone.pipe';
+import { RedDirectiv } from '../../directiv/red.directiv';
 
 @Component({
   selector: 'app-user-list-card',
   standalone: true,
-  imports: [CustomUpperCasePipe, PhonePipe,],
+  imports: [CustomUpperCasePipe, PhonePipe, RedDirectiv],
   templateUrl: './user-list-card.component.html',
   styleUrl: './user-list-card.component.scss'
 })
