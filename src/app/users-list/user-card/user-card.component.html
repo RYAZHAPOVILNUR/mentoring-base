@@ -1,0 +1,7 @@
+<div class="userCard">
+    <p class="cardName">{{user.username}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.website}}</p>
+    <p class="cardCompName">{{user.company.name}}</p>
+    <button (click)="onDeleteUser(user.id)" class="deleteButton">Удалить</button>
+</div>
