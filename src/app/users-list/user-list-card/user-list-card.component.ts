@@ -2,6 +2,7 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { User } from '../users-list.interface';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class UserListCardComponent {
   @Input()
   user!: User;
   readonly dialog = inject(MatDialog);
-
+  private snackBar = inject(MatSnackBar);
+  
   @Output()
   editUser = new EventEmitter()
 
@@ -28,8 +30,16 @@ export class UserListCardComponent {
       if (editResult) {
         console.log('editResult:', editResult)
         this.editUser.emit(editResult);
+        this.snackBar.open('Пользователь успешно обновлен', 'Закрыть', {
+          duration: 3000,
+        });
+      } else {
+        this.snackBar.open('Отмена редактирования',  'Закрыть', {
+          duration: 3000,
+        });
       }
-    });
+    })
+
   }
   
   @Output()

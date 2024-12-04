@@ -38,7 +38,7 @@ export class CreateUserFormComponent {
   }),
  });
 
- public onSubmit(event: Event) {
+ public onSubmit() {
     this.dialogRef.close(this.formUser.value); 
  }
 }
