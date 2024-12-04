@@ -8,7 +8,11 @@
     <div>{{ todo.completed ? "ДА" : "НЕТ" }}</div>
   </div>
   <div class="card-change">
-  <button mat-stroked-button class="card-buttons" (click)="openDeleteDialog()">Delete</button>
-  <button mat-stroked-button class="card-buttons" (click)="openEditDialog()">Edit</button>
+  <button mat-stroked-button class="card-buttons delete" (click)="openDeleteDialog()">
+    <mat-icon class="delete-element">delete</mat-icon>
+  </button>
+  <button mat-stroked-button class="card-buttons edit" (click)="openEditDialog()">
+    <mat-icon class="edit-element">edit Square</mat-icon>
+  </button>
 </div>
 </div>

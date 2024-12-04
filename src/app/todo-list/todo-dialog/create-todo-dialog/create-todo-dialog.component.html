@@ -18,10 +18,10 @@
           <mat-error>Некорректное значение</mat-error>
         </mat-form-field>
         <div class="button-position">
-        <button class="button-form" matIconSuffix mat-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
+        <button matIconSuffix mat-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
           <mat-icon class="add-element">expand_circle_down</mat-icon>
         </button>
-        <button class="button-form" mat-button mat-dialog-close>
+        <button mat-button mat-dialog-close>
           <mat-icon class="cancel-element">cancel</mat-icon>
         </button>
       </div>

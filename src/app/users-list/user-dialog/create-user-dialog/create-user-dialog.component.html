@@ -31,11 +31,11 @@
         <mat-error>Некорректное значение</mat-error>
       </mat-form-field>
       <div class="button-position">
-        <button class="button-form" matIconSuffix mat-icon-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
-          <mat-icon>expand_circle_down</mat-icon>
+        <button matIconSuffix mat-icon-button [disabled]="form.invalid" type="submit" (click)="submitForm()">
+          <mat-icon class="add-element">expand_circle_down</mat-icon>
         </button>
-        <button class="button-form" mat-icon-button mat-dialog-close>
-          <mat-icon>cancel</mat-icon>
+        <button mat-icon-button mat-dialog-close>
+          <mat-icon class="cancel-element">cancel</mat-icon>
         </button>
       </div>
       </form>

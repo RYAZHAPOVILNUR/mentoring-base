@@ -1,13 +1,17 @@
-<div mat-card-avatar class="component-cards-item">
+<div mat-card-avatar class="component-cards-item" shadow>
   <div class="text-height">
-    <p>{{user.name | CustomUpperCase}}</p>
-    <p>{{user.email | CustomUpperCase}}</p>
-    <p>{{user.website | CustomUpperCase}}</p>
-    <p>{{user.company.name}}</p>
-    <p>{{user.phone | phone}}</p>
+    <p red>{{user.name | CustomUpperCase}}</p>
+    <p red>{{user.email | CustomUpperCase}}</p>
+    <p red>{{user.website | CustomUpperCase}}</p>
+    <p red>{{user.company.name}}</p>
+    <p red>{{user.phone | phone}}</p>
   </div>
   <div class="card-change">
-  <button mat-stroked-button class="card-buttons" (click)="openDeleteDialog()">Delete</button>
-  <button mat-stroked-button class="card-buttons" (click)="openEditDialog()">Edit</button>
+  <button mat-stroked-button class="card-buttons delete" (click)="openDeleteDialog()">
+    <mat-icon class="delete-element">delete</mat-icon>
+  </button>
+  <button mat-stroked-button class="card-buttons edit" (click)="openEditDialog()">
+    <mat-icon class="edit-element">edit Square</mat-icon>
+  </button>
 </div>
 </div>

@@ -1,5 +1,6 @@
 <app-user-add-button (createUser)="createUser($event)"></app-user-add-button>
 <div class="component-cards">
+  <div class="component-cards-item">
   <div *ngFor="let user of usersService.users$ | async">
     <app-user-card
       [user]="user"
@@ -7,4 +8,5 @@
       (editUser)="editUser($event)"
     ></app-user-card>
   </div>
+</div>
 </div>

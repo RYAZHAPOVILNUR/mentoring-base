@@ -9,6 +9,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
 import { PhonePipe } from "../../pipes/phone.pipe";
+import { MatIconModule } from '@angular/material/icon';
+import { RedDirective } from '../../directives/red.directive';
+import { ShadowDirective } from '../../directives/shadow-card.directive';
 
 @Component({
   selector: 'app-user-card',
@@ -20,8 +23,11 @@ import { PhonePipe } from "../../pipes/phone.pipe";
     MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
     CustomUpperCasePipe,
-    PhonePipe
+    PhonePipe,
+    RedDirective,
+    ShadowDirective,
 ],
 })
 export class UserCardComponent {

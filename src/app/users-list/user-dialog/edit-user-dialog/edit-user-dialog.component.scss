@@ -24,6 +24,18 @@
 }
 
 .button-position {
+  margin-top: 20px;
+  width: 300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.add-element {
+  color: green;
+  transform: scale(1.5);
+}
+
+.cancel-element {
+  color: red;
+  transform: scale(1.5);
 }

@@ -1,0 +1,24 @@
+.component-forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 150px;
+}
+
+.button-position {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-element {
+  color: green;
+  transform: scale(1.5);
+}
+
+.cancel-element {
+  color: red;
+  transform: scale(1.5);
+}

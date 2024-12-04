@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DatePipe, NgFor, NgIf } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { BasketDirective } from '../directives/basket.directive';
+
 
 const menuItems = [
   'Каталог',
@@ -22,7 +25,7 @@ const result = aboutCompany('О компании');
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, DatePipe],
+  imports: [NgFor, NgIf, RouterLink, DatePipe, MatIconModule, BasketDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

@@ -20,16 +20,21 @@
     flex-direction: column;
   }
   
-  .button-form {
-    border-radius: 25px;
-    align-self: center;
-    width: 50px;
-    margin-top: 20px;
-  }
+  
   
   .button-position {
+    margin-top: 20px;
     width: 300px;
     display: flex;
     justify-content: space-around;
   }
   
+  .add-element {
+    color: green;
+    transform: scale(1.5);
+  }
+
+  .cancel-element {
+    color: red;
+    transform: scale(1.5);
+  }

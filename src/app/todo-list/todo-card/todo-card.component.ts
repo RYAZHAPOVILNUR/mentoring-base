@@ -8,6 +8,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CutTextPipe } from '../../pipes/max-lenght.pipe';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-todo-card',
@@ -19,6 +20,7 @@ import { CutTextPipe } from '../../pipes/max-lenght.pipe';
     MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
     CutTextPipe,
   ],
 })

@@ -9,7 +9,7 @@
       <mat-label>Введите email</mat-label>
       <input matInput formControlName="email" />
       <mat-error>Некорректное значение</mat-error>
-    </mat-form-field> 
+    </mat-form-field>
     <mat-form-field class="form-input">
       <mat-label>Введите website</mat-label>
       <input matInput formControlName="website" />
@@ -24,15 +24,25 @@
     </div>
     <mat-form-field class="form-input">
       <mat-label>Введите номер телефона</mat-label>
-      <input type="tel" placeholder="+7-xxx-xxx-xx-xx"
-       matInput formControlName="phone" />
+      <input
+        type="tel"
+        placeholder="+7-xxx-xxx-xx-xx"
+        matInput
+        formControlName="phone"
+      />
       <mat-error>Некорректное значение</mat-error>
     </mat-form-field>
     <div class="button-position">
-      <button class="button-form" mat-raised-button [disabled]="form.invalid" (click)="submitForm()">
-      Редактировать
-    </button>
-    <button class="button-form" mat-raised-button mat-dialog-close>Закрыть</button>
-  </div>
+      <button
+        mat-button
+        [disabled]="form.invalid"
+        (click)="submitForm()"
+        editTooltip="Редактировать данные пользователя">
+      <mat-icon class="add-element">expand_circle_down</mat-icon>
+      </button>
+      <button mat-button mat-dialog-close>
+        <mat-icon class="cancel-element">cancel</mat-icon>
+      </button>
+    </div>
   </form>
 </div>

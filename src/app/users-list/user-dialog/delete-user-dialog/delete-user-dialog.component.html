@@ -1,7 +1,15 @@
-<h2 mat-dialog-title>Вы действительно ходите удалить пользователя {{this.data.user.name}}?</h2>
-<mat-dialog-content>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button cdkFocusInitial [mat-dialog-close]="true">Delete</button>
-  <button mat-button mat-dialog-close>Cancel</button>
-</mat-dialog-actions>
+<mat-card class="component-forms" appearance="outlined">
+  <h3 mat-dialog-title>
+    Вы действительно ходите удалить пользователя {{ this.data.user.name }}?
+  </h3>
+  <mat-card-title>
+    <div class="button-position">
+    <button mat-button cdkFocusInitial [mat-dialog-close]="true">
+      <mat-icon class="delete-element">delete</mat-icon>
+    </button>
+    <button mat-button mat-dialog-close>
+      <mat-icon class="cancel-element">cancel</mat-icon>
+    </button>
+  </div>
+  </mat-card-title>
+</mat-card>
