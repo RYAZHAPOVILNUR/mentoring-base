@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <link rel="stylesheet" href="header.component.scss">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <section class="header--top">
+        <div class="nav-top">
+          <img class="frame-photo photo-left" src="/assets/head-logo.svg" alt="Лого фирмы">
+          <a class="header--nav-item">{{headerItem1}}</a>
+          <a class="header--nav-item">{{aboutCompany}}</a>
+          <a class="header--nav-item"*ngIf="isShowCatalog">{{headerItem3}}</a>
+          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+          <button (click)="changeMenuText()">Изменить текст</button>
+        </div>
+        <div class="header--right">
+          <div class="header--number-company">
+            <img src="/assets/phone-logo.svg" alt="Картинка телефона">
+            <a href="tel+79650842929">+7(965) 084-29-29</a>
+          </div>
+          <div class="header--heart-img">
+            <img src="/assets/heart-logo.svg" alt="Картинка сердечка">
+          </div>
+          <button class="header--basket-button">
+            <img src="/assets/basket-logo.svg" alt="Картика корзины">
+            <span class="basket-item">Пусто</span>
+          </button>
+        </div>
+      </section>
+      <section class="header--botton">
+        <img class="photo-left" src="/assets/fav-icon.svg" alt="Картинка favicon">
+        <div class="nav-botton" *ngFor="let item of menuItems">{{item}}
+          <!--<button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+          <button class="header--nav-item item-button">{{header2Item1}}</button>
+        -->
+        </div>
+        <div>
+          <input class="input-header" type="Поиск, например Круг зачистной " placeholder="Поиск, например Круг зачистной ">
+        </div>
+        <div class="location-icon">
+          <img class="map-pin" src="/assets/location-logo.svg" alt="Значок местоположения">
+          <span>Москва</span>
+        </div>
+      </section>
+      <!-- <section class="header--banner">
+        <button (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
+        <img *ngIf="isShowImg" src="/assets/page-banner.svg" alt="Картина банер страницы">
+      </section> -->
+    </div>
+  </header>
+</body>
+</html>

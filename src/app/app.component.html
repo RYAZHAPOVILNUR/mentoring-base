@@ -13,11 +13,12 @@
       <section class="header--top">
         <div class="nav-top">
           <img class="frame-photo photo-left" src="/assets/head-logo.svg" alt="Лого фирмы">
-          <a class="header--nav-item">{{headerItem1}}</a>
-          <a class="header--nav-item">{{aboutCompany}}</a>
-          <a class="header--nav-item"*ngIf="isShowCatalog">{{headerItem3}}</a>
-          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
-          <button (click)="changeMenuText()">Изменить текст</button>
+          <a class="header--nav-item" [style.cursor]="'pointer'" routerLink="/">{{headerItem1}}</a>
+          <a class="header--nav-item" [style.cursor]="'pointer'">{{aboutCompany}}</a>
+          <a class="header--nav-item" [style.cursor]="'pointer'" *ngIf="isShowCatalog">{{headerItem3}}</a>
+          <button class="transition-button" [style.cursor]="'pointer'" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+          <button class="transition-button" [style.cursor]="'pointer'" (click)="changeMenuText()">Изменить текст</button>
+          <button class="transition-button" [style.cursor]="'pointer'" routerLink="/users">{{usersList}}</button>
         </div>
         <div class="header--right">
           <div class="header--number-company">
@@ -51,13 +52,13 @@
           <span>Москва</span>
         </div>
       </section>
-      <section class="header--banner">
+      <!-- <section class="header--banner">
         <button (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
         <img *ngIf="isShowImg" src="/assets/page-banner.svg" alt="Картина банер страницы">
-      </section>
+      </section> -->
     </div>
   </header>
-  <main class="section">
+  <!-- <main class="section">
     <div class="content-container">
       <section class="section--rack rack">
         <div class="rack--items">
@@ -454,6 +455,7 @@
         </div>
       </div>
     </section>
-  </footer>
+  </footer> -->
+  <router-outlet></router-outlet>
 </body>
 </html>
