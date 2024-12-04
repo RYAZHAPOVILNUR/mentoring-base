@@ -1,0 +1,172 @@
+.header { 
+    align-items: center;
+    padding:0px 240px;   
+    display:flex;
+    justify-content: space-between;
+    height: 80px;
+    color: rgb(255, 255, 255);
+    background-color: #4B565E
+} 
+
+.uber {
+    display: flex;    
+}
+
+.jjj{ 
+    display: flex;
+    justify-content: space-between;    
+}
+
+.header-left{
+    display: flex;    
+}
+
+.logo{
+    height: 40px;
+    width: 61px;
+    align-items: center; 
+    margin-right: 30px;;  
+} 
+
+.header-left-txt{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header-right{
+    display: flex;
+} 
+
+.telefoon {
+    margin-right: 15px;
+}
+
+.number{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+}
+
+.heart{
+    margin-left: 30px;
+    margin-right:30px;
+}
+
+.karzina{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;    
+    height: 48px;
+    width:126px;
+    border: 1px solid #F0BA4E;
+    border-radius: 50px;
+    background: #4B565E;   
+} 
+
+.karzina-img{
+    height: 28px;
+    width: 28px;   
+}
+
+.karzina-text{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;   
+}
+
+.header-2{
+    display: flex;
+    height: 48px;
+    width: 100;
+    background: #f0b644;
+    padding: 0px 240px;
+    justify-content: space-between;
+}
+
+.header-2-left{
+    display: flex;
+    align-items: center;
+}
+
+.header-2-logo{
+    height: 16px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.header-2-left-txt{
+    display: flex;
+    gap:10px;   
+}
+
+.header-2-right{
+    display: flex;
+    align-items: center;
+}
+
+.search-box{
+    width: 400px;    
+    border-bottom: 1px solid black;
+    position: relative;    
+}
+
+.search{
+    width: 400px;
+    height: 28px;
+    background: transparent;
+    padding-left: 15px;
+    border: none;
+}
+
+
+.country{
+    margin-right: 4px;
+    color: #d8e5e9;
+    background-color: #F0BA4E;
+    border-style: solid;
+    border-width: 0;
+}
+
+
+.item-cards__pagination {
+    display: flex;
+    justify-content: end;
+
+    &-button {
+        font-family: inter; 
+        border: none;
+        background: none;
+        color: #bcc2c4;
+    }
+
+}
+.active-button{
+    color: #F0BA4E;
+    font-weight: 600;    
+}
+
+.item-card__grid {
+    display: flex; 
+} 
+
+.item-card__grid-left {
+    height: 421px;
+    width: 428px; 
+    max-height: 421px;
+    max-width:  428px;
+    background-image: url(/assets/image_19.png);
+    background-repeat no-repeat 
+    overflow: hidden; 
+}
