@@ -23,8 +23,14 @@ html {
  * Remove the margin in all browsers.
  */
 
-body {
+* {
+    font-family: Inter;
+}
+
+
+ body {
     margin: 0;
+    background-color: rgba(251, 251, 251, 1);
 }
 
 /**
