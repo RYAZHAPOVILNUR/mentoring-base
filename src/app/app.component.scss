@@ -136,7 +136,7 @@
     max-height: 428px;
     box-shadow: 0px 20px 50px 0px #3C3C3B12;
     max-width: 421px;
-    background-image: url(/assets/image_19.png);
+    background-image: url("/assets/image_19.png");
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: left;
@@ -161,7 +161,6 @@
 
 .item-cards__grid-left-action{
     align-self: end;
-    font-family: Inter;
 }
 
 .item-cards__grid-left-action-text{
@@ -261,7 +260,7 @@
 }
 
 .item-cards__grid-right-block-enamels{
-    background-image: url(/assets/enamels.png);
+    background-image: url("/assets/enamels.png");
     background-repeat: no-repeat;
     background-position-y: bottom;
     display: flex;
@@ -296,7 +295,7 @@
 }
 
 .item-cards__grid-right-block-paint{
-    background-image: url(/assets/Dulux.png);
+    background-image: url("/assets/Dulux.png");
     background-repeat: no-repeat;
     display: flex;
     background-position: right;
@@ -327,7 +326,7 @@
 }
 
 .item-cards__grid-right-block-glue{
-    background-image: url(/assets/glue1.png);
+    background-image: url("/assets/glue1.png");
     background-repeat: no-repeat;
     background-position: right;
     display: flex;
@@ -357,7 +356,7 @@
 }
 
 .item-cards__grid-right-block-socket{
-    background-image: url(/assets/socket1.png);
+    background-image: url("/assets/socket1.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-position-x: left;
