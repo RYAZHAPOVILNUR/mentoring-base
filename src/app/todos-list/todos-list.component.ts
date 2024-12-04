@@ -36,6 +36,6 @@ export class TodosListComponent {
   }
 
   ngOnInit() {
-    this.store.dispatch(TodosActions.set({ todos: [] }));
+    this.store.dispatch(TodosActions.load({ todos: [] }));
   }
 }

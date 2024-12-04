@@ -8,7 +8,7 @@ const initialState: { users: User[] } = {
 
 export const usersReducer = createReducer(
   initialState,
-  on(UsersActions.set, (state, payload) => ({
+  on(UsersActions.load, (state, payload) => ({
     ...state,
     users: payload.users,
   })),
@@ -24,13 +24,9 @@ export const usersReducer = createReducer(
   }),
   on(UsersActions.edit, (state, payload) => ({
     ...state,
-    users: state.users.map((user) => {
-      if (user.id === payload.user.id) {
-        return payload.user;
-      } else {
-        return user;
-      }
-    }),
+    users: state.users.map((user) =>
+      user.id === payload.user.id ? payload.user : user
+    ),
   })),
   on(UsersActions.create, (state, payload) => ({
     ...state,

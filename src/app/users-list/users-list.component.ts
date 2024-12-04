@@ -72,6 +72,6 @@ export class UsersListComponent {
   }
 
   ngOnInit() {
-    this.store.dispatch(UsersActions.set({ users: [] }));
+    this.store.dispatch(UsersActions.load({ users: [] }));
   }
 }

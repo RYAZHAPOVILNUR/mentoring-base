@@ -7,7 +7,7 @@ import { UsersActions } from './users.actions';
 export const loadUsers = createEffect(
   (actions$ = inject(Actions), usersService = inject(UsersApiService)) => {
     return actions$.pipe(
-      ofType(UsersActions.set),
+      ofType(UsersActions.load),
       switchMap(() =>
         usersService.getUsers().pipe(
           map((users) => UsersActions.loadedSuccess({ users })),
