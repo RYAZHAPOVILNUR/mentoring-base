@@ -11,7 +11,7 @@ export interface Todo {
 }
 
 @Component({
-  selector: 'app-users-list',
+  selector: 'app-todo-list',
   standalone: true,
   templateUrl: './todos-list.component.html',
   imports: [NgForOf, TodoCardComponent],
@@ -29,7 +29,7 @@ export class TodosListComponent {
       }
     )
   }
-  deleteTodo(id: any) {
+  deleteTodo(id: number) {
     this.todos = this.todos.filter(
       todo => {
         if (id === todo.id) {
