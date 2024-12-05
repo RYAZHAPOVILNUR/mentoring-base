@@ -1,67 +1,5 @@
 <body>
-    <section class="section">
-        <div class="header">
-            <div class="container">
-                <div class="header__left">
-                    <div class="header__logo">
-                        <img class="logo" src="../assets/logo.svg" alt="Лого">
-                    </div>
-                    <nav class="header__nav-left">
-                        <ul class="header__item-left">
-                            <li class="header__ist-left">
-                                <a href="#" class="header__list-link">Главная</a>
-                            </li>
-                            <li class="header__ist-left"> 
-                                <a href="#" class="header__list-link">{{aboutCompany}}</a>
-                            </li>
-                            <li class="header__ist-left">
-                                <a href="#" class="header__list-link">Каталог</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="header__right">
-                    <nav class="header__nav-right">
-                        <ul class="header__item-right">
-                            <li class="header__list-right">
-                                <img src="../assets/phone.svg" alt="телефон" class="phone__logo">
-                                <a href="tel: +7 (965) 084-29-29" class="header__list-link">+7 (965) 084-29-29</a>
-                            </li>
-                            <li class="header__list-right">
-                                <img src="../assets/heart.svg" alt="понравилось" class="like">
-                            </li>
-                        </ul>
-                    </nav>
-                    <button class="header__shop">
-                        <img src="../assets/basket.svg" alt="корзина">
-                        Пусто
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="header__wrapper">
-            <div class="container">
-                <div class="under__header-left">
-                    <div class="icon">
-                        <img src="../assets/burger.svg" alt="бургер меню">
-                    </div>
-                    <button (click)="changeText()" class="under__header-change"></button>
-                    <ul class="under__header-item">
-                        <li *ngFor="let item of menuItems">{{item}}</li>
-                    </ul>
-                </div>
-                <div class="under__header-right">
-                    <div class="right__wrapper">
-                        <input  class="header__input" type="search" name="поиск" placeholder="Поиск, например Круг зачистной">
-                        <div class="location">
-                            <img src="../assets/location.svg" alt="локация">
-                            <p>Москва</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <app-header></app-header>
     <section class="section wallpaper">
         <button (click)="isShowImg = !isShowImg"></button>
         <img *ngIf="isShowImg" class="wallpaper__shadow" src="../assets/shadow.png" alt="фоновое фото">
@@ -750,4 +688,5 @@
             </div>
         </div>
     </footer>
+    <router-outlet></router-outlet>
 </body>
