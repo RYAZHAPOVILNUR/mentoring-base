@@ -1,87 +1,28 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app.component.scss">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-</head>
-<body>
-  <header>
-    <div class="header">
-      <section class="header--top">
-        <div class="nav-top">
-          <img class="frame-photo photo-left" src="/assets/head-logo.svg" alt="Лого фирмы">
-          <a class="header--nav-item" [style.cursor]="'pointer'" routerLink="/">{{headerItem1}}</a>
-          <a class="header--nav-item" [style.cursor]="'pointer'">{{aboutCompany}}</a>
-          <a class="header--nav-item" [style.cursor]="'pointer'" *ngIf="isShowCatalog">{{headerItem3}}</a>
-          <button class="transition-button" [style.cursor]="'pointer'" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
-          <button class="transition-button" [style.cursor]="'pointer'" (click)="changeMenuText()">Изменить текст</button>
-          <button class="transition-button" [style.cursor]="'pointer'" routerLink="/users">{{usersList}}</button>
-        </div>
-        <div class="header--right">
-          <div class="header--number-company">
-            <img src="/assets/phone-logo.svg" alt="Картинка телефона">
-            <a href="tel+79650842929">+7(965) 084-29-29</a>
-          </div>
-          <div class="header--heart-img">
-            <img src="/assets/heart-logo.svg" alt="Картинка сердечка">
-          </div>
-          <button class="header--basket-button">
-            <img src="/assets/basket-logo.svg" alt="Картика корзины">
-            <span class="basket-item">Пусто</span>
-          </button>
-        </div>
-      </section>
-      <section class="header--botton">
-        <img class="photo-left" src="/assets/fav-icon.svg" alt="Картинка favicon">
-        <div class="nav-botton" *ngFor="let item of menuItems">{{item}}
-          <!--<button class="header--nav-item item-button">{{header2Item1}}</button>
-          <button class="header--nav-item item-button">{{header2Item1}}</button>
-          <button class="header--nav-item item-button">{{header2Item1}}</button>
-          <button class="header--nav-item item-button">{{header2Item1}}</button>
-          <button class="header--nav-item item-button">{{header2Item1}}</button>
-        -->
-        </div>
-        <div>
-          <input class="input-header" type="Поиск, например Круг зачистной " placeholder="Поиск, например Круг зачистной ">
-        </div>
-        <div class="location-icon">
-          <img class="map-pin" src="/assets/location-logo.svg" alt="Значок местоположения">
-          <span>Москва</span>
-        </div>
-      </section>
-      <!-- <section class="header--banner">
-        <button (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
-        <img *ngIf="isShowImg" src="/assets/page-banner.svg" alt="Картина банер страницы">
-      </section> -->
-    </div>
-  </header>
-  <!-- <main class="section">
-    <div class="content-container">
-      <section class="section--rack rack">
-        <div class="rack--items">
-          <img src="/assets/brick-logo.svg" alt="Картинка кирпичной стены">
-          <span><span class="rack--items-bold">Большой ассортимент</span><br>строительных материалов всегда в
-            наличии</span>
-        </div>
-        <div class="rack--items">
-          <img src="/assets/truck-logo.svg" alt="Картика грузовика доставки">
-          <span><span class="rack--items-bold">Доставка стройматериалов</span><br>в течении четырех часов или в <br>любое удобное время</span>
-        </div>
-        <div class="rack--items">
-          <img src="/assets/like-logo.svg" alt="Картинка лайк ">
-          <span>Многоуровневая <span class="rack--items-bold">система<br>управления качеством</span> по стандарту <br>ISO 9001</span>
-        </div>
-      </section>
-      <section class="item-cards">
-        <div>
-          <button class="item-cards--pagination item-cards--pagination-button pagination-button-yellow" *ngFor="let item of newPages">
-          {{item}}
-          </button>
-        </div>
-        <div class="item-cards--grid">
+<app-header></app-header>
+<!-- <main class="section">
+  <div class="content-container">
+    <section class="section--rack rack">
+      <div class="rack--items">
+        <img src="/assets/brick-logo.svg" alt="Картинка кирпичной стены">
+        <span><span class="rack--items-bold">Большой ассортимент</span><br>строительных материалов всегда в
+          наличии</span>
+      </div>
+      <div class="rack--items">
+        <img src="/assets/truck-logo.svg" alt="Картика грузовика доставки">
+        <span><span class="rack--items-bold">Доставка стройматериалов</span><br>в течении четырех часов или в <br>любое удобное время</span>
+      </div>
+      <div class="rack--items">
+        <img src="/assets/like-logo.svg" alt="Картинка лайк ">
+        <span>Многоуровневая <span class="rack--items-bold">система<br>управления качеством</span> по стандарту <br>ISO 9001</span>
+      </div>
+    </section>
+    <section class="item-cards">
+      <div>
+        <button class="item-cards--pagination item-cards--pagination-button pagination-button-yellow" *ngFor="let item of newPages">
+        {{item}}
+        </button>
+      </div>
+      <div class="item-cards--grid">
           <div class="item-cards--grid-left grid-left">
             <div class="grid-left--title-spray-gun">Строительный отделочный инструмент</div>
             <div class="grid-left--directory directory">
@@ -129,9 +70,9 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="bar-products">
+      </div>
+   </section>
+    <section class="bar-products">
         <div class="bar-products--title">
           <div class="title-bar-products--title">Популярные товары</div>
           <button class="title-bar-products--button">Посмотреть все товары</button>
@@ -262,81 +203,52 @@
             </div>
           </li>
         </ul>
-      </section>
-      <section class="main--mini-bar mini-bar">
+    </section>
+    <section class="main--mini-bar mini-bar">
         <div class="mini-bar--text">
           <span class="mini-bar--title">Более 10 000 наименований </span>
           <span class="mini-bar--paragraph">Инструмент для вашего бизнеса, разнообразных марок</span>
           <button class="mini-bar--catalog-button">Перейти в каталог</button>
         </div>
           <div class="mini-bar--background"></div>
-      </section>
-      <section class="bar-products">
-        <div class="bar-products--title">
+    </section>
+    <section class="bar-products">
+      <div class="bar-products--title">
           <div class="title-bar-products--title">Новинки</div>
           <button class="title-bar-products--button">Посмотреть все товары</button>
-        </div>
-        <ul class="bar-products--grid">
-          <li>
-            <div class="bar-products--grid--products-grid products-grid">
-              <div class="products-grid--grinding-wheel">
-                <button class="grinding-wheel--scroll-arrow-left-botton"></button>
-                <div class="grinding-wheel--top">
-                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
-                  <button class="grinding-wheel--top--favorites"></button>
-                </div>
-                <div class="bar-products--name">Круг зачистной 125х6х22</div>
-                <div class="bar-products--article">Артикул 00004</div>
-                <div class="bar-products--price">
-                  <span>Цена за штуку</span>
+      </div>
+      <ul class="bar-products--grid">
+        <li>
+          <div class="bar-products--grid--products-grid products-grid">
+            <div class="products-grid--grinding-wheel">
+              <button class="grinding-wheel--scroll-arrow-left-botton"></button>
+              <div class="grinding-wheel--top">
+                <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                <button class="grinding-wheel--top--favorites"></button>
+              </div>
+              <div class="bar-products--name">Круг зачистной 125х6х22</div>
+              <div class="bar-products--article">Артикул 00004</div>
+              <div class="bar-products--price">
+                <span>Цена за штуку</span>
+                <span>
+                  <span style="text-decoration-line: none;">52 руб.</span>
+                </span>
+              </div>
+              <div class="bar-products--button">
+                <div class="bar-products--button-left">
+                  <span>Количество </span>
                   <span>
-                    <span style="text-decoration-line: none;">52 руб.</span>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
                   </span>
                 </div>
-                <div class="bar-products--button">
-                  <div class="bar-products--button-left">
-                    <span>Количество </span>
-                    <span>
-                      <button>-</button>
-                      <span>1</span>
-                      <button>+</button>
-                    </span>
-                  </div>
-                  <button class="bar-products--button-right"><span>В корзину</span></button>
-                </div>
+                <button class="bar-products--button-right"><span>В корзину</span></button>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="bar-products--grid--products-grid products-grid">
-              <div class="products-grid--grinding-wheel">
-                <div class="grinding-wheel--top">
-                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
-                  <button class="grinding-wheel--top--favorites"></button>
-                </div>
-                <div class="bar-products--name">Круг зачистной 125х6х22</div>
-                <div class="bar-products--article">Артикул 00004</div>
-                <div class="bar-products--price">
-                  <span>Цена за штуку</span>
-                  <span>
-                    <span style="text-decoration-line: none;">52 руб.</span>
-                  </span>
-                </div>
-                <div class="bar-products--button">
-                  <div class="bar-products--button-left">
-                    <span>Количество </span>
-                    <span>
-                      <button>-</button>
-                      <span>1</span>
-                      <button>+</button>
-                    </span>
-                  </div>
-                  <button class="bar-products--button-right"><span>В корзину</span></button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
+          </div>
+        </li>
+        <li>
             <div class="bar-products--grid--products-grid products-grid">
               <div class="products-grid--grinding-wheel">
                 <div class="grinding-wheel--top">
@@ -364,9 +276,38 @@
                 </div>
               </div>
             </div>
-          </li>
-          <li>
+        </li>
+        <li>
             <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span style="text-decoration-line: none;">52 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+        </li>
+        <li>
+           <div class="bar-products--grid--products-grid products-grid">
               <div class="products-grid--grinding-wheel">
                 <button class="grinding-wheel--scroll-arrow-right-botton"></button>
                 <div class="grinding-wheel--top">
@@ -393,13 +334,13 @@
                   <button class="bar-products--button-right"><span>В корзину</span></button>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </div>
-  </main>
-  <footer class="footer">
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
+<footer class="footer">
     <section class="footer--section section">
       <div class="footer--top">
         <div class="footer--top-left">
@@ -455,7 +396,6 @@
         </div>
       </div>
     </section>
-  </footer> -->
-  <router-outlet></router-outlet>
-</body>
-</html>
+</footer> -->
+
+

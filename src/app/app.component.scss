@@ -33,6 +33,7 @@
   display: inherit;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .transition-button {
@@ -40,6 +41,7 @@
   border-radius: 54px;
   background-color: #F0BA4E;
   border: 1px solid #4B565E;
+  cursor: pointer;
 }
 
 .header--right {

@@ -34,7 +34,7 @@ const newPages:number[] = [5, 4, 3, 2, 1]
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NgFor, NgIf, RouterLink],
-  templateUrl: './app.component.html',
+  templateUrl: 'header/header.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {

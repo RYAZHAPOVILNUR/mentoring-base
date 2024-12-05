@@ -7,11 +7,10 @@ import { RouterOutlet } from "@angular/router";
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf, NgFor,],
+  imports: [NgIf, NgFor, RouterOutlet],
   templateUrl : './header.component.html',
   styleUrl : 'header.component.scss'
 })
-
 export class HeaderComponent {
   isShowCatalog = true;
 
@@ -22,6 +21,8 @@ export class HeaderComponent {
   readonly headerItem3 = 'Каталог';
 
   readonly aboutCompany = nameHeader
+
+  readonly usersList = nameUsersList
 
   // isShowImg = true
 
@@ -63,3 +64,9 @@ const user = {
 // user.name = 'Petr'
 
 console.log(user);
+
+const func2 = (usersName: string) => {return usersName}
+
+const nameUsersList: string = 'Пользователи'
+
+const vuzov2 = func2(nameUsersList)
