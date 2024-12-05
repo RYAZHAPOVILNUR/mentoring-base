@@ -6,12 +6,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { RedDirectiv } from '../../directiv/red.directiv';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-user-list-card',
   standalone: true,
-  imports: [CustomUpperCasePipe, PhonePipe, RedDirectiv],
+  imports: [CustomUpperCasePipe, PhonePipe, RedDirectiv, MatButtonModule],
   templateUrl: './user-list-card.component.html',
   styleUrl: './user-list-card.component.scss'
 })

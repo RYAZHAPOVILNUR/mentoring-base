@@ -28,7 +28,7 @@
         </mat-error>
     </mat-form-field>
 </form>
-<button mat-raised-button  type="submit" color="primary" class="add-user"  [disabled]="formUser.invalid" (click)="submitForm()">
+<button mat-raised-button  type="submit" color="primary" class="add-user"  [disabled]="formUser.invalid" (click)="submitForm()" matTooltip="Редактировать данные пользователя">
     Редактировать 
 </button>
 <button mat-raised-button color="primary" class="close-user" mat-dialog-close>

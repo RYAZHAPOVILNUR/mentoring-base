@@ -9,6 +9,7 @@ import { MatDialog} from "@angular/material/dialog";
 import { DeleteUserDialogComponent } from "./delete-user-dialog/delete-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { map, Observable, take } from "rxjs";
+import { ShadowDirective } from "../directiv/shadow.derictiv";
 
 
 // const consoleResponse = (response: any) => console.log(response);
@@ -19,7 +20,7 @@ import { map, Observable, take } from "rxjs";
     templateUrl: './users-list.components.html',
     styleUrl: './users-list.components.scss',
     standalone: true,
-    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe] ,
+    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe, ShadowDirective] ,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent {
@@ -85,7 +86,7 @@ export class UserListComponent {
         )
         .subscribe((existingUser) => {
           if (existingUser !== undefined) {
-            this.snackBar.open('Такой Email уже существует', 'ok', {
+            this.snackBar.open('Такой Email уже существует', 'Закрыть', {
               duration: 3000,
             });
           } else {
@@ -99,7 +100,7 @@ export class UserListComponent {
               },
               phone: formDate.phone,
             });
-            this.snackBar.open('Новый пользователь создан', 'ok', {
+            this.snackBar.open('Новый пользователь создан', 'Закрыть', {
               duration: 3000,
             });
           }

@@ -20,17 +20,8 @@ export class TodosService {
 
 
     createTodos(todo: Todo): void { 
-        const existingTodo = this.todosSubject$.value.find(
-            (currentElement) => (currentElement.title) === (todo.title)
-        );
-    
-        if (existingTodo !== undefined) {
-            alert('Задача с таким тексто уже существует')
-        }else {
             this.todosSubject$.next([...this.todosSubject$.value, todo]) 
-                alert('НОВАЯ ЗАДАЧА ДОБАВЛЕНА')
-            }
-        }
+    }
 
     
 

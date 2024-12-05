@@ -1,6 +1,7 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { YellowDirective } from '../directiv/yellow.directiv';
 
 
 const aboutCompanyFn = (Text: string) => Text;
@@ -18,7 +19,7 @@ console.log (upperCasemenuItems)
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, DatePipe],
+  imports: [NgFor, NgIf, RouterLink, DatePipe, YellowDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
