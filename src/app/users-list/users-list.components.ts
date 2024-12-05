@@ -19,7 +19,7 @@ import { map, Observable, take } from "rxjs";
     templateUrl: './users-list.components.html',
     styleUrl: './users-list.components.scss',
     standalone: true,
-    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe, CreateUserFormComponent] ,
+    imports: [NgFor, CommonModule, UserListCardComponent, AsyncPipe] ,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent {
@@ -97,6 +97,7 @@ export class UserListComponent {
               company: {
                 name: formDate.company.name,
               },
+              phone: formDate.phone,
             });
             this.snackBar.open('Новый пользователь создан', 'ok', {
               duration: 3000,

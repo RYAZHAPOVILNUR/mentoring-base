@@ -3,6 +3,9 @@ import { User } from '../users-list.interface';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
+import { PhonePipe } from '../../pipes/phone.pipe';
+import { RedDirectiv } from '../../directiv/red.directiv';
 
 
 @Component({
