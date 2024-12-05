@@ -39,7 +39,7 @@ export class CreateUserFormComponent {
   phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
  });
 
- public onSubmit(event: Event) {
+ public onSubmit() {
     this.dialogRef.close(this.formUser.value); 
  }
 }

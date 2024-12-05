@@ -29,15 +29,11 @@
                 Название компании введено НЕ ВЕРНО
             </mat-error>
         </mat-form-field>
-        <mat-form-field class="form-field">
-            <mat-label>Телефон</mat-label>
-            <input matInput type="url" formControlName="phone" />
-            <mat-error *ngIf="formUser.controls['phone'].invalid && (formUser.controls['phone'].dirty || formUser.controls['phone'].touched)">
-                Введите полный номер телефона
-            </mat-error>
-        </mat-form-field>
         <button mat-raised-button color="primary" class="add-user" (click)="onSubmit($event)"  [disabled]="formUser.invalid">
             Создать Пользователя
         </button>
     </form>
+    <button mat-raised-button color="primary" class="add-user"  type="submit" (click)="onSubmit()"  [disabled]="formUser.invalid">
+        Создать Пользователя
+    </button>
 </div>

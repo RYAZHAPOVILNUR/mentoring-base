@@ -19,28 +19,16 @@ export class UsersService {
         this.usersSubject$.next(
             this.usersSubject$.value.map(
                 users => users.id === editUser.id ? editUser: users));
-        this.snackBar.open('Пользователь успешно обновлен', 'Закрыть',);
     }
 
     createUsers(user: User) {
-    const existingUser = this.usersSubject$.value.find(
-        (currentElement) => (currentElement.email) === (user.email)
-    );
-
-    if (existingUser !== undefined) {
-        this.snackBar.open('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН', 'Закрыть',);
-      } else {
         this.usersSubject$.next([...this.usersSubject$.value, user]);
-        this.snackBar.open('НОВЫЙ ПОЛЬЗОВАТЕЛЬ ДОБАВЛЕН', 'Закрыть',);
-      }
     }
 
     deletedUsers(id: number) {
         this.usersSubject$.next (
             this.usersSubject$.value.filter(
                 item => item.id !== id ));
-
-        this.snackBar.open('ПОЛЬЗОВАТЕЛЬ УДАЛЕН', 'Закрыть',);
     }
 }
 
