@@ -1,7 +1,9 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { headerComponent } from "./header/header.component";
+import { HttpClient } from "@angular/common/http";
+import {UsersListComponent} from "./users-list/users-list.component"; 
 
 function getMenuName(menuName: string) {
   return menuName; 
@@ -20,7 +22,7 @@ let menuItems = ['Каталог','Стройматериалы','Инструм
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, headerComponent],
+  imports: [RouterOutlet, NgIf, NgFor, headerComponent, UsersListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -41,6 +43,18 @@ export class AppComponent {
     this.menuItems = this.menuItems.map(item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
     ); 
     this.isUpperCase = !this.isUpperCase; 
+  }
+
+  public apiService = inject(HttpClient); 
+  users = []; 
+
+  constructor() {
+      this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe(
+          (response:any) => {
+              this.users = response;
+              console.log('USERS: ', this.users) 
+          }
+      )
   }
 }
 
