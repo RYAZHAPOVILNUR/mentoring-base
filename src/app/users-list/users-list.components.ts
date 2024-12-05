@@ -75,18 +75,34 @@ export class UserListComponent {
       });
     }
 
-    public createUser(formData: createUser) {
-      this.usersService.createUsers({
-        id: new Date().getTime(),
-        name: formData.name,
-        email: formData.email,
-        website: formData.website,
-        company: {
-          name: formData.name
-        },
-      });
-      console.log('Дынные формы: ', event);
-      console.log(new Date().getTime());
-    }
+    public createUser(formDate: createUser) {
+      this.usersService.users$
+        .pipe(
+          take(1),
+          map((users) =>
+            users.find((existingUser) => existingUser.email === formDate.email)
+          )
+        )
+        .subscribe((existingUser) => {
+          if (existingUser !== undefined) {
+            this.snackBar.open('Такой Email уже существует', 'ok', {
+              duration: 3000,
+            });
+          } else {
+            this.usersService.createUsers({
+              id: new Date().getTime(),
+              name: formDate.name,
+              email: formDate.email,
+              website: formDate.website,
+              company: {
+                name: formDate.company.name,
+              },
+            });
+            this.snackBar.open('Новый пользователь создан', 'ok', {
+              duration: 3000,
+            });
+          }
+        });
+      }
 
   }   
