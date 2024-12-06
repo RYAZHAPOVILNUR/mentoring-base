@@ -1,12 +1,6 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {NgFor} from "@angular/common";
-
-export interface Todo {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
+import {Todo} from "../../interfaces/user-interface";
 
 @Component({
   selector: 'app-todo-card',
@@ -18,7 +12,7 @@ export interface Todo {
 
 export class TodoCardComponent {
   @Input()
-  todo: Todo | undefined;
+  todo!: Todo;
 
   @Output()
   deleteTodo: EventEmitter<number> = new EventEmitter();
