@@ -4,7 +4,7 @@ import { UsersApiService } from '../servises/users-api.servise';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../servises/users.service';
 import { IUser } from '../Interfaces/user.interface';
-import { map, pipe, take } from 'rxjs';
+import { map, take } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { UserAddButtonComponent } from './user-add-button/user-add-button.component';
@@ -26,7 +26,7 @@ import { UserAddButtonComponent } from './user-add-button/user-add-button.compon
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiService);
-  readonly usersService = inject(UsersService);
+  readonly usersService = inject(UsersService)
   private snackBar = inject(MatSnackBar);
   readonly dialog = inject(MatDialog);
 

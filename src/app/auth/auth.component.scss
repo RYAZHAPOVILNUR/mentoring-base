@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aqua;
+}
+
+.admin-button {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+}

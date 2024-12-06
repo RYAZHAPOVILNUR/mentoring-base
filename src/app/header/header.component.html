@@ -7,10 +7,9 @@
       <nav class="header-nav">
         <a class="header-nav-item" href="">{{ headerItem1 }}</a>
         <a class="header-nav-item" href="" routerLink="/">{{ aboutCompany }}</a>
-        <a class="header-nav-item" *ngIf="!isShowCatalog" href="">{{
-          headerItem3
-        }}</a>
+        <a class="header-nav-item" *ngIf="!isShowCatalog" href="">{{headerItem3}}</a>
       </nav>
+      <div class="button-position">
       <div class="changeMenuText">
         <button
           class="changeMenuText-buttons"
@@ -21,9 +20,16 @@
         <button class="changeMenuText-buttons" (click)="changeMenuText()">
           Изменить текст
         </button>
-        <button class="changeMenuText-buttons" routerLink="users">Админ</button>
+        <button class="changeMenuText-buttons" routerLink="users">Users</button>
         <button class="changeMenuText-buttons" routerLink="todos">Todos</button>
+        
       </div>
+      <div class="changeMenuAdmin-buttons">
+        <button class="changeMenuText-buttons" routerLink="admin">Admin</button>
+      <button class="changeMenuText-buttons"(click)="openDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
+      <button class="changeMenuText-buttons" (click)="logout()" *ngIf="(userService.user$ | async) !== null">Выйти</button>
+    </div>
+    </div>
     </div>
     <div class="header-right">
       <div class="logo-phone">
