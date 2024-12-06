@@ -2,7 +2,13 @@ import {Component, inject} from "@angular/core";
 import {TodosApiService} from "../todos-api.service";
 import {NgForOf} from "@angular/common";
 import {TodoCardComponent} from "./todo-card/todo-card.component";
-import {Todo} from "../interfaces/user-interface";
+
+export interface Todo {
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean
+}
 
 @Component({
   selector: 'app-todo-list',
