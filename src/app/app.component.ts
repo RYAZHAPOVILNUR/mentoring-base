@@ -2,6 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const func = (itemName: string) => {return itemName}
 
@@ -15,26 +16,11 @@ const nameUsersList: string = 'Пользователи'
 
 const vuzov2 = func2(nameUsersList)
 
-const newPages:number[] = [5, 4, 3, 2, 1]
-
-
-// const user = {
-  // name: 'Muaz',
-  // surname: 'Musaev',
-  // height: 175,
-  // weight: 68
-// }
-
-
-// user.name = 'Petr'
-
-// console.log(user);
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgIf, RouterLink],
-  templateUrl: 'header/header.component.html',
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
@@ -48,7 +34,7 @@ export class AppComponent {
   readonly headerItem2 = 'О';
 
   readonly headerItem3 = 'Каталог';
-  //
+
   readonly usersList = nameUsersList
   //header2
   // readonly header2Item1 = 'Каталог';
@@ -66,8 +52,6 @@ export class AppComponent {
   readonly aboutCompany = nameHeader
 
   isShowImg = true
-
-  readonly newPages:number[] = newPages;
 
   menuItems = upperCaseMenuItems;
 

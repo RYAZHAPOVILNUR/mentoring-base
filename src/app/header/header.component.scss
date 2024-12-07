@@ -1,0 +1,138 @@
+
+.header {
+  max-width: 1920px;
+  width: 100%;
+  display: block;
+  justify-content: space-around;
+}
+
+.header--top {
+  max-width: 1440px;
+  width: 100%;
+  height: 80px;
+  gap: 40px;
+  color: #F9FAFB;
+  padding: 0px 240px;
+  font-size: 16px;
+  background-color: #4B565E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-top, .nav-botton {
+  display: inherit;
+  justify-content: space-around;
+  gap: 24px;
+}
+
+.header--nav-item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.transition-button {
+  gap: 10px;
+  border-radius: 54px;
+  background-color: #F0BA4E;
+  border: 1px solid #4B565E;
+  cursor: pointer;
+}
+
+.header--right {
+  display: flex;
+}
+
+.header--number-company {
+  margin-right: 40px;
+  gap: 10px;
+  display: inherit;
+  align-items: center;
+}
+
+.header--heart-img {
+  margin-right: 40px;
+  display: inherit;
+  align-self: center;
+  width: 24px;
+  height: 24px;
+}
+
+.header--basket-button {
+  width: 106px;
+  height: 48px;
+  padding: 10px 20px;
+  gap: 10px;
+  border: 1px solid #F0BA4E;
+  border-radius: 50px;
+  width: 106px;
+  color: #F9FAFB;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header--botton {
+  max-width: 1440px;
+  width: 100%;
+  height: 48px;
+  gap: 24px;
+  color: #3C3C3B;
+  padding: 0px 240px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F0BA4E;
+}
+
+.basket-item {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.nav-botton {
+  margin-top: 5px;
+}
+
+.item-button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.input-header {
+  width: 400px;
+  height: 28px;
+  border: none;
+  border-bottom : 1px solid #3C3C3B;
+  background-color: #F0BA4E;
+  background-image: url("/assets/search-logo.svg");
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.search-header {
+  width: 12px;
+  height: 12px;
+}
+
+.location-icon {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 24px;
+}
+
+.map-min {
+  border: 1px solid #3C3C3B;
+  padding: 5px 5px 5px 40px;
+  height: 20px;
+}

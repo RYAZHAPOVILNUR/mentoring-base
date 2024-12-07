@@ -1,22 +1,21 @@
 КОМПОНЕНТ СПИСКА ЮЗЕРОВ
 
 <div class="main--user-list">
-  <div class="user-list" *ngFor="let item of users">
-    <p>{{$any(item).id}}</p>
-    <p>{{$any(item).name}}</p>
-    <p>{{$any(item).email}}</p>
-    <p>{{$any(item).aboutCompany}}</p>
-    <p>{{$any(item).address.street}}</p>
-    <p>{{$any(item).address.suite}}</p>
-    <p>{{$any(item).address.city}}</p>
-    <p>{{$any(item).address.zipcode}}</p>
-    <p>{{$any(item).address.geo.lat}}</p>
-    <p>{{$any(item).address.geo.lng}}</p>
-    <p>{{$any(item).phone}}</p>
-    <p>{{$any(item).website}}</p>
-    <p>{{$any(item).company.name}}</p>
-    <p>{{$any(item).company.catchPhrase}}</p>
-    <p>{{$any(item).company.bs}}</p>
-    <button [style.cursor]="'pointer'" class="user-delete-button" (click)="deleteUser(item.id)">Удалить юзера</button>
+  <div class="user-list" *ngFor="let user of users">
+    <p>{{(user).name}}</p>
+    <p>{{(user).username}}</p>
+    <p>{{(user).email}}</p>
+    <p>{{(user).address.street}}</p>
+    <p>{{(user).address.suite}}</p>
+    <p>{{(user).address.city}}</p>
+    <p>{{(user).address.zipcode}}</p>
+    <p>{{(user).address.geo.lat}}</p>
+    <p>{{(user).address.geo.lng}}</p>
+    <p>{{(user).phone}}</p>
+    <p>{{(user).website}}</p>
+    <p>{{(user).company.name}}</p>
+    <p>{{(user).company.catchPhrase}}</p>
+    <p>{{(user).company.bs}}</p>
+    <button class="user-delete-button" (click)="deleteUser(user.id)">Удалить юзера</button>
   </div>
 </div>

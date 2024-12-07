@@ -1,15 +1,15 @@
 import { NgIf, NgFor } from "@angular/common";
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterLink } from "@angular/router";
 
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf, NgFor, RouterOutlet],
+  imports: [NgIf, NgFor, RouterLink],
   templateUrl : './header.component.html',
-  styleUrl : 'header.component.scss'
+  styleUrl : './header.component.scss'
 })
 export class HeaderComponent {
   isShowCatalog = true;
@@ -52,18 +52,6 @@ const func = (itemName: string) => {return itemName}
 const nameHeader: string = 'О компании'
 
 const vuzov = func(nameHeader)
-
-const user = {
-  name: 'Muaz',
-  surname: 'Musaev',
-  height: 175,
-  weight: 68
-}
-
-
-// user.name = 'Petr'
-
-console.log(user);
 
 const func2 = (usersName: string) => {return usersName}
 

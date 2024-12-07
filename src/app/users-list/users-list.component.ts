@@ -8,8 +8,8 @@ import { Component, inject, Injectable } from "@angular/core";
 export interface User {
   id: number;
   name: string;
+  username: string;
   email: string;
-  aboutCompany: string;
   address: {
     street: string;
     suite: string;
@@ -19,7 +19,6 @@ export interface User {
       lat: string;
       lng: string;
     };
-
   };
   phone: string;
   website: string;
@@ -46,15 +45,14 @@ export class UsersListComponent {
       (response: any) => {
         this.users = response;
         console.log('USERS:', this.users);
-
       }
     )
   }
 
   deleteUser(id: number) {
     this.users = this.users.filter(
-      item => {
-        if (id === item.id) {
+      user => {
+        if (id === user.id) {
           return false
         } else {
           return true

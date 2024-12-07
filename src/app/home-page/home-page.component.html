@@ -1,0 +1,345 @@
+<main class="section">
+  <section class="main--banner">
+    <button (click)="isShowImg = !isShowImg">Скрыть/Показать мужика</button>
+    <img *ngIf="isShowImg" src="/assets/page-banner.svg" alt="Картина банер страницы">
+  </section>
+  <div class="content-container">
+    <section class="section--rack rack">
+      <div class="rack--items">
+        <img src="/assets/brick-logo.svg" alt="Картинка кирпичной стены">
+        <span><span class="rack--items-bold">Большой ассортимент</span><br>строительных материалов всегда в
+          наличии</span>
+      </div>
+      <div class="rack--items">
+        <img src="/assets/truck-logo.svg" alt="Картика грузовика доставки">
+        <span><span class="rack--items-bold">Доставка стройматериалов</span><br>в течении четырех часов или в <br>любое удобное время</span>
+      </div>
+      <div class="rack--items">
+        <img src="/assets/like-logo.svg" alt="Картинка лайк ">
+        <span>Многоуровневая <span class="rack--items-bold">система<br>управления качеством</span> по стандарту <br>ISO 9001</span>
+      </div>
+    </section>
+    <section class="item-cards">
+      <div class="item-cards--pagination">
+        <button class="item-cards--pagination-button pagination-button-yellow" *ngFor="let item of newPages">
+        {{item}}
+        </button>
+      </div>
+      <div class="item-cards--grid">
+          <div class="item-cards--grid-left grid-left">
+            <div class="grid-left--title-spray-gun">Строительный отделочный инструмент</div>
+            <div class="grid-left--directory directory">
+              <span style="margin-right: 10px;">Перейти в каталог</span>
+              <a class="directory--button">
+                <img src="/assets/arrow-button.svg" alt="Перейти в каталог">
+              </a>
+            </div>
+          </div>
+          <div class="item-cards--grid-right grid-right">
+            <div class="grid-right--block block-enamels background-enamels">
+              <div class="block-enamels--title-enamels">Эмали</div>
+              <div class="grid-right--directory directory">
+                <span style="margin-right: 10px;">Перейти в каталог</span>
+                <a class="directory--button">
+                  <img src="/assets/arrow-button.svg" alt="Перейти в каталог">
+                </a>
+              </div>
+            </div>
+            <div class="grid-right--block block-paint-varnish-materials background-paint-varnish-materials">
+                <div class="block-paint-varnish-materials--title-paint-varnish-materials">Лакокрасочные материалы</div>
+                <div class="grid-right--directory directory">
+                  <span style="margin-right: 10px;">Перейти в каталог</span>
+                  <a class="directory--button">
+                    <img src="/assets/arrow-button.svg" alt="Перейти в каталог">
+                  </a>
+                </div>
+            </div>
+            <div class="grid-right--block block-foams-adhesives-sealants background-foams-adhesives-sealants">
+                <div class="block-foams-adhesives-sealants--title-foams-adhesives-sealants">Пены, клеи и герметики</div>
+                <div class="grid-right--directory directory">
+                  <span style="margin-right: 10px;">Перейти в каталог</span>
+                  <a class="directory--button">
+                    <img src="/assets/arrow-button.svg" alt="Перейти в каталог">
+                  </a>
+                </div>
+            </div>
+            <div class="grid-right--block block-sockets-switches background-sockets-switches">
+              <div class="block-sockets-switches--title-sockets-switches">Розетки и выключатели</div>
+              <div class="grid-right--directory directory">
+                <span style="margin-right: 10px;">Перейти в каталог</span>
+                <a class="directory--button">
+                  <img src="/assets/arrow-button.svg" alt="Перейти в каталог">
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+   </section>
+    <section class="bar-products">
+        <div class="bar-products--title">
+          <div class="title-bar-products--title">Популярные товары</div>
+          <button class="title-bar-products--button">Посмотреть все товары</button>
+        </div>
+        <ul class="bar-products--grid">
+          <li>
+            <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <!-- <button class="grinding-wheel--scroll-arrow-left-top"></button> -->
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--discounts">%</button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span>52 руб.</span>
+                    <span>48 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--discounts">%</button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span>52 руб.</span>
+                    <span>48 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <div class="grinding-wheel--top">
+                  <div class="top--new-discounts">
+                    <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                    <button class="grinding-wheel--top--discounts">%</button>
+                  </div>
+                    <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span>52 руб.</span>
+                    <span>48 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <!-- <button class="grinding-wheel--scroll-arrow-right-top"></button> -->
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span style="text-decoration-line: none;">52 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+    </section>
+    <section class="main--mini-bar mini-bar">
+        <div class="mini-bar--text">
+          <span class="mini-bar--title">Более 10 000 наименований </span>
+          <span class="mini-bar--paragraph">Инструмент для вашего бизнеса, разнообразных марок</span>
+          <button class="mini-bar--catalog-button">Перейти в каталог</button>
+        </div>
+          <div class="mini-bar--background"></div>
+    </section>
+    <section class="bar-products">
+      <div class="bar-products--title">
+          <div class="title-bar-products--title">Новинки</div>
+          <button class="title-bar-products--button">Посмотреть все товары</button>
+      </div>
+      <ul class="bar-products--grid">
+        <li>
+          <div class="bar-products--grid--products-grid products-grid">
+            <div class="products-grid--grinding-wheel">
+              <!-- <button class="grinding-wheel--scroll-arrow-left-botton"></button> -->
+              <div class="grinding-wheel--top">
+                <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                <button class="grinding-wheel--top--favorites"></button>
+              </div>
+              <div class="bar-products--name">Круг зачистной 125х6х22</div>
+              <div class="bar-products--article">Артикул 00004</div>
+              <div class="bar-products--price">
+                <span>Цена за штуку</span>
+                <span>
+                  <span style="text-decoration-line: none;">52 руб.</span>
+                </span>
+              </div>
+              <div class="bar-products--button">
+                <div class="bar-products--button-left">
+                  <span>Количество </span>
+                  <span>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                  </span>
+                </div>
+                <button class="bar-products--button-right"><span>В корзину</span></button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+            <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span style="text-decoration-line: none;">52 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+        </li>
+        <li>
+            <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span style="text-decoration-line: none;">52 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+            </div>
+        </li>
+        <li>
+           <div class="bar-products--grid--products-grid products-grid">
+              <div class="products-grid--grinding-wheel">
+                <!-- <button class="grinding-wheel--scroll-arrow-right-botton"></button> -->
+                <div class="grinding-wheel--top">
+                  <button class="grinding-wheel--top--new"><span>Новинка</span></button>
+                  <button class="grinding-wheel--top--favorites"></button>
+                </div>
+                <div class="bar-products--name">Круг зачистной 125х6х22</div>
+                <div class="bar-products--article">Артикул 00004</div>
+                <div class="bar-products--price">
+                  <span>Цена за штуку</span>
+                  <span>
+                    <span style="text-decoration-line: none;">52 руб.</span>
+                  </span>
+                </div>
+                <div class="bar-products--button">
+                  <div class="bar-products--button-left">
+                    <span>Количество </span>
+                    <span>
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </span>
+                  </div>
+                  <button class="bar-products--button-right"><span>В корзину</span></button>
+                </div>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
