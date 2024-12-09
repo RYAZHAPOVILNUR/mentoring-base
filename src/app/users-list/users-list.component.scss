@@ -1,11 +1,17 @@
-// .userCard {
-//     width: 200px;
-//     height: 200px;
-//     border: 1px solid rgba(240, 186, 78, 1);
-//     margin: 5px;
-//     padding: 10px;
+.userCard {
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(240, 186, 78, 1);
+    margin: 5px;
+    padding: 10px;
 
-// }
+}
+
+.userCards {
+    
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .cardName {
     font-weight: bold;

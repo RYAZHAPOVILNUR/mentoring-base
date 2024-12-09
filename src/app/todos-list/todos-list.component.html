@@ -9,10 +9,12 @@
         rel="stylesheet">
 </head>
 <body>
-    <div style="display: flex; flex-wrap: wrap;" class="todoCards">
-        <div *ngFor="let todo of todos" class="todoCard">
-            <app-todo-card [todo]="todo" (deleteTodo)='deleteTodo($event)' ></app-todo-card>
-        </div>
+    <div class="todoCards">
+        <ng-container class="todoCards" *ngFor="let todo of todosService.todosSubject | async">
+            <div class="todoCard">
+                <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+            </div>        
+        </ng-container>
     </div>
 </body>
 </html>

@@ -1,0 +1,13 @@
+.todoCard {
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgba(240, 186, 78, 1);
+    margin: 5px;
+    padding: 10px;
+}
+
+.todoCards {
+    
+    display: flex;
+    flex-wrap: wrap;
+}
