@@ -62,6 +62,10 @@ export class UserCardComponent {
     });
   }
 
+  onDeleteUser(userId: IUser) {
+    this.deleteUser.emit(userId);
+  }
+
   openEditDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
@@ -79,9 +83,5 @@ export class UserCardComponent {
         });
       }
     });
-  }
-
-  onDeleteUser(userId: IUser) {
-    this.deleteUser.emit(userId);
   }
 }

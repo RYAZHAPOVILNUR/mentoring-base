@@ -1,6 +1,6 @@
 <app-todo-add-button (createTodo)="createTodo($event)"></app-todo-add-button>
 <div class="component-cards">
-  <div *ngFor="let todo of todosService.todos$ | async">
+  <div *ngFor="let todo of todos$ | async">
     <app-todo-card
       [todo]="todo"
       (deleteTodo)="deleteTodo(todo.id)"

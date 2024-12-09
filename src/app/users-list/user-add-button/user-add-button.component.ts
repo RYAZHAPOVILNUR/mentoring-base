@@ -5,8 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { IUser } from '../../Interfaces/user.interface';
 import { CreateUserDialogComponent } from '../user-dialog/create-user-dialog/create-user-dialog.component';
 
-
-
 @Component({
   selector: 'app-user-add-button',
   standalone: true,

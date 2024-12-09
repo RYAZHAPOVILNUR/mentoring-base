@@ -2,12 +2,14 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TodosApiService } from '../servises/todos-api.servise';
 import { TodoCardComponent } from './todo-card/todo-card.component';
-import { TodosService } from '../servises/todos.service';
 import { ITodo } from '../Interfaces/todo.interface';
 import { TodoAddButtonComponent } from './todo-add-button/todo-add-button.component';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, take } from 'rxjs';
+import { selectTodos } from './store/todos.selectors';
+import { Store } from '@ngrx/store';
+import { TodosActions } from './store/todos.actions';
 
 @Component({
   selector: 'app-todos-list',
@@ -25,47 +27,34 @@ import { map, take } from 'rxjs';
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
-  readonly todosService = inject(TodosService);
   readonly dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+  private readonly store = inject(Store);
+  public readonly todos$ = this.store.select(selectTodos);
 
   constructor() {
     this.todosApiService.getTodos().subscribe((response: ITodo[]) => {
-      this.todosService.setTodos(response);
+      this.store.dispatch(TodosActions.set({ todos: response }));
     });
   }
   public deleteTodo(id: number) {
-    this.todosService.deleteTodo(id);
+    this.store.dispatch(TodosActions.delete({ id }));
   }
 
   public createTodo(todo: ITodo) {
-    this.todosService.todos$
-      .pipe(
-        take(1),
-        map((todos) =>
-          todos.find((existingTodo) => existingTodo.title === todo.title)
-        )
-      )
-      .subscribe((existingTodo) => {
-        if (existingTodo !== undefined) {
-          this.snackBar.open('Такая задача уже существует', 'ok', {
-            duration: 3000,
-          });
-        } else {
-          this.todosService.createTodo({
-            id: new Date().getTime(),
-            userId: todo.userId,
-            title: todo.title,
-            completed: todo.completed,
-          });
-          this.snackBar.open('Новая задача создана', 'ok', {
-            duration: 3000,
-          });
-        }
-      });
+    const newTodo = {
+      id: new Date().getTime(),
+      userId: todo.userId,
+      title: todo.title,
+      completed: todo.completed,
+    };
+    this.store.dispatch(TodosActions.create({ todo: newTodo }));
+    this.snackBar.open('Новая задача создана', 'ok', {
+      duration: 3000,
+    });
   }
 
   public editTodo(formDialogValue: ITodo) {
-    this.todosService.editTodo(formDialogValue);
+    this.store.dispatch(TodosActions.edit({ todo: formDialogValue }));
   }
 }
