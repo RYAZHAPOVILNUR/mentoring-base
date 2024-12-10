@@ -1,11 +1,11 @@
 <div class="task-block">
   <p>ТЕКС ЗАДАЧИ</p>
-  <div>{{todo!.title}}</div>
+  <div>{{todo.title}}</div>
 
   <p>АВТОР ЗАДАЧИ</p>
-  <div>{{todo!.userId}}</div>
+  <div>{{todo.userId}}</div>
 
   <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
-  <div>{{todo!.completed ? 'ДА' : 'НЕТ'}}</div>
+  <div>{{todo.completed ? 'ДА' : 'НЕТ'}}</div>
   <button (click)=onDeleteTodo(todo.id)>УДАЛИТЬ ЗАДАЧУ</button>
 </div>
