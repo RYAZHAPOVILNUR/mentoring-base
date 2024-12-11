@@ -1,28 +1,27 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { ITodo } from "../todos-list.component";
+import { Component, EventEmitter, inject, Input, Output } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { ITodo } from "../../interfaces/todo.interface";
+import { CharacterLimitPipe } from "../../pipes/character-limit.pipe";
 
-@Component ({
+@Component({
     selector: 'app-todo-card',
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
-    standalone: true
+    standalone: true,
+    imports: [CharacterLimitPipe]
 })
 
 export class TodoCardComponent {
-    constructor(private snackBar: MatSnackBar) {}
+    private snackBar = inject(MatSnackBar)
 
     @Input()
-    todo!: ITodo 
+    todo!: ITodo
 
     @Output()
     deleteTodo = new EventEmitter()
 
     onDeleteTodo(userId: number) {
         this.deleteTodo.emit(userId)
-    }
-    
-    snackBarTodo() {
         this.snackBar.open('Задача успешно удалена', 'Закрыть')
     }
 }

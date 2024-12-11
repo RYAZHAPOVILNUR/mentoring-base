@@ -3,6 +3,7 @@ import { IUser } from "../../interfaces/user.interface";
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { NumberEditingPipe } from "../../pipes/number-editing.pipe";
 
 
 
@@ -10,14 +11,15 @@ import { MatSnackBar } from "@angular/material/snack-bar";
     selector: 'app-user-card',
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
-    standalone: true
+    standalone: true,
+    imports: [NumberEditingPipe]
 })
 
-export class UserCardComponent<T extends IUser> {
-    constructor(private snackBar: MatSnackBar) {}
+export class UserCardComponent {
+    private snackBar = inject(MatSnackBar)
 
     @Input() 
-    public user!: T
+    public user!: IUser
 
     @Output() 
     public deleteUser: EventEmitter<number> = new EventEmitter<number>()
@@ -40,9 +42,6 @@ export class UserCardComponent<T extends IUser> {
 
     public onDeleteUser(userId: number): void {
         this.deleteUser.emit(userId)
-    }
-
-    public snackBarUserDelete() {
         this.snackBar.open('Пользователь успешно удалён', 'Закрыть')
     }
 }

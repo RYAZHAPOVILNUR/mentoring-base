@@ -6,13 +6,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogRef } from "@angular/material/dialog";
-import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
+import { UserCreateButtonComponent } from "./create-user-dialog/user-create-button.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 
 @Component({
-  selector: 'app-create-user-form',
-  templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss',
+  selector: 'app-user-create-dialog',
+  templateUrl: './user-create-dialog.component.html',
+  styleUrl: './user-create-dialog.component.scss',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -25,8 +26,9 @@ import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dial
   ]
 })
 
-export class CreateUserFormComponent {
-  readonly dialogRef = inject(MatDialogRef<CreateUserDialogComponent>)
+export class UserCreateDialogComponent {
+  private snackBar = inject(MatSnackBar)
+  readonly dialogRef = inject(MatDialogRef<UserCreateButtonComponent>)
 
   public form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -39,6 +41,7 @@ export class CreateUserFormComponent {
 
   public submitForm(): void {
     this.dialogRef.close(this.form.value)
+    this.snackBar.open('Пользователь успешно добавлен', 'Закрыть')
     console.log(this.form.value)
   }
 }

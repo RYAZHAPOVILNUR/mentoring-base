@@ -14,7 +14,8 @@ import { MatSnackBar } from "@angular/material/snack-bar";
     templateUrl: './edit-user-dialog.component.html',
     styleUrl: './edit-user-dialog.component.scss',
     standalone: true,
-    imports: [ReactiveFormsModule,
+    imports: [
+        ReactiveFormsModule,
         MatFormField,
         MatInput,
         MatDividerModule,
@@ -27,7 +28,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 
 export class EditUserDialogComponent {
-    constructor(private snackBar: MatSnackBar) { }
+    private snackBar = inject(MatSnackBar)
 
     readonly data = inject(MAT_DIALOG_DATA)
     readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>)
@@ -41,14 +42,8 @@ export class EditUserDialogComponent {
         })
     })
 
-    userWithUpdatedFields() {
-        return {
-            ...this.form.value,
-            id: this.data.user.id
-        }
-    }
-
     public submitForm() {
         this.dialogRef.close({ ...this.form.value, id: this.data.user.id })
+        this.snackBar.open('Пользователь успешно изменён', 'Закрыть')
     }
 }

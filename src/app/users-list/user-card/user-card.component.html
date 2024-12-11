@@ -3,6 +3,7 @@
     <p>{{user.email}}</p>
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
-    <button (click)="snackBarUserDelete()" (click)="onDeleteUser(user.id)" class="button_card">Delete user</button>
+    <p>{{user.phone | numberEditing }}</p>
+    <button (click)="onDeleteUser(user.id)" class="button_card">Delete user</button>
     <button (click)="openDialog()" class="button_card button_card_edit">Edit user</button>
 </div>

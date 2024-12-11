@@ -13,7 +13,7 @@ export interface IUser {
             lng: string
         }
     },
-    phone?: string,
+    phone: string,
     website: string,
     company: {
         name: string,
@@ -30,4 +30,5 @@ export interface ICreateUser {
     company: {
         name: string
     }
+    phone: string
 }

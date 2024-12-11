@@ -3,28 +3,25 @@ import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { UsersApiService } from "../services/users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../services/user.service";
-import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
 import { ICreateUser, IUser } from "../interfaces/user.interface";
-import { CreateUserDialogComponent } from "../create-user-form/create-user-dialog/create-user-dialog.component";
+import { UserCreateButtonComponent } from "../create-user-form/create-user-dialog/user-create-button.component";
 
 @Component({
     selector: 'app-users-list',
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserDialogComponent],
+    imports: [NgFor, UserCardComponent, AsyncPipe, UserCreateButtonComponent],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class UsersListComponent {
-
     readonly usersApiServise = inject(UsersApiService)
     readonly usersService = inject(UsersService)
-    
 
     constructor() {
         this.usersApiServise.getUsers().subscribe(
-            (response: any) => {
+            (response: IUser[]) => {
                 this.usersService.setUsers(response)
             },
             (error: any) => {
@@ -36,7 +33,7 @@ export class UsersListComponent {
             users => console.log(users)
         )
     }
-    
+
     public deleteUser(id: number) {
         this.usersService.deleteUsers(id)
     }
@@ -54,6 +51,7 @@ export class UsersListComponent {
             company: {
                 name: formData.company.name,
             },
+            phone: formData.phone
         })
         console.log('Данные формы: ', event)
     }
