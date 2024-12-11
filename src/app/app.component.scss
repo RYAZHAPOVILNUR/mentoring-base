@@ -34,11 +34,15 @@
     margin-left: 40px;
 }
 
-button {
+.cart-container {
     background-color: transparent;
     border: 1px solid #F0BA4E;
     border-radius: 50px;
     color: #F9FAFB;
+}
+
+.cart-container:hover {
+    background-color: yellow;
 }
 
 .cart-container {

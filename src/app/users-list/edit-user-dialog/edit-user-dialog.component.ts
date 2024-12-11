@@ -8,6 +8,7 @@ import { MatFormField, MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInput, MatInputModule } from "@angular/material/input";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { MatTooltipModule, TooltipPosition } from "@angular/material/tooltip";
 
 @Component({
     selector: 'app-edit-user-dialog',
@@ -23,7 +24,8 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
-        NgIf
+        NgIf,
+        MatTooltipModule
     ]
 })
 
@@ -46,4 +48,7 @@ export class EditUserDialogComponent {
         this.dialogRef.close({ ...this.form.value, id: this.data.user.id })
         this.snackBar.open('Пользователь успешно изменён', 'Закрыть')
     }
+
+    positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+    position = new FormControl(this.positionOptions[0]);
 }

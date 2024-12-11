@@ -30,7 +30,10 @@
             Поле не может быть пустым.
         </mat-error>
     </mat-form-field>
-    <button class="custom-button-style" mat-raised-button color="primary" [disabled]="form.invalid" (click)="submitForm()">
+    <button class="custom-button-style" mat-raised-button color="primary" [disabled]="form.invalid"
+        (click)="submitForm()" #tooltip="matTooltip" matTooltip="Редактировать данные пользователя"
+        [matTooltipPosition]="position.value!" matTooltipHideDelay="100000"
+        aria-label="Button that displays a tooltip that hides when scrolled out of the container">
         Edit user
     </button>
 </form>

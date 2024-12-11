@@ -1,6 +1,6 @@
 <app-user-create-button (createUser)="createUser($event)"></app-user-create-button>
 <div class="users_cards_container">
-    <div class="users_cards" *ngFor="let user of usersService.users$ | async">
+    <div shadow class="users_cards" *ngFor="let user of usersService.users$ | async">
         <app-user-card [user]="user" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-user-card>
     </div>
 </div>

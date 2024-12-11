@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { NumberEditingPipe } from "../../pipes/number-editing.pipe";
+import { MatTooltipModule, TooltipPosition } from '@angular/material/tooltip';
+import { FormControl } from "@angular/forms";
 
 
 
@@ -12,22 +14,23 @@ import { NumberEditingPipe } from "../../pipes/number-editing.pipe";
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
     standalone: true,
-    imports: [NumberEditingPipe]
+    imports: [NumberEditingPipe, MatTooltipModule]
 })
 
 export class UserCardComponent {
     private snackBar = inject(MatSnackBar)
 
-    @Input() 
+    @Input()
     public user!: IUser
 
-    @Output() 
+    @Output()
     public deleteUser: EventEmitter<number> = new EventEmitter<number>()
 
     @Output()
     public editUser = new EventEmitter<IUser>()
 
     readonly dialog = inject(MatDialog)
+    above: any;
 
     openDialog(): void {
         const dialogRef = this.dialog.open(EditUserDialogComponent, {
@@ -44,4 +47,7 @@ export class UserCardComponent {
         this.deleteUser.emit(userId)
         this.snackBar.open('Пользователь успешно удалён', 'Закрыть')
     }
+
+    positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+    position = new FormControl(this.positionOptions[0]);
 }
