@@ -31,5 +31,4 @@ export class RedDirectiv {
         this.textTransform = 'lowercase';
         console.log('white');
     }
-
 }

@@ -3,12 +3,12 @@
         <div class="header-logo"><img src="/assets/Logo EGE.svg" alt="Логотип сайта"></div>
         <nav class="header-nav">
           <a routerLink="/" class="header-nav-item">{{headerItem1}}</a>
-          <a routerLink="/" class="header-nav-item">{{aboutCompany}} </a>
+          <a routerLink="/users" class="header-nav-item">{{aboutCompany}} </a>
           <a href="catalog.html" class="header-nav-item" *ngIf="IsShowCatalog">{{headerItem3}}</a>
         </nav>
         <button (click)="IsShowCatalog=!IsShowCatalog">Скрыть/Показать каталог</button>
         <button (click)="changeMenuText()">Capslock</button>
-        <button  routerLink="users">Админка</button>
+        <button  routerLink="admin">Админка</button>
         <button  routerLink="todos">Задачи</button>
     </div>
     <div class="header-right">
@@ -19,6 +19,8 @@
         <img class="header-logo4" src="/assets/Basket.svg" alt="Логотип корзины">
         <span>Пусто</span>
         </button> 
+        <button (click)="openDialog()" *ngIf="(userServise.users$ | async) === null">Войти</button>
+        <button (click)="logout()" *ngIf="(userServise.users$ | async) !== null">Выйти</button>
     </div>
   </div> 
   <div class="header2">

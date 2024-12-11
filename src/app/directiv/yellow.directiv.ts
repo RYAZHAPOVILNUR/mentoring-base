@@ -22,5 +22,4 @@ export class YellowDirective {
     leave() {
     this.color = '#4B565E';
     }
-
 }
