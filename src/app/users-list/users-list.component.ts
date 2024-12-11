@@ -33,21 +33,26 @@ export class UsersListComponent {
       this.usersService.setUsers(response);
     });
   }
-
+  
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
-  public createUser(formData: any) {
+  editUser(user: User) {
+    this.usersService.editUser(
+      user
+    );
+  }
+  public createUser(user: CreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
-      name: formData.name,
-      email: formData.email,
-      website: formData.website,
+      name: user.name,
+      email: user.email,
+      website: user.website,
       company: {
-        name: formData.companyName,
+        name: user.company.name,
       },
     });
-    console.log('Данные формы:', event);
+    console.log('Данные формы:');
     console.log(new Date().getTime());
   }
 }
@@ -73,5 +78,15 @@ export interface User {
     name: string;
     catchPhrase?: string;
     bs?: string;
+  };
+}
+
+export interface CreateUser {
+  id: number;
+  name: string;
+  email: string;
+  website?: string;
+  company: {
+    name: string;
   };
 }

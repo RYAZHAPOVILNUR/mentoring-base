@@ -1,0 +1,26 @@
+<div style="margin: 30px 30px 30px 30px;">
+    <h1>create-todo-form</h1>
+    <form style="display: flex; flex-direction: column;" [formGroup]="form">
+        <mat-form-field class="mat">
+            <mat-label>ТЕКСТ ЗАДАЧИ</mat-label>
+            <input matInput formControlName="title">
+            <mat-error>Некоректное значение</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat">
+            <mat-label>АВТОР ЗАДАЧИ</mat-label>
+            <input matInput formControlName="userId">
+            <mat-error>Некоректное значение</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat">
+            <mat-label>ЗАДАЧА ЗАВЕРШЕНА</mat-label>
+            <mat-select formControlName="completed">
+                <mat-option [value]="true">Да</mat-option>
+                <mat-option [value]="false">Нет</mat-option>
+            </mat-select>
+            <mat-error>Некоректное значение</mat-error>
+        </mat-form-field>
+        <button  (click)="submitForm()">Кнопка</button>
+    </form>
+</div>

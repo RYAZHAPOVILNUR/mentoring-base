@@ -1,0 +1,36 @@
+<div class="component-forms">
+<h1>{{data.user.name}}</h1>
+<div class="form-item">
+<form class="mat-forms" [formGroup]="form">
+    <mat-form-field class="form-input">
+        <mat-label>Введите имя пользователя</mat-label>
+        <input matInput formControlName="name">
+        <mat-error>Некоректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-input">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error>Некоректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-input">
+        <mat-label>Website</mat-label>
+        <input matInput formControlName="website">
+        <mat-error>Некоректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-input" formGroupName="company">
+        <mat-label>Company name</mat-label>
+        <input matInput formControlName="name">
+        <mat-error>Некоректное значение</mat-error>
+    </mat-form-field>
+    <div class="button-position">
+    <button matIconSuffix mat-raised-button [disabled]="form.invalid" (click)="onSubmit()">
+        Редактировать
+    </button>
+    <button mat-raised-button mat-dialog-close>Кнопка</button>
+    </div>
+</form>
+</div>
+</div>

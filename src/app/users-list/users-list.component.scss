@@ -1,6 +1,6 @@
 .userCard {
     width: 240px;
-    height: 200px;
+    min-height: 200px;
     padding: 20px;
     border: 1px solid black;
     margin: 5px;
@@ -12,6 +12,5 @@
     display: flex;
     width: 1250px;
     flex-wrap: wrap;
-   
     align-items: center;
 }

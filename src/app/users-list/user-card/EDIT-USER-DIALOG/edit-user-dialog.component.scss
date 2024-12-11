@@ -1,0 +1,23 @@
+.component-forms {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+}
+.form-item{
+    margin: 30px auto;
+    align-self: center;
+}
+.mat-forms {
+    display: flex;
+    flex-direction: column;
+}
+.button-position {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.form-input{
+    width: 300px;
+}

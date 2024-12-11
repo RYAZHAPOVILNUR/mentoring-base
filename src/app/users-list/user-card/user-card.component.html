@@ -1,7 +1,10 @@
- <div class="userCard">
+<div class="userCard">
     <p>{{user.name}}</p>
     <p>{{user.email}}</p>
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
-    <button class="delete-user" (click)="onDeleteUser(user.id)" >УДАЛИТЬ ЮЗЕРА</button>
- </div>
+ 
+    <button mat-raised-button class="delete-user" (click)="openDeleteDialog()">УДАЛИТЬ ЮЗЕРА</button>
+    <button mat-raised-button (click)="openDialog()">РЕДАКТИРОВАТЬ ЮЗЕРА</button>
+
+</div>

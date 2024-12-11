@@ -2,20 +2,19 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   inject,
-  Injectable,
+  Output,
 } from '@angular/core';
+import { MatSnackBar, } from '@angular/material/snack-bar';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosApiService } from './todos-api.service';
 import { TodosService } from './todo-card/todos.service';
 import { CreateTodoFormComponent } from '../components/create-todo-form/create-todo-form.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ITodo } from '../interfaces/todo.interface';
 
-export interface Todo {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
+
 @Component({
   selector: 'app-todos-list',
   templateUrl: './todos-list.component.html',
@@ -25,24 +24,38 @@ export interface Todo {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosListComponent {
-  todo: any;
-  createTodos($event: Event) {
-    throw new Error('Method not implemented.');
-  }
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodosService);
-
+  readonly snackBar = inject(MatSnackBar);
   constructor() {
     this.todosApiService.getTodos().subscribe((response: any) => {
       this.todosService.setTodos(response.slice(0, 10));
-      console.log(response);
     });
   }
-
   deleteTodo(id: number) {
     this.todosService.deleteTodo(id);
   }
-  createTodo(todo: Todo) {
+  createTodo(todo: ITodo) {
+    console.log(todo);
     this.todosService.createTodo(todo);
   }
-}
+//   openDialog(): void {
+//     const dialogRef = this.dialog.open(EditTodoDialogComponent, {
+//       data: { user: this.todo },
+//     });
+
+//     dialogRef.afterClosed().subscribe((editResult) => {
+//       console.log('Модалка Закрылась, Значение формы:', editResult);
+//     });
+//   }
+
+  @Output()
+  editTodo = new EventEmitter<ITodo>();
+
+  @Output()
+  deleteUser = new EventEmitter<ITodo>();
+
+  readonly dialog = inject(MatDialog);
+
+ 
+  }
