@@ -46,6 +46,8 @@ export class HeaderComponent {
 
   readonly newtab = 'Пользователи';
 
+  readonly todos = "Задачи"
+
   readonly newPages: number[] = newPages;
 
   menuItems: string[] = upperCaseMenuItems;
