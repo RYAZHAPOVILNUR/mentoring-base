@@ -73,7 +73,7 @@ export interface User {
     };
   };
   phone?: string;
-  website?: string;
+  website: string;
   company: {
     name: string;
     catchPhrase?: string;
@@ -85,7 +85,7 @@ export interface CreateUser {
   id: number;
   name: string;
   email: string;
-  website?: string;
+  website: string;
   company: {
     name: string;
   };

@@ -16,12 +16,13 @@ import {
 import { DeleteTodoDialogComponent } from '../delete-todo-dialog/delete-todo-dialog.component';
 import { ITodo } from '../../interfaces/todo.interface';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { TitleLimitPipe } from '../../Pipes/title-limit.pipe';
 @Component({
   selector: 'app-todo-card',
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
   standalone: true,
-  imports: [MatIconModule, MatDialogModule, MatSnackBarModule],
+  imports: [MatIconModule, MatDialogModule, MatSnackBarModule, TitleLimitPipe, ],
 })
 export class TodoCardComponent {
   @Input()
@@ -30,7 +31,7 @@ export class TodoCardComponent {
   public deleteTodo = new EventEmitter<any>();
   private snackBar = inject(MatSnackBar);
   readonly dialog = inject(MatDialog);
-  
+
   onDeleteTodo(todoId: number) {
     this.deleteTodo.emit(todoId);
   }
@@ -47,9 +48,10 @@ export class TodoCardComponent {
         this.snackBar.open('Удаление завершено', 'Ок', {
           duration: 10000,
         });
-    } else  this.snackBar.open('Отмена удаления', 'Ок', {
-      duration: 10000,
-    });
+      } else
+        this.snackBar.open('Отмена удаления', 'Ок', {
+          duration: 10000,
+        });
     });
   }
 }

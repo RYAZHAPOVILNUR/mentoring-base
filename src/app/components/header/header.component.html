@@ -1,61 +1,59 @@
 <div class="content-container">
     <div>
-  <div class="header">
-    <div class="header-left">
-      <div class="header-logo">
-        <img src="/assets/Frame.svg" alt="logotip" />
-      </div>
-      <nav class="header-nav">
-        <div class="header-nav-item" routerLink="users">{{headerItem1}}</div>
-        <div class="header-nav-item" routerLink="/">{{aboutCompany}}</div>
-        <div class="header-nav-item" *ngIf="isShowCatalog">
-          {{headerItem3}}
+        <div class="header">
+            <div class="header-left">
+                <div class="header-logo">
+                    <img src="/assets/Frame.svg" alt="logotip" />
+                </div>
+                <nav class="header-nav">
+                    <div class="header-nav-item" routerLink="users">{{headerItem1 }}</div>
+                    <div class="header-nav-item" routerLink="/">{{aboutCompany}}</div>
+                    <div class="header-nav-item" *ngIf="isShowCatalog">
+                        {{headerItem3 }}
+                    </div>
+                </nav>
+                <button (click)="isShowCatalog = !isShowCatalog">
+                    Скрыть/показать каталог
+                </button>
+                <button (click)="changeMenutext()">Изменить текст</button>
+            </div>
+            <div class="header-right">
+                <div class="phone">
+                    <img src="/assets/Phone.svg" alt="phone" />
+                    <div>
+                        <a class="number" href="tel:79650842929">{{number | phoneNumber}}</a>
+                    </div>
+                    <div class="heart">
+                        <img src="/assets/heart 1.svg" alt="heart" />
+                        <div class="knopka">
+                            <img src="/assets/Frame 3.png" alt="knopka" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button routerLink="/users">Админка</button>
+            <button routerLink="/todos">Todos</button>
         </div>
-      </nav>
-      <button (click)="isShowCatalog = !isShowCatalog">
-        Скрыть/показать каталог
-      </button>
-      <button (click)="changeMenutext()">Изменить текст</button>
-    </div>
-    <div class="header-right">
-      <div class="phone">
-        <img src="/assets/Phone.svg" alt="phone" />
         <div>
-          <a class="number" href="tel:79650842929">+7(965)084-29-29</a>
+            <div class="subheader">
+                <div class="subheader-left">
+                    <img src="/assets/Frame 5.svg" alt="Иконка Каталог" />
+                </div>
+                <div>
+                    <nav class="subheader-nav">
+                        <div class="subheader-nav-item" *ngFor="let item of menuItems">
+                            {{ item }}
+
+                        </div>
+                    </nav>
+                </div>
+                <div class="subheader-right">
+                    <input class="search" type="text" placeholder="Поиск, например Круг зачистной" />
+                    <img src="/assets/Mask group.png" alt="lupa" />
+                    <img src="/assets/Time.svg" alt="metka" />
+                </div>
+                {{ today | date:'medium' }}
+            </div>
         </div>
-        <div class="heart">
-          <img src="/assets/heart 1.svg" alt="heart" />
-          <div class="knopka">
-            <img src="/assets/Frame 3.png" alt="knopka" />
-          </div>
-        </div>
-      </div>
     </div>
-    <button routerLink="/users">Админка</button>
-    <button routerLink="/todos">Todos</button>
-  </div>
-  <div>
-    <div class="subheader">
-      <div class="subheader-left">
-        <img src="/assets/Frame 5.svg" alt="Иконка Каталог" />
-      </div>
-      <div>
-        <nav class="subheader-nav">
-          <div class="subheader-nav-item" *ngFor="let item of menuItems">
-            {{ item }}
-          </div>
-        </nav>
-      </div>
-      <div class="subheader-right">
-        <input
-          class="search"
-          type="text"
-          placeholder="Поиск, например Круг зачистной"
-        />
-        <img src="/assets/Mask group.png" alt="lupa" />
-        <img src="/assets/Time.svg" alt="metka" />
-      </div>
-    </div>
-  </div>
-</div>
 </div>

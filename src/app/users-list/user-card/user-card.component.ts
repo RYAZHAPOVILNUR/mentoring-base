@@ -15,15 +15,21 @@ import { EditUserDialogComponent } from './EDIT-USER-DIALOG/edit-user-dialog.com
 import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { CustomUpperCasePipe } from '../../Pipes/upper-case.pipe';
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports: [MatIconModule, MatDialogModule,  MatSnackBarModule, MatButtonModule],
+  imports: [
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    CustomUpperCasePipe,
+  ],
 })
 export class UserCardComponent {
-
   @Input()
   user!: User;
 
@@ -37,10 +43,10 @@ export class UserCardComponent {
 
   public openDeleteDialog(): void {
     const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
-        data: {user: this.user},
+      data: { user: this.user },
     });
-   
-   dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
+
+    dialogRef.afterClosed().subscribe((result: boolean | undefined) => {
       if (result) {
         this.deleteUser.emit(this.user);
         this.snackBar.open('Удаление завершено', 'Ок', {
@@ -48,23 +54,23 @@ export class UserCardComponent {
           horizontalPosition: 'center', // Положение по горизонтали
           verticalPosition: 'bottom',
         });
-    } else  this.snackBar.open('Отмена удаления', 'Ок', {
-      duration: 10000,
-      horizontalPosition: 'right', // Положение по горизонтали
-      verticalPosition: 'bottom',
+      } else
+        this.snackBar.open('Отмена удаления', 'Ок', {
+          duration: 10000,
+          horizontalPosition: 'right', // Положение по горизонтали
+          verticalPosition: 'bottom',
+        });
     });
-    });
-}
+  }
   openDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
       data: { user: this.user },
     });
 
-//     dialogRef.afterClosed().subscribe((editResult) => {
-//       console.log('Модалка Закрылась, Значение формы:', editResult);
-//       this.editUser.emit(editResult);
-//     });
-//   }
-   
-  
-}}
+    //     dialogRef.afterClosed().subscribe((editResult) => {
+    //       console.log('Модалка Закрылась, Значение формы:', editResult);
+    //       this.editUser.emit(editResult);
+    //     });
+    //   }
+  }
+}
