@@ -1,8 +1,6 @@
-
-Компонент Списка Юзеров
-
+<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
 <div class="users">
-  <div *ngFor="let user of userService.usersSubject | async">
+  <div *ngFor="let user of usersService.users$ | async">
     <app-user-card [user]="user" (deleteUser)="deleteUser ($event)"></app-user-card>
   </div>
 </div>

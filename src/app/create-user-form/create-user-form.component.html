@@ -1,0 +1,34 @@
+<h1>CREATE USER FORM</h1>
+<div>
+  <form class="form-input"
+        [formGroup]="form"
+        (ngSubmit)="submitForm()">
+    <p>NAME:</p>
+    <input type="text" formControlName="name">
+    <div class="alert"
+      *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
+      <div *ngIf="form.controls['name'].errors">Имя введено неправильно</div>
+    </div>
+    <p>EMAIL:</p>
+    <input type="text" formControlName="email">
+    <div class="alert"
+      *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
+      <div *ngIf="form.controls['name'].errors">Email введен неправильно</div>
+    </div>
+    <p>WEBSITE:</p>
+    <input type="text" formControlName="website">
+    <div class="alert"
+      *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)">
+      <div *ngIf="form.controls['name'].errors">Website введен неправильно</div>
+    </div>
+    <p>COMPANY NAME:</p>
+    <input type="text" formControlName="companyName">
+    <div class="alert"
+      *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)">
+      <div *ngIf="form.controls['name'].errors">Имя компании введено неправильно</div>
+    </div>
+    <button class="button-create" [disabled]="form.invalid">CREATE USER</button>
+  </form>
+</div>
+
+
