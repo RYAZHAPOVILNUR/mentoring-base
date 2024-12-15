@@ -1,6 +1,8 @@
 import { NgFor } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component, inject, Injectable } from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { User } from "./user-interface";
 
 
 @Component ({
@@ -15,11 +17,11 @@ import { Component, inject, Injectable } from "@angular/core";
 
 export class UsersListComponent {
     readonly apiService = inject(HttpClient); 
-    users = []; 
+    users: User[] = []; 
 
     constructor() {
-        this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe(
-            (response:any) => {
+        this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
+            (response:User[]) => {
                 this.users = response;
                 console.log('USERS: ', this.users) 
             }
