@@ -1,6 +1,6 @@
 <h1 style="margin-left: 50px;">Create Todos Form</h1>
 <div class="todos_form">
-    <form class="form_group" [formGroup]="formTodo">
+    <form class="form_group" [formGroup]="formTodo" >
         <mat-form-field appearance="fill" class="form-field">
             <mat-label>ТЕКСТ ЗАДАЧИ:</mat-label>
             <input matInput type="text" formControlName="title" />
@@ -20,7 +20,10 @@
             </mat-select>
           </mat-form-field>
     </form>
-    <button mat-raised-button color="primary" class="add-todo" (click)="onSubmit()"  [disabled]="formTodo.invalid">
-      Создать задачу
+    <button mat-raised-button  type="submit" color="primary" class="add-todo"  [disabled]="formTodo.invalid" (click)="submitForm()" matTooltip="Редактировать данные пользователя">
+        Редактировать 
+    </button>
+    <button mat-raised-button color="primary" class="close-todo" mat-dialog-close>
+        Закрыть
     </button>
 </div>

@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../todos-list.interface';
 import { CustomMaxLenghtPipe } from '../../pipes/max-lenght.pipes';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-todos-card',
   standalone: true,
-  imports: [CustomMaxLenghtPipe],
+  imports: [CustomMaxLenghtPipe, MatButtonModule],
   templateUrl: './todos-card.component.html',
   styleUrl: './todos-card.component.scss'
 })
@@ -14,9 +15,16 @@ export class TodosCardComponent {
   todo!: Todo;
 
   @Output()
-  deleteTodos = new EventEmitter()
+  editTodo = new EventEmitter()
+  
+  onEditTodo(todo: Todo) {
+    this.editTodo.emit(todo)
+  }
 
-  onDeleteTodos(todoId: number) {
-    this.deleteTodos.emit(todoId)
+  @Output()
+  deleteTodo = new EventEmitter()
+
+  onDeleteTodo(todoId: number) {
+    this.deleteTodo.emit(todoId);
   }
 }

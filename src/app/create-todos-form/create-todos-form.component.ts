@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -6,6 +6,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { Todo } from '../todos-list/todos-list.interface';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-todos-form',
@@ -15,23 +17,17 @@ import { MatOptionModule } from '@angular/material/core';
   styleUrl: './create-todos-form.component.scss'
 })
 export class CreateTodosFormComponent {
+  readonly data =inject<{ todo: Todo }>(MAT_DIALOG_DATA);
+  readonly dialogRef = inject(MatDialogRef<CreateTodosFormComponent>);
 
-  constructor () {
-    this.formTodos.valueChanges.subscribe((formValue) => console.log(formValue))
-   }
-   
-  @Output()
-  createTodos = new EventEmitter();
- 
-  public formTodos = new FormGroup ({
+  public formTodo = new FormGroup ({
    userId: new FormControl('', [Validators.required]),
    title: new FormControl('', [Validators.required, Validators.minLength(10)]),
    completed: new FormControl(false),
   });
  
-  public submitForm(): void {
-    this.createTodos.emit(this.formTodos.value);
-    this.formTodos.reset();
-   }
+  onSubmit() {
+    this.dialogRef.close(this.formTodo.value)
+  };
 
  }

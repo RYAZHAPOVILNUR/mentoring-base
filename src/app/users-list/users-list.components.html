@@ -1,11 +1,12 @@
-<button mat-raised-button class="custom-button" color="primary" (click)="openCreateUserDialog()">
+<button mat-raised-button class="custom-button" color="primary" (click)="crateUser()">
     Создать пользователя
-  </button>
+</button>
 <div class="users">
-    <div  *ngFor="let user of usersService.users$ | async"> 
+    <div  *ngFor="let user of users$ | async"> 
         <app-user-list-card shadow class="users-card" [user]="user" 
-        (deleteUser)="openDeleteDialog(user.id)"
-        (editUser)="editUser($event)"></app-user-list-card>
+        (editUser)="editUser(user)"
+        (deleteUser)="deleteUser(user.id)">
+        </app-user-list-card>
         <div>
     </div>
 </div>

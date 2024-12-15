@@ -7,24 +7,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatError } from '@angular/material/form-field';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {  User } from '../users-list/users-list.interface';
-
+import { MatOptionModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-create-user-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, MatFormFieldModule, MatInputModule, MatButtonModule, MatError],
+  imports: [ReactiveFormsModule, NgIf, MatFormFieldModule, MatInputModule, MatButtonModule, MatError, MatOptionModule],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss'
 })
 export class CreateUserFormComponent {
  readonly data =inject<{ user: User }>(MAT_DIALOG_DATA);
  readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>)
-
- constructor() {
-  this.formUser.valueChanges.subscribe((formValue) =>
-    console.log('Form Value:', formValue)
-  );
- }
 
  @Output()
  creatUser = new EventEmitter();
@@ -41,5 +35,5 @@ export class CreateUserFormComponent {
 
  public onSubmit() {
     this.dialogRef.close(this.formUser.value); 
- }
+ };
 }

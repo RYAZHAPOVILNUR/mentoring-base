@@ -1,7 +1,12 @@
-<app-create-todos-form (createTodos)="createTodos($event)"></app-create-todos-form>
+<button mat-raised-button class="custom-button" color="primary" (click)="createTodo()">
+    Создать задачу
+</button>
 <div class="todos">
-    <div  *ngFor="let todo of todosService.todos$ | async"> 
-        <app-todos-card class="todos-card" [todo]="todo" (deleteTodos)="deleteTodos($event)"></app-todos-card>
+    <div  *ngFor="let todo of todos$ | async"> 
+        <app-todos-card class="todos-card" [todo]="todo"
+         (deleteTodo)="deleteTodo(todo.id)"
+         (editTodo)="editTodo(todo)">
+        </app-todos-card>
         <div>
     </div>
 </div>

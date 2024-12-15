@@ -19,7 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class EditUserDialogComponent {
   readonly data = inject(MAT_DIALOG_DATA);
-  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>)
+  readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
   
 
   public formUser = new FormGroup ({
@@ -34,6 +34,6 @@ export class EditUserDialogComponent {
   
   submitForm() {
     this.dialogRef.close({...this.formUser.value,  id: this.data.user.id,});
-    console.log(this.formUser.value)
+    console.log(this.formUser.value);
   };
 }

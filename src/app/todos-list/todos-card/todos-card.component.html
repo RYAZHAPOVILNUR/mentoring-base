@@ -5,5 +5,13 @@
     <div>"{{ todo.userId }}"</div>
     <p>ЗАДАЧА ЗАВЕРШЕНА:
      {{ todo.completed ? 'Да' : 'Нет' }} </p>
-  </div>
-  <div class="delete"><button class="delete_1" (click)="onDeleteTodos(todo.id)">Удалить Задачу</button>
+</div>
+<div class="buttons">
+    <div class="edit">
+      <button mat-raised-button color="primary" (click)="onEditTodo(todo)">Edit</button>
+    </div>
+    <div class="delete">
+      <button mat-raised-button color="warn" (click)="onDeleteTodo(todo.id)">Delete</button>
+    </div>
+</div>
+
