@@ -1,17 +1,16 @@
-<div style=
-"width: 200px; height: 200px; 
-border: 1px solid black; margin: 10px; box-shadow: 0px 20px 50px 0px #3c3c3b12; padding: 15px;
-background-color: burlywood;">
+<div class = "user-card-style">
     <p>{{user.name}}</p>
      <p>{{user.email}}</p>
      <p>{{user.website}}</p>
      <p>{{user.company.name}}</p>
-     <button mat-button (click)="onDeleteUser(user.id)" 
-style="margin-left: 15px; background-color: rgb(233, 106, 106); border-radius: 10px; "
->Удалить пользователя
-</button>
-     <button (click)="openDialog()"
-style="margin-left: 15px; background-color: rgb(233, 106, 106); border-radius: 10px; "
->Редактировать
-</button> 
+     <button class="user-card-button-style" (click)="onDeleteUser(user.id)" mat-flat-button
+              matTooltip="Удалить пользователя"
+              aria-label="Button that displays a tooltip when focused or hovered over">
+        Удалить
+     </button>
+     <button class= user-card-button-style (click)="openDialog()" mat-flat-button
+              matTooltip="Редактировать пользователя"
+              aria-label="Button that displays a tooltip when focused or hovered over">
+        Редактировать
+     </button> 
 </div>

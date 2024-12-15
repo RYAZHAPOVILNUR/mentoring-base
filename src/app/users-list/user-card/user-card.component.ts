@@ -3,6 +3,9 @@ import { User } from "../users-list.component";
 import { MatDialog } from "@angular/material/dialog";
 import { EditUserDialog } from "../edit-user-dialog/edit-user-dialog.component";
 import { MatButtonModule } from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { CustomCutPipe } from "../../My Pipes/cutPipe";
+
 
 
 @Component({
@@ -10,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
     standalone: true,
-    imports: [MatButtonModule]
+    imports: [MatButtonModule, MatTooltipModule, CustomCutPipe]
 })
 
 export class UserCardComponent {

@@ -1,13 +1,14 @@
 
-<div class="todos-card-style">
+<div class="todos-card-style" >
     <div style="height: 205px;" >
-<p style="margin-top: -10px;">Текст Задачи</p>
+
+<p style="margin-top: -10px;" red>Текст Задачи</p>
     <div style="margin-top: -5px;">
-        {{todo.title}}
+        {{todo.title | CustomSlicePipe}}
     </div>
    
     <p>Автор задачи</p>
-  <div style="margin-top: -10px;">{{todo.userId}}</div>
+  <div style="margin-top: -10px;">{{todo.userId }}</div>
    
   <p>Задача завершена</p>
    <div style="margin-top: -10px;">{{todo.completed ? 'ДА' : 'НЕТ'}}</div>  

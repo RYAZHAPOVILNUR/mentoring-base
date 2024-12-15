@@ -1,7 +1,8 @@
 import { NgFor } from "@angular/common";
 import { Component, EventEmitter, Input, Output, output } from "@angular/core";
 import { Todo } from "../todos-list.component";
-
+import { CustomSlicePipe } from "../../My Pipes/slicePipe.pipe";
+import { redDirective } from "../../my directives/red.directive";
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Todo } from "../todos-list.component";
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
     standalone: true,
-    imports: [NgFor]
+    imports: [CustomSlicePipe, redDirective]
 })
 export class TodoCardComponent {
     @Input()

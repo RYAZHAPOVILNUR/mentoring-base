@@ -52,7 +52,7 @@ readonly usersService = inject(UsersService)
 users$ = this.usersService.users$
 constructor() {
     this.UsersApiService.getUsers().subscribe(
-        (Response:any) => {
+        (Response: User[]) => {
             this.usersService.setUsers(Response);
             this.users$ = this.usersService.users$
         }
@@ -63,19 +63,18 @@ constructor() {
         this.usersService.deleteUser(id)
         this.users$ = this.usersService.users$
       } 
-      editUser(user: any) {
-        this.usersService.editUser({
-          ...user, company: {name: user.companyName}
-        })
-      }
-     public createUser(formData: any) {
+      editUser(user: User) {
+      this.usersService.editUser(user)
+        }
+      
+     public createUser(formData: User) {
         this.usersService.createUser({
           id: new Date().getTime(),
           name: formData.name,
           email: formData.email,
           website: formData.website,
           company: {
-            name: formData.companyName
+            name: formData.company.name
           }
         })
       

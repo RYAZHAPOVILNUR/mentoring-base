@@ -11,13 +11,19 @@
           <div class="header-buttons"><button  class="header-buttons-item"   (click)="isShowCatalog = !isShowCatalog" mat-button>Скрыть/показать каталог</button>
           <button (click)="isShowBanner = !isShowBanner" class="header-buttons-item" mat-button>Баннер</button>
           <button (click)="changeMenuText()" class="header-buttons-item" mat-button>Изменить текст</button>
-          <button class="header-buttons-item" routerLink="users" mat-button>Админка</button></div>
+          <button class="header-buttons-item" routerLink="users" mat-button>Пользователи</button></div>
           <button class="header-buttons-item" routerLink="todos" style="margin-left: 3px;" mat-button>Задачи</button>
-    </div>
+          <button class="header-buttons-item" routerLink="admin" style="margin-left: 3px;" mat-button>Admin</button>
+          <span>{{Date | date}}</span>
+        </div> 
             <div class="header-right">
    <div class="header-number"> <img src="/assets/Frame number.svg" alt="номер"></div>
    <div class="header-heart"> <img src="/assets/heart 1.svg" alt="избранное"> </div>
-   <button class="header-korzinka"><img src="/assets/buying.svg" alt="корзинка"><span style="margin-left: 5px;">Пусто</span></button>
+   <button class="header-korzinka" yellow ><img src="/assets/buying.svg" alt="корзинка"><span style="margin-left: 5px;">Пусто</span></button>
+            </div>
+            <div>
+                <button (click)="openLoginDialog()">Войти</button>
+                <button (click)="logout()">Покинуть</button>
             </div>
  </div>
         <div class="header2">
