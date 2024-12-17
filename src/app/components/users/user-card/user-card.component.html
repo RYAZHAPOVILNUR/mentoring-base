@@ -1,7 +1,7 @@
 <div class="userslist">
-  <p>{{ $any(user).name }}</p>
-  <p>{{ $any(user).email }}</p>
-  <p>{{ $any(user).website }}</p>
-  <p>{{ $any(user).company.name }}</p>
+  <p>{{user.name }}</p>
+  <p>{{user.email }}</p>
+  <p>{{user.website }}</p>
+  <p>{{user.company.name }}</p>
   <button (click)="onDeleteUser(user.id)" class="buton">Удалить юзера</button>
 </div>

@@ -3,30 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { UsersApiService } from '../../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
+import { User } from './user-interface';
 
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  adress: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchphrase: string;
-    bs: string;
-  };
-}
+
 
 @Component({
   selector: 'app-users',
@@ -40,7 +19,7 @@ export class UsersComponent {
   users: User[] = [];
 
   constructor() {
-    this.usersApiService.getUsers().subscribe((response: any) => {
+    this.usersApiService.getUsers().subscribe((response: User[]) => {
       this.users = response;
       console.log('USERS:', this.users);
     });
