@@ -20,19 +20,22 @@
             <div class="header-right">
                 <div class="phone">
                     <img src="/assets/Phone.svg" alt="phone" />
+                    </div>
                     <div>
                         <a class="number" href="tel:79650842929">{{number | phoneNumber}}</a>
                     </div>
                     <div class="heart">
                         <img src="/assets/heart 1.svg" alt="heart" />
-                        <div class="knopka">
-                            <img src="/assets/Frame 3.png" alt="knopka" />
                         </div>
-                    </div>
+                        <div  class="knopka">
+                            <button class="button-basket"> 
+                                <mat-icon yellow>shopping_cart</mat-icon>
+                                <span class="basket">Пусто</span>
+                            </button>                         
                 </div>
+                <button routerLink="/users">Админка</button>
+                <button routerLink="/todos">Todos</button>
             </div>
-            <button routerLink="/users">Админка</button>
-            <button routerLink="/todos">Todos</button>
         </div>
         <div>
             <div class="subheader">
@@ -43,7 +46,6 @@
                     <nav class="subheader-nav">
                         <div class="subheader-nav-item" *ngFor="let item of menuItems">
                             {{ item }}
-
                         </div>
                     </nav>
                 </div>
@@ -51,9 +53,9 @@
                     <input class="search" type="text" placeholder="Поиск, например Круг зачистной" />
                     <img src="/assets/Mask group.png" alt="lupa" />
                     <img src="/assets/Time.svg" alt="metka" />
-                </div>
                 {{ today | date:'medium' }}
             </div>
         </div>
     </div>
+</div>
 </div>

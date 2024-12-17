@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { User } from '../../users-list.component';
+import {MatTooltipModule} from '@angular/material/tooltip' 
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -26,7 +27,8 @@ import { User } from '../../users-list.component';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatDialogClose
+    MatDialogClose,
+    MatTooltipModule,
   ],
   standalone: true,
 })
@@ -48,11 +50,14 @@ export class EditUserDialogComponent {
       Validators.minLength(3),
     ]),
     company: new FormGroup({
-      name: new FormControl(this.data.user.company.name, [Validators.required, Validators.minLength(2)]),
+      name: new FormControl(this.data.user.company.name, [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
     }),
   });
 
   onSubmit() {
-    this.dialogRef.close({...this.form.value, id: this.data.user.id});
+    this.dialogRef.close({ ...this.form.value, id: this.data.user.id });
   }
 }

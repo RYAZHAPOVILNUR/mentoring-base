@@ -19,7 +19,7 @@ Injectable();
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent,],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {

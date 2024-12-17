@@ -1,5 +1,3 @@
-
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -12,6 +10,7 @@
 .header-left {
     display: flex;
     align-items: center;
+    margin: 80px;
 }
 
 .header-logo {
@@ -27,7 +26,9 @@
 }
 
 .header-right {
+    display: flex;
     align-items: center;
+    gap: 6px
 }
 
 .phone {
@@ -59,12 +60,15 @@
     color: black;
     background-color: #F0BA4E;
     padding: 0 100px;
+
+   
 }
 
 .subheader-left {
     display: flex;
     align-items: center;
     margin-right: 20px;
+    margin: 80px;
 }
 
 .subheader-nav {
@@ -90,4 +94,19 @@
     border-bottom: 1px solid #3C3C3B;
     background-color: transparent;
 }
+.button-basket {
+    display: flex;
+    align-items: center;
+    background-color: #4B565E;
+    border: 1px solid #F0BA4E;
+    color: floralwhite;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+.basket {
+    margin-left: 5px;
+}
 
+.content-container {
+    justify-content: space-between;
+}

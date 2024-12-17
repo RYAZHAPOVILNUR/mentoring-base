@@ -1,16 +1,6 @@
-.userCard {
-    width: 240px;
-    min-height: 200px;
-    padding: 20px;
-    border: 1px solid black;
-    margin: 5px;
-    box-shadow: 1px 1px 1px black;
-    gap: 10px;
-    display: flex;
-}
 .userListWrapper{
-    display: flex;
-    width: 1250px;
     flex-wrap: wrap;
-    align-items: center;
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
 }

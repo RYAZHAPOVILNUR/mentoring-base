@@ -3,6 +3,8 @@ import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { HomepageComponent } from '../homepage/homepage.component';
 import { RouterLink } from '@angular/router';
 import { PhoneNumber } from '../../Pipes/phone-number.pipe';
+import { YellowDirective } from '../../directives/yellow.directive';
+import { MatIconModule } from '@angular/material/icon';
 
 const menuItems: string[] = [
   'Каталог',
@@ -19,7 +21,7 @@ const user = {};
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, DatePipe, PhoneNumber],
+  imports: [NgFor, NgIf, RouterLink, DatePipe, PhoneNumber, YellowDirective, MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

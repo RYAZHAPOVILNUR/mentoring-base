@@ -1,4 +1,27 @@
-.delete-user {
-    border: 2px solid #F0BA4E;
-    border-radius: 40px;
+.card-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 250px;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  word-wrap: break-word;
+  background: var(--mat-background, #f5f5f5);
+  transition: background 1s ease;
+}
+
+.component-cards:hover {
+  background: var(--mat-primary, #4aade6);
+}
+
+.user-card {
+  line-height: 14px;
+}
+
+.card-charge{
+    display: flex;
+    justify-content: space-between;
 }

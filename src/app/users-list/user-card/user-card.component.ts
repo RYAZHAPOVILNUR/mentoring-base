@@ -16,6 +16,8 @@ import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dia
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { CustomUpperCasePipe } from '../../Pipes/upper-case.pipe';
+import { RedDirective } from '../../directives/red.directive';
+import { ShadowDirective } from '../../directives/shadow-card.directive';
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
@@ -27,6 +29,8 @@ import { CustomUpperCasePipe } from '../../Pipes/upper-case.pipe';
     MatSnackBarModule,
     MatButtonModule,
     CustomUpperCasePipe,
+    RedDirective,
+    ShadowDirective,
   ],
 })
 export class UserCardComponent {
