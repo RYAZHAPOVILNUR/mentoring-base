@@ -17,3 +17,13 @@ export interface User {
     bs?: string;
   }
 }
+
+export interface CreateUser {
+  id: number
+  name: string
+  email: string
+  website: string
+  company: {
+    name: string
+  }
+}

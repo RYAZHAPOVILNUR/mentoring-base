@@ -4,6 +4,7 @@ import {UsersApiService} from "../users-api.service";
 import {UserCardComponent} from "./user-card/user-card.component";
 import {UsersService} from "../users.service";
 import {CreateUserFormComponent} from "../create-user-form/create-user-form.component";
+import {CreateUser, User} from "../interfaces/user-interface";
 
 @Component({
   selector: 'app-users-list',
@@ -20,7 +21,7 @@ export class UsersListComponent {
 
   constructor() {
     this.userApiService.getUsers().subscribe(
-      (response: any) => {
+      (response: User[]) => {
         this.usersService.setUsers(response);
       });
 
@@ -30,14 +31,14 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formData: any) {
+  public createUser(formData: CreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.companyName,
+        name: formData.company.name,
       },
     });
     console.log('ДАННЫЕ ФОРМЫ: ', event);

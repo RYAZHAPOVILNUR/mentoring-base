@@ -23,7 +23,8 @@ export class UsersService {
       currentElement => currentElement.email === user.email
     );
 
-    existingUser !== undefined ? alert('Такой Email уже зарегистрирован!')
+    existingUser !== undefined
+      ? alert('Такой Email уже зарегистрирован!')
       : (this.usersSubject$.next([...this.usersSubject$.value, user]), alert('Пользователь успешно добавлен!'));
   }
 

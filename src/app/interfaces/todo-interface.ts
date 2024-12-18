@@ -4,3 +4,10 @@ export interface Todo {
   title: string,
   completed: boolean
 }
+
+export interface CreateTodo {
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean
+}

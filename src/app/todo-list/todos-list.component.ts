@@ -4,6 +4,7 @@ import {AsyncPipe, NgForOf} from "@angular/common";
 import {TodoCardComponent} from "./todo-card/todo-card.component";
 import {TodosService} from "../todos.service";
 import {CreateTodoFormComponent} from "../create-todo-form/create-todo-form.component";
+import {CreateTodo, Todo} from "../interfaces/todo-interface";
 
 @Component({
   selector: 'app-todo-list',
@@ -20,7 +21,7 @@ export class TodosListComponent {
 
   constructor() {
     this.todosApiService.getTodos().subscribe(
-      (response: any)=> {
+      (response: Todo[])=> {
         this.todoService.setUsers(response);
       }
     )
@@ -30,7 +31,7 @@ export class TodosListComponent {
     this.todoService.deleteTodo(id);
   }
 
-  public createTodo(formData: any) {
+  public createTodo(formData: CreateTodo) {
     this.todoService.createTodo({
       id: new Date().getTime(),
       userId: formData.userId,
