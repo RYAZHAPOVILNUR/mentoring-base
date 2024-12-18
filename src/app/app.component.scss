@@ -120,6 +120,22 @@ input {
     width: 100%;
 }
 
+.advantages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 28px 0;
+}
+
+.advantages-item {
+    display: flex;
+    align-items: center;
+}
+
+.advantages-text {
+    padding-left: 10px;
+}
+
 .content-container {
     max-width: 1320px;
 }
@@ -346,6 +362,7 @@ input {
 
   .price {
     padding-bottom: 8px;
+    color: #A1A0A0;
   }
   
   /* Стили для цен */
@@ -427,6 +444,34 @@ input {
 
   .more {
     display: flex;
+    justify-content: space-between;
+  }
+
+  .more-text {
+    margin: 28px;
+  }
+
+  .big-text {
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 500;
+    padding-bottom: 18px;
+  }
+
+  .for-business {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    color: #A1A0A0;
+    padding-bottom: 98px;
+
+  }
+
+  .catalog {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    color: #F0BA4E;
   }
 
   .carusel-new {
@@ -479,4 +524,9 @@ input {
     height: 380px;
     margin-top: 56px;
     background-color: #4B565E;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
   }
