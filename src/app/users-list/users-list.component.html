@@ -1,21 +1,7 @@
 КОМПОНЕНТ СПИСКА ЮЗЕРОВ
 
 <div class="main--user-list">
-  <div class="user-list" *ngFor="let user of users">
-    <p>{{(user).name}}</p>
-    <p>{{(user).username}}</p>
-    <p>{{(user).email}}</p>
-    <p>{{(user).address.street}}</p>
-    <p>{{(user).address.suite}}</p>
-    <p>{{(user).address.city}}</p>
-    <p>{{(user).address.zipcode}}</p>
-    <p>{{(user).address.geo.lat}}</p>
-    <p>{{(user).address.geo.lng}}</p>
-    <p>{{(user).phone}}</p>
-    <p>{{(user).website}}</p>
-    <p>{{(user).company.name}}</p>
-    <p>{{(user).company.catchPhrase}}</p>
-    <p>{{(user).company.bs}}</p>
-    <button class="user-delete-button" (click)="deleteUser(user.id)">Удалить юзера</button>
+  <div *ngFor="let user of users">
+    <app-user-card [user]="user" (deleteUser) ="deleteUser($event)"></app-user-card>
   </div>
 </div>
