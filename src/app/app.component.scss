@@ -139,6 +139,12 @@
     border-width: 0;
 }
 
+.baner {
+    height: 720px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
 
 .item-cards__pagination {
     display: flex;
@@ -157,16 +163,21 @@
     font-weight: 600;    
 }
 
-.item-card__grid {
-    display: flex; 
-} 
+.item-cards{}
 
-.item-card__grid-left {
-    height: 421px;
-    width: 428px; 
-    max-height: 421px;
-    max-width:  428px;
-    background-image: url(/assets/image_19.png);
-    background-repeat no-repeat 
-    overflow: hidden; 
+.freem-box {
+    display: flex;
+    align-items: center;
+    width: 1319px;
+    height: 72px;
+    margin: 0 auto;
+    gap: 28px;
 }
+
+.freem-card {
+    display: flex;
+    width: 421px;
+    height: 72px;
+    gap: 16px;  
+}
+
