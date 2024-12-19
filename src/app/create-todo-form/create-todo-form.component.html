@@ -1,20 +1,18 @@
 <h1>CREATE TODO FORM</h1>
 <div>
-  <form class="form-input"
-        [formGroup]="form"
-        (ngSubmit)="submitForm()">
-    <p>Title:</p>
-    <input type="text" formControlName="title">
-    <div class="alert"
-         *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
-      <div *ngIf="form.controls['title'].errors">Задача введена неправильно</div>
-    </div>
-    <p>Author todo:</p>
-    <input type="number" formControlName="userId">
-    <div class="alert"
-         *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)">
-      <div *ngIf="form.controls['userId'].errors">Автор задачи введен неправильно</div>
-    </div>
-    <button class="button-create" [disabled]="form.invalid">CREATE USER</button>
+  <form class="form-input" [formGroup]="form" (ngSubmit)="submitForm()">
+      <mat-form-field>
+        <mat-label>Текст задачи</mat-label>
+        <input matInput formControlName="title">
+        <mat-error>Некоректно введена задача</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Автор задачи</mat-label>
+        <input matInput formControlName="userId" type="number">
+        <mat-error>Некоректно введен автор</mat-error>
+      </mat-form-field>
+    <button matIconSuffix mat-raised-button [disabled]="form.invalid">CREATE TODO
+      <mat-icon>add</mat-icon>
+    </button>
   </form>
 </div>

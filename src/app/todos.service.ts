@@ -19,9 +19,14 @@ export class TodosService {
   }
 
   createTodo(todo: Todo) {
-    this.todosSubject$.next(
-      [...this.todosSubject$.value, todo]
-    )
+    const existingTodo = this.todosSubject$.value.find(
+      currentElement => currentElement.title === todo.title
+      // [...this.todosSubject$.value, todo]
+    );
+
+    existingTodo !== undefined
+      ? alert('Такая задача уже есть!')
+      : (this.todosSubject$.next([...this.todosSubject$.value, todo]), alert('Задача успешно добавлена!'));
   }
 
   deleteTodo(id: number) {
@@ -29,5 +34,4 @@ export class TodosService {
       this.todosSubject$.value.filter(
         item => item.id !== id)
     )}
-
 }

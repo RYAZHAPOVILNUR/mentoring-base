@@ -1,35 +1,31 @@
 <h1>CREATE USER FORM</h1>
 <div>
-  <form class="form-input"
-        [formGroup]="form"
-        (ngSubmit)="submitForm()">
-    <p>NAME:</p>
-    <input type="text" formControlName="name">
-    <div class="alert"
-      *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
-      <div *ngIf="form.controls['name'].errors">Имя введено неправильно</div>
-    </div>
-    <p>EMAIL:</p>
-    <input type="text" formControlName="email">
-    <div class="alert"
-      *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
-      <div *ngIf="form.controls['name'].errors">Email введен неправильно</div>
-    </div>
-    <p>WEBSITE:</p>
-    <input type="text" formControlName="website">
-    <div class="alert"
-      *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)">
-      <div *ngIf="form.controls['name'].errors">Website введен неправильно</div>
-    </div>
-    <p>COMPANY NAME:</p>
-    <div formGroupName="company">
-    <input type="text" formControlName="name">
-      <div class="alert"
-        *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
-        <div *ngIf="form.controls['name'].errors">Имя компании введено неправильно</div>
+  <form class="form-input" [formGroup]="form" (ngSubmit)="submitForm()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>Некоректно введено Имя</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>EMAIL</mat-label>
+      <input matInput formControlName="email">
+      <mat-error>Email введен неверно</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>WEBSITE</mat-label>
+      <input matInput formControlName="website">
+      <mat-error>Website введен неверно</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>COMPANY NAME</mat-label>
+      <div formGroupName="company">
+      <input matInput formControlName="name">
       </div>
-    </div>
-    <button class="button-create" [disabled]="form.invalid">CREATE USER</button>
+      <mat-error>Неверно введена компания</mat-error>
+    </mat-form-field>
+    <button matIconSuffix mat-raised-button [disabled]="form.invalid">CREATE USER
+      <mat-icon>add</mat-icon>
+    </button>
   </form>
 </div>
 
