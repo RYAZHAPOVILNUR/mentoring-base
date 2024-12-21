@@ -113,7 +113,6 @@
 
     .search {
       display: flex;
-      justify-content: space-between;
       align-items: center;
 
       input {
@@ -129,6 +128,16 @@
       img {
         position: relative;
         right: 40px;
+      }
+
+      .location {
+        position: relative;
+        right: 10px;
+      }
+
+      .city {
+        margin-left: 0;
+        color: white;
       }
     }
   }
