@@ -1,0 +1,135 @@
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #4b565e;
+
+  .header_cont {
+    width: 1440px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header_left {
+      display: flex;
+
+      .logo {
+        cursor: pointer;
+        margin-right: 30px;
+      }
+
+      nav > ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          margin-right: 25px;
+          color: white;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .header_right {
+    display: flex;
+
+    .contacts {
+      display: flex;
+      align-items: center;
+
+      .phone_logo {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      .number {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+      }
+
+      .heart_logo {
+        margin: 0 35px;
+        cursor: pointer;
+      }
+    }
+
+    .basket {
+      & button {
+        background-color: #4b565e;
+        border: 1px solid #f0ba4e;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+          margin: 0 20px;
+          color: white;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.header_second {
+  width: 100%;
+  height: 48px;
+  background-color: #f0ba4e;
+
+  .cont_second {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      img {
+        cursor: pointer;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+
+        li {
+          margin-right: 25px;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      input {
+        width: 400px;
+        height: 28px;
+        border: none;
+        border-bottom: 1px solid #4b565e;
+        color: #4b565e99;
+        background-color: #f0ba4e;
+        outline: none;
+      }
+
+      img {
+        position: relative;
+        right: 40px;
+      }
+    }
+  }
+}
