@@ -24,6 +24,8 @@ export class HeaderComponent {
 
   readonly usersList = nameUsersList
 
+  readonly todosList = nameTodosList
+
   // isShowImg = true
 
   menuItems = upperCaseMenuItems;
@@ -58,3 +60,9 @@ const func2 = (usersName: string) => {return usersName}
 const nameUsersList: string = 'Пользователи'
 
 const vuzov2 = func2(nameUsersList)
+
+const func3 = (todosName: string) => {return todosName}
+
+const nameTodosList: string = 'Todos'
+
+const vuzov3 = func3(nameTodosList)

@@ -11,7 +11,7 @@ describe('TodosListComponent', () => {
       imports: [TodosListComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(TodosListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -21,3 +21,4 @@ describe('TodosListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -2,20 +2,7 @@ import { Component, inject } from '@angular/core';
 import { TodosApiService } from '../todos-api.service';
 import { TodoCardComponent } from "./todo-card/todo-card.component";
 import { NgFor } from '@angular/common';
-
-
-
-
-
-
-
-
-export interface Todo {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
+import { Todo } from './todos-interface';
 
 @Component({
   selector: 'app-todos-list',
@@ -30,9 +17,8 @@ export class TodosListComponent {
     todos: Todo[] = [];
 
     constructor() {
-
       this.todosApiService.getTodos().subscribe(
-        (response: any) => {
+        (response: Todo[]) => {
           this.todos = response;
           console.log('TODOS:', this.todos);
         }
@@ -51,3 +37,4 @@ export class TodosListComponent {
       )
     }
 }
+

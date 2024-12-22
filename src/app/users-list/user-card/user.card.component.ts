@@ -1,4 +1,5 @@
 import { Component, EventEmitter, inject, Input, input, Output } from "@angular/core";
+import { User } from "../user-interface";
 
 @Component({
   selector: 'app-user-card',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, inject, Input, input, Output } from "@angular/
 })
 export class UserCardComponent {
   @Input()
-  user: any
+  user!: User;
 
   @Output()
   deleteUser = new EventEmitter()
@@ -16,4 +17,12 @@ export class UserCardComponent {
   onDeleteUser(userId: number) {
     this.deleteUser.emit(userId)
   }
+
+  readonly userDelete = nameUserDelete
 }
+
+const funcUserButton = (userDeleteButton: string) => {return userDeleteButton}
+
+const nameUserDelete: string = 'Удалить пользователя'
+
+const vuzov = funcUserButton(nameUserDelete)
