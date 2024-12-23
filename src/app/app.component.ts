@@ -12,7 +12,7 @@ const upperCase = names.map (
 console.log(upperCase);
 
 
-//Home-work-1
+
 
 function aboutCompany(name:string) {
 return name;
@@ -20,9 +20,9 @@ return name;
 const nameCompany = aboutCompany("О компании");
 console.log(nameCompany);
 
-//Home-work-2
 
-//Home-work-3
+
+
 
 const newpages = [5,4,3,2,1];
 
@@ -40,7 +40,7 @@ const upperCaseMenuItems : string[] = menuItems.map(
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'mentoring-first-project7';
+  title = 'mentoring-first-project';
 
  isShouCatalog : boolean= true;
  isShouBunner : boolean = true;
