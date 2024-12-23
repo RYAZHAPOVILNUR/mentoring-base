@@ -20,27 +20,11 @@ export class TodoCardComponent {
     this.deleteTodo.emit(todoId)
   }
 
-  readonly tasksText = taskTexts
+  readonly tasksText: string = 'ТЕКСТ ЗАДАЧИ'
 
-  readonly tasksAuthor = taskAuthors
+  readonly tasksAuthor: string = 'АВТОР ЗАДАЧИ'
 
-  readonly tasksCompleted = taskCompleteds
+  readonly tasksCompleted: string = 'ЗАДАЧА ЗАВЕРШЕНА'
+
+  readonly todoDelete: string = 'Todo delete'
 }
-
-const textTasks = (taskText: string) => {return taskText}
-
-const taskTexts: string = 'ТЕКСТ ЗАДАЧИ'
-
-const vuzov1 = textTasks(taskTexts)
-
-const authorTasks = (taskAuthor: string) => {return taskAuthor}
-
-const taskAuthors: string = 'АВТОР ЗАДАЧИ'
-
-const vuzov2 = authorTasks(taskAuthors)
-
-const completedTasks = (taskCompleted: string) => {return taskCompleted}
-
-const taskCompleteds: string = 'ЗАДАЧА ЗАВЕРШЕНА'
-
-const vuzov3 = completedTasks(taskCompleteds)

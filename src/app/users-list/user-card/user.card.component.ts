@@ -18,11 +18,5 @@ export class UserCardComponent {
     this.deleteUser.emit(userId)
   }
 
-  readonly userDelete = nameUserDelete
+  readonly userDelete: string = 'Удалить пользователя'
 }
-
-const funcUserButton = (userDeleteButton: string) => {return userDeleteButton}
-
-const nameUserDelete: string = 'Удалить пользователя'
-
-const vuzov = funcUserButton(nameUserDelete)
