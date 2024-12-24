@@ -6,9 +6,10 @@
       </div>
       <nav>
         <ul>
-          <li>Главная</li>
-          <li>О компании</li>
-          <li>Каталог</li>
+          <li *ngIf="isShowMain">{{ header_item_1 }}</li>
+          <li>{{ aboutCompany }}</li>
+          <li>{{ header_item_3 }}</li>
+          <button (click)="isShowMain = !isShowMain">Скрыть/Показать</button>
         </ul>
       </nav>
     </div>
@@ -36,12 +37,13 @@
     <nav>
       <img src="../assets/light.svg" alt="catalogue" />
       <ul>
-        <li>Каталог</li>
-        <li>Стройматериалы</li>
-        <li>Инструменты</li>
-        <li>Электрика</li>
-        <li>Интерьер и одежда</li>
+        <li>
+          {{
+            isUpperCase ? lowerCaseItems.join(" ") : upperCaseItems.join(" ")
+          }}
+        </li>
       </ul>
+      <button (click)="isUpperCase = !isUpperCase">Изменить регистр</button>
     </nav>
     <div class="search">
       <input placeholder="Введите для поиска ..." />
@@ -51,9 +53,14 @@
     </div>
   </div>
 </div>
-<div class="main_picture">
-  <img src="../assets/Man.png" alt="" />
+<!-- Task 2 -->
+<button (click)="isShowMainPicture = !isShowMainPicture">
+  Скрыть/Показать главную картинку
+</button>
+<div class="main_picture" *ngIf="isShowMainPicture">
+  <img src="../assets/Man.png" alt="man" />
 </div>
+<!--  -->
 <div class="advantages">
   <div class="advantage">
     <div class="icon_of_advantage">
@@ -86,13 +93,11 @@
 </div>
 <div class="pagination">
   <div class="pages">
+    <!-- Task 3 -->
     <ul>
-      <li style="color: #f0ba4e; font-weight: 600">1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
+      <li *ngFor="let page of newPages">{{ page }}</li>
     </ul>
+    <!--  -->
   </div>
 </div>
 <div class="cards_cont_main">
@@ -412,16 +417,24 @@
 <footer>
   <div class="footer_cont">
     <div class="footer_left">
-      <img src="../assets/Logo.svg" alt="">
+      <img src="../assets/Logo.svg" alt="" />
       <div class="contacts_footer">
         <div class="footer_phone">
-          <img style="height: 30px; margin-bottom: 0; vertical-align: middle;"  src="../assets/Icon.svg" alt="phone">
+          <img
+            style="height: 30px; margin-bottom: 0; vertical-align: middle"
+            src="../assets/Icon.svg"
+            alt="phone"
+          />
           <span>Контактный телефон</span>
           <p>+ 7 (812) 309-09-34</p>
           <p>+ 7 (965) 084-29-09</p>
         </div>
         <div class="footer_mail">
-          <img style="height: 30px; margin-bottom: 0; vertical-align: middle;" src="../assets/sms.svg" alt="mail">
+          <img
+            style="height: 30px; margin-bottom: 0; vertical-align: middle"
+            src="../assets/sms.svg"
+            alt="mail"
+          />
           <span>Электронная почта</span>
           <p>tustin78#mail.ru</p>
           <p>info#tustin.ru</p>
@@ -433,18 +446,21 @@
         <span>Каталог</span>
       </div>
       <div class="footer_icons">
-        <img src="../assets/Dark/Dark/Light/Social Icons.svg" alt="whatsapp">
-        <img src="../assets/Dark/Dark/Mini Button.svg" alt="youtube">
-        <img src="../assets/Dark/Mini Button.svg" alt="facebook">
+        <img src="../assets/Dark/Dark/Light/Social Icons.svg" alt="whatsapp" />
+        <img src="../assets/Dark/Dark/Mini Button.svg" alt="youtube" />
+        <img src="../assets/Dark/Mini Button.svg" alt="facebook" />
       </div>
     </div>
     <div class="footer_right">
       <h4>Остались вопросы?</h4>
-      <span>Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</span>
-      <input placeholder="Введите свою почту">
-      <img src="../assets/sms.svg" alt="">
-      <button>Отправить</button>   
-      <p>© 2021-2022, EDE</p>   
+      <span
+        >Узнавайте первым о скидках, предложениях и событиях еженедельно в своем
+        почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</span
+      >
+      <input placeholder="Введите свою почту" />
+      <img src="../assets/sms.svg" alt="" />
+      <button>Отправить</button>
+      <p>© 2021-2022, EDE</p>
     </div>
   </div>
 </footer>
