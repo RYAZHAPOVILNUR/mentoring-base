@@ -7,9 +7,11 @@
         </div>
         <nav class="header-nav">
           <div class="header-nav-item">{{headerItem1}}</div>
-          <div class="header-nav-item">{{headerItem2}}</div>
-          <div class="header-nav-item">{{headerItem3}}</div>
+          <div class="header-nav-item">{{aboutCompany}}</div>
+          <div class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</div>
         </nav>
+        <button (click)="isShowCatalog = !isShowCatalog">скрыть/показать каталог</button>
+        и
       </div>
       <div class="header-right">
         <div class="header-nav-item">
@@ -70,9 +72,9 @@
     </div>
   </div>
 </div>
-
+<button (click)="isShowImg = !isShowImg">скрыть/показать</button>
 <div>
-  <img src="/assets/banner.png" alt="background-large" class="banner">
+  <img *ngIf="isShowImg" [src]="imagePath" alt="background-large" class="banner">
 </div>
 
 <div class="content-container">
