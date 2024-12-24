@@ -11,7 +11,7 @@
           <div class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</div>
         </nav>
         <button (click)="isShowCatalog = !isShowCatalog">скрыть/показать каталог</button>
-        и
+        <button (click)="changeMenuText()">изменить текст</button>
       </div>
       <div class="header-right">
         <div class="header-nav-item">
@@ -41,17 +41,18 @@
 <div class="container-bar">
   <div class="content-container">
     <div class="bar">
-      <div class="bar-left">
-        <div class="bar-item">
-          <div class="bar-item-tel">
-            <img src="/assets/light.svg" alt="light" class="light">
-            <div>{{header2Item1}}</div>
-          </div>
+      <div class="bar-left" >
+        <img src="/assets/light.svg" alt="light" class="light">
+        <div class="bar-item" *ngFor="let item of menuItems">
+          {{item}}
+      <!-- <div class="bar-item-tel">
+              <div>{{header2Item1}}</div>
+          </div> -->
         </div>
-          <div class="bar-item">{{header2Item2}}</div>
+          <!-- <div class="bar-item">{{header2Item2}}</div>
           <div class="bar-item">{{header2Item3}}</div>
           <div class="bar-item">{{header2Item4}}</div>
-          <div class="bar-item">{{header2Item5}}</div>
+          <div class="bar-item">{{header2Item5}}</div> -->
       </div>
       <div class="bar-right">
         <div class="bar-item-search">
