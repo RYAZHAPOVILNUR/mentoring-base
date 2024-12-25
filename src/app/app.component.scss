@@ -18,10 +18,10 @@
 
 .header-nav {
     display: flex;
+    gap: 24px;
 }
 
 .header-nav-item {
-    margin-right: 24px;
     color: #F9FAFB;
 }
 
@@ -78,8 +78,9 @@
     margin-right: 10px;
 }
 
-.header-2-nav-item {
-    margin-right: 25px;
+.header-2-nav {
+    display: flex;
+    gap: 24px;
 }
 
 .header-2-right {
