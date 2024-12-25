@@ -1,49 +1,111 @@
 <div class="header">
-  <div class="header__left">
-      <div class="header-logo">
-          <img src="/assets/Frame.svg" alt="логотип">
+  <div class="container">
+      <div class="header-flex-catalog">
+          <div class="header__left">
+              <div class="header-logo">
+                  <img src="/assets/Frame.svg" alt="логотип">
+              </div>
+              <nav class="header-nav">
+                  <ul class="header-ul">
+                      <li class="header-items"><a href="">Главная</a></li>
+                      <li class="header-items"><a href="">О компании</a></li>
+                      <li class="header-items"><a href="">Каталог</a></li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="header__right">
+              <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">+7 (965) 084-29-29</a></div>
+              <div class="header-heart">
+                  <a href=""><img src="assets/heart1.svg"></a>
+              </div>
+              <button class="header-button">
+                  <img src="/assets/cart.svg" alt="корзина">
+                  <p>Пусто</p>
+              </button>
+          </div>
       </div>
-      <nav class="header-nav">
-          <ul class="header-ul">
-              <li class="header-items">Главная</li>
-              <li class="header-items">О компании</li>
-              <li class="header-items">Каталог</li>
-          </ul>
-      </nav>
-  </div>
-  <div class="header__right">
-      <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">+7 (965) 084-29-29</a></div>
-      <div class="header-heart">
-          <a href=""><img src="assets/heart1.svg"></a>
-      </div>
-      <button class="header-button">
-          <img src="/assets/cart.svg" alt="корзина">
-          <p>Пусто</p>
-      </button>
   </div>
 </div>
-<article class="catalog">
-  <div class="catalog__left">
-      <ul class="catalog-ul">
-          <li><img src="/assets/light.svg" alt="|||">Каталог</li>
-          <li>Стройматериалы</li>
-          <li>Инструменты</li>
-          <li>Электрика</li>
-          <li>Интерьер и одежда</li>
-      </ul>
-  </div>
-  <div class="catalog__right">
-      <div class="catalog-search">
-          <form>
-              <input type="text" name="text" class="search" placeholder="Поиск, например Круг зачистной ">
-              <button>
-                  <img src="/assets/Maskgroup.svg" alt="поиск">
-              </button>
-            </form>
+<div class="catalog">
+  <div class="container">
+      <div class="header-flex-catalog">
+          <div class="catalog__left">
+              <ul class="catalog-ul">
+                  <li><a href=""><img src="/assets/light.svg" alt="|||">Каталог</a></li>
+                  <li><a href="">Стройматериалы</a></li>
+                  <li><a href="">Инструменты</a></li>
+                  <li><a href="">Электрика</a></li>
+                  <li><a href="">Интерьер и одежда</a></li>
+              </ul>
+          </div>
+          <div class="catalog__right">
+              <div class="catalog-search">
+                  <form>
+                      <input type="text" name="text" class="search" placeholder="Поиск, например Круг зачистной ">
+                      <button>
+                          <img src="/assets/Maskgroup.svg" alt="поиск">
+                      </button>
+                    </form>
+              </div>
+              <div class="catalog-local">
+                  <a href="">
+                      <img src="/assets/Vector.svg" alt="локация">
+                      <p>Москва</p>
+                  </a>
+              </div>
+          </div>
       </div>
-      <div class="catalog-local">
-          <img src="/assets/Vector.svg" alt="локация">
-          <p>Москва</p>
-      </div>
   </div>
-</article>
+</div>
+<div class="background">
+    <img src="/assets/background.png" alt="баннер">
+</div>
+<div class="info">
+    <div class="container">
+        <div class="info-flex">
+            <div class="info-item">
+                <img src="/assets/info1.svg" alt="ассортимент">
+                <div class="info-text">
+                    <p><span>Большой ассортимент</span> строительных материалов всегда в наличии</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <img src="/assets/info2.svg" alt="доставка">
+                <div class="info-text">
+                    <p><span>Доставка стройматериалов</span> в течении четырех часов или в любое удобное время</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <img src="/assets/info3.svg" alt="качество">
+                <div class="info-text">
+                    <p>Многоуровневая <span>система управления качеством</span> по стандарту ISO 9001</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cart">
+    <div class="container">
+        <div class="cart-flex">
+            <div class="cart-pagination">
+                <ul>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                </ul>
+            </div>
+            <div class="cart-product">
+                <div class="cart-left">
+                    <div class="cart-cart">
+                        
+                    </div>
+                </div>
+                <div class="cart-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
