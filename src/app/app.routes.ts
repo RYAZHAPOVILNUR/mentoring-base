@@ -5,10 +5,6 @@ import { ContentComponent } from './content/content.component';
 
 export const routes: Routes = [
   {
-    path: ' ',
-    component: HeaderComponent,
-  },
-  {
     path: '',
     component: ContentComponent,
   },
