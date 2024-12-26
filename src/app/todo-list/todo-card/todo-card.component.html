@@ -1,0 +1,9 @@
+<div class="todo_card_cont">
+  <div class="p_cont">
+    <p>Id: {{ todoCard.id }}</p>
+    <p>Todo: {{ todoCard.title }}</p>
+  </div>
+  <div class="button_cont">
+    <button (click)="onDeleteTodo(todoCard.id)">Удалить карточку</button>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<h1>Todo-List component</h1>
+
+<div class="todos_list_cont">
+    <div class="todo" *ngFor="let todo of todos">
+        <todo-card-root [todoCard]="todo" (deleteTodoCard)="deleteTodo($event)"></todo-card-root>
+    </div>
+</div>
