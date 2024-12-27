@@ -2,7 +2,6 @@ import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "../header/header.component";
 
 export interface User {
     id: number,
@@ -33,7 +32,7 @@ export interface User {
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, RouterOutlet, HeaderComponent]
+  imports: [NgFor, RouterOutlet]
 })
 export class UsersListComponent {
   readonly apiService = inject(HttpClient);
