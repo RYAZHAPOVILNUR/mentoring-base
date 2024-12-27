@@ -23,6 +23,10 @@
         list-style: none;
         display: flex;
 
+        .routerLi {
+          color: orange;
+        }
+
         li {
           margin-right: 25px;
           color: white;
