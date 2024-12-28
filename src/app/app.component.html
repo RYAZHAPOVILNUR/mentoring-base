@@ -5,9 +5,12 @@
         <img src="/assets/Frame-logo.svg" alt="logo">
       </div>
       <div class="">
-        <a class="header-nav-item" href="">Главная</a>
-        <a class="header-nav-item" href="">О комапании</a>
-        <a class="header-nav-item" href="">Каталог</a>
+        <a class="header-nav-item" href="">{{headerItem1}}</a>
+        <a class="header-nav-item" href="" *ngIf="isShowAboutCompanmy">{{headerItem2}}</a>
+        <a class="header-nav-item" href="" *ngIf="isShowCatalog">{{headerItem3}}</a>
+        <button class="changeBtn" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать Каталог</button>
+        <button class="changeBtn" (click)="isShowAboutCompanmy = !isShowAboutCompanmy">Скрыть/Показать О компании</button>
+        <button class="changeBtn" (click)="changeMenuText()">Изменить текст</button>
       </div>
     </nav>
   </div>
@@ -25,13 +28,8 @@
 </div>
 
 <div class="top-bar">
-  <div class="top-bar-left">
-    <img class="menu" src="/assets/light.svg" alt="">
-    <a class="top-bar-item " href="">Каталог</a>
-    <a class="top-bar-item" href="">Стройматериалы</a>
-    <a class="top-bar-item" href="">Интрументы</a>
-    <a class="top-bar-item" href="">Электрика</a>
-    <a class="top-bar-item" href="">Интерьер и одежда</a>
+  <img class="menu" src="/assets/light.svg" alt="">
+  <div class="top-bar-left top-bar-item" *ngFor="let item of menuItems">{{item}}
   </div>
   <div class="top-bar-right">
     <form class="form-search" action="">
@@ -44,8 +42,8 @@
     </div>
   </div>
 </div>
-
-<div class="container">
+<button class="changeBtn" (click)="isShowImage = !isShowImage">Скрыть/Показать изображение</button>
+<div class="container" *ngIf="isShowImage">
   <img class="image-back image1" src="/assets/Rectangle5.png" alt="">
   <img class="image-back image2" src="/assets/Vector1.png" alt="">
   <div class="text-container">Инструмент для вашего <br>бизнеса</div>
@@ -69,12 +67,8 @@
   </div>
 
   <div class="item-cards">
-    <div class="item-cards__pagination">
-      <button class="item-cards__pagination-button active-button">1</button>
-      <button class="item-cards__pagination-button">2</button>
-      <button class="item-cards__pagination-button">3</button>
-      <button class="item-cards__pagination-button">4</button>
-      <button class="item-cards__pagination-button">5</button>
+    <div class="item-cards__pagination" >
+      <button class="item-cards__pagination-button active-button" *ngFor="let item of newPages">{{item}}</button>
     </div>
     <div class="item-cards__grid">
       <div class="item-cards__grid-left">
