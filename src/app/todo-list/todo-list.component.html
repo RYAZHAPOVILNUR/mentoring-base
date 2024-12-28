@@ -1,5 +1,4 @@
-<h1>Todo-List component</h1>
-
+<app-todo-form (createTodo)="createTodo($event)"></app-todo-form>
 <div class="todos_list_cont">
     <div class="todo" *ngFor="let todo of todosService.todosSubject$ | async">
         <todo-card-root [todoCard]="todo" (deleteTodoCard)="deleteTodo($event)"></todo-card-root>

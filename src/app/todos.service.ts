@@ -15,4 +15,20 @@ export class TodosService {
       this.todosSubject$.value.filter((todo) => todo.id !== id)
     );
   }
+
+  createTodo(todo: Todo) {
+    const uniqueId = this.todosSubject$.value.find((i) => i.id === todo.id);
+
+    // console.log(typeof(todo.id) === 'number');
+    // typeof(todo.id) === typeof (this.todosSubject$.value.map((i) => i.id));
+
+    if (uniqueId) {
+      alert(
+        'Тудушка с таким Id уже существует, братан. Поменяй айдишку, брат, тогда все ровно будет.'
+      );
+    } else {
+      this.todosSubject$.next([...this.todosSubject$.value, todo]);
+      alert('Тудушка успешно добавлена!');
+    }
+  }
 }

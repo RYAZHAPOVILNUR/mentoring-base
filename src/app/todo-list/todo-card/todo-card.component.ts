@@ -22,5 +22,4 @@ export class TodoCardComponent {
     onDeleteTodo(todoCardId: number) {
         this.deleteTodoCard.emit(todoCardId)
     }
-
 }

@@ -1,0 +1,39 @@
+<h1>Create todo form</h1>
+<div class="form_cont">
+  <form [formGroup]="form" (ngSubmit)="submitFormTodo()">
+    <p>Id:</p>
+    <input type="text" formControlName="id" />
+    <div
+      *ngIf="
+        form.controls['id'].invalid &&
+        (form.controls['id'].dirty || form.controls['id'].touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="form.controls['id'].errors">Id введено неверно</div>
+    </div>
+    <p>Title:</p>
+    <input type="text" formControlName="title" />
+    <div
+      *ngIf="
+        form.controls['title'].invalid &&
+        (form.controls['title'].dirty || form.controls['title'].touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="form.controls['title'].errors">Загаловок введен неверно</div>
+    </div>
+    <p>Completed:</p>
+    <input type="text" formControlName="completed" />
+    <div
+      *ngIf="
+        form.controls['completed'].invalid &&
+        (form.controls['completed'].dirty || form.controls['completed'].touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="form.controls['completed'].errors">Статус задачи введен неверно</div>
+    </div>
+    <button [disabled]="form.invalid">Создать список дел</button>
+  </form>
+</div>

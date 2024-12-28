@@ -4,28 +4,29 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
+import { UserFormComponent } from '../create-user-form/create-user-form.component';
 
 export interface User {
   id: number;
   name: string;
-  username: string;
+  username?: string;
   email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
+  address?: {
+    street?: string;
+    suite?: string;
+    city?: string;
+    zipcode?: string;
+    geo?: {
+      lat?: string;
+      lng?: string;
     };
   };
-  phone: string;
+  phone?: string;
   website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
+  company?: {
+    name?: string;
+    catchPhrase?: string;
+    bs?: string;
   };
 }
 @Component({
@@ -33,7 +34,7 @@ export interface User {
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe],
+  imports: [NgFor, UserCardComponent, AsyncPipe, UserFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
@@ -48,5 +49,17 @@ export class UsersListComponent {
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
+  }
+
+  createUser(formData: any) {
+    this.usersService.createUser({
+      id: new Date().getTime(),
+      name: formData.name,
+      company: {
+        name: formData.company,
+      },
+      email: formData.email,
+      website: formData.website,
+    });
   }
 }
