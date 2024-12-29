@@ -32,7 +32,7 @@
         display: flex;
         align-items: center;
 
-        > img {
+        img {
           margin: 0 10px;
         }
       }
@@ -86,15 +86,19 @@
     div {
       display: flex;
       align-items: center;
-      input {
-        width: 300px;
-        font-size: 16px;
-        background-color: inherit;
-        border: 0;
+      label {
+        display: flex;
         border-bottom: 1px solid #3C3C3B;
-        outline: none;
+        margin: 0 24px;
+        input {
+          width: 300px;
+          font-size: 16px;
+          background-color: inherit;
+          border: 0;
+          outline: none;
+        }
       }
-      div {
+      > div {
         img {
           margin: 0 5px;
         }
