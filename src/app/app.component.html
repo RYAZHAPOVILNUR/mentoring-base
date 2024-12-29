@@ -7,10 +7,11 @@
                 </div>
                 <nav class="header-nav">
                     <ul class="header-ul">
-                        <li class="header-items"><a href="">Главная</a></li>
-                        <li class="header-items"><a href="">О компании</a></li>
-                        <li class="header-items"><a href="">Каталог</a></li>
+                        <li class="header-items"><a href="">{{headerItem1}}</a></li>
+                        <li class="header-items"><a href="">{{aboutCompany}}</a></li>
+                        <li class="header-items" *ngIf="isShowCatalog"><a href="">{{headerItem3}}</a></li>
                     </ul>
+                    <button (click)="isShowCatalog=!isShowCatalog">Каталог on/off</button>
                 </nav>
             </div>
             <div class="header__right">
@@ -32,11 +33,8 @@
         <div class="header-flex-catalog">
             <div class="catalog__left">
                 <ul class="catalog-ul">
-                    <li><a href=""><img src="/assets/light.svg" alt="|||">Каталог</a></li>
-                    <li><a href="">Стройматериалы</a></li>
-                    <li><a href="">Инструменты</a></li>
-                    <li><a href="">Электрика</a></li>
-                    <li><a href="">Интерьер и одежда</a></li>
+                    <li *ngFor='let catalogItem of catalogItems'><a href=""><img src="/assets/light.svg" alt="|||">{{catalogItem}}</a></li>
+                    <button (click)="changeMenuText()" >toLowerCase/toUpperCase</button>
                 </ul>
             </div>
             <div class="catalog__right">
@@ -58,7 +56,8 @@
         </div>
     </div>
 </section>
-<section class="background">
+<div class="container"><button (click)="isShowBanner = !isShowBanner" >Показать/скрыть мужика</button></div>
+<section *ngIf="isShowBanner" class="background">
     <img src="/assets/background.png" alt="баннер">
 </section>
 <section class="info">
@@ -90,11 +89,7 @@
         <div class="cart-flex">
             <div class="cart-pagination">
                 <ul>
-                    <li><a class="pag-activ" href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
+                    <li *ngFor=" let itemNewPage of newPage"><a class="pag-activ" href="">{{itemNewPage}}</a></li>
                 </ul>
             </div>
             <div class="cart-product">
@@ -161,9 +156,6 @@
                 <article class="goods">
                     <div class="goods-info">
                         <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        <!--
-                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
-                        -->
                     </div>
                     <div class="goods-favourites">
                         <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
@@ -192,9 +184,9 @@
                 <article class="goods">
                     <div class="goods-info">
                         <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        <!--
-                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
-                        -->
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
                     </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>
@@ -222,6 +214,9 @@
                         <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
                         <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
                     </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>
                     <p><span>Артикул 00004</span></p>
@@ -246,9 +241,9 @@
                 <article class="goods">
                     <div class="goods-info">
                         <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
-                        <!-- 
-                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        -->
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
                     </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>
@@ -302,10 +297,10 @@
                 <button class="popular-button-right"><img src="/assets/strelka-right.svg" alt=""></button>
                 <article class="goods">
                     <div class="goods-info">
-                        <!--
-                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        -->
                         <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
                     </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>
@@ -330,10 +325,10 @@
                 </article>
                 <article class="goods">
                     <div class="goods-info">
-                        <!--
-                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        -->
                         <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
                     </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>
@@ -358,10 +353,10 @@
                 </article>
                 <article class="goods">
                     <div class="goods-info">
-                        <!--
-                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        -->
                         <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
                     </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>
@@ -386,10 +381,10 @@
                 </article>
                 <article class="goods">
                     <div class="goods-info">
-                        <!--
-                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
-                        -->
                         <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
                     </div>
                     <img src="/assets/goods1.png" alt="">
                     <h5><a href="">Круг зачистной 125х6х22</a></h5>

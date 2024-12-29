@@ -36,6 +36,9 @@
   display: flex;
   height: 80px;
   align-items: center;
+  nav {
+    display: flex;
+  }
 }
 .header-logo {
   display: flex;
@@ -115,11 +118,15 @@
     a {
       color: #3c3c3b !important;
     }
+    img {
+      display: none;
+    }
   }
   li:first-child {
     padding-left: 26px;
     position: relative;
     img {
+      display: inline;
       position: absolute;
       left: 0;
       top: -5px;
