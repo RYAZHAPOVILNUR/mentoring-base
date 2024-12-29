@@ -1,3 +1,5 @@
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -181,4 +183,13 @@ template {
 
 [hidden] {
   display: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

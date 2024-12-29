@@ -1,8 +1,10 @@
-<h1>Create todo form</h1>
 <div class="form_cont">
+  <h1>Create todo form</h1>
   <form [formGroup]="form" (ngSubmit)="submitFormTodo()">
-    <p>Id:</p>
-    <input type="text" formControlName="id" />
+    <mat-form-field>
+      <mat-label>Введите Id</mat-label>
+      <input matInput type="text" formControlName="id" />
+    </mat-form-field>
     <div
       *ngIf="
         form.controls['id'].invalid &&
@@ -12,8 +14,10 @@
     >
       <div *ngIf="form.controls['id'].errors">Id введено неверно</div>
     </div>
-    <p>Title:</p>
-    <input type="text" formControlName="title" />
+    <mat-form-field>
+      <mat-label>Введите текст</mat-label>
+      <input matInput type="text" formControlName="title" />
+    </mat-form-field>
     <div
       *ngIf="
         form.controls['title'].invalid &&
@@ -21,10 +25,12 @@
       "
       class="alert"
     >
-      <div *ngIf="form.controls['title'].errors">Загаловок введен неверно</div>
+      <div *ngIf="form.controls['title'].errors">Заголовок введен неверно</div>
     </div>
-    <p>Completed:</p>
-    <input type="text" formControlName="completed" />
+    <mat-form-field>
+      <mat-label>Введите статус</mat-label>
+      <input matInput type="text" formControlName="completed" />
+    </mat-form-field>
     <div
       *ngIf="
         form.controls['completed'].invalid &&
@@ -32,8 +38,13 @@
       "
       class="alert"
     >
-      <div *ngIf="form.controls['completed'].errors">Статус задачи введен неверно</div>
+      <div *ngIf="form.controls['completed'].errors">
+        Статус задачи введен неверно
+      </div>
     </div>
-    <button [disabled]="form.invalid">Создать список дел</button>
+    <button mat-fab extended [disabled]="form.invalid">
+      <mat-icon>+</mat-icon>
+      Создать список дел
+    </button>
   </form>
 </div>
