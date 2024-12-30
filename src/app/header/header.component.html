@@ -1,0 +1,61 @@
+<header class="header">
+    <div class="container">
+        <div class="header-flex-catalog">
+            <div class="header__left">
+                <div class="header-logo">
+                    <img src="/assets/Frame.svg" alt="логотип">
+                </div>
+                <nav class="header-nav">
+                    <ul class="header-ul">
+                        <li class="header-items"><a href="">{{headerItem1}}</a></li>
+                        <li class="header-items"><a href="">{{aboutCompany}}</a></li>
+                        <li class="header-items" *ngIf="isShowCatalog"><a href="">{{headerItem3}}</a></li>
+                    </ul>
+                    <button (click)="isShowCatalog=!isShowCatalog">Каталог on/off</button>
+                </nav>
+            </div>
+            <div class="header__right">
+                <button routerLink = '/users' class="header-user">
+                    <p>Пользователи</p>
+                </button>
+                <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">+7 (965)
+                        084-29-29</a></div>
+                <div class="header-heart">
+                    <a href=""><img src="assets/heart1.svg"></a>
+                </div>
+                <button class="header-button">
+                    <img src="/assets/cart.svg" alt="корзина">
+                    <p>Пусто</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="catalog">
+    <div class="container">
+        <div class="header-flex-catalog">
+            <div class="catalog__left">
+                <ul class="catalog-ul">
+                    <li *ngFor='let catalogItem of catalogItems'><a href=""><img src="/assets/light.svg" alt="|||">{{catalogItem}}</a></li>
+                    <button (click)="changeMenuText()" >toLowerCase/toUpperCase</button>
+                </ul>
+            </div>
+            <div class="catalog__right">
+                <div class="catalog-search">
+                    <form>
+                        <input type="text" name="text" class="search" placeholder="Поиск, например Круг зачистной ">
+                        <button>
+                            <img src="/assets/Maskgroup.svg" alt="поиск">
+                        </button>
+                    </form>
+                </div>
+                <div class="catalog-local">
+                    <a href="">
+                        <img src="/assets/Vector.svg" alt="локация">
+                        <p>Москва</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div style=" display: flex; flex-wrap: wrap; gap: 20px; padding: 30px 0;">
+        <article *ngFor='let user of users' class="goods">
+            <h5><a href="">{{user.name}}</a></h5>
+            <p><span>{{user.username}}</span></p>
+            <p><span>{{user.address}}</span></p>
+            <p><span>{{user.username}}</span></p>
+            <p><span>{{user.username}}</span></p>
+            <button (click)="deleteUser(user.id)">Delete</button>
+        </article>
+    </div>
+</div>
+<!-- "email": "Sincere@april.biz",
+"address": {
+  "street": "Kulas Light",
+  "suite": "Apt. 556",
+  "city": "Gwenborough",
+  "zipcode": "92998-3874",
+  "geo": {
+    "lat": "-37.3159",
+    "lng": "81.1496"
+  } -->

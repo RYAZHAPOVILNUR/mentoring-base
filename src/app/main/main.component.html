@@ -1,0 +1,355 @@
+<div class="container"><button (click)="isShowBanner = !isShowBanner" >Показать/скрыть мужика</button></div>
+<section *ngIf="isShowBanner" class="background">
+    <img src="/assets/background.png" alt="баннер">
+</section>
+<section class="info">
+    <div class="container">
+        <div class="info-flex">
+            <div class="info-item">
+                <img src="/assets/info1.svg" alt="ассортимент">
+                <div class="info-text">
+                    <p><span>Большой ассортимент</span> строительных материалов всегда в наличии</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <img src="/assets/info2.svg" alt="доставка">
+                <div class="info-text">
+                    <p><span>Доставка стройматериалов</span> в течении четырех часов или в любое удобное время</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <img src="/assets/info3.svg" alt="качество">
+                <div class="info-text">
+                    <p>Многоуровневая <span>система управления качеством</span> по стандарту ISO 9001</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cart">
+    <div class="container">
+        <div class="cart-flex">
+            <div class="cart-pagination">
+                <ul>
+                    <li *ngFor=" let itemNewPage of newPage"><a class="pag-activ" href="">{{itemNewPage}}</a></li>
+                </ul>
+            </div>
+            <div class="cart-product">
+                <div class="cart-left">
+                    <div class="cart-left-cart">
+                        <h3 class="cart-name">Строительный отделочный инструмент</h3>
+                        <div class="cart-bottom">
+                            Перейти в каталог
+                            <button><img src="/assets/button-cart.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-right">
+                    <div class="cart-right-cart cart1">
+                        <h3 class="cart-name">Эмали</h3>
+                        <div class="cart-bottom">
+                            Перейти в каталог
+                            <button><img src="/assets/button-cart.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="cart-right-cart cart2">
+                        <h3 class="cart-name flex-start">Лакокрасочные <br>
+                            материалы</h3>
+                        <div class="cart-bottom flex-start">
+                            Перейти в каталог
+                            <button><img src="/assets/button-cart.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="cart-right-cart cart3">
+                        <h3 class="cart-name flex-start">Пены, клеи и<br> герметики</h3>
+                        <div class="cart-bottom flex-start">
+                            Перейти в каталог
+                            <button><img src="/assets/button-cart.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="cart-right-cart cart4">
+                        <h3 class="cart-name">Розетки и выключатели</h3>
+                        <div class="cart-bottom">
+                            Перейти в каталог
+                            <button><img src="/assets/button-cart.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="popular">
+    <div class="container">
+        <div class="popular-flex">
+            <div class="popular-top">
+                <h3 class="popular-title">
+                    <a href="">Популярные товары</a>
+                </h3>
+                <a href="" class="popular-watch">
+                    Посмотреть все товары
+                </a>
+            </div>
+            <div class="popular-bottom">
+                <div class="popular-absolute">
+                    <button class="popular-button-left"><img src="/assets/strelka-left.svg" alt=""></button>
+                    <button class="popular-button-right"><img src="/assets/strelka-right.svg" alt=""></button>
+                </div>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong><b>52 руб.</b> 48 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong><b>52 руб.</b> 48 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="skidki" src="/assets/skidki.svg" alt="Скидка"></a>
+                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong><b>52 руб.</b> 48 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong>52 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="minibanner">
+    <div class="container">
+        <div class="minibanner-block">
+            <div>
+                <h4 >Более 10 000 наименований </h4>
+                <p>Инструмент для вашего бизнеса, разнообразных марок</p>
+            </div>
+            <div><a href="">Перейти в каталог</a></div>
+        </div>
+    </div>
+</section>
+<section class="popular">
+    <div class="container">
+        <div class="popular-flex">
+            <div class="popular-top">
+                <h3 class="popular-title">
+                    <a href="">Новинки</a>
+                </h3>
+                <a href="" class="popular-watch">
+                    Посмотреть все товары
+                </a>
+            </div>
+            <div class="popular-bottom">
+                <button class="popular-button-left"><img src="/assets/strelka-left.svg" alt=""></button>
+                <button class="popular-button-right"><img src="/assets/strelka-right.svg" alt=""></button>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong>52 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong>52 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong>52 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+                <article class="goods">
+                    <div class="goods-info">
+                        <a href=""><img class="novinki" src="/assets/novinki.svg" alt="Новинка"></a>
+                    </div>
+                    <div class="goods-favourites">
+                        <a href=""><img src="/assets/favourites.svg" alt="Скидка"></a>
+                    </div>
+                    <img src="/assets/goods1.png" alt="">
+                    <h5><a href="">Круг зачистной 125х6х22</a></h5>
+                    <p><span>Артикул 00004</span></p>
+                    <div class="goods-price">
+                        <p>
+                            <span>Цена за штуку </span>
+                            <strong>52 руб.</strong>
+                        </p>
+                    </div>
+                    <div class="goods-bottom">
+                        <div class="goods-counter">
+                            <h6>Количество </h6>
+                            <div class="counter">
+                                <button>+</button>
+                                <div>1</div>
+                                <button>-</button>
+                            </div>
+                        </div>
+                        <button>В корзину</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
