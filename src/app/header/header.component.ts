@@ -26,8 +26,6 @@ export class HeaderComponent {
 
   readonly todosList = nameTodosList
 
-  // isShowImg = true
-
   menuItems = upperCaseMenuItems;
 
   isUpperCase = true;
