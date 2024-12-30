@@ -1,0 +1,28 @@
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+
+    .alert {
+        color: red;
+        position: relative;
+        top: -20px;
+        font-size: 12px;
+      }
+
+      mat-form-field {
+        width: 280px;
+      }
+
+      button {
+        margin: 0 auto;
+        width: 200px;
+
+        mat-icon {
+            position: relative;
+            bottom: 5px;
+            left: 7px;
+          }
+      }
+  
+}

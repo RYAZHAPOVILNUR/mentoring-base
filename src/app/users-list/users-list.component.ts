@@ -62,4 +62,13 @@ export class UsersListComponent {
       website: formData.website,
     });
   }
+
+  editUser(user: any) {
+    this.usersService.editUser({
+      ...user,
+      company: { 
+        name: user.company 
+      },
+    });
+  }
 }
