@@ -29,16 +29,6 @@ export class UsersListComponent {
   deleteUser(id: number) {
     this.usersService.deleteUser(id)
   }
-
-  getUserAuthor(id: number) {
-//     const user = this.usersService.users.find(
-//       user => user.id === id
-//     )
-
-//     if (!user) return
-
-//     return user.name
-  }
 }
 
 
