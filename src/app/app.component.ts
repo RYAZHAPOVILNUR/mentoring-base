@@ -48,14 +48,6 @@ export class AppComponent {
 
   readonly header2Item1: string = upperCaseMenuItems[0]
 
-  // readonly header2Item2 = 'Стройматериалы'
-
-  // readonly header2Item3 = 'Инструменты'
-
-  // readonly header2Item4 = 'Электрика'
-
-  // readonly header2Item5 = 'Интерьер и одежда'
-
   readonly newPages = newArrow
 
   isUppeerCase = true
@@ -69,18 +61,4 @@ export class AppComponent {
 
 }
 
-const names = ['ilnur', 'sveta', 'beslan', 'ruslan'] 
-
-names.forEach(
-  (name) => {
-    console.log(name)
-  }
-)
-
-console.log(names);
-
-
-// function item(value: string, index: number, array: string[]): string {
-//   throw new Error('Function not implemented.');
-// }
 
