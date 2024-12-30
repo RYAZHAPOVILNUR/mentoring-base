@@ -8,9 +8,9 @@
         <a class="header-nav-item" href="">{{headerItem1}}</a>
         <a class="header-nav-item" href="" *ngIf="isShowAboutCompanmy">{{headerItem2}}</a>
         <a class="header-nav-item" href="" *ngIf="isShowCatalog">{{headerItem3}}</a>
-        <button class="changeBtn" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать Каталог</button>
-        <button class="changeBtn" (click)="isShowAboutCompanmy = !isShowAboutCompanmy">Скрыть/Показать О компании</button>
-        <button class="changeBtn" (click)="changeMenuText()">Изменить текст</button>
+        <button class="changeBtn" type="button" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать Каталог</button>
+        <button class="changeBtn" type="button" (click)="isShowAboutCompanmy = !isShowAboutCompanmy">Скрыть/Показать О компании</button>
+        <button class="changeBtn" type="button" (click)="changeMenuText()">Изменить текст</button>
       </div>
     </nav>
   </div>
@@ -42,6 +42,7 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
 <button class="changeBtn" (click)="isShowImage = !isShowImage">Скрыть/Показать изображение</button>
 <div class="container" *ngIf="isShowImage">
   <img class="image-back image1" src="/assets/Rectangle5.png" alt="">
@@ -460,3 +461,4 @@
     </div>
   </div>
 </footer>
+
