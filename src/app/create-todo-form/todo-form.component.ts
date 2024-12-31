@@ -14,8 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-todo-form',
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss',
+  templateUrl: './todo-form.component.html',
+  styleUrl: './todo-form.component.scss',
   standalone: true,
   imports: [
     ReactiveFormsModule,

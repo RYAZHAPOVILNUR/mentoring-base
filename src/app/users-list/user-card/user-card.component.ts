@@ -1,10 +1,11 @@
 import { NgFor } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { User } from "../users-list.component";
 
 
 
 @Component({
-    selector: 'user-card-root',
+    selector: 'app-user-card',
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
     standalone: true,
@@ -14,7 +15,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export class UserCardComponent {
     @Input()
 
-    userCard: any
+    userCard!: User
 
     @Output()
 

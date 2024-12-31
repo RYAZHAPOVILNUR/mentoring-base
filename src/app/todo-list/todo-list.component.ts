@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TodosApiService } from '../todo-api.service';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosService } from '../todos.service';
-import { TodoFormComponent } from "../create-todo-form/create-todo-form.component";
+import { TodoFormComponent } from "../create-todo-form/todo-form.component";
 
 export interface Todo {
   userId?: number;
@@ -13,7 +13,7 @@ export interface Todo {
 }
 
 @Component({
-  selector: 'todo-list-root',
+  selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss',
   standalone: true,

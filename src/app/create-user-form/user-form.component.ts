@@ -14,8 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-user-form',
-  templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss',
+  templateUrl: './user-form.component.html',
+  styleUrl: './user-form.component.scss',
   standalone: true,
   imports: [
     ReactiveFormsModule,

@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UsersApiService } from '../users-api.service';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
-import { UserFormComponent } from '../create-user-form/create-user-form.component';
+import { UserFormComponent } from '../create-user-form/user-form.component';
 
 export interface User {
   id: number;
@@ -30,7 +30,7 @@ export interface User {
   };
 }
 @Component({
-  selector: 'users-list-root',
+  selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
