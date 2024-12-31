@@ -4,9 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog.component.ts/edit-user-dialog.component';
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { User } from '../users-list.component';
 
 @Component({
-  selector: 'user-card-root',
+  selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
@@ -14,7 +15,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class UserCardComponent {
   @Input()
-  userCard: any;
+  userCard!: User;
 
   @Output()
   deleteUserCard = new EventEmitter();

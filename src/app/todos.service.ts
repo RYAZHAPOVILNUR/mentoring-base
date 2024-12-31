@@ -19,8 +19,6 @@ export class TodosService {
   createTodo(todo: Todo) {
     const uniqueId = this.todosSubject$.value.find((i) => i.id === todo.id);
 
-    // console.log(typeof(todo.id) === 'number');
-    // typeof(todo.id) === typeof (this.todosSubject$.value.map((i) => i.id));
 
     if (uniqueId) {
       alert(

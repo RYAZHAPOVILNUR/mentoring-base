@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Todo } from "../todo-list.component";
 
 
 
 @Component({
-    selector: 'todo-card-root',
+    selector: 'app-todo-card',
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
     standalone: true,
@@ -13,7 +14,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export class TodoCardComponent {
     @Input()
 
-    todoCard: any
+    todoCard!: Todo
 
     @Output()
 
