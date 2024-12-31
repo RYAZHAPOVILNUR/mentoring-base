@@ -1,0 +1,30 @@
+.cont {
+  padding: 40px;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .yes_or_no_cont {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+
+    .buttons {
+      cursor: pointer;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 600;
+
+
+      &:hover {
+        background-color: #f54082;
+        border: none;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
-<app-user-form (createUser)="createUser($event)"></app-user-form>
+<div class="button_cont">
+  <button mat-fab extended (click)="openDialog()">Добавить пользователя</button>
+</div>
 <div class="users_list_cont">
   <div class="user" *ngFor="let user of usersService.usersSubject$ | async">
     <user-card-root

@@ -1,14 +1,21 @@
 p {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 
-  button {
-    display: flex;
-    justify-self: center;
-    margin: 25px 0 15px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px;
-    border: 1px solid orange;
-    background-color: white;
+button {
+  display: flex;
+  justify-self: center;
+  margin: 25px 0 15px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background-color: orange;
+  color: white;
+
+  &:hover {
+    background-color: #f54082;
+    border: none;
+    color: white;
   }
+}

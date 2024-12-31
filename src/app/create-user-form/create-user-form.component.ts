@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogClose } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-form',
@@ -25,6 +26,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatIconModule,
     MatDividerModule,
+    MatDialogClose,
   ],
 })
 export class UserFormComponent {
@@ -43,9 +45,4 @@ export class UserFormComponent {
       Validators.minLength(3),
     ]),
   });
-
-  submitForm(): void {
-    this.createUser.emit(this.form.value);
-    this.form.reset();
-  }
 }

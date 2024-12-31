@@ -1,5 +1,5 @@
 <div class="form_cont">
-  <form [formGroup]="form" (ngSubmit)="submitForm()">
+  <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Введите имя</mat-label>
       <input matInput type="text" formControlName="name" />
@@ -56,7 +56,12 @@
         Название вебсайта введено неверно
       </div>
     </div>
-    <button mat-fab extended [disabled]="form.invalid">
+    <button
+      mat-fab
+      extended
+      [disabled]="form.invalid"
+      [mat-dialog-close]="form.value"
+    >
       <mat-icon>+</mat-icon>
       Создать пользователя
     </button>

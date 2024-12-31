@@ -2,12 +2,15 @@ import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog.component.ts/edit-user-dialog.component';
+import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'user-card-root',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
+  imports: [MatSnackBarModule],
 })
 export class UserCardComponent {
   @Input()
@@ -20,6 +23,7 @@ export class UserCardComponent {
   editUser = new EventEmitter();
 
   readonly dialog = inject(MatDialog);
+  private snackBar = inject(MatSnackBar);
 
   openDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
@@ -29,6 +33,23 @@ export class UserCardComponent {
     dialogRef.afterClosed().subscribe((editResult) => {
       if (editResult) {
         this.editUser.emit(editResult);
+        this.snackBar.open('Пользователь изменен!', 'OK', {
+          duration: 3000,
+        });
+      }
+    });
+  }
+
+  openDialogDelete(): void {
+    const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
+      data: { userCard: this.userCard },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.snackBar.open('Пользователь удален!', 'OK', {
+          duration: 3000,
+        });
       }
     });
   }

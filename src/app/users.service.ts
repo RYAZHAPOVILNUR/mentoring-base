@@ -31,7 +31,6 @@ export class UsersService {
       alert('Ошибка! Пользователь с таким Email уже зарегистрирован');
     } else {
       this.usersSubject$.next([...this.usersSubject$.value, user]);
-      alert('Пользователь успешно добавлен!');
     }
   }
 
