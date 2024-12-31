@@ -1,5 +1,6 @@
 import { NgFor } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { User } from "../users-list.component";
 
 
 
@@ -13,8 +14,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 export class UserCardComponent {
     @Input()
-
-    userCard: any
+    userCard!: User;
 
     @Output()
 

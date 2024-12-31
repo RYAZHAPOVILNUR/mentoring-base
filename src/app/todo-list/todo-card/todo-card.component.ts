@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-
+import { Todo } from "../todo-list.component";
 
 
 @Component({
@@ -12,8 +12,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 export class TodoCardComponent {
     @Input()
-
-    todoCard: any
+    todoCard!: Todo;
 
     @Output()
 

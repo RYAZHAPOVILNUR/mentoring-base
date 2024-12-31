@@ -6,13 +6,13 @@
         </div>
         <nav>
           <ul>
-            <li class="RouterLi" *ngIf="isShowMain" routerLink="/">
+            <li class="active" *ngIf="isShowMain" routerLink="/">
               {{ header_item_1 }}
             </li>
             <li>{{ aboutCompany }}</li>
             <li>{{ header_item_3 }}</li>
-            <li class="RouterLi" routerLink="users">Пользователи</li>
-            <li class="RouterLi" routerLink="todos">Список дел</li>
+            <li class="active" routerLink="users">Пользователи</li>
+            <li class="active" routerLink="todos">Список дел</li>
             <button (click)="isShowMain = !isShowMain">Скрыть/Показать</button>
           </ul>
         </nav>
