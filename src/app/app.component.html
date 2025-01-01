@@ -1,125 +1,102 @@
-<div class="app-container">
- <header>
-      <div class="content-container_1">
-    <nav class="nav">
-      <div class="nav-container">
 
-        <div class="menu-items-container">
-
-          <img src="../assets/logo.svg" alt="">
-          <span class="menu-item white-color">{{headerItem1}}</span>
-          <span class="menu-item white-color"> {{aboutCompany}}</span>
-          <span class="menu-item white-color" *ngIf="isShouCatalog"> {{headerItem3}}</span>
-          <button (click)="isShouCatalog = !isShouCatalog" >Скрыть или показать каталог
-          </button>
-          <button (click)="changeTextMenu()"> Изменить текст </button>
+<app-header></app-header>
+<div class="wrapper">
+  <button (click)="isShouBunner = !isShouBunner">
+    Показать или скрыть баннер
+  </button>
+  <main>
+    <div>
+      <div class="banner" *ngIf="isShouBunner">
+        <img
+          src="../assets/banner.jpg"
+          alt="bacground-large"
+          style="width: 100%"
+          />
         </div>
-
       </div>
-      <div class="header-info-container white-color">
-        <img src="../assets/Phone.svg" alt="">
-        <span>+
-        793717677771</span>
-        <img src="../assets/Vector.svg" alt="Избраное">
-        <button class="cart-button header-info-item">
-          <img src="../assets/Mask group.png" alt="cart">
-          <div style="margin-left: 10px; font-size: 16px;">Пусто</div>
+    </main>
+    <div class="content-container_2">
+      <div class="content">
+        <div class="advantages">
+          <div class="advantages-container">
+            <div class="advantage-item">
+              <img class="advantage-image" src="../assets/briks.svg" alt="" />
+              <div class="advantage-content">
+                <div class="advantage-content-title">
+                  Доставка стройматериалов
+                </div>
+                <div class="advantage-content-text">
+                  в течении четырех часов или в любое удобное время
+                </div>
+              </div>
+            </div>
+            <div class="advantage-item">
+              <img class="advantage-image" src="../assets/car.png" alt="" />
+              <div class="advantage-content">
+                <div class="advantage-content-title">
+                  Доставка стройматериалов
+                </div>
+                <div class="advantage-content-text">
+                  в течении четырех часов или в любое удобное время
+                </div>
+            </div>
+          </div>
+          <div class="advantage-item">
+            <img class="advantage-image" src="../assets/like.png" alt="" />
+            <div class="advantage-content">
+              <div class="advantage-content-title">Многоуровневая система</div>
+              <div class="advantage-content-text">
+                управления качеством по стандарту ISO 9001
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-cards">
+        <div class="item-cards_pagination">
+          <button
+          class="item-cards_pagination-button"
+          *ngFor="let item of newPages"
+          >
+          {{ item }}
         </button>
       </div>
-      </nav>
-      <nav class="second-nav">
-        <div class="second-nav-container">
-        <div class="menu-items-container">
-          <img src="../assets/light.svg" alt="Черточки">
-          <span class="menu-item" *ngFor="let item of menuItems"> {{item}} </span>
-
+      <div class="item-cards_grid">
+        <div class="item-cards_grid-left">
+          <div class="item-cards_grid-left-text">
+            Строительный отделочный инструмент
+          </div>
+          <div class="item-cards_grid-left-action">
+            <span style="margin-right: 10px">Перейти в каталог</span>
+            <a class="item-cards_grid-left-action-link">
+              <img src="../assets/arrow-click.svg" alt="" />
+            </a>
+          </div>
         </div>
-        <div class="menu-items-container">
-          <input class="search-input" type="text" placeholder="Поиск, например Круг зачистной">
-          <img src="../assets/map-pin (2) 1.png" alt="moscow" style="width: 12px; height: 12px"> <span class="menu-item-moscow">  Москва </span>
+
+        <div class="item-cards_grid-right">
+          <div class="item-cards__grid-right-block">
+            <img src="../assets/image 14.svg" alt="" />
+            <span class="text-enter-catalog">Перейти в каталог</span>
+            <a>
+              <img src="../assets/arrow-click.svg" alt="" />
+            </a>
+          </div>
+          <div class="item-cards__grid-right-block">
+            <img src="../assets/image 17.svg" alt="" />
+          </div>
+          <div class="item-cards__grid-right-block">33</div>
+          <div class="item-cards__grid-right-block"></div>
         </div>
-
       </div>
-
-
-      </nav>
-      <div class="banner" *ngIf="isShouBunner">
-        <img src="../assets/banner.jpg" alt="bacground-large" style="width: 100%;">
-      </div>
-      <button (click)="isShouBunner = !isShouBunner">Показать или скрыть баннер</button>
     </div>
-    </header>
-  <div class="content-container_2">
-    <div class="content">
-
-      <div class="advantages-container">
-        <div class="advantage">
-          <img class="advantage-image" src="../assets/briks.svg" alt="">
-          <div class="advantage-content">
-            <div class="advantage-content-title">Доставка стройматериалов</div>
-            <div class="advantage-content-text">в течении четырех часов или в любое удобное время</div>
-          </div>
-        </div>
-        <div class="advantage">
-          <img class="advantage-image" src="../assets/car.png" alt="">
-          <div class="advantage-content">
-            <div class="advantage-content-title">Доставка стройматериалов</div>
-            <div class="advantage-content-text">в течении четырех часов или в любое удобное время</div>
-          </div>
-        </div>
-        <div class="advantage">
-          <img class="advantage-image" src="../assets/like.png" alt="">
-          <div class="advantage-content">
-            <div class="advantage-content-title">Многоуровневая система </div>
-            <div class="advantage-content-text">управления качеством по стандарту ISO 9001</div>
-          </div>
-        </div>
-      </div>
-        <div class="item-cards">
-          <div class="item-cards_pagination">
-         <button class="item-cards_pagination-button" *ngFor="let item of newPages">{{item}}</button>
-          </div>
-            <div class="item-cards_grid">
-
-                <div class="item-cards_grid-left">
-                  <div class="item-cards_grid-left-text">
-                    Строительный отделочный инструмент
-                  </div>
-                  <div class="item-cards_grid-left-action">
-                   <span style="margin-right: 10px;">Перейти в каталог</span>
-                   <a class="item-cards_grid-left-action-link">
-                    <img src="../assets/arrow-click.svg" alt="">
-                  </a>
-
-                  </div>
-              </div>
-
-                <div class="item-cards_grid-right">
-                  <div class="item-cards__grid-right-block">
-
-                    <img src="../assets/image 14.svg" alt="">
-                   <span class="text-enter-catalog">Перейти в каталог</span>
-                    <a>
-                      <img src="../assets/arrow-click.svg" alt="">
-                    </a>
-                  </div>
-                  <div class="item-cards__grid-right-block">
-                    <img src="../assets/image 17.svg" alt="">
-                  </div>
-                  <div class="item-cards__grid-right-block">33</div>
-                  <div class="item-cards__grid-right-block">44</div>
-                </div>
-           
+  </div>
+</div>
 
 
-
-          </div>
 
 
 
 </div>
-    </div>
 
-<!--
-  <footer></footer> -->
-</div>
+<router-outlet></router-outlet>

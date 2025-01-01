@@ -1,0 +1,63 @@
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Верхнее выравнивание */
+  padding: 20px;
+  background-color:rgba(75, 86, 94, 1);
+  border-top: 2px solid #ccc;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Выравнивание текста по левому краю */
+}
+
+.company-logo img {
+  width: 59px;
+  height: 39px;
+  gap: 0px;
+  opacity: 0px;
+
+}
+
+.contact-info p {
+  margin: 5px 0; /* Отступы между строками */
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-right p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Отступ между инпутом и кнопкой */
+}
+
+input[type="email"] {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff; /* Синий цвет кнопки */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Цвет кнопки при наведении */
+}

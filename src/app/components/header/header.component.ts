@@ -1,11 +1,7 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-
-
+import { NgFor, NgIf } from "@angular/common";
+import { Component, Inject, Injectable } from "@angular/core";
+import { UsersListComponent } from "../users-list/users-list.component";
+import { RouterLink } from "@angular/router";
 
 const names = ['vlad', 'sasha', 'ravil'];
 const upperCase = names.map (
@@ -35,21 +31,20 @@ const upperCaseMenuItems : string[] = menuItems.map(
     return item.toUpperCase();
   }
 )
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, HeaderComponent, RouterLink, FooterComponent, HomeComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
-})
-export class AppComponent {
-  title = 'mentoring-first-project';
 
- isShouCatalog : boolean= true;
- isShouBunner : boolean = true;
-   readonly headerItem1 = 'Главная';
+@Component({
+  selector: 'app-header',
+  standalone : true,
+  imports: [NgFor, NgIf, RouterLink ],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
+})
+
+export class HeaderComponent {
+  readonly headerItem1 = 'Главная';
    readonly headerItem3 = 'Каталог';
    readonly header2Item1 = "Каталог";
+   isShouCatalog : boolean= true;
    readonly aboutCompany = nameCompany;
    readonly newPages :number[] = newpages;
    menuItems : string[] = upperCaseMenuItems;
@@ -63,3 +58,6 @@ export class AppComponent {
 
 
 }
+
+
+

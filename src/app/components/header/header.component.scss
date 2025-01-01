@@ -1,0 +1,137 @@
+@import '../../../null.scss';
+
+.header{
+  width: 100%;
+ &-top {
+ display: flex;
+ justify-content: center;
+ background-color: #4B565E;
+ }
+
+margin: 0 auto;
+&-bottom {
+  display: flex;
+  background-color:#F0BA4E;
+justify-content: center;
+      padding: 20px 0;
+
+  }
+&-container{
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+
+
+}
+&-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  height: 80px;
+  font-size: 16px;
+
+}
+
+}
+
+
+.header-items {
+  display: flex;
+  color:white;
+  gap: 10px;
+  justify-content: space-between;
+
+}
+
+.header-info-container  {
+  display: flex;
+  gap: 10px;
+
+}
+.menu-items-container {
+  display: flex;
+  align-items : center;
+
+}
+
+.menu-item {
+  cursor: pointer;
+  margin-right: 25px;
+  font-size: 16px;
+  font-weight: 600px;
+}
+.menu-items-location {
+display: flex;
+gap: 10px;
+
+}
+.white-color {
+  color :white;
+}
+.header-info-container {
+  display: flex;
+  align-items : center
+}
+.header-info-item {
+  margin-left: 40px;
+
+}
+.second-nav-container {
+display: flex;
+}
+
+.cart-button {
+  width:125px;
+  height: 50px;
+ border-radius: 50px;
+ border: 1px solid #F0BA4E ;
+ background-color: #4B565E ;
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center
+}
+
+.second-nav-container {
+  width: 1080px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-input {
+  position: relative;
+  border-bottom: 1px solid;
+  width: 262px;
+  height: 19px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+
+
+  input {
+    border: 1px solid red;
+    background: transparent;
+  }
+  button {
+    background:url("../../../assets/search.png") no-repeat right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+
+}
+
+}
+
+.search-input:focus {
+  outline: none;
+}

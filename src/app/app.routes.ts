@@ -1,10 +1,24 @@
+import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { UsersListComponent } from './users-list/users-list.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+
+
 
 export const routes: Routes = [
   {
   path : 'users',
- component : UsersListComponent
-  }
+ component : UsersListComponent,
+  } ,
+  {
+    path: 'header',
+    component: HeaderComponent,
 
+  },
+  {
+    path: 'footer',
+    component : FooterComponent
+  }
 ]
