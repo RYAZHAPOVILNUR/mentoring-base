@@ -32,8 +32,8 @@ export interface User {
       lng?: string;
     };
   };
-  phone?: string;
-  website: string;
+  phone: string;
+  website?: string;
   company?: {
     name?: string;
     catchPhrase?: string;
@@ -70,7 +70,7 @@ export class UsersListComponent {
             name: editResult.company,
           },
           email: editResult.email,
-          website: editResult.website,
+          phone: editResult.phone,
         });
       }
     });
@@ -94,7 +94,7 @@ export class UsersListComponent {
         name: formData.company,
       },
       email: formData.email,
-      website: formData.website,
+      phone: formData.phone,
     });
   }
 

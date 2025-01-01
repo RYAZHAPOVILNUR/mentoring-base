@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Todo } from "../todo-list.component";
+import { limitSymbols } from "../../pipes/limit-symbols.pipe";
 
 
 
@@ -8,7 +9,7 @@ import { Todo } from "../todo-list.component";
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
     standalone: true,
-    imports: []
+    imports: [limitSymbols]
 })
 
 export class TodoCardComponent {

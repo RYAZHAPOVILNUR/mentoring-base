@@ -1,7 +1,7 @@
 <div class="todo_card_cont">
   <div class="p_cont">
     <p>Id: {{ todoCard.id }}</p>
-    <p>Todo: {{ todoCard.title }}</p>
+    <p>Todo: {{ todoCard.title | limitSymbols:20}}</p>
     <p>Completed: {{todoCard.completed}}</p>
   </div>
   <div class="button_cont">

@@ -42,17 +42,17 @@
       <div *ngIf="form.controls['email'].errors">Email введен неверно</div>
     </div>
     <mat-form-field>
-      <mat-label>Введите адрес сайта</mat-label>
-      <input matInput type="text" formControlName="website" />
+      <mat-label>Введите номер телефона</mat-label>
+      <input matInput type="text" formControlName="phone" />
     </mat-form-field>
     <div
       *ngIf="
-        form.controls['website'].invalid &&
-        (form.controls['website'].dirty || form.controls['website'].touched)
+        form.controls['phone'].invalid &&
+        (form.controls['phone'].dirty || form.controls['phone'].touched)
       "
       class="alert"
     >
-      <div *ngIf="form.controls['website'].errors">
+      <div *ngIf="form.controls['phone'].errors">
         Название вебсайта введено неверно
       </div>
     </div>

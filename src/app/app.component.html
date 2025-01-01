@@ -14,7 +14,8 @@
             <li class="RouterLi" routerLink="users">Пользователи</li>
             <li class="RouterLi" routerLink="todos">Список дел</li>
             <button (click)="isShowMain = !isShowMain">Скрыть/Показать</button>
-          </ul>
+          <span class="date">{{MyDate | date:'medium'}}</span>
+            </ul>
         </nav>
       </div>
       <div class="header_right">

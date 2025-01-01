@@ -40,7 +40,7 @@ export class UserFormComponent {
       Validators.minLength(2),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    website: new FormControl('', [
+    phone: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),

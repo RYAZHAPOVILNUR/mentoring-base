@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
@@ -20,7 +20,7 @@ const lowerCaseItems = menuItems.map((i) => i.toLowerCase());
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, RouterLink ],
+  imports: [RouterOutlet, NgIf, RouterLink, DatePipe ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -33,6 +33,8 @@ export class AppComponent {
 
   upperCaseItems = upperCaseItems;
   lowerCaseItems = lowerCaseItems;
+
+  MyDate = Date.now()
 
   readonly header_item_1 = 'Главная';
   readonly aboutCompany = menuNameItem('О компании');

@@ -1,17 +1,19 @@
-import { NgFor } from '@angular/common';
+import { NgFor, UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog.component.ts/edit-user-dialog.component';
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { User } from '../users-list.component';
+import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
+import { DeleteLinePipe } from '../../pipes/delete-lines.pipe';
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports: [MatSnackBarModule],
+  imports: [MatSnackBarModule, UpperCasePipe, CustomUpperCasePipe, DeleteLinePipe],
 })
 export class UserCardComponent {
   @Input()

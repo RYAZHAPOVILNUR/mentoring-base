@@ -50,7 +50,7 @@ export class EditUserDialogComponent {
       Validators.required,
       Validators.email,
     ]),
-    website: new FormControl(this.data.userCard.website, [
+    phone: new FormControl(this.data.userCard.phone, [
       Validators.required,
       Validators.minLength(3),
     ]),

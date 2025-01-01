@@ -25,6 +25,12 @@
         list-style: none;
         display: flex;
 
+        .date {
+          color: white;
+          font-size: 13px;
+          margin-left: 10px;
+        }
+
         .RouterLi {
           color: orange;
         }
