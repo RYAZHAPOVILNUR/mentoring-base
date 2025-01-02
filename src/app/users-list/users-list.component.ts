@@ -34,8 +34,8 @@ export interface User {
   };
   phone: string;
   website?: string;
-  company?: {
-    name?: string;
+  company: {
+    name: string;
     catchPhrase?: string;
     bs?: string;
   };
@@ -77,7 +77,7 @@ export class UsersListComponent {
   }
 
   constructor() {
-    this.usersApiService.getUsers().subscribe((res: any) => {
+    this.usersApiService.getUsers().subscribe((res) => {
       this.usersService.setUsers(res);
     });
   }

@@ -13,7 +13,7 @@
             <li>{{ header_item_3 }}</li>
             <li class="RouterLi" routerLink="users">Пользователи</li>
             <li class="RouterLi" routerLink="todos">Список дел</li>
-            <button (click)="isShowMain = !isShowMain">Скрыть/Показать</button>
+            <button type="button" (click)="isShowMain = !isShowMain">Скрыть/Показать</button>
           <span class="date">{{MyDate | date:'medium'}}</span>
             </ul>
         </nav>
@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="basket">
-          <button>
+          <button type="button">
             <img class="basket_logo" src="../assets/cart.svg" alt="basket" />
             <span>Пусто</span>
           </button>
@@ -48,7 +48,7 @@
             }}
           </li>
         </ul>
-        <button (click)="isUpperCase = !isUpperCase">Изменить регистр</button>
+        <button type="button" (click)="isUpperCase = !isUpperCase">Изменить регистр</button>
       </nav>
       <div class="search">
         <input placeholder="Введите для поиска ..." />

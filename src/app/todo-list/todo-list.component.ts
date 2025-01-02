@@ -25,8 +25,10 @@ export class TodoListComponent {
   readonly todosService = inject(TodosService);
 
   constructor() {
-    this.todosApiService.getTodos().subscribe((res: any) => {
+    this.todosApiService.getTodos().subscribe((res: Todo[]) => {
       this.todosService.setTodo(res);
+      console.log(res);
+      
     });
   }
 
@@ -34,8 +36,9 @@ export class TodoListComponent {
     this.todosService.deleteTodo(id);
   }
 
-  createTodo(formData: any) {
+  createTodo(formData: Todo) {
     this.todosService.createTodo({
+      userId: formData.userId,
       id: formData.id,
       title: formData.title,
       completed: formData.completed
