@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 
 
@@ -13,7 +13,7 @@ const name = nameMenuItem('О компании');
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor],
+  imports: [RouterOutlet, NgIf, NgFor, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -35,9 +35,6 @@ export class AppComponent {
   }
 
   aboutCompany = name;
-  isShow = true;
-
-  newPages = [5, 4 ,3, 2, 1];
 
   
 }
