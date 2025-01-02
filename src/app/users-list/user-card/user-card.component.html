@@ -2,5 +2,5 @@
 <p>{{ userCard.company?.name | uppercase }}</p>
 <p>{{ userCard.email }}</p>
 <p>{{ userCard.phone | deleteLine}}</p>
-<button (click)="openDialogDelete()">Удалить карточку</button>
-<button (click)="openDialog()">Редактировать карточку</button>
+<button type="button" (click)="openDialogDelete()">Удалить карточку</button>
+<button type="button" (click)="openDialog()">Редактировать карточку</button>
