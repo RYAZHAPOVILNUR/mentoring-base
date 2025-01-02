@@ -11,19 +11,22 @@
                         <li class="header-items"><a href="">{{aboutCompany}}</a></li>
                         <li class="header-items" *ngIf="isShowCatalog"><a href="">{{headerItem3}}</a></li>
                     </ul>
-                    <button (click)="isShowCatalog=!isShowCatalog">Каталог on/off</button>
+                    <button type="button" (click)="isShowCatalog=!isShowCatalog">Каталог {{isShowCatalog ? 'off':'on'}}</button>
                 </nav>
             </div>
             <div class="header__right">
-                <button routerLink = '/users' class="header-user">
+                <button type="button" routerLink = '/users' class="header-user">
                     <p>Пользователи</p>
+                </button>
+                <button type="button" routerLink = '/todos' class="header-user">
+                    <p>Todos</p>
                 </button>
                 <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">+7 (965)
                         084-29-29</a></div>
                 <div class="header-heart">
                     <a href=""><img src="assets/heart1.svg"></a>
                 </div>
-                <button class="header-button">
+                <button type="button" class="header-button">
                     <img src="/assets/cart.svg" alt="корзина">
                     <p>Пусто</p>
                 </button>
@@ -37,14 +40,14 @@
             <div class="catalog__left">
                 <ul class="catalog-ul">
                     <li *ngFor='let catalogItem of catalogItems'><a href=""><img src="/assets/light.svg" alt="|||">{{catalogItem}}</a></li>
-                    <button (click)="changeMenuText()" >toLowerCase/toUpperCase</button>
+                    <button type="button" (click)="changeMenuText()" >toLowerCase/toUpperCase</button>
                 </ul>
             </div>
             <div class="catalog__right">
                 <div class="catalog-search">
                     <form>
                         <input type="text" name="text" class="search" placeholder="Поиск, например Круг зачистной ">
-                        <button>
+                        <button type="button">
                             <img src="/assets/Maskgroup.svg" alt="поиск">
                         </button>
                     </form>

@@ -1,30 +1,30 @@
-import { NgFor } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, } from '@angular/core';
-import { User } from '../User';
+import { NgFor, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, } from '@angular/core';
+import { User } from '../user.interface.ts';
+import { UsersApiService } from '../users-api.service.js';
+import { UserCardComponent } from "./user-card/user-card.component";
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, UserCardComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
 })
 
 export class UsersListComponent {
-  readonly apiServer = inject(HttpClient);
+  readonly usersApiService = inject(UsersApiService);
   users: User[] = [];
   
   deleteUser (id:number) {
     this.users = this.users.filter(
-
-      (item) => item.id !== id
+      (item) => (item.id !== id)
     )
   }
 
   constructor() {
-    this.apiServer
-      .get<User[]>('https://jsonplaceholder.typicode.com/users')
-      .subscribe((item) => this.users = item);
+    this.usersApiService.getUsers().subscribe(
+      (item) => this.users = item,
+    );
   }
 }
