@@ -2,5 +2,5 @@
 <p >{{ userCard.company?.name | uppercase }}</p>
 <p >{{ userCard.email }}</p>
 <p >{{ userCard.phone | deleteLine}}</p>
-<button mat-fab extended (click)="openDialogDelete()">Удалить карточку</button>
-<button mat-fab extended (click)="openDialog()">Редактировать карточку</button>
+<button type="button" mat-fab extended (click)="openDialogDelete()">Удалить карточку</button>
+<button type="button" mat-fab extended (click)="openDialog()">Редактировать карточку</button>
