@@ -1,0 +1,21 @@
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1520px;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.user-card {
+	width: 250px;
+	height: 250px;
+	margin: 5px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.card-button {
+	border: 1px solid black;
+	cursor: pointer;
+}
