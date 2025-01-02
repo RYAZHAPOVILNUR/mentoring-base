@@ -16,6 +16,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { ShadowDirective } from '../directives/shadow-user-card.directive';
 
 export interface User {
   id: number;
@@ -45,7 +46,7 @@ export interface User {
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe, MatSnackBarModule, MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [NgFor, UserCardComponent, AsyncPipe, MatSnackBarModule, MatButtonModule, MatDividerModule, MatIconModule, ShadowDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {

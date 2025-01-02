@@ -2,7 +2,7 @@
   <button mat-fab extended (click)="openDialog()">Добавить пользователя</button>
 </div>
 <div class="users_list_cont">
-  <div class="user" *ngFor="let user of usersService.usersSubject$ | async">
+  <div shadow class="user" *ngFor="let user of usersService.usersSubject$ | async">
     <app-user-card
       [userCard]="user"
       (deleteUserCard)="deleteUser($event)"

@@ -7,13 +7,17 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { User } from '../users-list.component';
 import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
 import { DeleteLinePipe } from '../../pipes/delete-lines.pipe';
+import { RedDirective } from '../../directives/red.directive';
+import { ShadowDirective } from '../../directives/shadow-user-card.directive';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   standalone: true,
-  imports: [MatSnackBarModule, UpperCasePipe, CustomUpperCasePipe, DeleteLinePipe],
+  imports: [MatSnackBarModule, UpperCasePipe, CustomUpperCasePipe, DeleteLinePipe, RedDirective, ShadowDirective, MatButtonModule],
 })
 export class UserCardComponent {
   @Input()

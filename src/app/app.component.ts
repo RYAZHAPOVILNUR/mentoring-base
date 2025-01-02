@@ -1,6 +1,7 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { YellowDirective } from './directives/yellow-basket.directive';
 
 const menuNameItem = (menuName: string) => {
   return menuName;
@@ -20,7 +21,7 @@ const lowerCaseItems = menuItems.map((i) => i.toLowerCase());
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, RouterLink, DatePipe ],
+  imports: [RouterOutlet, NgIf, RouterLink, DatePipe, YellowDirective ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
