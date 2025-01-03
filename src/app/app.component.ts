@@ -1,27 +1,16 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { YellowDirective } from './directives/yellow-basket.directive';
-
-const menuNameItem = (menuName: string) => {
-  return menuName;
-};
-
-const menuItems = [
-  'Каталог',
-  'Стройматериалы',
-  'Инструменты',
-  'Электрика',
-  'Интерьер и одежда',
-];
-
-const upperCaseItems = menuItems.map((i) => i.toUpperCase());
-const lowerCaseItems = menuItems.map((i) => i.toLowerCase());
+import { MatDialog } from '@angular/material/dialog';
+import { AuthComponent } from './auth/auth.component';
+import { UserService } from './user.service';
+import { upperCaseItems, lowerCaseItems, menuNameItem } from './constance';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, RouterLink, DatePipe, YellowDirective ],
+  imports: [RouterOutlet, NgIf, RouterLink, DatePipe, YellowDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -35,9 +24,32 @@ export class AppComponent {
   upperCaseItems = upperCaseItems;
   lowerCaseItems = lowerCaseItems;
 
-  MyDate = Date.now()
+  MyDate = Date.now();
 
   readonly header_item_1 = 'Главная';
   readonly aboutCompany = menuNameItem('О компании');
   readonly header_item_3 = 'Каталог';
+
+  readonly dialog = inject(MatDialog);
+  userService = inject(UserService);
+  router = inject(Router);
+
+  logOut() {
+    this.userService.logOut();
+    this.router.navigate(['']);
+  }
+
+  openDialogAuth(): void {
+    const dialogRef = this.dialog.open(AuthComponent, {});
+
+    dialogRef.afterClosed().subscribe((res: string) => {
+      if (res === 'user') {
+        this.userService.loginAsUser();
+      } else if (res === 'admin') {
+        this.userService.loginAsAdmin();
+      } else {
+        return;
+      }
+    });
+  }
 }

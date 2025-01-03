@@ -16,10 +16,7 @@
 
       .logo {
         cursor: pointer;
-        margin-right: 30px;
       }
-
-     
 
       nav > ul {
         list-style: none;
@@ -31,12 +28,18 @@
           margin-left: 10px;
         }
 
-        .RouterLi {
+        .active {
           color: orange;
         }
 
+        .log {
+          &:hover {
+            color: orange;
+          }
+        }
+
         li {
-          margin-right: 25px;
+          margin-right: 20px;
           color: white;
           font-size: 16px;
           font-weight: 600;

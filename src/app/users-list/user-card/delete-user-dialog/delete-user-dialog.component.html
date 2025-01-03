@@ -3,7 +3,7 @@
     Вы действительно ходите удалить пользователя {{ data.userCard.name }}?
   </h2>
   <div class="yes_or_no_cont">
-    <div class="buttons" (click)="deleteUser(data.userCard.id)" mat-dialog-close="true">Да</div>
-    <div class="buttons" mat-dialog-close>Нет</div>
+    <div type="button" class="buttons" (click)="deleteUser(data.userCard.id)" mat-dialog-close="true">Да</div>
+    <div type="button" class="buttons" mat-dialog-close>Нет</div>
   </div>
 </div>

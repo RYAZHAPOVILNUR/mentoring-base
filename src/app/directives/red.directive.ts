@@ -28,12 +28,10 @@ export class RedDirective {
   enter() {
     this.color = 'red';
     this.textTransform = 'uppercase';
-    console.log('red');
   }
 
   @HostListener('mouseleave')
   leave() {
     this.color = 'white';
-    console.log('white');
   }
 }

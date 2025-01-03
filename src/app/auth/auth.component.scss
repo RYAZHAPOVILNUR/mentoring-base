@@ -1,0 +1,29 @@
+.auth_cont {
+  padding: 50px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #f54082;
+    border: none;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    width: 200px;
+
+    &:hover {
+      background-color: orange;
+      color: white;
+    }
+  }
+
+  .button_cont {
+    .but_first {
+      margin-right: 50px;
+    }
+  }
+}

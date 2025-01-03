@@ -12,7 +12,7 @@ export class DeleteUserDialogComponent {
   readonly usersService = inject(UsersService);
   readonly data = inject(MAT_DIALOG_DATA);
 
-  deleteUser(res: any) {
+  deleteUser(res: number) {
     this.usersService.deleteUser(res);
   }
 }
