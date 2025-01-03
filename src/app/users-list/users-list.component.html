@@ -1,0 +1,13 @@
+<app-header></app-header>
+<div style="width: 1320px; margin: 0 auto;">
+    <div class="users-carts-container">
+        <div *ngFor="let item of users" class="users-carts">
+           <p>{{$any(item).name}}</p>
+           <p>{{$any(item).email}}</p>
+           <p>{{$any(item).website}}</p>
+           <p>{{$any(item).company.name}}</p>
+           <button class="button-delete-user" (click)="deleteUser(item.id)">Удалить Юзера</button>
+        </div>
+    </div>    
+</div>
+

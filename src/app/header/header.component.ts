@@ -1,21 +1,15 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink, HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  imports: [RouterOutlet,RouterLink,NgFor],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class AppComponent {
-  title = 'mentoring-first-project';
-
-  isShowImage = true;
-
-  readonly isShowCatalog = true;
+export class HeaderComponent {
 
   readonly headerItem1 = 'Главная'
 
@@ -25,11 +19,9 @@ export class AppComponent {
 
   readonly headerItem4 = 'Пользователи'
 
-  readonly header2Item1 = upperCaseMenu
+  readonly headerItemYellow1 = upperCaseMenu
 
   menuUpperNames = upperCaseMenu
-
-  readonly newPages = newPages
 
   isUpperCase = true
 
@@ -41,8 +33,6 @@ export class AppComponent {
     this.isUpperCase = !this.isUpperCase
   }
 }
-
-const newPages = [ 5, 4, 3, 2, 1];
 
 const aboutCompanyFunc = (value: string) => value
 
