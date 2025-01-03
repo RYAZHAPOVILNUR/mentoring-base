@@ -1,3 +1,151 @@
-.button {
-    color: black;
+.header {
+    display: flex;
+    height: 80px;
+    color: white;
+    background-color: #4B565E;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 80px;
 }
+
+
+
+.Container {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    height: 80px;
+    padding: 0px 60px 0px 60px;
+    gap: 40px;
+}
+
+.header-logo {
+    margin-right: 20px;
+}
+
+image.Logo {
+    width: 61px;
+    height: 40px;
+
+}
+
+.Sections-Bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 755px;
+    height: 80px;
+}
+
+.Bottom-Menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 273px;
+    height: 19px;
+    gap: 24px;
+    opacity: 0px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.header-nav-item-1 {
+    width: 65px;
+    height: 19px;
+}
+
+.header-nav-item-2 {
+    width: 95px;
+    height: 19px;
+}
+
+.header-nav-item-3 {
+    width: 65px;
+    height: 19px;
+}
+
+.Frame-4 {
+    align-items: center;
+    display: flex;
+    width: 194px;
+    height: 28px;
+    gap: 10px;
+}
+
+image.Phone {
+    width: 28px;
+    height: 28px;
+}
+
+.Phone-Number {
+    font-family: 'Inter', sans-serif;
+    width: 156px;
+    height: 19px;
+}
+
+
+.Frame-3 {
+    display: flex;
+    align-items: center;
+    width: 106px;
+    height: 48px;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border: 1px solid #F0BA4E;
+    border-radius: 50px;
+}
+
+.Light-TopBar {
+    width: 1920px;
+    height: 48px;
+    padding: 0px 300px 0px 300px;
+    gap: 10px;
+    background-color: #F0BA4E;
+}
+
+.Light-Container {
+    width: 1320px;
+    height: 48px;
+    gap: 24px;
+    align-items: center;
+    display: flex;
+}
+
+.Frame-5 {
+    width: 83px;
+    height: 24px;
+    gap: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.Catalog {
+    width: 57px;
+    height: 17px;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.Select {
+    width: 696px;
+    height: 17px;
+    gap: 24px;
+    align-items: center;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
