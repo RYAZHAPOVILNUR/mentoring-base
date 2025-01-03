@@ -37,3 +37,5 @@ export class TodoListComponent {
     });
   }
 }
+export { Todo };
+
