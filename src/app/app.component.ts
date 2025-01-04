@@ -13,7 +13,7 @@ const name = nameMenuItem('О компании');
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, NgIf, NgFor, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

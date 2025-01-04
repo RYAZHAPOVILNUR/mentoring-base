@@ -1,15 +1,16 @@
 <div class="header">
   <div class="content-container header">
+
     <div class="header-left">
       <div class="header-logo">
         <img src="/assets/Frame.svg" alt="Logo">
       </div>
       <nav class="header-nav">
-        <a [routerLink]="['/']" class="header-nav-item">{{headerItem1}}</a>
+        <a routerLink='/' class="header-nav-item">{{headerItem1}}</a>
         <div class="header-nav-item">{{aboutCompany}}</div>
         <div class="header-nav-item">{{headerItem3}}</div>
         <a [routerLink]="['/users']" class="header-nav-item">Пользователи</a>
-        <button (click)="changeMenuText()">Изменить текст</button>
+        <button type="button" (click)="changeMenuText()">Изменить текст</button>
       </nav>
     </div>
     <div class="header-right">
@@ -20,7 +21,7 @@
       <div class="header-right-item">
         <img class="header-img-fav" src="/assets/heart1.svg" alt="2">
       </div>
-      <button class="header-right-item header-btn">
+      <button type="button" class="header-right-item header-btn">
         <img class="header-img-basc" src="/assets/basc.svg" alt="3">
         <div>Пусто</div>
       </button>

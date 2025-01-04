@@ -1,0 +1,27 @@
+button {
+    padding: 15px;
+    background-color: brown;
+    border: 1px solid black;
+    cursor: pointer;
+    box-shadow: -3px 3px 1px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;;
+    &:active {
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+        scale: 99%;
+    }
+}
+
+.buttons {
+    margin: 30px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+
+}
+
+.active {
+    box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.9), 
+              0px 0px 10px rgba(0, 255, 0, 0.9), 
+              0px 0px 20px rgba(0, 0, 255, 0.9);
+}

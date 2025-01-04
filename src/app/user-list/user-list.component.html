@@ -1,0 +1,65 @@
+<div class="content-container">
+    <app-homework9
+     (getUser)="getNineUser($event, users)"
+     (getCity)="getUsersCity($event, users)"
+     (getFiveUsers)="getFiveUsers($event, users)"
+     (getReversUsers)="getReversUsers(users)"
+     (getLengthUsers)="getLengthUsers()"
+     (purseLowerUsername)="purseLowerUsername(users)"
+     (getComUsers)="getComUsers($event, users)"
+     (getLengthUsername)="getLengthUsername($event, users)"
+    >
+    </app-homework9>
+    <ng-container *ngIf="isShowLength$ | async; else LengthGroup">
+      <ng-container *ngIf="isNotEmailGroup$ | async; else EmailsGroup">
+        <div class="item-favorite-cards">
+          <div *ngFor="let user of users;" class="item-favorite-cards__container">
+            <div class="item-favorite-cards__item">
+              <div class="cards-item__img">
+                <img src="/assets/card-img.png" alt="">
+              </div>
+              <div class="cards-item__block-1">
+                <div>{{user.name}}</div>
+              </div>
+              <div class="cards-item__footer">
+                <div class="cards-item__footer-left">
+                  <div class="cards-item__footer-text"><strong>ID</strong>: {{user.id}}</div>
+                </div>
+                <div class="cards-item__footer-left">
+                  <div class="cards-item__footer-text"><strong>Username</strong>: {{user.username}}</div>
+                </div>
+                <ng-container *ngIf="showCity">
+                  <div class="cards-item__footer-left">
+                    <div class="cards-item__footer-text"><strong>City</strong>: {{user.address?.city}}</div>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="parse$ | async">
+                  <div class="cards-item__footer-left">
+                    <div class="cards-item__footer-text"><strong>Email</strong>: {{user.email}}</div>
+                  </div>
+                  <div class="cards-item__footer-left">
+                    <div class="cards-item__footer-text"><strong>Website</strong>: {{user.website}}</div>
+                  </div>
+                </ng-container>
+                <button type="button" (click)="deleteUser(user.id, users)" class="cards-item__footer-btn">Удалить</button>
+              </div>
+            </div>
+          </div>
+      </div>
+      </ng-container>
+      <ng-template #EmailsGroup>
+        <div class="item-favorite-cards__item">
+          <ul>
+            <li *ngFor="let user of users;">{{user.email}}</li>
+          </ul>
+        </div>
+      </ng-template>
+    </ng-container>
+    <ng-template #LengthGroup>
+      <div class="item-favorite-cards__item">
+        <ul>
+          <li>Колличество пользователей: {{users.length}}</li>
+        </ul>
+      </div>
+    </ng-template>
+</div>
