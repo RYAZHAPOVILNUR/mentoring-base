@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgIf } from '@angular/common';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -32,12 +32,11 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatIconModule,
     MatDividerModule,
     MatDialogClose,
-    MatTooltipModule
+    MatTooltipModule,
   ],
 })
 export class EditUserDialogComponent {
   readonly data = inject(MAT_DIALOG_DATA);
-  
 
   form = new FormGroup({
     name: new FormControl(this.data.userCard.name, [
@@ -60,9 +59,8 @@ export class EditUserDialogComponent {
 
   get userWithUpdateFields() {
     return {
-        ...this.form.value,
-        id: this.data.userCard.id
-    }
+      ...this.form.value,
+      id: this.data.userCard.id,
+    };
   }
-
 }
