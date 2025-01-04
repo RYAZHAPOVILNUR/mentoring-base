@@ -10,7 +10,7 @@ import { Todo } from '../../todo.interface';
 })
 export class TodosCardComponent {
   @Input()
-  todo!: Todo
+  todo!: Todo;
 
   @Output()
   deleteTodo = new EventEmitter()
