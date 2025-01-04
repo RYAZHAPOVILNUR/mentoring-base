@@ -13,7 +13,7 @@ import { CustomCutPipe } from "../../My Pipes/cutPipe";
     templateUrl: './user-card.component.html',
     styleUrl: './user-card.component.scss',
     standalone: true,
-    imports: [MatButtonModule, MatTooltipModule, CustomCutPipe]
+    imports: [MatButtonModule, MatTooltipModule]
 })
 
 export class UserCardComponent {

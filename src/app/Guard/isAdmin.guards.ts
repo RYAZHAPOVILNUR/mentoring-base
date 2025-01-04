@@ -14,6 +14,5 @@ export const isAdminFn: CanActivateFn = () => {
         router.navigate([''])
         console.log('guard не пропустил')
         return false
-
     }
 }
