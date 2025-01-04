@@ -1,0 +1,16 @@
+<h1>CREATE USER FORM</h1>
+<form class="create_user_form" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>NAME</p>
+    <input type="text" formControlName="name">
+
+    <p>EMAIL</p>
+    <input type="text" formControlName="email">
+
+    <p>WEBSITE</p>
+    <input type="text" formControlName="website">
+
+    <p>COMPANY NAME</p>
+    <input type="text" formControlName="companyName">
+
+    <button [disabled]="form.invalid" class="create_user_btn">CREATE USER</button>
+</form>

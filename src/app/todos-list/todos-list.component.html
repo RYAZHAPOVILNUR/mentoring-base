@@ -9,6 +9,9 @@
         rel="stylesheet">
 </head>
 <body>
+
+    <app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
+
     <div class="todoCards">
         <ng-container class="todoCards" *ngFor="let todo of todosService.todosSubject | async">
             <div class="todoCard">

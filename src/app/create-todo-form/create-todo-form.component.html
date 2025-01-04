@@ -1,0 +1,14 @@
+<h1>CREATE TODO FORM</h1>
+<form class="create_todo_form" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>ТЕКСТ ЗАДАЧИ</p>
+    <input type="text" formControlName="title">
+
+    <p>АВТОР ЗАДАЧИ</p>
+    <input type="text" formControlName="userId">
+
+    <p>СТАТУС ЗАДАЧИ</p>
+    <input type="text" formControlName="completed">
+
+
+    <button [disabled]="form.invalid" class="create_todo_btn">CREATE USER</button>
+</form>

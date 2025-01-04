@@ -28,10 +28,24 @@ export class TodosService {
     }
 
     createTodos(todo: Todo) {
-        this.todosSubject.next(
-            [...this.todosSubject.value, todo]
-        )
-    }
+        const todoIsExited = this.todosSubject.value.find(
+            CurrentElement => CurrentElement.title === todo.title
+        );
+
+        if (todoIsExited !== undefined) {
+
+            alert('Такая задача уже существует')
+
+        } else {
+
+            this.todosSubject.next(
+                [...this.todosSubject.value, todo]
+            );
+
+            alert('Задача создана')
+            
+        };
+    };
 
     deleteTodos(id: number) {
         this.todosSubject.next(

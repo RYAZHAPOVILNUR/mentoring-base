@@ -11,6 +11,9 @@
 </head>
 
 <body>
+
+    <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+
     <div class="userCards">
         <ng-container class="userCards" *ngFor="let user of usersService.usersSubject | async">
             <div class="userCard">
