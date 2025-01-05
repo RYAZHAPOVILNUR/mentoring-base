@@ -4,16 +4,13 @@ import { HomeComponent } from './components/home/home.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 export const routes: Routes = [
-  {
-  path : 'users',
- component : UsersListComponent,
+  { path : 'users',
+    component : UsersListComponent,
   } ,
-  {
-    path: '',
+  { path: '',
     component: HomeComponent
   } ,
-  {
-    path: 'todos',
+  { path: 'todos',
     component: TodoListComponent
   }
 ]

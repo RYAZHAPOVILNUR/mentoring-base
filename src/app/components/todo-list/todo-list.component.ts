@@ -30,7 +30,6 @@ constructor() {
 )
 }
 
-
 deleteTodo(id: any) {
   this.todos = this.todos.filter(
     todo => {

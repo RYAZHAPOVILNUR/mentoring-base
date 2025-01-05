@@ -3,10 +3,6 @@
 <div class="div-cards" style="display: flex; flex-wrap: wrap;">
   <div *ngFor="let item of users" class="card">
     <app-user-card [user]="item"(deleteUser)="deleteUser($event)"> </app-user-card>
-    <!-- <div class="button-container" >
-      <button class="btn_card"(click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
-    </div> -->
-
   </div>
 
 </div>
