@@ -12,12 +12,24 @@
 
 <body>
 
-    <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+    <button mat-fab extended
+        class="create_user_btn" 
+        (click)="openDialog()">
+        
+        <mat-icon>add</mat-icon>
+        СОЗДАТЬ
+    
+    </button>
+
 
     <div class="userCards">
         <ng-container class="userCards" *ngFor="let user of usersService.usersSubject | async">
             <div class="userCard">
-                <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+                <app-user-card
+                 [user]="user" 
+                 (deleteUser)="deleteUser($event)"
+                 (editUser)="editUser($event)"
+                 ></app-user-card>
             </div>        
         </ng-container>
     </div>

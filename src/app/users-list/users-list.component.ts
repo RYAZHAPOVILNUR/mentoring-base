@@ -4,7 +4,10 @@ import { ChangeDetectionStrategy, Component, inject} from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
-import { CreateUserForm } from "../create-user-form/create-user-form.component";
+import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 
 
 const consoleResponse = (response: unknown) => console.log(response) 
@@ -40,17 +43,33 @@ export interface IUsers {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserForm],
-    changeDetection: ChangeDetectionStrategy.OnPush
-
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [NgFor,
+              UserCardComponent,
+              AsyncPipe,
+              CreateUserDialogComponent,
+              MatIconModule,
+              MatButtonModule]
 })
 
 export class UsersListComponent {
     readonly usersApiService = inject(UsersApiService);
     readonly usersService = inject(UsersService);
+    readonly dialog = inject(MatDialog)
+
 
     public deleteUser(id: number) {
         this.usersService.deleteUsers(id)
+    };
+
+
+    public editUser(user: any) {
+        this.usersService.editUsers({
+            ...user,
+            company: {
+                name: user.companyName
+            }
+        })
     };
 
 
@@ -66,6 +85,21 @@ export class UsersListComponent {
             }
         })
     };
+
+
+    openDialog(): void {
+            const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+              data: 1234312423,
+            });
+        
+            dialogRef.afterClosed().subscribe(createResult => {
+              console.log('МОДАЛКА ЗАКРЫТА', createResult);
+              if (!createResult) return;
+              this.createUser(createResult)
+            });
+          }
+
+
 
     constructor() {
         this.usersApiService.getUsers().subscribe(
