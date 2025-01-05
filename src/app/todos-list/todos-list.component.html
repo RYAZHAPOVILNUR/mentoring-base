@@ -1,0 +1,6 @@
+<div class="content-container">
+    <h1>Компонент списка задач</h1>
+    <div class="cards-container">
+      <app-todos-card *ngFor="let todo of todos" [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todos-card>
+    </div>
+  </div>

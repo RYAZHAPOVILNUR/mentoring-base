@@ -5,10 +5,11 @@
         <img src="/assets/Frame.svg" alt="Logo">
       </div>
       <nav class="header-nav">
-        <a [routerLink]="['/']" class="header-nav-item">{{headerItem1}}</a>
+        <a routerLink='/' class="header-nav-item">{{headerItem1}}</a>
         <div class="header-nav-item">{{aboutCompany}}</div>
         <div class="header-nav-item">{{headerItem3}}</div>
         <a [routerLink]="['/users']" class="header-nav-item">Пользователи</a>
+        <a [routerLink]="['/todos']" class="header-nav-item">Карточки</a>
         <button (click)="changeMenuText()">Изменить текст</button>
       </nav>
     </div>

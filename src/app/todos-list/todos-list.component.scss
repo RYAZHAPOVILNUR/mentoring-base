@@ -1,0 +1,11 @@
+.content-container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 28px;
+}
