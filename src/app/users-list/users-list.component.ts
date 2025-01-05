@@ -9,6 +9,7 @@ export interface User {
     name: string;
     email: string;
     website: string;
+    phone: number;
     company: {
         name: string;
     }
@@ -27,8 +28,8 @@ export class UsersListComponent {
     users: User[] = []
 
     constructor() {
-        this.apiService.get<User>('https://jsonplaceholder.typicode.com/users').subscribe(
-            (response: any) => {
+        this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
+            (response) => {
                 this.users = response;
             }
         )

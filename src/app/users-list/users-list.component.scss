@@ -2,24 +2,31 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .users-carts {
     width: 230px; 
-    height: 230px; 
-    border: 1px solid black; 
+    height: 270px; 
     margin: 5px;
     padding: 10px;
     font-size: 16px;
     font-weight: 500;
-    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    box-shadow: 0px 30px 50px 0px #3C3C3B12;
 }
 
 .button-delete-user {
     display: flex;
-    border: 1px solid black;
+    border: 1px solid #F0BA4E;
     border-radius: 15px;
     background-color: #F0BA4E;
     color: black;
     padding: 8px;
+    margin-top: 60px;
+}
+
+.user-component-name{
+    font-size: 25px;
+    font-weight: 700;
+    margin: 5px;
 }

@@ -1,11 +1,12 @@
-<app-header></app-header>
-<div style="width: 1320px; margin: 0 auto;">
+<div style="width: 1320px; margin: 0 auto; margin-top: 20px;">
+    <span class="user-component-name">Компонент списка Юзеров:</span>
     <div class="users-carts-container">
         <div *ngFor="let item of users" class="users-carts">
-           <p>{{$any(item).name}}</p>
-           <p>{{$any(item).email}}</p>
-           <p>{{$any(item).website}}</p>
-           <p>{{$any(item).company.name}}</p>
+           <p>{{item.name}}</p>
+           <p>{{item.email}}</p>
+           <p>{{item.website}}</p>
+           <p>{{item.company.name}}</p>
+           <p>{{item.phone}}</p>
            <button class="button-delete-user" (click)="deleteUser(item.id)">Удалить Юзера</button>
         </div>
     </div>    
