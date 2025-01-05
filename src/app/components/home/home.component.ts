@@ -7,23 +7,12 @@ const upperCase = names.map (
   (name) => {
     return name.toLocaleUpperCase() }
 )
-console.log(upperCase);
-
-
-
 
 function aboutCompany(name:string) {
 return name;
 }
 const nameCompany = aboutCompany("О компании");
-console.log(nameCompany);
-
-
-
-
-
 const newpages = [5,4,3,2,1];
-
 const menuItems : string[] = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
 const upperCaseMenuItems : string[] = menuItems.map(
   (item:string) => {

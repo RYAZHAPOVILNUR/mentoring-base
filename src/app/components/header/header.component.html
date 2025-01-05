@@ -9,7 +9,7 @@
          <nav class="header-menu">
    <ul class="header-items">
      <li>
-   <a href=""> {{headerItem1}} </a>
+   <a  routerLink=""> {{headerItem1}} </a>
      </li>
      <li>
    <a href="" > {{aboutCompany}}</a>
@@ -20,7 +20,7 @@
      </li>
      <button (click)="isShouCatalog = !isShouCatalog"  >Скрыть или показать каталог
      </button>
-     <button (click)="changeTextMenu()"> Изменить текст </button>
+     <button (click)="changeTextMenu()" style="border : 1px solid red; border-radius: 50px;"> Изменить текст </button>
    </ul>
          </nav>
       </div>
@@ -30,6 +30,9 @@
         <div class="header-info-container white-color">
           <div>
             <button routerLink="users">Users</button>
+          </div>
+          <div>
+            <button routerLink="todos">Задачи</button>
           </div>
           <img src="../assets/Phone.svg" alt="">
           <span>+
@@ -79,4 +82,4 @@
 
     </div>
     </div>
-    </header>
+</header>

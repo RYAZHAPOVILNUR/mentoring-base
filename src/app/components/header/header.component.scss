@@ -14,15 +14,12 @@ margin: 0 auto;
   background-color:#F0BA4E;
 justify-content: center;
       padding: 20px 0;
-
   }
 &-container{
   width: 1320px;
   display: flex;
   justify-content: space-between;
   align-items:center;
-
-
 }
 &-menu{
   display: flex;
@@ -34,29 +31,24 @@ justify-content: center;
   font-style: normal;
   height: 80px;
   font-size: 16px;
-
 }
 
 }
-
 
 .header-items {
   display: flex;
   color:white;
   gap: 10px;
   justify-content: space-between;
-
 }
 
 .header-info-container  {
   display: flex;
   gap: 10px;
-
 }
 .menu-items-container {
   display: flex;
   align-items : center;
-
 }
 
 .menu-item {
@@ -68,7 +60,6 @@ justify-content: center;
 .menu-items-location {
 display: flex;
 gap: 10px;
-
 }
 .white-color {
   color :white;
@@ -79,7 +70,6 @@ gap: 10px;
 }
 .header-info-item {
   margin-left: 40px;
-
 }
 .second-nav-container {
 display: flex;
@@ -115,7 +105,6 @@ display: flex;
   font-weight: 400;
   line-height: 19.36px;
 
-
   input {
     border: 1px solid red;
     background: transparent;
@@ -127,7 +116,6 @@ display: flex;
     right: 0;
     width: 20px;
     height: 20px;
-
 }
 
 }

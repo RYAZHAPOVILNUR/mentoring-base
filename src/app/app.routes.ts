@@ -1,12 +1,7 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { UsersListComponent } from './components/users-list/users-list.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-
-
-
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 export const routes: Routes = [
   {
@@ -14,16 +9,12 @@ export const routes: Routes = [
  component : UsersListComponent,
   } ,
   {
-    path: 'header',
-    component: HeaderComponent,
-
-  },
-  {
-    path: 'footer',
-    component : FooterComponent
-  },
-  {
-    path: 'home',
+    path: '',
     component: HomeComponent
+  } ,
+  {
+    path: 'todos',
+    component: TodoListComponent
   }
 ]
+

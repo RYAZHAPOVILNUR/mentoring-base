@@ -8,21 +8,11 @@ const upperCase = names.map (
   (name) => {
     return name.toLocaleUpperCase() }
 )
-console.log(upperCase);
-
-
-
 
 function aboutCompany(name:string) {
 return name;
 }
 const nameCompany = aboutCompany("О компании");
-console.log(nameCompany);
-
-
-
-
-
 const newpages = [5,4,3,2,1];
 
 const menuItems : string[] = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
@@ -39,16 +29,15 @@ const upperCaseMenuItems : string[] = menuItems.map(
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-
 export class HeaderComponent {
   readonly headerItem1 = 'Главная';
-   readonly headerItem3 = 'Каталог';
-   readonly header2Item1 = "Каталог";
-   isShouCatalog : boolean= true;
-   readonly aboutCompany = nameCompany;
-   readonly newPages :number[] = newpages;
-   menuItems : string[] = upperCaseMenuItems;
-   isUpperCase : boolean = true;
+  readonly headerItem3 = 'Каталог';
+  readonly header2Item1 = "Каталог";
+  isShouCatalog : boolean= true;
+  readonly aboutCompany = nameCompany;
+  readonly newPages :number[] = newpages;
+  menuItems : string[] = upperCaseMenuItems;
+  isUpperCase : boolean = true;
    changeTextMenu() {
     this.menuItems = upperCaseMenuItems.map(
       item  => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
