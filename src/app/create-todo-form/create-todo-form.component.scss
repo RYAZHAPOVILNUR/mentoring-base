@@ -1,7 +1,7 @@
 .create_todo_form {
     display: flex;
     flex-direction: column;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 30px 0;
 }
 
 .create_todo_btn {
@@ -10,6 +10,6 @@
 
 }
 
-input {
+.custom-wigth {
     width: 200px;
 }
