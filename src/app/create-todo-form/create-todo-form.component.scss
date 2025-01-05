@@ -1,0 +1,29 @@
+.create-todo {
+  margin: 30px;
+}
+
+.create-todo--form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-todo--input {
+  width: 150px;
+  box-shadow: 20px 0px 50px 0px #12112714;
+  border: 1px solid #F0BA4E;
+  border-radius: 5%;
+}
+
+.alert {
+  color: #ff000f;
+}
+
+.create-todo--button {
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 54px;
+  border: 1px solid #000;
+  background-color: #F0BA4E;
+  gap: 10px;
+  cursor: pointer;
+}

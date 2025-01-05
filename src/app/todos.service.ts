@@ -4,8 +4,9 @@ import { Todo } from "./todos-list/todos-interface";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
-  todosSubject$ = new BehaviorSubject<Todo[]>([]);
+  private todosSubject$ = new BehaviorSubject<Todo[]>([]);
   todosObservable$: Observable<Todo[]> = this.todosSubject$.asObservable();
+
   setTodos(todos: Todo[]) {
     this.todosSubject$.next(todos);
   }
@@ -19,15 +20,23 @@ export class TodosService {
   }
 
   createTodo(todo: Todo) {
-    this.todosSubject$.next(
-      [...this.todosSubject$.value, todo]
-    )
+    const existingTodo = this.todosSubject$.value.find(
+      currentElement => currentElement.id === todo.id)
+
+    console.log(existingTodo);
+
+    if(existingTodo !== undefined) {
+      alert('ТАКОЙ ID УЖЕ ЗАРЕГИСТРИРОВАН')
+    } else {
+      this.todosSubject$.next(
+        [...this.todosSubject$.value, todo]);
+        alert('НОВЫЙ ПОЛЬЗОВАТЕЛЬ УСПЕШНО ДОБАВЛЕН')
+    }
   }
 
   deleteTodo(id: number) {
     this.todosSubject$.next(
-      this.todosSubject$.value.filter(
-        todo => id === todo.id ? false : true)
+      this.todosSubject$.value.filter(todo => id === todo.id ? false : true)
     )
   }
 }

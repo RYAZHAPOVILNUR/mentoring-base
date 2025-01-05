@@ -1,0 +1,36 @@
+<h1>CREATE TODO FORM</h1>
+<div class="create-todo">
+  <form class="create-todo--form" [formGroup]="form" (ngSubmit)="submitForm()">
+    <p>TODO ID:</p>
+    <input class="create-todo--input" type="text" formControlName="userId">
+    <div
+      *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
+      class="alert">
+      <div *ngIf="form.controls['userId'].errors">ID ПОЛЬЗОВАТЕЛЯ ВВЕДЕНО НЕПРАВИЛЬНО</div>
+    </div>
+    <p>ID:</p>
+    <input class="create-todo--input" type="text" formControlName="id">
+    <div
+      *ngIf="form.controls['id'].invalid && (form.controls['id'].dirty || form.controls['id'].touched)"
+      class="alert">
+      <div *ngIf="form.controls['id'].errors">ID ВВЕДЕН НЕПРАВИЛЬНО</div>
+    </div>
+    <p>TITLE:</p>
+    <input class="create-todo--input" type="text" formControlName="title">
+    <div
+      *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
+      class="alert">
+      <div *ngIf="form.controls['title'].errors">ЗАГОЛОВОК ВВЕДЕН НЕПРАВИЛЬНО</div>
+    </div>
+    <p>COMPLETED</p>
+    <input class="create-todo--input" type="text" formControlName="completed">
+    <div
+      *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)"
+      class="alert">
+      <div *ngIf="form.controls['completed'].errors">ПОЛЕ ЗАВЕРШЕНИЯ ВВЕДЕНА НЕПРАВИЛЬНО</div>
+    </div>
+    <button class="create-todo--button" [disabled]="form.invalid">
+      CREATE TODO
+    </button>
+  </form>
+</div>
