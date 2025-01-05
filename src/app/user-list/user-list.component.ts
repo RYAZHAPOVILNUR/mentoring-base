@@ -18,10 +18,10 @@ export class UserListComponent {
     users: User[] = [];
     
     constructor() {
-		this.usersApiService.getUsers().subscribe(users => {
-			this.users = users;
-			console.log(this.users);
-		});
+      this.usersApiService.getUsers().subscribe(users => {
+        this.users = users;
+        console.log(this.users);
+      });
     }
 
     deleteUser(id: number) {

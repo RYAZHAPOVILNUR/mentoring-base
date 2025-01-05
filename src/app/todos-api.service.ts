@@ -14,7 +14,7 @@ export interface Todo {
 export class TodosApiService {
   readonly apiService = inject(HttpClient);
 
-  getUsers() {
+  getTodos() {
     return this.apiService.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=12');
   }
 }

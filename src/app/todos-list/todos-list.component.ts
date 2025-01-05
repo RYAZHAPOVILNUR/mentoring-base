@@ -16,10 +16,10 @@ export class TodosListComponent {
     todos: Todo[] = [];
     
     constructor() {
-    this.todosApiService.getUsers().subscribe(todos => {
-      this.todos = todos;
-      console.log(this.todos);
-    });
+      this.todosApiService.getTodos().subscribe(todos => {
+        this.todos = todos;
+        console.log(this.todos);
+      });
     }
 
     deleteTodo(id: number) {
