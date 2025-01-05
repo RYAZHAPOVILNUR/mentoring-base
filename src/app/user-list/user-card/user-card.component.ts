@@ -5,7 +5,7 @@ import { User } from "../../user.interface.ts";
     selector: 'app-user-card',
     standalone: true,
     templateUrl: './user-card.component.html',
-    styleUrl: './user-card.component.scss',
+    styleUrls: ['./user-card.component.scss'],
 })
 export class UserCardComponent {
     @Input()

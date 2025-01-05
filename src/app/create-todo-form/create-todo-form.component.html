@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="createTodo-form">
+      <form action="" [formGroup]="form" (ngSubmit)="formTodo()">
+        <label for="">ТЕКСТ ЗАДАЧИ</label>
+        <input type="text" name="" id="" formControlName="title" />
+        <span class="alert" *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
+          <span *ngIf="form.controls['title'].errors">invalid</span>
+        </span>
+        <label for="">АВТОР ЗАДАЧИ</label>
+        <input type="text" name="" id="" formControlName="userId" />
+        <span class="alert" *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)">
+          <span *ngIf="form.controls['userId'].errors">invalid</span>
+        </span>
+        <label for="">ЗАДАЧА ЗАВЕРШЕНА</label>
+        <input type="checkbox" name="" id="" formControlName="completed" />
+        <!-- <span
+         class='alert'>
+          <span >inValid</span>
+        </span> -->
+        <button [disabled]="form.invalid">create todo</button>
+      </form>
+    </div>
+  </div>
+  <!-- "userId": 1,
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+    "completed": false -->

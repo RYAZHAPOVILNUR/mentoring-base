@@ -31,8 +31,13 @@ export class UsersService {
         )
     }
     createUser(user: User) {
-        this.usersSubject$.next(
-            [...this.usersSubject$.value, user]
+        const isUserForm = this.usersSubject$.value.find(
+            item => item.email === user.email
         )
+        if (isUserForm) {
+            alert('такой email уже есть');
+        } else {
+            this.usersSubject$.next([...this.usersSubject$.value, user]);
+        }
     }
 }

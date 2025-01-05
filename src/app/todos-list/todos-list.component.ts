@@ -4,14 +4,15 @@ import { Todo } from '../todo.interface';
 import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosService } from '../todos.service';
+import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [TodosCardComponent, NgFor, AsyncPipe],
+  imports: [TodosCardComponent, NgFor, AsyncPipe, CreateTodoFormComponent],
   providers: [],
   templateUrl: './todos-list.component.html',
-  styleUrl: './todos-list.component.scss'
+  styleUrls: ['./todos-list.component.scss']
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
@@ -25,5 +26,14 @@ export class TodosListComponent {
 
   deleteTodo (todoId: number) {
     this.todosService.deleteTodo(todoId)
+  }
+
+  createTodo(form: Todo) {
+    this.todosService.createTodo({
+      "id": form.id,
+      "title": form.title,
+      "userId": form.userId,
+      "completed": form.completed,
+    })
   }
 } 

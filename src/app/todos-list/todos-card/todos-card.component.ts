@@ -6,7 +6,7 @@ import { Todo } from '../../todo.interface';
   standalone: true,
   imports: [],
   templateUrl: './todos-card.component.html',
-  styleUrl: './todos-card.component.scss'
+  styleUrls: ['./todos-card.component.scss']
 })
 export class TodosCardComponent {
   @Input()

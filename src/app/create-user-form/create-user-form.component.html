@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="createUser-form">
+    <form action="" [formGroup]="form" (ngSubmit)="submitForm()">
+      <label for="">name</label>
+      <input type="text" name="" id="" formControlName="name" />
+      <span
+       class='alert'
+        *ngIf="
+          form.controls['name'].invalid &&
+          (form.controls['name'].dirty || form.controls['name'].touched)
+        "
+      >
+        <span *ngIf="form.controls['name'].errors">inValid</span>
+      </span>
+      <label for="">email</label>
+      <input type="email" name="" id="" formControlName="email" />
+      <span
+       class='alert'
+        *ngIf="
+          form.controls['email'].invalid &&
+          (form.controls['email'].dirty || form.controls['email'].touched)
+        "
+      >
+        <span *ngIf="form.controls['email'].errors">inValid</span>
+      </span>
+      <label for="">website</label>
+      <input type="text" name="" id="" formControlName="website" />
+      <span
+       class='alert' 
+        *ngIf="
+          form.controls['website'].invalid &&
+          (form.controls['website'].dirty || form.controls['website'].touched)
+        "
+      >
+        <span *ngIf="form.controls['website'].errors">inValid</span>
+      </span>
+      <label for="">company name</label>
+      <input type="text" name="" id="" formControlName="companyName" />
+      <span
+       class='alert'
+        *ngIf="
+          form.controls['companyName'].invalid &&
+          (form.controls['companyName'].dirty ||
+            form.controls['companyName'].touched)
+        "
+      >
+        <span *ngIf="form.controls['companyName'].errors">inValid</span>
+      </span>
+      <button [disabled]="form.invalid">create user</button>
+    </form>
+  </div>
+</div>

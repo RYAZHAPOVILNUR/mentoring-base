@@ -5,7 +5,7 @@ import { Todo } from "./todo.interface";
 @Injectable({providedIn: 'root'})
 export class TodosService {
     private todosSubject$ = new BehaviorSubject<Todo[]>([])
-    todos = this.todosSubject$.asObservable()
+    todos$ = this.todosSubject$.asObservable()
 
     setTodos(todos: Todo[]) {
         this.todosSubject$.next(todos)
@@ -37,6 +37,10 @@ export class TodosService {
         )
     }
     createTodo (createTodo: Todo) {
+        const isFormTodo = this.todosSubject$.value.find(
+            (item) => item.title === createTodo.title
+        )
+        isFormTodo ? alert('Пользователь с такой задачой уже есть!'):
         this.todosSubject$.next(
             [...this.todosSubject$.value, createTodo]
         )

@@ -1,7 +1,6 @@
-КОМПОНЕНТ СПИСКА ЗАДАЧ
-
+<app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
 <div class="todos-list">
-     <div *ngFor="let todo of todosService.todos | async">
+     <div *ngFor="let todo of todosService.todos$ | async">
         <app-todos-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todos-card>
      </div>
 </div>
