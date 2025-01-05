@@ -12,15 +12,15 @@ const initialState: { todos: Todo[] } = {
 export const todoReducer = createReducer(
     initialState,
     on(TodoActions.setTodo, (state, payload) => ({
-        ...state, 
+        ...state,
         todos: payload.todos,
-        })),
+    })),
     on(TodoActions.createTodo, (state, payload) => ({
-            ...state, 
-            users: [...state.todos, payload.todos],
-        })), 
-     on(TodoActions.deleteTodo, (state, payload) => ({
-            ...state,
-            users: state.todos.filter((todo) => todo.id !== payload.id),
-        }))
+        ...state,
+        users: [...state.todos, payload.todos],
+    })),
+    on(TodoActions.deleteTodo, (state, payload) => ({
+        ...state,
+        users: state.todos.filter((todo) => todo.id !== payload.id),
+    }))
 )

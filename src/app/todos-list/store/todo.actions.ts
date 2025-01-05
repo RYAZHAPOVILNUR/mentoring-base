@@ -5,10 +5,10 @@ import { Todo } from "../todos-list.component";
 export const TodoActions = createActionGroup({
     source: 'Users',
     events: {
-        'setTodo': props<{todos: Todo[]}>(),
+        'setTodo': props<{ todos: Todo[] }>(),
 
-        'deleteTodo': props<{id: number}>(),
+        'deleteTodo': props<{ id: number }>(),
 
-        'CreateTodo': props<{todos: Todo}>(),
+        'CreateTodo': props<{ todos: Todo }>(),
     }
 })
