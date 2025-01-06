@@ -1,6 +1,8 @@
 <app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
-<div class="todos-list">
-     <div *ngFor="let todo of todosService.todos$ | async">
-        <app-todos-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todos-card>
-     </div>
+<div class="container">
+   <div class="todos-list">
+        <div *ngFor="let todo of todosService.todos$ | async">
+           <app-todos-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todos-card>
+        </div>
+   </div>
 </div>

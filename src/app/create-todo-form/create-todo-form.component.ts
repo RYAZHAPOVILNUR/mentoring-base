@@ -1,13 +1,15 @@
 import { NgIf } from "@angular/common";
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
 
 @Component({
   selector: 'app-create-todo-form',
   templateUrl: './create-todo-form.component.html',
   styleUrls: ['./create-todo-form.component.scss'],
   standalone: true,
-  imports:[ReactiveFormsModule, NgIf],
+  imports:[ReactiveFormsModule, NgIf,MatButtonModule, MatInputModule],
 })
 export class CreateTodoFormComponent {
 
