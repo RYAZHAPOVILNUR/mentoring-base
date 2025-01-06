@@ -7,6 +7,7 @@
     
     
     <mat-card-content>
+        <p>{{user.phone}}</p>
         <p>{{user.email}}</p>
         <a>{{user.website}}</a>
         <p class="cardCompName">{{user.company.name}}</p>
@@ -14,7 +15,7 @@
 
 
     <mat-card-actions>
-        <button mat-button class="deleteButton" (click)="openDialogDelete()">Удалить</button>
-        <button mat-button class="deleteButton" (click)="openDialog()">Редактировать</button>
+        <button mat-raised-button class="deleteButton" (click)="openDialogDelete()">Удалить</button>
+        <button mat-raised-button matTooltip="Редактировать данные пользователя" class="deleteButton" (click)="openDialog()">Редактировать</button>
     </mat-card-actions>
 </mat-card>

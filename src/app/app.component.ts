@@ -1,6 +1,7 @@
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { ActiveDirective } from './directives/active.directive';
 
 function returnNameMenu(name: string) {
   return name
@@ -16,7 +17,7 @@ const newPages = [5, 4, 3, 2, 1]
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgIf, NgFor],
+  imports: [RouterOutlet, RouterLink, NgIf, NgFor, DatePipe, ActiveDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -49,6 +50,8 @@ export class AppComponent {
   readonly headerLowItem5 = 'Интерьер и одежда';
 
   readonly newPages = newPages;
+
+  readonly dateObj = Date.now();
 
   menuItems = menuItems
 

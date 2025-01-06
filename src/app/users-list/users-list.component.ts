@@ -77,6 +77,7 @@ export class UsersListComponent {
         this.usersService.createUsers({
             id: new Date().getTime(),
             name: formData.name,
+            phone: formData.phone,
             email: formData.email,
             website: formData.website,
             company: {

@@ -11,7 +11,10 @@
     rel="stylesheet">
 
 </head>
-<body>
+<body> 
+  <div class="header_time">
+    <p class="header_time">{{ dateObj | date:'medium' }}</p>
+  </div>
     <div class="header">
       <div class="header__left">
         <div class="header__logo"><img src="../assets/Frame.svg" alt="logo"></div>
@@ -29,7 +32,7 @@
           <p style="font-family: Inter;">+7 (965) 084-29-29</p>
         </div>
         <img src="../assets/heart 1.svg" alt="heart" class="heart">
-        <button class="basket">
+        <button active class="basket">
           <img src="../assets/cart.svg" alt="" class="basket__img">
           <p class="basket__txt">Пусто</p>
         </button>

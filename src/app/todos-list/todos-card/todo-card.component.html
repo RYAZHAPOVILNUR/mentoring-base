@@ -1,7 +1,7 @@
 <p>Текст задачи</p>
-<p>{{todo.title}}</p>
+<p>{{ todo.title | shortField }}</p>
 <p>Автор задачи</p>
-<p>{{todo.userId}}</p>
+<p>{{ todo.userId }}</p>
 <p>Задача завершена:</p>
-<div>{{todo.completed ? 'ДА' : 'НЕТ'}}</div>
+<div>{{ todo.completed ? 'ДА' : 'НЕТ' }}</div>
 <button class="deleteButton" (click)="onDeleteTodo(todo.id)">Удалить</button>

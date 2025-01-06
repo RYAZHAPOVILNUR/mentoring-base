@@ -5,6 +5,8 @@ import { EditUserDialogComponent } from "./edit-user-dialog/edit-user-dialog.com
 import { DeleteUserDialogComponent } from "./delete-user-dialog/del-user-dialog.component";
 import { MatCardModule} from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button'
+import { PhoneWithOnlyNumbers } from "../../pipes/phone-withonly-numbers.pipe";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -14,7 +16,11 @@ import { MatButtonModule} from '@angular/material/button'
     styleUrl: './user-card.component.scss',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [EditUserDialogComponent, MatCardModule, MatButtonModule]
+    imports: [EditUserDialogComponent,
+              MatCardModule,
+              MatButtonModule,
+              PhoneWithOnlyNumbers,
+              MatTooltipModule]
 })
 
 export class UserCardComponent {
