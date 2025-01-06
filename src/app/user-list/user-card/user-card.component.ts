@@ -14,10 +14,7 @@ export class UserCardComponent {
 
   @Output() deleteUser = new EventEmitter<number>();
 
-  constructor(private cdr: ChangeDetectorRef) {}
-
   onDeleteUser(id: number) {
     this.deleteUser.emit(id);
-    this.cdr.markForCheck();
   }
 }

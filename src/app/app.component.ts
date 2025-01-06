@@ -17,11 +17,9 @@ export class AppComponent {
   menuItems = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
   isUpperCase = true;
 
-  constructor(private cdr: ChangeDetectorRef) {}
 
   changeMenuText() {
     this.menuItems = this.menuItems.map(item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase());
     this.isUpperCase = !this.isUpperCase
-    this.cdr.markForCheck();
   }
 }

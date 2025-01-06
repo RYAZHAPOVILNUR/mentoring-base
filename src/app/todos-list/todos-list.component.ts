@@ -20,12 +20,10 @@ export class TodosListComponent {
     constructor(private cdr: ChangeDetectorRef) {
       this.todosApiService.getTodos().subscribe(todos => {
         this.todosService.setTodos(todos);
-        this.cdr.markForCheck();
       });
     }
 
     deleteTodo(id: number) {
       this.todosService.deleteTodo(id);
-      this.cdr.markForCheck();
     }
 }

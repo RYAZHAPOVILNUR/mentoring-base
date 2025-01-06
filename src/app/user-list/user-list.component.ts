@@ -21,12 +21,10 @@ export class UserListComponent {
     constructor(private cdr: ChangeDetectorRef) {
       this.usersApiService.getUsers().subscribe(users => {
         this.userService.setUsers(users);
-        this.cdr.markForCheck();
       });
     }
 
     deleteUser(id: number) {
       this.userService.deleteUser(id);
-      this.cdr.markForCheck();
     }
 }

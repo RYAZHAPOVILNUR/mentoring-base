@@ -14,10 +14,7 @@ export class TodosCardComponent {
 
   @Output() deleteTodo = new EventEmitter<number>();
 
-  constructor(private cdr: ChangeDetectorRef) {}
-
   onDeleteTodo(id: number) {
     this.deleteTodo.emit(id);
-    this.cdr.markForCheck();
   }
 }
