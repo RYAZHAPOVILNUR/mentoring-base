@@ -6,11 +6,11 @@
       </div>
       <nav class="header-nav">
         <a routerLink='/' class="header-nav-item">{{headerItem1}}</a>
-        <div class="header-nav-item">{{aboutCompany}}</div>
+        <div class="header-nav-item">{{headerItem2}}</div>
         <div class="header-nav-item">{{headerItem3}}</div>
-        <a [routerLink]="['/users']" class="header-nav-item">Пользователи</a>
-        <a [routerLink]="['/todos']" class="header-nav-item">Карточки</a>
-        <button (click)="changeMenuText()">Изменить текст</button>
+        <a routerLink='/users' class="header-nav-item">Пользователи</a>
+        <a routerLink='/todos' class="header-nav-item">Карточки</a>
+        <button type="button" (click)="changeMenuText()">Изменить текст</button>
       </nav>
     </div>
     <div class="header-right">
@@ -21,7 +21,7 @@
       <div class="header-right-item">
         <img class="header-img-fav" src="/assets/heart1.svg" alt="2">
       </div>
-      <button class="header-right-item header-btn">
+      <button type="button" class="header-right-item header-btn">
         <img class="header-img-basc" src="/assets/basc.svg" alt="3">
         <div>Пусто</div>
       </button>

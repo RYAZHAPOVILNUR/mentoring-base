@@ -1,9 +1,8 @@
-
 <div class="content-container">
   <h1>Компонент списка пользователей</h1>
   <div class="cards-container">
     <app-user-card 
-      *ngFor="let user of userService.usersSubject$ | async" 
+      *ngFor="let user of userService.users$ | async" 
       [user]="user" 
       (deleteUser)="deleteUser($event)"
       >

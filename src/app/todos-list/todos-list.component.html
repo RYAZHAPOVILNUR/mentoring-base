@@ -2,7 +2,7 @@
     <h1>Компонент списка задач</h1>
     <div class="cards-container">
       <app-todos-card
-        *ngFor="let todo of todosService.todosSubject$ | async" 
+        *ngFor="let todo of todosService.todos$ | async" 
         [todo]="todo" 
         (deleteTodo)="deleteTodo($event)"
         >

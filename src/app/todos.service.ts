@@ -6,7 +6,8 @@ import { Todo } from './todos-api.service';
   providedIn: 'root'
 })
 export class TodosService {
-  todosSubject$ = new BehaviorSubject<Todo[]>([]);
+  private todosSubject$ = new BehaviorSubject<Todo[]>([]);
+  todos$ = this.todosSubject$.asObservable();
 
   setTodos(todos: Todo[]) {
     this.todosSubject$.next(todos);
@@ -30,5 +31,4 @@ export class TodosService {
   deleteTodo(id: number) {
     this.todosSubject$.next(this.todosSubject$.value.filter(todo => todo.id !== id));
   }
-
 }
