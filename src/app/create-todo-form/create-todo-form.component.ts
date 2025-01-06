@@ -1,7 +1,7 @@
 import { NgIf } from "@angular/common";
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { MatButtonModule } from "@angular/material/button";
+import { MatButton, MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 
 @Component({
@@ -9,7 +9,7 @@ import { MatInputModule } from "@angular/material/input";
   templateUrl: './create-todo-form.component.html',
   styleUrls: ['./create-todo-form.component.scss'],
   standalone: true,
-  imports:[ReactiveFormsModule, NgIf,MatButtonModule, MatInputModule],
+  imports:[ReactiveFormsModule, NgIf,MatButtonModule, MatInputModule, MatButton],
 })
 export class CreateTodoFormComponent {
 
