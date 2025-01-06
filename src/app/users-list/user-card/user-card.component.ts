@@ -1,14 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, output, Output} from "@angular/core";
 import { IUsers } from "../users-list.component";
-import {
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle } from '@angular/material/dialog'
+import { MatDialog } from '@angular/material/dialog'
 import { EditUserDialogComponent } from "./edit-user-dialog/edit-user-dialog.component";
-import { DeleteUserDialogComponent } from "./delete-user-dialog/delete-user-dialog.component";
+import { DeleteUserDialogComponent } from "./delete-user-dialog/del-user-dialog.component";
+import { MatCardModule} from '@angular/material/card';
+import { MatButtonModule} from '@angular/material/button'
+
 
 
 @Component({
@@ -17,7 +14,7 @@ import { DeleteUserDialogComponent } from "./delete-user-dialog/delete-user-dial
     styleUrl: './user-card.component.scss',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [EditUserDialogComponent]
+    imports: [EditUserDialogComponent, MatCardModule, MatButtonModule]
 })
 
 export class UserCardComponent {
@@ -48,9 +45,17 @@ export class UserCardComponent {
       }
 
 
-      // openDialogDelete(): void {
-      //   this.dialog.open(DeleteUserDialogComponent);
-      // }
+      openDialogDelete(): void {
+        const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
+          data: {user: this.user}
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed'); 
+          if (!result) return;
+          this.deleteUser.emit(result)
+        });
+      }
 
 
 

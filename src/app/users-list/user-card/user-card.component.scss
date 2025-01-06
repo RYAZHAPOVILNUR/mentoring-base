@@ -3,16 +3,20 @@
     font-weight: bold;
 }
 
-.cardCompName {
-    color: rgba(75, 86, 94, 1);
+.userCard {
+    width: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    margin-bottom: 20px;
+    margin-right: 60px;
 }
 
-.deleteButton {
-    border: solid;
-    border-color: rgba(240, 186, 78, 1);
-    background-color: white;
-    border-width: 2px;
-    border-radius: 5%;
-    width: 100px;
-    height: 40px;
+
+.userCard_avatar {
+    background-image: url('../../../assets/avatar_icon.png');
+  background-size: cover;
+}
+
+.cardCompName {
+    color: rgba(75, 86, 94, 1);
 }

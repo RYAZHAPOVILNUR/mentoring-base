@@ -1,5 +1,4 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
 import { ChangeDetectionStrategy, Component, inject} from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
