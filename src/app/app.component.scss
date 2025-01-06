@@ -16,6 +16,7 @@
 .header-Left {
     display: flex;
     gap: 40px;
+    align-items: center;
 
 }
 
@@ -175,6 +176,80 @@ input {
     text-decoration-skip-ink: none;
     color: white;
     margin-left: 4px;
+}
 
+.big-photo-container {
+    position: relative; /* Устанавливает контейнер как родитель для абсолютного позиционирования */
+}
+
+.background-image {
+    width: 100%; /* Устанавливает ширину фона на 100% от контейнера */
+    height: 100%; /* Автоматически подстраивает высоту */
+}
+
+.overlay-image {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Позиционирует сверху */
+    left: 0; /* Позиционирует слева */
+    width: 59%; /* Установите нужную ширину наложенной картинки */
+    height: 99%;/* Установите нужную высоту наложенной картинки */
+    filter: brightness(10%);
+}
+
+.overlay-text {
+    position: absolute;
+    width: 543px;
+    height: 112px;
+    top: 304px;
+    left: 300px;
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F0BA4E;
+}
+
+.frame-35 {
+    display: flex;
+    align-items: center;
+    width: 1319px;
+    height: 72px;
+    top: 876px;
+    left: 300px;
+    gap: 28px;
+    opacity: 0px;
+    margin-left: 240px;
+}
+
+.frame-35-items {
+    display: flex;
+    align-items: center;
+    width: 421px;
+    height: 72px;
+    gap: 16px;
+}
+
+.frame-35-text-1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.frame-35-text-2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: grey;
 }
 
