@@ -29,7 +29,7 @@ export class UsersListComponent {
 
     constructor() {
         this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
-            (response) => {
+            (response: User[]) => {
                 this.users = response;
             }
         )
@@ -37,8 +37,8 @@ export class UsersListComponent {
     
     deleteUser(id: number){
         this.users = this.users.filter(
-            item => {
-                if (id === item.id){
+            user => {
+                if (id === user.id){
                     return false
                 } else {
                     return true;

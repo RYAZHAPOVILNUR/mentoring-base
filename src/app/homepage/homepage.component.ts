@@ -15,4 +15,4 @@ export class HomepageComponent {
   readonly newPages = newPages
 }
 
-const newPages = [ 5, 4, 3, 2, 1];
+const newPages = [5, 4, 3, 2, 1];

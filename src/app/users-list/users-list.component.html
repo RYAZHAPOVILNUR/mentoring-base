@@ -1,14 +1,13 @@
 <div style="width: 1320px; margin: 0 auto; margin-top: 20px;">
     <span class="user-component-name">Компонент списка Юзеров:</span>
     <div class="users-carts-container">
-        <div *ngFor="let item of users" class="users-carts">
-           <p>{{item.name}}</p>
-           <p>{{item.email}}</p>
-           <p>{{item.website}}</p>
-           <p>{{item.company.name}}</p>
-           <p>{{item.phone}}</p>
-           <button class="button-delete-user" (click)="deleteUser(item.id)">Удалить Юзера</button>
+        <div *ngFor="let user of users" class="users-carts">
+           <p>{{user.name}}</p>
+           <p>{{user.email}}</p>
+           <p>{{user.website}}</p>
+           <p>{{user.company.name}}</p>
+           <p>{{user.phone}}</p>
+           <button class="button-delete-user" (click)="deleteUser(user.id)">Удалить Юзера</button>
         </div>
     </div>    
 </div>
-
