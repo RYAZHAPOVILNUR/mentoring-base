@@ -1,10 +1,10 @@
 <div class="card-container">
 	<div class="user-card" *ngFor="let item of users">
-		<p>{{$any(item).name}}</p>
-		<p>{{$any(item).email}}</p>
-		<p>{{$any(item).website}}</p>
-		<p>{{$any(item).company.name}}</p>
-		<p>{{$any(item).phone}}</p>
+		<p>{{(item).name}}</p>
+		<p>{{(item).email}}</p>
+		<p>{{(item).website}}</p>
+		<p>{{(item).company.name}}</p>
+		<p>{{(item).phone}}</p>
 		<button class="card-button" type="button" (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
 	</div>
 </div>

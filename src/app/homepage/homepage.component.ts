@@ -17,5 +17,4 @@ export class HomepageComponent {
   readonly newPages = newPages;
   
   isShowImage = true;
-
 }

@@ -7,10 +7,8 @@ export const routes: Routes = [
 		path: '',
 		component: HomepageComponent	
 	},
-	
 	{
 		path: 'users',
 		component: UsersListComponent
 	},
-	
 ];
