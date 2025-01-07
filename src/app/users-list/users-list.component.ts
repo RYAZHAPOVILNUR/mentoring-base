@@ -6,7 +6,6 @@ import { User } from "./user-interface";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 
-
 @Component ({
     selector: 'app-users-list', 
     templateUrl: './users-list.component.html', 
@@ -15,15 +14,13 @@ import { UserCardComponent } from "./user-card/user-card.component";
     imports: [NgFor, UserCardComponent]
 })
 
-
-
 export class UsersListComponent {
     readonly usersApiService = inject(UsersApiService); 
     users: User[] = []; 
 
     constructor() {
         this.usersApiService.getUsers() .subscribe(
-            (response: any) => {
+            (response: User[]) => {
                 this.users = response;
                 console.log('USERS: ', this.users) 
             }
@@ -31,15 +28,6 @@ export class UsersListComponent {
     }
 
     deleteUser(id:number) {
-        this.users = this.users.filter(
-            item => {
-                if (id === item.id) {
-                    return false; 
-                }
-                else {
-                    return true;
-                }
-            }
-        )
+        this.users = this.users.filter(item => id === item.id ? false : true)
     }
 }
