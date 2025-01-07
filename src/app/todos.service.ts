@@ -22,9 +22,6 @@ export class TodosService {
   createTodo(todo: Todo) {
     const existingTodo = this.todosSubject$.value.find(
       currentElement => currentElement.id === todo.id)
-
-    console.log(existingTodo);
-
     if(existingTodo !== undefined) {
       alert('ТАКОЙ ID УЖЕ ЗАРЕГИСТРИРОВАН')
     } else {

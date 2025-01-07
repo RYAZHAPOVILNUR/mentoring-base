@@ -39,6 +39,5 @@ export class CreateTodoFormComponent {
   public submitForm(): void {
     this.createTodo.emit({...this.formTodo.value, completed: this.getCompletedValue()});
     this.formTodo.reset();
-    console.log(this.formTodo.valid, this.getCompletedValue);
   }
 }

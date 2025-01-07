@@ -43,7 +43,5 @@ export class TodosListComponent {
         title: formData.title,
         completed: formData.completed
       });
-      console.log('ДАННЫЕ ФОРМЫ:', formData);
-      console.log(new Date().getTime());
     }
 }

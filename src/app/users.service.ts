@@ -22,9 +22,6 @@ export class UsersService {
   public createUser(user: User) {
     const existingUser = this.usersSubject$.value.find(
       currentElement => currentElement.email === user.email)
-
-    console.log(existingUser);
-
     if(existingUser !== undefined) {
       alert('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН')
     } else {

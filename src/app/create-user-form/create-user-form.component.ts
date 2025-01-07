@@ -26,6 +26,5 @@ export class CreateUserFormComponent {
   public submitForm(): void {
     this.createUser.emit(this.formUser.value);
     this.formUser.reset();
-    console.log(this.formUser.valid);
   }
 }
