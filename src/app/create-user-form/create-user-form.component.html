@@ -1,0 +1,45 @@
+<div>
+    <form
+        [formGroup]="form"
+        (ngSubmit)="submitForm()"
+        class="cards__item"
+    >
+        <p>Name:</p>
+        <input type="text" class="form-input" formControlName="name">
+        <div
+            *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)"
+            class="alert"
+        >
+            <div *ngIf="form.controls['name'].errors">Имя введено неправильно</div>
+        </div>
+
+        <p>Email:</p>
+        <input type="text" class="form-input" formControlName="email">
+        <div
+            *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
+            class="alert"
+        >
+            <div *ngIf="form.controls['email'].errors">Email введен неправильно</div>
+        </div>
+
+        <p>Website:</p>
+        <input type="text" class="form-input" formControlName="website">
+        <div
+            *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)"
+            class="alert"
+        >
+            <div *ngIf="form.controls['website'].errors">Website введен неправильно</div>
+        </div>
+
+        
+        <p>Company Name:</p>
+        <input type="text" class="form-input" formControlName="companyName">
+        <div
+            *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)"
+            class="alert"
+        >
+            <div *ngIf="form.controls['companyName'].errors">Website введен неправильно</div>
+        </div>
+        <button class="cards-item__footer-btn" [disabled]="form.invalid">Create user</button>
+    </form>
+</div>

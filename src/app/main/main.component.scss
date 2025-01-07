@@ -32,7 +32,7 @@
 .item-cards__grid-left {
     height: 428px;
     width: 421px;
-    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.5);
     max-height: 428px;
     max-width: 421px;
     min-width: 421px;
@@ -73,7 +73,7 @@
 .item-cards__grid-right-block {
     height: 200px;
     width: 421px;
-    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.5);
     max-height: 200px;
     max-width: 421px;
     background-repeat: no-repeat;
@@ -156,6 +156,7 @@
 .item-favorite-cards__container {
     display: flex;
     gap: 28px;
+    margin-top: 15px;
 }
 
 .item-favorite-cards__item {
@@ -166,7 +167,7 @@
     background-color: white;
     height: 429px;
     width: 309px;
-    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.5);
 }
 
 .item-favorite-cards__item > * {
@@ -245,6 +246,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 28px;
+    box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.5);
 }
 
 .more-names__title {

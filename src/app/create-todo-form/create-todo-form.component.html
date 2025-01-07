@@ -1,0 +1,33 @@
+<div>
+    <form
+        [formGroup]="form"
+        (ngSubmit)="submitForm()"
+        class="cards__item"
+    >
+        <p>UserId:</p>
+        <input type="number" class="form-input" formControlName="userId">
+        <div
+            *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
+            class="alert"
+        >
+            <div *ngIf="form.controls['userId'].errors">Имя введено неправильно</div>
+        </div>
+
+        <p>Title:</p>
+        <input type="text" class="form-input" formControlName="title">
+        <div
+            *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
+            class="alert"
+        >
+            <div *ngIf="form.controls['title'].errors">Title введен неправильно</div>
+        </div>
+
+        
+        <div class="completed">
+            <p>Completed:</p>
+            <input type="checkbox" class="form-input" formControlName="completed">
+        </div>
+
+        <button class="cards-item__footer-btn" [disabled]="form.invalid">Create todo</button>
+    </form>
+</div>
