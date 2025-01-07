@@ -1,62 +1,30 @@
+import { UsersService } from './../../users.service';
 import { UsersApiService } from './../../users-api.service';
-import { NgFor, NgIf } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
-import { Component, inject } from "@angular/core";
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
-
-export interface User {
-  id:number;
-  name : string;
-  username : string;
-  email : string;
-  adress : {
-    street : string;
-    suite : string;
-    city : string;
-    zipcode : string;
-    geo : {
-      lat: string;
-      lng : string;
-    };
-  };
-  phone : string;
-   website : string;
-   company : {
-    name : string;
-    catchPharse : string;
-    bs: string
-   };
-}
+import { TodosApiService } from './../../todos-api.service';
+import { User } from '../../Interfaces/user.interface';
 
 @Component({
-    selector:'app-user-list',
-    templateUrl: './users-list.component.html',
-    styleUrl: './users-list.component.scss',
-    standalone:true,
-    imports:[NgFor, NgIf, UserCardComponent],
-  })
+  selector: 'app-user-list',
+  templateUrl: './users-list.component.html',
+  styleUrls: ['./users-list.component.scss'],
+  standalone: true,
+  imports: [NgFor, UserCardComponent, AsyncPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
 export class UsersListComponent {
-readonly usersApiService = inject(UsersApiService);
-users : User[] = [];
-
-constructor () {
-this.usersApiService.getUsers().subscribe(
-  (response : any) => {
-    this.users = response;
-}
-  )
-    }
-
-deleteUser(id : number) {
-this.users = this.users.filter(
-  item => {
-    if (id === item.id) {
-      return false
-    } else {
-      return true;
-    }
+  readonly usersApiService = inject(UsersApiService);
+  usersService = inject(UsersService);
+  users: User[] = [];
+  deleteUser(id: number) {
+    this.usersService.deleteUser(id);
   }
-)
-    }
-}
 
+  constructor() {
+    this.usersApiService
+      .getUsers()
+      .subscribe((response: any) => this.usersService.setUsers(response));
+  }
+}

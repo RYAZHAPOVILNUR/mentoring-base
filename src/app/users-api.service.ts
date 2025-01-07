@@ -11,10 +11,3 @@ export class UsersApiService {
 }
 
 
-class test {
-  field : number = 2;
-  field2 : number = 3;
-
-
-}
-

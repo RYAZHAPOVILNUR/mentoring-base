@@ -1,8 +1,8 @@
 КОМПОНЕНТ СПИСКА ЮЗЕРОВ
 
-<div class="div-cards" style="display: flex; flex-wrap: wrap;">
-  <div *ngFor="let item of users" class="card">
-    <app-user-card [user]="item"(deleteUser)="deleteUser($event)"> </app-user-card>
+<div class="div-cards">
+  <div *ngFor="let user of usersService.users$ | async" class="card">
+    <app-user-card [user]="user" (deleteUser)="deleteUser($event)">
+    </app-user-card>
   </div>
-
 </div>

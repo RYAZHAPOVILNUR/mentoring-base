@@ -8,7 +8,7 @@ import { TodoListComponent } from "../todo-list.component";
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
   standalone: true,
-  imports: [NgFor, TodoListComponent],
+  imports: [],
 })
 export class TodoCardComponent {
   @Input()

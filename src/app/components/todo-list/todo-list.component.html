@@ -1,8 +1,8 @@
 КОМПОНЕНТ СПИСКА ЗАДАЧ
 
-<div class="div-cards" style="display: flex; flex-wrap: wrap;">
-  <div *ngFor="let todo of todos" class="card">
-    <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"> </app-todo-card>
+<div class="div-cards" style="display: flex; flex-wrap: wrap">
+  <div *ngFor="let todo of TodosService.todos | async" class="card">
+    <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)">
+    </app-todo-card>
   </div>
 </div>
-
