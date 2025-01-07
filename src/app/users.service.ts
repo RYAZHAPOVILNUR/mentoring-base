@@ -7,11 +7,11 @@ export class UsersService {
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   usersObservable$: Observable<User[]> = this.usersSubject$.asObservable();
 
-  setUsers(users: User[]) {
+  public setUsers(users: User[]) {
     this.usersSubject$.next(users);
   }
 
-  editUser(editedUser: User) {
+  public editUser(editedUser: User) {
       this.usersSubject$.next(
         this.usersSubject$.value.map(
           user => (user.id === editedUser.id ? editedUser : user)
@@ -19,7 +19,7 @@ export class UsersService {
       )
   }
 
-  createUser(user: User) {
+  public createUser(user: User) {
     const existingUser = this.usersSubject$.value.find(
       currentElement => currentElement.email === user.email)
 
@@ -34,7 +34,7 @@ export class UsersService {
     }
   }
 
-  deleteUser(id: number) {
+  public deleteUser(id: number) {
     this.usersSubject$.next(
       this.usersSubject$.value.filter(user => id === user.id ? false : true)
     )

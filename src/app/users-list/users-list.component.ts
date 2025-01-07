@@ -2,7 +2,7 @@ import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject} from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user.card.component";
-import { User } from "./user-interface";
+import { User, userCreate } from "./user-interface";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
 
@@ -30,22 +30,24 @@ export class UsersListComponent {
       users => console.log(users))
   }
 
-  deleteUser(id: number) {
+  public deleteUser(id: number) {
     this.usersService.deleteUser(id)
   }
 
-  public createUser(formData: any) {
+  public createUser(formData: userCreate) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.companyName
+        name: formData.company.name
       }
     });
-    console.log('ДАННЫЕ ФОРМЫ:', formData);
+    console.log('ДАННЫЕ ФОРМЫ:');
     console.log(new Date().getTime());
+    console.log(formData);
+
 
   }
 }

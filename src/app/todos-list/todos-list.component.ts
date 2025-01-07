@@ -2,9 +2,10 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TodosApiService } from '../todos-api.service';
 import { TodoCardComponent } from "./todo-card/todo-card.component";
 import { AsyncPipe, NgFor } from '@angular/common';
-import { Todo } from './todos-interface';
+import { Todo, todoCreate } from './todos-interface';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+
 
 @Component({
   selector: 'app-todos-list',
@@ -35,16 +36,14 @@ export class TodosListComponent {
       this.todosService.deleteTodo(id)
     }
 
-    public createTodo(formData: any) {
+    public createTodo(formData: todoCreate) {
       this.todosService.createTodo({
+        id: new Date().getTime(),
         userId: formData.userId,
-        id: new Date().getTime() & formData.id,
         title: formData.title,
         completed: formData.completed
       });
       console.log('ДАННЫЕ ФОРМЫ:', formData);
       console.log(new Date().getTime());
-
-
     }
 }
