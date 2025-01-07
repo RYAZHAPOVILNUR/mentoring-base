@@ -9,6 +9,7 @@ import { FooterComponent } from "./footer/footer.component";
   imports: [RouterOutlet, HeaderComponent, FooterComponent, ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'mentoring-first-project';

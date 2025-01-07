@@ -1,20 +1,27 @@
 <div class="container">
     <div class="createTodo-form">
-      <form action="" [formGroup]="form" (ngSubmit)="formTodo()">
-        <label for="">ТЕКСТ ЗАДАЧИ</label>
-        <input type="text" name="" id="" formControlName="title" />
-        <span class="alert" *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
-          <span *ngIf="form.controls['title'].errors">invalid</span>
-        </span>
-        <label for="">АВТОР ЗАДАЧИ</label>
-        <input type="text" name="" id="" formControlName="userId" />
-        <span class="alert" *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)">
-          <span *ngIf="form.controls['userId'].errors">invalid</span>
-        </span>
-        <label for="">ЗАДАЧА ЗАВЕРШЕНА</label>
-        <input type="checkbox" name="" id="" formControlName="completed" />
-        <button mat-raised-button [disabled]="form.invalid">create todo</button>
+      <form 
+      class="form"[formGroup]="form">
+          <mat-form-field class="form-input">
+              <mat-label>Текст задачи</mat-label>
+              <input matInput formControlName="title">
+              <mat-error>Некорректное значение</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="form-input">
+              <mat-label>Автор задачи</mat-label>
+              <input matInput formControlName="userId">
+              <mat-error>Некорректное значение</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="form-input">
+              <mat-label>Задача завершена</mat-label>
+              <input matInput formControlName="completed">
+              <mat-error>Некорректное значение</mat-error>
+          </mat-form-field>
+          <button class="button-form" type="button" (click)="submitForm()" matIconSuffix mat-raised-button [disabled]="form.invalid">Add Todo
+              <mat-icon>add</mat-icon>
+          </button>
       </form>
-      <button mat-raised-button>button</button>
-    </div>
+  </div>
   </div>

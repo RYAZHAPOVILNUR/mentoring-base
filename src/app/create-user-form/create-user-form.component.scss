@@ -19,21 +19,13 @@
     }
   }
 .createUser-form {
+  width: 350px;
     form {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    label {
-        text-transform: uppercase;
-        width: 250px;
-    }
-    button {
-        text-transform: uppercase;
-        width: 250px;
-    }
     input {
         margin-bottom: 15px;
-        width: 250px;
     }
     }
 

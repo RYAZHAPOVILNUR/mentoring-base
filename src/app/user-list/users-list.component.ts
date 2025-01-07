@@ -1,4 +1,4 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor} from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, } from '@angular/core';
 import { UsersApiService } from '../users-api.service.js';
 import { UserCardComponent } from "./user-card/user-card.component";

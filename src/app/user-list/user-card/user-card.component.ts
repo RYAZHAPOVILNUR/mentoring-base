@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
 import { User } from "../../user.interface.ts";
 
 @Component({
@@ -6,6 +6,7 @@ import { User } from "../../user.interface.ts";
     standalone: true,
     templateUrl: './user-card.component.html',
     styleUrls: ['./user-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCardComponent {
     @Input()
