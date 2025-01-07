@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   standalone: true,
   imports: [ReactiveFormsModule, NgIf],
   templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss'
+  styleUrl: './create-user-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateUserFormComponent {
   @Output() createUser = new EventEmitter();

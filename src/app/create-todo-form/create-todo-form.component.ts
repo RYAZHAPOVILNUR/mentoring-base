@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   standalone: true,
   imports: [ReactiveFormsModule, NgIf],
   templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss'
+  styleUrl: './create-todo-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateTodoFormComponent {
   @Output() createTodo = new EventEmitter();
