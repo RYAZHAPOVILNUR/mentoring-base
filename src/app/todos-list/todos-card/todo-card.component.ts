@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output} from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from "@angular/core";
 import { Todo } from "../todos-list.component";
 import { ShortField } from "../../pipes/short-field.pipe";
 
@@ -7,6 +7,7 @@ import { ShortField } from "../../pipes/short-field.pipe";
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [ShortField]
 })
 

@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { TodosApiService } from "../todos-api.service";
 import { AsyncPipe, NgFor } from "@angular/common";
 import { TodoCardComponent } from "./todos-card/todo-card.component";
@@ -18,6 +18,7 @@ export interface Todo {
     templateUrl: './todos-list.component.html',
     styleUrl: './todos-list.component.scss',
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodoForm]
 })
 

@@ -2,15 +2,14 @@ import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject} from "@angular/core";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { UsersService } from "../users.service";
 import { CreateUserDialogComponent } from "./create-user-dialog/create-user-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatButton, MatButtonModule } from '@angular/material/button';
-
-
-const consoleResponse = (response: unknown) => console.log(response) 
-
+import { Store } from "@ngrx/store";
+import { UsersAction } from "./store/user.actions";
+import { selectUsers } from "./store/users.selectors";
+ 
 export interface IUsers {
     id: number,
     name: string,
@@ -33,7 +32,6 @@ export interface IUsers {
         catchPhrase?: string,
         bs?: string
     }
-    
 }
 
 
@@ -53,38 +51,46 @@ export interface IUsers {
 
 export class UsersListComponent {
     readonly usersApiService = inject(UsersApiService);
-    readonly usersService = inject(UsersService);
-    readonly dialog = inject(MatDialog)
+    readonly dialog = inject(MatDialog);
+    private readonly store = inject(Store);
+    public readonly users$ = this.store.select(selectUsers);
 
+    constructor() {
+        this.usersApiService.getUsers().subscribe((response: any) => {
+            this.store.dispatch(UsersAction.set({ users: response }));
+        });
 
+        this.users$.subscribe(
+            users => console.log(users)
+        );
+    };
+    
     public deleteUser(id: number) {
-        this.usersService.deleteUsers(id)
+        this.store.dispatch(UsersAction.delete({ id }));
     };
 
 
     public editUser(user: any) {
-        this.usersService.editUsers({
-            ...user,
-            company: {
-                name: user.companyName
-            }
-        })
+        this.store.dispatch(UsersAction.edit({ user }));
     };
 
 
     public createUser(formData: any) {
         console.log('ДАННЫЕ ФОРМЫ:', formData);
-        this.usersService.createUsers({
-            id: new Date().getTime(),
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            website: formData.website,
-            company: {
-                name: formData.companyName
+        this.store.dispatch(UsersAction.create({
+            user: {
+                id: new Date().getTime(),
+                name: formData.name,
+                phone: formData.phone,
+                email: formData.email,
+                website: formData.website,
+                company: {
+                    name: formData.companyName
+                }   
             }
         })
-    };
+    )
+};
 
 
     openDialog(): void {
@@ -101,16 +107,5 @@ export class UsersListComponent {
 
 
 
-    constructor() {
-        this.usersApiService.getUsers().subscribe(
-            (response: any) => {
-                this.usersService.setUsers(response);
-            }
-        );
-
-
-        this.usersService.usersSubject.subscribe(
-            users => console.log(users)
-        );
-    };
+    
 }

@@ -3,7 +3,7 @@ import { IUsers } from "../users-list.component";
 import { MatDialog } from '@angular/material/dialog'
 import { EditUserDialogComponent } from "./edit-user-dialog/edit-user-dialog.component";
 import { DeleteUserDialogComponent } from "./delete-user-dialog/del-user-dialog.component";
-import { MatCardModule} from '@angular/material/card';
+import { MatCardModule, MatCardTitle} from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button'
 import { PhoneWithOnlyNumbers } from "../../pipes/phone-withonly-numbers.pipe";
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -20,7 +20,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
               MatCardModule,
               MatButtonModule,
               PhoneWithOnlyNumbers,
-              MatTooltipModule]
+              MatTooltipModule,
+              PhoneWithOnlyNumbers,
+              MatCardTitle]
 })
 
 export class UserCardComponent {

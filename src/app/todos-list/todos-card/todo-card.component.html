@@ -4,4 +4,4 @@
 <p>{{ todo.userId }}</p>
 <p>Задача завершена:</p>
 <div>{{ todo.completed ? 'ДА' : 'НЕТ' }}</div>
-<button class="deleteButton" (click)="onDeleteTodo(todo.id)">Удалить</button>
+<button class="deleteButton" type="button" (click)="onDeleteTodo(todo.id)">Удалить</button>

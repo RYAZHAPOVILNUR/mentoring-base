@@ -1,7 +1,8 @@
 import { DatePipe, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { ActiveDirective } from './directives/active.directive';
+import { UserService } from './user.service';
 
 function returnNameMenu(name: string) {
   return name
@@ -17,9 +18,11 @@ const newPages = [5, 4, 3, 2, 1]
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgIf, NgFor, DatePipe, ActiveDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterOutlet, RouterLink, NgIf, NgFor, DatePipe, ActiveDirective],
+  
 })
 
 
@@ -27,11 +30,15 @@ const newPages = [5, 4, 3, 2, 1]
 export class AppComponent {
   title = 'mentoring-first-project';
 
+  readonly userService = inject(UserService);
+  
   isShowCatalog = true;
 
   isShowPromo = true;
 
   isUpperCase = false;
+
+  adminStatus = true
 
   readonly headerItem1 = 'Главная';
 
@@ -53,6 +60,7 @@ export class AppComponent {
 
   readonly dateObj = Date.now();
 
+
   menuItems = menuItems
 
   changeMenuText() {
@@ -61,6 +69,17 @@ export class AppComponent {
     )
 
     this.isUpperCase = !this.isUpperCase
+  };
+
+
+  logAsAdmin() {
+    this.userService.loginAsAdmin();
+    this.adminStatus = true
+  }
+
+  logAsUser() {
+    this.userService.loginAsUser();
+    this.adminStatus = false
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon'
     templateUrl: './create-todo-form.component.html',
     styleUrl: './create-todo-form.component.scss',
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [ReactiveFormsModule,
               MatButtonModule,
               MatInputModule,
