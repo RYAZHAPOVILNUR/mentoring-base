@@ -1,0 +1,49 @@
+<h1 class="title_form">Создание <br> пользователя</h1>
+
+<form class="create_user_form" [formGroup]="form">
+    
+    
+    <mat-form-field class="custom-wigth">
+        <mat-label>Имя пользователя</mat-label>
+        <input matInput type="text" formControlName="name">
+    </mat-form-field>
+
+
+    <mat-form-field class="custom-wigth">
+        <mat-label>Номер телефона</mat-label>
+        <input matInput type="text" formControlName="phone">
+    </mat-form-field>
+
+
+    <mat-form-field class="custom-wigth">
+        <mat-label>Электронный адрес</mat-label>
+        <input matInput type="text" formControlName="email">
+    </mat-form-field>
+
+
+    <mat-form-field class="custom-wigth">
+        <mat-label>Веб-сайт</mat-label>
+        <input matInput type="text" formControlName="website">
+    </mat-form-field>
+
+
+    <mat-form-field class="custom-wigth">
+        <mat-label>Название компании</mat-label>
+        <input matInput type="text" formControlName="companyName">
+    </mat-form-field>
+    
+</form>
+
+<div class="btn_container">
+        <button 
+        mat-fab extended 
+        [disabled]="form.invalid" 
+        class="create_user_btn"
+        type="button"
+        [mat-dialog-close]="form.value">
+
+        <mat-icon>add</mat-icon>
+        СОЗДАТЬ
+    
+        </button>
+    </div>
