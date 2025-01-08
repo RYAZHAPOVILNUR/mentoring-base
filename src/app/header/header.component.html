@@ -8,10 +8,10 @@
 				<a class="header-nav-item" href="">{{headerItem1}}</a>
 				<a class="header-nav-item" href="" *ngIf="isShowAboutCompanmy">{{headerItem2}}</a>
 				<a class="header-nav-item" href="" *ngIf="isShowCatalog">{{headerItem3}}</a>
-				<button class="changeBtn" type="button" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать
-					Каталог</button>
+				<button class="changeBtn" type="button" (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать Каталог</button>
 				<button class="changeBtn" type="button" (click)="changeMenuText()">Изменить текст</button>
 				<button class="changeBtn" type="button" [routerLink]="'/users'">Админка</button>
+				<button class="changeBtn" type="button" [routerLink]="'/todos'">ToDos</button>
 			</div>
 		</nav>
 	</div>
