@@ -10,13 +10,13 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class AppComponent {
   readonly headerItem1 = 'Главная';
   readonly headerItem2 = 'О компании';
   readonly headerItem3 = 'Каталог';
   menuItems = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
   isUpperCase = true;
-
 
   changeMenuText() {
     this.menuItems = this.menuItems.map(item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase());
