@@ -1,14 +1,8 @@
-<h1>CREATE TODO FORM</h1>
-<form class="create_todo_form" [formGroup]="form" (ngSubmit)="submitForm()">
-    <!-- <p>ТЕКСТ ЗАДАЧИ</p>
-    <input type="text" formControlName="title">
+<h1 class="title_form">Создание <br> задачи</h1>
 
-    <p>АВТОР ЗАДАЧИ</p>
-    <input type="text" formControlName="userId">
-
-    <p>СТАТУС ЗАДАЧИ</p>
-    <input type="text" formControlName="completed"> -->
-
+<form class="create_todo_form" [formGroup]="form">
+    
+    
     <mat-form-field class="custom-wigth">
         <mat-label>Текст задачи</mat-label>
         <input matInput type="text" formControlName="title">
@@ -23,19 +17,24 @@
 
     <mat-form-field class="custom-wigth">
         <mat-label>Статус задачи</mat-label>
-        <input matInput type="text" formControlName="completed">
+        <mat-select formControlName="completed">
+            <mat-option [value]="true">Да</mat-option>
+            <mat-option [value]="false">Нет</mat-option>
+        </mat-select>
     </mat-form-field>
+    
+</form>
 
-
-    <div class="btn_container">
+<div class="btn_container">
         <button 
         mat-fab extended 
         [disabled]="form.invalid" 
-        class="create_user_btn">
+        class="create_btn"
+        type="button"
+        [mat-dialog-close]="form.value">
 
         <mat-icon>add</mat-icon>
         СОЗДАТЬ
     
         </button>
     </div>
-</form>

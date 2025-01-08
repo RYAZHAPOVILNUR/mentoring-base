@@ -10,12 +10,25 @@
 </head>
 <body>
 
-    <app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
+    <button mat-fab extended
+        type="button"
+        class="create_btn" 
+        (click)="openDialog()">
+        
+        <mat-icon>add</mat-icon>
+        СОЗДАТЬ
+    
+    </button>
+
 
     <div class="todoCards">
         <ng-container class="todoCards" *ngFor="let todo of todosService.todosSubject | async">
             <div class="todoCard">
-                <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+                <app-todo-card 
+                    [todo]="todo" 
+                    (deleteTodo)="deleteTodo($event)"
+                    (editTodo)='editTodo($event)'>            
+                </app-todo-card>
             </div>        
         </ng-container>
     </div>

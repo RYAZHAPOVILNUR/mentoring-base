@@ -1,7 +1,28 @@
-<p>Текст задачи</p>
-<p>{{ todo.title | shortField }}</p>
-<p>Автор задачи</p>
-<p>{{ todo.userId }}</p>
-<p>Задача завершена:</p>
-<div>{{ todo.completed ? 'ДА' : 'НЕТ' }}</div>
-<button class="deleteButton" type="button" (click)="onDeleteTodo(todo.id)">Удалить</button>
+<mat-card class="todoCard" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title> Автор задачи: {{todo.userId}} </mat-card-title>
+    </mat-card-header>
+    
+    
+    <mat-card-content>
+        
+        <p> Текст задачи:<br> {{todo.title | shortField}} </p>
+        
+        <p> Задача выполнена? <br> {{todo.completed | booleanTrans}} </p>
+        
+    </mat-card-content>
+
+ 
+    <mat-card-actions class="btns">
+        <button mat-raised-button
+                 type="button" 
+                 class="deleteButton" 
+                 (click)="openDialogDelete()">Удалить</button>
+        
+         <button mat-raised-button
+                type="button"
+                matTooltip="Редактировать данные пользователя" 
+                class="deleteButton edit_btn" 
+                (click)="openDialog()">Редактировать</button>
+    </mat-card-actions>
+</mat-card>

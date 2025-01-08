@@ -16,13 +16,15 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     styleUrl: './user-card.component.scss',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [EditUserDialogComponent,
+    imports: [
+              EditUserDialogComponent,
               MatCardModule,
               MatButtonModule,
               PhoneWithOnlyNumbers,
               MatTooltipModule,
               PhoneWithOnlyNumbers,
-              MatCardTitle]
+              MatCardTitle
+            ]
 })
 
 export class UserCardComponent {

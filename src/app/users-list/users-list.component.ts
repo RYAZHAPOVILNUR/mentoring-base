@@ -71,7 +71,18 @@ export class UsersListComponent {
 
 
     public editUser(user: any) {
-        this.store.dispatch(UsersAction.edit({ user }));
+        this.store.dispatch(UsersAction.edit({ 
+            user: {
+                id: user.id,
+                name: user.name,
+                phone: user.phone,
+                email: user.email,
+                website: user.website,
+                company: {
+                    name: user.companyName
+                }     
+            }
+        }));
     };
 
 

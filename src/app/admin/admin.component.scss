@@ -1,0 +1,14 @@
+.block {
+    max-width: 820px;
+    min-height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn {
+    background-color: rgba(240, 186, 78, 1) !important;
+    color: rgba(75, 86, 94, 1) !important;
+}

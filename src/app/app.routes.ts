@@ -4,11 +4,13 @@ import { UsersListComponent } from './users-list/users-list.component';
 import {MainComponent } from './main/main.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 import { adminGuard } from './admin.guard';
+import { AdminComponent } from './admin/admin.component';
+
+
 export const routes: Routes = [
     {
         path: 'users',
-        component: UsersListComponent,
-        canActivate: [adminGuard]
+        component: UsersListComponent
     },
     {
         path: 'main',
@@ -17,7 +19,13 @@ export const routes: Routes = [
     {
         path: 'todos',
         component: TodosListComponent
-    }
+    },
+
+    {
+        path: 'admin',
+        component: AdminComponent,
+        canActivate: [adminGuard]
+    },
 
 ];
 

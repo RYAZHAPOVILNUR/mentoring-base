@@ -8,8 +8,8 @@ import { MatInputModule } from "@angular/material/input";
 
 @Component({
     selector: 'app-delete-user-dialog',
-    templateUrl: './del-user-dialog.component.html',
-    styleUrl: './del-user-dialog.component.scss',
+    templateUrl: './delete-todo-dialog.component.html',
+    styleUrl: './delete-todo-dialog.component.scss',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [MatButton,
@@ -23,11 +23,11 @@ import { MatInputModule } from "@angular/material/input";
                   MatDialogContent]
 })
 
-export class DeleteUserDialogComponent {
+export class DeleteTodoDialogComponent {
 
 
     @Output()
-    deleteUser = new EventEmitter
+    deleteTodo = new EventEmitter
 
 
 

@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="title_form">Удаление <br> задачи</h2>
+<mat-dialog-content>
+  Вы действительно хотите удалить задачу?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-fab extended mat-dialog-close>НЕТ</button>
+  <button mat-fab extended [mat-dialog-close]="data.todo.id" cdkFocusInitial>ДА</button>
+</mat-dialog-actions>

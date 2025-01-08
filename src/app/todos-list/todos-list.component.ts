@@ -3,7 +3,10 @@ import { TodosApiService } from "../todos-api.service";
 import { AsyncPipe, NgFor } from "@angular/common";
 import { TodoCardComponent } from "./todos-card/todo-card.component";
 import { TodosService } from "../todos.service";
-import { CreateTodoForm } from "../create-todo-form/create-todo-form.component";
+import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { MatIcon } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
 export interface Todo {
     userId: number,
@@ -19,13 +22,19 @@ export interface Todo {
     styleUrl: './todos-list.component.scss',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodoForm]
+    imports: [
+            NgFor,
+            TodoCardComponent,
+            AsyncPipe, 
+            MatIcon,
+            MatButtonModule
+        ]
 })
 
 export class TodosListComponent {
     readonly todosApiService = inject(TodosApiService);
     readonly todosService = inject(TodosService)
-
+    readonly dialog = inject(MatDialog)
 
     deleteTodo(id: number) {
         this.todosService.deleteTodos(id)
@@ -41,7 +50,29 @@ export class TodosListComponent {
             completed: formData.completed
         })
     };
+
+    public editTodo(user: any) {
+        this.todosService.editTodos({
+            ...user,
+            company: {
+                name: user.companyName
+            }
+        })
+    };
     
+
+    openDialog(): void {
+        const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
+            data: 1234312423,
+        });
+            
+        dialogRef.afterClosed().subscribe(createResult => {
+            console.log('МОДАЛКА ЗАКРЫТА', createResult);
+                if (!createResult) return;
+                this.createTodo(createResult)
+        });
+    }
+
     
     constructor() {
         this.todosApiService.getTodos().subscribe(
