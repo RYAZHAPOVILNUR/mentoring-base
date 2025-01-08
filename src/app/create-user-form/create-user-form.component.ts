@@ -4,8 +4,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angula
 
 @Component({
   selector: 'app-create-user-form',
-  templateUrl: './create-user-form.html',
-  styleUrl: './create-user-form.scss',
+  templateUrl: './create-user-form.component.html',
+  styleUrl: './create-user-form.component.scss',
   standalone: true,
   imports: [ReactiveFormsModule, NgIf]
 })
