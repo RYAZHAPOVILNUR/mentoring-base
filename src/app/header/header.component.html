@@ -4,9 +4,11 @@
             <div class="header-top-navigation">
                 <img class="logo" src="/assets/logo-image.svg" alt="Logo">
                 <nav class="navigation-top-items">
-                    <span class="navigation-top-item">Главная</span>
-                    <span class="navigation-top-item">О компании</span>
-                    <span class="navigation-top-item">Каталог</span>
+                    <span class="navigation-top-item">{{headerItem1}}</span>
+                    <span class="navigation-top-item">{{aboutCompany}}</span>
+                    <span *ngIf="showCatolog" class="navigation-top-item">{{headerItem3}}</span>
+                    <button (click)="isShowCatalog()" type="button">Скрыть/Показать каталог</button>
+                    <button (click)="isUpperCase()" type="button">Изменить размер</button>
                 </nav>
             </div>
             <div class="header-top-info">
@@ -29,13 +31,10 @@
             <div class="header-bottom-navigation">
                 <div class="navigation-bottom-hamburger">
                     <img src="/assets/hamburger-icon.svg" alt="Hamburger">
-                    <span>Каталог</span>
                 </div>
-                <nav class="navigation-bottom-items">
-                    <span class="navigation-bottom-item">Стройматериалы</span>
-                    <span class="navigation-bottom-item">Инструменты</span>
-                    <span class="navigation-bottom-item">Электрика</span>
-                    <span class="navigation-bottom-item">Интерьер и одежда</span>
+                <nav *ngFor="let item of menuItems" class="navigation-bottom-items">
+                    <span class="navigation-bottom-item">{{item}}</span>
+
                 </nav>
             </div>
             <div class="header-bottom-search">
