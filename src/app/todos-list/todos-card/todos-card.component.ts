@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from '../../todos-api.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { Todo } from '../../interfaces/todo.interface';
 
 @Component({
   selector: 'app-todos-card',
@@ -7,7 +13,7 @@ import { Todo } from '../../todos-api.service';
   imports: [],
   templateUrl: './todos-card.component.html',
   styleUrl: './todos-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosCardComponent {
   @Input() todo!: Todo;

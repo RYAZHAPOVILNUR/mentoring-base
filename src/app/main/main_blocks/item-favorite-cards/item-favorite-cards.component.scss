@@ -1,0 +1,121 @@
+.item-favorite-cards__header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 56px;
+}
+
+.cards__header-title {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 28px;
+  color: #000000;
+}
+
+.cards-item__img {
+  position: relative;
+}
+
+.cards-item__img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url("/assets/heart2.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.cards-item__img:hover::after {
+  opacity: 1;
+}
+
+.cards__header-link {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 18px;
+  color: #f0ba4e;
+  text-decoration: none;
+}
+
+.item-favorite-cards__container {
+  display: flex;
+  gap: 28px;
+  margin-top: 15px;
+}
+
+.item-favorite-cards__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: white;
+  height: 429px;
+  width: 309px;
+  box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.5);
+}
+
+.item-favorite-cards__item > * {
+  line-height: 28px;
+}
+
+.cards-item__block-1 > * {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  color: #3c3c3b;
+}
+
+.cards-item__block-1 > span {
+  font-size: 16px;
+}
+
+.cards-item__block-2 > span {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  color: #a1a0a0;
+}
+
+.price-block {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  color: #3c3c3b;
+  display: flex;
+  gap: 16px;
+}
+
+.old-price {
+  text-decoration-line: line-through;
+  font-size: 16px;
+}
+
+.cards-item__footer-btn {
+  padding: 14px 28px;
+  border: 1px solid #f0ba4e;
+  border-radius: 54px;
+  background-color: white;
+}
+
+.cards-item__footer {
+  display: flex;
+  gap: 32px;
+}
+
+.cards-item__footer-left {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.cards-number {
+  display: flex;
+  align-items: center;
+}
+
+.cards-number > span {
+  font-size: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+}

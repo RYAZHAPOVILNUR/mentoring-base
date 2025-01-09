@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Todo } from './todos-api.service';
+import { Todo } from './interfaces/todo.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodosService {
   private todosSubject$ = new BehaviorSubject<Todo[]>([]);
@@ -11,31 +11,35 @@ export class TodosService {
 
   setTodos(todos: Todo[]) {
     this.todosSubject$.next(todos);
-  };
+  }
 
   editTodo(editedTodo: Todo) {
     this.todosSubject$.next(
-      this.todosSubject$.value.map(user => {
+      this.todosSubject$.value.map((user) => {
         if (user.id === editedTodo.id) {
           return editedTodo;
         }
         return user;
       })
-    )
+    );
   }
 
   createTodo(todo: Todo) {
-    const existingTodo = this.todosSubject$.value.find(currentElement => currentElement.userId === todo.userId);
+    const existingTodo = this.todosSubject$.value.find(
+      (currentElement) => currentElement.userId === todo.userId
+    );
 
-		if (existingTodo !== undefined) {
-			alert('Такой userId уже существует');
-		} else {
-			this.todosSubject$.next([...this.todosSubject$.value, todo]);
-			alert('Новая задача успешно добавлена');
-		}
+    if (existingTodo !== undefined) {
+      alert('Такой userId уже существует');
+    } else {
+      this.todosSubject$.next([...this.todosSubject$.value, todo]);
+      alert('Новая задача успешно добавлена');
+    }
   }
 
   deleteTodo(id: number) {
-    this.todosSubject$.next(this.todosSubject$.value.filter(todo => todo.id !== id));
+    this.todosSubject$.next(
+      this.todosSubject$.value.filter((todo) => todo.id !== id)
+    );
   }
 }

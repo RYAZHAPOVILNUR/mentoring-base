@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../../users-api.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { User } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'app-user-card',

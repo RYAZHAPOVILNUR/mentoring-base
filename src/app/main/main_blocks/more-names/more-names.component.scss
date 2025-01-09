@@ -1,0 +1,40 @@
+.more-names {
+  margin-top: 56px;
+  height: 251px;
+  background-image: url("/assets/worker.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.5);
+}
+
+.more-names__title {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 28px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #3c3c3b;
+}
+
+.more-names__subtitle {
+  margin-top: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  color: #a1a0a0;
+}
+
+.more-names__link {
+  text-decoration: none;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  color: #f0ba4e;
+}

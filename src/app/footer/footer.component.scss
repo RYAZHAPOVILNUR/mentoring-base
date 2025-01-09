@@ -1,0 +1,132 @@
+.footer {
+  margin-top: 48px;
+  background-color: #4b565e;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 34px 0 52px 0;
+}
+
+.footer-width {
+  width: 660px;
+}
+
+.footer-contacts {
+  display: flex;
+  gap: 56px;
+}
+
+.footer-contact {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-descr {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  & > span {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
+
+.footer-title {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6000000238418579);
+}
+
+.footer-rigth {
+  padding: 34px 0px 34px 126px;
+  border-left: 1px solid #566169;
+}
+
+.footer-question {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer-rigth > p {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6000000238418579);
+}
+
+form {
+  margin-top: 32px;
+  width: 534px;
+  height: 48px;
+  padding-left: 24px;
+  border: 1px solid #f0ba4e;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > button {
+    padding: 12px 19px;
+    background: #f0ba4e;
+    border-radius: 30px;
+    border: none;
+    margin: 3px;
+  }
+  & > input {
+    background-color: #4b565e;
+    border: none;
+    min-width: 70%;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 53px;
+  padding-top: 34px;
+  padding-bottom: 32px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-icons-items {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  & > a {
+    text-decoration: none;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+  }
+}
+
+.footer-date {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6000000238418579);
+}

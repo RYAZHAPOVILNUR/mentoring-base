@@ -1,36 +1,25 @@
-<div>
-    <form
-        [formGroup]="form"
-        (ngSubmit)="submitForm()"
-        class="cards__item"
-    >
-        <mat-form-field>
-            <mat-label>UserId</mat-label>
-            <input matInput type="number" class="form-input" formControlName="userId">
-        </mat-form-field> 
-        <div
-            *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)"
-            class="alert"
-        >
-            <div *ngIf="form.controls['userId'].errors">UserId отсутствует</div>
-        </div>
+<form [formGroup]="form" class="cards__item">
+  <mat-form-field>
+    <mat-label>UserId</mat-label>
+    <input matInput type="number" class="form-input" formControlName="userId" />
+    <mat-error>UserId введен неправильно</mat-error>
+  </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Title</mat-label>
-            <input matInput type="text" class="form-input" formControlName="title">
-        </mat-form-field> 
-        <div
-            *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
-            class="alert"
-        >
-            <div *ngIf="form.controls['title'].errors">Title введен неправильно</div>
-        </div>
-        
-        <div class="completed">
-            <p>Completed:</p>
-            <input type="checkbox" class="form-input" formControlName="completed">
-        </div>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput type="text" class="form-input" formControlName="title" />
+    <mat-error>Title введен неправильно</mat-error>
+  </mat-form-field>
 
-        <button mat-button type="submit" class="cards-item__footer-btn" [disabled]="form.invalid">Create todo</button>
-    </form>
-</div>
+  <mat-checkbox formControlName="completed">Completed</mat-checkbox>
+
+  <button
+    (click)="submitForm()"
+    mat-button
+    type="submit"
+    class="cards-item__footer-btn"
+    [disabled]="form.invalid"
+  >
+    Create todo
+  </button>
+</form>
