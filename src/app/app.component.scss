@@ -3,12 +3,14 @@
     background-color:#4B565E;
     min-height: 80px;
     display: flex;
+
     &-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
     }
+
     &__logo-nav {
         display: flex;
         align-items: center;
@@ -28,14 +30,14 @@
     }
 
     &__logo {
-        background: url(../assets/Frame.svg) no-repeat center;    
+        background: url("../assets/frame.svg") no-repeat center;    
         width: 61px;
         height: 40px;
         display: flex;
     }
 
     &__phone {
-        background-image: url(../assets/Phone.png);
+        background-image: url("../assets/phone.png");
         background-repeat: no-repeat;
         background-position: left;
         padding-left: 34px;
@@ -43,14 +45,14 @@
     }
 
     &__favorite {
-        background: url(../assets/favorites.png) no-repeat center;
+        background: url("../assets/favorites.png") no-repeat center;
         width: 24px;
         height: 21px;
         display: flex;
     }
 
     &__cart {
-        background: url(../assets/buying.svg) no-repeat left;
+        background: url("../assets/buying.svg") no-repeat left;
         min-height: 34px;
         padding-left: 52px;
         padding-top: 16px;
@@ -71,15 +73,18 @@
     background-color: #F0BA4E;
     color: #3C3C3B;
     display: flex;
+
     &-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
     }
-    &__nav{
+
+    &__nav {
         display: flex;
         align-items: center;
+
         .header__link {
             margin-right: 24px;
         }
@@ -87,8 +92,9 @@
         .header__link:last-child {
             margin-right: 150px;
         }
+
         .header__link_burger {
-            background: url(../assets/burger.svg) no-repeat left ;
+            background: url("../assets/burger.svg") no-repeat left ;
             margin-right: 10px;
             width: 16px;
             height: 24px;
@@ -104,6 +110,7 @@
     border-bottom: 1px solid #3C3C3B;
     padding: 4px 8px;
     box-sizing: border-box;
+
     .search-input {
         flex: 1; 
         border: none; 
@@ -112,6 +119,7 @@
         outline: none; 
         color: #333; 
       }
+
       .search-button {
         display: flex;
         align-items: center;
@@ -122,6 +130,7 @@
         border: none; 
         cursor: pointer;
       }
+
       .search-button img {
         width: 24px;
         height: 24px;
@@ -132,18 +141,14 @@
     display: flex; 
     align-items: center; 
     gap: 4px;
+
     &-icon {
         width: 16px; 
         height: 16px;
       }
+
     &-text {
         font-size: 14px; 
         color: #ffffff; 
       }   
-  }
-  
-
-  
-  
-  
- 
+}
