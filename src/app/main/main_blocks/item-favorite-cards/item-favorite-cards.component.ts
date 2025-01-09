@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-item-favorite-cards',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './item-favorite-cards.component.html',
   styleUrl: './item-favorite-cards.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemFavoriteCardsComponent {}

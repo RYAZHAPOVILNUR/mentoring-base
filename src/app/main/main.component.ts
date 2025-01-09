@@ -1,5 +1,5 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemCardsComponent } from './main_blocks/item-cards/item-cards.component';
 import { ItemFavoriteCardsComponent } from './main_blocks/item-favorite-cards/item-favorite-cards.component';
 import { MoreNamesComponent } from './main_blocks/more-names/more-names.component';
@@ -15,6 +15,7 @@ import { MoreNamesComponent } from './main_blocks/more-names/more-names.componen
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent {
   isShow = true;
