@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { TodosApiService } from "../todos-api.service";
-import { AsyncPipe, NgFor } from "@angular/common";
+import { AsyncPipe, NgFor, NgIf } from "@angular/common";
 import { TodoCardComponent } from "./todos-card/todo-card.component";
 import { TodosService } from "../todos.service";
 import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatIcon } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
+import { Store } from "@ngrx/store";
+import { selectTodos } from "./store/todo.selector";
+import { TodosActions } from "./store/todo.actions";
 
 export interface Todo {
     userId: number,
@@ -27,7 +30,8 @@ export interface Todo {
             TodoCardComponent,
             AsyncPipe, 
             MatIcon,
-            MatButtonModule
+            MatButtonModule,
+            NgIf
         ]
 })
 
@@ -35,29 +39,63 @@ export class TodosListComponent {
     readonly todosApiService = inject(TodosApiService);
     readonly todosService = inject(TodosService)
     readonly dialog = inject(MatDialog)
+    private readonly store = inject(Store);
+    public readonly todos$ = this.store.select(selectTodos);
+    
+    constructor() {
+        this.todosApiService.getTodos().subscribe(
+            (response: any) => {
+                    // this.todosService.setTodos(response)
+                this.store.dispatch(TodosActions.set({ todos: response }))
+            }
+        )
+
+        this.todos$.subscribe(
+            todos => console.log(todos)
+        )
+    };
+
 
     deleteTodo(id: number) {
-        this.todosService.deleteTodos(id)
+        // this.todosService.deleteTodos(id);
+        this.store.dispatch(TodosActions.delete({ id }));
     };
 
 
     public createTodo(formData: any) {
-        console.log('ДАННЫЕ ФОРМЫ:', formData);
-        this.todosService.createTodos({
-            id: new Date().getTime(),
-            userId: formData.userId,
-            title: formData.title,
-            completed: formData.completed
-        })
+        // console.log('ДАННЫЕ ФОРМЫ:', formData);
+        // this.todosService.createTodos({
+        //     id: new Date().getTime(),
+        //     userId: formData.userId,
+        //     title: formData.title,
+        //     completed: formData.completed
+        // });
+
+        this.store.dispatch(TodosActions.create({ 
+            todo: {
+                id: new Date().getTime(),
+                userId: formData.userId,
+                title: formData.title,
+                completed: formData.completed
+            }
+         }))
     };
 
-    public editTodo(user: any) {
-        this.todosService.editTodos({
-            ...user,
-            company: {
-                name: user.companyName
+    public editTodo(todo: any) {
+        // this.todosService.editTodos({
+        //     ...user,
+        //     company: {
+        //         name: user.companyName
+        //     }
+        // })
+        this.store.dispatch(TodosActions.edit({ 
+            todo: {
+                id: todo.id,
+                userId: todo.userId,
+                title: todo.title,
+                completed: todo.completed
             }
-        })
+         }))
     };
     
 
@@ -74,15 +112,5 @@ export class TodosListComponent {
     }
 
     
-    constructor() {
-        this.todosApiService.getTodos().subscribe(
-            (response: any) => {
-                this.todosService.setTodos(response)
-            }
-        )
-
-        this.todosService.todosSubject.subscribe(
-            todos => console.log(todos)
-        )
-    }
+    
 }

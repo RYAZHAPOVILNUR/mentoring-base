@@ -22,7 +22,7 @@
 
 
     <div class="todoCards">
-        <ng-container class="todoCards" *ngFor="let todo of todosService.todosSubject | async">
+        <ng-container class="todoCards" *ngFor="let todo of todos$ | async">
             <div class="todoCard">
                 <app-todo-card 
                     [todo]="todo" 
@@ -32,5 +32,12 @@
             </div>        
         </ng-container>
     </div>
+
+    <ng-container *ngIf="(todos$ | async)?.length === 0">
+        <p>Загрузка...</p>
+    </ng-container>
+
+
+
 </body>
 </html>
