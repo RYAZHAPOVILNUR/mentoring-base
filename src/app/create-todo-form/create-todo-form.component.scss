@@ -20,11 +20,11 @@
     }
   }
 .createTodo-form {
+  width: 450px;
     form {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 350px;
     input {
         margin-bottom: 15px;
     }

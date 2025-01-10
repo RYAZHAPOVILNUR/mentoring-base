@@ -1,5 +1,5 @@
 import { NgFor, NgIf, } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 const headerItem1 = 'Главная';
@@ -11,7 +11,7 @@ const company = (name:string) => name;
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterModule],
+  imports: [NgFor, NgIf, RouterModule ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

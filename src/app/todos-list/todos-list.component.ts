@@ -5,11 +5,15 @@ import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [TodosCardComponent, NgFor, AsyncPipe, CreateTodoFormComponent],
+  imports: [TodosCardComponent, NgFor, AsyncPipe, MatButton],
   providers: [],
   templateUrl: './todos-list.component.html',
   styleUrls: ['./todos-list.component.scss'],
@@ -18,6 +22,10 @@ import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.co
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
   todosService = inject(TodosService)
+
+  private dialog = inject(MatDialog)
+
+  private _snackBar = inject(MatSnackBar);
 
   constructor() {
       this.todosApiService.getTodos().subscribe(
@@ -29,12 +37,30 @@ export class TodosListComponent {
     this.todosService.deleteTodo(todoId)
   }
 
-  createTodo(form: Todo) {
-    this.todosService.createTodo({
-      "id": form.id,
-      "title": form.title,
-      "userId": form.userId,
-      "completed": form.completed,
-    })
+  editTodo(todo: Todo) {
+    this.todosService.editTodo(todo)
+    console.log(todo)
+  }
+
+  createTodo() {
+    const dialogRef = this.dialog.open(CreateTodoFormComponent)
+
+    dialogRef.afterClosed().subscribe(form => {
+      console.log('The dialog was closed');
+      if (form) {
+        this.todosService.createTodo({
+          id: new Date().getTime(),
+          title: form.title,
+          userId: form.userId,
+          completed: form.completed,
+        });
+        this._snackBar.openFromComponent(SnackbarComponent, {
+          duration: 5000,
+                  data: {
+                  isCreateTodo: true,
+                  }
+        })
+      }
+    });
   }
 } 

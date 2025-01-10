@@ -25,15 +25,16 @@
                 <h6>Остались вопросы?</h6>
                 <p>Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</p>
                 <form action="">
-                    <div>
-                        <img src="/assets/sms.svg" alt="email">
-                        <input type="email" id="email" placeholder="Введите свою почту"  name="email" required>
-                        <input id="submit" type="submit" value="Отправить">
-                    </div>
+                        <mat-form-field appearance="outline" style="height: 56px;">
+                            <mat-label>Введите свою почту</mat-label>
+                            <input matInput type="email" placeholder="example@mail.com" required>
+                            <mat-icon matPrefix>email</mat-icon>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" style="height: 56px;">Отправить</button>
                 </form>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom">     
             <ul>
                 <li><a href="">Главная</a></li>
                 <li><a href="">О компании</a></li>

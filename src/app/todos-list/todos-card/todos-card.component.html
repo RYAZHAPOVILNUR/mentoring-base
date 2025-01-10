@@ -1,15 +1,23 @@
-<div class="todos-card">
-    <p>ТЕКСТ ЗАДАЧИ</p>
-    <div>
-        {{todo.title}}
-    </div>
-    <p>АВТОР ЗАДАЧИ</p>
-    <div>
-        {{todo.userId}}
-    </div>
-    <p>ЗАДАЧА ЗАВЕРШЕНА</p>
-    <div>
-        {{todo.completed ? "Да" : "Нет"}}
-    </div>
-    <button type="button" (click)="onDeleteTodo(todo.id)">УДАЛИТЬ ЗАДАЧУ</button>
-</div>
+<mat-card class="todos-card">
+    <mat-card-content class="todos-card-content">
+        <h3 mat-subheader>ТЕКСТ ЗАДАЧИ</h3>
+        <p>{{todo.title}}</p>
+
+        <h3 mat-subheader>АВТОР ЗАДАЧИ</h3>
+        <p>{{todo.userId}}</p>
+
+        <h3 mat-subheader>ЗАДАЧА ЗАВЕРШЕНА</h3>
+        <p>{{todo.completed ? "Да" : "Нет"}}</p>
+
+        <mat-card-actions>
+            <button class="delete-button" mat-raised-button color="warn" (click)="onDeleteTodo(todo.id)">
+                <mat-icon>delete</mat-icon>
+                УДАЛИТЬ ЗАДАЧУ
+            </button>
+            <button class="edit-button" mat-raised-button color="primary" (click)="onEditTodo()">
+                <mat-icon>edit</mat-icon>
+                РЕДАКТИРОВАТЬ ЗАДАЧУ
+            </button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

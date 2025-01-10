@@ -1,6 +1,7 @@
-<div class="container">
-    <div class="createTodo-form">
-      <form class="form"[formGroup]="form">
+<h2 mat-dialog-title>Редактировать пользователя</h2>
+<div mat-dialog-content>
+    <form class="form"[formGroup]="form">
+      <input type="hidden" formControlName="id" />
           <mat-form-field class="form-input">
               <mat-label>Текст задачи</mat-label>
               <input matInput formControlName="title">
@@ -21,9 +22,14 @@
       </form>
       <div mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Отмена</button>
-        <button class="button-form" type="button" [mat-dialog-close]="form.value" matIconSuffix mat-raised-button [disabled]="form.invalid">Add Todo
+        <button class="button-form"
+              type="button"
+              matIconSuffix
+              mat-raised-button
+              [mat-dialog-close]="form.value"
+              [disabled]="form.invalid">
+              Add Todo
             <mat-icon>add</mat-icon>
         </button>
       </div>
-  </div>
-  </div>
+</div>
