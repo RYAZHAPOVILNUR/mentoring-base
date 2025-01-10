@@ -6,7 +6,7 @@ import { User } from './interfaces/user.interface';
   providedIn: 'root',
 })
 export class UsersApiService {
-  readonly apiService = inject(HttpClient);
+  private readonly apiService = inject(HttpClient);
 
   getUsers() {
     return this.apiService.get<User[]>(

@@ -2,11 +2,13 @@ import { inject, Injectable } from '@angular/core';
 import { User } from './interfaces/user.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UsersApiService } from './users-api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+  public readonly usersApiService = inject(UsersApiService);
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
   private snakeBarMessageSubject$ = new BehaviorSubject<string>('');

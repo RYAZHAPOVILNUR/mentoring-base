@@ -1,10 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { TodosCardComponent } from './todos-card/todos-card.component';
 import { AsyncPipe, NgFor } from '@angular/common';
-import { TodosApiService } from '../todos-api.service';
 import { Todo } from '../interfaces/todo.interface';
 import { TodosService } from '../todos.service';
 import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-todos-list',
@@ -14,12 +19,13 @@ import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.co
   styleUrl: './todos-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodosListComponent {
-  readonly todosApiService = inject(TodosApiService);
+export class TodosListComponent implements OnInit {
   readonly todosService = inject(TodosService);
 
-  constructor() {
-    this.todosApiService.getTodos().subscribe((todos) => {
+  public readonly todos$: Observable<Todo[]> = this.todosService.todos$;
+
+  ngOnInit() {
+    this.todosService.todosApiService.getTodos().subscribe((todos) => {
       this.todosService.setTodos(todos);
     });
   }

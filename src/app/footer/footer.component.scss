@@ -48,9 +48,18 @@
   color: rgba(255, 255, 255, 0.6000000238418579);
 }
 
-.footer-rigth {
+.footer-right {
   padding: 34px 0px 34px 126px;
   border-left: 1px solid #566169;
+}
+
+.footer-right > p {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6000000238418579);
 }
 
 .footer-question {
@@ -59,15 +68,6 @@
   font-size: 18px;
   text-align: left;
   color: #ffffff;
-}
-
-.footer-rigth > p {
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: left;
-  color: rgba(255, 255, 255, 0.6000000238418579);
 }
 
 form {

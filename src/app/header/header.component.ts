@@ -1,26 +1,19 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { menuItems, headerItems } from './header.config';
 
 @Component({
-  selector: 'app-headers',
+  selector: 'app-header',
   standalone: true,
   imports: [NgIf, NgFor, RouterLink],
-  templateUrl: './headers.component.html',
-  styleUrl: './headers.component.scss',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeadersComponent {
-  readonly headerItem1 = 'Главная';
-  readonly headerItem2 = 'О компании';
-  readonly headerItem3 = 'Каталог';
-  menuItems = [
-    'Каталог',
-    'Стройматериалы',
-    'Инструменты',
-    'Электрика',
-    'Интерьер и одежда',
-  ];
+export class HeaderComponent {
+  public menuItems = menuItems;
+  public headerItems = headerItems;
   isUpperCase = true;
 
   changeMenuText() {

@@ -5,9 +5,11 @@
         <img src="/assets/Frame.svg" alt="Logo" />
       </div>
       <nav class="header-nav">
-        <a routerLink="/" class="header-nav-item">{{ headerItem1 }}</a>
-        <div class="header-nav-item">{{ headerItem2 }}</div>
-        <div class="header-nav-item">{{ headerItem3 }}</div>
+        <ng-container *ngFor="let headerItem of headerItems">
+          <a [routerLink]="headerItem.link" class="header-nav-item">{{
+            headerItem.title
+          }}</a>
+        </ng-container>
         <a routerLink="/users" class="header-nav-item">Пользователи</a>
         <a routerLink="/todos" class="header-nav-item">Карточки</a>
         <button type="button" (click)="changeMenuText()">Изменить текст</button>
@@ -36,9 +38,9 @@
         *ngFor="let item of menuItems; let i = index"
         class="subheader-catalog-item"
       >
-        <ng-container *ngIf="i === 0"
-          ><img class="subheader-catalog-img" src="/assets/lines.png" alt=""
-        /></ng-container>
+        <ng-container *ngIf="i === 0">
+          <img class="subheader-catalog-img" src="/assets/lines.png" alt="" />
+        </ng-container>
         <div>{{ item }}</div>
       </div>
     </div>

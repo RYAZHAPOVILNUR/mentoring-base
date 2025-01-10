@@ -6,7 +6,7 @@ import { Todo } from './interfaces/todo.interface';
   providedIn: 'root',
 })
 export class TodosApiService {
-  readonly apiService = inject(HttpClient);
+  private readonly apiService = inject(HttpClient);
 
   getTodos() {
     return this.apiService.get<Todo[]>(
