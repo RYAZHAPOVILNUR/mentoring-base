@@ -4,3 +4,12 @@
   gap: 28px;
   margin-top: 28px;
 }
+
+.add__user {
+  border: 1px solid #91908e;
+  transition: 0.3s;
+  &:active {
+    transition: 0.3s;
+    scale: 0.99;
+  }
+}

@@ -1,13 +1,25 @@
-<div class="cards__item">
-  <p><strong>Name: </strong>{{ user.name }}</p>
-  <p><strong>Email: </strong>{{ user.email }}</p>
-  <p><strong>Website: </strong>{{ user.website }}</p>
-  <p><strong>Company: </strong>{{ user.company.name }}</p>
-  <button
-    type="button"
-    (click)="onDeleteUser(user.id)"
-    class="cards-item__footer-btn"
-  >
-    Удалить пользователя
-  </button>
-</div>
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image src="/assets/user.jpg" alt="Photo of User" />
+
+  <mat-card-content>
+    <p><strong>Website: </strong>{{ user.website }}</p>
+    <p><strong>Company: </strong>{{ user.company.name }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      type="button"
+      (click)="onDeleteUser(user.id)"
+      class="cards-item__footer-btn"
+    >
+      Удалить пользователя
+    </button>
+  </mat-card-actions>
+</mat-card>

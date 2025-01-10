@@ -1,8 +1,8 @@
 <div class="content-container">
   <h1>Компонент списка пользователей</h1>
-  <app-create-user-form
-    (createUser)="createUser($event)"
-  ></app-create-user-form>
+  <button mat-raised-button class="add__user" (click)="createUser()">
+    Добавить пользователя
+  </button>
   <div class="cards-container">
     <app-user-card
       *ngFor="let user of userService.users$ | async"

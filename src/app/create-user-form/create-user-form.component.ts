@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  inject,
   Output,
 } from '@angular/core';
 import {
@@ -14,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-form',
@@ -32,6 +34,8 @@ import { MatIconModule } from '@angular/material/icon';
 export class CreateUserFormComponent {
   @Output() createUser = new EventEmitter();
 
+  readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
+
   public form = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.email, Validators.required]),
@@ -40,7 +44,7 @@ export class CreateUserFormComponent {
   });
 
   public submitForm(): void {
-    this.createUser.emit(this.form.value);
+    this.dialogRef.close(this.form.value);
     this.form.reset();
   }
 }

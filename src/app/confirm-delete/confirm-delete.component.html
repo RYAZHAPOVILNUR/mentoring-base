@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Delete file</h2>
+<mat-dialog-content>
+  Вы действительно ходите удалить пользователя?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    mat-stroked-button
+    mat-dialog-close
+    cdkFocusInitial
+    (click)="confirmDelete(true)"
+  >
+    Да
+  </button>
+  <button mat-button mat-dialog-close (click)="confirmDelete(false)">
+    Нет
+  </button>
+</mat-dialog-actions>

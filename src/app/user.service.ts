@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { User } from './interfaces/user.interface';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,9 @@ import { BehaviorSubject } from 'rxjs';
 export class UserService {
   private usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
+  private snakeBarMessageSubject$ = new BehaviorSubject<string>('');
+  message$ = this.snakeBarMessageSubject$.asObservable();
+  private _snackBar = inject(MatSnackBar);
 
   setUsers(users: User[]) {
     this.usersSubject$.next(users);
@@ -30,10 +34,10 @@ export class UserService {
     );
 
     if (existingUser !== undefined) {
-      alert('Такой email уже существует');
+      this.showSnackBarMessage('Такой email уже существует!');
     } else {
       this.usersSubject$.next([...this.usersSubject$.value, user]);
-      alert('Новый пользователь успешно добавлен');
+      this.showSnackBarMessage('Новый пользователь успешно добавлен');
     }
   }
 
@@ -41,5 +45,13 @@ export class UserService {
     this.usersSubject$.next(
       this.usersSubject$.value.filter((user) => user.id !== id)
     );
+    this.showSnackBarMessage('Пользователь успешно удален');
+  }
+
+  showSnackBarMessage(message: string) {
+    this.snakeBarMessageSubject$.next(message);
+    this.message$.subscribe((message) => {
+      this._snackBar.open(message, 'Close', { duration: 3000 });
+    });
   }
 }
