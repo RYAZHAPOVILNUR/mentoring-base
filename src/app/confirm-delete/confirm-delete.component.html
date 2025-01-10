@@ -4,6 +4,7 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button
+    type="button"
     mat-stroked-button
     mat-dialog-close
     cdkFocusInitial
@@ -11,7 +12,12 @@
   >
     Да
   </button>
-  <button mat-button mat-dialog-close (click)="confirmDelete(false)">
+  <button
+    type="button"
+    mat-button
+    mat-dialog-close
+    (click)="confirmDelete(false)"
+  >
     Нет
   </button>
 </mat-dialog-actions>
