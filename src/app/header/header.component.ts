@@ -1,19 +1,19 @@
-import { NgFor, NgIf, } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NgFor, NgIf, } from "@angular/common";
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
-const headerItem1 = 'Главная';
-const headerItem2 = 'О компании';
-const headerItem3 = 'Каталог';
+const headerItem1 = "Главная";
+const headerItem2 = "О компании";
+const headerItem3 = "Каталог";
 
 const company = (name:string) => name;
 
 @Component({
-  selector: 'app-header',
+  selector: "app-header",
   standalone: true,
   imports: [NgFor, NgIf, RouterModule ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
@@ -36,7 +36,7 @@ export class HeaderComponent {
 
 }
 
-const catalogItems = ['Каталог','Стройматериалы','Инструменты','Электрика','Интерьер и одежда'];
+const catalogItems = ["Каталог","Стройматериалы","Инструменты","Электрика","Интерьер и одежда"];
 const upperCaseMenuItems = catalogItems.map(
   (item) => {
     return item.toUpperCase()

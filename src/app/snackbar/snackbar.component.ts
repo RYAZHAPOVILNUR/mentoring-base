@@ -1,13 +1,13 @@
-import { NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MAT_SNACK_BAR_DATA, MatSnackBarModule, MatSnackBarRef } from '@angular/material/snack-bar';
+import { NgIf } from "@angular/common";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MAT_SNACK_BAR_DATA, MatSnackBarModule, MatSnackBarRef } from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-snackbar',
+  selector: "app-snackbar",
   standalone: true,
   imports: [MatSnackBarModule, MatFormFieldModule, NgIf],
-  templateUrl: './snackbar.component.html',
+  templateUrl: "./snackbar.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SnackbarComponent {

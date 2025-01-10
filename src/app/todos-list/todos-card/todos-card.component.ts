@@ -1,20 +1,20 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Todo } from '../../todo.interface';
-import { MatDialog } from '@angular/material/dialog';
-import { TodoConfirmationComponent } from '../todo-confirmation.component.ts/todo-confirmation.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackbarComponent } from '../../snackbar/snackbar.component';
-import { EditTodoDialogComponent } from '../edit-todo-dialog-component/edit-todo-dialog-component';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from "@angular/core";
+import { Todo } from "../../todo.interface";
+import { MatDialog } from "@angular/material/dialog";
+import { TodoConfirmationComponent } from "../todo-confirmation.component.ts/todo-confirmation.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { SnackbarComponent } from "../../snackbar/snackbar.component";
+import { EditTodoDialogComponent } from "../edit-todo-dialog-component/edit-todo-dialog-component";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
-  selector: 'app-todos-card',
+  selector: "app-todos-card",
   standalone: true,
   imports: [MatCardModule, MatIconModule, MatButtonModule],
-  templateUrl: './todos-card.component.html',
-  styleUrls: ['./todos-card.component.scss'],
+  templateUrl: "./todos-card.component.html",
+  styleUrls: ["./todos-card.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosCardComponent {

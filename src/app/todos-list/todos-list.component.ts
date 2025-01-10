@@ -1,22 +1,22 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TodosApiService } from '../todos-api.service';
-import { Todo } from '../todo.interface';
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { TodosApiService } from "../todos-api.service";
+import { Todo } from "../todo.interface";
 import { TodosCardComponent } from "./todos-card/todos-card.component";
-import { AsyncPipe, NgFor } from '@angular/common';
-import { TodosService } from '../todos.service';
-import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
-import { MatDialog } from '@angular/material/dialog';
-import { MatButton } from '@angular/material/button';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackbarComponent } from '../snackbar/snackbar.component';
+import { AsyncPipe, NgFor } from "@angular/common";
+import { TodosService } from "../todos.service";
+import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.component";
+import { MatDialog } from "@angular/material/dialog";
+import { MatButton } from "@angular/material/button";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { SnackbarComponent } from "../snackbar/snackbar.component";
 
 @Component({
-  selector: 'app-todos-list',
+  selector: "app-todos-list",
   standalone: true,
   imports: [TodosCardComponent, NgFor, AsyncPipe, MatButton],
   providers: [],
-  templateUrl: './todos-list.component.html',
-  styleUrls: ['./todos-list.component.scss'],
+  templateUrl: "./todos-list.component.html",
+  styleUrls: ["./todos-list.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosListComponent {
@@ -39,14 +39,12 @@ export class TodosListComponent {
 
   editTodo(todo: Todo) {
     this.todosService.editTodo(todo)
-    console.log(todo)
   }
 
   createTodo() {
     const dialogRef = this.dialog.open(CreateTodoFormComponent)
 
     dialogRef.afterClosed().subscribe(form => {
-      console.log('The dialog was closed');
       if (form) {
         this.todosService.createTodo({
           id: new Date().getTime(),

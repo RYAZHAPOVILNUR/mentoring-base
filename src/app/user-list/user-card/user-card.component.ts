@@ -5,21 +5,21 @@ import {
   inject,
   Input,
   Output,
-} from '@angular/core';
-import { User } from '../../user.interface.ts';
-import { MatDialog } from '@angular/material/dialog';
-import { EditUserDialogComponent } from '../edit-user-dialog-component/edit-user-dialog-component.js';
-import { UserConfirmationComponent } from './user-confirmation/user-confirmation.component.js';
-import { MatSnackBar} from '@angular/material/snack-bar';
-import { SnackbarComponent } from '../../snackbar/snackbar.component.js';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
+} from "@angular/core";
+import { User } from "../../user.interface.ts";
+import { MatDialog } from "@angular/material/dialog";
+import { EditUserDialogComponent } from "../edit-user-dialog-component/edit-user-dialog-component.js";
+import { UserConfirmationComponent } from "./user-confirmation/user-confirmation.component.js";
+import { MatSnackBar} from "@angular/material/snack-bar";
+import { SnackbarComponent } from "../../snackbar/snackbar.component.js";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatCardModule } from "@angular/material/card";
 @Component({
-  selector: 'app-user-card',
+  selector: "app-user-card",
   standalone: true,
-  templateUrl: './user-card.component.html',
-  styleUrls: ['./user-card.component.scss'],
+  templateUrl: "./user-card.component.html",
+  styleUrls: ["./user-card.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatCardModule, MatIconModule, MatButtonModule],
 })
@@ -64,7 +64,6 @@ export class UserCardComponent {
           ...result,
           company: { name: result.companyName },
         });
-        console.log(result.id);
         this._snackBar.openFromComponent(SnackbarComponent, {
           duration: 5000,
           data: {

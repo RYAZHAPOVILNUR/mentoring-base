@@ -11,14 +11,14 @@
                         <li class="header-items"><a href="">{{aboutCompany}}</a></li>
                         <li class="header-items" *ngIf="isShowCatalog"><a href="">{{headerItem3}}</a></li>
                     </ul>
-                    <button type="button" (click)="isShowCatalog=!isShowCatalog">Каталог {{isShowCatalog ? 'off':'on'}}</button>
+                    <button type="button" (click)="isShowCatalog=!isShowCatalog">Каталог {{isShowCatalog ? "off":"on"}}</button>
                 </nav>
             </div>
             <div class="header__right">
-                <button mat-flat-button type="button" routerLink = '/users' class="header-button header-user">
+                <button mat-flat-button type="button" routerLink = "/users" class="header-button header-user">
                     <p>Пользователи</p>
                 </button>
-                <button mat-flat-button type="button" routerLink = '/todos' class="header-button header-user">
+                <button mat-flat-button type="button" routerLink = "/todos" class="header-button header-user">
                     <p>Todos</p>
                 </button>
                 <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">+7 (965)
@@ -39,7 +39,7 @@
         <div class="header-flex-catalog">
             <div class="catalog__left">
                 <ul class="catalog-ul">
-                    <li *ngFor='let catalogItem of catalogItems'><a href=""><img src="/assets/light.svg" alt="|||">{{catalogItem}}</a></li>
+                    <li *ngFor="let catalogItem of catalogItems"><a href=""><img src="/assets/light.svg" alt="|||">{{catalogItem}}</a></li>
                     <button type="button" (click)="changeMenuText()" >toLowerCase/toUpperCase</button>
                 </ul>
             </div>

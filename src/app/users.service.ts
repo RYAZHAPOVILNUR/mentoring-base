@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { User } from "./user.interface.ts";
 import { BehaviorSubject } from "rxjs";
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: "root"})
 export class UsersService {
     private usersSubject$ = new BehaviorSubject<User[]>([])
     users$ = this.usersSubject$.asObservable()
@@ -35,7 +35,7 @@ export class UsersService {
             item => item.email === user.email
         )
         if (isUserForm) {
-            alert('такой email уже есть');
+            alert("такой email уже есть");
         } else {
             this.usersSubject$.next([...this.usersSubject$.value, user]);
         }

@@ -4,7 +4,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 
 @Component({
     standalone: true,
-    templateUrl: './todo-confirmation.component.html',
+    templateUrl: "./todo-confirmation.component.html",
     imports: [MatDialogModule, MatButtonModule]
 })
 export class TodoConfirmationComponent{

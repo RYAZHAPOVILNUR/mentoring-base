@@ -1,19 +1,19 @@
-import { Routes } from '@angular/router';
-import { UsersListComponent } from './user-list/users-list.component';
-import { MainComponent } from './main/main.component';
-import { TodosListComponent } from './todos-list/todos-list.component';
+import { Routes } from "@angular/router";
+import { UsersListComponent } from "./user-list/users-list.component";
+import { MainComponent } from "./main/main.component";
+import { TodosListComponent } from "./todos-list/todos-list.component";
 
 export const routes: Routes = [
     {
-        path: '',
+        path: "",
         component: MainComponent,
     },
     {
-        path: 'users',
+        path: "users",
         component: UsersListComponent,
     },
     {
-        path: 'todos',
+        path: "todos",
         component: TodosListComponent,
     }
 ];

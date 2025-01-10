@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Todo } from "./todo.interface";
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: "root"})
 export class TodosService {
     private todosSubject$ = new BehaviorSubject<Todo[]>([])
     todos$ = this.todosSubject$.asObservable()
@@ -40,7 +40,7 @@ export class TodosService {
         const isFormTodo = this.todosSubject$.value.find(
             (item) => item.title === createTodo.title
         )
-        isFormTodo ? alert('Пользователь с такой задачой уже есть!'):
+        isFormTodo ? alert("Пользователь с такой задачой уже есть!"):
         this.todosSubject$.next(
             [...this.todosSubject$.value, createTodo]
         )
