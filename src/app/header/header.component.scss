@@ -21,15 +21,13 @@
     gap: 40px;
 }
 
-.logo {
-}
-
 .navigation-top-items {
     display: flex;
     gap: 25px;
 }
 
 .navigation-top-item {
+    cursor: pointer;
     font-weight: 600;
     font-size: 16px;
     color: #f9fafb;

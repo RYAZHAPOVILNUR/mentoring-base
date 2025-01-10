@@ -1,0 +1,30 @@
+.users {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+
+.users-item{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 20px 50px 0 rgba(18, 17, 39, 0.08);
+    background: #fff;
+}
+
+.user-delete{
+    padding: 10px 15px;
+    width: 150px;
+    background: transparent;
+    border-radius: 54px;
+    border: 1px solid #f0ba4e;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 16px;
+}
