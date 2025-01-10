@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { TodosApiService } from "../todos-api.service";
 import { AsyncPipe, NgFor, NgIf } from "@angular/common";
 import { TodoCardComponent } from "./todos-card/todo-card.component";
-import { TodosService } from "../todos.service";
 import { CreateTodoDialogComponent } from "./create-todo-dialog/create-todo-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatIcon } from "@angular/material/icon";
@@ -37,7 +36,6 @@ export interface Todo {
 
 export class TodosListComponent {
     readonly todosApiService = inject(TodosApiService);
-    readonly todosService = inject(TodosService)
     readonly dialog = inject(MatDialog)
     private readonly store = inject(Store);
     public readonly todos$ = this.store.select(selectTodos);
@@ -45,7 +43,7 @@ export class TodosListComponent {
     constructor() {
         this.todosApiService.getTodos().subscribe(
             (response: any) => {
-                    // this.todosService.setTodos(response)
+                console.log(response)
                 this.store.dispatch(TodosActions.set({ todos: response }))
             }
         )
@@ -53,24 +51,16 @@ export class TodosListComponent {
         this.todos$.subscribe(
             todos => console.log(todos)
         )
+
     };
 
 
-    deleteTodo(id: number) {
-        // this.todosService.deleteTodos(id);
+    public deleteTodo(id: number) {
         this.store.dispatch(TodosActions.delete({ id }));
     };
 
 
     public createTodo(formData: any) {
-        // console.log('ДАННЫЕ ФОРМЫ:', formData);
-        // this.todosService.createTodos({
-        //     id: new Date().getTime(),
-        //     userId: formData.userId,
-        //     title: formData.title,
-        //     completed: formData.completed
-        // });
-
         this.store.dispatch(TodosActions.create({ 
             todo: {
                 id: new Date().getTime(),
@@ -82,12 +72,6 @@ export class TodosListComponent {
     };
 
     public editTodo(todo: any) {
-        // this.todosService.editTodos({
-        //     ...user,
-        //     company: {
-        //         name: user.companyName
-        //     }
-        // })
         this.store.dispatch(TodosActions.edit({ 
             todo: {
                 id: todo.id,

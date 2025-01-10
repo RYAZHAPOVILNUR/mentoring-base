@@ -31,6 +31,6 @@ export const todoReducer = createReducer(
 
     on(TodosActions.delete, (state, payload) => ({
         ...state,
-        users: state.todos.filter((todo) => todo.id !== payload.id),
+        todos: state.todos.filter((todo) => todo.id !== payload.id),
     }))
 );

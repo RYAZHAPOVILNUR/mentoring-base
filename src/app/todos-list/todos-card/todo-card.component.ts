@@ -60,7 +60,8 @@ export class TodoCardComponent {
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed'); 
             if (!result) return;
-            this.deleteTodo.emit(result)
+            this.deleteTodo.emit(result);
+            console.log(result)
         });
     }    
 

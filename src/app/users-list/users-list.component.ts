@@ -63,6 +63,8 @@ export class UsersListComponent {
         this.users$.subscribe(
             users => console.log(users)
         );
+
+        console.log(this.users$)
     };
     
     public deleteUser(id: number) {
