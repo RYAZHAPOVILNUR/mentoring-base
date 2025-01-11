@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { menuItems, headerItems } from './header.config';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink],
+  imports: [NgIf, NgFor, RouterLink, DatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,7 +14,8 @@ import { menuItems, headerItems } from './header.config';
 export class HeaderComponent {
   public menuItems = menuItems;
   public headerItems = headerItems;
-  isUpperCase = true;
+  public isUpperCase = true;
+  public today: Date = new Date();
 
   changeMenuText() {
     this.menuItems = this.menuItems.map((item) =>

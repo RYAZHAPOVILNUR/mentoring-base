@@ -6,11 +6,12 @@ import {
   Output,
 } from '@angular/core';
 import { Todo } from '../../interfaces/todo.interface';
+import { TruncatePipe } from '../../pipes/truncate.pipe';
 
 @Component({
   selector: 'app-todos-card',
   standalone: true,
-  imports: [],
+  imports: [TruncatePipe],
   templateUrl: './todos-card.component.html',
   styleUrl: './todos-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

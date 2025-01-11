@@ -10,11 +10,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeleteComponent } from '../../confirm-delete/confirm-delete.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { DeleteDefisPipe } from '../../pipes/deleteDefis';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule],
+  imports: [MatButtonModule, MatCardModule, DeleteDefisPipe],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

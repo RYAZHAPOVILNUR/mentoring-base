@@ -1,5 +1,7 @@
 <div class="cards__item">
-  <p><strong>Текст задачи: </strong><br /><br />{{ todo.title }}</p>
+  <p>
+    <strong>Текст задачи: </strong><br /><br />{{ todo.title | truncate : 20 }}
+  </p>
   <p><strong>Автор задачи: </strong>{{ todo.userId }}</p>
   <p><strong>Задача завершена: </strong>{{ todo.completed ? "ДА" : "Нет" }}</p>
   <button

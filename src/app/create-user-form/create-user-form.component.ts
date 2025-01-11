@@ -41,6 +41,7 @@ export class CreateUserFormComponent {
     email: new FormControl('', [Validators.email, Validators.required]),
     website: new FormControl('', [Validators.required]),
     companyName: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required]),
   });
 
   public submitForm(): void {

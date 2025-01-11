@@ -28,6 +28,12 @@
     <mat-error>Company Name введен неправильно</mat-error>
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input matInput type="text" class="form-input" formControlName="phone" />
+    <mat-error>Phone введен неправильно</mat-error>
+  </mat-form-field>
+
   <button
     (click)="submitForm()"
     mat-flat-button

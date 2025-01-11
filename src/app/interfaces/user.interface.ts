@@ -7,7 +7,7 @@ export interface User {
   };
   name: string;
   email: string;
-  phone?: string;
+  phone: string;
   website: string;
   id: number;
   company: {

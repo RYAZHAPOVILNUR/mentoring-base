@@ -11,7 +11,7 @@
           }}</a>
         </ng-container>
         <a routerLink="/users" class="header-nav-item">Пользователи</a>
-        <a routerLink="/todos" class="header-nav-item">Карточки</a>
+        <a routerLink="/todos" class="header-nav-item">Задачи</a>
         <button type="button" (click)="changeMenuText()">Изменить текст</button>
       </nav>
     </div>
@@ -43,6 +43,7 @@
         </ng-container>
         <div>{{ item }}</div>
       </div>
+      <div class="header-nav-item">{{ today | date : "medium" }}</div>
     </div>
 
     <div class="subheader-search">

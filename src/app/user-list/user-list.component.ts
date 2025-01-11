@@ -43,6 +43,7 @@ export class UserListComponent implements OnInit {
           id: new Date().getTime(),
           name: user.name,
           email: user.email,
+          phone: user.phone,
           website: user.website,
           company: {
             name: user.name,
