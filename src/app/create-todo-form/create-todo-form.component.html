@@ -1,29 +1,30 @@
 <h1>CREATE TODO FORM</h1>
-<div class="create-todo">
-  <form class="create-todo--form" [formGroup]="formTodo" (ngSubmit)="submitForm()">
-    <p class="input-title">Текст задачи</p>
-    <input class="create-todo--input" type="text" formControlName="userId">
-    <div
-      *ngIf="formTodo.controls['userId'].invalid && (formTodo.controls['userId'].dirty || formTodo.controls['userId'].touched)"
-      class="alert">
-      <div *ngIf="formTodo.controls['userId'].errors">Текст задачи введен неправильно</div>
-    </div>
-    <p class="input-title">Автор задачи</p>
-    <input class="create-todo--input" type="text" formControlName="title">
-    <div
-      *ngIf="formTodo.controls['title'].invalid && (formTodo.controls['title'].dirty || formTodo.controls['title'].touched)"
-      class="alert">
-      <div *ngIf="formTodo.controls['title'].errors">Автор введен неправильно</div>
-    </div>
-    <p class="input-title">Задача решена</p>
-    <input class="create-todo--input" type="text" formControlName="completed">
-    <div
-      *ngIf="formTodo.controls['completed'].invalid && (formTodo.controls['completed'].dirty || formTodo.controls['completed'].touched)"
-      class="alert">
-      <div *ngIf="formTodo.controls['completed'].errors">Ответ некорректен</div>
-    </div>
-    <button class="create-todo--button" [disabled]="formTodo.invalid">
-      Create todo
-    </button>
-  </form>
-</div>
+<form class="create-todo--form" [formGroup]="formTodo">
+
+  <mat-form-field class="create-todo--input">
+    <mat-label>Названиее задачи</mat-label>
+    <input matInput formControlName="userId" placeholder="et doloremque nulla">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="create-todo--input">
+    <mat-label>Автор задачи</mat-label>
+    <input matInput formControlName="title" placeholder="1, 2, 3">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="create-todo--input">
+    <mat-label>Задача завершена?</mat-label>
+    <input matInput formControlName="completed" placeholder="да/нет">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <button type="submit" (click)="submitForm()" matIconSuffix mat-raised-button color="primary" [disabled]="formTodo.invalid" class="create-todo--button">
+    Add Todo
+    <mat-icon>add</mat-icon>
+  </button>
+</form>
+

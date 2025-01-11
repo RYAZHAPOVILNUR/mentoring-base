@@ -9,6 +9,10 @@
 
   <p>{{tasksCompleted}}</p>
   <div>{{todo.completed ? 'Да' : 'Нет'}}</div>
-  <button class="todo-delete-button" (click)="onDeleteTodo(todo.id)">{{todoDelete}}</button>
+  <button class="todo-delete-button" (click)="onDeleteTodo(todo.id)" mat-raised-button
+  matTooltip="нажмите чтобы удалить задачу"
+  aria-label="клик">
+    <mat-icon>delete</mat-icon>
+  </button>
 </div>
 

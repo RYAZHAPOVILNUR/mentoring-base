@@ -1,38 +1,37 @@
 <h1>CREATE USER FORM</h1>
-<div class="create-user">
-  <form class="create-user--form" [formGroup]="formUser" (ngSubmit)="submitForm()">
-    <p>NAME:</p>
-    <input class="create-user--input" type="text" formControlName="name">
-    <div
-      *ngIf="formUser.controls['name'].invalid && (formUser.controls['name'].dirty || formUser.controls['name'].touched)"
-      class="alert">
-      <div *ngIf="formUser.controls['name'].errors">ИМЯ ВВЕДЕНО НЕПРАВИЛЬНО</div>
-    </div>
-    <p>EMAIL:</p>
-    <input class="create-user--input" type="text" formControlName="email">
-    <div
-      *ngIf="formUser.controls['email'].invalid && (formUser.controls['email'].dirty || formUser.controls['email'].touched)"
-      class="alert">
-      <div *ngIf="formUser.controls['email'].errors">ПОЧТА ВВЕДЕНА НЕПРАВИЛЬНО</div>
-    </div>
-    <p>WEBSITE:</p>
-    <input class="create-user--input" type="text" formControlName="website">
-    <div
-      *ngIf="formUser.controls['website'].invalid && (formUser.controls['website'].dirty || formUser.controls['website'].touched)"
-      class="alert">
-      <div *ngIf="formUser.controls['website'].errors">ВЕБСАЙТ ВВЕДЕН НЕПРАВИЛЬНО</div>
-    </div>
-    <p>COMPANY NAME:</p>
-    <div formGroupName="company">
-      <input class="create-user--input" type="text" formControlName="name">
-      <div
-        *ngIf="formUser.controls['name'].invalid && (formUser.controls['name'].dirty || formUser.controls['name'].touched)"
-        class="alert">
-        <div *ngIf="formUser.controls['name'].errors">ИМЯ КОМПАНИИ ВВЕДЕНО НЕПРАВИЛЬНО</div>
-      </div>
-    </div>
-    <button class="create-user--button" [disabled]="formUser.invalid">
-      Create user
-    </button>
-  </form>
-</div>
+
+<form class="create-user--form" [formGroup]="formUser">
+  <mat-form-field class="create-user--input">
+    <mat-label>Введите имя пользователя</mat-label>
+    <input matInput formControlName="name" placeholder="Ervin Howell">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="create-user--input">
+    <mat-label>Введите email</mat-label>
+    <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="create-user--input">
+    <mat-label>Введите website</mat-label>
+    <input matInput formControlName="website" placeholder="anastasia.net">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <mat-form-field formGroupName="company">
+    <mat-label>Введите company</mat-label>
+    <input matInput formControlName="name" placeholder="Romaguera-Crona">
+    <mat-icon matIconSuffix>mode_edit</mat-icon>
+    <mat-error>Некорректное значение</mat-error>
+  </mat-form-field>
+
+  <button type="submit" (click)="submitForm()" matIconSuffix mat-raised-button color="primary" [disabled]="formUser.invalid" class="create-user--button">
+    Add User
+    <mat-icon>add</mat-icon>
+  </button>
+</form>
+

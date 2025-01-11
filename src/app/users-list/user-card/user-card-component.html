@@ -3,7 +3,11 @@
   <p>{{user.email}}</p>
   <p>{{user.website}}</p>
   <p>{{user.company.name}}</p>
-  <button class="user-delete-button" (click)="onDeleteUser(user.id)">{{userDelete}}</button>
+  <button class="user-delete-button" (click)="onDeleteUser(user.id)" mat-raised-button
+  matTooltip="нажмите чтобы удалить пользователья"
+  aria-label="клик">
+    <mat-icon class="delete-icon">delete</mat-icon>
+  </button>
 </div>
 
 

@@ -1,34 +1,18 @@
-.create-todo {
-  margin: 30px;
-}
 
 .create-todo--form {
   display: flex;
   flex-direction: column;
-}
-
-.input-title {
-  color: #494949;
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .create-todo--input {
-  width: 150px;
-  box-shadow: 20px 0px 50px 0px #12112714;
-  border: 1px solid #F0BA4E;
-  border-radius: 5%;
-}
-
-.alert {
-  color: #ff000f;
+width: 100%;
 }
 
 .create-todo--button {
-  width: 150px;
-  margin-top: 20px;
-  border-radius: 54px;
-  border: 1px solid #000;
-  background-color: #F0BA4E;
+  height: 50px;
+  margin: 20px;
   gap: 10px;
-  cursor: pointer;
 }

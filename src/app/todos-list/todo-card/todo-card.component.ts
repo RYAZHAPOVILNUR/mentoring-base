@@ -1,11 +1,14 @@
 import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../todos-interface';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-todo-card',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule, MatButtonModule, MatTooltipModule],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss'
 })
