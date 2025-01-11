@@ -9,11 +9,12 @@ import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { TruncatePipe } from "../../truncate.pipe";
+import { SwadowDirective } from "../../directives/swadow.directive";
 
 @Component({
   selector: "app-todos-card",
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule, TruncatePipe],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, TruncatePipe, SwadowDirective],
   templateUrl: "./todos-card.component.html",
   styleUrls: ["./todos-card.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,

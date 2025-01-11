@@ -15,13 +15,14 @@ import { SnackbarComponent } from "../../snackbar/snackbar.component.js";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
+import { SwadowDirective } from "../../directives/swadow.directive.js";
 @Component({
   selector: "app-user-card",
   standalone: true,
   templateUrl: "./user-card.component.html",
   styleUrls: ["./user-card.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, SwadowDirective],
 })
 export class UserCardComponent {
   @Input()

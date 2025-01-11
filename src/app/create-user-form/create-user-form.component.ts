@@ -13,6 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @Component({
   selector: "app-create-user-form",
@@ -26,6 +27,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatButtonModule,
     MatInputModule,
     MatIconModule,
+    MatTooltipModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

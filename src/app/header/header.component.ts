@@ -2,6 +2,7 @@ import { DatePipe, NgFor, NgIf, } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { PhonePipe } from "../phone.pipe";
+import { BackgroundKorzinaDirective } from "../directives/backgroundKorzina.directive";
 
 const headerItem1 = "Главная";
 const headerItem2 = "О компании";
@@ -12,7 +13,7 @@ const company = (name:string) => name;
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [NgFor, NgIf, RouterModule, DatePipe, PhonePipe ],
+  imports: [NgFor, NgIf, RouterModule, DatePipe, PhonePipe, BackgroundKorzinaDirective ],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,

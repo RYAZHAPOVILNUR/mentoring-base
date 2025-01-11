@@ -6,13 +6,14 @@ import { completedValidator } from "../../create-todo-form/completed-validator";
 import { MAT_DIALOG_DATA, MatDialogModule } from "@angular/material/dialog";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     selector: "app-edit-todo-dialog",
     templateUrl: "./edit-todo-dialog-component.html",
-    imports: [MatButtonModule,MatInputModule,ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatIcon],
+    imports: [MatButtonModule,MatInputModule,ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatIcon, MatTooltipModule],
 })
 export class EditTodoDialogComponent {
     private data = inject(MAT_DIALOG_DATA)

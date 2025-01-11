@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
+import { MatTooltipModule} from '@angular/material/tooltip';
 
 interface UserForm {
   id: FormControl<number>;
@@ -35,6 +36,7 @@ interface UserForm {
     MatInputModule,
     MatButtonModule,
     NgIf,
+    MatTooltipModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

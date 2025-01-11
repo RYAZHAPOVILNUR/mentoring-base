@@ -10,13 +10,16 @@
         <p>{{todo.completed ? "Да" : "Нет"}}</p>
 
         <mat-card-actions>
-            <button class="delete-button" mat-raised-button color="warn" (click)="onDeleteTodo(todo.id)">
+            <button swadow class="delete-button" mat-raised-button color="warn" (click)="onDeleteTodo(todo.id)">
                 <mat-icon>delete</mat-icon>
                 УДАЛИТЬ ЗАДАЧУ
             </button>
-            <button class="edit-button" mat-raised-button color="primary" (click)="onEditTodo()">
-                <mat-icon>edit</mat-icon>
-                РЕДАКТИРОВАТЬ ЗАДАЧУ
+            <button 
+                class="edit-button"
+                mat-raised-button color="primary"
+                (click)="onEditTodo()">
+                    <mat-icon>edit</mat-icon>
+                    РЕДАКТИРОВАТЬ ЗАДАЧУ
             </button>
         </mat-card-actions>
     </mat-card-content>
