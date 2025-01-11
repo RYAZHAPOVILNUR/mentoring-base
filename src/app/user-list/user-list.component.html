@@ -10,7 +10,11 @@
   </button>
   <div class="cards-container">
     <ng-container *ngFor="let user of users$ | async">
-      <app-user-card [user]="user" (deleteUser)="deleteUser($event)">
+      <app-user-card
+        [user]="user"
+        (deleteUser)="deleteUser($event)"
+        (editUser)="editUser(user)"
+      >
       </app-user-card>
     </ng-container>
   </div>

@@ -1,6 +1,7 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   inject,
   OnInit,
@@ -27,6 +28,8 @@ export class UserListComponent implements OnInit {
 
   public readonly users$: Observable<User[]> = this.userService.users$;
 
+  constructor(private readonly cdr: ChangeDetectorRef) {}
+
   ngOnInit() {
     this.userService.usersApiService.getUsers().subscribe((users) => {
       this.userService.setUsers(users);
@@ -35,7 +38,11 @@ export class UserListComponent implements OnInit {
 
   createUser() {
     this.dialog
-      .open(CreateUserFormComponent)
+      .open(CreateUserFormComponent, {
+        data: {
+          user: null,
+        },
+      })
       .afterClosed()
       .subscribe((user: User) => {
         if (!user) return;
@@ -46,9 +53,23 @@ export class UserListComponent implements OnInit {
           phone: user.phone,
           website: user.website,
           company: {
-            name: user.name,
+            name: user.company.name,
           },
         });
+      });
+  }
+
+  editUser(user: User) {
+    this.dialog
+      .open(CreateUserFormComponent, {
+        data: {
+          user: user,
+        },
+      })
+      .afterClosed()
+      .subscribe((editedUser: User) => {
+        if (!editedUser) return;
+        this.userService.editUser(editedUser);
       });
   }
 

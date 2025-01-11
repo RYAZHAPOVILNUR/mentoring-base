@@ -28,6 +28,7 @@ export class UserService {
         return user;
       })
     );
+    this.showSnackBarMessage('Пользователь успешно редактирован');
   }
 
   createUser(user: User) {

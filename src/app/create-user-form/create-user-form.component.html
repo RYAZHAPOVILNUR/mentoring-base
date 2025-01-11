@@ -17,14 +17,9 @@
     <mat-error>Website введен неправильно</mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field formGroupName="company">
     <mat-label>Company Name</mat-label>
-    <input
-      matInput
-      type="text"
-      class="form-input"
-      formControlName="companyName"
-    />
+    <input matInput type="text" class="form-input" formControlName="name" />
     <mat-error>Company Name введен неправильно</mat-error>
   </mat-form-field>
 
@@ -35,12 +30,14 @@
   </mat-form-field>
 
   <button
-    (click)="submitForm()"
+    (click)="applayChangesForm()"
+    [matTooltip]="messageTooltip"
     mat-flat-button
     type="submit"
     class="cards-item__footer-btn"
     [disabled]="form.invalid"
   >
-    Добавить<mat-icon>add</mat-icon>
+    {{ data.user ? "Редактировать" : "Добавить" }}
+    <mat-icon>{{ data.user ? "edit" : "add" }}</mat-icon>
   </button>
 </form>

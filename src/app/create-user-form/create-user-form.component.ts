@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   inject,
+  OnInit,
   Output,
 } from '@angular/core';
 import {
@@ -15,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-create-user-form',
@@ -26,26 +28,45 @@ import { MatDialogRef } from '@angular/material/dialog';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
+    MatTooltipModule,
   ],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateUserFormComponent {
+export class CreateUserFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();
 
   readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
+  readonly data: any = inject(MAT_DIALOG_DATA);
+
+  get messageTooltip(): string {
+    return this.data.user
+      ? 'Редактировать данные пользователя'
+      : 'Добавить пользователя';
+  }
 
   public form = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.email, Validators.required]),
     website: new FormControl('', [Validators.required]),
-    companyName: new FormControl('', [Validators.required]),
+    company: new FormGroup({
+      name: new FormControl('', [Validators.required]),
+    }),
     phone: new FormControl('', [Validators.required]),
   });
 
-  public submitForm(): void {
-    this.dialogRef.close(this.form.value);
+  public ngOnInit(): void {
+    if (this.data.user) {
+      this.form.patchValue(this.data.user);
+    }
+  }
+
+  public applayChangesForm(): void {
+    this.dialogRef.close({
+      ...this.form.value,
+      id: this.data.user?.id,
+    });
     this.form.reset();
   }
 }

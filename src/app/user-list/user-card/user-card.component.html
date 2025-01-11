@@ -1,4 +1,4 @@
-<mat-card class="example-card" appearance="outlined">
+<mat-card class="example-card" appearance="outlined" boxShadow>
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{ user.name }}</mat-card-title>
@@ -17,9 +17,22 @@
     <button
       mat-raised-button
       type="button"
+      (click)="onEditUser()"
+      class="cards-item__footer-btn"
+    >
+      <mat-icon>edit</mat-icon>
+      Редактировать пользователя
+    </button>
+  </mat-card-actions>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      type="button"
       (click)="onDeleteUser(user.id)"
       class="cards-item__footer-btn"
     >
+      <mat-icon>delete</mat-icon>
       Удалить пользователя
     </button>
   </mat-card-actions>

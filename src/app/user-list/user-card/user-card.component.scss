@@ -6,7 +6,10 @@
   background-color: white;
   cursor: pointer;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    scale: 1.01;
+  }
   &:active {
     transition: 0.3s;
     scale: 0.99;
