@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -6,7 +6,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   imports: [],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
+
 export class UserCardComponent {
   @Input()
   user: any

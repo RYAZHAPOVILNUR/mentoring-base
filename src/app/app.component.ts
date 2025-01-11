@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { headerComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
@@ -22,6 +22,7 @@ const upperCaseMenuItems = menuItems.map(
   imports: [RouterOutlet, headerComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 
 export class AppComponent {
@@ -64,5 +65,4 @@ export class AppComponent {
     
     this.isUpperCase = !this.isUpperCase
   }
-  
 }

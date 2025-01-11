@@ -1,12 +1,14 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
 	selector: 'app-todos-card',
 	standalone: true,
 	imports: [],
 	templateUrl: './todos-card.component.html',
-	styleUrl: './todos-card.component.scss'
+	styleUrl: './todos-card.component.scss',
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class TodosCardComponent {
 	@Input()
 	todo: any

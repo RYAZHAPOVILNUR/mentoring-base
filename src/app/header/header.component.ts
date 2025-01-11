@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from "@angular/common";
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 const menuItems = ['Каталог', 'Стройматериалы', 'Интрументы', 'Электрика', 'Интерьер и одежда'];
@@ -7,7 +7,6 @@ const menuItems = ['Каталог', 'Стройматериалы', 'Интру
 const upperCaseMenuItems = menuItems.map(
 	(item) => {
 		return item.toUpperCase();
-    
 	}
 )
 
@@ -17,11 +16,10 @@ const upperCaseMenuItems = menuItems.map(
 	imports: [NgIf, NgFor, RouterLink],
 	templateUrl: 'header.component.html',
 	styleUrl: '../app.component.scss',
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-
 export class headerComponent {
-	
 	readonly headerItem1 = 'Главная';
 	
 	readonly headerItem2 = 'О комапании';
