@@ -13,6 +13,7 @@
                     </ul>
                     <button type="button" (click)="isShowCatalog=!isShowCatalog">Каталог {{isShowCatalog ? "off":"on"}}</button>
                 </nav>
+                {{value | date: 'medium'}}
             </div>
             <div class="header__right">
                 <button mat-flat-button type="button" routerLink = "/users" class="header-button header-user">
@@ -21,8 +22,7 @@
                 <button mat-flat-button type="button" routerLink = "/todos" class="header-button header-user">
                     <p>Todos</p>
                 </button>
-                <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">+7 (965)
-                        084-29-29</a></div>
+                <div class="header-contact"><a href="tel:+7 (965) 084-29-29"><img src="assets/Phone.svg">{{tel | phone}}</a></div>
                 <div class="header-heart">
                     <a href=""><img src="assets/heart1.svg"></a>
                 </div>

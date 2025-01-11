@@ -1,6 +1,7 @@
-import { NgFor, NgIf, } from "@angular/common";
-import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { DatePipe, NgFor, NgIf, } from "@angular/common";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { PhonePipe } from "../phone.pipe";
 
 const headerItem1 = "Главная";
 const headerItem2 = "О компании";
@@ -11,12 +12,14 @@ const company = (name:string) => name;
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [NgFor, NgIf, RouterModule ],
+  imports: [NgFor, NgIf, RouterModule, DatePipe, PhonePipe ],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  value = new Date();
+  tel = "+7 (965) 084-29-29"
   isUpperCase = true;
   isShowCatalog = true;
 

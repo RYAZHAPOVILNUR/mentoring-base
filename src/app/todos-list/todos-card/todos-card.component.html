@@ -1,7 +1,7 @@
 <mat-card class="todos-card">
     <mat-card-content class="todos-card-content">
         <h3 mat-subheader>ТЕКСТ ЗАДАЧИ</h3>
-        <p>{{todo.title}}</p>
+        <p>{{todo.title | truncate:20}}</p>
 
         <h3 mat-subheader>АВТОР ЗАДАЧИ</h3>
         <p>{{todo.userId}}</p>

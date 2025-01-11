@@ -8,11 +8,12 @@ import { EditTodoDialogComponent } from "../edit-todo-dialog-component/edit-todo
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { TruncatePipe } from "../../truncate.pipe";
 
 @Component({
   selector: "app-todos-card",
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, TruncatePipe],
   templateUrl: "./todos-card.component.html",
   styleUrls: ["./todos-card.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,14 +35,14 @@ export class TodosCardComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       if(result) {
-        this.deleteTodo.emit(todoId)
+        this.deleteTodo.emit(todoId);
+        this._snackBar.openFromComponent(SnackbarComponent, {
+          duration: 5000,
+          data: {
+            isDeleteTodo: true,
+          }
+        })
       };
-      this._snackBar.openFromComponent(SnackbarComponent, {
-        duration: 5000,
-        data: {
-          isDeleteTodo: true,
-        }
-      })
     })
   }
   onEditTodo() {
