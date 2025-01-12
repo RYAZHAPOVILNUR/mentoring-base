@@ -5,10 +5,8 @@
                 <img class="logo" src="/assets/logo-image.svg" alt="Logo">
                 <nav class="navigation-top-items">
                     <span class="navigation-top-item" routerLink="/">{{headerItem1}}</span>
-                    <span class="navigation-top-item" routerLink="/">{{aboutCompany}}</span>
-                    <span class="navigation-top-item" *ngIf="showCatolog">{{headerItem3}}</span>
                     <span class="navigation-top-item" routerLink="users">Пользователи</span>
-                    <button (click)="isShowCatalog()" type="button">Скрыть/Показать каталог</button>
+                    <span class="navigation-top-item" routerLink="todos">Список задач</span>
                     <button (click)="isUpperCase()" type="button">Изменить размер</button>
                 </nav>
             </div>
