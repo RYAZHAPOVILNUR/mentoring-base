@@ -1,0 +1,13 @@
+<div class="user-card-block">
+    <div *ngFor="let user of users" class="user-card-item" >
+        <div class="user-card-item-content">
+            <h1>{{user.name}}</h1>
+            <h2>{{user.email}}</h2>
+            <h3 style="padding-top: 50px; box-sizing: border-box;">{{user.website}}</h3>
+            <h3>{{user.company.name }}</h3>
+        </div>
+       
+        <button type="button" class="card-item-self-prices-to-basket-button" (click)="deleteUsers(user.id)">Удалить</button>
+    </div>
+</div>
+
