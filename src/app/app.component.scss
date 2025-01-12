@@ -1,3 +1,6 @@
+.container {
+  width: 100%;
+}
 .header {
   height: 80px;
   color: white;
@@ -5,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 240px;
+  // padding: 0 240px;
 }
 
 .header-left {
@@ -18,7 +21,7 @@
   border: none;
   cursor: pointer;
   margin-right: 40px;
-  margin-left: 60px;
+  // margin-left: 60px;
 }
 
 .header-nav {
@@ -65,7 +68,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 300px;
 }
 
 .top-bar-left {
@@ -103,12 +105,10 @@
   border: none;
   background-color: #f0ba4e;
   cursor: pointer;
-  // align-items: center;
 }
 
 .search-item {
   border-bottom: solid 1px black;
-  // align-items: center;
 }
 
 .location {
@@ -121,3 +121,200 @@
 .select-city {
   color: white;
 }
+
+.background-image {
+  width: 100%;
+}
+
+.item-cards__pagination {
+  display: flex;
+  justify-content: end;
+
+  &-button {
+    border: none;
+    margin-left: 16px;
+    background: none;
+    color: #A1A0A0;
+  }
+}
+
+.active-button {
+  color: #F0BA4E;
+  font-weight: 600;
+}
+
+.content-container-1 {
+  display: flex;
+  justify-content: space-between;
+  width: 1320px;
+  margin: 0 auto;
+}
+
+.content-container-2 {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.advantages-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1320px;
+  margin-top: 30px;
+  margin-bottom: 28px;
+}
+
+.advantage {
+  display: flex;
+  align-items:center;
+}
+
+.advantage-text {
+  padding-left: 16px;
+}
+
+.item-cards__grid {
+  display: flex;
+  margin-top: 16px;
+}
+
+.item-cards__grid-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 428px;
+  width: 621px;
+  height: 428px;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+  background-image: url(/assets/sprayer.png);
+  background-position-x: left;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 500px;
+}
+
+.item-cards__grid-left-text {
+  color: #3C3C3B;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.item-cards__grid-left-action {
+  align-self: end;
+  display: flex;
+  align-items: center;
+  color: #3C3C3B;
+}
+
+.item-cards__grid-right {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  padding-left: 29px;
+}
+
+.item-cards__grid-right-block {
+  width: 421px;
+  height: 200px;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+}
+
+.right-block-1 {
+  background-image: url('/assets/spray.png');
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+}
+
+.right-block-2 {
+  background-image: url('/assets/paint-backet.png');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.right-block-3 {
+  background-image: url('/assets/acrilyc.png');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.right-block-4 {
+  background-image: url('/assets/power-socket.png');
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+}
+
+.right-block-1-text {
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  justify-content: end;
+  padding-top: 16px;
+  padding-right: 16px;
+}
+
+.right-block-1-action {
+  display: flex;
+  align-items:center;
+  justify-content: end;
+  padding-right: 16px;
+  padding-top: 96px;
+  color: #3C3C3B;
+}
+
+.right-block-2-text {
+  font-size: 28px;
+  font-weight: 600;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.right-block-2-action {
+  display: flex;
+  align-items:center;
+  padding-left: 16px;
+  padding-top: 64px;
+  color: #3C3C3B;
+}
+
+.right-block-3-text {
+  font-size: 28px;
+  font-weight: 600;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.right-block-3-action {
+  display: flex;
+  align-items:center;
+  justify-content: left;
+  padding-left: 16px;
+  padding-top: 64px;
+  color: #3C3C3B;
+}
+
+.right-block-4-text {
+  font-size: 28px;
+  font-weight: 600;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.right-block-4-action {
+  display: flex;
+  align-items:center;
+  justify-content: end;
+  padding-top: 96px;
+  padding-right: 16px;
+  color: #3C3C3B;
+}
+
+
+
