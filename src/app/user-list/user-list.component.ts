@@ -2,18 +2,7 @@ import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersApiService } from '../users-api.service';
-
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
-  address: {
-    city: string;
-  }
-}
+import { User } from '../interfaces/users.interface';
 
 @Component({
   selector: 'app-user-list',

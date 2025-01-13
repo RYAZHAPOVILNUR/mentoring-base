@@ -1,27 +1,29 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	font-family: sans-serif;
-	color: #000000;
+  margin: 0;
+  font-family: sans-serif;
+  color: #000000;
 }
 
-input, textarea, button {
-	font-family: inherit;
-	padding: 0;
-	border: none;
+input,
+textarea,
+button {
+  font-family: inherit;
+  padding: 0;
+  border: none;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 h1,
@@ -31,34 +33,34 @@ h4,
 h5,
 h6,
 p {
-	margin: 0;
+  margin: 0;
 }
 
 img {
-	display: block;
-	max-width: 100%;
-	height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 fieldset {
-	border: none;
-	margin: 0;
-	padding: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 legend {
-	display: block;
-	margin: 0;
-	padding: 0;
-	border: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .none {
-	display: none !important;
+  display: none !important;
 }
