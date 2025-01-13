@@ -1,17 +1,22 @@
 .header {
-    display: flex;
     height: 80px;
+    margin: 0 auto;
     background: #4B565E;
-    padding: 0px 240px;
     align-items: center;
-    justify-content: space-between;
     color: white;
 
 }
 
+.header-container {
+    justify-content: space-between;
+    display: flex;
+    width: 1320px;
+    height: 80px;
+    margin: 0 auto;
+    align-items: center;
+    color: white;
 
-
-
+}
 
 .header-Left {
     display: flex;
@@ -31,8 +36,6 @@
     align-items: center;
     justify-content: space-between;
 }
-
-
 
 image.Logo {
     height: 40px;
@@ -61,11 +64,6 @@ image.Logo {
     text-decoration-skip-ink: none;
 
 }
-
-
-
-
-
 
 .Phone-Number {
     font-family: 'Inter', sans-serif;
@@ -99,14 +97,21 @@ image.Logo {
 
 .Light-TopBar {
     background: #F0BA4E;
-    padding: 0px 240px;
+    display: flex;
+    height: 48px;
+    margin: 0 auto;
+    align-items: center;
+    color: white;
 }
 
 .Light-Container {
+    width: 1320px;
     height: 48px;
     gap: 24px;
     align-items: center;
     display: flex;
+    margin: 0 auto;
+    justify-content: space-between
 }
 
 .Frame-5 {
@@ -200,8 +205,8 @@ input {
     position: absolute;
     width: 543px;
     height: 112px;
-    top: 304px;
-    left: 300px;
+    top: 50%;
+    left: 20%;
     font-family: 'Inter', sans-serif;
     font-size: 40px;
     font-weight: 700;
@@ -212,16 +217,17 @@ input {
     color: #F0BA4E;
 }
 
+.contant-container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
 .frame-35 {
     display: flex;
     align-items: center;
-    width: 1319px;
+    justify-content: space-between;
     height: 72px;
-    top: 876px;
-    left: 300px;
-    gap: 28px;
-    opacity: 0px;
-    margin-left: 240px;
+    margin: 0 auto;
 }
 
 .frame-35-items {
@@ -251,5 +257,221 @@ input {
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: grey;
+}
+
+.item-cards__pagination {
+    display: flex;
+    justify-content: end;
+
+    &-button {
+        font-family: 'Inter', sans-serif;
+        border: none;
+        background: none;
+        color: #A1A0A0;
+        font-weight: 400;
+    }
+}
+
+.active-button {
+    color: #F0BA4E;
+    font-weight: 600;
+}
+
+.item-cards__grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.item-cards__grid-left {
+    height: 421px;
+    width: 428px;
+    max-height: 421px;
+    max-width: 428px;
+    background-image: url(/assets/airbrush.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-position-y: bottom;
+    background-position-x: left;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-text {
+        font-size: 28px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+    }
+
+}
+
+.item-cards__grid-action {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.94px;
+        text-align: left;
+        text-underline-position: from-font;
+    }
+
+    &-link {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+.item-cards__grid-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+.item-cards__grid-right-card {
+    width: 421px;
+    height: 200px;
+    max-width: 421px;
+    max-height: 200px;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position-y: bottom;
+}
+
+#enamel {
+    background-image: url(/assets/enamel.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.item-cards__grid-right-text {
+    width: 91px;
+    height: 34px;
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+}
+
+#dye {
+    background-image: url(/assets/dye.png);
+    background-position-x: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#sealant {
+    background-image: url(/assets/sealant.png);
+    background-position-x: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#socket {
+    background-image: url(/assets/socket.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.Popular-products {
+    position: relative;
+    width: 1412px;
+    height: 491px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.Popular-products__contant-container {
+    width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &-text {
+            width: 282px;
+            height: 34px;
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 33.89px;
+            text-align: left;
+        }
+
+        &-AllProductsLink {
+            width: 218px;
+            height: 22px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 21.78px;
+            text-align: left;
+            color: #D8C497;
+
+        }
+    }
+
+    &-cards {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            width: 309px;
+            height: 429px;
+            background-color: white;
+            box-shadow: 0px 20px 50px 0px #12112714;
+
+            &-container {
+
+                &-image {
+                    background-image: url(/assets/disk.png);
+                    background-repeat: no-repeat;
+                    background-position: center top;
+                }
+                
+            }
+            
+
+        }
+    }
+
+
+}
+
+.Popular-products-buttons {
+    position: absolute;
+    width: 1412px;
+    height: 60px;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
 }
 
