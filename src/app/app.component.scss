@@ -448,15 +448,101 @@ input {
             height: 429px;
             background-color: white;
             box-shadow: 0px 20px 50px 0px #12112714;
+            box-sizing: border-box;
+            padding: 24px;
 
             &-container {
+                align-self: center;
 
                 &-image {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 261px;
+                    height: 180px;
+                    border-radius: 14px 0px 0px 0px;
                     background-image: url(/assets/disk.png);
                     background-repeat: no-repeat;
                     background-position: center top;
+                    align-self: center;
+
+                    &-percent {
+                        width: 54px;
+                        height: 39px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 61px;
+                        background-color: #FA5D69;
+                        font-family: 'Inter', sans-serif;
+                        color: white;
+                    }
+
+                    &-heart-cards {
+                        width: 24px;
+                        height: 39px;
+                    }
                 }
                 
+                &-name {
+                    width: 261px;
+                    height: 24px;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 24.2px;
+                    text-align: left;              
+                }
+
+                &-article {
+                    width: 261px;
+                    height: 19px;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 19.36px;
+                    text-align: left;
+                    margin-top: 8px;
+                }
+
+                &-price {
+                    width: 256px;
+                    height: 73px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    margin-top: 8px;
+
+                    &-text {
+                        font-family: 'Inter', sans-serif;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 19.36px;
+                        text-align: left;
+                        color: #A1A0A0;
+                    }
+
+                    &-numbers {
+                        display: flex;
+                        gap: 16px;
+                        margin-top: 6px;
+
+                        &-crossed {
+                            font-family: 'Inter', sans-serif;
+                            font-size: 16px;
+                            font-weight: 600;
+                            line-height: 19.36px;
+                            text-align: left;
+                            text-decoration-line: line-through;
+                        }
+
+                        &-real {
+                            font-family: 'Inter', sans-serif;
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 24.2px;
+                            text-align: left;
+                        }
+                    }
+                }
             }
             
 
