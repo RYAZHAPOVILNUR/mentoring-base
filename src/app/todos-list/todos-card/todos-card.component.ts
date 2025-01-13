@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from "@angular/core";
 import { Todo } from "../../todo.interface";
 import { MatDialog } from "@angular/material/dialog";
-import { TodoConfirmationComponent } from "../todo-confirmation.component.ts/todo-confirmation.component";
+import { TodoConfirmationComponent } from "./todo-confirmation.component.ts/todo-confirmation.component";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { SnackbarComponent } from "../../snackbar/snackbar.component";
 import { EditTodoDialogComponent } from "../edit-todo-dialog-component/edit-todo-dialog-component";

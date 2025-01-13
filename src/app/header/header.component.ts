@@ -1,19 +1,14 @@
-import { DatePipe, NgFor, NgIf, } from "@angular/common";
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { NgFor, } from "@angular/common";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { PhonePipe } from "../phone.pipe";
+import { PhonePipe } from "../pipe/phone.pipe";
 import { BackgroundKorzinaDirective } from "../directives/backgroundKorzina.directive";
-
-const headerItem1 = "Главная";
-const headerItem2 = "О компании";
-const headerItem3 = "Каталог";
-
-const company = (name:string) => name;
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [NgFor, NgIf, RouterModule, DatePipe, PhonePipe, BackgroundKorzinaDirective ],
+  imports: [NgFor, RouterModule, PhonePipe, BackgroundKorzinaDirective,NgFor],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,28 +16,26 @@ const company = (name:string) => name;
 export class HeaderComponent {
   value = new Date();
   tel = "+7 (965) 084-29-29"
-  isUpperCase = true;
-  isShowCatalog = true;
 
-  readonly headerItem1 = headerItem1;
-  readonly aboutCompany = company(headerItem2);
-  readonly headerItem3 = headerItem3;
+  readonly catalogItems = ["Каталог","Стройматериалы","Инструменты","Электрика","Интерьер и одежда"];
+  readonly headerItems = ["Главная","О компании","Каталог"]
 
-  catalogItems = upperCaseMenuItems
+  private readonly userService = inject(UserService)
 
-  changeMenuText () {
-      this.catalogItems = upperCaseMenuItems.map(
-        item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
-      )
+  changeMenuText() {
+    return  this.catalogItems.map((item: string) => item.toUpperCase())
+  }
 
-      this.isUpperCase = !this.isUpperCase
+  loginAsAdmin() {
+    this.userService.loginAsAdmin()
+  }
+
+  loginAsUser() {
+    this.userService.loginAsUser()
+  }
+
+  logout() {
+    this.userService.logout
   }
 
 }
-
-const catalogItems = ["Каталог","Стройматериалы","Инструменты","Электрика","Интерьер и одежда"];
-const upperCaseMenuItems = catalogItems.map(
-  (item) => {
-    return item.toUpperCase()
-  }
-)

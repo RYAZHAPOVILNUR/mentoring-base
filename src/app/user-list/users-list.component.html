@@ -10,7 +10,7 @@
 </div>
 <div class="container">
   <div style="display: flex; flex-wrap: wrap; gap: 20px; padding: 30px 0">
-    <mat-card *ngFor="let user of usersService.users$ | async" class="goods">
+    <mat-card *ngFor="let user of users$ | async" class="goods">
       <mat-card-content>
         <app-user-card
           [user]="user"

@@ -3,12 +3,14 @@ import { TodosApiService } from "../todos-api.service";
 import { Todo } from "../todo.interface";
 import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { AsyncPipe, NgFor } from "@angular/common";
-import { TodosService } from "../todos.service";
 import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.component";
 import { MatDialog } from "@angular/material/dialog";
 import { MatButton } from "@angular/material/button";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { SnackbarComponent } from "../snackbar/snackbar.component";
+import { Store } from "@ngrx/store";
+import { selectTodos } from "./store/todos.selectors";
+import { TodosActions } from "./store/todos.actions";
 
 @Component({
   selector: "app-todos-list",
@@ -21,24 +23,27 @@ import { SnackbarComponent } from "../snackbar/snackbar.component";
 })
 export class TodosListComponent {
   readonly todosApiService = inject(TodosApiService);
-  todosService = inject(TodosService)
 
+  public readonly store = inject(Store)
+
+  public readonly todos$ = this.store.select(selectTodos)
   private dialog = inject(MatDialog)
 
   private _snackBar = inject(MatSnackBar);
 
   constructor() {
       this.todosApiService.getTodos().subscribe(
-        (item) => this.todosService.setTodos(item)
+        (todos: Todo[]) => 
+          this.store.dispatch(TodosActions.set({todos: todos}))
       )
   }
 
-  deleteTodo (todoId: number) {
-    this.todosService.deleteTodo(todoId)
+  deleteTodo (id: number) {
+    this.store.dispatch(TodosActions.delete({id}))
   }
 
   editTodo(todo: Todo) {
-    this.todosService.editTodo(todo)
+    this.store.dispatch(TodosActions.edit({todo}))
   }
 
   createTodo() {
@@ -46,12 +51,13 @@ export class TodosListComponent {
 
     dialogRef.afterClosed().subscribe(form => {
       if (form) {
-        this.todosService.createTodo({
-          id: new Date().getTime(),
-          title: form.title,
-          userId: form.userId,
-          completed: form.completed,
-        });
+        this.store.dispatch(TodosActions.create({
+          todo:{
+            id: new Date().getTime(),
+            title: form.title,
+            userId: form.userId,
+            completed: form.completed,
+        }}))
         this._snackBar.openFromComponent(SnackbarComponent, {
           duration: 5000,
                   data: {

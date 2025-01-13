@@ -1,11 +1,12 @@
 import { Directive, HostBinding, HostListener } from "@angular/core";
 
 @Directive({
-    selector: "swadow",
+    selector: "shadow",
     standalone: true,
 })
+
 export class SwadowDirective {
-    private swadow = ""
+    private swadow: null | string = null
 
     @HostBinding("style.box-shadow")
     get boxSwadow() {

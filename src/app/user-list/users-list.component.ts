@@ -2,7 +2,6 @@ import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { UsersApiService } from "../users-api.service.js";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { UsersService } from "../users.service.js";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component.js";
 import { User } from "../user.interface.ts.js";
 import { MatDialog } from "@angular/material/dialog";
@@ -10,6 +9,9 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { SnackbarComponent } from "../snackbar/snackbar.component.js";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
+import { Store } from "@ngrx/store";
+import { UsersActions } from "./store/users.actions.js";
+import { selectUsers } from "./store/users.selectors.js";
 
 @Component({
   selector: "app-users-list",
@@ -21,14 +23,16 @@ import { MatButtonModule } from "@angular/material/button";
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiService);
-  usersService = inject(UsersService);
 
   private readonly dialog = inject(MatDialog);
 
   private _snackBar = inject(MatSnackBar);
 
+  private readonly store = inject(Store)
+  public readonly users$ = this.store.select(selectUsers)
+
   deleteUser(id: number) {
-    this.usersService.deleteUser(id);
+    this.store.dispatch(UsersActions.delete({id}))
   }
 
   createUser() {
@@ -36,7 +40,8 @@ export class UsersListComponent {
 
     dialogRef.afterClosed().subscribe((form) => {
       if (form) {
-        this.usersService.createUser({
+        this.store.dispatch(UsersActions.create({
+          user:{
           id: new Date().getTime(),
           name: form.name,
           email: form.email,
@@ -44,7 +49,8 @@ export class UsersListComponent {
           company: {
             name: form.companyName,
           },
-        });
+        }
+        }))
         this._snackBar.openFromComponent(SnackbarComponent, {
                   duration: 5000,
                   data: {
@@ -56,12 +62,15 @@ export class UsersListComponent {
   }
 
   editUser(user: User): void {
-    this.usersService.editUser(user);
+    this.store.dispatch(UsersActions.edit({user}))
   }
 
   constructor() {
     this.usersApiService
       .getUsers()
-      .subscribe((item) => this.usersService.setUsers(item));
+      .subscribe((item: User[]) => {
+        this.store.dispatch(UsersActions.set({users: item}))
+      }
+    );
   }
 }
