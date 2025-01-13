@@ -1,28 +1,29 @@
 import { Component, inject } from '@angular/core';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosApiService } from '../todos-api.service';
-import { NgFor } from '@angular/common';
-import { Todo } from '../interfaces/todos.interface';
+import { AsyncPipe, NgFor } from '@angular/common';
+import { TodosService } from '../todos.service';
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [TodoCardComponent, NgFor],
+  imports: [TodoCardComponent, NgFor, AsyncPipe],
   templateUrl: './todos-list.component.html',
   styleUrl: './todos-list.component.scss'
 })
 
 export class TodosListComponent {
-  private todosApiservice = inject(TodosApiService)
-  todos: Todo[] = []
+  todosApiservice = inject(TodosApiService)
+  todosService = inject(TodosService)
 
   constructor(){
-    this.todosApiservice.getTodos().subscribe(todoList => {
-      this.todos = todoList.slice(0,10)
-    })
+    this.todosApiservice.getTodos().subscribe(todos => 
+      this.todosService.setTodos(todos)
+    )
   }
 
   deleteTodo(id: number){
-    this.todos = [...this.todos.filter(todo => todo.id !== id)]
+    this.todosService.deleteTodo(id)
   }
+
 }
