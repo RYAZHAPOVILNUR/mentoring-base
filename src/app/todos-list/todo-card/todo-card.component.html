@@ -1,0 +1,17 @@
+<div style="width: 200px; height: 100%; border: 1px solid black;">
+  <p>Текст Задачи</p>
+  <div>
+    {{todo.title}}
+  </div>
+
+  <p>Автор Задачи</p>
+  <div>
+    {{todo.userId}}
+  </div>
+
+  <p>Задача Завершена</p>
+  <div>
+    {{todo.completed ? 'ДА' : 'НЕТ'}}
+  </div>
+  <button (click)=onDeleteTodo(todo.id)>Удалить Задачу</button>
+</div>
