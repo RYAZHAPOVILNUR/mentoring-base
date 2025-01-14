@@ -39,7 +39,7 @@
 }
 
 .header__nav-item {
-  cursor: pointer; /* Изменено с .header-nav div на .header__nav-item */
+  cursor: pointer;
 }
 
 .header__contact {
@@ -95,7 +95,7 @@
 }
 
 .header-bottom__nav-item {
-  cursor: pointer; /* Добавлено для пунктов навигации в нижнем заголовке */
+  cursor: pointer;
 }
 
 .input-search {
@@ -118,7 +118,6 @@
   margin: 0 auto;
 }
 
-/*main*/
 .main {
   margin-top: 28px;
   margin-bottom: 50px;
@@ -233,7 +232,6 @@
   background-image: url("/assets/image14.png");
   background-repeat: no-repeat;
   overflow: hidden;
-  // padding: 16px;
   box-shadow: 0px 20px 50px 0px #3c3c3b12;
   background-position-y: bottom;
   background-position-x: left;
@@ -334,9 +332,6 @@
   height: 251px;
   top: -313px;
   left: 818px;
-
-  // width: 421px;
-  // height: 200px;
   box-shadow: 0px 20px 50px 0px #3c3c3b12;
   background-image: url("/assets/pngwing1.png");
   background-repeat: no-repeat;
@@ -575,7 +570,6 @@
 .footer-contacts {
   display: flex;
   gap: 56px;
-  // padding: 0 0 52px 0;
   &__telephone {
     display: flex;
     gap: 12px;
@@ -659,13 +653,6 @@
   }
 }
 
-.wrapper-btn {
-  // display: flex;
-  // justify-content: right;
-  // max-width: 352px;
-  // width: 100%;
-  //margin: 6px;
-}
 .subscription-form__btn {
   padding: 12px 19.5px;
   background: rgba(240, 186, 78, 1);
