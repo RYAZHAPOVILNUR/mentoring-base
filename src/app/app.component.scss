@@ -1020,6 +1020,7 @@
 
 .conwert-mail {
     padding-left: 22px;
+    margin-right: 10px;
 }
 
 .input-search {
@@ -1065,4 +1066,54 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 
+}
+
+.footer-bottom {
+    width: 100%;
+    height: 77px;
+    padding-top: 25px;
+}
+
+.footer-bottom-block-menu {
+    align-items: center;
+    display: flex;
+    width: 249px;
+    height: 17px;
+}
+
+.footer-bottom-block-menu-item {
+    margin-right: 10px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.bottom-bar {
+    display: flex;
+    height: 24px;
+    padding-top: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-bar-left {
+    width: 112px;
+    height: 24px;  
+    display: flex;
+    gap: 10px;    
+}
+
+.bottom-bar-right {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF99;
 }
