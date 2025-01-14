@@ -543,6 +543,83 @@ input {
                         }
                     }
                 }
+
+                &-busket {
+                    display: flex;
+                    justify-content: space-between;
+
+                    &-amount {
+                        width: 114px;
+                        height: 53px;
+                        gap: 10px 0px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        &-text {
+                            font-family: 'Inter', sans-serif;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 19.36px;
+                            text-align: left;
+
+                        }
+
+                        &-add {
+                            width: 61px;
+                            height: 24px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            &-minus {
+                                border: none;
+                                background-color: transparent;
+                                font-family: 'Inter', sans-serif;
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 19.36px;
+                                text-align: left;
+
+                            }
+
+                            &-plus {
+                                border: none;
+                                background-color: transparent;
+                                font-family: 'Inter', sans-serif;
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 19.36px;
+                                text-align: left;
+                            }
+
+                            &-number {
+                                font-family: 'Inter', sans-serif;
+                                font-size: 20px;
+                                font-weight: 500;
+                                line-height: 24.2px;
+                                text-align: left;
+
+                            }
+                        }
+                    }
+
+                    &-button {
+                        width: 135px;
+                        height: 47px;
+                        align-items: center;
+                        border-radius: 54px;
+                        border: 1px;
+                        background-color: transparent;
+                        border: 1px solid #F0BA4E;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 19.36px;
+
+
+                    }
+                }
             }
             
 
@@ -559,5 +636,14 @@ input {
     top: 40%;
     display: flex;
     justify-content: space-between;
+
+    &-left {
+        width: 60px;
+height: 60px;
+border-radius: 36px;
+padding: 10px;
+
+    }
 }
+
 
