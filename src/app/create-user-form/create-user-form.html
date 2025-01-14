@@ -1,0 +1,19 @@
+<h1>Create User Form</h1>
+<div style="margin: 30px 30px 30px 0px;">
+    <form style="display: flex; flex-direction: column;"
+     [formGroup]="form"
+     (ngSubmit)="submitForm()">
+        <p>Name:</p>
+        <input type="text" class="form-input" formControlName = "name">
+        <p>Email:</p>
+        <input type="text" class="form-input" formControlName = "email">
+        <p>Website:</p>
+        <input type="text" class="form-input" formControlName = "website">
+        <p>Company:</p>
+        <input type="text" class="form-input" formContralName = "companyName">
+        <button 
+            style="width: 150px; margin-top: 20px;">
+            CREATE USER
+        </button>
+    </form>
+</div>

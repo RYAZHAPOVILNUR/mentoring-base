@@ -4,6 +4,7 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { headerComponent } from "./header/header.component";
 import { HttpClient } from "@angular/common/http";
 import {UsersListComponent} from "./users-list/users-list.component"; 
+import { CreateUserFormComponent } from './create-user-form/create-user-form.component';
 
 
 function getMenuName(menuName: string) {
@@ -23,7 +24,7 @@ let menuItems = ['Каталог','Стройматериалы','Инструм
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, headerComponent, UsersListComponent,],
+  imports: [RouterOutlet, NgIf, NgFor, headerComponent, UsersListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
