@@ -3,6 +3,8 @@ import { Component, inject, Injectable } from "@angular/core";
 import { HeaderComponent } from "../header/header.component";
 import { RouterLink } from "@angular/router";
 import { NgFor } from "@angular/common";
+import { UserApiService } from "../users-api.service";
+import { UserCardComponent } from "./user-card/user-card.component";
 
 export interface User {
     id: number;
@@ -14,21 +16,20 @@ export interface User {
         name: string;
     }
 }
-Injectable()
 
 @Component({
     selector: 'app-users-list',
-    imports: [HeaderComponent, RouterLink, NgFor],
+    imports: [HeaderComponent, RouterLink, NgFor, UserCardComponent],
     standalone: true,
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss'
 })
 export class UsersListComponent {
-    readonly apiService = inject(HttpClient)
+    readonly usersApiService = inject(UserApiService)
     users: User[] = []
 
     constructor() {
-        this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
+        this.usersApiService.getUsers().subscribe(
             (response: User[]) => {
                 this.users = response;
             }

@@ -19,6 +19,8 @@ export class HeaderComponent {
 
   readonly headerItem4 = 'Пользователи'
 
+  readonly headerItem5 = 'Todos'
+
   readonly headerItemYellow1 = upperCaseMenu
 
   menuUpperNames = upperCaseMenu

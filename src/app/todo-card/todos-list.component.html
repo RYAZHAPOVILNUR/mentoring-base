@@ -1,0 +1,7 @@
+<p style="font-weight: 700; font-size: 22px;">Компонент списка задач:</p>
+
+<div style="display: flex; width: 100%; flex-wrap: wrap;">
+    <div *ngFor="let todo of todos">
+        <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+    </div>
+</div>
