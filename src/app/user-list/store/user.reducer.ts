@@ -2,7 +2,11 @@ import { createReducer, on } from "@ngrx/store";
 import { User } from "../../user.interface.ts.js";
 import { UsersActions } from "./users.actions.js";
 
-const initialState: {users: User[]} = {
+interface UserState {
+    users: User[];
+}
+
+const initialState: UserState = {
     users: [],
 };
 
@@ -12,15 +16,9 @@ export const userReducer = createReducer(
         ...state,
         users: payload.users
     })),
-    on(UsersActions.edit, (state, payload) => ({
+    on(UsersActions.edit, (state, {user}) => ({
         ...state,
-        users: state.users.map((user) => {
-            if (user.id === payload.user.id) {
-                return payload.user
-            } else {
-                return user
-            }
-        })
+        users: state.users.map((t) => (t.id === user.id ? user : t))
     })),
     on(UsersActions.create, (state, payload) => ({
         ...state,

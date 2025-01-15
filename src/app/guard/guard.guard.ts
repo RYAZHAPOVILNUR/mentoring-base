@@ -11,11 +11,5 @@ export const AdminGuard: CanActivateFn = (route:ActivatedRouteSnapshot, state: R
     }
 
     return router.createUrlTree([""],
-        // {
-        //     queryParams: {
-        //       returnUrl: state.url,  // сохраняем URL, куда пытались попасть
-        //       message: 'Для доступа требуются права администратора'  // сообщение для пользователя
-        //     }
-        //   }
     )
 }

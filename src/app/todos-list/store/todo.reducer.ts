@@ -2,9 +2,13 @@ import { createReducer, on } from "@ngrx/store";
 import { Todo } from "../../todo.interface";
 import { TodosActions } from "./todos.actions";
 
-const initialState:{todos: Todo[]} = {
-    todos: [],
+export interface TodoState {
+  todos: Todo[];
 }
+
+const initialState: TodoState = {
+  todos: [],
+};
 
 export const todoReducer = createReducer(
     initialState,
@@ -16,15 +20,9 @@ export const todoReducer = createReducer(
         ...state,
         todos: [...state.todos, payload.todo]
     })),
-    on(TodosActions.edit, (state, payload) => ({
+    on(TodosActions.edit, (state, {todo}) => ({
         ...state,
-        todos: state.todos.map((todo) => {
-            if (todo.id === payload.todo.id) {
-                return payload.todo
-            } else {
-                return  todo
-            }
-        })
+        todos: state.todos.map((t) => (t.id === todo.id ? todo : t))
     })),
     on(TodosActions.delete, (state, payload) =>({
         ...state,
