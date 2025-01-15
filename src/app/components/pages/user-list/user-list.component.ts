@@ -15,11 +15,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-user-list',
-    imports: [NgFor, UserCardComponent, AsyncPipe, MatButtonModule],
-    templateUrl: './user-list.component.html',
-    styleUrl: './user-list.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-user-list',
+  imports: [NgFor, UserCardComponent, AsyncPipe, MatButtonModule],
+  templateUrl: './user-list.component.html',
+  styleUrl: './user-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserListComponent implements OnInit {
   private readonly dialog: MatDialog = inject(MatDialog);
