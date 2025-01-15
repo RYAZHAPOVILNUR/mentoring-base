@@ -5,17 +5,16 @@ import { ItemFavoriteCardsComponent } from './main_blocks/item-favorite-cards/it
 import { MoreNamesComponent } from './main_blocks/more-names/more-names.component';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [
-    NgIf,
-    ItemCardsComponent,
-    ItemFavoriteCardsComponent,
-    MoreNamesComponent,
-  ],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-main',
+    imports: [
+        NgIf,
+        ItemCardsComponent,
+        ItemFavoriteCardsComponent,
+        MoreNamesComponent,
+    ],
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent {
   isShow = true;

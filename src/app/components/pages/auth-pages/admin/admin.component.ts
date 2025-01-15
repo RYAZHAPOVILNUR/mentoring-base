@@ -9,12 +9,11 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-admin',
-  standalone: true,
-  imports: [MatButtonModule, MatCardModule, DeleteDefisPipe, NgFor, AsyncPipe],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-admin',
+    imports: [MatButtonModule, MatCardModule, DeleteDefisPipe, NgFor, AsyncPipe],
+    templateUrl: './admin.component.html',
+    styleUrl: './admin.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdminComponent {
   private readonly authService = inject(AuthService);

@@ -22,19 +22,18 @@ import { User } from '../../../interfaces/user.interface';
 import { Auth } from '../../../interfaces/auth.interface';
 
 @Component({
-  selector: 'app-create-user-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatTooltipModule,
-  ],
-  templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-create-user-form',
+    imports: [
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatTooltipModule,
+    ],
+    templateUrl: './create-user-form.component.html',
+    styleUrl: './create-user-form.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateUserFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();

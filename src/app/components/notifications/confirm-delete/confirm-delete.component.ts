@@ -9,18 +9,17 @@ import {
 } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-confirm-delete',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatDialogActions,
-    MatDialogContent,
-    MatDialogClose,
-    MatDialogTitle,
-  ],
-  templateUrl: './confirm-delete.component.html',
-  styleUrl: './confirm-delete.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-confirm-delete',
+    imports: [
+        MatButtonModule,
+        MatDialogActions,
+        MatDialogContent,
+        MatDialogClose,
+        MatDialogTitle,
+    ],
+    templateUrl: './confirm-delete.component.html',
+    styleUrl: './confirm-delete.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConfirmDeleteComponent {
   readonly dialogRef = inject(MatDialogRef<ConfirmDeleteComponent>);

@@ -9,12 +9,11 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  imports: [MatButtonModule, MatCardModule, DeleteDefisPipe, NgFor, AsyncPipe],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-user',
+    imports: [MatButtonModule, MatCardModule, DeleteDefisPipe, NgFor, AsyncPipe],
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent {
   private readonly authService = inject(AuthService);

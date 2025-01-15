@@ -12,12 +12,11 @@ import { CreateTodoFormComponent } from '../../forms/create-todo-form/create-tod
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-todos-list',
-  standalone: true,
-  imports: [TodosCardComponent, NgFor, AsyncPipe, CreateTodoFormComponent],
-  templateUrl: './todos-list.component.html',
-  styleUrl: './todos-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-todos-list',
+    imports: [TodosCardComponent, NgFor, AsyncPipe, CreateTodoFormComponent],
+    templateUrl: './todos-list.component.html',
+    styleUrl: './todos-list.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosListComponent implements OnInit {
   readonly todosService = inject(TodosService);

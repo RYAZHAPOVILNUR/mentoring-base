@@ -15,12 +15,11 @@ import { data } from './auth.config';
 import { authData } from './auth.config';
 
 @Component({
-  selector: 'app-auth',
-  standalone: true,
-  imports: [],
-  templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-auth',
+    imports: [],
+    templateUrl: './auth.component.html',
+    styleUrl: './auth.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthComponent {
   @Output() showAdminPage = new EventEmitter<boolean>(false);

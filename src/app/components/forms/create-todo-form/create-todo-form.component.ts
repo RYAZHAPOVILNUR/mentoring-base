@@ -17,19 +17,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'app-create-todo-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatCheckboxModule,
-  ],
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-create-todo-form',
+    imports: [
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatCheckboxModule,
+    ],
+    templateUrl: './create-todo-form.component.html',
+    styleUrl: './create-todo-form.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateTodoFormComponent {
   @Output() createTodo = new EventEmitter();

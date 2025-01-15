@@ -20,19 +20,18 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-auth-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatTooltipModule,
-  ],
-  templateUrl: './auth-form.component.html',
-  styleUrl: './auth-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-auth-form',
+    imports: [
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatTooltipModule,
+    ],
+    templateUrl: './auth-form.component.html',
+    styleUrl: './auth-form.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();

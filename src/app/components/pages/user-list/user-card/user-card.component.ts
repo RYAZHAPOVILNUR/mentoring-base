@@ -16,18 +16,17 @@ import { BoxShadowDirective } from '../../../../directives/box-shadow.directive'
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-user-card',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatCardModule,
-    DeleteDefisPipe,
-    BoxShadowDirective,
-    MatIcon,
-  ],
-  templateUrl: './user-card.component.html',
-  styleUrl: './user-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-user-card',
+    imports: [
+        MatButtonModule,
+        MatCardModule,
+        DeleteDefisPipe,
+        BoxShadowDirective,
+        MatIcon,
+    ],
+    templateUrl: './user-card.component.html',
+    styleUrl: './user-card.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserCardComponent {
   @Input() user!: User;

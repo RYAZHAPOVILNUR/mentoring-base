@@ -6,12 +6,11 @@ import { BgColorDirective } from '../../../directives/bg-color.directive';
 import { AuthComponent } from '../../pages/auth-pages/auth/auth.component';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [NgIf, NgFor, RouterLink, DatePipe, BgColorDirective, AuthComponent],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-header',
+    imports: [NgIf, NgFor, RouterLink, DatePipe, BgColorDirective, AuthComponent],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   public menuItems = menuItems;
