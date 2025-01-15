@@ -16,6 +16,7 @@ import { UsersService } from '../users.service';
 export class UserListComponent {
   usersApiService = inject(UsersApiService)
   usersService = inject(UsersService)
+  users$ = this.usersService.users$
 
   constructor() {
     this.usersApiService.getUsers().subscribe(users => 

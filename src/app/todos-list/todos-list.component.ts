@@ -15,7 +15,8 @@ import { TodosService } from '../todos.service';
 export class TodosListComponent {
   todosApiservice = inject(TodosApiService)
   todosService = inject(TodosService)
-
+  todos$ = this.todosService.todos$
+  
   constructor(){
     this.todosApiservice.getTodos().subscribe(todos => 
       this.todosService.setTodos(todos)

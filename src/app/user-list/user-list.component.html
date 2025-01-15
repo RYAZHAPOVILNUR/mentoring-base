@@ -1,8 +1,8 @@
 <div class="users">
   <app-user-card
-  *ngFor="let user of usersService.users$ | async" 
-  [user]="user"
-  (deleteUser)="deleteUser($event)"
+    *ngFor="let user of users$ | async"
+    [user]="user"
+    (deleteUser)="deleteUser($event)"
   >
   </app-user-card>
 </div>

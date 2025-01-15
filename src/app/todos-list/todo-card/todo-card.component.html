@@ -1,11 +1,11 @@
 <div class="todos-item">
-    <h2>Текст задачи</h2>
-    <p>{{ todo.title }}</p>
+  <h2>Текст задачи</h2>
+  <p>{{ todo.title }}</p>
 
-    <h2>Автор задачи</h2>
-    <p>{{ todo.userId }}</p>
+  <h2>Автор задачи</h2>
+  <p>{{ todo.userId }}</p>
 
-    <h2>Задача завершена</h2>
-    <p>{{ todo.completed ? 'Да' : 'Нет' }}</p>
-    <button (click)="onDelete()" class="todo-delete">Удалить</button>
+  <h2>Задача завершена</h2>
+  <p>{{ todo.completed ? "Да" : "Нет" }}</p>
+  <button class="todo-delete" type="reset" (click)="onDelete()">Удалить</button>
 </div>
