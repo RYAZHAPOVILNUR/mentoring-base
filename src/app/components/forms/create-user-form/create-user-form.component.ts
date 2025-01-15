@@ -18,6 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { User } from '../../../interfaces/user.interface';
+import { Auth } from '../../../interfaces/auth.interface';
 
 @Component({
   selector: 'app-create-user-form',
@@ -38,7 +40,7 @@ export class CreateUserFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();
 
   readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
-  readonly data: any = inject(MAT_DIALOG_DATA);
+  readonly data: { user: User | Auth } = inject(MAT_DIALOG_DATA);
 
   get messageTooltip(): string {
     return this.data.user

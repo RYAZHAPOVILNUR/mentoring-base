@@ -1,10 +1,24 @@
 .header {
-  display: flex;
   color: white;
   background-color: #4b565e;
-  height: 80px;
+  position: relative;
+}
+
+.app-auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.header-container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
 }
 
 .header-left {

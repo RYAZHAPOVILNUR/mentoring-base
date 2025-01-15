@@ -1,0 +1,24 @@
+<div class="modal">
+  <div class="modal__dialog">
+    <h2 mat-dialog-title>Войти как:</h2>
+    <mat-dialog-actions>
+      <button
+        type="button"
+        mat-stroked-button
+        mat-dialog-close
+        cdkFocusInitial
+        (click)="isBranchAdmin(true)"
+      >
+        Admin
+      </button>
+      <button
+        type="button"
+        mat-button
+        mat-dialog-close
+        (click)="isBranchAdmin(false)"
+      >
+        User
+      </button>
+    </mat-dialog-actions>
+  </div>
+</div>

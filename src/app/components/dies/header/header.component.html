@@ -1,5 +1,21 @@
 <div class="header">
-  <div class="content-container header">
+  <div class="app-auth">
+    <app-auth
+      (showAdminPage)="isAdminPageToggle($event)"
+      (showUserPage)="isUserPageToggle($event)"
+    ></app-auth>
+    <ng-container *ngIf="isAdminPage">
+      <button routerLink="/admin" class="header-nav-item admin">
+        Администратор
+      </button>
+    </ng-container>
+    <ng-container *ngIf="isUserPage">
+      <button routerLink="/user" class="header-nav-item admin">
+        Мой профиль
+      </button>
+    </ng-container>
+  </div>
+  <div class="content-container header-container">
     <div class="header-left">
       <div class="header-logo">
         <img src="/assets/Frame.svg" alt="Logo" />

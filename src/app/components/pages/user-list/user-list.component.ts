@@ -7,9 +7,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UserService } from '../user.service';
-import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
-import { User } from '../interfaces/user.interface';
+import { UsersService } from '../../../services/users.service';
+import { CreateUserFormComponent } from '../../forms/create-user-form/create-user-form.component';
+import { User } from '../../../interfaces/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { Observable } from 'rxjs';
@@ -24,16 +24,18 @@ import { Observable } from 'rxjs';
 })
 export class UserListComponent implements OnInit {
   private readonly dialog: MatDialog = inject(MatDialog);
-  readonly userService = inject(UserService);
+  readonly userService = inject(UsersService);
 
   public readonly users$: Observable<User[]> = this.userService.users$;
 
-  constructor(private readonly cdr: ChangeDetectorRef) {}
-
   ngOnInit() {
-    this.userService.usersApiService.getUsers().subscribe((users) => {
-      this.userService.setUsers(users);
-    });
+    const users = localStorage.getItem('users');
+    users
+      ? this.userService.setUsers(JSON.parse(users))
+      : this.userService.usersApiService.getUsers().subscribe((users) => {
+          this.userService.setUsers(users);
+          this.userService.updateLocalStorage(users);
+        });
   }
 
   createUser() {

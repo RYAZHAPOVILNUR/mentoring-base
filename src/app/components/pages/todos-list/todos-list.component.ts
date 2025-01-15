@@ -6,9 +6,9 @@ import {
 } from '@angular/core';
 import { TodosCardComponent } from './todos-card/todos-card.component';
 import { AsyncPipe, NgFor } from '@angular/common';
-import { Todo } from '../interfaces/todo.interface';
-import { TodosService } from '../todos.service';
-import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { Todo } from '../../../interfaces/todo.interface';
+import { TodosService } from '../../../services/todos.service';
+import { CreateTodoFormComponent } from '../../forms/create-todo-form/create-todo-form.component';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -25,9 +25,13 @@ export class TodosListComponent implements OnInit {
   public readonly todos$: Observable<Todo[]> = this.todosService.todos$;
 
   ngOnInit() {
-    this.todosService.todosApiService.getTodos().subscribe((todos) => {
-      this.todosService.setTodos(todos);
-    });
+    const todos = localStorage.getItem('todos');
+    todos
+      ? this.todosService.setTodos(JSON.parse(todos))
+      : this.todosService.todosApiService.getTodos().subscribe((todos) => {
+          this.todosService.setTodos(todos);
+          this.todosService.updateLocalStorage(todos);
+        });
   }
 
   createTodo(formData: Todo) {

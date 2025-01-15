@@ -1,0 +1,43 @@
+<form [formGroup]="form" class="cards__item">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name" />
+    <mat-error>Имя введено неправильно</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="text" formControlName="email" />
+    <mat-error>Email введен неправильно</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Website</mat-label>
+    <input matInput type="text" class="form-input" formControlName="website" />
+    <mat-error>Website введен неправильно</mat-error>
+  </mat-form-field>
+
+  <mat-form-field formGroupName="company">
+    <mat-label>Company Name</mat-label>
+    <input matInput type="text" class="form-input" formControlName="name" />
+    <mat-error>Company Name введен неправильно</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input matInput type="text" class="form-input" formControlName="phone" />
+    <mat-error>Phone введен неправильно</mat-error>
+  </mat-form-field>
+
+  <button
+    (click)="applayChangesForm()"
+    [matTooltip]="messageTooltip"
+    mat-flat-button
+    type="submit"
+    class="cards-item__footer-btn"
+    [disabled]="form.invalid"
+  >
+    Войти
+    <mat-icon>login</mat-icon>
+  </button>
+</form>

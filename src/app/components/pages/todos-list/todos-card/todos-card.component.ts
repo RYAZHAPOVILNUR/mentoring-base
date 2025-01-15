@@ -5,8 +5,8 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { Todo } from '../../interfaces/todo.interface';
-import { TruncatePipe } from '../../pipes/truncate.pipe';
+import { Todo } from '../../../../interfaces/todo.interface';
+import { TruncatePipe } from '../../../../pipes/truncate.pipe';
 
 @Component({
   selector: 'app-todos-card',

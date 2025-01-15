@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Todo } from './interfaces/todo.interface';
-import { TodosApiService } from './todos-api.service';
+import { Todo } from '../interfaces/todo.interface';
+import { TodosApiService } from './api-services/todos-api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +24,7 @@ export class TodosService {
         return user;
       })
     );
+    this.updateLocalStorage(this.todosSubject$.value);
   }
 
   createTodo(todo: Todo) {
@@ -35,6 +36,7 @@ export class TodosService {
       alert('Такой userId уже существует');
     } else {
       this.todosSubject$.next([...this.todosSubject$.value, todo]);
+      this.updateLocalStorage(this.todosSubject$.value);
       alert('Новая задача успешно добавлена');
     }
   }
@@ -43,5 +45,10 @@ export class TodosService {
     this.todosSubject$.next(
       this.todosSubject$.value.filter((todo) => todo.id !== id)
     );
+    this.updateLocalStorage(this.todosSubject$.value);
+  }
+
+  updateLocalStorage(todo: Todo[]): void {
+    localStorage.setItem('todos', JSON.stringify(todo));
   }
 }
