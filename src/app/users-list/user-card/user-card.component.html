@@ -1,7 +1,6 @@
 <div style="width: 200px; height: 200px; margin-top: 50px;">
-  <p>{{user.name}}</p>
-  <p>{{user.email}}</p>
-  <p>{{user.company.name}}</p>
-  <button (click)=onDeleteUser(user.id)>Удалить юзера</button>
+  <p>{{ user[0].id }}</p>
+  <p>{{ user[0].title }}</p>
+  <p>{{ user[0].completed }}</p>
+  <button (click)="onDeleteUser(user[0].id)">Удалить юзера</button>
 </div>
-

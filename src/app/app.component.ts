@@ -5,14 +5,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 const newPages = [5, 4, 3, 2, 1];
 newPages.reverse();
 
-// changeMenuText() => {
-//   this.menuItems = upperCaseMenuItems.map(
-//     item => this.isUpperCase ? item.toLowerCase() : item.toUpperCase();
-//   )
-
-//   this.isUpperCase = !this.isUpperCase;
-// }
-
 const user = {
   name:'ilnur',
   surname: 'razhapov',

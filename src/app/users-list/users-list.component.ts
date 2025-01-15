@@ -4,7 +4,12 @@ import { Component, inject } from "@angular/core";
 import { UsersApiService } from "../users-api.servise";
 import { UserCardComponent } from "./user-card/user-card.component";
 
-
+export interface Luser {
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean
+}
 @Component ({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -15,21 +20,19 @@ import { UserCardComponent } from "./user-card/user-card.component";
 
 export class UsersListComponent {
   readonly usersApiServise = inject(UsersApiService);
-  users: any = [];
+  users: Luser[] = [];
 
   constructor () {
     this.usersApiServise.getUsers().subscribe(
-      (response: any) => {
-        this.users = response;
-        console.log('Users:', this.users);
+      (response: Object) => {
+        this.users = response as Luser[];
       }
     )
   }
   deleteUser (id: number) {
     this.users = this.users.filter(
-      // @ts-ignore
-      item => {
-        if (id === item.id) {
+      user => {
+        if (id === user.id) {
            return false;
           } else {
             return true;
@@ -38,4 +41,3 @@ export class UsersListComponent {
     )
   }
 }
-

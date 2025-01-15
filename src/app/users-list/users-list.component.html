@@ -1,6 +1,6 @@
 <div style="display: flex; flex-wrap: wrap;">
-  <div *ngFor="let item of users" >
-    <app-user-card [user]="item" (deleteUser)="deleteUser($event)"></app-user-card>
+  <div *ngFor="let user of users" >
+    <app-user-card [user]="users" (deleteUser)="deleteUser($event)"></app-user-card>
   </div>
 </div>
 

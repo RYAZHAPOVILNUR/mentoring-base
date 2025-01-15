@@ -18,19 +18,20 @@ export interface Todo {
   standalone: true,
   imports: [NgFor, TodoCardComponent]
 })
+
 export class TodoListComponent {
   readonly todosApiService = inject(TodosApiService)
   todos: Todo[] = [];
 
   constructor () {
     this.todosApiService.getTodos().subscribe(
-      (response: any) => {
-        this.todos = response;
+      (response: Object) => {
+        this.todos = response as Todo[];
       }
     )
   }
 
-  deleteTodo(id: any) {
+  deleteTodo(id: number) {
     this.todos = this.todos.filter(
       todo => {
         if (id === todo.id) {
@@ -42,5 +43,3 @@ export class TodoListComponent {
     )
   }
 }
-
-

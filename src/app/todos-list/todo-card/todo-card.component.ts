@@ -1,5 +1,6 @@
 import { NgFor } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Todo } from "../todos-list.component.";
 
 @Component({
   selector: 'app-todo-card',
@@ -8,9 +9,10 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   standalone: true,
   imports: [NgFor]
 })
+
 export class TodoCardComponent {
   @Input()
-  todo: any
+  todo!: Todo
 
   @Output()
   deleteTodo = new EventEmitter();
