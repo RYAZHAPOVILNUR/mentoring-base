@@ -1,0 +1,24 @@
+<form class="form" [formGroup]="createUserForm">
+    <h2>Добавить пользователя</h2>
+    <div class="form-input-wrapper">
+        <label>Name</label>
+        <input class="form-input" type="text" formControlName="name">
+    </div>
+    <div class="form-input-wrapper">
+        <label>Username</label>
+        <input class="form-input" type="text" formControlName="username">
+    </div>
+    <div class="form-input-wrapper">
+        <label>Email</label>
+        <input class="form-input" type="text" formControlName="email">
+    </div>
+    <div class="form-input-wrapper">
+        <label>Phone</label>
+        <input class="form-input" type="text" formControlName="phone">
+    </div>
+    <div class="form-input-wrapper">
+        <label>Website</label>
+        <input class="form-input" type="text" formControlName="website">
+    </div>
+    <button class="form-submit" type="submit" (click)="submitForm()" [disabled]="createUserForm.invalid">Добавить</button>
+</form>

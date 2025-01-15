@@ -15,7 +15,13 @@ export class UsersService {
   }
 
   createUser(user: User){
-    this.usersSubject$.next([...this.usersSubject$.value, user])
+    const userIsExisting = this.usersSubject$.value.find(currentUser => currentUser.email === user.email)
+    
+    if(userIsExisting === undefined){
+      this.usersSubject$.next([...this.usersSubject$.value, user])
+    } else {
+      alert("Такой пользователь уже зарегистрирован")
+    }
   }
 
   editUser(userChanged: User){

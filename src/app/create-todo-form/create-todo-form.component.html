@@ -1,0 +1,20 @@
+<form class="form" [formGroup]="createTodoForm">
+    <h2>Добавить задачу</h2>
+    <div class="form-input-wrapper">
+        <label>Название задачи</label>
+        <input class="form-input" type="text" formControlName="title">
+    </div>
+    <div class="form-input-wrapper">
+        <label>Автор задачи</label>
+        <input class="form-input" type="text" formControlName="userId">
+    </div>
+    <div class="form-input-wrapper">
+        <label for="completed">Задача завершена?</label>
+        <select id="completed" class="form-input" formControlName="completed">
+            <option value="true">Да</option>
+            <option value="false">Нет</option>
+        </select>
+    </div>
+    <button class="form-submit" type="submit" (click)="submitForm()" [disabled]="createTodoForm.invalid">Добавить</button>
+</form>
+

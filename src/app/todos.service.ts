@@ -8,11 +8,11 @@ import { Todo } from './interfaces/todos.interface';
 export class TodosService {
   private todosSubject$ = new BehaviorSubject<Todo[]>([])
   todos$ = this.todosSubject$.asObservable();
-
+  
   setTodos(todos: Todo[]){
-    this.todosSubject$.next(todos)
+    this.todosSubject$.next(todos.slice(0,5))
   }
-
+  
   createTodo(todo: Todo){
     this.todosSubject$.next([...this.todosSubject$.value, todo])
   }
