@@ -14,13 +14,13 @@
     </div>
     <div class="header-right">
       <div class="header__tel">
-        <img src="../assets/Phone.png" alt="tel">
-        <p class="txt__tel">+7 (965) 084-29-29</p>
+        <img src="../assets/Phone.png" alt="tel" class="header__tel-img">
+        <a href="tel+79650842929" class="txt__tel">+7 (965) 084-29-29</a>
       </div>
       <a href="#"  class="header__favorites">
         <img src="../assets/Vector.svg" alt="favorites">
       </a>
-      <div class="header__btn" onclick="">
+      <div class="header__btn" onclick="click">
         <img class="header__btn-img" src="../assets/Buying.png">
         <p class="header__btn-text">Пусто</p>
       </div>
@@ -33,22 +33,204 @@
     <div class="header-left--btm">
       <nav class="header__bottom-nav">
         <ul class="header__bottom-nav--list">
-          <li class="item-img">
-            <a href="#"><img src="../assets/light.svg" alt="catalog"></a>
+          <li class="header__bottom-nav--list---item">
+            <a href="#" class="item-img" ><img src="../assets/light.svg" alt="catalog"></a>
+            <button href="#" class="item-link">Каталог</button>
           </li>
-          <li class="header__bottom-nav--list---item"><a href="#">Каталог</a></li>
-          <li class="header__bottom-nav--list---item"><a href="#">Стройматериалы</a></li>
-          <li class="header__bottom-nav--list---item"><a href="#">Инструменты</a></li>
-          <li class="header__bottom-nav--list---item"><a href="#">Электрика</a></li>
-          <li class="header__bottom-nav--list---item"><a href="#">Интерьер и одежда</a></li>
+          <li class="header__bottom-nav--list---item"><button href="#" class="item-link">Стройматериалы</button></li>
+          <li class="header__bottom-nav--list---item"><button href="#" class="item-link">Инструменты</button></li>
+          <li class="header__bottom-nav--list---item"><button href="#" class="item-link">Электрика</button></li>
+          <li class="header__bottom-nav--list---item"><button href="#" class="item-link">Интерьер и одежда</button></li>
         </ul>
       </nav>
     </div>
     <div class="header-right--btm">
-      <input type="search" placeholder="Поиск, например Круг зачистной">
+      <input type="search" placeholder="Поиск, например Круг зачистной" class="header__input">
       <div class="header-location">
-        <img src="../assets/map-pin (2) 1.svg" alt="location">
-        <p>Москва</p>
+        <img src="../assets/map-pin (2) 1.svg" alt="location" class="location__img">
+        <p class="location__txt">Москва</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header__img">
+  <img src="../assets/Rectangle 5.png" alt="image-large" class="header__img-img">
+</div>
+
+<div class="advantages">
+  <div class="advantages__wrapper">
+    <div class="advantages__item">
+      <img src="../assets/asssortiment.png" alt="asssortiment" class="advantages__item-img">
+      <p class="advantages__item-txt"><span class="txt-blc">Большой ассортимент</span> <br>строительных материалов <br> всегда в наличии</p>
+     </div>
+     <div class="advantages__item">
+      <img src="../assets/dostavka.png" alt="dostavka" class="advantages__item-img">
+      <p class="advantages__item-txt"><span class="txt-blc">Доставка стройматериалов</span><br> в течении четырех часов или в <br>любое удобное время</p>   
+     </div>
+     <div class="advantages__item">
+      <img src="../assets/like.png" alt="img-like" class="advantages__item-img">
+      <p class="advantages__item-txt">Многоуровневая <span class="txt-blc">система <br> управления качеством</span> по стандарту <br> ISO 9001</p>
+     </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="cards__wrapper">
+    <div class="cards__pagination">
+      <button class="cards__pagination-btn activ-button">1</button>
+      <button class="cards__pagination-btn">2</button>
+      <button class="cards__pagination-btn">3</button>
+      <button class="cards__pagination-btn">4</button>
+      <button class="cards__pagination-btn">5</button>
+    </div>
+    <div class="cards__items">
+      <div class="cards__items-left">
+        <div class="cards__items-left--item">
+          <h1 class="cards__items__title">Строительный отделочный инструмент</h1>
+          <button class="cards__items__button">
+            <span class="item__button-txt">Перейти в каталог</span>
+            <img src="../assets/strelka.svg" alt="">
+          </button>
+        </div>
+      </div>
+      <div class="cards__items-right"> 
+          <div class="cards__items-right--item1">
+            <h1 class="cards__items__title">Эмали</h1>
+            <button class="cards__items__button">
+              <span class="item__button-txt">Перейти в каталог</span>
+              <img src="../assets/strelka.svg" alt="">
+            </button>
+          </div>
+          <div class="cards__items-right--item2">
+            <h1 class="cards__items__title">Лакокрасочные <br>
+              материалы</h1>
+            <button class="cards__items__button">
+              <span class="item__button-txt">Перейти в каталог</span>
+              <img src="../assets/strelka.svg" alt="">
+            </button>
+          </div>
+          <div class="cards__items-right--item3">
+            <h1 class="cards__items__title">Пены, клеи и <br>герметики</h1>
+            <button class="cards__items__button">
+              <span class="item__button-txt">Перейти в каталог</span>
+              <img src="../assets/strelka.svg" alt="">
+            </button>
+          </div>
+          <div class="cards__items-right--item4">
+            <h1 class="cards__items__title">Розетки и выключатели</h1>
+            <button class="cards__items__button">
+              <span class="item__button-txt">Перейти в каталог</span>
+              <img src="../assets/strelka.svg" alt="">
+            </button>
+          </div> 
+      </div>
+    </div>
+  </div>
+</div>  
+
+<div class="popular-tovars">
+  <div class="popular-tovars__wrapper">
+    <div class="popular-tovars__header">
+      <h1 class="tovars__header-title">Популярные товары</h1>
+      <button class="tovars__header-button">
+        Посмотреть все товары
+      </button>
+    </div>
+    <div class="popular-tovars__body">
+      <div class="tovars__carts">
+        <div class="tovars__carts-item">
+          <div class="tovars__carts-item--header">
+            <img class="img-tovar" src="../assets/disk.png" alt="disk">
+            <p class="sale">%</p>
+            <img class="img-heart" src="../assets/heart.svg" alt="heart">
+          </div>
+          <div class="tovars__carts-item--body">
+            <h3 class="item--body---title">Круг зачистной 125х6х22</h3>
+            <p class="item--body---articul">Артикул 00004</p>
+            <p class="item--body---price__one">Цена за штуку</p>
+            <p class="item--body---price__old">52 руб.</p>
+            <p class="item--body---price__new">48 руб.</p>
+          </div>
+          <div class="tovars__carts-item--footer">
+            <div class="quantity">
+              <p class="quantity__txt">Количество</p>
+              <p class="quantity__mns">-</p>
+              <p class="quantity__num">1</p>
+              <p class="quantity__pls">+</p>
+            </div>
+            <button class="item--footer---button">В корзину</button>
+          </div>
+        </div>
+        <div class="tovars__carts-item">
+          <div class="tovars__carts-item--header">
+            <img class="img-tovar" src="../assets/disk.png" alt="disk">
+            <p class="sale">%</p>
+            <img class="img-heart" src="../assets/heart.svg" alt="heart">
+          </div>
+          <div class="tovars__carts-item--body">
+            <h3 class="item--body---title">Круг зачистной 125х6х22</h3>
+            <p class="item--body---articul">Артикул 00004</p>
+            <p class="item--body---price__one">Цена за штуку</p>
+            <p class="item--body---price__old">52 руб.</p>
+            <p class="item--body---price__new">48 руб.</p>
+          </div>
+          <div class="tovars__carts-item--footer">
+            <div class="quantity">
+              <p class="quantity__txt">Количество</p>
+              <p class="quantity__mns">-</p>
+              <p class="quantity__num">1</p>
+              <p class="quantity__pls">+</p>
+            </div>
+            <button class="item--footer---button">В корзину</button>
+          </div>
+        </div>
+        <div class="tovars__carts-item">
+          <div class="tovars__carts-item--header">
+            <img class="img-tovar" src="../assets/disk.png" alt="disk">
+            <p class="sale">%</p>
+            <img class="img-heart" src="../assets/heart.svg" alt="heart">
+          </div>
+          <div class="tovars__carts-item--body">
+            <h3 class="item--body---title">Круг зачистной 125х6х22</h3>
+            <p class="item--body---articul">Артикул 00004</p>
+            <p class="item--body---price__one">Цена за штуку</p>
+            <p class="item--body---price__old">52 руб.</p>
+            <p class="item--body---price__new">48 руб.</p>
+          </div>
+          <div class="tovars__carts-item--footer">
+            <div class="quantity">
+              <p class="quantity__txt">Количество</p>
+              <p class="quantity__mns">-</p>
+              <p class="quantity__num">1</p>
+              <p class="quantity__pls">+</p>
+            </div>
+            <button class="item--footer---button">В корзину</button>
+          </div>
+        </div>
+        <div class="tovars__carts-item">
+          <div class="tovars__carts-item--header">
+            <img class="img-tovar" src="../assets/disk.png" alt="disk">
+            <p class="sale">%</p>
+            <img class="img-heart" src="../assets/heart.svg" alt="heart">
+          </div>
+          <div class="tovars__carts-item--body">
+            <h3 class="item--body---title">Круг зачистной 125х6х22</h3>
+            <p class="item--body---articul">Артикул 00004</p>
+            <p class="item--body---price__one">Цена за штуку</p>
+            <p class="item--body---price__old">52 руб.</p>
+            <p class="item--body---price__new">48 руб.</p>
+          </div>
+          <div class="tovars__carts-item--footer">
+            <div class="quantity">
+              <p class="quantity__txt">Количество</p>
+              <p class="quantity__mns">-</p>
+              <p class="quantity__num">1</p>
+              <p class="quantity__pls">+</p>
+            </div>
+            <button class="item--footer---button">В корзину</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

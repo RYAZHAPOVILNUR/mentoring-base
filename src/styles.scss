@@ -10,6 +10,7 @@
  */
 
  html {
+    font-family: "Inter"; 
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
@@ -22,6 +23,7 @@
    */
   
   body {
+    background: #E9E9E9;
     margin: 0;
   }
   
@@ -355,3 +357,4 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
 	-webkit-appearance:none;
 }
+
