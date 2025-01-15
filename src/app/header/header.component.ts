@@ -1,5 +1,6 @@
 import { NgFor, NgIf } from "@angular/common";
 import { Component, Injectable } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 const navMenuItem = (item: string) => {
     return 'О компании'
@@ -19,7 +20,7 @@ const navMenuItem = (item: string) => {
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     standalone: true,
-    imports: [NgFor, NgIf]
+    imports: [NgFor, NgIf, RouterLink]
 })
 
 export class HeaderComponent{
