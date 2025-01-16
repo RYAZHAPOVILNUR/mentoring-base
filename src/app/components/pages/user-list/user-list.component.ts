@@ -1,7 +1,6 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   inject,
   OnInit,
@@ -28,13 +27,9 @@ export class UserListComponent implements OnInit {
   public readonly users$: Observable<User[]> = this.userService.users$;
 
   ngOnInit() {
-    const users = localStorage.getItem('users');
-    users
-      ? this.userService.setUsers(JSON.parse(users))
-      : this.userService.usersApiService.getUsers().subscribe((users) => {
-          this.userService.setUsers(users);
-          this.userService.updateLocalStorage(users);
-        });
+    this.userService.usersApiService.getUsers().subscribe((users) => {
+      this.userService.setUsers(users);
+    });
   }
 
   createUser() {

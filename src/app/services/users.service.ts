@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { User } from '../interfaces/user.interface';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UsersApiService } from './api-services/users-api.service';
 
@@ -28,7 +28,6 @@ export class UsersService {
         return user;
       })
     );
-    this.updateLocalStorage(this.usersSubject$.value);
     this.showSnackBarMessage('Пользователь успешно редактирован');
   }
 
@@ -41,7 +40,6 @@ export class UsersService {
       this.showSnackBarMessage('Такой email уже существует!');
     } else {
       this.usersSubject$.next([...this.usersSubject$.value, user]);
-      this.updateLocalStorage(this.usersSubject$.value);
       this.showSnackBarMessage('Новый пользователь успешно добавлен');
     }
   }
@@ -50,7 +48,6 @@ export class UsersService {
     this.usersSubject$.next(
       this.usersSubject$.value.filter((user) => user.id !== id)
     );
-    this.updateLocalStorage(this.usersSubject$.value);
     this.showSnackBarMessage('Пользователь успешно удален');
   }
 
@@ -59,9 +56,5 @@ export class UsersService {
     this.message$.subscribe((message) => {
       this._snackBar.open(message, 'Close', { duration: 3000 });
     });
-  }
-
-  updateLocalStorage(user: User[]): void {
-    localStorage.setItem('users', JSON.stringify(user));
   }
 }
