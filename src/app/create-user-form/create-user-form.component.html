@@ -1,24 +1,41 @@
-<form class="form" [formGroup]="createUserForm">
-    <h2>Добавить пользователя</h2>
-    <div class="form-input-wrapper">
-        <label>Name</label>
-        <input class="form-input" type="text" formControlName="name">
-    </div>
-    <div class="form-input-wrapper">
-        <label>Username</label>
-        <input class="form-input" type="text" formControlName="username">
-    </div>
-    <div class="form-input-wrapper">
-        <label>Email</label>
-        <input class="form-input" type="text" formControlName="email">
-    </div>
-    <div class="form-input-wrapper">
-        <label>Phone</label>
-        <input class="form-input" type="text" formControlName="phone">
-    </div>
-    <div class="form-input-wrapper">
-        <label>Website</label>
-        <input class="form-input" type="text" formControlName="website">
-    </div>
-    <button class="form-submit" type="submit" (click)="submitForm()" [disabled]="createUserForm.invalid">Добавить</button>
+<form [formGroup]="createUserForm">
+  <mat-card>
+    <mat-card-header>
+      <h2>Добавить пользователя</h2>
+    </mat-card-header>
+    <mat-card-content class="form-content-wrapper">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input formControlName="phone" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Website</mat-label>
+        <input formControlName="website" matInput />
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="submitForm()"
+        [disabled]="createUserForm.invalid"
+      >
+        Добавить
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </form>

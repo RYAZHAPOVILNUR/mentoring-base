@@ -1,25 +1,6 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-input-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form-input {
-    padding: 5px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #000;
-}
-
-.form-submit{
-    padding: 5px;
-    width: 150px;
-    cursor: pointer;
-    border-radius: 10px;
+.form-content-wrapper{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }

@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MaterialModule } from '../Material.module';
 
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MaterialModule],
   templateUrl: './create-todo-form.component.html',
   styleUrl: './create-todo-form.component.scss'
 })
@@ -20,11 +21,6 @@ export class CreateTodoFormComponent {
   submitForm(){
     const userId = Date.now(); 
     const userData = { ...this.createTodoForm.value, id: userId };
-
-    if (typeof userData.completed === 'string') {
-      userData.completed = userData.completed === 'true';  
-    }
-
     this.createTodo.emit(userData)
     this.createTodoForm.reset()
 
