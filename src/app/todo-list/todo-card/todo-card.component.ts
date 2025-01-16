@@ -1,5 +1,4 @@
-import { NgFor } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, input } from "@angular/core";
 import { Todo } from "../todo-interface";
 
 @Component({
@@ -7,11 +6,11 @@ import { Todo } from "../todo-interface";
     templateUrl: './todo-card.component.html', 
     styleUrl: './todo-card.component.scss', 
     standalone: true, 
-    imports: [NgFor]
 })
 
 export class TodoCardComponent {
-    @Input() 
+    // readonly todo = input.required<Todo>(); 
+    @Input()
     todo!: Todo; 
 
     @Output() 

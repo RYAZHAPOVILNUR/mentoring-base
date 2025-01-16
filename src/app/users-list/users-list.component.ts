@@ -31,7 +31,20 @@ export class UsersListComponent {
         this.usersService.deleteUser(id);
     }
 
-    public createUser(event: any) {
-        console.log('ДАННЫЕ ФОРМЫ: ', event); 
+    editUser(user: User) {
+        this.usersService.editUser(user); 
+    }
+
+    public createUser(formData: any) {
+         this.usersService.createUser({
+             id: new Date().getTime(),
+             name: formData.name,
+             email: formData.email,
+             website: formData.website,
+             company: {
+                 name: formData.companyName,
+             },
+            }
+        )
     }
 }

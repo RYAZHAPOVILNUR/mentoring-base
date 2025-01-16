@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from "@angular/core";
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 
 @Component({
     selector: 'app-create-user', 
@@ -13,14 +13,14 @@ export class CreateUserFormComponent {
     createUser = new EventEmitter()
 
     public form = new FormGroup({
-        name: new FormControl(), 
-        email: new FormControl(), 
-        website: new FormControl(), 
-        companyName: new FormControl(), 
+        name: new FormControl('', [Validators.required, Validators.minLength(2)]), 
+        email: new FormControl('', [Validators.required, Validators.email]), 
+        website: new FormControl('', [Validators.required, Validators.minLength(3)]), 
+        companyName: new FormControl('', [Validators.required, Validators.minLength(2)]), 
     }); 
 
     public submitForm(): void {
-
         this.createUser.emit(this.form.value);
+        this.form.reset(); 
     }
 }

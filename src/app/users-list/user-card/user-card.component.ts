@@ -7,7 +7,6 @@ import { User } from "../user-interface";
     templateUrl: './user-card.component.html', 
     styleUrl: './user-card.component.scss', 
     standalone: true,
-    imports: []
 })
 
 export class UserCardComponent {
