@@ -1,0 +1,124 @@
+.header{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    color: white;
+    background-color:#3C3C3B ;
+    padding-left: 240px;
+    padding-right: 240px;
+}
+.header-left{
+    display: flex;
+    width: 754px;
+    height: 80px;
+
+}
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-nav-item{
+    margin-right: 20px;
+}
+.header-logo{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+.header-right {
+    display: flex; 
+    margin-left: 40px;
+    
+    
+}
+.header-phone{
+    display: flex;
+    align-items: center;
+
+}
+
+.header-right img {
+    margin-right: 5px; 
+    width: 24px;
+    height: 24px;
+}
+
+.header-heart{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+
+}
+
+.header-korzina span{
+    color: #fff;
+
+
+}
+.header-korzina-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#3C3C3B ;
+    border-radius: 50px;
+    border: 2px solid #F0BA4E;
+    width: 120px;
+    height: 48px;
+    margin-left: 40px;
+
+}
+.header-korzina img{
+    width: 28px;
+    height: 28px;
+}
+.header-2{
+    background-color:#F0BA4E ;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    color: black;
+    padding-left: 240px;
+    padding-right: 240px;
+    height: 48px;
+}
+.header-2-item{
+    display: flex;
+    align-items: center;
+    width: 83px;
+    height: 24px;
+    justify-content: space-between;
+}
+.header-2-nav{
+    display: flex;
+    width: 696px;
+    height: 17px;
+    justify-content: flex-start;
+    margin-left: 24px;
+}
+
+.header-2-nav-item{
+    padding-right: 24px;
+}
+
+.inp-search{
+border-bottom: 2px solid #000 ;
+}
+.inp-search input{
+    width: 400px;
+    height: 28px;
+    background-color: #F0BA4E;
+    border: none;
+    
+}
+
+.header-time{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 24px;
+    width: 69px;
+    height: 14px;
+}
