@@ -18,26 +18,27 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { Auth } from '../../../interfaces/auth.interface';
 
 @Component({
-    selector: 'app-auth-form',
-    imports: [
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatTooltipModule,
-    ],
-    templateUrl: './auth-form.component.html',
-    styleUrl: './auth-form.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-auth-form',
+  imports: [
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatTooltipModule,
+  ],
+  templateUrl: './auth-form.component.html',
+  styleUrl: './auth-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();
 
   readonly dialogRef = inject(MatDialogRef<AuthFormComponent>);
-  readonly data: any = inject(MAT_DIALOG_DATA);
+  readonly data: { user: Auth } = inject(MAT_DIALOG_DATA);
 
   get messageTooltip(): string {
     return this.data.user

@@ -6,12 +6,16 @@ import {
   OnInit,
 } from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../../../services/users.service';
 import { CreateUserFormComponent } from '../../forms/create-user-form/create-user-form.component';
 import { User } from '../../../interfaces/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { UsersActions } from './store/users.action';
+import { selectUsers } from './store/users.selector';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { UsersApiService } from '../../../services/api-services/users-api.service';
 
 @Component({
   selector: 'app-user-list',
@@ -22,13 +26,16 @@ import { Observable } from 'rxjs';
 })
 export class UserListComponent implements OnInit {
   private readonly dialog: MatDialog = inject(MatDialog);
-  readonly userService = inject(UsersService);
-
-  public readonly users$: Observable<User[]> = this.userService.users$;
+  readonly usersApiService = inject(UsersApiService);
+  private readonly store = inject(Store);
+  public readonly users$: Observable<User[]> = this.store.select(selectUsers);
+  private snakeBarMessageSubject$ = new BehaviorSubject<string>('');
+  message$ = this.snakeBarMessageSubject$.asObservable();
+  private _snackBar = inject(MatSnackBar);
 
   ngOnInit() {
-    this.userService.usersApiService.getUsers().subscribe((users) => {
-      this.userService.setUsers(users);
+    this.usersApiService.getUsers().subscribe((users) => {
+      this.store.dispatch(UsersActions.set({ users: users }));
     });
   }
 
@@ -42,16 +49,21 @@ export class UserListComponent implements OnInit {
       .afterClosed()
       .subscribe((user: User) => {
         if (!user) return;
-        this.userService.createUser({
-          id: new Date().getTime(),
-          name: user.name,
-          email: user.email,
-          phone: user.phone,
-          website: user.website,
-          company: {
-            name: user.company.name,
-          },
-        });
+        this.store.dispatch(
+          UsersActions.create({
+            user: {
+              id: new Date().getTime(),
+              name: user.name,
+              email: user.email,
+              phone: user.phone,
+              website: user.website,
+              company: {
+                name: user.company.name,
+              },
+            },
+          })
+        );
+        this.showSnackBarMessage('Новый пользователь успешно добавлен');
       });
   }
 
@@ -65,11 +77,20 @@ export class UserListComponent implements OnInit {
       .afterClosed()
       .subscribe((editedUser: User) => {
         if (!editedUser) return;
-        this.userService.editUser(editedUser);
+        this.store.dispatch(UsersActions.edit({ user: editedUser }));
+        this.showSnackBarMessage('Пользователь успешно редактирован');
       });
   }
 
   deleteUser(id: number) {
-    this.userService.deleteUser(id);
+    this.store.dispatch(UsersActions.delete({ id: id }));
+    this.showSnackBarMessage('Пользователь успешно удален');
+  }
+
+  showSnackBarMessage(message: string) {
+    this.snakeBarMessageSubject$.next(message);
+    this.message$.subscribe((message) => {
+      this._snackBar.open(message, 'Close', { duration: 3000 });
+    });
   }
 }

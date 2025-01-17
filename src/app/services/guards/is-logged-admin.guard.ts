@@ -25,9 +25,12 @@ export const isLoggedAdminGuard: CanActivateFn = (route, state) => {
   if (isAdmin) {
     return allowedRoutesForAdmin.includes(targetRoute);
   } else if (isAuth && !isAdmin) {
+    if (targetRoute === 'admin') {
+      router.navigate(['']);
+      _snackBar.open('You are not admin', 'Close', { duration: 3000 });
+    }
     return allowedRoutesForUser.includes(targetRoute);
   } else {
-    console.log(targetRoute, isAdmin);
     if (targetRoute === 'admin') {
       router.navigate(['']);
       _snackBar.open('You are not admin', 'Close', { duration: 3000 });

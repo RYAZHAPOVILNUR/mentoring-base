@@ -1,13 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
-import { UsersActions } from './users.action';
 import { User } from '../../../../interfaces/user.interface';
+import { UsersActions } from './users.action';
 
-// Начальное состояние
 export const initialState: { users: User[] } = {
   users: [],
 };
 
-// Создание редюсера
 export const userReducer = createReducer(
   initialState,
 
