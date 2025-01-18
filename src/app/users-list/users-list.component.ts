@@ -54,56 +54,102 @@ export class UsersListComponent {
     readonly dialog = inject(MatDialog);
     private readonly store = inject(Store);
     public readonly users$ = this.store.select(selectUsers);
+    readonly cashedData = localStorage.getItem('users')
 
     constructor() {
-        this.usersApiService.getUsers().subscribe((response: any) => {
-            this.store.dispatch(UsersAction.set({ users: response }));
-        });
 
         this.users$.subscribe(
             users => console.log(users)
         );
 
-        console.log(this.users$)
+        if (this.cashedData) {
+            
+            console.log('данные есть в локал')
+            this.store.dispatch(UsersAction.set({users: JSON.parse(this.cashedData)}))
+            return
+
+        } else {
+            
+            console.log('Данных нет в локал')
+            this.usersApiService.getUsers().subscribe(
+            (response: any) => {
+                this.store.dispatch(UsersAction.set({ users: response }))
+                localStorage.setItem('users', JSON.stringify(response))
+            })
+        }
     };
     
     public deleteUser(id: number) {
         this.store.dispatch(UsersAction.delete({ id }));
+
+        const usersLocal = localStorage.getItem('users');
+        const users = usersLocal ? JSON.parse(usersLocal) : [];
+        const userId = users.findIndex((user: IUsers) => user.id === id)
+
+        if (userId !== -1) { 
+            users.splice(userId, 1);
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log(`Пользователь удален`);
+          } else {
+              console.log(`Пользователь с id ${id} не найден в local storage`);
+          }
+
+
     };
 
 
     public editUser(user: any) {
-        this.store.dispatch(UsersAction.edit({ 
-            user: {
-                id: user.id,
-                name: user.name,
-                phone: user.phone,
-                email: user.email,
-                website: user.website,
-                company: {
-                    name: user.companyName
-                }     
-            }
-        }));
-    };
+        const newUser = {
+            id: user.id,
+            name: user.name,
+            phone: user.phone,
+            email: user.email,
+            website: user.website,
+            company: {
+            name: user.companyName
+        }}
+        
+        this.store.dispatch(UsersAction.edit({ user: newUser }));
+
+        const usersLocal = localStorage.getItem('users');
+        const users = usersLocal ? JSON.parse(usersLocal) : [];
+        const userId = users.findIndex((userLS: IUsers) => userLS.id === user.id);
+
+        if (userId !== -1) {
+          
+            users[userId] = newUser;
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log(`Пользователь отредактирован`);
+       } else {
+
+           console.log(`Пользователь с id ${user.id} не найден в local storage`);
+       }
+   }
+
+
 
 
     public createUser(formData: any) {
         console.log('ДАННЫЕ ФОРМЫ:', formData);
-        this.store.dispatch(UsersAction.create({
-            user: {
+        const newUser = {
                 id: new Date().getTime(),
                 name: formData.name,
                 phone: formData.phone,
                 email: formData.email,
                 website: formData.website,
                 company: {
-                    name: formData.companyName
-                }   
-            }
-        })
-    )
-};
+                name: formData.companyName
+            }   
+        }
+
+        this.store.dispatch(UsersAction.create({ user: newUser }));
+        
+        const usersLocal = localStorage.getItem('users');
+        const users = usersLocal ? JSON.parse(usersLocal) : [];
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+
+    };
 
 
     openDialog(): void {
