@@ -3,6 +3,29 @@ import { HttpClient } from "@angular/common/http";
 import { Component, inject } from "@angular/core";
 
 
+export interface User {
+    id: number;
+    name: string;
+    username: string;
+    email:  string;
+    adress: {
+        street: string;
+        suit: string;
+        city: string;
+        zipcode: string;
+        geo: {
+            lat: string;
+            lng: string;
+        };
+    };
+    phone: string;
+    website: string;
+    company: {
+        name: string;
+        catchPhrase: string;
+        bs: string;
+    };
+}
 
 
 @Component(
@@ -17,11 +40,11 @@ import { Component, inject } from "@angular/core";
 
 export class UsersListComponent {
     readonly apiService = inject(HttpClient);
-    users: any = [];
+    users: User[] = [];
 
     constructor(){
         this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe(
-            (response) => {
+            (response: any) => {
                 this.users = response;
                 console.log('USERS:', this.users)
             }
@@ -30,7 +53,6 @@ export class UsersListComponent {
 
     deleteUser(id: number){
         this.users = this.users.filter(
-            // @ts-ignore
             item => {
                 if (id === item.id) {
                     return false
