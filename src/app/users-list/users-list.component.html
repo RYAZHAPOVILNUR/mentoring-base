@@ -1,5 +1,5 @@
 <div class="user-card-block">
-    <div *ngFor="let user of users" >
+    <div *ngFor="let user of usersService.users$ | async" >
        
        <app-user-card [user]="user" (deleteUser)="deleteUsers($event)" ></app-user-card>
 

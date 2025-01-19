@@ -1,29 +1,31 @@
-import { NgFor } from '@angular/common';
+import { AsyncPipe, NgFor } from '@angular/common';
 //import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { User } from '../models/User';
-import { UsersApiSevice } from '../users-api.service';
+import { UsersApiSevice } from '../services/users-api.service';
 import { UserCardComponent } from "./user-card/user-card.component";
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [NgFor, UserCardComponent],
+  imports: [NgFor, UserCardComponent, AsyncPipe],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiSevice);
+  readonly usersService = inject(UsersService)
 
-  users: User[] = [];
 
   constructor() {
     this.usersApiService.getUsers().subscribe((res: User[]) => {
-      this.users = res;
+      this.usersService.setUsers(res)
     });
   }
 
   deleteUsers(id: number) {
-    this.users = this.users.filter((item) => item.id !== id);
+    this.usersService.deleteUser(id)
   }
 }

@@ -1,5 +1,5 @@
 <div class="todo-card-block">
-    <div *ngFor="let todo of todos" >
+    <div *ngFor="let todo of todosService.todos$ | async" >
        
        <app-todo-card [todo]="todo" (deleteTodo)="deleteTodos($event)" ></app-todo-card>
 
