@@ -1,48 +1,26 @@
 import { NgFor } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  adress: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-}
+import { User } from '../models/User';
+import { UsersApiSevice } from '../users-api.service';
+import { UserCardComponent } from "./user-card/user-card.component";
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, UserCardComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
 })
 export class UsersListComponent {
-  readonly apiService = inject(HttpClient);
+  readonly usersApiService = inject(UsersApiSevice);
+
   users: User[] = [];
 
   constructor() {
-    this.apiService
-      .get<Array<User>>('https://jsonplaceholder.typicode.com/users')
-      .subscribe((res) => {
-        this.users = res;
-      });
+    this.usersApiService.getUsers().subscribe((res: User[]) => {
+      this.users = res;
+    });
   }
 
   deleteUsers(id: number) {

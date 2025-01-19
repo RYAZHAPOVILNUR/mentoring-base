@@ -5,29 +5,4 @@
   font-family:"Inter", serif;
 }
 
-.user-card-item {
-  width: 200px;
-  height: 200px;
-  //border: 1px solid black;
-  display: flex;
-  margin: 20px;
-  padding: 10px;
-  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.0705882353);
-  background-position-x: center;
-  height: 490px;
-  width: 309px;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.card-item-self-prices-to-basket-button {
-  width: 135px;
-  height: 45px;
-  border-width: 1px;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: #f0ba4e;
-  background-color: white;
-  gap: 10px;
-  size: 16px;
-}

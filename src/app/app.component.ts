@@ -52,6 +52,7 @@ export class AppComponent {
   aboutCompany = headerValue2
   headerItem3 = 'Каталог';
   headerItem4 = 'Пользователи';
+  headerItem5 = 'Тудушки';
 
   secondHeaderItem1 = 'Стройматериалы';
   secondHeaderItem2 = 'Инструменты';
