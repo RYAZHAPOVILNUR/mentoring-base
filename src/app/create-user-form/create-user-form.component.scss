@@ -1,0 +1,12 @@
+.create-form-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 300px;
+	margin-left: 180px;
+}
+
+.create-form-btn {
+	border: 1px solid black;
+	margin-top: 20px;
+	cursor: pointer;
+}

@@ -1,14 +1,3 @@
-// 1. Преобразовать данные из https://jsonplaceholder.typicode.com/users к виду чтобы у каждого пользователя отобразить только id и username
-// 2. Получить из данных выше список всех эмейлов
-// 3. Вывести пользователя с id === 9
-// 4. Вывести всех пользователей из города 'Lebsackbury'
-// 5. Вывести первых 5 пользователей
-// 6. Вывести всех пользователей в обратном порядке
-// 7. Посчитать сколько всего пользователей
-// 8. Вывести список вебсайтов пользователей которые содержат '.com'
-// 9. Вывести все username которые длиннее 12 символов
-// 10. Привести список всех username где каждый будет в нижнем регистре
-
 const users = [
 	{
 		id: 1,
@@ -242,32 +231,22 @@ const users = [
 	},
 ];
 
-// 1.
 const usersId = users.map(user => ({id: user.id, username: user.username}));
 
-// 2.
 const usersEmail = users.map(user => user.email);
 
-// 3.
 const usersFind = users.find(user => user.id === 9);
 
-// 4.
 const usersFromCity = users.filter(user => user.address.city === 'Lebsackbury');
 
-// 5.
 const usersFirstFive = users.slice(0, 5);
 
-// 6. 
 const usersRevers = users.toReversed();
 
-// 7.
 const usersTotal = users.length;
 
-// 8.
 const usersWebsite = users.filter(user => user.website.includes('.com')).map(user => user.website);
 
-// 9. 
 const usersLongName = users.filter(user => user.username.length > 12).map(user => user.username);
 
-// 10.
 const usersToLowerCase = users.map(user => user.username.toLowerCase()); 

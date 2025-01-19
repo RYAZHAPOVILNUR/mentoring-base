@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from '../../users.interface';
 
 @Component({
   selector: 'app-user-card',
@@ -11,13 +12,13 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 
 export class UserCardComponent {
   @Input()
-  user: any
+  user!: User;
   
   @Output()
-  deleteUser = new EventEmitter()
+  deleteUser = new EventEmitter();
   
   onDeleteUser(userId: number) {
-    this.deleteUser.emit(userId)
+    this.deleteUser.emit(userId);
   }
 
 }

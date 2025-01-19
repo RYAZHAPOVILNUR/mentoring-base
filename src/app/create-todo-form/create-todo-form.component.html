@@ -1,0 +1,9 @@
+<form class="create-form-container" action="" [formGroup]="formTodo" (ngSubmit)="submitForm()">
+	<p>Автор задачи:</p>
+	<input type="text" formControlName="userId">
+	<p>Текст задачи:</p>
+	<input type="text" formControlName="title">
+	<p>Задача завершена:</p>
+	<input type="text" formControlName="completed">
+	<button class="create-form-btn" [disabled]="formTodo.invalid" type="submit">Create Todo</button>
+</form>

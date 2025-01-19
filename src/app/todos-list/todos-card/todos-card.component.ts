@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Todo } from '../../todos.interface';
 
 @Component({
 	selector: 'app-todos-card',
@@ -11,12 +12,12 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 
 export class TodosCardComponent {
 	@Input()
-	todo: any
+	todo!: Todo;
 	
 	@Output()
-	deleteTodo = new EventEmitter()
+	deleteTodo = new EventEmitter();
 	
 	onDeleteTodo(todoId: number) {
-		this.deleteTodo.emit(todoId)
+		this.deleteTodo.emit(todoId);
 	}
 }

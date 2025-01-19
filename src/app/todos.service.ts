@@ -6,6 +6,7 @@ import { Todo } from "./todos.interface";
 
 export class TodosService {
 	todosSubject = new BehaviorSubject<Todo[]>([]);
+	todos = this.todosSubject.asObservable();
 	
 	setTodos(todos: Todo[]) {
 		this.todosSubject.next(todos);
@@ -24,9 +25,16 @@ export class TodosService {
 	}
 	
 	createTodo(todo: Todo) {
-		this.todosSubject.next(
-			[...this.todosSubject.value, todo]
-		)
+		const existingTodo = this.todosSubject.value.find(
+			(currentElement) => currentElement.title === todo.title
+		);
+		
+		if (existingTodo !== undefined) {
+			alert('Такая задача уже существует!');
+		} else {
+			this.todosSubject.next([todo, ...this.todosSubject.value])
+			alert('Задача успешно добавлена!')
+		}
 	}
 	
 	deleteTodo(id: number) {
