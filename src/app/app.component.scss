@@ -8,7 +8,6 @@
   width: 1920px;
   height: 80px;
   background-color:#4B565E;
-  
 }
 
 .header-container-grey-main{
@@ -24,12 +23,17 @@
 }
 
 .header-nav{
-  font-size: 16px;
-  font-weight: 600;
-  color: #F9FAFB;
+  
   display: flex;
   width: 273px;
   justify-content: space-between;
+}
+
+.header-nav a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #F9FAFB;
 }
 
 .header-container-grey-main-left{
@@ -46,6 +50,13 @@
   display: flex;
   align-items: center;
   margin-right: 40px;
+}
+
+.phone_namber a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
 }
 
 .header-icons{
@@ -76,13 +87,6 @@
   margin-right: 12px;
 }
 
-.phone-number{
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFFFFF;
-
-}
-
 .header-container-yellow{
   width: 1920px;
   height: 48px;
@@ -106,7 +110,6 @@
 
 .header2-nav{
   display: flex;
-  font-family: 'Inter', sans-serif; 
   font-size: 14px;
   font-weight: 600;
   color: #3C3C3B;
@@ -204,10 +207,6 @@
   left: 300px;
 }
 
-.header-head{
-font-family: 'Inter', sans-serif;     
-}
-
 .features {
   max-width: 1320px;
   margin: 0 auto;
@@ -229,19 +228,19 @@ font-family: 'Inter', sans-serif;
   max-width: 333px;
   max-height: 66px;
   flex-grow: 1;
-  font-size: 14px;
+  font-size: 18px;
   color: #A1A0A0;
   margin-left: 16px;
-  font-family: 'Inter', sans-serif;
   width: 500;
+  line-height: 21.78px;
 }
 
 .text strong{
   color: #3C3C3B;
-
+  
 }
 
-.icon img {
+.icons_features img {
   width: 72px;
   height: 72px;
 }
@@ -255,26 +254,26 @@ font-family: 'Inter', sans-serif;
   max-height: 423px;
   margin: 0 auto;
   margin-bottom: 56px;
-  }
+}
   
 .item-cards__pagination{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: auto;
-    font-size: 16px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: auto;
+  font-size: 16px;
 
-    &-button{
-      border: none;
-      background: none;
-      color: #A1A0A0;
+  &-button{
+    border: none;
+    background: none;
+    color: #A1A0A0;
   }
 
-  }
+}
 
-  .active-button{
-    color: #F0BA4E;
-    font-weight: 600;
-  }
+.active-button{
+  color: #F0BA4E;
+  font-weight: 600;
+}
 
 .item-cards__grid{
   display: flex;
@@ -286,7 +285,7 @@ font-family: 'Inter', sans-serif;
   height: 428px;
   box-shadow: 0px 20px 50px 0px #3C3C3B12;
   max-height: 421px;
-  background-image: url(/assets/image_19.png);
+  background-image: url("/assets/spray_gun.svg");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-y: bottom;
@@ -300,8 +299,8 @@ font-family: 'Inter', sans-serif;
 
 .item-cards__grid-left-text{
   font-size: 26px;
-  font-family: 'Inter';
   font-weight: 600;
+  margin: 16px 0 0 16px;
 }
 
 .item-cards__grid-left-action{
@@ -335,7 +334,6 @@ font-family: 'Inter', sans-serif;
 
 .item-cards__grid-right-block-text-1{
   font-size: 26px;
-  font-family: 'Inter';
   font-weight: 600;
   text-align: right;
   margin: 16px 16px 0 0;
@@ -351,12 +349,10 @@ font-family: 'Inter', sans-serif;
   bottom: 16px;
 }
 
-
 .item-cards__grid-right-block-text-2{
   font-size: 26px;
-  font-family: 'Inter';
-  font-weight: 600;
   margin: 16px 0 0 16px;
+  font-weight: 600;
 }
 
 .item-cards__grid-right-block-img-2{
@@ -374,7 +370,6 @@ font-family: 'Inter', sans-serif;
 
 .item-cards__grid-right-block-text-3{
   font-size: 26px;
-  font-family: 'Inter';
   font-weight: 600;
   margin: 16px 0 0 16px;
 }
@@ -394,10 +389,8 @@ font-family: 'Inter', sans-serif;
 
 .item-cards__grid-right-block-text-4{
   font-size: 26px;
-  font-family: 'Inter';
   font-weight: 600;
-  text-align: right;
-  margin: 16px 16px 0 0;
+  margin: 16px 0 0 16px;
 }
 
 
@@ -419,7 +412,6 @@ font-family: 'Inter', sans-serif;
 
 
 .item-cards_popular-productions-text{
-  font-family: 'Inter';
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -442,6 +434,12 @@ font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: space-between;
   
+}
+
+.item-cards__grid-right-block-img-4{
+  display: flex;
+  position: absolute;
+  bottom: 0;
 }
 
 .item-cards_popular-productions-card{
@@ -486,7 +484,6 @@ font-family: 'Inter', sans-serif;
 }
 
 .product-card{
-  font-family: 'Inter';
   padding: 24px;
 }
 
@@ -573,7 +570,6 @@ font-family: 'Inter', sans-serif;
   border-radius: 54px;
   padding: 10px 20px;
   font-size: 16px;
-  font-family: 'Inter';
   font-weight: 500;
   color: #333;
 }
@@ -594,7 +590,6 @@ font-family: 'Inter', sans-serif;
 }
 
 .banner-text{
-  font-family: 'Inter';
   margin: 28px 0 0 28px;
 
 }
@@ -654,7 +649,6 @@ font-family: 'Inter', sans-serif;
 .container_content-1-contacts{
   display: flex;
   justify-content: space-between;
-  font-family: 'Inter';
 }
 
 .container_content-1-contacts-1{
@@ -676,14 +670,18 @@ font-family: 'Inter', sans-serif;
 }
 
 .container_content-1-contacts-number-2{
+  margin-bottom: 8px;  
+}
+
+.container_content-1-contacts-number-2 a{
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 8px;
+  text-decoration: none;
 }
 
 .container_content-1-catalog{
-  font-family: 'Inter';
   display: flex;
   width: 249px;
   justify-content: space-between;
@@ -697,6 +695,11 @@ font-family: 'Inter', sans-serif;
   display: flex;
   width: 112px;
   justify-content: space-between;
+}
+
+.container_content-1-contacts-icon-1 img{
+  width: 24px;
+  height: 24px;
 }
 
 .container_content-2-quastion-1{
@@ -715,7 +718,6 @@ font-family: 'Inter', sans-serif;
 }
 
 .form-container {
-  font-family: 'Inter';
   display: flex;
   align-items: center;
   border: 1px solid #F0BA4E;
@@ -753,15 +755,15 @@ font-family: 'Inter', sans-serif;
 }
 
 .icon {
-  margin-left: 10px;
+  margin-left: 24px;
   color: #ffffff;
   display: flex;
   align-items: center;
 }
 
-.icon::before {
-  content: "✉";
-  font-size: 16px;
+.icon img{
+  width: 16px;
+  height: 16px;
 }
 
 .container_content-2-quastion-date{
