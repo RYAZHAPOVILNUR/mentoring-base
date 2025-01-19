@@ -3,11 +3,12 @@
       <div class="header-Left">
         <img src="/assets/Frame.svg" alt="Logo">
         <nav class="Sections-Bottom">
-          <div class="Bottom-Menu" *ngFor="let item of nav">
-            <div class="header-nav-item">{{item}}</div>
+          <div class="Bottom-Menu">
+            <div class="header-nav-item" *ngFor="let item of nav">{{item}}</div>
           </div>
-          <button routerLink="/users-list">К компоненту списка юзеров</button>
         </nav>
+        <button (click)="deleteCatalog()">Delete Catalog</button>
+        <button routerLink="/users-list">К компоненту списка юзеров</button>
       </div>
       <div class="header-Right">
         <div class="phone-bar">

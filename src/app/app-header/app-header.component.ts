@@ -10,6 +10,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './app-header.component.scss'
 })
 export class AppHeaderComponent {
-    readonly nav = ['Главная','О компании','Каталог'];
-
+    nav = ['Главная','О компании','Каталог'];
+    isDelete: boolean = false;
+    deleteCatalog() {
+      if (this.isDelete === false){
+        this.nav = ['Главная','О компании'];
+      } else {
+        this.nav = ['Главная','О компании','Каталог'];
+      }
+      this.isDelete = !this.isDelete;
+      return this.nav;
+    };
 }
