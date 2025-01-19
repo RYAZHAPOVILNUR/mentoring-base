@@ -10,15 +10,15 @@ export class AuthService {
   private isAdminSubject$ = new BehaviorSubject<boolean>(false);
   public isAuthSubject$ = new BehaviorSubject<boolean>(false);
 
-  get isAdminLoggedBox$() {
+  public get isAdminLoggedBox$() {
     return this.isAdminSubject$.value;
   }
 
-  get auth$() {
+  public get auth$() {
     return this.authSubject$.asObservable();
   }
 
-  setLocalStorageAuth(admin: Auth[]) {
+  public setLocalStorageAuth(admin: Auth[]) {
     this.isAdminSubject$.next(true);
     this.authSubject$.next(admin);
   }
@@ -33,12 +33,12 @@ export class AuthService {
     this.updateLocalStorage(this.authSubject$.value);
   }
 
-  exitAuth() {
+  public exitAuth() {
     this.authSubject$.next([]);
     this.updateLocalStorage(null);
   }
 
-  isAdmin() {
+  public isAdmin() {
     if (
       this.authSubject$.value[0] !== undefined &&
       this.authSubject$.value[0] !== null
@@ -53,7 +53,7 @@ export class AuthService {
     }
   }
 
-  updateLocalStorage(auth: Auth[] | null): void {
+  public updateLocalStorage(auth: Auth[] | null): void {
     localStorage.setItem('auth', JSON.stringify(auth));
   }
 }

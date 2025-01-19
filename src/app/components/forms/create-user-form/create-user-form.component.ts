@@ -37,10 +37,10 @@ import { User } from '../../../interfaces/user.interface';
 export class CreateUserFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();
 
-  readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
-  readonly data: { user: User } = inject(MAT_DIALOG_DATA);
+  private readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
+  public readonly data: { user: User } = inject(MAT_DIALOG_DATA);
 
-  get messageTooltip(): string {
+  public get messageTooltip(): string {
     return this.data.user
       ? 'Редактировать данные пользователя'
       : 'Добавить пользователя';
@@ -54,6 +54,7 @@ export class CreateUserFormComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
     }),
     phone: new FormControl('', [Validators.required]),
+    id: new FormControl(new Date().getTime(), [Validators.required]),
   });
 
   public ngOnInit(): void {
@@ -63,10 +64,7 @@ export class CreateUserFormComponent implements OnInit {
   }
 
   public applayChangesForm(): void {
-    this.dialogRef.close({
-      ...this.form.value,
-      id: this.data.user?.id,
-    });
+    this.dialogRef.close(this.form.value);
     this.form.reset();
   }
 }

@@ -7,13 +7,13 @@ import {
   Output,
 } from '@angular/core';
 import { User } from '../../../../interfaces/user.interface';
-import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeleteComponent } from '../../../notifications/confirm-delete/confirm-delete.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { DeleteDefisPipe } from '../../../../pipes/deleteDefis';
 import { BoxShadowDirective } from '../../../../directives/box-shadow.directive';
 import { MatIcon } from '@angular/material/icon';
+import { DialogService } from '../../../../services/dialog.service';
 
 @Component({
   selector: 'app-user-card',
@@ -34,7 +34,7 @@ export class UserCardComponent {
   @Output() deleteUser = new EventEmitter<number>();
   @Output() editUser = new EventEmitter();
 
-  private readonly dialog: MatDialog = inject(MatDialog);
+  private readonly dialog: DialogService = inject(DialogService);
 
   onDeleteUser(id: number) {
     this.dialog

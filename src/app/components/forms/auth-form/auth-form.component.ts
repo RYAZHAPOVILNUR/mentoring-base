@@ -37,10 +37,10 @@ import { Auth } from '../../../interfaces/auth.interface';
 export class AuthFormComponent implements OnInit {
   @Output() createUser = new EventEmitter();
 
-  readonly dialogRef = inject(MatDialogRef<AuthFormComponent>);
-  readonly data: { user: Auth } = inject(MAT_DIALOG_DATA);
+  private readonly dialogRef = inject(MatDialogRef<AuthFormComponent>);
+  public readonly data: { user: Auth } = inject(MAT_DIALOG_DATA);
 
-  get messageTooltip(): string {
+  public get messageTooltip(): string {
     return this.data.user
       ? 'Редактировать данные пользователя'
       : 'Добавить пользователя';
@@ -54,6 +54,7 @@ export class AuthFormComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
     }),
     phone: new FormControl('', [Validators.required]),
+    id: new FormControl(new Date().getTime(), [Validators.required]),
   });
 
   public ngOnInit(): void {
@@ -63,10 +64,7 @@ export class AuthFormComponent implements OnInit {
   }
 
   public applayChangesForm(): void {
-    this.dialogRef.close({
-      ...this.form.value,
-      id: this.data.user?.id,
-    });
+    this.dialogRef.close(this.form.value);
     this.form.reset();
   }
 }

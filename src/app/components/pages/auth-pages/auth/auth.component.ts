@@ -15,11 +15,11 @@ import { data } from './auth.config';
 import { authData } from './auth.config';
 
 @Component({
-    selector: 'app-auth',
-    imports: [],
-    templateUrl: './auth.component.html',
-    styleUrl: './auth.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-auth',
+  imports: [],
+  templateUrl: './auth.component.html',
+  styleUrl: './auth.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent {
   @Output() showAdminPage = new EventEmitter<boolean>(false);
@@ -31,7 +31,7 @@ export class AuthComponent {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
-  ngOnInit() {
+  public ngOnInit() {
     const isAuth = localStorage.getItem('auth');
     if (isAuth !== 'null' && isAuth !== null) {
       this.authService.setLocalStorageAuth(JSON.parse(isAuth));

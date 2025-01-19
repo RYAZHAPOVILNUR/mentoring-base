@@ -6,11 +6,11 @@ import { BgColorDirective } from '../../../directives/bg-color.directive';
 import { AuthComponent } from '../../pages/auth-pages/auth/auth.component';
 
 @Component({
-    selector: 'app-header',
-    imports: [NgIf, NgFor, RouterLink, DatePipe, BgColorDirective, AuthComponent],
-    templateUrl: './header.component.html',
-    styleUrl: './header.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-header',
+  imports: [NgIf, NgFor, RouterLink, DatePipe, BgColorDirective, AuthComponent],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   public menuItems = menuItems;
@@ -20,15 +20,15 @@ export class HeaderComponent {
   public isUserPage = false;
   public today: Date = new Date();
 
-  isAdminPageToggle(authState: boolean) {
+  public isAdminPageToggle(authState: boolean) {
     this.isAdminPage = authState;
   }
 
-  isUserPageToggle(authState: boolean) {
+  public isUserPageToggle(authState: boolean) {
     this.isUserPage = authState;
   }
 
-  changeMenuText() {
+  public changeMenuText() {
     this.menuItems = this.menuItems.map((item) =>
       this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
     );
