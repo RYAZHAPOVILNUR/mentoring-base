@@ -1,19 +1,13 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, Injectable } from "@angular/core";
 import { TodoApiService } from "../todos-api.service";
-import { TodoCardComponent } from "./todo-card.component";
+import { TodosCardComponent } from "./todo-card.component";
 import { NgFor } from "@angular/common";
-
-export interface Todo {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
-}
+import { Todo,} from "./todos-interface";
 
 @Component({
     selector: 'app-todos-list',
     standalone: true,
-    imports: [TodoCardComponent, NgFor],
+    imports: [TodosCardComponent, NgFor],
     templateUrl: './todos-list.component.html',
     styleUrl: './todos-list.component.scss'
 })
@@ -31,13 +25,7 @@ export class TodosListComponent {
 
     deleteTodo(id: number){
         this.todos = this.todos.filter(
-            todo => {
-                if (id === todo.id){
-                    return false
-                } else {
-                    return true;
-                }
-            }
+            todo => todo.id !== id
         )
     }
 }
