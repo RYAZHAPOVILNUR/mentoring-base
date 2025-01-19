@@ -43,8 +43,8 @@ export class UsersListComponent {
     users: User[] = [];
 
     constructor(){
-        this.apiService.get('https://jsonplaceholder.typicode.com/users').subscribe(
-            (response: any) => {
+        this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
+            (response: User[]) => {
                 this.users = response;
                 console.log('USERS:', this.users)
             }

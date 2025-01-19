@@ -1,0 +1,48 @@
+<div class="header">
+    <div class="header-container">
+      <div class="header-Left">
+        <img src="/assets/Frame.svg" alt="Logo">
+        <nav class="Sections-Bottom">
+          <div class="Bottom-Menu" *ngFor="let item of nav">
+            <div class="header-nav-item">{{item}}</div>
+          </div>
+          <button routerLink="/users-list">К компоненту списка юзеров</button>
+        </nav>
+      </div>
+      <div class="header-Right">
+        <div class="phone-bar">
+          <img src="/assets/Phone.svg" alt="Phone">
+          <div class="Phone-Number">+7 (965) 084-29-29</div>
+        </div>
+        <div class="heart">
+          <img src="/assets/heart 1.svg" alt="Heart-1">
+        </div>
+        <button class="Frame-3">
+            <img src="/assets/Mask group.svg" alt="Busket-Logo">
+            <span class="Busket-Text">Пусто</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="Light-TopBar">
+    <div class="Light-Container">
+      <div class="Frame-5">
+        <img src="/assets/light.svg" alt="Catalog-Logo">
+        <div class="Catalog">Каталог</div>
+      </div>
+      <div class="Select">
+        <div class="Select-Materials">Стройматериалы</div>
+        <div class="Select-Tools">Инструменты</div>
+        <div class="Select-Electric">Электрика</div>
+        <div class="Select-Interier">Интерьер и одежда</div>
+      </div>
+      <div class="Search-Area">
+        <input type="search" placeholder="Поиск, например Круг зачистной">
+        <img src="/assets/Search.svg" alt="Search-Logo">
+      </div>
+      <div class="Location">
+        <img src="/assets/Location.svg" alt="Location-Logo">
+        <div class="Location-City">Москва</div>
+      </div>
+    </div>
+  </div>
