@@ -1,43 +1,34 @@
-import { NgFor } from "@angular/common";
+import { AsyncPipe, NgFor } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component, inject } from "@angular/core";
 import { UsersApiService } from "../users-api.servise";
 import { UserCardComponent } from "./user-card/user-card.component";
+import { ChangeDetectionStrategy } from "@angular/core";
+import { UsersService } from "../users.service";
+import { User } from "./user";
 
-export interface Luser {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
 @Component ({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent]
+  imports: [NgFor, UserCardComponent, AsyncPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class UsersListComponent {
   readonly usersApiServise = inject(UsersApiService);
-  users: Luser[] = [];
+  readonly usersService = inject(UsersService);
 
   constructor () {
     this.usersApiServise.getUsers().subscribe(
-      (response: Object) => {
-        this.users = response as Luser[];
+      (response: User[]) => {
+        this.usersService.setUsers(response);
       }
     )
   }
-  deleteUser (id: number) {
-    this.users = this.users.filter(
-      user => {
-        if (id === user.id) {
-           return false;
-          } else {
-            return true;
-        }
-      }
-    )
+
+  deleteUser (id: User) {
+    this.usersService.deleteUser(id)
   }
 }
