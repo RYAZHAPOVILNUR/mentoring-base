@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
-import { Todo } from "../../todos-list.component";
+import { ITodo } from "../../../interfaces/todos.interface";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from "@angular/material/select";
 
@@ -33,7 +33,7 @@ export class EditTodoDialogComponent {
     createTodo = new EventEmitter
     
 
-    readonly data = inject<{todo: Todo}>(MAT_DIALOG_DATA);
+    readonly data = inject<{todo: ITodo}>(MAT_DIALOG_DATA);
     readonly dialogRef = inject(MatDialogRef);
 
 

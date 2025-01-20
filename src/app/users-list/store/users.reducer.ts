@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { IUsers } from "../users-list.component";
+import { IUsers } from "../../interfaces/users.interface";
 import { UsersAction } from "./user.actions";
 
 const initialState: { users: IUsers[] } = {

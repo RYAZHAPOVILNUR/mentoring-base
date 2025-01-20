@@ -5,7 +5,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
-import { IUsers } from "../users-list.component";
+import { IUsers} from "../../interfaces/users.interface";
 
 @Component({
     selector: 'app-create-user-dialog',

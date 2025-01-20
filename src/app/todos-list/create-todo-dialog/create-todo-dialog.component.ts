@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
-import { Todo, TodosListComponent } from "../todos-list.component";
+import { TodosListComponent } from "../todos-list.component";
+import { ITodo } from "../../interfaces/todos.interface";
 import { MatIcon } from "@angular/material/icon";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
@@ -30,7 +31,7 @@ import {MatRadioModule} from '@angular/material/radio';
 })
 
 export class CreateTodoDialogComponent {
-    readonly data = inject<{todo: Todo}>(MAT_DIALOG_DATA);
+    readonly data = inject<{todo: ITodo}>(MAT_DIALOG_DATA);
     readonly dialogRef = inject(MatDialogRef);
 
 

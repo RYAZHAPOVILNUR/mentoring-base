@@ -1,14 +1,14 @@
 import { createActionGroup, props } from "@ngrx/store";
-import { Todo } from "../todos-list.component";
+import { ITodo } from "../../interfaces/todos.interface";
 
 export const TodosActions  = createActionGroup({
     source: 'Todos',
     events: {
-        'set': props<{todos: Todo[]}>(),
+        'set': props<{todos: ITodo[]}>(),
 
-        'edit': props<{todo: Todo}>(),
+        'edit': props<{todo: ITodo}>(),
 
-        'create': props<{todo: Todo}>(),
+        'create': props<{todo: ITodo}>(),
 
         'delete': props<{id: number}>(),
     },

@@ -1,5 +1,5 @@
 import { createSelector } from "@ngrx/store";
-import { IUsers } from "../users-list.component";
+import { IUsers } from "../../interfaces/users.interface";
 
 interface UserState {
     users: IUsers[];

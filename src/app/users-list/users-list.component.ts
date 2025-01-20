@@ -9,31 +9,9 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { Store } from "@ngrx/store";
 import { UsersAction } from "./store/user.actions";
 import { selectUsers } from "./store/users.selectors";
+import { IUsers } from "../interfaces/users.interface";
+import { take } from "rxjs";
  
-export interface IUsers {
-    id: number,
-    name: string,
-    username?: string,
-    email: string,
-    address?: {
-        street: string,
-        suite: string,
-        city: string,
-        zipcode: string,
-        geo: {
-            lat: string,
-            lng: string
-        }
-    },
-    phone?: string,
-    website: string,
-    company: {
-        name: string,
-        catchPhrase?: string,
-        bs?: string
-    }
-}
-
 
 @Component({
     selector: 'app-users-list',
@@ -58,7 +36,7 @@ export class UsersListComponent {
 
     constructor() {
 
-        this.users$.subscribe(
+        this.users$.pipe(take(1)).subscribe(
             users => console.log(users)
         );
 
@@ -71,7 +49,7 @@ export class UsersListComponent {
         } else {
             
             console.log('Данных нет в локал')
-            this.usersApiService.getUsers().subscribe(
+            this.usersApiService.getUsers().pipe(take(1)).subscribe(
             (response: any) => {
                 this.store.dispatch(UsersAction.set({ users: response }))
                 localStorage.setItem('users', JSON.stringify(response))
@@ -157,7 +135,7 @@ export class UsersListComponent {
               data: 1234312423,
             });
         
-            dialogRef.afterClosed().subscribe(createResult => {
+            dialogRef.afterClosed().pipe(take(1)).subscribe(createResult => {
               console.log('МОДАЛКА ЗАКРЫТА', createResult);
               if (!createResult) return;
               this.createUser(createResult)

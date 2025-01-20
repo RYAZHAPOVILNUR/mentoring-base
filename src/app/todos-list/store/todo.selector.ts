@@ -1,8 +1,8 @@
 import { createSelector } from "@ngrx/store";
-import { Todo } from "../todos-list.component";
+import { ITodo } from "../../interfaces/todos.interface";
 
 interface TodoState {
-    todos: Todo[];
+    todos: ITodo[];
 }
 
 interface AppState {

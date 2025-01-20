@@ -1,8 +1,8 @@
 import { createReducer, on } from "@ngrx/store";
-import { Todo } from "../todos-list.component";
+import { ITodo } from "../../interfaces/todos.interface";
 import { TodosActions } from "./todo.actions";
 
-const initialState: { todos: Todo[] } = {
+const initialState: { todos: ITodo[] } = {
     todos: [],
 }
 

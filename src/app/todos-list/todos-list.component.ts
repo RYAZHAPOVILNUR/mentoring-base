@@ -9,13 +9,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { Store } from "@ngrx/store";
 import { selectTodos } from "./store/todo.selector";
 import { TodosActions } from "./store/todo.actions";
+import { ITodo } from "../interfaces/todos.interface";
+import { take } from "rxjs";
 
-export interface Todo {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
-}
 
 
 @Component({
@@ -43,16 +39,8 @@ export class TodosListComponent {
 
 
     constructor() {
-        // this.todosApiService.getTodos().subscribe(
-        //     (response: any) => {
-        //         // console.log(response)
-        //         this.store.dispatch(TodosActions.set({ todos: response }))
-        //     }
-        // )
 
-        // console.log(this.cashedData, 'локальные данные')
-
-        this.todos$.subscribe(
+        this.todos$.pipe(take(1)).subscribe(
             todos => console.log(todos)
         )
 
@@ -65,7 +53,7 @@ export class TodosListComponent {
         } else {
 
             console.log('Данных нет в локал')
-            this.todosApiService.getTodos().subscribe(
+            this.todosApiService.getTodos().pipe(take(1)).subscribe(
                 (response: any) => {
                     this.store.dispatch(TodosActions.set({ todos: response }))
                     localStorage.setItem('todos', JSON.stringify(response))
@@ -81,7 +69,7 @@ export class TodosListComponent {
 
         const todosLocal = localStorage.getItem('todos');
             const todos = todosLocal ? JSON.parse(todosLocal) : [];
-            const todoId = todos.findIndex((user: Todo) => user.id === id)
+            const todoId = todos.findIndex((user: ITodo) => user.id === id)
             if (todoId !== -1) { 
 
                 todos.splice(todoId, 1);
@@ -122,7 +110,7 @@ export class TodosListComponent {
     
         const todosLocal = localStorage.getItem('todos');
         const todos = todosLocal ? JSON.parse(todosLocal) : [];
-        const todoId = todos.findIndex((todoLS: Todo) => todoLS.id === todo.id);
+        const todoId = todos.findIndex((todoLS: ITodo) => todoLS.id === todo.id);
             if (todoId !== -1) {
                 
                 todos[todoId] = newTodo;
@@ -133,18 +121,13 @@ export class TodosListComponent {
             }
     };
 
-    public updateLocalStorage(todo: Todo[]): void {
-        localStorage.setItem('todos', JSON.stringify(todo));
-      }
-
-    
 
     openDialog(): void {
         const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
             data: 1234312423,
         });
             
-        dialogRef.afterClosed().subscribe(createResult => {
+        dialogRef.afterClosed().pipe(take(1)).subscribe(createResult => {
             console.log('МОДАЛКА ЗАКРЫТА', createResult);
                 if (!createResult) return;
                 this.createTodo(createResult)

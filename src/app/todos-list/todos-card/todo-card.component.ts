@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output} from "@angular/core";
-import { Todo } from "../todos-list.component";
+import { ITodo } from "../../interfaces/todos.interface";
 import { MatCardModule, MatCardTitle } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatTooltipModule } from "@angular/material/tooltip";
@@ -8,6 +8,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { DeleteTodoDialogComponent } from "./delete-todo-dialog/delete-todo-dialog.component";
 import { EditTodoDialogComponent } from "./edit-todo-dialog/edit-todo-dialog.component";
 import { BoolaenTransform } from "../../pipes/boolean-transform.pipe";
+import { take } from "rxjs";
 
 @Component({
     selector: 'app-todo-card',
@@ -28,7 +29,7 @@ import { BoolaenTransform } from "../../pipes/boolean-transform.pipe";
 export class TodoCardComponent {
     
     @Input()
-    todo!: Todo;
+    todo!: ITodo;
 
     @Output()
     deleteTodo = new EventEmitter()
@@ -44,7 +45,7 @@ export class TodoCardComponent {
             data: {todo: this.todo},
         });
         
-        dialogRef.afterClosed().subscribe(editResult => {
+        dialogRef.afterClosed().pipe(take(1)).subscribe(editResult => {
             console.log('МОДАЛКА ЗАКРЫТА, ЗНАЧЕНИЕ ФОРМЫ -', editResult );
             if (!editResult) return;
             this.editTodo.emit(editResult)
