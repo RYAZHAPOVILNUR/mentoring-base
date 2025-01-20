@@ -1,5 +1,6 @@
-import { createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { User } from "../../user.interface.ts";
+import { userReducer } from "./user.reducer.js";
 
 interface UserState {
     users: User[];
@@ -9,9 +10,9 @@ interface AppState {
     users: UserState;
 }
 
-const selectUsersFeature = (state: AppState) => state.users
+const {selectUsersState} = userReducer
 
 export const selectUsers = createSelector(
-    selectUsersFeature,
+    selectUsersState,
     (state: UserState) => state.users
 )

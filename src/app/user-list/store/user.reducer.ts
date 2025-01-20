@@ -1,4 +1,4 @@
-import { createReducer, on } from "@ngrx/store";
+import { createFeature, createReducer, on } from "@ngrx/store";
 import { User } from "../../user.interface.ts.js";
 import { UsersActions } from "./users.actions.js";
 
@@ -10,22 +10,25 @@ const initialState: UserState = {
     users: [],
 };
 
-export const userReducer = createReducer(
-    initialState,
-    on(UsersActions.set, (state, payload) => ({
-        ...state,
-        users: payload.users
-    })),
-    on(UsersActions.edit, (state, {user}) => ({
-        ...state,
-        users: state.users.map((t) => (t.id === user.id ? user : t))
-    })),
-    on(UsersActions.create, (state, payload) => ({
-        ...state,
-        users: [...state.users, payload.user]
-    })),
-    on(UsersActions.delete, (state, payload) =>({
-        ...state,
-        users: state.users.filter(user => user.id !== payload.id)
-    }))
-)
+export const userReducer = createFeature({
+    name: "users",
+    reducer: createReducer(
+        initialState,
+        on(UsersActions.set, (state, payload) => ({
+            ...state,
+            users: payload.users
+        })),
+        on(UsersActions.edit, (state, {user}) => ({
+            ...state,
+            users: state.users.map((t) => (t.id === user.id ? user : t))
+        })),
+        on(UsersActions.create, (state, payload) => ({
+            ...state,
+            users: [...state.users, payload.user]
+        })),
+        on(UsersActions.delete, (state, payload) =>({
+            ...state,
+            users: state.users.filter(user => user.id !== payload.id)
+        }))
+    )
+})

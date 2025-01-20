@@ -8,6 +8,7 @@ import { provideStore } from '@ngrx/store';
 import { userReducer } from "./user-list/store/user.reducer";
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { todoReducer } from "./todos-list/store/todo.reducer";
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,9 +17,9 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync("noop"),
     provideAnimationsAsync(),
     provideStore({
-      users: userReducer,
-      todos: todoReducer,
+        todos: todoReducer,
     }),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideEffects()
 ]
 };
