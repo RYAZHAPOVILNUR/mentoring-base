@@ -1,8 +1,0 @@
-<div class="container"><button class="todo-list-create-button" mat-raised-button (click)="createTodo()">Создать Todo</button></div>
-<div class="container">
-   <div class="todos-list">
-        <div *ngFor="let todo of todos$ | async">
-           <app-todos-card [todo]="todo" (editTodo)="editTodo($event)" (deleteTodo)="deleteTodo($event)"></app-todos-card>
-        </div>
-   </div>
-</div>
