@@ -1,8 +1,8 @@
 <header class="header">
   <div class="header-left">
-     <div class="header-logo">
+     <a class="header-logo" href="/"> 
        <img src="/assets/Frame.svg" alt="логотип сайта">
-     </div>
+     </a>
      <nav class="header-nav">
        <div class="header-nav-item">Главная</div>
        <div class="header-nav-item">О компании</div>
@@ -10,10 +10,12 @@
      </nav> 
    </div>
    <div class="header-right"> 
-     <img class="icon" src="/assets/Phone.svg" alt=""/>
-     <div class="header-right-item">+7 (965) 084-29-29</div>
-     <div class="header-right-item"><img src="/assets/heart1.svg" alt="" /></div> 
-     <button  class="header-right-item header-right basket">
+      <img class="icon" src="/assets/Phone.svg" alt=""/>
+     <a class="header-right-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
+     <div class="header-right-item-heart">
+      <img src="/assets/heart_2.svg" alt="heart"/>
+   </div> 
+     <button type="button" class="header-right-item header-right basket">
        <img class="icon" src="/assets/Mask group.svg" alt=""/>
        <span class="basket-text">Пусто</span>
      </button>
@@ -51,21 +53,23 @@
  
      <div class="advantages">
        <div class="item-advantages">
-         <img class="img-item-advantages" src="/assets/Mask_group.png" alt="Большой ассортимент"/>
+         <img class="img-item-advantages" src="/assets/Mask_group_1.png" alt="Большой ассортимент"/>
          <div class="item-advantages-text">
            <span class="verh-text">Большой ассортимент</span>
            <span class="niz-text">строительных материалов всегда в наличии</span>
          </div>
        </div>
+
        <div class="item-advantages"> 
-         <img class="img-item-advantages" src="/assets/Mask group (1).png" alt="Достовка сторойматериалов">
+         <img class="img-item-advantages" src="/assets/Mask_group_2.png" alt="Достовка сторойматериалов">
          <div class="item-advantages-text">
            <span class="verh-text">Доставка сторойматериалов1</span>
            <span class="niz-text">в течении четырех часов или в любое удобное время</span>
           </div>
         </div>
+
         <div class="item-advantages">
-         <img class="img-item-advantages" src="/assets/Mask group (2).png" alt="Многоуровневая сиситема управления"/>
+         <img class="img-item-advantages" src="/assets/Mask_group_3.png" alt="Многоуровневая сиситема управления"/>
         <div class="item-advantages-text">
          <span class="verh-text">Многоуровневая сиситема управления</span>
          <span class="niz-text">качеством по стандарту ISO 9001</span>
@@ -76,11 +80,11 @@
    <div class="content-container">
      <div class="item-cards">
        <div class="item-cards__pagination">
-       <button class="item-cards__pagination-button active-button">1</button>
-       <button class="item-cards__pagination-button">2</button>
-       <button class="item-cards__pagination-button">3</button>
-       <button class="item-cards__pagination-button">4</button>
-       <button class="item-cards__pagination-button">5</button>
+       <button type="button" class="item-cards__pagination-button active-button">1</button>
+       <button type="button" class="item-cards__pagination-button">2</button>
+       <button type="button" class="item-cards__pagination-button">3</button>
+       <button type="button" class="item-cards__pagination-button">4</button>
+       <button type="button" class="item-cards__pagination-button">5</button>
      </div>
      <div class="item-cards__grid">
        <div class="item-cards__grid-left">
@@ -89,7 +93,7 @@
         </div>
         <div class="item-cards__grid-left-action">
            <span class="text-span"> Перейти в каталог</span>
-           <a class="item-cards__grid-left-action-link">
+           <a class="item-cards__grid-left-action-link" href="">
            <img src="/assets/Frame_20.svg" alt="">
           </a>
        </div>
@@ -101,7 +105,7 @@
           </div>
          <div class="item_cards__grid-right-block-action-1">
            <span class="text-span"> Перейти в каталог</span>
-           <a class="item-cards__grid-left-action-link-1">
+           <a class="item-cards__grid-left-action-link-1" href="">
            <img src="/assets/Frame_20.svg" alt="">
           </a>
           </div>
@@ -112,7 +116,7 @@
          </div>
          <div class="item_cards__grid-right-block-action-2">
            <span class="text-span"> Перейти в каталог</span>
-           <a class="item-cards__grid-left-action-link-2">
+           <a class="item-cards__grid-left-action-link-2" href="">
              <img src="/assets/Frame_20.svg" alt="">
            </a>
          </div>
@@ -123,7 +127,7 @@
            </div>
            <div class="item_cards__grid-right-block-action-3">
              <span class="text-span"> Перейти в каталог</span>
-             <a class="item-cards__grid-left-action-link-3">
+             <a class="item-cards__grid-left-action-link-3" href="">
                <img src="/assets/Frame_20.svg" alt="">
              </a>
            </div>
@@ -135,7 +139,7 @@
             </div>
            <div class="item_cards__grid-right-block-action-4">
              <span class="text-span"> Перейти в каталог</span>
-             <a class="item-cards__grid-left-action-link-4">
+             <a class="item-cards__grid-left-action-link-4" href="">
              <img src="/assets/Frame_20.svg" alt="">
             </a>
             </div>
@@ -174,12 +178,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -206,12 +210,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -239,12 +243,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -270,12 +274,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -319,12 +323,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -350,12 +354,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -379,12 +383,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -408,12 +412,12 @@
          <div class="selektor">
            <span class="selektor-text">Количество</span>
            <div class="quantity-plus__minus-1">
-             <button class="quantity-plus__minus-">-</button>
+             <button type="button" class="quantity-plus__minus-">-</button>
              <span class="quantity-1">1</span>
-             <button class="quantity-plus__minus">+</button>
+             <button type="button" class="quantity-plus__minus">+</button>
            </div>
          </div>
-         <button class="basket-cart">В корзину
+         <button type="button" class="basket-cart">В корзину
            <div class="basket-cart-text"></div>
          </button>
        </div>
@@ -480,7 +484,7 @@
        </div>
        <div class="bottom-bar">
          <div class="bottom-bar-left">
-           <img src="/assets/Mini Button.svg" alt="f">
+           <img src="/assets/Mini_Button.svg" alt="f">
            <img src="/assets/youtube.svg" alt="u">
            <img src="/assets/Social_Icons.svg" alt="w">
          </div>

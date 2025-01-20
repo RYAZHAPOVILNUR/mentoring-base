@@ -29,14 +29,22 @@
 .header-right {
     display: flex;
     align-items: center;
+    height: 80px;
 }
 
 .header-right-item {
-    margin-right: 40px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header-right-item-heart {
+    width: 24px;
+    height: 24px;
+    margin: 40px;
 }
 
 .icon {
-    margin-right: 12px;
+    margin-right: 10px;
 }
 
 .menu {
@@ -57,7 +65,7 @@
     border-width: 1px;
     border-style: solid;
     padding:10px 20px;
-    width: 106px;
+    width: 126px;
     height: 48px;
 }
 
