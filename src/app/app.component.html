@@ -5,11 +5,10 @@
         <div class ="header-logo">
           <img src="/assets/logo.svg" alt="логотип сайта">
           </div>
-          <nav class="header-nav">
-            <a href="">Главная</a>
-            <a href="">О компании</a>
-            <a href="">Каталог</a>
-          </nav>
+          <div class="header-nav-main">
+            <nav class="header-nav" *ngFor="let item of menuItems">{{ item }}</nav>
+            <button (click)="changeMenuText()">Изменить текст</button>
+          </div> 
       </div>
       <div class="header-container-grey-main-right">
         <div class="phone_namber">
@@ -71,7 +70,8 @@
   </div>
 </div>
 <div class="banner-container">
-  <div class="banner-img">
+  <div class="home-screen" *ngIf="isShowCatalog">
+    <div class="banner-img">
     <img src="/assets/backgraund_banner.png" alt="backgraund-large" style="width: 100%;">
   </div>
   <div class="banner-overlay">
@@ -81,7 +81,11 @@
   <div class="banner-container-text">
     <div>Инструмент для вашего<br>бизнеса</div>
   </div>
+  </div>
+  
+  <button (click)="isShowCatalog=!isShowCatalog">Скрыть/показать картинку</button>
 </div>
+
 <div class="features">
   <div class="feature">
       <div class="icons_features">
@@ -114,11 +118,11 @@
 <div class="content-container">
   <div class="item-cards">
     <div class="item-cards__pagination">
-      <button class="item-cards__pagination-button active-button">1</button>
-      <button class="item-cards__pagination-button">2</button>
-      <button class="item-cards__pagination-button">3</button>
-      <button class="item-cards__pagination-button">4</button>
-      <button class="item-cards__pagination-button">5</button>
+      <button *ngFor="let item of newPages"
+        class="item-cards_pagination-button active-button">
+  {{item}}
+</button>
+
     </div>
     <div class="item-cards__grid">
       <div class="item-cards__grid-left">

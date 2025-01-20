@@ -22,14 +22,13 @@
   margin-right: 40px;
 }
 
-.header-nav{
-  
+.header-nav-main{
   display: flex;
-  width: 273px;
+  width: 450px;
   justify-content: space-between;
 }
 
-.header-nav a{
+.header-nav{
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -261,6 +260,7 @@
   justify-content: flex-end;
   margin-right: auto;
   font-size: 16px;
+  border: none;
 
   &-button{
     border: none;
@@ -273,7 +273,9 @@
 .active-button{
   color: #F0BA4E;
   font-weight: 600;
+  border: none;
 }
+
 
 .item-cards__grid{
   display: flex;
@@ -390,7 +392,7 @@
 .item-cards__grid-right-block-text-4{
   font-size: 26px;
   font-weight: 600;
-  margin: 16px 0 0 16px;
+  margin: 16px 0px 0px 16px;
 }
 
 
