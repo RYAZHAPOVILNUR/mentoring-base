@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -177,3 +178,6 @@ template {
 [hidden] {
   display: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

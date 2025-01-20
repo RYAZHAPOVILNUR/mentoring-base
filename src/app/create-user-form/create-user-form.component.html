@@ -1,26 +1,98 @@
-<div style="margin: 30px;">
-    <form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitUserForm()">
-        <p>Name: </p>
-        <input type="text" class="form-input" formControlName="name">
-        <div class="alert" *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
-            <div *ngIf="form.controls['name'].errors">Имя введено некорректно!</div>
-        </div>
-        <p>Email: </p>
-        <input type="text"  class="form-input"  formControlName="email">
-        <div class="alert" *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
-            <div *ngIf="form.controls['email'].errors">email введен некорректно!</div>
-        </div>
-        <p>Website: </p>
-        <input type="text"  class="form-input"  formControlName="website">
-        <div class="alert" *ngIf="form.controls['website'].invalid && (form.controls['website'].dirty || form.controls['website'].touched)">
-            <div *ngIf="form.controls['website'].errors">website введен некорректно!</div>
-        </div>
-        <p>Company name: </p>
-        <input type="text"  class="form-input"  formControlName="companyName">
-        <div class="alert" *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)">
-            <div *ngIf="form.controls['companyName'].errors">company name введено некорректно!</div>
-        </div>
-        <button style="width: 150px; margin-top: 20px;" type="submit" [disabled]="form.invalid">CREATE USER</button>
-    </form>
-    
+<div style="margin: 30px">
+  <form
+    style="display: flex; flex-direction: column"
+    [formGroup]="form"
+    (ngSubmit)="submitUserForm()"
+  >
+    <mat-form-field class="example-full-width form-input">
+      <mat-label>Name:</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="name"
+        placeholder="Заголовок задачи"
+      />
+      <div
+        class="alert"
+        *ngIf="
+          form.controls['name'].invalid &&
+          (form.controls['name'].dirty || form.controls['name'].touched)
+        "
+      >
+        <mat-error *ngIf="form.controls['name'].errors"
+          >Имя введено некорректно!</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-input">
+      <mat-label>Email:</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="email"
+        placeholder="Заголовок задачи"
+      />
+      <div
+        class="alert"
+        *ngIf="
+          form.controls['email'].invalid &&
+          (form.controls['email'].dirty || form.controls['email'].touched)
+        "
+      >
+        <mat-error *ngIf="form.controls['email'].errors"
+          >Email введен некорректно!</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-input">
+      <mat-label>Website:</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="website"
+        placeholder="Заголовок задачи"
+      />
+      <div
+        class="alert"
+        *ngIf="
+          form.controls['website'].invalid &&
+          (form.controls['website'].dirty || form.controls['website'].touched)
+        "
+      >
+        <mat-error *ngIf="form.controls['website'].errors"
+          >Имя введено некорректно!</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-input">
+      <mat-label>Company name:</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="companyName"
+        placeholder="Заголовок задачи"
+      />
+      <div
+        class="alert"
+        *ngIf="
+          form.controls['companyName'].invalid &&
+          (form.controls['companyName'].dirty ||
+            form.controls['companyName'].touched)
+        "
+      >
+        <mat-error *ngIf="form.controls['companyName'].errors"
+          >Имя введено некорректно!</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      style="width: 150px; margin-top: 20px"
+      type="submit"
+      color="primary"
+      [disabled]="form.invalid"
+    >
+      CREATE USER
+    </button>
+  </form>
 </div>

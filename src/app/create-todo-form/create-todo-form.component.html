@@ -1,16 +1,41 @@
-<div style="margin: 30px;">
-    <form style="display: flex; flex-direction: column;" [formGroup]="form" (ngSubmit)="submitTodoForm()">
-        <p>Title: </p>
-        <input type="text" class="form-input" formControlName="title">
-        <div class="alert_todo" *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
-            <div *ngIf="form.controls['title'].errors">Заголовок введен некорректно!</div>
-        </div>
-        <p>Completed: </p>
-        <input type="checkbox"  class="form-input"  formControlName="completed">
-        <div class="alert" *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)">
-            <div *ngIf="form.controls['completed'].errors">email введен некорректно!</div>
-        </div>
-        <button style="width: 150px; margin-top: 20px;" type="submit" [disabled]="form.invalid">CREATE TODO</button>
-    </form>
-    
+<div style="margin: 30px">
+  <form
+    style="display: flex; flex-direction: column"
+    class="form-input"
+    [formGroup]="form"
+    (ngSubmit)="submitTodoForm()"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="title"
+        placeholder="Заголовок задачи"
+      />
+      <div
+        class="alert_todo"
+        *ngIf="
+          form.controls['title'].invalid &&
+          (form.controls['title'].dirty || form.controls['title'].touched)
+        "
+      >
+        <mat-error *ngIf="form.controls['title'].errors"
+          >Заголовок введен некорректно!</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <mat-checkbox class="example-margin" formControlName="completed"
+      >Check me!</mat-checkbox
+    >
+    <button
+      mat-raised-button
+      style="width: 150px; margin-top: 20px"
+      type="submit"
+      [disabled]="form.invalid"
+      color="primary"
+    >
+      CREATE TODO
+    </button>
+  </form>
 </div>
