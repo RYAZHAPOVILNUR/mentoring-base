@@ -42,24 +42,16 @@ export class UsersListComponent{
 
     constructor() {
         this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users')
-    .subscribe(
-        (response: any) => {
+        .subscribe((response: User[]) => {
             this.users = response;
-            console.log('USERS:',this.users )
-
-        }
-    );
-
+        });
     }
+    
 
     deleteUser(id: number) {
         this.users = this.users.filter(
             user => {
-                if (id ===user.id) {
-                    return false
-                } else {
-                    return true;
-                }
+                return id === user.id ? false : true;
             }
         )
     }
