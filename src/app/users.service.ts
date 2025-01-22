@@ -4,7 +4,8 @@ import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class UsersService {
-  usersSubject = new BehaviorSubject<User[]>([]);
+  private usersSubject = new BehaviorSubject<User[]>([]);
+  public users$ = this.usersSubject.asObservable();
 
   setUsers(users: User[]) {
     this.usersSubject.next(users);
@@ -14,11 +15,7 @@ export class UsersService {
     this.usersSubject.next(
       this.usersSubject.value.map(
         user => {
-          if(user.id === editedUser.id) {
-            return editedUser
-          } else {
-              return user
-          }
+          return user.id === editedUser.id ? editedUser : user
         }
       )
     )
@@ -30,16 +27,11 @@ export class UsersService {
     )
   }
 
-
   deleteUser(user: User) {
     this.usersSubject.next(
       this.usersSubject.value.filter(
         item => {
-          if (user.id === item.id) {
-            return false;
-          } else {
-              return true;
-          }
+          return user.id === item.id ? false : true
         }
       )
     )

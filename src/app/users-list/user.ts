@@ -1,6 +1,6 @@
 export interface User {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
+  id: 1,
+  name: "Leanne Graham",
+  username: "Bret",
+  email: "Sincere@april.biz",
 }

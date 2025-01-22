@@ -1,7 +1,7 @@
 <h1 style="margin-top: 50px;">КОМПОНЕНТ СПИСКА ЗАДАЧ</h1>
 
 <div style="display: flex; width: 100%; flex-wrap: wrap; gap: 20px">
-  <div *ngFor="let todo of todos">
+  <div *ngFor="let todo of TodosService.todosSubject | async">
     <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
   </div>
 </div>
