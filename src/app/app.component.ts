@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { headerComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
-
 
 const newPages = [5, 4, 3, 2, 1];
 
@@ -25,7 +24,7 @@ const upperCaseMenuItems = menuItems.map(
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'mentoring-first-project';
   
   readonly headerItem1 = 'Главная';
@@ -64,5 +63,9 @@ export class AppComponent {
     )
     
     this.isUpperCase = !this.isUpperCase
+  }
+  
+  ngOnInit(): void {
+    
   }
 }

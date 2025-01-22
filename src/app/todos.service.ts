@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Todo } from "./todos.interface";
 
 @Injectable({providedIn: 'root'})
 
-export class TodosService {
+export class TodosService implements OnInit {
 	todosSubject = new BehaviorSubject<Todo[]>([]);
 	todos = this.todosSubject.asObservable();
 	
@@ -49,5 +49,9 @@ export class TodosService {
 				}
 			)
 		)
+	}
+	
+	ngOnInit(): void {
+		
 	}
 }

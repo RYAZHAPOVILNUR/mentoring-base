@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from '../../todos.interface';
 
 @Component({
@@ -10,7 +10,7 @@ import { Todo } from '../../todos.interface';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class TodosCardComponent {
+export class TodosCardComponent implements OnInit {
 	@Input()
 	todo!: Todo;
 	
@@ -19,5 +19,9 @@ export class TodosCardComponent {
 	
 	onDeleteTodo(todoId: number) {
 		this.deleteTodo.emit(todoId);
+	}
+	
+	ngOnInit(): void {
+		
 	}
 }

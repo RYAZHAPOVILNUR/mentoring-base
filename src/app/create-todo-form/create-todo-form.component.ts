@@ -1,25 +1,20 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormGroup, ReactiveFormsModule, FormControl, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-
-export function completedValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'да' || value === 'нет') {
-      return null;
-    }
-    return { invalidCompleted: true};
-  };
-}
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { completedValidator } from './create-todo-form-validator.component';
 
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatIconModule],
   templateUrl: './create-todo-form.component.html',
   styleUrl: './create-todo-form.component.scss'
 })
 
-export class CreateTodoFormComponent {
+export class CreateTodoFormComponent implements OnInit {
   @Output()
   createTodo = new EventEmitter();
   
@@ -41,4 +36,7 @@ export class CreateTodoFormComponent {
     this.formTodo.reset()
   }
   
+  ngOnInit(): void {
+    
+  }
 }

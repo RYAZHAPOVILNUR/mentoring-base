@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 const newPages = [5, 4, 3, 2, 1];
 
@@ -12,8 +12,12 @@ const newPages = [5, 4, 3, 2, 1];
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   readonly newPages = newPages;
   
   isShowImage = true;
+  
+  ngOnInit(): void {
+    
+  }
 }

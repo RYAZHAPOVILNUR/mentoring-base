@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { TodosApiService } from '../todos-api.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosCardComponent } from './todos-card/todos-card.component';
@@ -16,7 +16,7 @@ import { CreateTodoFormComponent } from "../create-todo-form/create-todo-form.co
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class TodosListComponent {
+export class TodosListComponent implements OnInit {
 	readonly todosApiService = inject(TodosApiService);
 	readonly todosService = inject(TodosService)
 	
@@ -29,7 +29,7 @@ export class TodosListComponent {
 			}
 		)
 	}
-
+	
 	public deleteTodos(id: number) {
 		this.todosService.deleteTodo(id)
 	}
@@ -41,5 +41,9 @@ export class TodosListComponent {
 			userId: formItem.userId,
 			completed: formItem.completed,
 		})
+	}
+	
+	ngOnInit(): void {
+		
 	}
 }

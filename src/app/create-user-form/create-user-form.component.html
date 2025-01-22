@@ -1,13 +1,30 @@
-<form class="create-form-container" action="" [formGroup]="form" (ngSubmit)="submitForm()">
-	<p>Name:</p>
-	<input type="text" formControlName="name">
-	<p>Email:</p>
-	<input type="text" formControlName="email">
-	<p>Website:</p>
-	<input type="text" formControlName="website">
-	<p>Company name:</p>
-	<input type="text" formControlName="companyName">
-	<p>Phone:</p>
-	<input type="text" formControlName="phone">
-	<button class="create-form-btn" type="submit" [disabled]="form.invalid">Create User</button>
+<form class="create-form-container" action="" [formGroup]="form">
+	<mat-form-field>
+		<mat-label>Введите имя пользователя</mat-label>
+		<input matInput type="text" formControlName="name">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<mat-form-field>
+		<mat-label>Введите Email:</mat-label>
+		<input matInput type="text" formControlName="email">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<mat-form-field>
+		<mat-label>Введите Website:</mat-label>
+		<input matInput type="text" formControlName="website">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<mat-form-field>
+		<mat-label>Введите Company name:</mat-label>
+		<input matInput type="text" formControlName="companyName">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<button mat-stroked-button (click)="submitForm()" [disabled]="form.invalid" type="submit">Add user
+		<mat-icon>add</mat-icon>
+	</button>
 </form>
+

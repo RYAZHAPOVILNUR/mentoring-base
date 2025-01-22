@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { User } from "./users.interface";
 
 @Injectable({providedIn: 'root'})
 
-export class UsersService {
+export class UsersService implements OnInit {
 	usersSubject = new BehaviorSubject<User[]>([]);
 	
 	setUsers(users: User[]) {
@@ -47,6 +47,10 @@ export class UsersService {
 				}
 			)
 		)
+		
+	}
+	
+	ngOnInit(): void {
 		
 	}
 }

@@ -1,5 +1,5 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, OnInit } from "@angular/core";
 import { UserApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
@@ -16,7 +16,7 @@ import { User } from "../users.interface";
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class UsersListComponent {
+export class UsersListComponent implements OnInit {
 	readonly usersApiService = inject(UserApiService);
 	readonly usersService = inject(UsersService);
 	
@@ -28,7 +28,6 @@ export class UsersListComponent {
 				this.usersService.setUsers(response);
 			}
 		)
-		
 	}
 	
 	public deleteUser(id: number) {
@@ -41,10 +40,13 @@ export class UsersListComponent {
 			name: formData.name,
 			email: formData.email,
 			website: formData.website,
-			phone: formData.phone,
 			company: {
 				name: formData.name,
 			}
 		})
+	}
+	
+	ngOnInit(): void {
+		
 	}
 }

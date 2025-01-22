@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../../users.interface';
 
 @Component({
@@ -10,7 +10,7 @@ import { User } from '../../users.interface';
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 
-export class UserCardComponent {
+export class UserCardComponent implements OnInit {
   @Input()
   user!: User;
   
@@ -20,5 +20,8 @@ export class UserCardComponent {
   onDeleteUser(userId: number) {
     this.deleteUser.emit(userId);
   }
-
+  
+  ngOnInit(): void {
+    
+  }
 }
