@@ -7,7 +7,7 @@ import { Todo } from "../../../interfaces/todos.interface";
     templateUrl: './todo-card.component.html',
     styleUrl: './todo-card.component.scss',
     standalone: true,
-    imports: [NgFor],
+    imports: [],
 })
 
 export class TodoCardComponent {

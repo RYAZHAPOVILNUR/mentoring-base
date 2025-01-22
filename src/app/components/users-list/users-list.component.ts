@@ -1,6 +1,6 @@
-import { NgFor, NgIf } from "@angular/common";
+import { AsyncPipe, NgFor, NgIf } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { UsersApiService } from "../../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -14,7 +14,8 @@ import { UsresService } from "../../users.service";
     standalone: true,
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
-    imports: [NgFor, UserCardComponent]
+    imports: [NgFor, UserCardComponent, AsyncPipe],
+    changeDetection:ChangeDetectionStrategy.OnPush
 })
 
 export class UsersListComponent {
@@ -26,13 +27,19 @@ export class UsersListComponent {
         this.usersApiService.getUsers().subscribe(
             (respons: any) => {
                 this.userService.setUsers(respons);
+                // this.users = this.userService.users
                 
             }
         )
+
+        // this.userService.usersSubject.subscribe(
+        //     user => this.users = this.users
+        // )
     }
 
     deleteUser(id: number) {
         this.userService.deleteUser(id)
+        this.users = this.userService.users
        
 }
 

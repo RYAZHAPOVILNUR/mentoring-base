@@ -5,5 +5,5 @@
     <div>{{todo.userId}}</div>
     <p>Задача завершена:</p>
     <div>{{todo.completed ? 'да' : 'нет'}}</div>
-    <button (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
+    <button class="delete" (click)="onDeleteTodo(todo.id)">Удалить задачу</button>
 </div>
