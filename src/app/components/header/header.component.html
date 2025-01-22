@@ -20,22 +20,27 @@
             <div class="header-right">
                 <div class="phone">
                     <img src="/assets/Phone.svg" alt="phone" />
-                    </div>
-                    <div>
-                        <a class="number" href="tel:79650842929">{{number | phoneNumber}}</a>
-                    </div>
-                    <div class="heart">
-                        <img src="/assets/heart 1.svg" alt="heart" />
-                        </div>
-                        <div  class="knopka">
-                            <button class="button-basket"> 
-                                <mat-icon yellow>shopping_cart</mat-icon>
-                                <span class="basket">Пусто</span>
-                            </button>                         
                 </div>
-                <button routerLink="/users">Админка</button>
+                <div>
+                    <a class="number" href="tel:79650842929">{{number | phoneNumber}}</a>
+                </div>
+                <div class="heart">
+                    <img src="/assets/heart 1.svg" alt="heart" />
+                </div>
+                <div class="knopka">
+                    <button class="button-basket">
+                        <mat-icon yellow>shopping_cart</mat-icon>
+                        <span class="basket">Пусто</span>
+                    </button>
+                </div>
+                <button routerLink="/admin">Users</button>
                 <button routerLink="/todos">Todos</button>
             </div>
+        </div>
+     
+        <div> 
+            <button (click)="openDialog()" *ngif="(userService.user$ | async)=== null">Войти</button>
+            <button (click)="logout()" *ngif="(userService.user$ | async) !== null">Выйти</button>
         </div>
         <div>
             <div class="subheader">
@@ -53,9 +58,9 @@
                     <input class="search" type="text" placeholder="Поиск, например Круг зачистной" />
                     <img src="/assets/Mask group.png" alt="lupa" />
                     <img src="/assets/Time.svg" alt="metka" />
-                {{ today | date:'medium' }}
+                    {{ today | date:'medium' }}
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

@@ -1,0 +1,15 @@
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button-wrapper {
+    display: flex;
+    gap: 10px;
+}
+.button {
+    width: 150px;
+}
+.title {
+    margin: 10px;
+}

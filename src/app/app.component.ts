@@ -10,7 +10,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, HeaderComponent, HomepageComponent],
+  imports: [RouterOutlet, HeaderComponent, HomepageComponent,],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {}
