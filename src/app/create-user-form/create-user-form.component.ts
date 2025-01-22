@@ -1,3 +1,4 @@
+import { NgIf } from "@angular/common";
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 
@@ -6,7 +7,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angula
     templateUrl: './create-user-form.html',
     styleUrl: './create-user-form.scss', 
     standalone: true,
-    imports: [ReactiveFormsModule], 
+    imports: [NgIf, ReactiveFormsModule], 
 }) 
 export class CreateUserFormComponent {
     @Output() 

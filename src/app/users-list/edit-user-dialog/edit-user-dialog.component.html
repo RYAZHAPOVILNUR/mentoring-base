@@ -1,8 +1,6 @@
-<h1>Create User Form</h1>
-<div style="margin: 30px 30px 30px 0px;">
-    <form style="display: flex; flex-direction: column;"
-     [formGroup]="form"
-     (ngSubmit)="submitForm()">
+<app-edit-user-dialog></app-edit-user-dialog>
+<form style="display: flex; flex-direction: column; padding: 50px;"
+     [formGroup]="form">
         <p>Name:</p>
         <input type="text" class="form-input" formControlName = "name">
         <div
@@ -33,10 +31,9 @@
         *ngIf="form.controls['companyName'].invalid && (form.controls['companyName'].dirty || form.controls['companyName'].touched)"
         class="alert">
         <div *ngIf="form.controls['name'].errors">САЙТ ВВЕДЕН НЕВЕРНО</div>
-    </div>
+    </div>  
         <button 
-            style="width: 150px; margin-top: 20px;" [disabled]="form.invalid">
-            CREATE USER
-        </button>   
+            style="width: 150px; margin-top: 20px;" [disabled]="form.invalid" [mat-dialog-close]="userWithUpdatedFields">
+            РЕДАКТИРОВАТЬ
+        </button>  
     </form>
-</div>

@@ -1,5 +1,5 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { User } from "./user-interface";
 import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -20,7 +20,7 @@ export class UsersListComponent {
     readonly usersService = inject(UsersService);   
 
     constructor() {
-        this.usersApiService.getUsers() .subscribe(
+        this.usersApiService.getUsers().subscribe(
             (response: User[]) => {
                 this.usersService.setUsers(response);
             }
@@ -32,17 +32,22 @@ export class UsersListComponent {
     }
 
     editUser(user: User) {
-        this.usersService.editUser(user); 
+        this.usersService.editUser({
+            ...user, 
+            company: {
+                name: user.company.name, 
+            }, 
+        }); 
     }
 
-    public createUser(formData: any) {
+    public createUser(formData: User) {
          this.usersService.createUser({
              id: new Date().getTime(),
              name: formData.name,
              email: formData.email,
              website: formData.website,
              company: {
-                 name: formData.companyName,
+                 name: formData.company.name,
              },
             }
         )
