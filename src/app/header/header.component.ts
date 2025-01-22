@@ -1,17 +1,15 @@
-import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { Router, NavigationEnd } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor,HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [NgFor, RouterLink],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class AppComponent {
+export class HeaderComponent {
   title = 'mentoring-first-project';
 
   readonly headerItem1 ="Главная"
@@ -20,13 +18,9 @@ export class AppComponent {
 
   readonly headerItem3 ="Каталог"
 
-  isShowCatalog = true;
+  isShowCatalog=true;
 
   public aboutCompany = getMenuName("О компании");
-
-  readonly newPagesConst =[5, 4, 3, 2, 1];
-
-  public newPages = this.newPagesConst;
 
   public isUpperCase: boolean = true;
 
@@ -44,18 +38,6 @@ export class AppComponent {
     this.isUpperCase = !this.isUpperCase;
   }
 
-  showLayout: boolean = true; 
-
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.showLayout = !event.url.includes('/users');
-      }
-    });
-  }
-    
 }
 
 function getMenuName(name: string): string {

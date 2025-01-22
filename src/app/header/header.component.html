@@ -1,0 +1,71 @@
+<div class="header-container-grey">
+    <div class="header-container-grey-main">
+      <div class="header-container-grey-main-left">
+        <div class ="header-logo">
+          <img src="/assets/logo.svg" alt="логотип сайта">
+          </div>
+          <div class="header-nav-main">
+            <nav class="header-nav" *ngFor="let item of menuItems">{{ item }}</nav>
+            <button (click)="changeMenuText()">Изменить текст</button>
+          </div> 
+      </div>
+      <div class="header-container-grey-main-right">
+        <div class="phone_namber">
+          <div class="header-icon">
+            <img src="/assets/phone.png" alt="phone icon"/>
+          </div>
+          <div class="phone-number">
+            <a href="">+7(965) 084-29-29</a>
+            </div>
+        </div>
+        <div class="header-icons">
+          <div class="icon-heart">
+            <img src="/assets/favorites.svg" alt="избранное">
+          </div>
+          <button class="cart-button">
+            <div class="cart-icon">
+              <img src="assets/backet.svg" alt="корзина">
+            </div>
+            <span class="cart-text">Пусто</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-container-yellow">
+    <div class="header-container-yellow-main">
+      <div class="header-container-yellow-left">
+        <div class="menu-icon">
+          <img src="/assets/hamburger_button.svg" alt="menu">
+        </div>
+        <div class="header2-nav">
+          <div class="header2-nav-item">Каталог</div>
+          <div class="header2-nav-item">Стройматериалы</div>
+          <div class="header2-nav-item">Инструменты</div>
+          <div class="header2-nav-item">Электрика</div>
+          <div class="header2-nav-item">Интерьер и одежда</div>
+          <button class="users-button" routerLink="users">Пользователи</button>
+        </div>
+      </div>
+      <div class="header-container-yellow-right">
+        <div class="header2-right">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Поиск, например Круг зачистной"
+              class="search-input"
+            />
+            <button class="search-button">
+              <img src="/assets/search.svg" alt="search">
+            </button>
+          </div>
+          <div class="location">
+            <div class="location-icon">
+              <img src="/assets/location.svg" alt="search">
+            </div>
+            <div class="location-text">Москва</div>
+          </div>
+      </div>
+    </div>   
+  </div>
+</div>

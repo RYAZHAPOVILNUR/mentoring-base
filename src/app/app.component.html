@@ -1,615 +1,559 @@
 <div class="header-head">
-  <div class="header-container-grey">
-    <div class="header-container-grey-main">
-      <div class="header-container-grey-main-left">
-        <div class ="header-logo">
-          <img src="/assets/logo.svg" alt="логотип сайта">
-          </div>
-          <div class="header-nav-main">
-            <nav class="header-nav" *ngFor="let item of menuItems">{{ item }}</nav>
-            <button (click)="changeMenuText()">Изменить текст</button>
-          </div> 
-      </div>
-      <div class="header-container-grey-main-right">
-        <div class="phone_namber">
-          <div class="header-icon">
-            <img src="/assets/phone.png" alt="phone icon"/>
-          </div>
-          <div class="phone-number">
-            <a href="">+7(965) 084-29-29</a>
-            </div>
+  <app-header></app-header>
+  <div *ngIf="showLayout">
+    <div>
+      <router-outlet></router-outlet>
+      <div class="banner-container">
+        <div class="home-screen" *ngIf="isShowCatalog">
+          <div class="banner-img">
+          <img src="/assets/backgraund_banner.png" alt="backgraund-large" style="width: 100%;">
         </div>
-        <div class="header-icons">
-          <div class="icon-heart">
-            <img src="/assets/favorites.svg" alt="избранное">
-          </div>
-          <button class="cart-button">
-            <div class="cart-icon">
-              <img src="assets/backet.svg" alt="корзина">
-            </div>
-            <span class="cart-text">Пусто</span>
-          </button>
+        <div class="banner-overlay">
+          <div class="banner-triangle"></div>
+          <img src="/assets/banner_dark.png" alt="">
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="header-container-yellow">
-    <div class="header-container-yellow-main">
-      <div class="header-container-yellow-left">
-        <div class="menu-icon">
-          <img src="/assets/hamburger_button.svg" alt="menu">
-        </div>
-        <div class="header2-nav">
-          <div class="header2-nav-item">Каталог</div>
-          <div class="header2-nav-item">Стройматериалы</div>
-          <div class="header2-nav-item">Инструменты</div>
-          <div class="header2-nav-item">Электрика</div>
-          <div class="header2-nav-item">Интерьер и одежда</div>
-        </div>
-      </div>
-      <div class="header-container-yellow-right">
-        <div class="header2-right">
-          <div class="search-bar">
-            <input
-              type="text"
-              placeholder="Поиск, например Круг зачистной"
-              class="search-input"
-            />
-            <button class="search-button">
-              <img src="/assets/search.svg" alt="search">
-            </button>
-          </div>
-          <div class="location">
-            <div class="location-icon">
-              <img src="/assets/location.svg" alt="search">
-            </div>
-            <div class="location-text">Москва</div>
-          </div>
-      </div>
-    </div>   
-  </div>
-</div>
-<div class="banner-container">
-  <div class="home-screen" *ngIf="isShowCatalog">
-    <div class="banner-img">
-    <img src="/assets/backgraund_banner.png" alt="backgraund-large" style="width: 100%;">
-  </div>
-  <div class="banner-overlay">
-    <div class="banner-triangle"></div>
-    <img src="/assets/banner_dark.png" alt="">
-  </div>
-  <div class="banner-container-text">
-    <div>Инструмент для вашего<br>бизнеса</div>
-  </div>
-  </div>
-  
-  <button (click)="isShowCatalog=!isShowCatalog">Скрыть/показать картинку</button>
-</div>
-
-<div class="features">
-  <div class="feature">
-      <div class="icons_features">
-        <img src="/assets/features_tile.svg" alt="" srcset="">
-      </div>
-      <div class="text">
-          <strong>Большой ассортимент</strong><br>
-          строительных материалов всегда в <br> наличии
-      </div>
-  </div>
-  <div class="feature">
-      <div class="icons_features">
-        <img src="/assets/features_car.svg" alt="" srcset="">
-      </div>
-      <div class="text">
-          <strong>Доставка стройматериалов</strong><br>
-          в течении четырех часов или в <br>  любое удобное время
-      </div>
-  </div>
-  <div class="feature">
-      <div class="icons_features">
-        <img src="/assets/features_like.svg" alt="" srcset="">
-      </div>
-      <div class="text">
-          Многоуровневая<strong> система <br> управления качеством </strong>по стандарту <br> ISO 9001
-      </div>
-  </div>
-</div>
-
-<div class="content-container">
-  <div class="item-cards">
-    <div class="item-cards__pagination">
-      <button *ngFor="let item of newPages"
-        class="item-cards_pagination-button active-button">
-  {{item}}
-</button>
-
-    </div>
-    <div class="item-cards__grid">
-      <div class="item-cards__grid-left">
-        <div class="item-cards__grid-left-text">
-          Строительный отделочный <br> инструмент
-        </div>
-        <div class="item-cards__grid-left-action">
-          <div style="margin-right: 11px;">Перейти в каталог</div>
-          <a class="item-cards__grid-left-action-link">
-            <img src="/assets/arrow_botton.png" alt="">
-          </a>
-        </div>
-      </div>
-      <div class="item-cards__grid-right">
-        <div class="item-cards__grid-right-block">
-          <div class="item-cards__grid-right-block-text-1">
-            Эмали
-          </div>
-        <div class="item-cards__grid-right-block-action-1">
-          <span style="margin-right: 10px;">Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link-1">
-            <img src="/assets/arrow_botton.png" alt="">
-          </a>
-        </div>
-        <div class="item-cards__grid-right-block-img-1">
-          <img src="/assets/enamel.png" alt="">
+        <div class="banner-container-text">
+          <div>Инструмент для вашего<br>бизнеса</div>
         </div>
         </div>
-        <div class="item-cards__grid-right-block">
-          <div class="item-cards__grid-right-block-text-2">
-            Лакокрасочные<br>материалы
-          </div>
-        <div class="item-cards__grid-right-block-action-2">
-          <span style="margin-right: 10px;">Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link-2">
-            <img src="/assets/arrow_botton.png" alt="">
-          </a>
-        </div>
-        <div class="item-cards__grid-right-block-img-2">
-          <img src="/assets/varnish.png" alt="">
-        </div>
-        </div>
-        <div class="item-cards__grid-right-block">
-          <div class="item-cards__grid-right-block-text-2">
-            Пены, клеи и<br>герметики
-          </div>
-        <div class="item-cards__grid-right-block-action-3">
-          <span style="margin-right: 10px;">Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link-3">
-            <img src="/assets/arrow_botton.png" alt="">
-          </a>
-        </div>
-        <div class="item-cards__grid-right-block-img-3">
-          <img src="/assets/foam.png" alt="">
-        </div>
-        </div>
-        <div class="item-cards__grid-right-block">
-          <div class="item-cards__grid-right-block-text-4">
-            Разетки и выключатели
-          </div>
-        <div class="item-cards__grid-right-block-action-4">
-          <span style="margin-right: 10px;">Перейти в каталог</span>
-          <a class="item-cards__grid-right-action-link-4">
-            <img src="/assets/arrow_botton.png" alt="">
-          </a>
-        </div>
-        <div class="item-cards__grid-right-block-img-4">
-          <img src="/assets/power_strip.png" alt="">
-        </div>
-        </div>
+        
+        <button (click)="isShowCatalog=!isShowCatalog">Скрыть/показать картинку</button>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-conteiner-2">
-<div class="item-cards_popular-productions">
-  <div class="item-cards_popular-productions-text">
-    <div class="item-cards_popular-productions-text-1">
-      Популярные товары
-    </div>
-    <div class="item-cards_popular-productions-text-2">
-      Посмотреть все товары
-    </div>
-  </div>
-  
-</div>
-<div class="item-cards_popular-productions-cards">
-  <div class="item-cards_popular-productions-card">
-    <div class="item-cards_popular-productions-card-icons">
-      <div class="item-cards_popular-productions-card-icons-1">
-        <img src="/assets/discount.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-icons-2">
-        <img src="/assets/favorites_dark.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-wrapper">
-        <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product-card-1">Круг зачистной 125х6х22
-      </div>
-      <div class="product-card-2">Артикул 00004</div>
-    <div class="product-card-3">Цена за штуку</div>
-    <div class="product-card-4">
-      <div class="product-card-4-price-old">52 руб.</div>
-      <div class="product-card-4-price-new">48 руб.</div>
-    </div>
-
-    <div class="product-controls">
-      <div class="quantity">
-        <label for="quantity-input">Количество</label>
-        <div class="quantity-selector">
-          <button class="quantity-btn">-</button>
-          <div class="number">1</div>
-          <button class="quantity-btn">+</button>
-        </div>
-      </div>
-      <button class="add-to-cart-btn">В корзину</button>
-    </div>
-    </div>
-  </div>
-  <div class="item-cards_popular-productions-card">
-    <div class="item-cards_popular-productions-card-icons">
-      <div class="item-cards_popular-productions-card-icons-1">
-        <img src="/assets/discount.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-icons-2">
-        <img src="/assets/favorites_dark.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-wrapper">
-        <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product-card-1">Круг зачистной 125х6х22
-      </div>
-      <div class="product-card-2">Артикул 00004</div>
-    <div class="product-card-3">Цена за штуку</div>
-    <div class="product-card-4">
-      <div class="product-card-4-price-old">52 руб.</div>
-      <div class="product-card-4-price-new">48 руб.</div>
-    </div>
-
-    <div class="product-controls">
-      <div class="quantity">
-        <label for="quantity-input">Количество</label>
-        <div class="quantity-selector">
-          <button class="quantity-btn">-</button>
-          <div class="number">1</div>
-          <button class="quantity-btn">+</button>
-        </div>
-      </div>
-      <button class="add-to-cart-btn">В корзину</button>
-    </div>
-    </div>
-  </div>
-  <div class="item-cards_popular-productions-card">
-    <div class="item-cards_popular-productions-card-icons">
-      <div class="item-cards_popular-productions-card-icons-1">
-        <img src="/assets/new_items.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-icons-1-3">
-        <img src="/assets/discount.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-icons-2">
-        <img src="/assets/favorites_dark.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-wrapper">
-        <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product-card-1">Круг зачистной 125х6х22
-      </div>
-      <div class="product-card-2">Артикул 00004</div>
-    <div class="product-card-3">Цена за штуку</div>
-    <div class="product-card-4">
-      <div class="product-card-4-price-old">52 руб.</div>
-      <div class="product-card-4-price-new">48 руб.</div>
-    </div>
-
-    <div class="product-controls">
-      <div class="quantity">
-        <label for="quantity-input">Количество</label>
-        <div class="quantity-selector">
-          <button class="quantity-btn">-</button>
-          <div class="number">1</div>
-          <button class="quantity-btn">+</button>
-        </div>
-      </div>
-      <button class="add-to-cart-btn">В корзину</button>
-    </div>
-    </div>
-  </div>
-  <div class="item-cards_popular-productions-card">
-    <div class="item-cards_popular-productions-card-icons">
-      <div class="item-cards_popular-productions-card-icons-1">
-        <img src="/assets/new_items.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-icons-2">
-        <img src="/assets/favorites_dark.png" alt="">
-      </div>
-      <div class="item-cards_popular-productions-card-wrapper">
-        <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product-card-1">Круг зачистной 125х6х22
-      </div>
-      <div class="product-card-2">Артикул 00004</div>
-    <div class="product-card-3">Цена за штуку</div>
-    <div class="product-card-4">
-      <div class="product-card-4-price-new">52 руб.</div>
-    </div>
-
-    <div class="product-controls">
-      <div class="quantity">
-        <label for="quantity-input">Количество</label>
-        <div class="quantity-selector">
-          <button class="quantity-btn">-</button>
-          <div class="number">1</div>
-          <button class="quantity-btn">+</button>
-        </div>
-      </div>
-      <button class="add-to-cart-btn">В корзину</button>
-    </div>
-    </div>
-  </div>
-</div>
-
-</div>
-<div class="content-conteiner-3">
-  <div class="banner-text">
-    <div class="banner-text-1">Более 10 000 наименований </div>
-    <div class="banner-text-2">Инструмент для вашего бизнеса, разнообразных марок</div>
-    <div class="banner-text-3">Перейти в каталог</div>
-  </div>
-  <div class="banner-image">
-    <img src="/assets/screwdriver.png" alt="">
-  </div>
-</div>
-<div class="content-conteiner-4">
-  <div class="item-cards_popular-productions">
-    <div class="item-cards_popular-productions-text">
-      <div class="item-cards_popular-productions-text-1">
-        Новинки
-      </div>
-      <div class="item-cards_popular-productions-text-2">
-        Посмотреть все товары
-      </div>
-    </div>
-    
-  </div>
-  <div class="item-cards_popular-productions-cards">
-    <div class="item-cards_popular-productions-card">
-      <div class="item-cards_popular-productions-card-icons">
-        <div class="item-cards_popular-productions-card-icons-1">
-          <img src="/assets/new_items.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-icons-2">
-          <img src="/assets/favorites_dark.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-wrapper">
-          <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-1">Круг зачистной 125х6х22
-        </div>
-        <div class="product-card-2">Артикул 00004</div>
-      <div class="product-card-3">Цена за штуку</div>
-      <div class="product-card-4">
-        <div class="product-card-4-price-new">52 руб.</div>
-      </div>
-  
-      <div class="product-controls">
-        <div class="quantity">
-          <label for="quantity-input">Количество</label>
-          <div class="quantity-selector">
-            <button class="quantity-btn">-</button>
-            <div class="number">1</div>
-            <button class="quantity-btn">+</button>
-          </div>
-        </div>
-        <button class="add-to-cart-btn">В корзину</button>
-      </div>
-      </div>
-    </div>
-    <div class="item-cards_popular-productions-card">
-      <div class="item-cards_popular-productions-card-icons">
-        <div class="item-cards_popular-productions-card-icons-1">
-          <img src="/assets/new_items.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-icons-2">
-          <img src="/assets/favorites_dark.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-wrapper">
-          <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-1">Круг зачистной 125х6х22
-        </div>
-        <div class="product-card-2">Артикул 00004</div>
-      <div class="product-card-3">Цена за штуку</div>
-      <div class="product-card-4">
-        <div class="product-card-4-price-new">52 руб.</div>
-      </div>
-  
-      <div class="product-controls">
-        <div class="quantity">
-          <label for="quantity-input">Количество</label>
-          <div class="quantity-selector">
-            <button class="quantity-btn">-</button>
-            <div class="number">1</div>
-            <button class="quantity-btn">+</button>
-          </div>
-        </div>
-        <button class="add-to-cart-btn">В корзину</button>
-      </div>
-      </div>
-    </div>
-    <div class="item-cards_popular-productions-card">
-      <div class="item-cards_popular-productions-card-icons">
-        <div class="item-cards_popular-productions-card-icons-1">
-          <img src="/assets/new_items.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-icons-2">
-          <img src="/assets/favorites_dark.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-wrapper">
-          <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-1">Круг зачистной 125х6х22
-        </div>
-        <div class="product-card-2">Артикул 00004</div>
-      <div class="product-card-3">Цена за штуку</div>
-      <div class="product-card-4">
-        <div class="product-card-4-price-new">52 руб.</div>
-      </div>
-  
-      <div class="product-controls">
-        <div class="quantity">
-          <label for="quantity-input">Количество</label>
-          <div class="quantity-selector">
-            <button class="quantity-btn">-</button>
-            <div class="number">1</div>
-            <button class="quantity-btn">+</button>
-          </div>
-        </div>
-        <button class="add-to-cart-btn">В корзину</button>
-      </div>
-      </div>
-    </div>
-    <div class="item-cards_popular-productions-card">
-      <div class="item-cards_popular-productions-card-icons">
-        <div class="item-cards_popular-productions-card-icons-1">
-          <img src="/assets/new_items.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-icons-2">
-          <img src="/assets/favorites_dark.png" alt="">
-        </div>
-        <div class="item-cards_popular-productions-card-wrapper">
-          <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-1">Круг зачистной 125х6х22
-        </div>
-        <div class="product-card-2">Артикул 00004</div>
-      <div class="product-card-3">Цена за штуку</div>
-      <div class="product-card-4">
-        <div class="product-card-4-price-new">52 руб.</div>
-      </div>
-  
-      <div class="product-controls">
-        <div class="quantity">
-          <label for="quantity-input">Количество</label>
-          <div class="quantity-selector">
-            <button class="quantity-btn">-</button>
-            <div class="number">1</div>
-            <button class="quantity-btn">+</button>
-          </div>
-        </div>
-        <button class="add-to-cart-btn">В корзину</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  
-  </div>
-<div class="content-conteiner-5">
-  <div class="container_contents">
-    <div class="container_content-1">
-      <div class="container_content-1-logo">
-        <img src="/assets/logo.svg" alt="">
-      </div>
-      <div class="container_content-1-contacts">
-        <div class="container_content-1-contacts-1">
-          <div class="container_content-1-contacts-icon-1">
-            <img src="/assets/call-calling.png" alt="">
-          </div>
-          <div class="container_content-1-contacts-numbers">
-            <div class="container_content-1-contacts-number-1">
-              Контактный телефон
-            </div>
-            <div class="container_content-1-contacts-number-2">
-              <a href="">+ 7 (812) 309-09-34</a>
-              
-            </div>
-            <div class="container_content-1-contacts-number-2">
-              <a href="">+ 7 (965) 084-29-09</a>
-              
-            </div>
-          </div>
-        </div>
-        <div class ="container_content-1-contacts-2">
-          <div class="container_content-1-contacts">
-            <div class="container_content-1-contacts-icon-1">
-              <img src="/assets/icon_mail.svg" alt="">
-            </div>
-            <div class="container_content-1-contacts-numbers">
-              <div class="container_content-1-contacts-number-1">
-                Электронная почта
-              </div>
-              <div class="container_content-1-contacts-number-2">
-                <a href="">tustin78&#64;mail.ru</a>
-              </div>
-              <div class="container_content-1-contacts-number-2">
-                <a href="">info&#64;tustin.ru</a>
-              </div>
-            </div>
-        </div>
       
+      <div class="features">
+        <div class="feature">
+            <div class="icons_features">
+              <img src="/assets/features_tile.svg" alt="" srcset="">
+            </div>
+            <div class="text">
+                <strong>Большой ассортимент</strong><br>
+                строительных материалов всегда в <br> наличии
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icons_features">
+              <img src="/assets/features_car.svg" alt="" srcset="">
+            </div>
+            <div class="text">
+                <strong>Доставка стройматериалов</strong><br>
+                в течении четырех часов или в <br>  любое удобное время
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icons_features">
+              <img src="/assets/features_like.svg" alt="" srcset="">
+            </div>
+            <div class="text">
+                Многоуровневая<strong> система <br> управления качеством </strong>по стандарту <br> ISO 9001
+            </div>
+        </div>
       </div>
-      </div>
-      <div class="container_content-1-catalog">
-        <div class="container_content-1-catalog-text-1">
-          Главная
-        </div>
-        <div class="container_content-1-catalog-text-2">
-          О компании
-        </div>
-        <div class="container_content-1-catalog-text-3">
-          Каталог
-        </div>
-      </div>
-      <div class="container_content-1-icons">
-        <div class="container_content-icons-icon">
-          <img src="/assets/facebook_icon.png" alt="">
-        </div>
-        <div class="container_content-icons-icon">
-          <img src="/assets/youtube_icon.png" alt="">
-        </div>
-        <div class="container_content-icons-icon">
-          <img src="/assets/whatsap_icon.png" alt="">
-        </div>
-      </div>
-      </div>
-      <div class="container_content-2">
-        <div class="container_content-2-questions">
-          <div class="container_content-2-quastion-1">
-            Остались вопросы?
+      
+      <div class="content-container">
+        <div class="item-cards">
+          <div class="item-cards__pagination">
+            <button *ngFor="let page of newPages"
+              class="item-cards_pagination-button active-button">
+        {{ page }}
+      </button>
+      
           </div>
-          <div class="container_content-2-quastion-2">
-            Узнавайте первым о скидках, предложениях и событиях еженедельно в<br>своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
-          </div>
-          <div class="container_content-2-quastion-form">
-            <form class="form-container">
-              <div class="icon">
-                <img src="/assets/icon_mail.svg" alt="">
+          <div class="item-cards__grid">
+            <div class="item-cards__grid-left">
+              <div class="item-cards__grid-left-text">
+                Строительный отделочный <br> инструмент
               </div>
-              <input type="email" placeholder="Введите свою почту" required>
-              <button type="submit">Отправить</button>
-            </form>
-          </div>
-          <div class="container_content-2-quastion-date">
-            © 2021-2022, EDE
+              <div class="item-cards__grid-left-action">
+                <div style="margin-right: 11px;">Перейти в каталог</div>
+                <a class="item-cards__grid-left-action-link">
+                  <img src="/assets/arrow_botton.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="item-cards__grid-right">
+              <div class="item-cards__grid-right-block">
+                <div class="item-cards__grid-right-block-text-1">
+                  Эмали
+                </div>
+              <div class="item-cards__grid-right-block-action-1">
+                <span style="margin-right: 10px;">Перейти в каталог</span>
+                <a class="item-cards__grid-right-action-link-1">
+                  <img src="/assets/arrow_botton.png" alt="">
+                </a>
+              </div>
+              <div class="item-cards__grid-right-block-img-1">
+                <img src="/assets/enamel.png" alt="">
+              </div>
+              </div>
+              <div class="item-cards__grid-right-block">
+                <div class="item-cards__grid-right-block-text-2">
+                  Лакокрасочные<br>материалы
+                </div>
+              <div class="item-cards__grid-right-block-action-2">
+                <span style="margin-right: 10px;">Перейти в каталог</span>
+                <a class="item-cards__grid-right-action-link-2">
+                  <img src="/assets/arrow_botton.png" alt="">
+                </a>
+              </div>
+              <div class="item-cards__grid-right-block-img-2">
+                <img src="/assets/varnish.png" alt="">
+              </div>
+              </div>
+              <div class="item-cards__grid-right-block">
+                <div class="item-cards__grid-right-block-text-2">
+                  Пены, клеи и<br>герметики
+                </div>
+              <div class="item-cards__grid-right-block-action-3">
+                <span style="margin-right: 10px;">Перейти в каталог</span>
+                <a class="item-cards__grid-right-action-link-3">
+                  <img src="/assets/arrow_botton.png" alt="">
+                </a>
+              </div>
+              <div class="item-cards__grid-right-block-img-3">
+                <img src="/assets/foam.png" alt="">
+              </div>
+              </div>
+              <div class="item-cards__grid-right-block">
+                <div class="item-cards__grid-right-block-text-4">
+                  Разетки и выключатели
+                </div>
+              <div class="item-cards__grid-right-block-action-4">
+                <span style="margin-right: 10px;">Перейти в каталог</span>
+                <a class="item-cards__grid-right-action-link-4">
+                  <img src="/assets/arrow_botton.png" alt="">
+                </a>
+              </div>
+              <div class="item-cards__grid-right-block-img-4">
+                <img src="/assets/power_strip.png" alt="">
+              </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
+      <div class="content-conteiner-2">
+      <div class="item-cards_popular-productions">
+        <div class="item-cards_popular-productions-text">
+          <div class="item-cards_popular-productions-text-1">
+            Популярные товары
+          </div>
+          <div class="item-cards_popular-productions-text-2">
+            Посмотреть все товары
+          </div>
+        </div>
+        
+      </div>
+      <div class="item-cards_popular-productions-cards">
+        <div class="item-cards_popular-productions-card">
+          <div class="item-cards_popular-productions-card-icons">
+            <div class="item-cards_popular-productions-card-icons-1">
+              <img src="/assets/discount.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-icons-2">
+              <img src="/assets/favorites_dark.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-wrapper">
+              <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-1">Круг зачистной 125х6х22
+            </div>
+            <div class="product-card-2">Артикул 00004</div>
+          <div class="product-card-3">Цена за штуку</div>
+          <div class="product-card-4">
+            <div class="product-card-4-price-old">52 руб.</div>
+            <div class="product-card-4-price-new">48 руб.</div>
+          </div>
+      
+          <div class="product-controls">
+            <div class="quantity">
+              <label for="quantity-input">Количество</label>
+              <div class="quantity-selector">
+                <button class="quantity-btn">-</button>
+                <div class="number">1</div>
+                <button class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">В корзину</button>
+          </div>
+          </div>
+        </div>
+        <div class="item-cards_popular-productions-card">
+          <div class="item-cards_popular-productions-card-icons">
+            <div class="item-cards_popular-productions-card-icons-1">
+              <img src="/assets/discount.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-icons-2">
+              <img src="/assets/favorites_dark.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-wrapper">
+              <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-1">Круг зачистной 125х6х22
+            </div>
+            <div class="product-card-2">Артикул 00004</div>
+          <div class="product-card-3">Цена за штуку</div>
+          <div class="product-card-4">
+            <div class="product-card-4-price-old">52 руб.</div>
+            <div class="product-card-4-price-new">48 руб.</div>
+          </div>
+      
+          <div class="product-controls">
+            <div class="quantity">
+              <label for="quantity-input">Количество</label>
+              <div class="quantity-selector">
+                <button class="quantity-btn">-</button>
+                <div class="number">1</div>
+                <button class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">В корзину</button>
+          </div>
+          </div>
+        </div>
+        <div class="item-cards_popular-productions-card">
+          <div class="item-cards_popular-productions-card-icons">
+            <div class="item-cards_popular-productions-card-icons-1">
+              <img src="/assets/new_items.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-icons-1-3">
+              <img src="/assets/discount.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-icons-2">
+              <img src="/assets/favorites_dark.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-wrapper">
+              <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-1">Круг зачистной 125х6х22
+            </div>
+            <div class="product-card-2">Артикул 00004</div>
+          <div class="product-card-3">Цена за штуку</div>
+          <div class="product-card-4">
+            <div class="product-card-4-price-old">52 руб.</div>
+            <div class="product-card-4-price-new">48 руб.</div>
+          </div>
+      
+          <div class="product-controls">
+            <div class="quantity">
+              <label for="quantity-input">Количество</label>
+              <div class="quantity-selector">
+                <button class="quantity-btn">-</button>
+                <div class="number">1</div>
+                <button class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">В корзину</button>
+          </div>
+          </div>
+        </div>
+        <div class="item-cards_popular-productions-card">
+          <div class="item-cards_popular-productions-card-icons">
+            <div class="item-cards_popular-productions-card-icons-1">
+              <img src="/assets/new_items.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-icons-2">
+              <img src="/assets/favorites_dark.png" alt="">
+            </div>
+            <div class="item-cards_popular-productions-card-wrapper">
+              <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-1">Круг зачистной 125х6х22
+            </div>
+            <div class="product-card-2">Артикул 00004</div>
+          <div class="product-card-3">Цена за штуку</div>
+          <div class="product-card-4">
+            <div class="product-card-4-price-new">52 руб.</div>
+          </div>
+      
+          <div class="product-controls">
+            <div class="quantity">
+              <label for="quantity-input">Количество</label>
+              <div class="quantity-selector">
+                <button class="quantity-btn">-</button>
+                <div class="number">1</div>
+                <button class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">В корзину</button>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+      <div class="content-conteiner-3">
+        <div class="banner-text">
+          <div class="banner-text-1">Более 10 000 наименований </div>
+          <div class="banner-text-2">Инструмент для вашего бизнеса, разнообразных марок</div>
+          <div class="banner-text-3">Перейти в каталог</div>
+        </div>
+        <div class="banner-image">
+          <img src="/assets/screwdriver.png" alt="">
+        </div>
+      </div>
+      <div class="content-conteiner-4">
+        <div class="item-cards_popular-productions">
+          <div class="item-cards_popular-productions-text">
+            <div class="item-cards_popular-productions-text-1">
+              Новинки
+            </div>
+            <div class="item-cards_popular-productions-text-2">
+              Посмотреть все товары
+            </div>
+          </div>
+          
+        </div>
+        <div class="item-cards_popular-productions-cards">
+          <div class="item-cards_popular-productions-card">
+            <div class="item-cards_popular-productions-card-icons">
+              <div class="item-cards_popular-productions-card-icons-1">
+                <img src="/assets/new_items.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-icons-2">
+                <img src="/assets/favorites_dark.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-wrapper">
+                <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-1">Круг зачистной 125х6х22
+              </div>
+              <div class="product-card-2">Артикул 00004</div>
+            <div class="product-card-3">Цена за штуку</div>
+            <div class="product-card-4">
+              <div class="product-card-4-price-new">52 руб.</div>
+            </div>
+        
+            <div class="product-controls">
+              <div class="quantity">
+                <label for="quantity-input">Количество</label>
+                <div class="quantity-selector">
+                  <button class="quantity-btn">-</button>
+                  <div class="number">1</div>
+                  <button class="quantity-btn">+</button>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+            </div>
+          </div>
+          <div class="item-cards_popular-productions-card">
+            <div class="item-cards_popular-productions-card-icons">
+              <div class="item-cards_popular-productions-card-icons-1">
+                <img src="/assets/new_items.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-icons-2">
+                <img src="/assets/favorites_dark.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-wrapper">
+                <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-1">Круг зачистной 125х6х22
+              </div>
+              <div class="product-card-2">Артикул 00004</div>
+            <div class="product-card-3">Цена за штуку</div>
+            <div class="product-card-4">
+              <div class="product-card-4-price-new">52 руб.</div>
+            </div>
+        
+            <div class="product-controls">
+              <div class="quantity">
+                <label for="quantity-input">Количество</label>
+                <div class="quantity-selector">
+                  <button class="quantity-btn">-</button>
+                  <div class="number">1</div>
+                  <button class="quantity-btn">+</button>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+            </div>
+          </div>
+          <div class="item-cards_popular-productions-card">
+            <div class="item-cards_popular-productions-card-icons">
+              <div class="item-cards_popular-productions-card-icons-1">
+                <img src="/assets/new_items.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-icons-2">
+                <img src="/assets/favorites_dark.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-wrapper">
+                <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-1">Круг зачистной 125х6х22
+              </div>
+              <div class="product-card-2">Артикул 00004</div>
+            <div class="product-card-3">Цена за штуку</div>
+            <div class="product-card-4">
+              <div class="product-card-4-price-new">52 руб.</div>
+            </div>
+        
+            <div class="product-controls">
+              <div class="quantity">
+                <label for="quantity-input">Количество</label>
+                <div class="quantity-selector">
+                  <button class="quantity-btn">-</button>
+                  <div class="number">1</div>
+                  <button class="quantity-btn">+</button>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+            </div>
+          </div>
+          <div class="item-cards_popular-productions-card">
+            <div class="item-cards_popular-productions-card-icons">
+              <div class="item-cards_popular-productions-card-icons-1">
+                <img src="/assets/new_items.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-icons-2">
+                <img src="/assets/favorites_dark.png" alt="">
+              </div>
+              <div class="item-cards_popular-productions-card-wrapper">
+                <img src="/assets/disk.png" alt="" class="item-cards_popular-productions-card-img">
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-1">Круг зачистной 125х6х22
+              </div>
+              <div class="product-card-2">Артикул 00004</div>
+            <div class="product-card-3">Цена за штуку</div>
+            <div class="product-card-4">
+              <div class="product-card-4-price-new">52 руб.</div>
+            </div>
+        
+            <div class="product-controls">
+              <div class="quantity">
+                <label for="quantity-input">Количество</label>
+                <div class="quantity-selector">
+                  <button class="quantity-btn">-</button>
+                  <div class="number">1</div>
+                  <button class="quantity-btn">+</button>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      <div class="content-conteiner-5">
+        <div class="container_contents">
+          <div class="container_content-1">
+            <div class="container_content-1-logo">
+              <img src="/assets/logo.svg" alt="">
+            </div>
+            <div class="container_content-1-contacts">
+              <div class="container_content-1-contacts-1">
+                <div class="container_content-1-contacts-icon-1">
+                  <img src="/assets/call-calling.png" alt="">
+                </div>
+                <div class="container_content-1-contacts-numbers">
+                  <div class="container_content-1-contacts-number-1">
+                    Контактный телефон
+                  </div>
+                  <div class="container_content-1-contacts-number-2">
+                    <a href="">+ 7 (812) 309-09-34</a>
+                    
+                  </div>
+                  <div class="container_content-1-contacts-number-2">
+                    <a href="">+ 7 (965) 084-29-09</a>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class ="container_content-1-contacts-2">
+                <div class="container_content-1-contacts">
+                  <div class="container_content-1-contacts-icon-1">
+                    <img src="/assets/icon_mail.svg" alt="">
+                  </div>
+                  <div class="container_content-1-contacts-numbers">
+                    <div class="container_content-1-contacts-number-1">
+                      Электронная почта
+                    </div>
+                    <div class="container_content-1-contacts-number-2">
+                      <a href="">tustin78&#64;mail.ru</a>
+                    </div>
+                    <div class="container_content-1-contacts-number-2">
+                      <a href="">info&#64;tustin.ru</a>
+                    </div>
+                  </div>
+              </div>
+            
+            </div>
+            </div>
+            <div class="container_content-1-catalog">
+              <div class="container_content-1-catalog-text-1">
+                Главная
+              </div>
+              <div class="container_content-1-catalog-text-2">
+                О компании
+              </div>
+              <div class="container_content-1-catalog-text-3">
+                Каталог
+              </div>
+            </div>
+            <div class="container_content-1-icons">
+              <div class="container_content-icons-icon">
+                <img src="/assets/facebook_icon.png" alt="">
+              </div>
+              <div class="container_content-icons-icon">
+                <img src="/assets/youtube_icon.png" alt="">
+              </div>
+              <div class="container_content-icons-icon">
+                <img src="/assets/whatsap_icon.png" alt="">
+              </div>
+            </div>
+            </div>
+            <div class="container_content-2">
+              <div class="container_content-2-questions">
+                <div class="container_content-2-quastion-1">
+                  Остались вопросы?
+                </div>
+                <div class="container_content-2-quastion-2">
+                  Узнавайте первым о скидках, предложениях и событиях еженедельно в<br>своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.
+                </div>
+                <div class="container_content-2-quastion-form">
+                  <form class="form-container">
+                    <div class="icon">
+                      <img src="/assets/icon_mail.svg" alt="">
+                    </div>
+                    <input type="email" placeholder="Введите свою почту" required>
+                    <button type="submit">Отправить</button>
+                  </form>
+                </div>
+                <div class="container_content-2-quastion-date">
+                  © 2021-2022, EDE
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+
     </div>
     
+    
   </div>
+
+
 </div>
+
+<router-outlet *ngIf="!showLayout"></router-outlet>
+

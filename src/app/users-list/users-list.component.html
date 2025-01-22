@@ -1,0 +1,9 @@
+<div class="users-card">
+    <div *ngFor="let user of users" class="user-card">
+      <p>{{ user.name }}</p>
+      <p>{{ user.email }}</p>
+      <p>{{ user.website }}</p>
+      <p>{{ user.company.name }}</p>
+      <button (click)="deleteUser(user.id)" class="delete-user-btn">Удалить юзера</button>
+    </div>
+  </div>
