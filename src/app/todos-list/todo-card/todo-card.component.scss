@@ -1,0 +1,24 @@
+.delete-todo-btn{
+    background: white;
+    border: 1px solid #F0BA4E;
+    border-radius: 54px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    align-self: center;
+}
+
+.todo-card{
+    width: 200px;
+    height: 250px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 550;
+    word-wrap: break-word;
+    justify-content: space-between;
+    overflow: hidden;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    border: 1px solid black;
+}

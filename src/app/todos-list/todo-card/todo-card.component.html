@@ -1,0 +1,13 @@
+<div class="todo-card">
+    <p>ТЕКСТ ЗАДАЧИ:</p>
+    <div>
+        {{todo.title}}
+    </div>
+
+    <p>Автор задачи</p>
+    <div>{{todo.userId}}</div>
+
+    <p>Задача завершена:</p>
+    <div>{{todo.completed ? 'Да' : 'Нет'}}</div>
+    <button (click)=onDeleteTodo(todo.id) class="delete-todo-btn">Удалить задачу</button>
+</div>
