@@ -6,7 +6,7 @@ import { User } from './interfaces/users.interface';
   providedIn: 'root'
 })
 export class UsersApiService {
-  private apiService = inject(HttpClient)
+  readonly apiService = inject(HttpClient)
 
   getUsers(){
     return this.apiService.get<User[]>('https://jsonplaceholder.typicode.com/users')

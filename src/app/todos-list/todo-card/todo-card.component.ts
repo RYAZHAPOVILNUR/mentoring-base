@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../interfaces/todos.interface';
 
 @Component({
@@ -6,7 +6,8 @@ import { Todo } from '../../interfaces/todos.interface';
   standalone: true,
   imports: [],
   templateUrl: './todo-card.component.html',
-  styleUrl: './todo-card.component.scss'
+  styleUrl: './todo-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoCardComponent {
   @Input() todo!: Todo

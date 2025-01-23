@@ -1,14 +1,12 @@
 <div class="container">
   <app-create-user-form
-  (createUser)="createUser($event)"  
+    (createUser)="createUser($event)"
   ></app-create-user-form>
 
   <div class="users">
-    <app-user-card
-      *ngFor="let user of users$ | async"
-      [user]="user"
-      (deleteUser)="deleteUser($event)"
-    >
-    </app-user-card>
+    <ng-container *ngFor="let user of users$ | async">
+      <app-user-card [user]="user" (deleteUser)="deleteUser($event)">
+      </app-user-card>
+    </ng-container>
   </div>
 </div>
