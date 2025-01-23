@@ -25,7 +25,10 @@ export class UsersService {
   }
 
   editUser(userChanged: User){
-    this.usersSubject$.next(this.usersSubject$.value.map(user => user.id === userChanged.id ? userChanged : user))
+    const updatedUsers = this.usersSubject$.value.map(user =>
+      user.id === userChanged.id ? userChanged : user
+    );
+    this.usersSubject$.next(updatedUsers)
   }
 
   deleteUser(id: number){

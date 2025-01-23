@@ -11,8 +11,13 @@ import { Todo } from '../../interfaces/todos.interface';
 export class TodoCardComponent {
   @Input() todo!: Todo
   @Output() deleteTodo = new EventEmitter<number>();
+  @Output() editTodo = new EventEmitter<Todo>();
 
   onDelete() {
     this.deleteTodo.emit(this.todo.id);
+  }
+
+  onEdit(){
+    this.editTodo.emit(this.todo)
   }
 }

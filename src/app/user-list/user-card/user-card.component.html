@@ -4,5 +4,8 @@
   <p>{{ user.email }}</p>
   <p>{{ user.phone }}</p>
   <p>{{ user.website }}</p>
-  <button (click)="onDelete()" type="reset" class="user-delete">Удалить</button>
+  <div class="button-wrapper">
+    <button (click)="onDelete()" type="reset" class="user-delete">Удалить</button>
+    <button (click)="onEdit()" type="button" class="user-edit">Изменить</button>
+  </div>
 </div>

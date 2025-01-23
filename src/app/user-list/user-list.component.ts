@@ -1,37 +1,79 @@
 import { AsyncPipe, NgFor } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersApiService } from '../users-api.service';
 import { UsersService } from '../users.service';
-import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { User } from '../interfaces/users.interface';
+import { CreateEditUserFormComponent } from '../create-edit-user-form/create-edit-user-form.component';
+import { MatButton } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeletionComponent } from '../confirm-deletion/confirm-deletion.component';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent, ReactiveFormsModule],
+  imports: [
+    NgFor,
+    UserCardComponent,
+    AsyncPipe,
+    ReactiveFormsModule,
+    MatButton,
+  ],
   templateUrl: './user-list.component.html',
-  styleUrl: './user-list.component.scss'
+  styleUrl: './user-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+export class UserListComponent implements OnInit {
+  readonly usersApiService = inject(UsersApiService);
+  readonly usersService = inject(UsersService);
+  readonly dialog = inject(MatDialog);
+  users$ = this.usersService.users$;
 
-export class UserListComponent {
-  usersApiService = inject(UsersApiService)
-  usersService = inject(UsersService)
-  users$ = this.usersService.users$
-
-  constructor() {
-    this.usersApiService.getUsers().subscribe(users => 
-      this.usersService.setUsers(users)
-    )
+  ngOnInit(): void {
+    this.usersApiService
+      .getUsers()
+      .pipe(take(1))
+      .subscribe((users) => this.usersService.setUsers(users));
   }
 
-  createUser(formData: User){
-    this.usersService.createUser(formData)
-    console.log("🚀 ~ UserListComponent ~ createUser ~ formData:", formData)
+  openCreateDialog() {
+    const dialogRef = this.dialog.open(CreateEditUserFormComponent, {
+      data: null,
+    });
+
+    dialogRef.afterClosed().subscribe((newUser) => {
+      if (dialogRef.componentInstance.createEditUserForm.valid) {
+        this.usersService.createUser(newUser);
+      }
+    });
   }
 
-  deleteUser(id: number){
-    this.usersService.deleteUser(id)
+  openEditDialog(user: User) {
+    const dialogRef = this.dialog.open(CreateEditUserFormComponent, {
+      data: user,
+    });
+
+    dialogRef.afterClosed().subscribe((userChanged) => {
+      if (dialogRef.componentInstance.createEditUserForm.valid) {
+        this.usersService.editUser(userChanged);
+      }
+    });
+  }
+
+  deleteUser(id: number) {
+    const dialogRef = this.dialog.open(ConfirmDeletionComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === true) {
+        this.usersService.deleteUser(id);
+      }
+    });
   }
 }

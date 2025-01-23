@@ -1,36 +1,66 @@
-import { Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodosApiService } from '../todos-api.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { TodosService } from '../todos.service';
-import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { CreateEditTodoFormComponent } from '../create-edit-todo-form/create-edit-todo-form.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Todo } from '../interfaces/todos.interface';
+import { MatButton } from '@angular/material/button';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-todos-list',
   standalone: true,
-  imports: [TodoCardComponent, NgFor, AsyncPipe, CreateTodoFormComponent],
+  imports: [TodoCardComponent, NgFor, AsyncPipe, MatButton],
   templateUrl: './todos-list.component.html',
-  styleUrl: './todos-list.component.scss'
+  styleUrl: './todos-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+export class TodosListComponent implements OnInit {
+  todosApiservice = inject(TodosApiService);
+  todosService = inject(TodosService);
+  readonly dialog = inject(MatDialog);
+  todos$ = this.todosService.todos$;
 
-export class TodosListComponent {
-  todosApiservice = inject(TodosApiService)
-  todosService = inject(TodosService)
-  todos$ = this.todosService.todos$
-  
-  constructor(){
-    this.todosApiservice.getTodos().subscribe(todos => 
-      this.todosService.setTodos(todos)
-    )
+  constructor() {}
+  ngOnInit(): void {
+    this.todosApiservice
+      .getTodos()
+      .pipe(take(1))
+      .subscribe((todos) => this.todosService.setTodos(todos));
   }
 
-  createTodo(todo: Todo){
-    this.todosService.createTodo(todo)
+  openCreateDialog() {
+    const dialogRef = this.dialog.open(CreateEditTodoFormComponent, {
+      data: null,
+    });
+
+    dialogRef.afterClosed().subscribe((newTodo) => {
+      if (dialogRef.componentInstance.createEditTodoForm.valid) {
+        this.todosService.createTodo(newTodo);
+      }
+    });
   }
 
-  deleteTodo(id: number){
-    this.todosService.deleteTodo(id)
+  openEditDialog(todo: Todo) {
+    const dialogRef = this.dialog.open(CreateEditTodoFormComponent, {
+      data: todo,
+    });
+
+    dialogRef.afterClosed().subscribe((todoChanged) => {
+      if (dialogRef.componentInstance.createEditTodoForm.valid) {
+        this.todosService.editTodo(todoChanged);
+      }
+    });
   }
 
+  deleteTodo(id: number) {
+    this.todosService.deleteTodo(id);
+  }
 }
