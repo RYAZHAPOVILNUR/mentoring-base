@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Todo } from '../../interfaces/todos.interface';
 
 @Component({
@@ -6,10 +12,11 @@ import { Todo } from '../../interfaces/todos.interface';
   standalone: true,
   imports: [],
   templateUrl: './todo-card.component.html',
-  styleUrl: './todo-card.component.scss'
+  styleUrl: './todo-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoCardComponent {
-  @Input() todo!: Todo
+  @Input() todo!: Todo;
   @Output() deleteTodo = new EventEmitter<number>();
   @Output() editTodo = new EventEmitter<Todo>();
 
@@ -17,7 +24,7 @@ export class TodoCardComponent {
     this.deleteTodo.emit(this.todo.id);
   }
 
-  onEdit(){
-    this.editTodo.emit(this.todo)
+  onEdit() {
+    this.editTodo.emit(this.todo);
   }
 }

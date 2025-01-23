@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { User } from '../../interfaces/users.interface';
 
 @Component({
@@ -6,10 +12,11 @@ import { User } from '../../interfaces/users.interface';
   standalone: true,
   imports: [],
   templateUrl: './user-card.component.html',
-  styleUrl: './user-card.component.scss'
+  styleUrl: './user-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCardComponent {
-  @Input() user!: User
+  @Input() user!: User;
   @Output() deleteUser = new EventEmitter<number>();
   @Output() editUser = new EventEmitter<User>();
 
@@ -17,8 +24,7 @@ export class UserCardComponent {
     this.deleteUser.emit(this.user.id);
   }
 
-  onEdit(){
-    this.editUser.emit(this.user)
+  onEdit() {
+    this.editUser.emit(this.user);
   }
-
 }
