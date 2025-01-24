@@ -1,31 +1,31 @@
-import { Component, inject, Injectable } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
 import { TodoApiService } from "../todos-api.service";
 import { TodosCardComponent } from "./todo-card.component";
-import { NgFor } from "@angular/common";
+import { AsyncPipe, NgFor } from "@angular/common";
 import { Todo,} from "./todos-interface";
+import { TodosService } from "../todos.service";
 
 @Component({
     selector: 'app-todos-list',
     standalone: true,
-    imports: [TodosCardComponent, NgFor],
+    imports: [TodosCardComponent, NgFor, AsyncPipe],
     templateUrl: './todos-list.component.html',
-    styleUrl: './todos-list.component.scss'
+    styleUrl: './todos-list.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosListComponent {
     readonly todosApiService = inject(TodoApiService)
-    todos: Todo[] = []
+    readonly todosService = inject(TodosService)
 
     constructor() {
         this.todosApiService.getTodos().subscribe(
             (response: Todo[]) => {
-                this.todos = response;
+                this.todosService.setTodos(response)
             }
         )
     }
 
     deleteTodo(id: number){
-        this.todos = this.todos.filter(
-            todo => todo.id !== id
-        )
+        this.todosService.deleteTodo(id)
     }
 }
