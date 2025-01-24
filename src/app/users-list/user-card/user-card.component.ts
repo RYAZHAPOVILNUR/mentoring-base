@@ -3,11 +3,14 @@ import { MatDialog } from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
+import { UpperCasePipe } from '@angular/common';
+import { CustomUpperCasePipe } from '../../pipes/upper-case.pipe';
+import { NumberFormatPipe } from '../../pipes/number-format.pipe';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [],
+  imports: [UpperCasePipe, CustomUpperCasePipe, NumberFormatPipe ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
 })

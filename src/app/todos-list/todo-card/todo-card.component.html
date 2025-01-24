@@ -1,10 +1,11 @@
 <div class="todo-card-item">
     <div class="todo-card-item-content">
-      <h2 style="color: #0077ff;">Текст задачи:</h2><br><h3>{{ todo.title }}</h3>
+      <h2 style="color: #0077ff;">Текст задачи:</h2><br><h3>{{ todo.title | limitText }} </h3>
       <h3 style="padding-top: 50px; box-sizing: border-box">
         Автор задачи: {{ todo.userId }}
       </h3>
       <h3><a style="color: red">Статус исполнения: </a> {{ todo.completed}}</h3>
+      <h3><a style="color: red">Сегодня: </a> {{ myDate | setDate:'medium' }}</h3>
     </div>
     <button
       type="button"
