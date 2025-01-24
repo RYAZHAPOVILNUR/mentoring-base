@@ -1,0 +1,87 @@
+.compani_1 {
+    width: 1920px;
+    height: 137px;
+    max-width: 100%;
+}
+
+.pages {
+    display: flex;
+    gap: 16px;
+    padding-left: 290px;
+    margin-top: 28px;
+    color: #A1A0A0;
+}
+
+.compani_2 {
+    margin-left: 290px;
+    margin-top: 28px;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.map {
+    background-image: url('/assets/Map_location.png');
+    height: 759px;
+    width: 1920px;
+    max-width: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+.contacts {
+    width: 646px;
+    height: 723px;
+    top: 283px;
+    left: 300px;
+    gap: 16px;
+    opacity: 0px;
+    background-color: white;
+    margin-left: 290px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.contacts_emai_tel {
+    width: 646px;
+    height: 73px;
+    display: flex;
+    gap: 80px;
+}
+
+.img_tel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 29px;
+}
+
+.img_email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacts_compani {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts_telefon {
+    padding-left: 64px;
+    margin-top: -20px;
+}
+
+.cont_tel_2 {
+    margin-top: 8px;
+}
+
+.contacts_email {
+    padding-right: 180px;
+    margin-top: -20px;
+}
+
+.cont_email_2 {
+    margin-top: 8px;
+}
+ 
