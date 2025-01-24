@@ -19,6 +19,17 @@ const upperCaseMenuItems: string[] = menuItems.map((item: string): string => {
   return item.toUpperCase();
 });
 
+
+const user = {
+  name: 'Ilnyr',
+  surname: 'Ryazhapov',
+  height: 185,
+  weight: 100,
+}
+
+user.name = 'Petr'
+
+
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -1,0 +1,9 @@
+КОМПОНЕНТ СПИСКА ЮЗЕРОВ
+
+
+<div *ngFor="let item of users">
+  {{$any(item).name}}
+  {{$any(item).email}}
+</div>
+
+<!-- {{users[0].name}} -->

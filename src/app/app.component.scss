@@ -42,11 +42,6 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .header-nav {
   background-color: #4b565e;
 }
@@ -65,7 +60,6 @@ a {
 }
 
 .header-nav__nav-left {
-  font-family: Inter;
   display: flex;
   align-items: center;
   width: 855px;
@@ -79,11 +73,13 @@ a {
 
 .header-nav__nav-list {
   @include reset-ul;
+  
   display: flex;
 }
 
 .header-nav__nav-item {
   @include reset-li;
+  
   margin-right: 24px;
   font-size: 16px;
   font-weight: 600;
@@ -129,8 +125,8 @@ a {
 .header-nav__nav-empty {
   padding-left: 10px;
   padding-right: 20px;
-  padding-top: 14, 5px;
-  padding-bottom: 14, 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -161,12 +157,14 @@ a {
 
 .header-menu__menu-list {
   @include reset-ul;
+  
   display: flex;
   gap: 24px;
 }
 
 .header-menu__item {
   @include reset-li;
+  
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;
@@ -284,7 +282,7 @@ a {
   min-width: 421px;
   max-height: 428px;
   box-shadow: 0px 20px 50px 0px #3c3c3b12;
-  background-image: url(/assets/spraygun.png);
+  background-image: url("/assets/spraygun.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-y: bottom;
@@ -297,7 +295,6 @@ a {
 }
 
 .item-cards__grid-title {
-  font-family: Inter;
   font-size: 28px;
   font-weight: 600;
   box-sizing: border-box;
@@ -310,7 +307,6 @@ a {
 }
 
 .item-cards__grid-left-action span {
-  font-family: Inter;
   font-size: 14px;
   font-weight: 400;
 }
@@ -342,7 +338,7 @@ a {
 }
 
 .block-enamels {
-  background-image: url(/assets/enamels.png);
+  background-image: url("/assets/enamels.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-y: bottom;
@@ -350,7 +346,7 @@ a {
 }
 
 .block-paint {
-  background-image: url(/assets/paint.png);
+  background-image: url("/assets/paint.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-y: bottom;
@@ -358,7 +354,7 @@ a {
 }
 
 .block-sealant {
-  background-image: url(/assets/sealant.png);
+  background-image: url("/assets/sealant.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-y: bottom;
@@ -366,7 +362,7 @@ a {
 }
 
 .block-sockets {
-  background-image: url(/assets/sockets.png);
+  background-image: url("/assets/sockets.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-y: bottom;
@@ -434,6 +430,7 @@ a {
 
 .popular__product-list {
   @include reset-ul;
+  
   display: flex;
   justify-content: space-between;
   padding-inline-start: 0px;
@@ -445,7 +442,7 @@ a {
   box-shadow: 0px 20px 50px 0px #3c3c3b12;
   max-width: 310px;
   max-height: 430px;
-  background-image: url(/assets/cutting_disc.png);
+  background-image: url("/assets/cutting_disc.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-x: center;
@@ -597,6 +594,7 @@ a {
 
 .catalogue-action__link {
   @include clear-link;
+  
   color: #f0ba4e;
 }
 
@@ -640,6 +638,7 @@ a {
 
 .new__product-list {
   @include reset-ul;
+  
   display: flex;
   justify-content: space-between;
   padding-inline-start: 0px;
@@ -651,7 +650,7 @@ a {
   box-shadow: 0px 20px 50px 0px #3c3c3b12;
   max-width: 310px;
   max-height: 430px;
-  background-image: url(/assets/cutting_disc.png);
+  background-image: url("/assets/cutting_disc.png");
   background-repeat: no-repeat;
   overflow: hidden;
   background-position-x: center;
@@ -842,6 +841,7 @@ a {
 
 .footer-email-submit {
   @include clear-button;
+  
   border-radius: 30px;
   background-color: #f0ba4e;
   color: #f6f6f6;
@@ -858,6 +858,7 @@ a {
 
 .footer-input {
   @include clear-input;
+  
   width: 410px;
   margin-left: 9px;
   transform: translateY(-2px);
@@ -870,11 +871,14 @@ a {
 }
 
 .footer__nav {
+  @include reset-ul();
+  
   display: flex;
   color: #ffffff;
   gap: 28px;
   margin-bottom: 36px;
 }
+
 
 .footer__social {
   display: flex;
