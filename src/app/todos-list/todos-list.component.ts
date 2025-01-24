@@ -30,8 +30,6 @@ export class TodosListComponent{
                 this.todos = response;
             });
     }
-    
-    
 
     deleteTodo(id: number) {
         this.todos = this.todos.filter(
@@ -40,5 +38,4 @@ export class TodosListComponent{
             }
         )
     }
-
 }
