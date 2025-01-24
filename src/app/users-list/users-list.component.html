@@ -1,0 +1,8 @@
+<div class="user-component-container">
+    <span class="user-component-name">Компонент списка Юзеров:</span>
+    <div class="users-carts-container">
+        <div *ngFor="let user of usersService.users$ | async">
+            <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+        </div>
+    </div>    
+</div>

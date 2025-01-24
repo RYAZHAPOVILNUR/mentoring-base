@@ -1,0 +1,7 @@
+<p class="task-list-component">Компонент списка задач:</p>
+
+<div class="todo-cart">
+    <div *ngFor="let todo of todosService.todos$ | async ">
+        <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
+    </div>
+</div>

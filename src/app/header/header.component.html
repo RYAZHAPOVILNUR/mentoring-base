@@ -1,0 +1,45 @@
+<header>
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">
+        <img src="/assets/Frame.svg" alt="логотип сайта">
+      </div>
+      <nav class="header-nav">
+        <a routerLink="" class="header-nav-item">{{headerItem1}}</a>
+        <a href="https://example.com" class="header-nav-item">{{aboutCompany}}</a>
+        <a href="https://example.com" class="header-nav-item">{{headerItem3}}</a>
+        <button style="background-color: #F0BA4E; color: black; border-radius: 10px; cursor: pointer;" routerLink="/users" class="header-nav-item">{{headerItem4}}</button>
+        <a routerLink="/todos" style="color: #FFFF;">{{headerItem5}}</a>
+      </nav>
+   </div>
+   <div class="header-right">
+    <img src="/assets/Phone.svg" alt="">
+    <a class="phone-number" href="tel:+79650842929">+7 (965) 084-29-29</a>
+    <img class="heart" src="/assets/heart 1.svg" alt="сердечко">
+    <button type="button" class="cart">
+      <img class="img-cart" src="/assets/Mask group.svg" alt="тележка">
+      <span class="empty">Пусто</span>
+    </button>
+   </div>
+  </div>
+    
+    <div class="header-2">
+      <div class="header-2-left">
+          <img class="menu" src="/assets/light.svg" alt="меню">
+        <nav class="header-2-nav">
+          <span class="header-2-nav-item" *ngFor ="let item of menuUpperNames">{{item}}</span>
+          <button (click) ="changeMenuText()">Изменить текст</button>
+        </nav>
+      </div>
+      <div class="header-2-right">
+        <form>
+          <input class="search" type="search" placeholder="Поиск, например Круг зачистной">
+        </form>
+        <div class="map">
+          <img src="/assets/map-pin (2) 1.svg" alt="">
+          <button type="menu" class="country">Москва</button>
+        </div>
+      </div>
+    </div>
+  </header>
+<router-outlet></router-outlet>
