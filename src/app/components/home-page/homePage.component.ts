@@ -5,14 +5,12 @@ import { RouterOutlet } from "@angular/router";
 
 const menuPagination = ['5', '4', '3', '2', '1'];
 
-console.log(menuPagination);
-
 @Component({
     selector: 'app-home-page',
     standalone: true,
     templateUrl: './homePage.component.html',
     styleUrl: './homePage.component.scss',
-    imports: [RouterOutlet, NgFor, NgIf],
+    imports: [NgFor, NgIf],
 })
 
 export class HomePageComponent {

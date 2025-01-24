@@ -4,8 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,9 +12,6 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
   
   
 }

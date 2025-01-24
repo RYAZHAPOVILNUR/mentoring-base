@@ -6,6 +6,7 @@ import { BehaviorSubject } from "rxjs";
 export class UsresService {
     usersSubject$ = new BehaviorSubject<User[]>([])
     users: User [] = [];
+    users$!: any;
     
 
     setUsers(users: User []) {

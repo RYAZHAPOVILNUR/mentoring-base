@@ -1,0 +1,13 @@
+<form class="create_form" action="" [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="create_input">
+        <p>Name</p> 
+        <input type="text" formControlName="name"> 
+        <p>Email</p>
+        <input type="text" formControlName="email">
+        <p>Website</p>
+        <input type="text" formControlName="website">
+        <p>Company Name</p>
+        <input type="text" formControlName="companyName">
+    </div>
+    <button class="create_button">Crete user</button>
+</form>

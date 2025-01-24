@@ -1,3 +1,5 @@
+<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
+
 <div class="container_user">
     <div class="users">
         <div *ngFor="let item of userService.usersSubject$ | async">

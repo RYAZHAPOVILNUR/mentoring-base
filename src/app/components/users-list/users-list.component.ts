@@ -1,12 +1,10 @@
-import { AsyncPipe, NgFor, NgIf } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
+import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
 import { UsersApiService } from "../../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { Todo } from "../../interfaces/todos.interface";
-import { User } from "../../interfaces/user.interface";
 import { UsresService } from "../../users.service";
+import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+import { User } from "../../interfaces/user.interface";
 
 
 @Component({
@@ -14,7 +12,7 @@ import { UsresService } from "../../users.service";
     standalone: true,
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
-    imports: [NgFor, UserCardComponent, AsyncPipe],
+    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 
@@ -23,24 +21,32 @@ export class UsersListComponent {
     readonly userService = inject(UsresService);
     
     users = this.userService.users
+
     constructor() {
         this.usersApiService.getUsers().subscribe(
             (respons: any) => {
                 this.userService.setUsers(respons);
-                // this.users = this.userService.users
-                
             }
         )
 
-        // this.userService.usersSubject.subscribe(
-        //     user => this.users = this.users
-        // )
+    }
+
+    public createUser(formData: any) {
+        this.userService.creatUser({
+            id: new Date().getTime(),
+            name: formData.name,
+            email: formData.email,
+            website: formData.website,
+            company: {
+                name: formData.companyName,
+            }
+        })
     }
 
     deleteUser(id: number) {
         this.userService.deleteUser(id)
         this.users = this.userService.users
+    }
        
 }
 
-}
