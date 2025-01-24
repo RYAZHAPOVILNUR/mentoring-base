@@ -7,11 +7,20 @@
     </h3>
     <h3>{{ user.company.name }}</h3>
   </div>
-  <button
+  <div style="display: flex; justify-content: space-between;">
+    <button
     type="button"
     class="card-item-self-delete-button"
-    (click)="onDeleteUser(user.id)"
+    (click)="openDeleteDialog()"
   >
     Удалить
   </button>
+  <button
+    type="button"
+    class="card-item-self-delete-button"
+    (click)="openEditDialog()"
+  >
+    Редактировать
+  </button>
+  </div>
 </div>

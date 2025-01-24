@@ -1,0 +1,8 @@
+<h2 mat-dialog-title style="padding: 20px;">Удалить пользователя</h2>
+<mat-dialog-content>
+  <p>Вы дествительно хотите удалить пользователя ?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Отмена</button>
+  <button mat-button [mat-dialog-close]="userWithDeleteFields" cdkFocusInitial>Да</button>
+</mat-dialog-actions>

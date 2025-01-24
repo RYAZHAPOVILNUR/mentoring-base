@@ -36,7 +36,6 @@ export class UsersService {
       alert('Такой email уже существует!')
     }else {
       this.usersSubject$.next([...this.usersSubject$.value, user]);
-      alert('Новый пользователь успешно добавлен !')
     }
   }
 
