@@ -32,7 +32,7 @@ export interface User {
     standalone: true,
     imports: [NgFor, UserCardComponent],
     templateUrl: './users-list.component.html',
-    styleUrls: ['./users-list.component.scss']
+    styleUrls: ['./users-list.component.scss'],
 })
 
 
@@ -48,7 +48,6 @@ export class UsersListComponent{
     }
     
     
-
     deleteUser(id: number) {
         this.users = this.users.filter(
             user => {
