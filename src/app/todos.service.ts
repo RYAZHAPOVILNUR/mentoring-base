@@ -4,7 +4,8 @@ import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
-    todosSubject$ = new BehaviorSubject<Todo[]>([]);
+    private todosSubject$ = new BehaviorSubject<Todo[]>([]);
+    todos$ = this.todosSubject$.asObservable();
 
     setTodos(todos: Todo[]) {
         this.todosSubject$.next(todos);
@@ -14,11 +15,8 @@ export class TodosService {
         this.todosSubject$.next(
             this.todosSubject$.value.map(
                 todo => {
-                    if (todo.id === editedTodo.id) {
-                        return editedTodo
-                    } else {
-                        return todo
-                    }
+                    return (todo.id === editedTodo.id) ? editedTodo : todo;
+
                 }
             )   
         )
