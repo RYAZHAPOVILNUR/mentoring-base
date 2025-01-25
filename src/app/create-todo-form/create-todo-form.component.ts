@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,7 +11,8 @@ import { completedValidator } from './create-todo-form-validator.component';
   standalone: true,
   imports: [ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatIconModule],
   templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss'
+  styleUrl: './create-todo-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class CreateTodoFormComponent implements OnInit {

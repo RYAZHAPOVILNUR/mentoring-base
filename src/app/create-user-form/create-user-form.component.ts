@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule }  from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -10,7 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule],
   templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss'
+  styleUrl: './create-user-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class CreateUserFormComponent implements OnInit {
