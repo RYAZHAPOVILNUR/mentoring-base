@@ -1,5 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { TodosApiService } from "../todos-api.service";
+import { NgFor } from "@angular/common";
+import { TodoCard } from "./todo-card/todo-card.component";
 
 
 export interface Todos {
@@ -13,8 +15,10 @@ export interface Todos {
     selector: 'app-todos-list',
     templateUrl: './todos-list.component.html',
     styleUrl: './todos-list.component.scss',
-    standalone: true
+    standalone: true,
+    imports: [NgFor, TodoCard]
 })
+
 export class TodosListComponent {
     readonly apiService = inject(TodosApiService)
 
@@ -26,6 +30,12 @@ export class TodosListComponent {
                 this.todos = response
                 console.log('TODOS:', this.todos)
             }
+        )
+    }
+
+    deleteTodo(id: number){
+        this.todos = this.todos.filter(
+            item => id === item.id ? false : true
         )
     }
 
