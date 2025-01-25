@@ -1,0 +1,16 @@
+.todos {
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 25px;
+}
+
+.delete {
+    background: blueviolet;
+    border-radius: 15px;
+}
+
+.delete:hover {
+    background: green;
+}
