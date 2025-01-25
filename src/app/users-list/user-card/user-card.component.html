@@ -1,0 +1,12 @@
+<p>{{ user.name | CustomUpperCase }}</p>
+<p>{{ user.website }}</p>
+<p>{{ user.email }}</p>
+<p>{{ user.company.name }}</p>
+
+<button class="click_class" (click)="onDeleteUser(user.id)">
+  Удалить пользователя
+</button>
+
+<button class="click_class" (click)="openDialog()">
+  Редактировать пользователя
+</button>

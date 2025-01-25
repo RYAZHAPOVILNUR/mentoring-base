@@ -1,0 +1,99 @@
+<div style="background-color: #4b565e">
+  <div class="content-container-1">
+    <div class="header">
+      <div class="header_lefr">
+        <div class="header-logo">
+          <img src="../assets/frame_1.SVG" alt="логотип сайта" />
+        </div>
+        <div class="Date_pipe">
+          {{ currentDate | customDate }}
+        </div>
+        <nav class="header_nav">
+          <a href="url" class="header_nav_item">
+            {{ HeaderItem1 }}
+          </a>
+          <a href="url" class="header_nav_item">
+            {{ aboutCompany }}
+          </a>
+          <a href="url" class="header_nav_item" *ngIf="isShowCatalog">
+            {{ HeaderItem3 }}
+          </a>
+        </nav>
+
+        <button
+          class="button_change_menu_text"
+          (click)="isShowCatalog = !isShowCatalog"
+        >
+          скрыть\показать
+        </button>
+        <button class="button_change_menu_text" (click)="changeMenuText()">
+          изменить текст
+        </button>
+        <a class="button_change_menu_text" routerLink="/users">Админка</a>
+        <a class="button_change_menu_text" routerLink="/todos">Список Задач</a>
+      </div>
+
+      <div class="header_right">
+        <div class="logo-phone">
+          <img src="../assets/Phone.svg" alt="логотип телефона" />
+        </div>
+        <a href="tel: +7 (965) 084-29-29" class="number-phone">{{
+          "+7 (965) 084-29-29" | phonePipe
+        }}</a>
+        <div class="logo-heart">
+          <img src="../assets/heart 1.svg" alt="логотип сердца" />
+        </div>
+        <button type="button" class="header-korzina">
+          <img
+            class="korzina"
+            src="../assets/Mask group.svg"
+            alt="лого корзина"
+          />
+          <span class="header_korzina_text">Пусто</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="background-color: #f0ba4e">
+    <div class="content-container-1">
+      <div class="header_2">
+        <div class="header_2_left">
+          <div class="header_2_logo">
+            <img
+              class="logo-katalog"
+              src="../assets/light.svg"
+              alt="логотип каталога"
+            />
+          </div>
+
+          <nav class="header_nav_2">
+            <div *ngFor="let item of menuItems" class="header_nav_item2">
+              {{ item }}
+            </div>
+          </nav>
+        </div>
+
+        <div class="header_2_right">
+          <div class="input">
+            <input
+              class="input_header"
+              type="search"
+              placeholder="Поиск, например Круг зачистной "
+            />
+            <img src="../assets/Mask lupa.svg" alt="лого лупа" />
+          </div>
+
+          <div style="display: flex">
+            <img
+              style="margin-right: 5px"
+              src="../assets/map-pin (2) 1.svg"
+              alt="лого-москва"
+            />
+            <div>Москва</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

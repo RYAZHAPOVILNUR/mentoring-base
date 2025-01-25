@@ -1,0 +1,604 @@
+<div>
+  <button class="button_show_image" (click)="ImageBody = !ImageBody">
+    скрыть\показать мужика
+  </button>
+  <img *ngIf="ImageBody" src="../assets/баннер.png" alt="background-large" />
+</div>
+
+<div class="content-container">
+  <div class="info">
+    <div class="info-card">
+      <img class="icon-info" src="../assets/logo kirpich.svg" alt="" />
+      <span class="info-card-text"
+        >Большой ассортимент
+        <span style="color: rgba(161, 160, 160, 1)"
+          >строительных материалов всегда в наличии</span
+        >
+      </span>
+    </div>
+
+    <div class="info-card">
+      <img class="icon-info icon-center" src="../assets/mashinka.svg" alt="" />
+      <span class="info-card-text">
+        Доставка стройматериалов
+        <span style="color: rgba(161, 160, 160, 1)">
+          в течении четырех часов или в любое удобное время
+        </span>
+      </span>
+    </div>
+
+    <div class="info-card">
+      <img
+        class="icon-info"
+        class="icon-info"
+        src="../assets/palets.svg"
+        alt=""
+      />
+      <span class="info-card-text">
+        <span style="color: rgba(161, 160, 160, 1)">Многоуровневая</span>
+        система управления качеством
+        <span style="color: rgba(161, 160, 160, 1)">по стандарту ISO 9001</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="item-cards">
+    <div class="item-cards-pagination-style">
+      <div *ngFor="let item of newPages" class="item-cards_pagination">
+        <button class="item-cards_pagination-button active-button">
+          {{ item }}
+        </button>
+      </div>
+    </div>
+
+    <div class="item-card_grid">
+      <div class="item-cards_grid-left">
+        <p class="item-cards_grid-left-text">
+          Строительный отделочный инструмент
+        </p>
+        <div class="tem-cards_grid-left-action">
+          <p class="item-cards_grid-left-action_text">Перейти в каталог</p>
+          <a class="tem-cards_grid-left-action-link" href="">
+            <img src="../assets/strelka.svg" alt="лого каталог" />
+          </a>
+        </div>
+      </div>
+
+      <div class="item-cards_grid-right">
+        <div class="item-cards__grid-right-block block-1">
+          <p class="items-card__grid-right-block-text">Эмали</p>
+          <div class="item-cards_grid-right-action action-right-1">
+            <p class="item-cards_grid-right-action_text">Перейти в каталог</p>
+            <a href="">
+              <img src="../assets/strelka.svg" alt="лого эмали" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item-cards__grid-right-block block-2">
+          <p class="items-card__grid-right-block-text-2">
+            Лакокрасочные материалы
+          </p>
+          <div class="item-cards_grid-right-action action-right-2">
+            <p class="item-cards_grid-right-action_text">Перейти в каталог</p>
+            <a href="">
+              <img src="../assets/strelka.svg" alt="лого красочный материал" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item-cards__grid-right-block block-3">
+          <p class="items-card__grid-right-block-text-3">
+            Пены, клеи и герметики
+          </p>
+          <div class="item-cards_grid-right-action action-right-3">
+            <p class="item-cards_grid-right-action_text">Перейти в каталог</p>
+            <a href="">
+              <img src="../assets/strelka.svg" alt="лого пены" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item-cards__grid-right-block block-4">
+          <p class="items-card__grid-right-block-text-4">
+            Розетки и выключатели
+          </p>
+          <div class="item-cards_grid-right-action action-right-4">
+            <p class="item-cards_grid-right-action_text">Перейти в каталог</p>
+            <a href="">
+              <img src="../assets/strelka.svg" alt="лого розетки" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-card-1">
+  <div class="container-title">
+    <h2>Популярные товары</h2>
+    <button class="cards-title-button">Посмотреть все товары</button>
+  </div>
+  <div class="item-cards-block">
+    <div class="item-card-arrow-_left">
+      <button class="arrow-right_left">
+        <img src="../assets/strelka levo2 1.svg" alt="лого левая стрелка" />
+      </button>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div class="item-cards-image_number">
+          <img src="../assets/procenty.svg" alt="лого процент" />
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div><span class="crossed-out-price">52 руб.</span></div>
+            <div>
+              <span class="popular_products_card_text_one">48 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div class="item-cards-image_number">
+          <img src="../assets/procenty.svg" alt="лого процент" />
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div><span class="crossed-out-price">52 руб.</span></div>
+            <div>
+              <span class="popular_products_card_text_one">48 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div style="margin-left: 8px" class="item-cards-image_number">
+          <div style="width: 109px; height: 90px">
+            <img
+              style="position: relative; right: -5px; bottom: -11px"
+              src="../assets/Новинки.svg"
+              alt="лого процент"
+            />
+            <img
+              style="position: relative; top: 18px; right: -5px"
+              src="../assets/procenty.svg"
+              alt="лого проценты"
+            />
+          </div>
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div><span class="crossed-out-price">52 руб.</span></div>
+            <div>
+              <span class="popular_products_card_text_one">48 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div style="margin-left: 8px" class="item-cards-image_number">
+          <img
+            style="position: relative; right: 2px; bottom: 3px"
+            src="../assets/Новинки.svg"
+            alt="лого процент"
+          />
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div>
+              <span class="popular_products_card_text_one">52 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-card-arrow-right">
+      <button class="arrow-right_left">
+        <img src="../assets/strelka pravo.svg" alt="лого правая стрелка" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container-with-a-picture">
+  <div style="margin-bottom: 20px">
+    <span class="title_container_with_image">Более 10 000 наименований</span>
+  </div>
+  <div style="padding-bottom: 142px">
+    <span class="text_container_with_image_1"
+      >Инструмент для вашего бизнеса, разнообразных марок</span
+    >
+  </div>
+  <div>
+    <span class="text_container_with_image_2">Перейти в каталог</span>
+  </div>
+</div>
+
+<div class="container-card-1">
+  <div class="container-title">
+    <h2>Новинки</h2>
+    <button class="cards-title-button">Посмотреть все товары</button>
+  </div>
+  <div class="item-cards-block">
+    <div class="item-card-arrow-_left">
+      <button class="arrow-right_left">
+        <img src="../assets/strelka levo2 1.svg" alt="лого левая стрелка" />
+      </button>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div class="item-cards-image_number">
+          <img
+            style="position: relative; right: 22px"
+            src="../assets/Новинки.svg"
+            alt="лого процент"
+          />
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div>
+              <span class="popular_products_card_text_one">52 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div class="item-cards-image_number">
+          <img
+            style="position: relative; right: 22px"
+            src="../assets/Новинки.svg"
+            alt="лого процент"
+          />
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div>
+              <span class="popular_products_card_text_one">52 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div style="margin-left: 8px" class="item-cards-image_number">
+          <div style="width: 109px; height: 90px">
+            <img
+              style="position: relative; right: 5px; top: 20px"
+              src="../assets/Новинки.svg"
+              alt="лого процент"
+            />
+          </div>
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div>
+              <span class="popular_products_card_text_one">52 руб.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_cards-product">
+      <div class="item-cards-container-top">
+        <div style="margin-left: 8px" class="item-cards-image_number">
+          <img
+            style="position: relative; right: 6px"
+            src="../assets/Новинки.svg"
+            alt="лого процент"
+          />
+          <img src="../assets/black heart.svg" alt="лого сердце" />
+        </div>
+      </div>
+
+      <div class="item-cards-container-bottom">
+        <div>
+          <span class="popular_products_card_text_one"
+            >Круг зачистной 125х6х22</span
+          >
+        </div>
+        <div>
+          <span class="popular_products_card_text">Артикул 00004</span>
+        </div>
+        <div>
+          <div class="price-one-item">
+            <span>Цена за штуку</span>
+          </div>
+          <div class="price-per-item">
+            <div>
+              <span class="popular_products_card_text_one">52 руб.</span>
+            </div>
+          </div>
+        </div>
+        <div class="container_with_basket">
+          <div>
+            <span class="popular_products_card_text">Количество </span>
+            <div class="number_of_purchases">
+              <button class="popular_products_card_text add_subtract-item">
+                -
+              </button>
+              <span class="popular_products_card_text_one">1</span>
+              <button class="popular_products_card_text add_subtract-item">
+                +
+              </button>
+            </div>
+          </div>
+          <div>
+            <button class="popular_products_card_text basket-popular_products">
+              В корзину
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-card-arrow-right">
+      <button class="arrow-right_left">
+        <img src="../assets/strelka pravo.svg" alt="лого правая стрелка" />
+      </button>
+    </div>
+  </div>
+</div>

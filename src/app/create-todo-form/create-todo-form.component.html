@@ -1,0 +1,83 @@
+<div style="margin-bottom: 30px">
+  <form
+    class="form-todo-form"
+    action=""
+    [formGroup]="formTodo"
+    (ngSubmit)="SubmitForm()"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Текст задачи</mat-label>
+      <input
+        matInput
+        placeholder="напишите текст задачи"
+        value=""
+        class="form-input"
+        type="text"
+        formControlName="title"
+      />
+    </mat-form-field>
+    <div
+      *ngIf="
+        formTodo.controls['title'].invalid &&
+        (formTodo.controls['title'].dirty || formTodo.controls['title'].touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="formTodo.controls['title'].errors">Некорректная задача!</div>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Автор задачи</mat-label>
+
+      <input
+        matInput
+        placeholder="Имя автора"
+        value=""
+        class="form-input"
+        type="text"
+        formControlName="userId"
+      />
+    </mat-form-field>
+    <div
+      *ngIf="
+        formTodo.controls['userId'].invalid &&
+        (formTodo.controls['userId'].dirty ||
+          formTodo.controls['userId'].touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="formTodo.controls['userId'].errors">
+        Некорректное значение!
+      </div>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Задача завершена ?</mat-label>
+
+      <input
+        matInput
+        placeholder="да либо нет"
+        value=""
+        class="form-input"
+        type="text"
+        formControlName="completed"
+      />
+    </mat-form-field>
+    <div
+      *ngIf="
+        formTodo.controls['completed'].invalid &&
+        (formTodo.controls['completed'].dirty ||
+          formTodo.controls['completed'].touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="formTodo.controls['completed'].errors">
+        Некорректное значение!
+      </div>
+    </div>
+
+    <button mat-button class="form-button" [disabled]="formTodo.invalid">
+      CREATE TODO
+    </button>
+  </form>
+</div>

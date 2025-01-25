@@ -1,0 +1,93 @@
+<form class="form-user-form" [formGroup]="form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Имя</mat-label>
+
+    <input
+      matInput
+      placeholder="Напишите имя"
+      class="form-input"
+      type="text"
+      formControlName="name"
+    />
+  </mat-form-field>
+  <div
+    *ngIf="
+      form.controls['name'].invalid &&
+      (form.controls['name'].dirty || form.controls['name'].touched)
+    "
+    class="alert"
+  >
+    <div *ngIf="form.controls['name'].errors">ИМЯ ВВЕДЕНО НЕПРАВИЛЬНО!</div>
+  </div>
+  <mat-form-field class="example-full-width">
+    <mat-label>электронная почта</mat-label>
+
+    <input
+      matInput
+      placeholder="Введите вашу почту"
+      class="form-input"
+      type="text"
+      formControlName="email"
+    />
+  </mat-form-field>
+  <div
+    *ngIf="
+      form.controls['email'].invalid &&
+      (form.controls['email'].dirty || form.controls['email'].touched)
+    "
+    class="alert"
+  >
+    <div *ngIf="form.controls['email'].errors">email ВВЕДЁН НЕПРАВИЛЬНО!</div>
+  </div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Название сайта</mat-label>
+
+    <input
+      matInput
+      placeholder="Введите название сайта"
+      class="form-input"
+      type="text"
+      formControlName="website"
+    />
+  </mat-form-field>
+  <div
+    *ngIf="
+      form.controls['website'].invalid &&
+      (form.controls['website'].dirty || form.controls['website'].touched)
+    "
+    class="alert"
+  >
+    <div *ngIf="form.controls['website'].errors">САЙТ ВВЕДЁН НЕПРАВИЛЬНО!</div>
+  </div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Название компании</mat-label>
+
+    <input
+      matInput
+      placeholder="Введите название компании"
+      class="form-input"
+      type="text"
+      formControlName="companyName"
+    />
+  </mat-form-field>
+  <div
+    *ngIf="
+      form.controls['companyName'].invalid &&
+      (form.controls['companyName'].dirty ||
+        form.controls['companyName'].touched)
+    "
+    class="alert"
+  >
+    <div *ngIf="form.controls['companyName'].errors">
+      НАЗВЕНИЕ ВВЕДЕНО НЕПРАВИЛЬНО!
+    </div>
+  </div>
+  <button
+    mat-button
+    class="form-button"
+    [disabled]="form.invalid"
+    [mat-dialog-close]="userWithUpdatedFields"
+  >
+    РЕДАКТИРОВАТЬ
+  </button>
+</form>

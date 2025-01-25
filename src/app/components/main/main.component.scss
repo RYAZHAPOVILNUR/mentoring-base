@@ -1,0 +1,393 @@
+.button_show_image {
+  background-color: rgb(240, 186, 78);
+  border-radius: 40px;
+  height: 30px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+}
+
+.info-card {
+  display: flex;
+}
+
+.icon-info {
+  margin-right: 20px;
+}
+
+.icon-center {
+  margin-left: 45px;
+}
+
+.info-card {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.content-container {
+  margin: 0 auto;
+  width: 1320px;
+}
+
+.item-cards-pagination-style {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item-cards_pagination {
+  display: flex;
+  justify-content: end;
+
+  &-button {
+    border: none;
+    background: none;
+    color: #a1a0a0;
+  }
+}
+
+.item-card_grid {
+  display: flex;
+}
+
+.active-button {
+  color: #f0ba4e;
+  font-weight: 600;
+}
+
+.item-cards_grid-left {
+  width: 421px;
+  height: 428px;
+  max-width: 421px;
+  max-height: 428px;
+  background-image: url("../../../assets/image19.png");
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+  background-position-y: bottom;
+  background-position-x: left;
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-cards_grid-left-text {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.89px;
+  text-align: left;
+  color: rgba(60, 60, 59, 1);
+}
+
+.tem-cards_grid-left-action {
+  display: flex;
+  align-self: end;
+}
+
+.item-cards_grid-left-action_text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: rgba(60, 60, 59, 1);
+  margin-right: 10px;
+}
+
+.item-cards_grid-right {
+  display: flex;
+  width: 900px;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-left: 30px;
+}
+
+.item-cards__grid-right-block {
+  width: 421px;
+  height: 200px;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+}
+
+.block-1 {
+  background-image: url(../../../assets/emal14.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: left;
+}
+
+.items-card__grid-right-block-text {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.89px;
+  text-align: end;
+  margin-right: 10px;
+}
+
+.action-right-1 {
+  margin-left: 55%;
+  padding-top: 13%;
+}
+
+.block-2 {
+  background-image: url("../../../assets/kraska17.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.items-card__grid-right-block-text-2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.89px;
+  text-align: left;
+  width: 68px;
+  margin-left: 10px;
+}
+
+.action-right-2 {
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.block-3 {
+  background-image: url("../../../assets/pena18.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.items-card__grid-right-block-text-3 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.89px;
+  width: 218px;
+  margin-left: 10px;
+}
+
+.action-right-3 {
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.block-4 {
+  background-image: url("../../../assets/rozetka15.png");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: left;
+}
+
+.items-card__grid-right-block-text-4 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.89px;
+  margin-left: 10px;
+}
+
+.action-right-4 {
+  margin-left: 55%;
+  padding-top: 13%;
+}
+
+.item-cards_grid-right-action {
+  display: flex;
+}
+
+.item-cards_grid-right-action_text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  margin-right: 10px;
+}
+
+.container-card-1 {
+  margin: 0 auto;
+  width: 1412px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.container-title {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1412px;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.cards-title-button {
+  border: 1px solid;
+  border-color: white;
+  background: transparent;
+  color: rgba(240, 186, 78, 1);
+}
+
+.item-card-arrow-_left {
+  align-self: center;
+  position: relative;
+  left: 27px;
+}
+
+.item-card-arrow-right {
+  align-self: center;
+  position: relative;
+  right: 27px;
+}
+
+.arrow-right_left {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border-color: white;
+  border: 1px solid;
+  color: white;
+  background-color: rgba(28, 28, 28, 0);
+}
+
+.item-cards-block {
+  display: flex;
+  justify-content: center;
+}
+
+.item_cards-product {
+  width: 309px;
+  height: 429px;
+  margin: 0 auto;
+  background-image: url("../../../assets/bolgarkakrug13.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 20px;
+  padding: 15px;
+  box-shadow: 0px 20px 50px 0px rgba(60, 60, 59, 0.07);
+}
+
+.item-cards-container-top {
+  width: 309px;
+  height: 214px;
+  place-content: center;
+}
+
+.item-cards-container-bottom {
+  width: 309px;
+  height: 214px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.item-cards-image_number {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-bottom: 135px;
+}
+
+.popular_products_card_text_one {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  text-align: left;
+  color: rgba(60, 60, 59, 1);
+}
+
+.popular_products_card_text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  color: rgba(60, 60, 59, 1);
+}
+
+.basket-popular_products {
+  border: 1px solid;
+  border-radius: 31px;
+  border-color: #f0ba4e;
+  padding: 15px;
+  background: transparent;
+}
+
+.container_with_basket {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number_of_purchases {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+
+.add_subtract-item {
+  border: medium none;
+  background-color: transparent;
+}
+
+.price-per-item {
+  display: flex;
+  justify-content: space-between;
+  width: 147px;
+}
+
+.crossed-out-price {
+  text-decoration: line-through solid;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  text-align: left;
+  color: rgba(60, 60, 59, 1);
+}
+
+.price-one-item {
+  padding-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  color: rgba(161, 160, 160, 1);
+}
+
+.container-with-a-picture {
+  width: 1320px;
+  height: 251px;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url("../../../assets/muzhiksshurikom.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title_container_with_image {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.89px;
+  text-align: left;
+}
+
+.text_container_with_image_1 {
+  color: rgb(131, 131, 131);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  text-align: left;
+}
+
+.text_container_with_image_2 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.78px;
+  text-align: left;
+  color: rgba(240, 186, 78, 1);
+}

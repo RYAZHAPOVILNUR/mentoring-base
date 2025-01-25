@@ -1,0 +1,25 @@
+.form-user-form {
+  display: flex;
+  flex-direction: column;
+  width: 1320px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.form-input {
+  width: 200px;
+}
+
+.form-button {
+  width: 150px;
+  margin-top: 20px;
+  background-color: rgb(240, 186, 78);
+}
+
+.alert {
+  color: red;
+}
+
+.example-full-width {
+  width: 250px;
+}

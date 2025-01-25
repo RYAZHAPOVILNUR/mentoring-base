@@ -1,0 +1,13 @@
+<div class="title_todos-list">
+  <h1>Список задач</h1>
+</div>
+<app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
+<div class="content_container">
+  <div *ngFor="let todo of todosList$ | async">
+    <app-todo-card
+      [todo]="todo"
+      (deleteTodo)="deleteTodo($event)"
+      (editTodo)="editTodo($event)"
+    ></app-todo-card>
+  </div>
+</div>
