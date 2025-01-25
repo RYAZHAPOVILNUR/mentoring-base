@@ -1,0 +1,19 @@
+<div class="todo-form">
+    <h1>CREATE TODO FORM</h1>
+
+<form class="todo-form-cards" 
+    [formGroup] = 'form'
+    (ngSubmit)="submitForm()">
+
+    <div class="form-input">
+    <p>Название задачи:</p>
+    <input type="text" formControlName="title">
+    <p>Автор задачи:</p>
+    <input type="text" formControlName="userId">
+    <p>Задача завершена?:</p>
+    <input type="text" formControlName="completed">
+    <button class="create-form-button" [disabled]="form.invalid">CREATE TODO</button>
+    </div>   
+</form>
+</div>
+

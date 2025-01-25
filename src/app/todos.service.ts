@@ -11,6 +11,7 @@ export class TodosService {
         this.todosSubject$.next(todos);
     }
 
+    
     editTodo(editedTodo: Todo) {
         this.todosSubject$.next(
             this.todosSubject$.value.map(
@@ -22,11 +23,21 @@ export class TodosService {
         )
     }
 
+
     createTodo(todo: Todo){
-        this.todosSubject$.next(
-            [...this.todosSubject$.value, todo]
+        const existingTodo = this.todosSubject$.value.find(
+            (currentElement) => currentElement.title === todo.title
         )
+
+        if (existingTodo !== undefined) {
+            alert('такой title уже существует')
+        } else {
+            this.todosSubject$.next(
+                [...this.todosSubject$.value, todo]
+            )
+        }        
     }
+
 
     deleteTodo(id: number) {
         this.todosSubject$.next(
