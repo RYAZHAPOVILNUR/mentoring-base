@@ -1,0 +1,359 @@
+<button class="changeBtn" type="button" (click)="isShowImage = !isShowImage">Скрыть/Показать изображение</button>
+<div class="container" *ngIf="isShowImage">
+  <img class="image-back image1" src="/assets/Rectangle5.png" alt="">
+  <img class="image-back image2" src="/assets/Vector1.png" alt="">
+  <div class="text-container">Инструмент для вашего <br>бизнеса</div>
+</div>
+
+<div class="content-container">
+  
+  <div class="info-cards">
+    <div class="info-cards-left">
+      <img class="image-info" src="/assets/Mask_group.svg" alt="">
+      <p class="text-info"><b>Большой ассортимент</b><br> строительных материалов всегда в наличии</p>
+    </div>
+    <div class="info-cards-center">
+      <img class="image-info" src="/assets/Mask.svg" alt="">
+      <p class="text-info"><b>Доставка стройматериалов</b><br> в течении четырех часов или в любое удобное время</p>
+    </div>
+    <div class="info-cards-right">
+      <img class="image-info" src="/assets/Good.svg" alt="">
+      <p class="text-info">Многоуровневая <b>система</b><br> <b>управления качеством</b> по стандарту ISO 9001</p>
+    </div>
+  </div>
+
+  <div class="item-cards">
+    <div class="item-cards__pagination" >
+      <button class="item-cards__pagination-button active-button" type="button" *ngFor="let item of newPages">{{item}}</button>
+    </div>
+    <div class="item-cards__grid">
+      <div class="item-cards__grid-left">
+        <div class="item-cards__grid-left-text">
+          <span class="item-cards-text">Строительный отделочный инструмент</span>
+        </div>
+        <div class="item-cards__grid-left-action">
+          <span class="item-cards__grid-left-action-text">Перейти в каталог</span>
+          <a>
+            <img src="/assets/Frame20.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="item-cards__grid-right">
+        <div class="item-cards__grid-right-block enamel">
+          <div class="item-cards__grid-right-block-enamel">
+            <span class="item-cards-text">Эмали</span>
+          </div>
+          <div class="item-cards__grid-right-actions">
+            <span class="item-cards__grid-left-action-text">Перейти в каталог</span>
+            <a>
+              <img src="/assets/Frame20.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block glue">
+          <div class="item-cards__grid-right-block-glue">
+            <span class="item-cards-text">Лакокрасочные <br>материалы</span>
+          </div>
+          <div class="item-cards__grid-right-actions-plus">
+            <span class="item-cards__grid-left-action-text">Перейти в каталог</span>
+            <a>
+              <img src="/assets/Frame20.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block varnish">
+          <div class="item-cards__grid-right-block-varnish">
+            <span class="item-cards-text">Пены, клеи и <br> герметики</span>
+          </div>
+          <div class="item-cards__grid-right-actions-plus">
+            <span class="item-cards__grid-left-action-text">Перейти в каталог</span>
+            <a>
+              <img src="/assets/Frame20.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block sockets">
+          <div class="item-cards__grid-right-block-sockets">
+            <span class="item-cards-text">Розетки и выключатели</span>
+          </div>
+          <div class="item-cards__grid-right-actions">
+            <span class="item-cards__grid-left-action-text">Перейти в каталог</span>
+            <a>
+              <img src="/assets/Frame20.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="items-container">
+    <div class="popular__items-top">
+      <span class="popular__items-top-text">Популярные товары</span>
+      <a class="popular__items-top-button link" href="">Посмотреть все товары</a>
+    </div>
+    <div class="popular__items-main">
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/discount.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="popular__items-info-price-old">52 руб.</span>
+            <span class="popular__items-info-price-new">48 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/discount.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="popular__items-info-price-old">52 руб.</span>
+            <span class="popular__items-info-price-new">48 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/New.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+          <div class="popular__items-main-cards-image-disc">
+            <img src="/assets/discount.png" alt="">
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="popular__items-info-price-old">52 руб.</span>
+            <span class="popular__items-info-price-new">48 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/New.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="">52 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="banner-container">
+    <div class="banner-cotainer__content">
+      <span class="banner-cotainer__content-header">БОЛЕЕ 10 000 НАИМЕНОВАНИЙ</span>
+      <span class="banner-cotainer__content-text">Инструмент для вашего бизнеса, разнообразных марок</span>
+      <a class="banner-cotainer__content-link link" href="">Перейти в каталог</a>
+    </div>
+  </div>
+  
+  <div class="items-container">
+    <div class="popular__items-top">
+      <span class="popular__items-top-text">Новинки</span>
+      <a class="popular__items-top-button link" href="">Посмотреть все товары</a>
+    </div>
+    <div class="popular__items-main">
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/New.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="">52 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/New.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="">52 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/New.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="">52 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="popular__items-main-cards">
+        <div class="popular__items-main-cards-image">
+          <div class="popular__items-main-cards-image-one">
+            <img src="/assets/New.png" alt="">
+            <button type="button">
+              <img src="/assets/Vector.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="popular__items-info">
+          <span class="popular__items-info-text">Круг зачистной 125х6х22</span>
+          <span class="popular__items-info-articul">Артикул 00004</span>
+          <span class="popular__items-info-price">Цена за штуку</span> 
+          <div class="popular__items-info-price-container">
+            <span class="">52 руб.</span>
+          </div>
+          <div class="popular__items-info-price-container-bottom">
+            <div class="popular__items-info-price-container-bottom-input">
+              <span class="popular__items-info-articul">Количество</span>
+              <div class="popular__items-info-articul-image">
+                <img class="popular__items-info-articul-image-minus" src="/assets/-.svg" alt="">
+                <img class="popular__items-info-articul-image-one" src="/assets/1.svg" alt="">
+                <img class="popular__items-info-articul-image-plus" src="/assets/+.svg" alt="">
+              </div>
+            </div>
+            <button class="popular__items-info-price-container-bottom-btn" type="button">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

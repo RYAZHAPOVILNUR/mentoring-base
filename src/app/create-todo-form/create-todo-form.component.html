@@ -1,0 +1,23 @@
+<form class="create-form-container" action="" [formGroup]="formTodo">
+	<mat-form-field>
+		<mat-label>Ведите автора задачи:</mat-label>
+		<input matInput type="text" formControlName="userId">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<mat-form-field>
+		<mat-label>Введите текст задачи:</mat-label>
+		<input matInput type="text" formControlName="title">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<mat-form-field>
+		<mat-label>Задача завершена:</mat-label>
+		<input matInput type="text" formControlName="completed">
+		<mat-error>Некорректное значение</mat-error>
+	</mat-form-field>
+	
+	<button mat-stroked-button (click)="submitForm()" [disabled]="formTodo.invalid" type="submit">Add todo
+		<mat-icon>add</mat-icon>
+	</button>
+</form>
