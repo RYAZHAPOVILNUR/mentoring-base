@@ -1,0 +1,33 @@
+.User-Card {
+    width: 309px;
+    height: 429px;
+    background-color: white;
+    box-shadow: 0px 20px 50px 0px #12112714;
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 10px; 
+    flex-wrap: wrap; 
+    padding: 24px;
+    background-color: white;
+    box-shadow: 0px 20px 50px 0px #12112714;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-align: left;
+}
+
+.UserCard-DeleteButton {
+    width: 135px;
+    height: 47px;
+    align-items: center;
+    border-radius: 54px;
+    border: 1px;
+    background-color: transparent;
+    border: 1px solid #F0BA4E;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+}

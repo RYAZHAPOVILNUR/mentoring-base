@@ -11,7 +11,9 @@ import { RouterLink } from '@angular/router';
 })
 export class AppHeaderComponent {
     nav = ['Главная','О компании','Каталог'];
+    
     isDelete: boolean = false;
+
     deleteCatalog() {
       if (this.isDelete === false){
         this.nav = ['Главная','О компании'];
