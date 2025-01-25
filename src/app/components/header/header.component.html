@@ -33,14 +33,15 @@
                         <span class="basket">Пусто</span>
                     </button>
                 </div>
-                <button routerLink="/admin">Users</button>
+                <button routerLink="/users">Users</button>
                 <button routerLink="/todos">Todos</button>
+                
             </div>
         </div>
-     
         <div> 
-            <button (click)="openDialog()" *ngif="(userService.user$ | async)=== null">Войти</button>
-            <button (click)="logout()" *ngif="(userService.user$ | async) !== null">Выйти</button>
+            <button routerLink="/admin">Admin</button>
+            <button (click)="openDialog()" *ngIf="(userService.user$ | async)=== null"> Войти </button>
+            <button (click)="logout()" *ngIf="(userService.user$ | async) !== null"> Выйти </button>
         </div>
         <div>
             <div class="subheader">

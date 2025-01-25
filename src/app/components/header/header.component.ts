@@ -31,7 +31,6 @@ const user = {};
     YellowDirective,
     MatIconModule,
     AsyncPipe
-    
 ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

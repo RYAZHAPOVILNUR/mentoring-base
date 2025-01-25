@@ -20,7 +20,7 @@ import { ITodo } from '../interfaces/todo.interface';
   templateUrl: './todos-list.component.html',
   styleUrl: './todos-list.component.scss',
   standalone: true,
-  imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodoFormComponent],
+  imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodoFormComponent, ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosListComponent {
@@ -39,15 +39,7 @@ export class TodosListComponent {
     console.log(todo);
     this.todosService.createTodo(todo);
   }
-//   openDialog(): void {
-//     const dialogRef = this.dialog.open(EditTodoDialogComponent, {
-//       data: { user: this.todo },
-//     });
 
-//     dialogRef.afterClosed().subscribe((editResult) => {
-//       console.log('Модалка Закрылась, Значение формы:', editResult);
-//     });
-//   }
 
   @Output()
   editTodo = new EventEmitter<ITodo>();
