@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { TodosApiService } from '../todos-api.service';
-import { inject } from '@angular/core';
 import { TodoCardComponent } from './todo-card/todo-card.component';
 import { ChangeDetectionStrategy } from "@angular/core";
-import { Todo } from './todo-create';
 import { TodosService } from '../todos.service';
+import { Todo } from './todo-create';
 
 @Component ({
   selector: 'app-user-list',
@@ -18,22 +17,17 @@ import { TodosService } from '../todos.service';
 
 export class TodoListComponent {
   readonly todosApiService = inject(TodosApiService)
-  readonly TodosService = inject(TodosService)
-  todos: Todo[] = [];
+  readonly todosService = inject(TodosService)
 
   constructor () {
     this.todosApiService.getTodos().subscribe(
       (response: Todo[]) => {
-        this.todos = response;
+        this.todosService.setTodos(response);
       }
     )
   }
 
   deleteTodo(id: number) {
-    this.todos = this.todos.filter(
-      todo => {
-        return todo.id === id ? false : true
-      }
-    )
+    this.todosService.deleteTodos(id)
   }
 }

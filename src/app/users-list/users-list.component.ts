@@ -1,5 +1,4 @@
 import { AsyncPipe, NgFor } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
 import { Component, inject } from "@angular/core";
 import { UsersApiService } from "../users-api.servise";
 import { UserCardComponent } from "./user-card/user-card.component";
@@ -28,7 +27,7 @@ export class UsersListComponent {
     )
   }
 
-  deleteUser (id: User) {
+  deleteUser (id: number) {
     this.usersService.deleteUser(id)
   }
 }
