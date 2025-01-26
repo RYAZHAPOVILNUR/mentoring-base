@@ -14,7 +14,7 @@ import { CreateEditUserFormComponent } from '../create-edit-user-form/create-edi
 import { MatButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeletionComponent } from '../confirm-deletion/confirm-deletion.component';
-import { take } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',
@@ -35,12 +35,18 @@ export class UserListComponent implements OnInit {
   readonly usersService = inject(UsersService);
   readonly dialog = inject(MatDialog);
   users$ = this.usersService.users$;
+  private readonly destroy$ = new Subject<void>();
 
   ngOnInit(): void {
     this.usersApiService
       .getUsers()
-      .pipe(take(1))
+      .pipe(takeUntil(this.destroy$))
       .subscribe((users) => this.usersService.setUsers(users));
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   openCreateDialog() {

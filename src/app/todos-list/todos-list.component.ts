@@ -12,7 +12,7 @@ import { CreateEditTodoFormComponent } from '../create-edit-todo-form/create-edi
 import { MatDialog } from '@angular/material/dialog';
 import { Todo } from '../interfaces/todos.interface';
 import { MatButton } from '@angular/material/button';
-import { take } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-todos-list',
@@ -27,13 +27,18 @@ export class TodosListComponent implements OnInit {
   todosService = inject(TodosService);
   readonly dialog = inject(MatDialog);
   todos$ = this.todosService.todos$;
+  private readonly destroy$ = new Subject<void>()
 
-  constructor() {}
   ngOnInit(): void {
     this.todosApiservice
       .getTodos()
-      .pipe(take(1))
+      .pipe(takeUntil(this.destroy$))
       .subscribe((todos) => this.todosService.setTodos(todos));
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   openCreateDialog() {
