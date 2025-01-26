@@ -1,0 +1,21 @@
+<div class="container">
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="openCreateDialog()"
+  >
+    + Add user
+  </button>
+  <div class="users">
+    <ng-container *ngFor="let user of users$ | async">
+      <app-user-card
+        [user]="user"
+        (deleteUser)="deleteUser($event)"
+        (editUser)="openEditDialog($event)"
+      >
+      </app-user-card>
+    </ng-container>
+  </div>
+</div>
+

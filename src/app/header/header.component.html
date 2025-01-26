@@ -1,0 +1,52 @@
+<header class="header">
+    <div class="header-top">
+        <div class="header-top-container">
+            <div class="header-top-navigation">
+                <img class="logo" src="/assets/logo-image.svg" alt="Logo">
+                <nav class="navigation-top-items">
+                    <span class="navigation-top-item" routerLink="/">{{headerItem1}}</span>
+                    <span class="navigation-top-item" routerLink="users">Пользователи</span>
+                    <span class="navigation-top-item" routerLink="todos">Список задач</span>
+                    <button (click)="isUpperCase()" type="button">Изменить размер</button>
+                </nav>
+            </div>
+            <div class="header-top-info">
+                <div class="header-top-info-phone">
+                    <img src="/assets/phone-icon.svg" alt="Phone">
+                    <span>+7 (965) 084-29-29</span>
+                </div>
+                <div class="heade-top-info-favourites">
+                    <img src="/assets/favourite-icon.svg" alt="Favourite">
+                </div>
+                <div class="header-top-info-basket">
+                    <img src="/assets/basket-icon.svg" alt="Basket">
+                    <span>Пусто</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="header-bottom-container">
+            <div class="header-bottom-navigation">
+                <div class="navigation-bottom-hamburger">
+                    <img src="/assets/hamburger-icon.svg" alt="Hamburger">
+                </div>
+                <nav *ngFor="let item of menuItems" class="navigation-bottom-items">
+                    <span class="navigation-bottom-item">{{item}}</span>
+
+                </nav>
+            </div>
+            <div class="header-bottom-search">
+                <div class="input-container">
+                    <label class="label-search" for="search">Поиск, например Круг зачистной </label>
+                    <input class="input-search" type="text" name="search"/>
+                    <img class="image-search" src="/assets/search-icon.svg" alt="Search">
+                </div>
+                <div class="adress">
+                    <img src="/assets/map-pin.svg" alt="Map">
+                    <span>Москва</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

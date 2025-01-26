@@ -1,0 +1,20 @@
+<div class="container">
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="openCreateDialog()"
+  >
+    + Add todo
+  </button>
+
+  <div class="todos">
+    <ng-container *ngFor="let todo of todos$ | async">
+      <app-todo-card
+        [todo]="todo"
+        (deleteTodo)="deleteTodo($event)"
+        (editTodo)="openEditDialog($event)"
+      ></app-todo-card>
+    </ng-container>
+  </div>
+</div>
