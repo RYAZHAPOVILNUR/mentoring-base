@@ -1,0 +1,25 @@
+<h1>Create Todo Form</h1>
+<div class="todo-form">
+  <form class="create-todo-form"
+    [formGroup]="form"
+    (ngSubmit)="submitForm()">
+    <p>Title:</p>
+    <input type="text" formControlName="title">
+    <div class="alert" *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
+      <div *ngIf="form.controls['title'].errors">Title введен неправильно</div>
+    </div>
+    <p>UserId:</p>
+    <input type="text" formControlName="userId">
+    <div class="alert" *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)">
+      <div *ngIf="form.controls['userId'].errors">UserId введен неправильно</div>
+    </div>
+    <p>Completed:</p>
+    <input type="text" formControlName="completed">
+    <div class="alert" *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)">
+      <div *ngIf="form.controls['completed'].errors">Completed введен неправильно</div>
+    </div>
+    <button class="todo-form-button" [disabled]="form.invalid">
+      Create todo
+    </button>
+  </form>
+</div>
