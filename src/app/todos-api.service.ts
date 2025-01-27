@@ -8,6 +8,6 @@ export class TodosApiService {
   readonly apiService = inject(HttpClient)
 
   getTodos() {
-    return this.apiService.get<Todo[]>('https://jsonplaceholder.typicode.com/todos') as Observable<Todo[]>
+    return this.apiService.get('https://jsonplaceholder.typicode.com/todos') as Observable<Todo[]>
   }
 }

@@ -30,8 +30,8 @@ export class TodosService {
   deleteTodos(id: number) {
     this.todosSubject$.next(
       this.todosSubject$.value.filter(
-        item => {
-          return id === item.id ? false : true
+        todo => {
+          return id === todo.id ? false : true
         }
       )
     )

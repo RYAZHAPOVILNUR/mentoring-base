@@ -30,8 +30,8 @@ export class UsersService {
   deleteUser(id: number) {
     this.usersSubject$.next(
       this.usersSubject$.value.filter(
-        item => {
-          return id === item.id ? false : true
+      user => {
+          return id ===user.id ? false : true
         }
       )
     )
