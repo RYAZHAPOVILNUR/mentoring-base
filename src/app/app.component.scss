@@ -1,0 +1,78 @@
+.header {
+  background-color: #4b565e;
+  height: 80px;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+  display: flex;
+  padding: 0 240px;
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+.headerLogo {
+  margin-right: 20px;
+}
+.headerNavItem {
+  margin-right: 20px;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+.headerNav {
+  display: flex;
+}
+.logoPhone {
+  margin-right: 15px;
+}
+.logoLike {
+  margin-right: 15px;
+}
+
+.header2 {
+  background-color: #f0ba4e;
+  height: 48px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 240px;
+}
+.header2Left {
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.header2Right {
+  display: flex;
+  align-items: center;
+}
+.lightLogo {
+  margin-right: 5px;
+}
+.header2Leftspisok {
+  margin-right: 30px;
+}
+
+.poisk {
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  border: 1px solid yellow; // Толщина и цвет обводки
+  border-radius: 20px; // Закругленные углы
+  padding: 5px 15px; //Внутренние отступы
+  background-color: transparent; // Прозрачный фон
+  color: white; // Цвет текста
+  cursor: pointer; // Курсор при наведении
+  align-items: center;
+  display: flex;
+}
+.input1 {
+  border: none;
+  background-color: transparent;
+  color: #4b565e99;
+  margin-right: 5px; // наружные отступы
+}
