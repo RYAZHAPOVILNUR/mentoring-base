@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HeaderComponent } from './components/header/header.component';
+import { UsersComponent } from './components/users/users.component';
+import { TodosComponent } from './components/todos/todos.component';
 
 
 

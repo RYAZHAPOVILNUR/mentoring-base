@@ -4,9 +4,12 @@ import { Todo } from './components/todos/todo-interface';
 
 @Injectable({ providedIn: 'root' })
 export class TodosApiService {
-  readonly apiService = inject(HttpClient);
 
+  readonly apiservise = inject(HttpClient);
+  todos: any;
   getTodos() {
-    return this.apiService.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
+    return this.apiservise.get<Todo[]>(
+      'https://jsonplaceholder.typicode.com/todos'
+    );
   }
 }
