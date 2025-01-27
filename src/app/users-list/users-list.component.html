@@ -1,0 +1,5 @@
+<div style="display: flex; flex-wrap: wrap; gap: 20px ">
+  <div *ngFor="let user of usersService.users$ | async" style="border: 1px solid black;">
+    <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+  </div>
+</div>
