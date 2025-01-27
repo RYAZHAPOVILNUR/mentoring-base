@@ -1,22 +1,28 @@
 import { Injectable } from "@angular/core";
 import { User } from "./users-list/users-list.component";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class UsersService {
-    users: User[] = [];
+    usersSubject = new BehaviorSubject<User[]>([]);
 
     setUsers(users: User[]) {
-        this.users = users;
+        this.usersSubject.next(users)
     }
 
     editUser(editedUser: User) {
-        this.users = this.users.map(
-            item => item.id === editedUser.id ? editedUser : item
+        this.usersSubject.next(
+            this.usersSubject.value.map(
+                item => item.id === editedUser.id ? editedUser : item
+            )
         )
     }
 
     createUser(user: User) {
-        this.users = [...this.users, user] //три точки это rest оператор, который позволяет добавлять в массив users нового созданного user.
+        this.usersSubject.next(
+            [...this.usersSubject.value, user] 
+        )
+        //три точки это rest оператор, который позволяет добавлять в массив users нового созданного user.
         // this.users = this.users.concat([user]); Метод concat объединяет два массива в один: [users] + [user] = [users, user]. Это просто второй способ добавлять в массив какой-то новый элемент (перезаписывать его!!).
         // this.users.push(user); Так неправильно делать, потому что этот способ мутирует массив (изменяет его), но не перезаписывает. 
         // А нам надо, чтобы он перезаписывался.
@@ -25,8 +31,10 @@ export class UsersService {
     }
 
     deleteUser(id: number) {
-        this.users = this.users.filter(
-            item => item.id === id ? false : true
+        this.usersSubject.next(
+            this.usersSubject.value.filter(
+                item => item.id === id ? false : true
+            )
         )
     }
 }
