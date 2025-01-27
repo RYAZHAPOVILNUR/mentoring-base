@@ -1,11 +1,11 @@
 .header {
-  background-color: #4b565e;
-  height: 80px;
-  align-items: center;
-  color: white;
-  justify-content: space-between;
   display: flex;
-  padding: 0 240px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #4b565e;
+  color: white;
+  padding-inline: 240px;
 }
 .left {
   display: flex;
@@ -32,27 +32,27 @@
   margin-right: 15px;
 }
 .button {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
   border: 1px solid yellow;
   border-radius: 20px;
-  padding: 5px 15px;
   background-color: transparent;
   color: white;
   cursor: pointer;
-  align-items: center;
-  display: flex;
 }
 .top-bar {
-  background-color: #f0ba4e;
-  height: 48px;
-  align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0px 240px;
+  align-items: center;
+  height: 48px;
+  background-color: #f0ba4e;
+  padding-inline: 240px;
 }
 .top-bar-left {
-  color: black;
   display: flex;
   align-items: center;
+  color: black;
 }
 .light-logo {
   margin-right: 5px;
@@ -69,14 +69,14 @@
 }
 
 .search {
-  margin-right: 15px;
   display: flex;
   justify-content: space-between;
+  margin-right: 15px;
 }
 
 .input {
   border: none;
   background-color: transparent;
   color: #4b565e99;
-  margin-right: 5px; // наружные отступы
+  margin-right: 5px;
 }
