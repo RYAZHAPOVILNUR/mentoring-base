@@ -7,31 +7,41 @@
   display: flex;
   padding: 0 240px;
 }
-.headerLeft {
+.left {
   display: flex;
   align-items: center;
 }
-.headerLogo {
+.logo {
   margin-right: 20px;
 }
-.headerNavItem {
+.nav {
+  display: flex;
+}
+.nav-item {
   margin-right: 20px;
 }
-.headerRight {
+.right {
   display: flex;
   align-items: center;
-}
-.headerNav {
-  display: flex;
-}
-.logoPhone {
-  margin-right: 15px;
-}
-.logoLike {
-  margin-right: 15px;
 }
 
-.header2 {
+.logo-phone {
+  margin-right: 15px;
+}
+.logo-like {
+  margin-right: 15px;
+}
+.button {
+  border: 1px solid yellow;
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+}
+.top-bar {
   background-color: #f0ba4e;
   height: 48px;
   align-items: center;
@@ -39,38 +49,32 @@
   justify-content: space-between;
   padding: 0px 240px;
 }
-.header2Left {
+.top-bar-left {
   color: black;
   display: flex;
   align-items: center;
 }
-.header2Right {
+.light-logo {
+  margin-right: 5px;
+}
+.nav2 {
+  display: flex;
+}
+.nav2-item {
+  margin-right: 30px;
+}
+.top-bar-right {
   display: flex;
   align-items: center;
 }
-.lightLogo {
-  margin-right: 5px;
-}
-.header2Leftspisok {
-  margin-right: 30px;
-}
 
-.poisk {
+.search {
   margin-right: 15px;
   display: flex;
   justify-content: space-between;
 }
-.button {
-  border: 1px solid yellow; // Толщина и цвет обводки
-  border-radius: 20px; // Закругленные углы
-  padding: 5px 15px; //Внутренние отступы
-  background-color: transparent; // Прозрачный фон
-  color: white; // Цвет текста
-  cursor: pointer; // Курсор при наведении
-  align-items: center;
-  display: flex;
-}
-.input1 {
+
+.input {
   border: none;
   background-color: transparent;
   color: #4b565e99;
