@@ -40,7 +40,7 @@ export class HeaderComponent{
 
     isUppeerCase = true;
 
-    changeMenuText() :void {
+    changeMenuText() : void {
         this.menuItems = upperCaseMenuItems.map(
           item => this.isUppeerCase ? item.toLowerCase() : item.toUpperCase()
         )

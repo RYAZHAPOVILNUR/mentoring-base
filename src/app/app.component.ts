@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { TodoCardComponent } from './todos-list/todo-card/todo-card.component';
 
 
 const newArrow = [5, 4, 3, 2, 1]
@@ -10,7 +11,7 @@ const newArrow = [5, 4, 3, 2, 1]
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor, RouterLink,  HeaderComponent, UsersListComponent],
+  imports: [RouterOutlet, NgIf, NgFor, RouterLink,  HeaderComponent, UsersListComponent, TodoCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

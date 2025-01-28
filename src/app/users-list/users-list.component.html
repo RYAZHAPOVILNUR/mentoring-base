@@ -1,11 +1,7 @@
 компонент списка юзеров
 
 <div style="display: flex; width: 100%; flex-wrap: wrap;">
-    <div *ngFor="let item of users" style="width: 200px; height: 200px; border: 1px solid black; border-radius: 5px; margin: 5px; padding: 10px; box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2)">
-        <p>{{$any(item).name}}</p>
-        <p>{{$any(item).email}}</p>
-        <p>{{$any(item).website}}</p>
-        <p>{{$any(item).company.name}}</p>
-        <button (click)="deleteUser(item.id)" style="border: 1px solid #F0BA4E; border-radius: 10px; padding: 5px;">УДАЛИТЬ ЮЗЕРА</button>
+    <div *ngFor="let user of users">
+        <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
     </div>
 </div>

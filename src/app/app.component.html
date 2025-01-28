@@ -1,6 +1,6 @@
 
 <app-header></app-header>
-
+<router-outlet></router-outlet>
 <button type="button" (click)="isShowImg = !isShowImg">скрыть/показать</button>
 
 <div>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="content-container">
-  <router-outlet></router-outlet>
+  
   <div class="advantages">
     <div class="advantages-item">
       <img src="/assets/img_1.png" alt="..." />
@@ -56,10 +56,6 @@
       >
         {{ item }}
       </button>
-      <!-- <button type="button" class="item-cards__pagination-button">2</button>
-      <button type="button" class="item-cards__pagination-button">3</button>
-      <button type="button" class="item-cards__pagination-button">4</button>
-      <button type="button" class="item-cards__pagination-button">5</button> -->
     </div>
     <div class="item-cards__grid">
       <div class="item-cards__grid-left">
