@@ -1,9 +1,18 @@
-КОМПОНЕНТ СПИСКА ЮЗЕРОВ
+  
+  <div class="user-list-container">
+    <div class="users-list-title">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</div>
+  <div class="users-list">
 
+    <div class="users-list__card" *ngFor="let item of users" >
+      <p>{{$any(item).name}}</p>
+      <p>{{$any(item).email}}</p>
+      <p>{{$any(item).phone}}</p>
+      <p>{{$any(item).website}}</p>
+      <p>{{$any(item).company.name}}</p>
+      <button class="users-list__button" (click)="deleteUser(item.id)">УДАЛИТЬ ЮЗЕРА</button>
+    </div>
+  </div>
+  </div>
 
-<div *ngFor="let item of users">
-  {{$any(item).name}}
-  {{$any(item).email}}
-</div>
-
+<!-- style="width: 200px; color: red; height: 1900px; background-color: aquamarine;" -->
 <!-- {{users[0].name}} -->

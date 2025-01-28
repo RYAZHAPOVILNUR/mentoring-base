@@ -1,0 +1,96 @@
+<!-- <div>WORKS WORKS</div> -->
+
+<header class="header-nav">
+  <div class="content-container">
+    <div class="header-nav__nav-wrp">
+      <div class="header-nav__nav-left">
+        <div class="header-nav__nav-logo">
+          <img src="/assets/logo.svg" alt="logo" />
+        </div>
+        <ul class="header-nav__nav-list">
+          <li class="header-nav__nav-item">
+            <a href="#">{{ headerItem1 }}</a>
+          </li>
+          <li class="header-nav__nav-item">
+            <a href="#">{{ aboutCompany }}</a>
+          </li>
+          <li class="header-nav__nav-item" *ngIf="isShowCatalog">
+            <a href="#">{{ headerItem3 }}</a>
+          </li>
+        </ul>
+        <button class="button-js" (click)="isShowCatalog = !isShowCatalog">
+          Показать/скрыть каталог
+        </button>
+        <button class="button-js" (click)="changeMenuText()">Изменить текст</button>
+        <button class="button-js" routerLink='/users'>Пользователи</button>
+      </div>
+
+      <div class="header-nav__nav-right">
+        <div class="header-nav__nav-phone">
+          <img src="/assets/phone.svg" alt="image phone" />
+        </div>
+        <a class="header-nav__nav-phone-number" href="tel:+79650842929"
+          >+7 (965) 084-29-29</a
+        >
+        <div class="header-nav__nav-heart">
+          <img src="/assets/heart.svg" alt="logo" />
+        </div>
+        <button class="header-nav__nav-cart">
+          <img
+            class="header-nav__nav-cart-img"
+            src="/assets/buy.svg"
+            alt="image basket"
+          />
+          <span class="header-nav__nav-empty">Пусто</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="header-menu">
+  <div class="content-container">
+    <div class="header-menu__menu-wrp">
+      <div class="header-menu__menu-left">
+        <img
+          class="header-menu__menu-burger"
+          src="/assets/light.svg"
+          alt="burger"
+        />
+
+        <ul class="header-menu__menu-list">
+          <li class="header-menu__item" *ngFor="let item of menuItems">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-menu__menu-right">
+        <form class="header-menu__menu-form">
+          <input
+            class="header-menu__menu-input"
+            type="text"
+            placeholder="Поиск, например Круг зачистной"
+          />
+          <img
+            class="header-menu__menu-search"
+            src="/assets/search.svg"
+            alt="loop"
+          />
+        </form>
+        <div class="header-menu__menu-location">
+          <img
+            class="header-menu__menu-location-pin"
+            src="/assets/pin.svg"
+            alt="map-pin"
+          />
+          <div class="header-menu__menu-location-city">Москва</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
