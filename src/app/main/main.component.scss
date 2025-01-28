@@ -1,0 +1,366 @@
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+.background-large {
+    display: flex;
+    justify-content: center;
+}
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.advantages-assortment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 28px;
+    margin-block: 28px;
+}
+
+.advantages__img-logo {
+    margin-right: 16px;
+}
+
+.advantages__description {
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    margin: 0px;
+}
+
+.advantages--gray {
+    color: #A1A0A0;
+}
+
+.advantages--black {
+    color: black;
+}
+
+.advantages-assortment__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.advantages-assortment__pagination-button {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    color: #A1A0A0;
+    border: none;
+    background: none;
+}
+
+.active--button {
+    color: #F0BA4E;
+}
+
+.grid-card {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-card__left {
+    width: 761px;
+    height: 428px;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-image: url('/assets/img/build-pro-tools.png');
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    overflow: hidden;
+    padding: 16px;
+    margin-right: 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid-card__left-text {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+}
+
+.grid-card__rigth {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.grid-card__rigth-first-item {
+    width: 421px;
+    height: 200px;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-image: url(/assets/img/enamel-paint.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.grid-card__rigth-second-item {
+    width: 421px;
+    height: 200px;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-image: url(/assets/img/paints-varnishes.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.grid-card__rigth-three-item {
+    width: 421px;
+    height: 200px;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-image: url(/assets/img/balon.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.grid-card__rigth-four-item {
+    width: 421px;
+    height: 200px;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px 0px #3C3C3B12;
+    background-image: url(/assets/img/socket.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.grid-card__item-catalog-link {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.link--start-position {
+    align-self: flex-start;
+}
+
+.text--end-position {
+    align-self: flex-end;
+}
+
+.grig-card__item-catalog-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.grid-card-text__rigth {
+    display: flex;
+    justify-content: right;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+}
+
+.grig-card__item-catalog-img {
+    width: 386px;
+    height: 386px;
+    object-fit: cover;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products-header__item {
+    margin-top: 56px;
+    margin-bottom: 28px;
+}
+
+.products-header-category {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+}
+
+.products__items {
+    display: flex;
+}
+
+.products__items-card {
+    width: 309px;
+    height: 429px;
+    box-shadow: 0px 20px 50px 0px #12112714;
+    padding: 24px;
+}
+
+.products__items-card-discription {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products__items-card-img {
+    width: 261px;
+    height: 180px;
+    margin-bottom: 22px;
+}
+
+.products__items-card-img-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products__items-card--big-text {
+    font-size: 20px;
+    line-height: 24.2px;
+    font-weight: 600;
+    color: #3C3C3B;
+}
+
+.products__items-card--small-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    color: #3C3C3B;
+}
+
+.products__items-card-price {
+    margin-block: 20px;
+}
+
+.old--price {
+    font-weight: 600;
+    text-decoration: line-through;
+    margin-right: 16px;
+}
+
+.products__items-card-basket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products__items-card-basket-quantity {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.products__items-card-basket-buttons-quantity {
+    margin-inline: 16px;
+}
+
+.products__items-card-basket-button {
+    border: 1px solid #F0BA4E;
+    border-radius: 50px;
+    background: none;
+    padding: 14px 28px;
+}
+
+.next-slider {
+    position: absolute;
+    width: 140px;
+    height: 180px;
+    margin-top: -80px;
+    margin-left: -80px;
+}
+
+.next-slider--top {
+    margin-top: -96px;
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url('/assets/img/man-drill.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    width: 1320px;
+    height: 251px;
+    margin-top: 56px;
+    padding: 28px;
+}
+
+.review__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.review__item-title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+}
+
+.review__item-description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    color: #A1A0A0;
+}
+
+.styles-link-text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    color: #F0BA4E;
+    text-decoration: none;
+    outline: none;
+}
+
+.styles-link-text--position {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.sales--logo {
+    z-index: 1;
+    position: relative;
+    left: -149px;
+    top: 50px;
+}
+
+.gray--text {
+    color: #A1A0A0;
+}
+
+.clear-styles-button {
+    border: none;
+    background: none;
+    outline: none;
+}
