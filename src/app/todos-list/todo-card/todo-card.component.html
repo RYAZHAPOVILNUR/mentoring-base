@@ -1,0 +1,13 @@
+<div style="width: 200px; height: 270px; border: 1px solid black; border-radius: 5px; margin: 5px; padding: 10px; box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2)">
+    <p>ТЕКСТ ЗАДАЧИ:</p>
+    <div>
+        {{todo.title}}
+    </div>
+
+    <p>АВТОР ЗАДАЧИ:</p>
+    <div>{{todo.userId}}</div>
+
+    <p>ЗАДАЧА ЗАВЕРШЕНА:</p>
+    <div>{{todo.completed ? 'ДА' : 'НЕТ'}}</div>
+    <button (click)="onDeleteTodo(todo.id)" style="border: 1px solid #F0BA4E; border-radius: 10px; padding: 5px;">УДАЛИТЬ ЗАДАЧУ</button>
+</div>

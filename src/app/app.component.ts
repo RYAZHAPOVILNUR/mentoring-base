@@ -1,13 +1,29 @@
+import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { TodoCardComponent } from './todos-list/todo-card/todo-card.component';
+
+
+const newArrow = [5, 4, 3, 2, 1]
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgIf, NgFor, RouterLink,  HeaderComponent, UsersListComponent, TodoCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'mentoring-first-project';
+
+  imagePath = '/assets/banner.png'
+
+  isShowImg = true
+
+  readonly newPages = newArrow
+
 }
+
+
