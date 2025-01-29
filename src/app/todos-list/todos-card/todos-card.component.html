@@ -1,0 +1,17 @@
+
+<div class="userComponent1">
+    <p> Текст задачи</p>
+    <div>
+        {{todo.title}}
+    </div>
+    <p> Автор задачи</p>
+    <div>
+        {{todo.userId}}
+    </div>
+    <p>Задача завершена</p>
+    <div>
+        {{todo.completed ? 'Да' : 'Нет'}}
+    </div>
+    <button class="userButton1" (click)="onDeleteTodo(todo.id)">УДАЛИТЬ ЗАДАЧУ</button>
+</div>
+     

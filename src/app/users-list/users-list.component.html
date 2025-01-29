@@ -1,0 +1,7 @@
+КОМПОНЕНТ СПИСКА ЮЗЕРОВ
+
+<div style="display: flex; width: 100%; flex-wrap: wrap;">
+    <div class="userComponent" *ngFor = "let user of users">
+        <app-user-card [user]="user" (deliteUser)="deleteUser($event)"></app-user-card>
+    </div>
+</div>

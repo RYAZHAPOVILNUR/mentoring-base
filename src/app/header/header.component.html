@@ -1,0 +1,58 @@
+<div class="header">
+    <div>
+        <div class="header-left">
+            <div class="header-logo">
+                <img src="/assets/Frame.svg" alt="image">
+            </div>
+            <nav class="header-nav">
+                <div class="header-nav-item" routerLink="/">{{headerItem1}}</div>
+                <div class="header-nav-item">{{aboutCompany}}</div>
+                <div class="header-nav-item" routerLink="/users">Пользователи</div>
+                <div class="header-nav-item" *ngIf = 'isShowCatalog'>{{headerItem3}}</div>
+            </nav>
+            <button type="button" (click) = 'isShowCatalog = !isShowCatalog'>Скрыть/Показать каталог</button>
+            <button type="button" (click) = 'changeMenyText()'>Изменить текст</button>
+        </div>
+    </div>
+    <div class="header-right">
+        <div class="phone">
+            <img src="/assets/Phone.svg" alt="phone">
+        </div>
+        <div class="phone1">+7(965)084-29-29</div>
+        <div class="heart1">
+            <img src="/assets/heart 1.svg" alt="heart1">
+        </div>
+        <div class="frame3">
+            <button class="frame3-button">
+                <img src="/assets/Mask_group_(1).svg" alt="phone">
+                Пусто
+            </button>
+        </div>
+    </div>
+</div>
+<div class="light">
+    <div class="light-left">
+        <div class="light-nav1">
+            <span style="font-size:16px;cursor:pointer"> &#9776; </span>
+        </div>
+        <div >
+            <nav class="light-nav">
+                <div class="light-nav1" *ngFor = 'let item of menyItems'>{{item}}</div>
+            </nav>
+        </div>
+    </div>
+    <div class="light-right">
+        <div class="search-container">
+            <span class="search-container-text">
+                Поиск например, круг зачистной
+            </span>
+            <div class="lupa">
+                <img src="/assets/лупа.svg" alt="">
+            </div>
+        </div>           
+        <div class="light-right-mosk">
+            Москва
+        </div>
+    </div>
+
+</div>
