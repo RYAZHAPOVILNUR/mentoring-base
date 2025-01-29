@@ -1,0 +1,30 @@
+.title-users-list {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 20px;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card__item {
+    width: 200px;
+    height: 200px;
+    font-size: 16px;
+    border: 1px solid #F0BA4E;
+    box-shadow: 0px 20px 50px 0px #12112714;
+    padding: 15px;
+}
