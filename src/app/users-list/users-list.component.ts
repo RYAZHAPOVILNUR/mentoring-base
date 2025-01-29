@@ -5,13 +5,14 @@ import { UserCardComponent } from "./user-card/user-card.component";
 import { ChangeDetectionStrategy } from "@angular/core";
 import { UsersService } from "../users.service";
 import { User } from "./user";
+import { createUserFormComponent } from "../create-user-form/create-user-form.component";
 
 @Component ({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
   standalone: true,
-  imports: [NgFor, UserCardComponent, AsyncPipe],
+  imports: [NgFor, UserCardComponent, AsyncPipe, createUserFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
