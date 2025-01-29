@@ -4,7 +4,7 @@ import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
-import { FormGroup } from "@angular/forms";
+
 
 export interface User {
     id: number;
@@ -52,14 +52,14 @@ export class UsersListComponent{
     }
 
 
-    public createUser(formData: СreateUser) {
+    public createUser(formData: User) {
       this.usersService.createUser({
         id: new Date().getTime(),
         name: formData.name,
         email: formData.email,
         website: formData.website,
         company: {
-          name: formData.company.name
+        name : formData.company.name
         }
       })
     }
@@ -68,14 +68,4 @@ export class UsersListComponent{
     deleteUser(id: number) {
         this.usersService.deleteUser(id)
     }
-}
-
-export interface СreateUser {
-  id: number;
-  name: string;
-  email: string;
-  website: string;
-  company: {
-    name: string;
-  };
 }

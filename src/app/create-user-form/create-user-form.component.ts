@@ -1,38 +1,41 @@
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { User } from "../users-list/users-list.component";
-import { Form } from "../create-todo-form/form-types";
-import { СreateUser } from "../users-list/users-list.component";
+import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
     selector: 'app-create-user-form',
     templateUrl:'./create-user-form.component.html',
     styleUrl: './create-user-form.component.scss',
     standalone: true,
-    imports: [ReactiveFormsModule]
+    imports: [ReactiveFormsModule,
+        MatButtonModule, 
+        MatInputModule, 
+        MatFormFieldModule,
+        MatIconModule]
 })
 
 
 export class CreateUserFormComponent {
     @Output()
-    createUser = new EventEmitter<СreateUser>();
+    createUser = new EventEmitter();
 
 
-    public form = new FormGroup<Form<СreateUser>>({
-        name: new FormControl<string>('', { validators: [Validators.required], nonNullable: true }),
-        email: new FormControl<string>('', { validators: [Validators.required, Validators.minLength(5)], nonNullable: true }),
-        website: new FormControl<string>('', { validators: [Validators.required], nonNullable: true }),
+    public form = new FormGroup({
+        id: new FormControl(new Date().getTime()),
+        name: new FormControl('', { validators: [Validators.required]}),
+        email: new FormControl('', { validators: [Validators.required, Validators.email]}),
+        website: new FormControl('', { validators: [Validators.required]}),
         company: new FormGroup({
-            name: new FormControl<string>('', { validators: [Validators.required], nonNullable: true }),
+            name: new FormControl('', { validators: [Validators.required]}),
         })
     });
   
 
-
     public submitForm(): void {
-        const user: User = this.form.getRawValue();
-        this.createUser.emit(user);
+        this.createUser.emit(this.form.value);
         this.form.reset();
-
-    }
+    };
 }

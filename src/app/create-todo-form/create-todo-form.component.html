@@ -6,13 +6,25 @@
     (ngSubmit)="submitForm()">
 
     <div class="form-input">
-    <p>Название задачи:</p>
-    <input type="text" formControlName="title">
-    <p>Автор задачи:</p>
-    <input type="text" formControlName="userId">
-    <p>Задача завершена?:</p>
-    <input type="text" formControlName="completed">
-    <button class="create-form-button" [disabled]="form.invalid">CREATE TODO</button>
+     <mat-form-field>
+        <mat-label>Название задачи</mat-label>
+            <input formControlName="name" matInput type="text">
+            <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Автор задачи:</mat-label>
+            <input formControlName="name" matInput type="text">
+            <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field>
+            <mat-label>Задача завершена?</mat-label>
+                <input formControlName="name" matInput type="text">
+                <mat-error></mat-error>
+    </mat-form-field> 
+    <button matIconSuffix mat-raised-button 
+     [disabled]="form.invalid" class="create-form-button">Add todo
+        <mat-icon>add</mat-icon>
+    </button>     
     </div>   
 </form>
 </div>

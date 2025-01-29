@@ -25,9 +25,16 @@ export class UsersService {
 
 
     createUser(user: User){
-        this.usersSubject$.next(
-            [...this.usersSubject$.value, user]
-        )      
+        const userIsExiting = this.usersSubject$.value.find(
+            (currentElement) => currentElement.email === user.email
+        );
+        
+        if (userIsExiting !== undefined) {
+            alert('Такой пользователь уже зарегестрирован');
+        } else {
+            this.usersSubject$.next([...this.usersSubject$.value, user]);
+            alert('Новый пользователь успешно добавлен')
+        }
     }
 
 

@@ -5,17 +5,33 @@
     [formGroup] = 'form'
     (ngSubmit)="submitForm()">
 
-    <div class="form-input">
-    <p>NAME:</p>
-    <input type="text" formControlName="name">
-    <p>EMAIL:</p>
-    <input type="text" formControlName="email">
-    <p>WEBSITE:</p>
-    <input type="text" formControlName="website">
-    <p>COMPANY NAME:</p>
-    <input type="text" formControlName="company.name">
 
-    <button class="create-form-button" [disabled]="form.invalid">CREATE USER</button>
-    </div>   
+    <div class="form-input">
+     <mat-form-field>
+        <mat-label>Имя пользователя</mat-label>
+            <input formControlName="name" matInput type="text">
+            <mat-error></mat-error>
+     </mat-form-field>
+     <mat-form-field>
+        <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="text">
+            <mat-error></mat-error>
+     </mat-form-field> 
+     <mat-form-field>
+        <mat-label>Website</mat-label>
+            <input formControlName="website" matInput type="text">
+            <mat-error></mat-error>
+     </mat-form-field> 
+     <div formGroupName="company"></div>
+     <mat-form-field>
+        <mat-label>Назвние компании</mat-label>
+            <input formControlName="name" matInput type="text">
+            <mat-error></mat-error>
+     </mat-form-field>
+     <button matIconSuffix mat-raised-button 
+     [disabled]="form.invalid" class="create-form-button">Add user
+        <mat-icon>add</mat-icon>
+    </button>  
+    </div>      
 </form>
-</div>
+    </div>
