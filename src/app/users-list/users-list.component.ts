@@ -54,13 +54,8 @@ export class UsersListComponent {
   deleteUser(id: number) {
     this.users = this.users.filter(
 
-      item => {
-        // item.id !== id
-      if (id === item.id) {
-        return false
-      } else {
-        return true;
-      }
+      users => {
+        return id === users.id ? false : true;
       }
     )
   }
