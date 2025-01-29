@@ -6,6 +6,7 @@ import { AsyncPipe } from "@angular/common";
 import { UsersService } from "../users.service";
 import { ChangeDetectionStrategy } from "@angular/core";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
+import { MatButtonModule } from "@angular/material/button";
 
 export interface User {
   "id": number,
@@ -36,7 +37,7 @@ export interface User {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone:true,
-    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent, MatButtonModule],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 

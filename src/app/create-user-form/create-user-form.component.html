@@ -1,0 +1,32 @@
+
+<form class="createForm" [formGroup]="form" (ngSubmit)="submitForm()">
+    <mat-form-field class="example-full-width">
+        <mat-label>Введите имя пользователя</mat-label>
+        <input matInput formControlName="name">
+        <mat-error>Некорректное имя пользователя</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Введите email пользователя</mat-label>
+        <input matInput formControlName="email">
+        <mat-error>Некорректный email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Введите сайт пользователя</mat-label>
+        <input matInput formControlName="website">
+        <mat-error>Некорректный сайт</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Введите название компании пользователя</mat-label>
+        <input matInput formControlName="companyName">
+        <mat-error>Некорректное название компании</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="form.invalid">Add user
+        <mat-icon>add</mat-icon>
+    </button>
+</form>
+
+

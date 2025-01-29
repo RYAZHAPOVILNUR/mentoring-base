@@ -18,7 +18,7 @@
     <div class="alert" *ngIf="form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched)">
       <div *ngIf="form.controls['completed'].errors">Completed введен неправильно</div>
     </div>
-    <button class="todo-form-button" [disabled]="form.invalid">
+    <button mat-button class="todo-form-button" [disabled]="form.invalid">
       Create todo
     </button>
   </form>
