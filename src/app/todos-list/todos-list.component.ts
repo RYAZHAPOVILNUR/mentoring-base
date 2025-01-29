@@ -18,7 +18,6 @@ export interface Todo {
     selector: 'app-todos-list',
     templateUrl: './todos-list.component.html',
     styleUrl: './todos-list.component.scss',
-    standalone:true,
     imports: [NgFor, TodoCardComponent, AsyncPipe, CreateTodoFormComponent],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

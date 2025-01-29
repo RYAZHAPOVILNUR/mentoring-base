@@ -36,7 +36,6 @@ export interface User {
     selector: 'app-users-list',
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
-    standalone:true,
     imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent, MatButtonModule],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

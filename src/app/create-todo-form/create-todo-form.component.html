@@ -1,0 +1,28 @@
+<h1>Create Todo Form</h1>
+
+<form class="createForm" [formGroup]="form" (ngSubmit)="submitForm()">
+    <mat-form-field class="example-full-width">
+        <mat-label>Введите название задания</mat-label>
+        <input matInput formControlName="title">
+        <mat-error>Некорректное название задания</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Введите id пользователя</mat-label>
+      <input matInput formControlName="userId">
+      <mat-error>Некорректный id пользователя</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Задача завершена?</mat-label>
+        <mat-select formControlName="completed">
+            <mat-option [value]="true">Да</mat-option>
+            <mat-option [value]="false">Нет</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="form.invalid">Создать задание
+        <mat-icon>add</mat-icon>
+    </button>
+</form>
+

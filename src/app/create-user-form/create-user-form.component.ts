@@ -7,11 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
-  selector: 'app-create-user-form',
-  templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss',
-  standalone: true,
-  imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule]
+    selector: 'app-create-user-form',
+    templateUrl: './create-user-form.component.html',
+    styleUrl: './create-user-form.component.scss',
+    standalone: true,
+    imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule]
 })
 
 
