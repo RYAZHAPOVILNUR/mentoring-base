@@ -1,0 +1,51 @@
+<header class="header">
+    <div class="header-left">
+       <a class="header-logo" href="/"> 
+         <img src="/assets/Frame.svg" alt="логотип сайта">
+       </a>
+       <nav class="header-nav">
+         <button class="header-nav-item" routerLink="">{{headerItem1}}</button>
+         <button class="header-nav-item">{{headerItem2}}</button>
+         <button class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</button>
+       </nav> 
+       <button (click)="isShowCatalog = !isShowCatalog" class="header-nav-item">Скрыть/Показать каталог </button>
+     </div>
+     <div class="header-right"> 
+      <button routerLink="users" class="header-nav-item">Users</button>
+        <img class="icon" src="/assets/Phone.svg" alt=""/>
+       <a class="header-right-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
+       <div class="header-right-item-heart">
+        <img src="/assets/heart_2.svg" alt="heart"/>
+     </div> 
+       <button type="button" class="header-right-item header-right basket">
+         <img class="icon" src="/assets/Mask group.png" alt=""/>
+         <span class="basket-text">Пусто</span>
+       </button>
+     </div>
+   </header>    
+   
+   <div class="menu">
+     <div class="menu-left">
+       <div class="menu-logo2">
+         <img src="/assets/light.svg" alt="икона коталога"> 
+       </div>
+       <nav class="menu-nav">
+         <div class="menu-nav-item">{{menunavitem1}}</div>
+         <div class="menu-nav-item">{{menunavitem2}}</div>
+         <div class="menu-nav-item">{{menunavitem3}}</div>
+         <div class="menu-nav-item">{{menunavitem4}}</div>
+         <div class="menu-nav-item">{{menunavitem5}}</div>
+       </nav>
+     </div>  
+    
+     <div class="menu-right"> 
+       <form class="sea">
+        <input class="search" type="search" placeholder="Поиск, например Круг зачистной">
+        <img class="lup" src="/assets/search.svg" alt="">
+      </form>
+      <div class="moskwa">
+       <img class="" src="/assets/map-pin (2) 1.svg" alt=""/>
+       <div class="menu-right">Москва</div> 
+     </div>
+    </div>
+   </div> 
