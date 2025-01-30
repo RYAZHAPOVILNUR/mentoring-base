@@ -1,0 +1,94 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 240px;
+    height: 80px; 
+    color: white;
+    background-color: #4B565E
+}
+
+.header-left {
+display: flex;
+}
+
+.header-logo {
+    margin-left:  60px;
+    margin-right: 40px;
+}
+
+.header-nav {
+display: flex;
+align-items: center;
+}
+
+.header-nav-item {margin-right: 20px;}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.heart {margin: 0 40px;}
+.phone-number {color: white; margin-left: 10px;}
+.buy-list {
+    width: 106px;
+    height: 48px;
+    margin-right: 50px;
+    border-color: #F0BA4E;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    border-radius: 50px;
+    background-color: #4B565E; 
+    align-items: center;
+    }
+    .empty {color: white;margin-left: 10px;}
+
+    .header-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 300px;
+        height: 48px; 
+        color: black;
+        background-color: #F0BA4E 
+    }
+    .header-left2 {
+        display: flex;
+        align-items: center;
+    }
+    .menu-catalog {
+        display: flex;
+        align-items: center;
+    }
+    .header-nav-item2-item {
+        margin-left: 10px;
+        margin-right: 30px;
+    }
+    .header-nav-item2 {
+        display: flex;
+    }
+    .header-nav-item2-item2 {
+
+        height: 17px;
+        margin-right: 25px;
+    }
+    
+    .header-right2 {
+        display: flex;
+        align-items: center;
+    }
+
+    .search {
+width: 400px;
+height: 28px;
+background-color: transparent;
+border: none;
+border-bottom: 1px solid #4B565E;
+background-image: url("/assets/Search.svg");
+background-repeat: no-repeat;
+background-position: right;
+background-size: 24px;
+    }
+
+.map-pin {margin-left: 24px;}
+.city {color: white; margin-left: 4px;}
