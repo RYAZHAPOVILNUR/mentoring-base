@@ -1,9 +1,6 @@
 import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
-import { RouterLink, RouterOutlet } from "@angular/router";
-import { HeaderComponent } from "./component/header/header.component";
-import { FooterComponent } from "./component/footer/footer.component";
-import { HomepageComponent } from "./component/homepage/homepage.component";
+import { RouterLink } from "@angular/router";
 
 const menuItems = [
   "Каталог",
@@ -28,20 +25,13 @@ const upperPagesItems = newPages.map((item) => {
 });
 
 @Component({
-  selector: "app-root",
+  selector: "app-header",
   standalone: true,
-  imports: [
-    RouterOutlet,
-    NgIf,
-    NgFor,
-    HeaderComponent,
-    FooterComponent,
-    HomepageComponent,
-  ],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  imports: [NgFor, NgIf, RouterLink],
+  templateUrl: "./header.component.html",
+  styleUrl: "./header.component.scss",
 })
-export class AppComponent {
+export class HeaderComponent {
   title = "mentoring-first-project";
 
   isShowCatalog = false;

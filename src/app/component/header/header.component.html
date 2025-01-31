@@ -1,0 +1,75 @@
+<header class="header">
+  <div class="wrapper-top">
+    <div class="container">
+      <div class="header-top">
+        <div class="header__left">
+          <div class="header__logo">
+            <img src="/assets/Frame.svg" alt="логотип сайта" />
+          </div>
+          <nav class="header__nav">
+            <div class="header__nav-item">{{ headerItem1 }}</div>
+            <div class="header__nav-item">{{ aboutCompany }}</div>
+            <div class="header__nav-item" *ngIf="isShowCatalog">
+              {{ headerItem3 }}
+            </div>
+            <button (click)="isShowCatalog = !isShowCatalog">
+              показать/скрыть
+            </button>
+            <button (click)="changeMenuText()">изменить текст</button>
+            <button routerLink="/users" routerLinkActive="active-link">
+              Пользователи
+            </button>
+            <button routerLink="/home">home</button>
+          </nav>
+        </div>
+        <div class="header__right">
+          <div class="header__contact">
+            <img src="/assets/Phone.svg" alt="вызов" />
+            <a class="header__contact-phone" href="tel:9650842929"
+              >+7 (965) 084-29-29</a
+            >
+          </div>
+          <div class="header__like">
+            <img src="/assets/heart.svg" alt="лайк" />
+          </div>
+          <button type="button" class="header__basket">
+            <img src="/assets/basket.svg" alt="корзина" />
+            <span class="header__basket-status">Пусто</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper-bottom">
+    <div class="container">
+      <div class="header-bottom">
+        <div class="header-bottom__left">
+          <img src="/assets/light.svg" alt="" />
+          <nav class="header-bottom__nav">
+            <div class="header-bottom__nav-item" *ngFor="let item of menuItems">
+              {{ item }}
+            </div>
+          </nav>
+        </div>
+        <div class="header-bottom__right">
+          <form class="header-bottom__search-form">
+            <input
+              class="input-search"
+              type="search"
+              placeholder="Поиск, например Круг зачистной"
+            />
+          </form>
+          <div class="header-bottom__map">
+            <img src="/assets/map.svg" alt="карта" />
+            <button type="button" class="header-bottom__country" type="menu">
+              Москва
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button (click)="isShowBackground = !isShowBackground">
+      скрыть/показать
+    </button>
+  </div>
+</header>

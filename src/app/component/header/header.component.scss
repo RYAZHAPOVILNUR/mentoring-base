@@ -1,9 +1,3 @@
-.container {
-  max-width: 1320px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .wrapper-top {
   max-width: 1920px;
   width: 100%;
@@ -18,6 +12,11 @@
   background-color: #f0ba4e;
 }
 
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
 .header-top {
   display: flex;
   justify-content: space-between;

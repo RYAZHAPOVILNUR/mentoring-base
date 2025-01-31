@@ -1,0 +1,37 @@
+.users-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-list {
+  width: 220px;
+  height: 200px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+
+  p {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    margin-bottom: 1px;
+    box-shadow: 0px 20px 50px 0px #3c3c3b12;
+  }
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  border: 1px solid rgba(240, 186, 78, 1);
+  border-radius: 54px;
+  padding: 14px 28px;
+  margin-top: 12px;
+}
