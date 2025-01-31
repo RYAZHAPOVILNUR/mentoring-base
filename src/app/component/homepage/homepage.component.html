@@ -1,0 +1,349 @@
+<main class="main">
+  <div class="background" *ngIf="isShowBackground">
+    <img
+      class="background-img"
+      src="/assets/Rectangle.png"
+      alt="background-large"
+    />
+  </div>
+  <div class="container">
+    <div class="offers">
+      <div class="offers-item">
+        <img src="/assets/Maskgroup.svg" alt="" />
+        <span class="offers-text"
+          ><strong>Большой ассортимент</strong> строительных материалов всегда в
+          наличии</span
+        >
+      </div>
+      <div class="offers-item">
+        <img src="/assets/Maskgroup2.svg" alt="" />
+        <span class="offers-text"
+          ><strong>Доставка стройматериалов</strong> в течении четырех часов или
+          в любое удобное время</span
+        >
+      </div>
+      <div class="offers-item">
+        <img src="/assets/Maskgroup3.svg" alt="" />
+        <span class="offers-text"
+          >Многоуровневая <strong>система управления качеством</strong> по
+          стандарту ISO 9001</span
+        >
+      </div>
+    </div>
+    <div class="item-cards">
+      <div class="item-cards__pagination">
+        <button
+          class="item-cards__pagination-btn active-btn"
+          *ngFor="let page of newPages"
+        >
+          {{ page }}
+        </button>
+      </div>
+      <div class="item-cards__grid">
+        <div class="item-cards__grid-left">
+          <div class="item-cards__grid-left-text">
+            Строительный отделочный инструмент
+          </div>
+          <div class="item-cards__grid-left-action">
+            <span style="margin-right: 10px">Подробнее в каталог</span>
+            <a class="item-cards__grid-left-action-link" href="#">
+              <img src="/assets/Frame20.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right">
+          <div class="item-cards__grid-right-first">
+            <div class="item-cards__grid-right-block">
+              <div class="item-cards__grid-right-text">Эмали</div>
+              <div class="item-cards__grid-left-action pd16">
+                <span style="margin-right: 10px">Подробнее в каталог</span>
+                <a class="item-cards__grid-left-action-link" href="#">
+                  <img src="/assets/Frame20.svg" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="item-cards__grid-right-block-2">
+              <div class="item-cards__grid-right-text-2">
+                Лакокрасочные материалы
+              </div>
+              <div class="item-cards__grid-right-action">
+                <span style="margin-right: 10px">Подробнее в каталог</span>
+                <a class="item-cards__grid-left-action-link" href="#">
+                  <img src="/assets/Frame20.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item-cards__grid-right-second">
+            <div class="item-cards__grid-right-block-3">
+              <div class="item-cards__grid-right-text-3">
+                Пены, клеи и герметики
+              </div>
+              <div class="item-cards__grid-right-action">
+                <span style="margin-right: 10px">Подробнее в каталог</span>
+                <a class="item-cards__grid-left-action-link" href="#">
+                  <img src="/assets/Frame20.svg" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="item-cards__grid-right-block-4">
+              <div class="item-cards__grid-left-text">
+                Розетки и выключатели
+              </div>
+              <div class="item-cards__grid-left-action">
+                <span style="margin-right: 10px">Подробнее в каталог</span>
+                <a class="item-cards__grid-left-action-link" href="#">
+                  <img src="/assets/Frame20.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="products-list">
+      <aside class="popular-products">
+        <h2 class="popular-products__text">Популярные товары</h2>
+        <button class="popular-products__btn">Посмотреть все товары</button>
+      </aside>
+      <div class="products-items">
+        <div class="products-item">
+          <div class="products-item__img">
+            <img class="item__img-percent" src="/assets/Frame100.svg" alt="" />
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <ul class="product-prices__price">
+              <li>52 руб.</li>
+              <li>48 руб.</li>
+            </ul>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+        <div class="products-item">
+          <div class="products-item__img">
+            <img class="item__img-percent" src="/assets/Frame100.svg" alt="" />
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <ul class="product-prices__price">
+              <li>52 руб.</li>
+              <li>48 руб.</li>
+            </ul>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+        <div class="products-item">
+          <div class="products-item__img">
+            <div class="products-item__img-new">
+              <button type="button" class="product-new__btn">Новинка</button>
+              <img
+                class="item__img-percent"
+                src="/assets/Frame100.svg"
+                alt=""
+              />
+            </div>
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <ul class="product-prices__price">
+              <li>52 руб.</li>
+              <li>48 руб.</li>
+            </ul>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+        <div class="products-item">
+          <div class="products-item__img">
+            <div>
+              <button type="button" class="product-new__btn">Новинка</button>
+            </div>
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <ul class="product-prices__price">
+              <li>52 руб.</li>
+              <li>48 руб.</li>
+            </ul>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="names">
+      <div class="names-item">
+        <h2>Более 10 000 наименований</h2>
+        <p class="names-item__text">
+          Инструмент для вашего бизнеса, разнообразных марок
+        </p>
+      </div>
+      <div>
+        <button type="button" class="names-item__btn">
+          Посмотреть все товары
+        </button>
+      </div>
+    </div>
+    <div class="products-list">
+      <aside class="popular-products">
+        <h2 class="popular-products__text">Новинки</h2>
+        <button type="button" class="popular-products__btn">
+          Посмотреть все товары
+        </button>
+      </aside>
+      <div class="products-items">
+        <div class="products-item">
+          <div class="products-item__img">
+            <div class="products-item__img-new">
+              <button type="button" class="product-new__btn">Новинка</button>
+            </div>
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <span class="product-prices__price">52 руб.</span>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+        <div class="products-item">
+          <div class="products-item__img">
+            <div class="products-item__img-new">
+              <button class="product-new__btn">Новинка</button>
+            </div>
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <span class="product-prices__price">52 руб.</span>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+        <div class="products-item">
+          <div class="products-item__img">
+            <div class="products-item__img-new">
+              <button type="button" class="product-new__btn">Новинка</button>
+            </div>
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <span class="product-prices__price">52 руб.</span>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+        <div class="products-item">
+          <div class="products-item__img">
+            <div class="products-item__img-new">
+              <button type="button" class="product-new__btn">Новинка</button>
+            </div>
+            <img class="item__img-like" src="/assets/heart2.svg" alt="" />
+          </div>
+          <h2 class="product-name">Круг зачистной 125х6х22</h2>
+          <p class="product-article">Артикул: 00004</p>
+          <div class="product-prices">
+            <p class="product-prices__text">Цена за штуку</p>
+            <span class="product-prices__price">52 руб.</span>
+          </div>
+          <div class="quantity-card">
+            <div class="quantity-controls">
+              <div class="quantity-controls__text">Количество</div>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn">+</button>
+              </div>
+            </div>
+            <button type="button" class="add-to__btn">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
