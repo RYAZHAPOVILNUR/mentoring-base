@@ -1,0 +1,21 @@
+.list-cards {
+    width: 300px;
+    height: 340px;
+    margin: 5px;
+    padding: 15px;
+    box-shadow: 0px 20px 50px 0px #12112714;
+    border: 1px solid #e5e5e5;
+  }
+
+  .key {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid #F0BA4E;
+    background-color: white;
+    margin-left: 40px;
+  }
+
+  .list-cards__todo {
+    min-height: 250px;
+  }
+ 
