@@ -1,0 +1,133 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  color: white;
+  background-color: #3c3c3b;
+  
+}
+.header-left {
+  display: flex;
+  font-family: Inter;
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-nav-item {
+  margin-right: 20px;
+}
+.header-logo {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+.header-right {
+  display: flex;
+  margin-left: 40px;
+  font-family: Inter;
+}
+.header-phone {
+  display: flex;
+  align-items: center;
+}
+
+.header-right img {
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.header-heart {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.header-button-users{
+  font-family: Inter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3c3c3b;
+  border-radius: 50px;
+  border: 2px solid #f0ba4e;
+  width: 130px;
+  height: 48px;
+  margin-left: 40px;
+  color: white;
+ 
+}
+
+
+.header-korzina span {
+  color: #fff;
+  font-family: Inter;
+}
+.header-korzina-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3c3c3b;
+  border-radius: 50px;
+  border: 2px solid #f0ba4e;
+  width: 120px;
+  height: 48px;
+  margin-left: 40px;
+}
+.header-korzina img {
+  width: 28px;
+  height: 28px;
+}
+.header-2 {
+  background-color: #f0ba4e;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  color: black;
+  padding-left: 240px;
+  padding-right: 240px;
+  height: 48px;
+}
+.header-2-item {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  justify-content: space-between;
+  font-family: Inter;
+  
+}
+.header-2-nav {
+  display: flex;
+  height: 17px;
+  justify-content: flex-start;
+  font-family: Inter;
+}
+
+.header-2-nav-item {
+  padding-right: 24px;
+}
+
+.inp-search {
+  display: flex;
+  border-bottom: 2px solid #000;
+  font-family: Inter;
+}
+.inp-search input {
+  width: 400px;
+  height: 28px;
+  background-color: #f0ba4e;
+  border: none;
+}
+
+.header-time {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 24px;
+  font-family: Inter;
+}

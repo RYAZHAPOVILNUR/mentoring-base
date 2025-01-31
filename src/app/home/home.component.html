@@ -1,0 +1,91 @@
+<button type="button" (click)="isShowFoto = !isShowFoto">
+  Скрыть/Показать гл.фото
+</button>
+<div>
+  <img
+    *ngIf="isShowFoto"
+    src="/assets/main_photo.png"
+    alt=""
+    style="width: 100%"/>
+</div>
+<div class="main-short-review">
+  <div class="main-short-review__botton-1">
+    <img src="/assets/Maskgroup_1.svg" alt="" />
+    <div class="main-short-review__botton-text">
+      Большой ассортимент строительных материалов всегда в наличии
+    </div>
+  </div>
+  <div class="main-short-review__botton-2">
+    <img src="/assets/Maskgroup_2.svg" alt="" />
+    <div class="main-short-review__botton-text">
+      Доставка стройматериалов в течении четырех часов или в любое удобное время
+    </div>
+  </div>
+  <div class="main-short-review__botton-3">
+    <img src="/assets/Maskgroup_3.svg" alt="" />
+    <div class="main-short-review__botton-text">
+      Многоуровневая система управления качеством по стандарту ISO 9001
+    </div>
+  </div>
+</div>
+<div class="content-container">
+  <div class="item-cards">
+    <div class="item-cards__pagination" >
+      <button  *ngFor="let item of newPages" class="item-cards__pagination-button active-button" >{{item}}</button>
+    </div>
+
+    <div class="item-cards__grid">
+      <div class="item-cards__grid-left">
+        <div class="item-cards__grid-left-text">
+          Строительный отделочный инструмент
+        </div>
+
+        <div class="item-cards__grid-left-action">
+          <span style="margin-right: 10px">Перейти в каталог</span>
+          <a class="item-cards__grid-left-action-link">
+            <img src="/assets/Frame_20.svg" alt="" />
+          </a>
+        </div>
+      </div>
+
+      <div class="item-cards__grid-right">
+        <div class="item-cards__grid-right-block-1">
+          <div class="item-cards__grid-left-text">Эмали</div>
+          <div class="item-cards__grid-left-action">
+            <span style="margin-right: 10px">Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/Frame_20.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block-2">
+          <div class="item-cards__grid-left-text">Лакокрасочные материалы</div>
+          <div class="item-cards__grid-right-block-2-action">
+            <span style="margin-right: 10px">Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/Frame_20.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block-3">
+          <div class="item-cards__grid-left-text">Пены, клеи и герметики</div>
+          <div class="item-cards__grid-right-block-2-action">
+            <span style="margin-right: 10px">Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/Frame_20.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="item-cards__grid-right-block-4">
+          <div class="item-cards__grid-left-text">Розетки и выключатели</div>
+          <div class="item-cards__grid-left-action">
+            <span style="margin-right: 10px">Перейти в каталог</span>
+            <a class="item-cards__grid-left-action-link">
+              <img src="/assets/Frame_20.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

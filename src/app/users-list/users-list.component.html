@@ -1,0 +1,13 @@
+
+<div class="header-users">
+
+    <div class="header-users__items" *ngFor="let items of users" >
+   <p> {{(items.name)}}</p>
+   <p> {{(items.email)}}</p>
+   <p> {{(items.phone)}}</p>
+   <p> {{(items.address.street)}}</p>
+   <p> {{(items.company.name)}}</p>
+   <button type="button" class="header-users-button" (click)="deleteUsers(items.id)">Удалить Юзера</button>
+    </div>
+
+</div>
