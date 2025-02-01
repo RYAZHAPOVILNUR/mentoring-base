@@ -1,0 +1,6 @@
+<p class="componenttext">КОМПОНЕНТ СПИСКА ЮЗЕРОВ</p>
+<div class="positionboxes">
+  <div *ngFor="let user of usersService.users$ | async" class="userslist">
+    <app-user-card [user]="user"(deleteUser)="deleteUser($event)"></app-user-card>
+  </div>
+</div>

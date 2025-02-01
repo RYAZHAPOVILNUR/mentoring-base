@@ -1,0 +1,61 @@
+<header>
+    <div class="header">
+      <div class="header-left">
+        <div class="header-logo">
+          <img src="assets/ege.svg" alt="logo" />
+        </div>
+        <nav class="header-nav">
+          <a class="header-nav-item" routerLink="">{{ headerItem1 }}</a>
+          <a class="header-nav-item" routerLink="">{{ aboutCompany }}</a>
+          <a class="header-nav-item" *ngIf="isShowCatalog">{{ headerItem3 }}</a>
+        </nav>
+        <button (click)="isShowCatalog = !isShowCatalog">
+          Скрыть/Показать каталог
+        </button>
+        <button (click)="changeMenuText()">Изменить текст</button>
+        <button routerLink="users">{{newtab}}</button>
+        <button routerLink="todos">{{todos}}</button>
+      </div>
+      <div class="header3">
+        <div>
+          <div class="header-right"></div>
+        </div>
+        <div class="header-logo3">
+          <img src="assets/phone.svg" alt="logo" />
+          <a class="phone-number" href="tel:+79650842929">+ 7 965 084 2929</a>
+          <img class="heart 1" src="/assets/heart.svg" />
+          <button class="Cart1">
+            <img class="Cart" src="/assets/cart.svg" />
+            <span class="empty">Пусто</span>
+          </button>
+        </div>
+        <nav class="header-nav-right">
+          <div class="header3-nav-item"></div>
+        </nav>
+      </div>
+    </div>
+    <div class="header2">
+      <div class="header2-left">
+        <div class="header2-logo"></div>
+        <img src="assets/light.svg" alt="logo" />
+        <nav class="header2-nav">
+          <div class="header2-nav-item" *ngFor="let item of menuItems">
+            {{ item }}
+          </div>
+        </nav>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          class="search-field"
+          placeholder="Поиск, например Круг зачистной"
+        />
+        <img src="assets/maskgroup.svg" alt="" class="search-icon" />
+      </div>
+      <div class="location">
+        <img src="assets/mappin.svg" alt="locmap" />
+        <a class="locmap" href="mapМосква">Москва</a>
+      </div>
+    </div>
+  </header>
+  <div>

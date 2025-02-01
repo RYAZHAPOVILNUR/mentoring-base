@@ -1,13 +1,22 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { HeaderComponent } from './components/header/header.component';
+import { UsersComponent } from './components/users/users.component';
+import { TodosComponent } from './components/todos/todos.component';
+
+
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'mentoring-first-project';
+  title: string = 'mentoring-first-project';
 }
