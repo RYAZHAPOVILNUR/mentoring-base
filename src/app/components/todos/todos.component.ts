@@ -6,32 +6,25 @@ import { TodoCardComponent } from './todo-card/todo-card.component';
 import { Todo } from './todo-interface';
 import { TodosService } from '../../todos.service';
 
-
-
 @Component({
   selector: 'app-todos',
   standalone: true,
   imports: [NgFor, TodoCardComponent, AsyncPipe],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosComponent {
   readonly todosApiService = inject(TodosApiService);
   readonly todosService = inject(TodosService);
-  todos = this.todosApiService.todos;
 
   constructor() {
-    this.todosApiService.getTodos().subscribe(
-      (response: Todo[]) => {
+    this.todosApiService.getTodos().subscribe((response: Todo[]) => {
       this.todosService.setTodos(response);
-      }
-    )
-     
-    }
+    });
+  }
 
   deleteTodo(id: number) {
     this.todosService.deleteTodo(id);
-    };
   }
-
+}

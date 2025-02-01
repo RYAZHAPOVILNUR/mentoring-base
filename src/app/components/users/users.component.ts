@@ -19,7 +19,6 @@ import { UsersService } from '../../users.service';
 export class UsersComponent {
   readonly usersApiService = inject(UsersApiService);
   readonly usersService = inject(UsersService);
-  users = this.usersService.users;
 
   constructor() {
     this.usersApiService.getUsers().subscribe(
@@ -27,10 +26,8 @@ export class UsersComponent {
       this.usersService.setUsers(response);
       }
     )
-      // this.usersService.usersSubject.subscribe(
-      //   users => this.users = users
-      // )
-    }
+
+  }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);

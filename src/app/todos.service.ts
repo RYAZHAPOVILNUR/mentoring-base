@@ -5,39 +5,29 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class TodosService {
 
-  todosSubject = new BehaviorSubject<Todo[]>([]);
-  todos: Todo[] = [];
+  private todosSubject = new BehaviorSubject<Todo[]>([]);
+  todos$ = this.todosSubject.asObservable();
 
   setTodos(todos: Todo[]) {
-    this.todos = todos;
     this.todosSubject.next(todos);
   }
 
   editTodo(editedTodo: Todo) {
     this.todosSubject.next(
       this.todosSubject.value.map((todo) => {
-        if (todo.id === editedTodo.id) {
-          return editedTodo;
-        } else {
-          return todo;
-        }
+        return todo.id === editedTodo.id ? editedTodo : todo;
       })
     );
   }
 
   createTodo(todo: Todo) {
-
     this.todosSubject.next([...this.todosSubject.value, todo]);
   }
 
   deleteTodo(id: number) {
     this.todosSubject.next(
       this.todosSubject.value.filter((item) => {
-        if (id === item.id) {
-          return false;
-        } else {
-          return true;
-        }
+        return id !== item.id;
       })
     );
   }
