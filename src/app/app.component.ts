@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+let name = 'maga';
+
+name = '5';
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -9,5 +14,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'mentoring-first-project';
+  title: string = 'mentoring-first-project';
 }
