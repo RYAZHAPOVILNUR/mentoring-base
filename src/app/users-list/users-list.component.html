@@ -1,0 +1,14 @@
+<div style="padding: 0px 240px">КОМПАНЕНТ СПИСКА ЮЗЕРОВ</div>
+
+<div style="display: flex; flex-wrap: wrap; padding: 0px 240px; ">
+  <div *ngFor="let item of users" style="width: 200px; height: 200px; box-shadow: 0px 20px 50px 0px rgba(18, 17, 39, 0.08);
+    background: rgb(255, 255, 255); margin: 10px; padding: 10px;">
+    <p>{{item.name}}</p>
+    <p>{{item.email}}</p>
+    <p>{{item.website}}</p>
+    <p>{{item.company.name}}</p>
+    <button (click)="deleteUser(item.id)" style="border: 1px solid #f0ba4e;
+    border-radius: 54px;height: 35px;
+    width: 150px;margin-left: 26px">УДАЛИТЬ ЮЗЕРА</button>
+  </div>
+</div>

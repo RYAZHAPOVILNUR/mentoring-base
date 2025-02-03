@@ -1,0 +1,49 @@
+<header class="header">
+  <div class="header-left">
+    <a class="header-logo" href="/">
+      <img src="/assets/Frame.svg" alt="логотип сайта">
+    </a>
+    <nav class="header-nav">
+      <button class="header-nav-item" routerLink="">{{headerItem1}}</button>
+      <button class="header-nav-item">{{headerItem2}}</button>
+      <button class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</button>
+    </nav>
+    <button (click)="isShowCatalog = !isShowCatalog" class="header-nav-item">Скрыть/Показать каталог </button>
+    <button (click)="changeMenuText()" class="header-nav-item">Изменить текст</button>
+  </div>
+  <div class="header-right">
+    <button style="border: 1px solid #f0ba4e;
+      border-radius: 54px;height: 48px;width: 175px;" routerLink="users" class="header-nav-item">Пользователь</button>
+    <img class="icon" src="/assets/Phone.svg" alt="" />
+    <a class="header-right-item" href="tel:+79650842929">+7 (965) 084-29-29</a>
+    <div class="header-right-item-heart">
+      <img src="/assets/heart_2.svg" alt="heart" />
+    </div>
+    <button type="button" class="header-right-item header-right basket">
+      <img class="icon" src="/assets/Mask group.png" alt="" />
+      <span class="basket-text">Пусто</span>
+    </button>
+  </div>
+</header>
+
+<div class="menu">
+  <div class="menu-left">
+    <div class="menu-logo2">
+      <img src="/assets/light.svg" alt="икона коталога">
+    </div>
+    <nav class="menu-nav">
+      <div class="menu-nav-item" *ngFor="let Items of menuItems">{{Items}}</div>
+    </nav>
+  </div>
+
+  <div class="menu-right">
+    <form class="sea">
+      <input class="search" type="search" placeholder="Поиск, например Круг зачистной">
+      <img class="lup" src="/assets/search.svg" alt="">
+    </form>
+    <div class="moskwa">
+      <img class="" src="/assets/map-pin (2) 1.svg" alt="" />
+      <div class="menu-right">Москва</div>
+    </div>
+  </div>
+</div>
