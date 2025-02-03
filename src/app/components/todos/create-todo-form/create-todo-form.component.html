@@ -1,0 +1,24 @@
+<div class="inscription">
+    
+    <form class="form" [formGroup]="form">
+      <h1>CREATE TODO FORM</h1>
+      <mat-form-field>
+        <mat-label>ТЕКСТ ЗАДАЧИ:</mat-label>
+        <input matInput formControlName="title">
+        <mat-error>Некорректное значение</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>АВТОР ЗАДАЧИ:</mat-label>
+        <input matInput formControlName="userId">
+        <mat-error>Некорректное значение</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>ЗАДАЧА ЗАВЕРШЕНА:</mat-label>
+        <input matInput formControlName="completed">
+        <mat-error>Ответ некорректен</mat-error>
+      </mat-form-field>
+      <button type="submit" (click)="submitForm()" matIconSuffix mat-raised-button [disabled]="form.invalid">Add Todo
+        <mat-icon>add</mat-icon>
+    </button>
+    </form>
+</div>

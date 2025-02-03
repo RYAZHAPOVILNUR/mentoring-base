@@ -1,0 +1,27 @@
+<div>
+    <form class="form" [formGroup]="form">
+        <mat-form-field>
+            <mat-label>NAME:</mat-label>
+            <input matInput formControlName="name">
+            <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>EMAIL:</mat-label>
+            <input matInput formControlName="email">
+            <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>WEBSITE:</mat-label>
+            <input matInput formControlName="website">
+            <mat-error>Некорректное значение</mat-error>
+        </mat-form-field>
+            <mat-form-field formGroupName="company" >
+                <mat-label>COMPANY NAME:</mat-label>
+                <input matInput formControlName="name">
+                <mat-error>Некорректное значение</mat-error>
+            </mat-form-field>
+        <button matIconSuffix mat-raised-button [disabled]="form.invalid" [mat-dialog-close] ="userWithUpdatedFields">Редактировать
+            <mat-icon>edit</mat-icon>
+        </button>
+    </form>
+</div>

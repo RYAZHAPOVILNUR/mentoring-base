@@ -1,0 +1,134 @@
+.bot {
+    background-color: #4b565e;
+    margin: auto;
+    max-width: 1320px;
+    padding: 0 300px;
+
+    .footer_cont {
+      height: 373px;
+      background-color: #4b565e;
+      padding: 35px 0;
+      display: flex;
+      justify-content: space-between;
+    
+      .footer_left {
+        img {
+          margin-bottom: 32px;
+        }
+  
+        .contacts_footer {
+          display: flex;
+          justify-content: space-between;
+  
+          .footer_phone {
+            span {
+              color: #ffffff99;
+              font-size: 12px;
+              margin-left: 15px;
+            }
+  
+            p {
+              color: white;
+              margin-left: 46px;
+            }
+          }
+  
+          .footer_mail {
+            margin-left: 30px;
+  
+            span {
+              color: #ffffff99;
+              font-size: 12px;
+              margin-left: 15px;
+            }
+  
+            p {
+              color: white;
+              margin-left: 46px;
+            }
+          }
+        }
+  
+        .last_text {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 85px;
+          width: 250px;
+  
+          span {
+            color: white;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+          }
+        }
+  
+        .footer_icons {
+          display: flex;
+          margin-top: 30px;
+  
+          img {
+            margin-right: 20px;
+            height: 25px;
+            cursor: pointer;
+          }
+        }
+      }
+  
+      .footer_right {
+        width: 534px;
+  
+        h3 {
+          color: white;
+        }
+  
+        span {
+          color: #ffffff99;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 28px;
+        }
+  
+        input {
+          width: 472px;
+          height: 42px;
+          margin-top: 32px;
+          border: 1px solid #f0ba4e;
+          border-radius: 25px;
+          background-color: #4b565e;
+          padding-left: 50px;
+          color: white;
+        }
+  
+        img {
+          position: relative;
+          top: -35px;
+          left: 20px;
+        }
+  
+        button {
+          padding: 12px 20px;
+          position: relative;
+          top: -41px;
+          left: 413px;
+          border-radius: 30px;
+          color: white;
+          background-color: #f0ba4e;
+          border: none;
+          cursor: pointer;
+          font-size: 10px;
+        }
+  
+        p {
+          color: #ffffff99;
+          font-size: 14px;
+          margin-top: 110px;
+          text-align: end;
+        }
+      }
+    }
+  }
+
+  .indent {
+    padding-bottom: 50px;
+  }

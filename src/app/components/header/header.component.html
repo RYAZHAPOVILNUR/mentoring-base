@@ -1,0 +1,44 @@
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">
+      <img src="assets/Frame.svg" alt="логотип сайта">
+    </div>
+    <nav class="header-nav">
+      <button class="header-nav-item" routerLink="users">{{headerItem1}}</button>
+      <button class="header-nav-item" routerLink="/">{{aboutCompany}}</button>
+      <button class="header-nav-item" *ngIf="isShowCatalog">{{headerItem3}}</button>
+    </nav>
+    <button (click)="isShowCatalog=!isShowCatalog">Срыть/Показать Каталог</button>
+    <button (click)="changeMenuText()">Изменить текст</button>
+    <button routerLink="todos">Админка</button>
+  </div>
+  <div class="header-right">
+    <img class="header-Phone" src="assets/Phone.svg" alt="трубка">
+    <a class="phone-nav" href="tel:+79196414039">+7 (965) 084-29-29</a>
+    <img class="header-heart" src="assets/heart 1.svg" alt="сердечько">
+    <button class="one">
+      <img src="assets/Mask group.svg" alt="корзина">
+      <span class="nav-one">Пусто</span>
+    </button>
+  </div>
+</div>
+<div class="light">
+  <div class="light-left">
+    <div class="light-line">
+      <img src="assets/light.svg" alt="строки">
+    </div>
+    <nav class="light-nav">
+      <button class="light-nav-apple" *ngFor="let item of menuItems">{{item}}</button>
+    </nav>
+  </div>
+  <div class="light-right">
+    <input class="search" type="search" placeholder="Поиск, например Круг зачистной">
+    <button class="mask">
+      <img src="assets/Mask group a.svg" alt="лупа">
+    </button>
+    <div class="map">
+      <img src="assets/map-pin (2) 1.svg" alt="капля">
+      <button class="country" type="menu">Москва</button>
+    </div>
+  </div>
+</div>
