@@ -1,32 +1,45 @@
-import { NgIf } from "@angular/common";
+import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
+
+const func = (date: string) => { return date }
+
+const itemName: string = 'О компании'
+
+const vzv = func(itemName)
+
+const menuItems = ['Каталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда'];
+
+const upperCaseMenuItems = menuItems.map((item) => {
+    return item.toLowerCase();
+});
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
-    standalone : true, 
-    imports: [NgIf, RouterLink,]
+    standalone: true,
+    imports: [NgIf, RouterLink, NgFor,] ,
 })
 export class HeaderComponent {
 
-    isShowCatalog = !true;
+    readonly headerItem1 = 'Главная';
+    readonly headerItem2 = 'О компании';
+    readonly headerItem3 = 'Каталог';
+    readonly aboutCompany = vzv;
 
-  readonly headerItem1 = 'Главная';
+    isShowCatalog = !false;
 
-  readonly headerItem2 = 'О компании';
+    menuItems = upperCaseMenuItems;
 
-  readonly headerItem3 = 'Каталог';
+    isUpperCase = false;
 
-  readonly menunavitem1 = 'Каталог';
+    changeMenuText() {
+        this.menuItems = upperCaseMenuItems.map((item) =>
+            this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
 
-  readonly menunavitem2 = 'Стройматериалы';
+        );
+        this.isUpperCase = !this.isUpperCase
+    }
 
-  readonly menunavitem3 = 'Инструменты';
-
-  readonly menunavitem4 = 'Электрика';
-
-  readonly menunavitem5 = 'Интерьер и одежда';
-
-}
+};

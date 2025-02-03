@@ -5,15 +5,25 @@ import { reduce } from 'rxjs';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 
-const time = new Date().getTime();
-
-console.log('time:', time);
-
-if (time === 1737664334945) {
-  console.log('time is correct');
-} else {
-  console.log('ERROR');
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent,FooterComponent,],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {
 }
+
+// const time = new Date().getTime();
+
+// console.log('time:', time);
+
+// if (time === 1737664334945) {
+//   console.log('time is correct');
+// } else {
+//   console.log('ERROR');
+// }
 
 // const shopping = (name: string,  item1: string, item2: string, item3: string, price:[number, number, number]) => {
 //   return name + ' Пошел в магазин ' + 'Он купил там сначала ' +  item1 + ' Затем, он купил ' + item2 + ' В конце он еще купил  ' + item3 
@@ -24,17 +34,24 @@ if (time === 1737664334945) {
 
 // console.log(shoppingResult);
 
-// // const func1 = (value: number) => console.log('value is;', value);
+// const func1 = (value: number) => console.log('value is;', value);
 
-// // func1(123);
+// func1(123);
 
 // const names = ['Ilnur', 'Farurh', 'Igor', 'Dmitry'];
 
-// // // names.forEach(
-// // //   (name) => {
-// // //     console.log(name);
-// // //   }
-// // // );
+// function getMenuItem(menuItem: string): string {
+//   return menuItem;
+// }
+
+// const menuItemName =  getMenuItem('О компании') 
+// console.log(menuItemName);
+
+// names.forEach(
+//   (name) => {
+//     console.log(name);
+//   }
+// );
  
 // names.map(
 //   (name) => {
@@ -43,13 +60,5 @@ if (time === 1737664334945) {
 //   }
 // );
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent,FooterComponent,],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
-})
-export class AppComponent {
-}
+
 

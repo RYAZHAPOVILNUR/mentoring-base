@@ -1,3 +1,4 @@
+import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 
 @Component({   
@@ -5,9 +6,18 @@ import { Component } from "@angular/core";
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
     standalone : true,
-    imports: []
+    imports: [NgIf, NgFor,]
 })
 
 export class HomePageComponent {
+
+    isShowMen = !false; 
+
+    readonly newPages =[5, 4, 3, 2, 1];
+
+    pages = this.newPages
+
+
+
 
 }
