@@ -1,0 +1,59 @@
+
+<div>
+   <div *ngFor="let item of users">
+    <app-user-card [user]="users" (deleteUser)="deleteUser($event)"></app-user-card>
+   </div>
+</div>
+
+<!-- 
+<div class="container-block">
+   <div class="block">
+                <div class="item-block">
+                    <img src="/assets/Frame_40.svg" alt="">
+                </div>
+                <div class="text">Круг зачистной 125х6х22
+                    <div class="text-1">Актикуль 00004</div>
+                </div>
+                <div class="text_2">
+                    <div style="color: #A1A0A0;">Цена за штуку</div>
+                    <div class="text_22">
+                        <s style="font-size: 16px;font-weight: 500;">52 руб.</s>
+                        <div style="font-size: 20px;font-weight: 600;">48 руб.</div>
+                    </div>
+                </div>
+                <div class="text_3">
+                    <div class="text_33">
+                        <div>Количество</div>
+                        <div>- 1 + </div>
+                    </div>
+                    <button class="button-1">
+                        <div style="font-size: 16px;font-weight: 500;">В корзину</div>
+                    </button>
+                </div>
+    </div>
+
+   <div class="block-2">
+                <div class="item-block-2">
+                    <img src="/assets/Frame_42.png" alt="">
+                </div>
+                <div class="text">Круг зачистной 125х6х22
+                    <div class="text-1">Актикуль 00004</div>
+                </div>
+                <div class="text_2">
+                    <div style="color: #A1A0A0;">Цена за штуку</div>
+                    <div class="text_22">
+                        <s style="font-size: 16px;font-weight: 500;">52 руб.</s>
+                        <div style="font-size: 20px;font-weight: 600;">48 руб.</div>
+                    </div>
+                </div>
+                <div class="text_3">
+                    <div class="text_33">
+                        <div>Количество</div>
+                        <div>- 1 + </div>
+                    </div>
+                    <button class="button-1">
+                        <div style="font-size: 16px;font-weight: 500;">В корзину</div>
+                    </button>
+     </div>
+</div> -->
+
