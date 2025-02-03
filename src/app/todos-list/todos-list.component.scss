@@ -1,16 +1,16 @@
-.user-list-container {
+.todos-list-container {
   max-width: 1320px;
   margin: 0 auto;
 }
 
-.users-list-title {
+.todos-list-title {
   font-size: 25px;
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.users-list {
+.todos-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
