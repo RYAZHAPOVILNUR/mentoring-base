@@ -1,0 +1,27 @@
+<h2>Create todo form</h2>
+<div class="create-todo">
+    <form class="create-todo-form" [formGroup]="form" (ngSubmit)="SubmitForm()">
+        <p>TITLE:</p>
+        <input class="create-todo-form__input" type="text" formControlName="title">
+        <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)">
+            <div class="alert" *ngIf="form.controls['title'].errors">
+                title введен неправильно!
+            </div>
+        </div>
+        <p>USER ID:</p>
+        <input class="create-todo-form__input" type="text" formControlName="userId">
+        <div
+            *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)">
+            <div class="alert" *ngIf="form.controls['userId'].errors">
+                Имя введено неправильно!
+            </div>
+        </div>
+        <p>COMPLETED:</p>
+        <input class="create-todo-form__input" id="completedValidator" formControlName="completed">
+        <div class="alert" *ngIf="(form.controls['completed'].invalid && (form.controls['completed'].dirty || form.controls['completed'].touched))
+        && form.get('completed')?.hasError('invalidCompleted')">
+            Значение должно быть "да" или "нет".
+        </div>
+        <button class="create-todo-button" type="submit" [disabled]="!form.valid">CREATE TODO</button>
+    </form>
+</div>
