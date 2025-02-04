@@ -20,8 +20,7 @@ export class TodosListComponent {
 
     constructor() {
         this.todosApiService.getTodos().subscribe(
-
-        (response: any) => {
+        (response: Todo[]) => {
           this.todos = response;
           console.log('ToDo:', this.todos);
         }
@@ -29,7 +28,6 @@ export class TodosListComponent {
     }
     deleteTodo(id: number) {
       this.todos = this.todos.filter(
-
         todos => {
           return id === todos.id ? false : true;
         }
