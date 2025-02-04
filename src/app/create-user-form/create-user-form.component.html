@@ -1,0 +1,29 @@
+<h1>Create user form</h1>
+<div class="create-user">
+    <form [formGroup]="form" (ngSubmit)="SubmitForm()">
+        <mat-form-field class="create-user-form">
+            <mat-label>Введите имя пользователя</mat-label>
+            <input matInput formControlName="name">
+            <mat-error>Некорректное название</mat-error>
+        </mat-form-field>
+        <mat-form-field class="create-user-form">
+            <mat-label>Введите email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error>Некорректное название</mat-error>
+        </mat-form-field>
+        <mat-form-field class="create-user-form">
+            <mat-label>Введите website</mat-label>
+            <input matInput formControlName="website">
+            <mat-error>Некорректное название</mat-error>
+        </mat-form-field>
+        <mat-form-field class="create-user-form">
+            <mat-label>Введите company</mat-label>
+            <input matInput formControlName="companyName">
+            <mat-error>Некорректное название</mat-error>
+        </mat-form-field>
+        <button class="create-user-form" matIconSuffix mat-raised-button type="submit" [disabled]="form.invalid">
+            Add user
+            <mat-icon>add</mat-icon>
+        </button>
+    </form>
+</div>
